@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Philosopher';
+    src: local('Philosopher'), url('philosopher.woff2') format('woff2'), url('philosopher.woff') format('woff'), url('philosopher.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Philosopher';
+    src: local('Philosopher Italic'), local('Philosopher-Italic'), url('philosopheritalic.woff2') format('woff2'), url('philosopheritalic.woff') format('woff'), url('philosopheritalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Philosopher';
+    src: local('Philosopher Bold'), local('Philosopher-Bold'), url('philosopherbold.woff2') format('woff2'), url('philosopherbold.woff') format('woff'), url('philosopherbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Philosopher';
+    src: local('Philosopher Bold Italic'), local('Philosopher-BoldItalic'), url('philosopherbolditalic.woff2') format('woff2'), url('philosopherbolditalic.woff') format('woff'), url('philosopherbolditalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}

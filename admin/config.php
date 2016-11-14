@@ -1,25 +1,25 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost/adastra/admin/');
-define('HTTP_CATALOG', 'http://localhost/adastra/');
+define('HTTP_SERVER', 'http://adastra.local/admin/');
+define('HTTP_CATALOG', 'http://adastra.local/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost/adastra/admin/');
-define('HTTPS_CATALOG', 'http://localhost/adastra/');
+define('HTTPS_SERVER', 'http://adastra.local/admin/');
+define('HTTPS_CATALOG', 'http://adastra.local/');
 
 // DIR
-define('DIR_APPLICATION', 'C:/wamp/www/adastra/admin/');
-define('DIR_SYSTEM', 'C:/wamp/www/adastra/system/');
-define('DIR_LANGUAGE', 'C:/wamp/www/adastra/admin/language/');
-define('DIR_TEMPLATE', 'C:/wamp/www/adastra/admin/view/template/');
-define('DIR_CONFIG', 'C:/wamp/www/adastra/system/config/');
-define('DIR_IMAGE', 'C:/wamp/www/adastra/image/');
-define('DIR_CACHE', 'C:/wamp/www/adastra/system/storage/cache/');
-define('DIR_DOWNLOAD', 'C:/wamp/www/adastra/system/storage/download/');
-define('DIR_LOGS', 'C:/wamp/www/adastra/system/storage/logs/');
-define('DIR_MODIFICATION', 'C:/wamp/www/adastra/system/storage/modification/');
-define('DIR_UPLOAD', 'C:/wamp/www/adastra/system/storage/upload/');
-define('DIR_CATALOG', 'C:/wamp/www/adastra/catalog/');
+define('DIR_APPLICATION', 'C:/Server/OpenServer/domains/adastra.local/admin/');
+define('DIR_SYSTEM', 'C:/Server/OpenServer/domains/adastra.local/system/');
+define('DIR_LANGUAGE', 'C:/Server/OpenServer/domains/adastra.local/admin/language/');
+define('DIR_TEMPLATE', 'C:/Server/OpenServer/domains/adastra.local/admin/view/template/');
+define('DIR_CONFIG', 'C:/Server/OpenServer/domains/adastra.local/system/config/');
+define('DIR_IMAGE', 'C:/Server/OpenServer/domains/adastra.local/image/');
+define('DIR_CACHE', 'C:/Server/OpenServer/domains/adastra.local/system/storage/cache/');
+define('DIR_DOWNLOAD', 'C:/Server/OpenServer/domains/adastra.local/system/storage/download/');
+define('DIR_LOGS', 'C:/Server/OpenServer/domains/adastra.local/system/storage/logs/');
+define('DIR_MODIFICATION', 'C:/Server/OpenServer/domains/adastra.local/system/storage/modification/');
+define('DIR_UPLOAD', 'C:/Server/OpenServer/domains/adastra.local/system/storage/upload/');
+define('DIR_CATALOG', 'C:/Server/OpenServer/domains/adastra.local/catalog/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
