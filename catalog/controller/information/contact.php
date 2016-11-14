@@ -30,13 +30,13 @@ class ControllerInformationContact extends Controller {
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+			'text' =>'Главная',
 			'href' => $this->url->link('common/home')
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('information/contact')
+			'href' => ''
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');
@@ -46,7 +46,7 @@ class ControllerInformationContact extends Controller {
 		$data['text_contact'] = $this->language->get('text_contact');
 		$data['text_address'] = $this->language->get('text_address');
 		$data['text_telephone'] = $this->language->get('text_telephone');
-		$data['text_fax'] = $this->language->get('text_fax');
+		$data['text_email'] = $this->language->get('text_email');
 		$data['text_open'] = $this->language->get('text_open');
 		$data['text_comment'] = $this->language->get('text_comment');
 
@@ -55,7 +55,11 @@ class ControllerInformationContact extends Controller {
 		$data['entry_enquiry'] = $this->language->get('entry_enquiry');
 
 		$data['button_map'] = $this->language->get('button_map');
-
+		if (isset($this->request->post['config_email'])) {
+			$data['config_email'] = $this->request->post['config_email'];
+		} else {
+			$data['config_email'] = $this->config->get('config_email');
+		}
 		if (isset($this->error['name'])) {
 			$data['error_name'] = $this->error['name'];
 		} else {
@@ -195,13 +199,13 @@ class ControllerInformationContact extends Controller {
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+			'text' => 'Главная',
 			'href' => $this->url->link('common/home')
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('information/contact')
+			'href' =>''
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');

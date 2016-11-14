@@ -1,0 +1,31 @@
+@import "../fonts/Philosofer/philosopher.css";
+.breadcrumb_text{
+    font-family: 'Philosopher';
+    list-style-type: none;
+    color: #8a8781;
+    padding: 0;
+    display: inline-block;
+    width: 60px;
+}
+
+a.text{
+    font-family: 'Philosopher';
+    color: #8a8781;
+    padding: 0;
+}
+h1.heading_title {
+    font-family: 'Philosopher';
+    font-size: 36px;
+    color: #0b0b0b;
+}
+strong{
+    font-family: 'Philosopher';
+    font-size: 18px ;
+    color: #0b0b0b;
+}
+p{
+    font-family: 'Philosopher';
+    display: inline-block;
+    font-size: 18px;
+    color: #0b0b0b;
+}
