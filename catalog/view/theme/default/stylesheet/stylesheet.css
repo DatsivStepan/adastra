@@ -751,3 +751,10 @@ h2.price {
     background-image: none;
     background-color: #df5c39;
 }
+.div-header-style{
+	position: absolute;
+	z-index: 100;
+	background: rgba(252, 251, 250, 0.8);
+	width: 100%;
+    padding-top: 5px;
+}
