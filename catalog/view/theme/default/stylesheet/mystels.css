@@ -1,16 +1,21 @@
 @import "../fonts/Philosofer/philosopher.css";
+.mapa {
+    width: 100%;
+    height: 600px;
+}
 .breadcrumb_text{
     font-family: 'Philosopher';
+    font-size: 14px;
     list-style-type: none;
     color: #8a8781;
     padding: 0;
     display: inline-block;
-    width: 60px;
 }
 
 a.text{
     font-family: 'Philosopher';
     color: #8a8781;
+    font-size: 14px;
     padding: 0;
 }
 h1.heading_title {
@@ -18,14 +23,342 @@ h1.heading_title {
     font-size: 36px;
     color: #0b0b0b;
 }
-strong{
+strong.text{
     font-family: 'Philosopher';
     font-size: 18px ;
     color: #0b0b0b;
 }
-p{
+p.telephone, p.address, p.config_email, p.open{
     font-family: 'Philosopher';
-    display: inline-block;
     font-size: 18px;
     color: #0b0b0b;
+}
+h1.vopros{
+    font-family: 'Philosopher';
+    font-size: 36px;
+    font-weight: 700;
+    color: #322d2d;
+    margin-left: 15px;
+    margin-bottom: 25px;
+}
+
+input.form-control_style {
+    font-family: 'Philosopher';
+    display: block;
+    width: 85%;
+    height: 50px;
+    padding: 6px 12px;
+    font-size: 20px;
+    line-height: 1.42857143;
+    color: #322d2d;
+    border: 1px solid #322d2d;
+}
+h1.text_comment{
+    font-family: 'Philosopher';
+    font-weight: 700;
+    font-size: 18px;
+    color: #0b0b0b;
+    font-style: italic;
+}
+.btn_otpravutu {
+    font-family: 'Philosopher';
+    color: #f5f5f5;
+    padding: 7.5px 12px;
+    font-size: 20px;
+    border: 1px solid #322d2d;
+    border-radius: 25px;
+    width: 290px;
+    height: 50px;
+    background: #322d2d;
+    margin-left: 15px;
+}
+.strilka{
+    position: absolute;
+    margin: 7px 0 0 58px;
+
+}
+.form-control_style{
+    width: 85%;
+    height: 150px;
+    resize: none;
+    border: 1px solid #322d2d;
+    font-family: 'Philosopher';
+    padding: 6px 12px;
+    font-size: 20px;
+}
+.input-sort_KP{
+    border: hidden;
+    -webkit-appearance: none;
+    padding-right: 10px;
+    background: url('../image/strilka_vnuz.png') right center no-repeat;
+    outline: none;
+!important;
+}
+.korzuna_style{
+    !important;
+    background: url('../image/korzuna.png') right center no-repeat;
+    width: 25px;
+    height: 30px;
+    margin: 15px 0 0 18px;
+    border: none;
+}
+.label_text_sort{
+    font-family: 'Philosopher';
+    font-size: 14px;
+}
+.pull-right_KP{
+    font-family: 'Philosopher';
+    font-size: 13px;
+    font-weight: 900;
+    color: #322d2d;
+    margin: 0;
+}
+.h2_KP{
+    font-family: 'Philosopher';
+    font-size: 45px;
+    font-weight: 900;
+    margin: 1px 0 -25px 0;
+}
+.h3_KP{
+    font-family: 'Philosopher';
+    font-size: 36px;
+    font-weight: 900;
+}
+.h1_KP{
+    font-family: 'Philosopher';
+    font-size: 48px;
+    font-weight: bold;
+    position: absolute;
+    margin: -41px 0 0px 263px;
+}
+.text-bottom{
+    font-family: 'Philosopher';
+    font-size: 14px;
+}
+
+.text_pid-kartunkov{
+    font-family: 'Philosopher';
+    font-size: 14px;
+}
+
+.conteiner_proz{
+    background: rgba(0,0,0,0.45);
+    padding: 20px;
+    width: 75%;
+    min-height: 270px;
+    margin: -322px 0 0 13%;
+    position: relative;
+}
+.korzuna_style-2{
+    background: url(../image/korzuna_2.png) right center no-repeat;
+    width: 64px;
+    height: 72px;
+    margin: 27px 0 0 47%;
+    border: none;
+}
+.pull-right_KP_2{
+    font-family: 'Philosopher';
+    font-size: 35px;
+    font-weight: 900;
+    color: #ffffff;
+}
+.pull-right_KP_2-1{
+    border-bottom: 1px solid #ffffff;
+    width: 100px;
+    margin-left: 42%;
+    padding-top: 15px;
+}
+.text_style_1{
+    font-family: 'Philosopher';
+    font-size: 20px;
+    font-weight: 900;
+    color: #ffffff;
+}
+.text_style_2{
+    font-family: 'Philosopher';
+    font-size: 20px;
+    font-weight: 900;
+    color: #ffffff;
+}
+img.image_responsive{
+    width: 75%;!important;
+    margin-left: 13%;!important;
+}
+.h2_KP_2{
+    font-family: 'Philosopher';
+    font-size: 45px;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: -3%;
+}
+.h3_KP_2{
+    font-family: 'Philosopher';
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+}
+.h1_KP_2{
+    font-family: 'Philosopher';
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+.nomer_border{
+    border-bottom: 3px solid #6e6a6e;
+    margin: -2% 18% 0% 18%;
+}
+.Catalog{
+    font-family: 'Philosopher';
+    font-size: 48px;
+    font-weight: bold;
+    color: #585858;
+}
+.category-style_KP{
+    font-family: 'Philosopher';
+    font-size: 30px;
+    font-weight: 300;
+    color: #585858;
+    list-style-type: none;
+    text-align: center;
+}
+.category-child-style_KP{
+    font-family: 'Philosopher';
+    font-size: 30px;
+    font-weight: 300;
+    color: #848484;
+    list-style-type: none;
+    text-align: center;
+}
+@media (min-width: 600px)and (max-width: 767px){
+    .mapa {
+        width: 100%;
+        height: 600px;
+    }
+    .email_adminy{
+        margin-left: 50px;
+    }
+    input.form-control_style {
+        font-family: 'Philosopher';
+        display: block;
+        width: 100%;
+        height: 50px;
+        padding: 6px 12px;
+        font-size: 20px;
+        line-height: 1.42857143;
+        color: #322d2d;
+        border: 1px solid #322d2d;
+    }
+    .form-control_style{
+        width: 100%;
+        height: 150px;
+        resize: none;
+        border: 1px solid #322d2d;
+        font-family: 'Philosopher';
+        padding: 6px 12px;
+        font-size: 20px;
+    }
+    h1.heading_title {
+        font-family: 'Philosopher';
+        font-size: 36px;
+        color: #585858;
+        text-align: center;
+        margin-bottom: 50px;
+        border-bottom: 3px solid#e0deda;
+        padding-bottom: 20px;
+    }
+    h1.text_comment {
+        font-family: 'Philosopher';
+        font-weight: 700;
+        font-size: 24px;
+        color: #0b0b0b;
+        font-style: italic;
+    }  .product-thumb_style .caption_style {
+        padding: 0 20px;
+        min-height: 0;
+    }
+    .text_katalog{
+        font-family: 'Philosopher';
+        font-size: 48px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .text_pid-kartunkov{
+        font-family: 'Philosopher';
+        font-size: 20px;
+        color: #888888;
+    }
+
+
+}
+@media (min-width: 768px) {
+    .mapa {
+        width: 50%;
+        height: 600px;
+    }
+    .label_text_sort{
+        font-family: 'Philosopher';
+        font-size: 14px;
+        margin: 0;
+    }
+    .h2_KP {
+        font-family: 'Philosopher';
+        font-size: 35px;
+        font-weight: 900;
+        margin: 1px 0 -25px 0;
+    }
+    .h3_KP {
+        font-family: 'Philosopher';
+        font-size: 28px;
+        font-weight: 900;
+    }
+    .h1_KP {
+        font-family: 'Philosopher';
+        font-size: 27px;
+        font-weight: bold;
+        position: absolute;
+        margin: -34px 0 0px 200px;
+    }
+    .text_na_kartuni {
+        position: absolute;
+        margin: 17% 0% 0% 28%;
+        width: 56%;
+    }
+}
+
+@media (min-width: 992px) {
+    .mapa {
+        width: 50%;
+        height: 600px;
+    }
+    .h1_KP {
+        font-family: 'Philosopher';
+        font-size: 35px;
+        font-weight: bold;
+        position: absolute;
+        margin: -36px 0 0px 207px;
+    }
+    .text_na_kartuni{
+        position: absolute;
+        margin: 13% 0% 0% 34%;
+        width: 56%;
+    }
+}
+@media (min-width: 1200px) {
+    .mapa {
+        width: 600px;
+        height: 600px;
+    }
+    .h1_KP{
+        font-family: 'Philosopher';
+        font-size: 48px;
+        font-weight: bold;
+        position: absolute;
+        margin: -41px 0 0px 204px;
+    }
+    .text_na_kartuni{
+        position: absolute;
+        margin: 9% 0% 0% 37%;
+        width: 56%;
+    }
 }
