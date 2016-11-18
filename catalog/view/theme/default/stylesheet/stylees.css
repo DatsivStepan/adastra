@@ -1,12 +1,174 @@
-
+.title_adas_o_galer{
+    font-family:'Philosopher';
+    font-size: 38px;
+    color: #322d2d;
+}
+.breadcrumb_text_2{
+    font-family: 'Philosopher';
+    font-size: 17px;
+    list-style-type: none;
+    color: #8a8781;
+    padding: 0;
+    display: inline-block;
+    margin: 0 1% 0 0;
+}
+.title_adas_o_galer_2{
+    font-family:'Philosopher';
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 26px;
+    color: #322d2d;
+}
 .adas_text_o_nac{
+    font-family:'Philosopher';
+    font-size: 17px;
+    color: #322d2d;
+}
+.adas_text_o_nac_nuz{
     font-family:'Philosopher';
     font-size: 18px;
     color: #6d6b6b;
 }
-.adas_text_o_nac_nuz{
+.text_faktury_frecku{
     font-family:'Philosopher';
-    font-weight: 400;
+    font-size: 22px;
+    color: #322d2d;
+    font-weight: 600;
+}
+.text_faktury_gold{
+    font-family:'Philosopher';
+    font-size: 22px;
+    color: #322d2d;
+    font-weight: 600;
+}
+.text_faktury_gold_2{
+    font-family:'Philosopher';
+    font-size: 20x;
+    color: #322d2d;
+    font-weight: 600;
+}
+.text_factura_bold{
+    font-family:'Philosopher';
     font-size: 18px;
-    color: #6d6b6b;
+    color: #322d2d;
+    font-weight: 600;
+}
+.adas_img{
+    height: 300px;
+    width: 19.6%;
+    float:left;
+    margin-right: 0.5%;
+    margin-top: -13px;
+}
+.adas_img_mar{
+    height: 300px;
+    width: 19.6%;
+    float:left;
+    margin-top: -13px;
+}
+.text_kat_name{
+    font-family:'Philosopher';
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    margin: 53% 19% -8% 16%;
+    text-align: left;
+    padding: 0 0 6% 0;
+    height: 104px;
+}
+.a_kat_adas{
+    font-family:'Philosopher';
+    font-size: 17px;
+    font-weight: 600;
+    color: #ffde00;
+    margin: 0 0 0 15%;
+    background: url("/../catalog/view/theme/default/image/Forma-1-copy.png")right no-repeat;
+    padding: 0 15% 0 0;
+    text-decoration: underline;
+}
+.home_adas_text{
+    font-family: 'Philosopher' !important;
+    display: inline-block !important;
+    font-size: 18px !important;
+    color: #6e6565 !important;
+    margin-top: 50px;
+}
+.adas_new_text{
+    text-align: center;
+}
+.p_text_adas_3{
+    margin: 0 0 0 40px;
+
+}
+.nav-tabs{
+    border-bottom:none!important;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    color: #000;
+    font-family: 'Philosopher';
+    font-size: 18px;
+    cursor: default;
+    border: none;
+    border-bottom-color: transparent;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    border-bottom: 3px solid;
+}
+.nav-tabs>li>a:hover {
+    border-color: none;
+}
+.a_adas_sul{
+    font-family: 'Philosopher';
+    font-size: 18px;
+    color: #585858;
+    border: 1px solid #000000;
+}
+
+@media (max-width: 768px) and (min-width: 320px )   {
+    .adas_img{
+        height: 300px;
+        width: 100%;
+    }
+    .adas_img_mar{
+        height: 300px;
+        width: 100%;
+    }
+    .text_kat_name{
+        font-family: 'Philosopher';
+        font-size: 23px;
+        color: #fff;
+        font-weight: 600;
+        margin: 20% 58% -14% 18%;
+        text-align: left;
+        padding: 0px 0px 6% 0px;
+        height: 108px;
+    }
+    .a_kat_adas{
+        font-family:'Philosopher';
+        font-size: 14px;
+        font-weight: 600;
+        color: #ffde00;
+        margin: 0 0 0 15%;
+        background: url("/../catalog/view/theme/default/image/Forma-1-copy.png")right no-repeat;
+        padding: 0 15% 0 0;
+        text-decoration: underline;
+    }
+    .border_kat{
+        text-align: right;
+        margin: 0% 11% 2% 48%;
+        border: 1px solid#ffde00;
+        padding: 2% 8% 2% 0px;
+        border-radius: 25px;
+    }
+    .p_text_adas{
+        margin: 0 5px 0 0;
+        font-size: 15px;
+    }
+    .p_text_adas_3{
+        margin: 0 0 0 5px;
+        font-size: 15px;
+    }
+    .p_text_adas_2{
+        font-size: 15px;
+    }
 }
