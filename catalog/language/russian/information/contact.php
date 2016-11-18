@@ -5,19 +5,19 @@ $_['heading_title']  = 'Контакты';
 // Text
 $_['text_location']  = 'Наше местонахождение';
 $_['text_store']     = 'Наши магазины';
-$_['text_contact']   = 'Написать нам';
+$_['text_contact']   = 'Обратная связь';
 $_['text_address']   = 'Адрес:';
 $_['text_telephone'] = 'Телефон:';
 $_['text_email']       = 'E-mail:';
 $_['text_open']      = 'График роботы консультанта:';
 $_['text_comment']   = 'Дополнительная информация';
 $_['text_success']   = '<p>Ваше сообщение успешно отправлено владельцу магазина!</p>';
-$_['button_submit']         = 'Отправить сообщение';
+$_['button_submit']         = 'Отправить';
 
 // Entry
 $_['entry_name']     = 'Ваше имя';
 $_['entry_email']    = 'Ваш E-Mail';
-$_['entry_enquiry']  = 'Ваш вопрос или сообщение';
+$_['entry_enquiry']  = 'Ваше сообщение';
 $_['entry_captcha']  = 'Введите код, указанный на картинке';
 
 // Email
