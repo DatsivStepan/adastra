@@ -2,7 +2,7 @@
 /*
 	Philosopher, 400, 400 italic, 700, 700 italic
 */
-
+*{outline: none !important;}
 
 body {
 	font-family: 'Open Sans', sans-serif;
@@ -317,8 +317,6 @@ div.required .control-label:before {
 footer {
 	margin-top: 30px;
 	padding-top: 30px;
-	background-color: #303030;
-	border-top: 1px solid #ddd;
 	color: #e2e2e2;
 }
 footer hr {
@@ -751,10 +749,224 @@ h2.price {
     background-image: none;
     background-color: #df5c39;
 }
+.no-margin{
+	margin: 0 !important;
+}
 .div-header-style{
 	position: absolute;
 	z-index: 100;
 	background: rgba(252, 251, 250, 0.8);
 	width: 100%;
-    padding-top: 5px;
+    padding-top: 10px;
+	padding-left: 8%;
+	padding-right: 8%;
+}
+.div-header-style-1{
+	background: rgba(252, 251, 250, 0.8);
+	width: 100%;
+    padding-top: 10px;
+	padding-left: 8%;
+	padding-right: 8%;
+}
+.products-style .title {
+    font-size: 15px;
+    cursor: pointer;
+
+}
+.cart-div-style{
+	width: 100%;
+}
+.no-padding{
+	padding: 0;
+}
+.div-products-style{
+	font-size: 20px;
+	padding-top: 20px !important;
+	width: 14% !important;
+	float: left;
+}
+.div-menu-style{
+	padding-top: 20px;
+	width: 45%;
+	float: left;
+}
+.div-phone-style{
+	float: left;
+	width: 14%;
+
+}
+.div-cart-style{
+	padding-top: 10px !important;
+	width: 10%;
+	float: left;
+}
+.span-menu-text-style{
+	color: #0b0b0b;
+	padding-left: 5px;
+}
+.footer-div-contact-style{
+
+	color: #0b0b0b;
+}
+.footer-bottom-div-style{
+    border-top: 1px solid #5e5e5e ;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.footer-bottom-text-style{
+	font-family: 'Philosopher';
+	font-weight: 400;
+	font-size: 15px;
+	color: #0b0b0b;
+}
+.footer-bottom-text-padding{
+	padding-top: 20px;
+	text-align: center;
+}
+.footer-contact-text-left-style{
+	font-family: 'Philosopher';
+	font-weight: 700;
+	font-size: 40px;
+}
+.footer-contact-text-right-style{
+	font-family: 'Philosopher';
+	font-weight: 700;
+	font-size: 28px;
+}
+.footer-phone-text-style{
+	padding-top: 7px;
+	padding-left: 15px;
+}
+.footer-email-text-style{
+	padding-left: 15px;
+	padding-top: 3px;
+}
+.header-text-style{
+	font-family: 'Philosopher';
+	font-weight: 400;
+}
+.header-menu-text-style{
+	font-family: 'Philosopher';
+	font-weight: 400;
+	color: #0b0b0b;
+	font-size: 13px;
+	padding-left: 5px;
+}
+.header-phone-text-style{
+	padding-top: 7px;
+	padding-left: 15px;
+}
+.header-phone-style{
+	font-family: 'Philosopher';
+	font-weight: 700;
+	font-size: 20px;
+}
+.header-contact-text-style-1{
+	font-family: 'Philosopher';
+	font-weight: 400;
+	font-size: 15px;
+}
+.header-contact-text-style-2{
+	font-family: 'Philosopher';
+	font-weight: 700;
+	font-size: 15px;
+}
+.header-div-contact-style{
+	text-align: center;
+	cursor: pointer;
+}
+.modal-title-style{
+	font-size: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.modal-div-input-stile{
+	padding-bottom: 10px;
+}
+.modal-input-style{
+	text-align: center;
+	height: 35px;
+	width: 300px;
+}
+.modal-textarea-style{
+	text-align: center;
+	width: 300px;
+	height: 150px;
+}
+.modal-btn-style, .modal-btn-style:hover, .modal-btn-style:focus{
+	color: #fff;
+	background-color: #322d2d;
+	border-radius: 20px;
+	width: 300px;
+}
+.header-products-div-style{
+    display: none;
+    top:79px;
+    position: absolute;
+    z-index: 100;
+    background: rgba(255,255,254, 0.9);
+}
+.products-title-style{
+    color: #0b0b0b;
+    font-family: 'Helvetica';
+    font-weight: 700;
+    font-size:15px;
+}
+.products-category-style , .products-category-style:hover, .products-category-style:focus{
+    line-height: 25px;
+    color: #0b0b0b;
+    font-family: 'Helvetica';
+    font-weight: 200;
+    font-size:13px;
+}
+.product-div-style{
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.product-div-title-style{
+    padding-bottom: 10px;
+}
+.div-products-mb-style{
+	font-size: 40px;
+	/*padding-bottom: 14px;*/
+	padding-top: 10px !important;
+	width: 14% !important;
+	float: left;
+}
+.div-menu-mb-style{
+	border-bottom: 1px solid #5e5e5e;
+	padding-top: 20px;
+	width: 45%;
+	float: left;
+}
+.div-phone-mb-style{
+	float: right;
+}
+
+.div-md-header-style{
+	position: absolute;
+	z-index: 100;
+	background: rgba(252, 251, 250, 0.8);
+	width: 100%;
+	padding-top: 10px;
+	/*padding-left: 8%;*/
+	/*padding-right: 8%;*/
+}
+.mb-div-phone-style{
+	padding-top: 10px;
+	text-align: right;
+}
+.mb-phone-style{
+	text-align: center;
+	font-family: 'Philosopher';
+	font-weight: 700;
+	font-size: 40px;
+}
+.hide-phone-div{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	display: none;
 }

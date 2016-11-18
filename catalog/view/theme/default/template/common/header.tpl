@@ -24,6 +24,7 @@
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
 <link href="catalog/view/theme/default/stylesheet/mystels.css" rel="stylesheet">
+<script src="catalog/view/javascript/header.js" type="text/javascript"></script>
 
   <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
@@ -40,51 +41,245 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-<header>
-  <div class="container div-header-style">
-    <nav >
-      <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-        <div id="logo">
-          <?php if ($logo) { ?>
-          <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
-          <?php } else { ?>
-          <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
-          <?php } ?>
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Заголовок модального окна -->
+      <div class="modal-header" style="border: 0">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <!-- Основное содержимое модального окна -->
+      <div class="modal-body" style="text-align: center;">
+        <div class="modal-title-style">MESSAGE</div>
+        <div>
+          <form id="contactForm" action="" method="post">
+            <ul id="errorMasege" style="padding-left: 0">
+              <span style="display: none; color: red" class="row name">Некоректно заполнено Имя пользователя</span>
+              <span style="display: none; color: red" class="row email ">Некоректно заполнено Email</span>
+              <span style="display: none; color: red" class="row message ">Минимальная длина сообщения десеть знаков</span>
+            </ul>
+            <div class="row modal-div-input-stile">
+              <input class="modal-input-style contactItem" id="name" name="name" type="text" placeholder="NAME">
+            </div>
+            <div class="row modal-div-input-stile">
+              <input class="modal-input-style contactItem" id="email" name="email" type="text" placeholder="EMAIL">
+            </div>
+            <div class="row modal-div-input-stile">
+              <textarea  name="message" placeholder="MESSAGE" rows="5" id="message" class="contactItem modal-textarea-style"></textarea>
+            </div>
+            <button id="sendMessage" type="button" class="btn modal-btn-style">Send message</button>
+          </form>
         </div>
       </div>
-        <?php echo $currency; ?>
-        <?php echo $language; ?>
-        <div id="top-links" class="nav pull-right col-sm-8 col-md-8 col-lg-8 col-xl-8">
-          <ul class="list-inline">
-            <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
-            <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <span class="caret"></span></a>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <?php if ($logged) { ?>
-                <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-                <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-                <li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
-                <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
-                <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
-                <?php } else { ?>
-                <li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
-                <li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
-                <?php } ?>
-              </ul>
-            </li>
-            <li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a></li>
-            <li><a href="<?php echo $shopping_cart; ?>" title="<?php echo $text_shopping_cart; ?>"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_shopping_cart; ?></span></a></li>
-            <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_checkout; ?></span></a></li>
-          </ul>
-        </div>
-    </nav>
-    <!--  <div class="row">
-      <div class="col-sm-3"><?php echo $cart; ?></div
-    </div>>-->
+    </div>
   </div>
+</div>
+<header>
+  <!--Desktop header begin-->
+  <?php if($data['is_home'] == 'home'){ ?>
+      <div class="container div-header-style hidden-xs">
+        <nav >
+          <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            <div id="logo">
+              <?php if ($logo) { ?>
+              <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
+              <?php } else { ?>
+              <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
+              <?php } ?>
+            </div>
+          </div>
+          <div id="products" class="products-style fa fa-bars  no-padding div-products-style">
+            <span class="title header-text-style" style="padding-left: 5px">ПРОДУКЦИЯ <span id="product_1" class="fa fa-angle-down" style="font-size: 20px"></span></span>
+          </div>
+          <div id="products_id" class="row header-products-div-style">
+            <div class=" container" style="">
+              <?php foreach ($categories as $category) { ?>
+              <?php if ($category['children']) { ?>
+              <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 product-div-style">
+                <div class="product-div-title-style">
+              <span class="products-title-style"><?php echo $category['name']; ?>
+                </div>
+                <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
+                <span class="">
+              <?php foreach ($children as $child) { ?>
+                  <span class=""><a class="products-category-style" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span></br>
+                  <?php } ?>
+            </span>
+                <?php } ?>
+              </div>
+              </span>
+              <?php } else { ?>
+              <span class="products-category-style"><?php echo $category['name']; ?></span>
+              <?php } ?>
+              <?php } ?>
+            </div>
+          </div>
+          <div class=" div-menu-style">
+            <a href="index.php?route=common/home"><span class="header-menu-text-style">Как купить?</span></a>
+            <a href=""><span class="header-menu-text-style">Оплата</span></a>
+            <a href=""><span class="header-menu-text-style">Доставка</span></a>
+            <a href=""><span class="header-menu-text-style">Контакты</span></a>
+            <a href=""><span class="header-menu-text-style">География работи</span></a>
+            <a href=""><span class="header-menu-text-style">Материалы</span></a>
+            <a href=""><span class="header-menu-text-style">Цены</span></a>
+          </div>
+          <?php echo $currency; ?>
+          <?php echo $language; ?>
+          <div class="div-phone-style">
+            <div class="row">
+              <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding">
+                <img style="width: 20px" src="../../../catalog/view/theme/default/image/phone.png">
+              </div>
+              <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 no-padding">
+                <span class="header-phone-style"><?php echo $telephone; ?></span>
+              </div>
+            </div>
+            <div id="contact" class="row header-div-contact-style">
+              <span class="header-contact-text-style-1">Обратный звонок</span></br>
+              <span class="header-contact-text-style-2">We speak english</span>
+            </div>
+          </div>
+          <div class="div-cart-style"><?php echo $cart; ?></div>
+        </nav>
+      </div>
+    <!--Mobile header begin-->
+      <div class="container div-md-header-style hidden-sm hidden-md hidden-lg hidden-xl">
+        <div class="row no-margin">
+        <div id="products_id_md" class="products-style no-padding div-products-mb-style col-xs-2">
+          <img src="../../../catalog/view/theme/default/image/menu-bar.png">
+        </div>
+        <div class="col-xs-3">
+          <div id="logo">
+            <?php if ($logo) { ?>
+            <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
+            <?php } else { ?>
+            <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
+            <?php } ?>
+          </div>
+        </div>
+        <div id="phone_id" class="col-xs-3  no-padding mb-div-phone-style">
+          <img style="width: 22%" src="../../../catalog/view/theme/default/image/phone.png">
+        </div>
+        <div class="col-xs-3 no-padding" style="text-align: right">
+          <?php echo $cart; ?>
+        </div>
+        </div>
+        <div id="id_phone" class="row hide-phone-div">
+          <span class="mb-phone-style">
+            <?php echo $telephone; ?>
+          </span>
+        </div>
+        <div id="products_md" class="row " style="display: none">
+          <div class=" container" style="text-align: center">
+            <div class=" div-menu-mb-style" style="font-size: 25px; width: 100%;">
+              <a href="index.php?route=common/home"><span class="header-menu-text-style">Как купить?</span></a></br>
+              <a href=""><span class="header-menu-text-style">Оплата</span></a></br>
+              <a href=""><span class="header-menu-text-style">Доставка</span></a></br>
+              <a href=""><span class="header-menu-text-style">Контакты</span></a></br>
+              <a href=""><span class="header-menu-text-style">География работи</span></a></br>
+              <a href=""><span class="header-menu-text-style">Материалы</span></a></br>
+              <a href=""><span class="header-menu-text-style">Цены</span></a></br>
+            </div>
+            <?php foreach ($categories as $category) { ?>
+            <?php if ($category['children']) { ?>
+            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 product-div-style">
+              <div class="product-div-title-style">
+              <span class="products-title-style"><?php echo $category['name']; ?>
+              </div>
+              <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
+              <span class="">
+              <?php foreach ($children as $child) { ?>
+                <span class=""><a class="products-category-style" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span></br>
+                <?php } ?>
+            </span>
+              <?php } ?>
+            </div>
+            </span>
+            <?php } else { ?>
+            <span class="products-category-style"><?php echo $category['name']; ?></span>
+            <?php } ?>
+            <?php } ?>
+          </div>
+        </div>
 
-  <div class=""><?php echo $slider; ?></div>
+
+      </div>
+    <!--Mobile header end-->
+      <div class=""><?php echo $slider; ?></div>
+  <?php }else{ ?>
+      <div class="container div-header-style-1 hidden-xs">
+        <nav >
+          <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            <div id="logo">
+              <?php if ($logo) { ?>
+              <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
+              <?php } else { ?>
+              <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
+              <?php } ?>
+            </div>
+          </div>
+          <div id="products" class="products-style fa fa-bars  no-padding div-products-style">
+            <span class="title header-text-style" style="padding-left: 5px">ПРОДУКЦИЯ <span id="product_1" class="fa fa-angle-down" style="font-size: 20px"></span></span>
+          </div>
+          <div id="products_id" class="row header-products-div-style">
+            <div class=" container" style="">
+              <?php foreach ($categories as $category) { ?>
+              <?php if ($category['children']) { ?>
+              <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 product-div-style">
+                <div class="product-div-title-style">
+              <span class="products-title-style"><?php echo $category['name']; ?>
+                </div>
+                <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
+                <span class="">
+              <?php foreach ($children as $child) { ?>
+                  <span class=""><a class="products-category-style" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span></br>
+                  <?php } ?>
+            </span>
+                <?php } ?>
+              </div>
+              </span>
+              <?php } else { ?>
+              <span class="products-category-style"><?php echo $category['name']; ?></span>
+              <?php } ?>
+              <?php } ?>
+            </div>
+          </div>
+          <div class=" div-menu-style">
+            <a href="index.php?route=common/home"><span class="header-menu-text-style">Как купить?</span></a>
+            <a href=""><span class="header-menu-text-style">Оплата</span></a>
+            <a href=""><span class="header-menu-text-style">Доставка</span></a>
+            <a href=""><span class="header-menu-text-style">Контакты</span></a>
+            <a href=""><span class="header-menu-text-style">География работи</span></a>
+            <a href=""><span class="header-menu-text-style">Материалы</span></a>
+            <a href=""><span class="header-menu-text-style">Цены</span></a>
+          </div>
+          <?php echo $currency; ?>
+          <?php echo $language; ?>
+          <div class="div-phone-style">
+            <div class="row">
+              <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 no-padding">
+                <img style="width: 20px" src="../../../catalog/view/theme/default/image/phone.png">
+              </div>
+              <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 no-padding">
+                <span class="header-phone-style"><?php echo $telephone; ?></span>
+              </div>
+            </div>
+            <div id="contact" class="row header-div-contact-style">
+              <span class="header-contact-text-style-1">Обратный звонок</span></br>
+              <span class="header-contact-text-style-2">We speak english</span>
+            </div>
+          </div>
+          <div class="div-cart-style"><?php echo $cart; ?></div>
+        </nav>
+      </div>
+  <?php } ?>
+  <!--Desktop header end-->
+
 </header>
-<?php if ($categories) { ?>
+
+
+
+<!--<?php if ($categories) { ?>
 <div class="container">
   <nav id="menu" class="navbar">
     <div class="navbar-header"><span id="category" class="visible-xs"><?php echo $text_category; ?></span>
@@ -115,4 +310,4 @@
     </div>
   </nav>
 </div>
-<?php } ?>
+<?php } ?>-->
