@@ -1,5 +1,8 @@
-<div id="cart" class="btn-group btn-block">
-  <button type="button" data-toggle="dropdown" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-inverse btn-block btn-lg dropdown-toggle"><i class="fa fa-shopping-cart"></i> <span id="cart-total"><?php echo $text_items; ?></span></button>
+<div id="cart" class="" style="cursor: pointer">
+  <span  data-toggle="dropdown" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle">
+    <span style="padding-left: 25%;"><i style="font-size: 25px" class="fa fa-shopping-cart"></i></span></br>
+    <span id="cart-total"><?php echo $text_items; ?></span>
+  </span>
   <ul class="dropdown-menu pull-right">
     <?php if ($products || $vouchers) { ?>
     <li>

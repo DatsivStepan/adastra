@@ -5,6 +5,12 @@ class ControllerCommonFooter extends Controller {
 
 		$data['scripts'] = $this->document->getScripts('footer');
 
+        if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
+            $data['logo'] = 'image/' . $this->config->get('config_logo');
+        } else {
+            $data['logo'] = '';
+        }
+
 		$data['text_information'] = $this->language->get('text_information');
 		$data['text_service'] = $this->language->get('text_service');
 		$data['text_extra'] = $this->language->get('text_extra');
@@ -19,6 +25,8 @@ class ControllerCommonFooter extends Controller {
 		$data['text_order'] = $this->language->get('text_order');
 		$data['text_wishlist'] = $this->language->get('text_wishlist');
 		$data['text_newsletter'] = $this->language->get('text_newsletter');
+        $data['telephone'] = $this->config->get('config_telephone');
+        $data['email'] = $this->config->get('config_email');
 
 		$this->load->model('catalog/information');
 
