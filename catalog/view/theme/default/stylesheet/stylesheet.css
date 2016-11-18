@@ -970,3 +970,16 @@ h2.price {
 	text-align: center;
 	display: none;
 }
+.desktop-home-text-style{
+	padding-left: 30px;
+	font-family: 'Philosopher';
+	font-weight: 700;
+	font-size: 20px;
+	color: #0b0b0b;
+}
+.img-title-style{
+	font-family: 'Philosopher';
+	font-weight: 700;
+	font-size: 15px;
+	color: #0b0b0b;
+}
