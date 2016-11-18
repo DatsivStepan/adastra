@@ -114,6 +114,9 @@
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
     border-bottom: 3px solid;
 }
+.nav-tabs>li>a:hover {
+    border-color: none;
+}
 .a_adas_sul{
     font-family: 'Philosopher';
     font-size: 18px;
