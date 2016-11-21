@@ -395,7 +395,7 @@ class ModelCatalogProduct extends Model {
 
 	public function getCategories($product_id) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_to_category WHERE product_id = '" . (int)$product_id . "'");
-
+		
 		return $query->rows;
 	}
 
