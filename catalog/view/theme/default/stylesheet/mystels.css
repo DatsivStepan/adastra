@@ -1,7 +1,21 @@
 @import "../fonts/Philosofer/philosopher.css";
+/*.spanprod{
+  !* display: none;*!
+}
+.container_spanprod:hover .spanprod{
+    display: block;
+}*/
 .mapa {
     width: 100%;
     height: 600px;
+}
+.conteiner_proz_2{
+    background: rgba(0,0,0,0.45);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+
 }
 .breadcrumb_text{
     font-family: 'Philosopher';
@@ -230,6 +244,48 @@ img.image_responsive{
     list-style-type: none;
     text-align: center;
 }
+/*golovna*/
+.korzuna_style-3 {
+    background: url(../image/Korzuna_golovna.png) right center no-repeat;
+    width: 64px;
+    height: 72px;
+    margin: -15px 0 0 34%;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+.pull-right_KP_3 {
+    font-family: 'Philosopher';
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+}
+.text_style_1_3 {
+    font-family: 'Philosopher';
+    font-size: 16px;
+    font-weight: 100;
+    color: #ffffff;
+}
+.text_style_price{
+    font-family: 'Philosopher';
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+}
+.pull-right_KP_2-3{
+    border-bottom: 1px solid #ffffff;
+    width: 100px;
+    margin-left: 20%;
+    padding-top: 15px;
+    margin-bottom: 7%;
+}
+.conteiner_text_KP{
+    position: absolute;
+    top: 25%;
+    left: 26%;
+
+}
+/**/
 @media (min-width: 600px)and (max-width: 767px){
     .mapa {
         width: 100%;

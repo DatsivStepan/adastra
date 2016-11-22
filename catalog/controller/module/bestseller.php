@@ -2,6 +2,11 @@
 class ControllerModuleBestSeller extends Controller {
 	public function index($setting) {
 		$this->load->language('module/bestseller');
+		$this->document->addStyle("http://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css");
+		$this->document->addScript("http://plugin.bearsthemes.com/jquery/MasonryHybrid/jquery-3.1.0.min.js");
+		$this->document->addScript("https://code.jquery.com/ui/1.12.0/jquery-ui.js");
+		$this->document->addScript("http://plugin.bearsthemes.com/jquery/MasonryHybrid/isotope.pkgd.min.js");
+		$this->document->addScript("http://plugin.bearsthemes.com/jquery/MasonryHybrid/jquery.masonry-hybrid.min.js");
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
@@ -10,6 +15,7 @@ class ControllerModuleBestSeller extends Controller {
 		$data['button_cart'] = $this->language->get('button_cart');
 		$data['button_wishlist'] = $this->language->get('button_wishlist');
 		$data['button_compare'] = $this->language->get('button_compare');
+		$data['text_price'] = $this->language->get('text_price');
 
 		$this->load->model('catalog/product');
 
@@ -22,9 +28,9 @@ class ControllerModuleBestSeller extends Controller {
 		if ($results) {
 			foreach ($results as $result) {
 				if ($result['image']) {
-					$image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']);
+					$image = HTTP_SERVER.'image/'.$result['image'];
 				} else {
-					$image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
+					$image = $this->model_tool_image->resize('placeholder.png', 0, 0);
 				}
 
 				if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
