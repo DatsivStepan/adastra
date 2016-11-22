@@ -1,5 +1,8 @@
 <?php echo $header;?>
-<div id="content" class="<?php echo $class; ?>">
+<div id="content" class="<?php echo $class; ?>" xmlns="http://www.w3.org/1999/html">
+<!--<?php
+    $count = count($arr);
+?>-->
 <?php foreach ($category_home as $category) { ?>
 <?php if($category == end($category_home)) { ?>
     <div class="adas_img_mar" style="background: url(<?php echo $category['image'];?>)center no-repeat;">
@@ -48,29 +51,171 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row" style="padding-bottom: 15px">
-            <span class="desktop-home-text-style">Только что купили</span>
+    <div class="row div-advantages-bg">
+        <div class="container advantages-container-style">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <span class="advantages-style">
+                    Наши </br> преимущества
+                </span></br>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 advantages_1-div-style">
+                <span class="advantages_1-style">
+                    интернет магазин фресок Галерея Адастра обладает</br>следующими преимуществами:
+                </span>
+            </div>
+            <div class="row  row-advantages-style">
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" >
+                    <div class="row" style="position: relative; margin: 0 ">
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
+                            <span class="advantages-number_1-style">1</span>
+                        </div>
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style">
+                            <span class="advantages-content-title-style">
+                                Экологически чистые материалы
+                            </span></br>
+                            <span class="advantages-content-style">
+                                При изготовлении нашей продукции используются только экологически чистые материалы, корорые не наносят
+                                вред вашему здоровью
+                            </span>
+                        </div>
+                    </div>
+                    <div class="div-border_1-style"></div>
+                    <div class="div-border-style"></div>
+                </div>
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="float: right" >
+                    <div class="row" style="position: relative; margin: 0 ">
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
+                            <span class="advantages-number_2-style">2</span>
+                        </div>
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style">
+                            <span class="advantages-content-title-style">
+                                Мы являемся производителями
+                            </span></br>
+                            <span class="advantages-content-style">
+                                Мы являемся производителями с наличием собственной производственной базы, что дает
+                                нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="div-border_1-style"></div>
+                    <div class="div-border-style"></div>
+                </div>
+            </div>
+            <div class="row  row-advantages-style">
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" >
+                    <div class="row" style="position: relative; margin: 0 ">
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
+                            <span class="advantages-number_3-style">3</span>
+                        </div>
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style">
+                            <span class="advantages-content-title-style">
+                                Экологически чистые материалы
+                            </span></br>
+                            <span class="advantages-content-style">
+                                При изготовлении нашей продукции используются только экологически чистые материалы, корорые не наносят
+                                вред вашему здоровью
+                            </span>
+                        </div>
+                    </div>
+                    <div class="div-border_1-style"></div>
+                    <div class="div-border-style"></div>
+                </div>
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="float: right" >
+                    <div class="row" style="position: relative; margin: 0 ">
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
+                            <span class="advantages-number_4-style">4</span>
+                        </div>
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style">
+                            <span class="advantages-content-title-style">
+                                Мы являемся производителями
+                            </span></br>
+                            <span class="advantages-content-style">
+                                Мы являемся производителями с наличием собственной производственной базы, что дает
+                                нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="div-border_1-style"></div>
+                    <div class="div-border-style"></div>
+                </div>
+            </div>
+            <div class="row  row-advantages-style">
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" >
+                    <div class="row" style="position: relative; margin: 0 ">
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
+                            <span class="advantages-number_5-style">5</span>
+                        </div>
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style">
+                            <span class="advantages-content-title-style">
+                                Экологически чистые материалы
+                            </span></br>
+                            <span class="advantages-content-style">
+                                При изготовлении нашей продукции используются только экологически чистые материалы, корорые не наносят
+                                вред вашему здоровью
+                            </span>
+                        </div>
+                    </div>
+                    <div class="div-border_1-style"></div>
+                    <div class="div-border-style"></div>
+                </div>
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="float: right" >
+                    <div class="row" style="position: relative; margin: 0 ">
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
+                            <span class="advantages-number_6-style">6</span>
+                        </div>
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style">
+                            <span class="advantages-content-title-style">
+                                Мы являемся производителями
+                            </span></br>
+                            <span class="advantages-content-style">
+                                Мы являемся производителями с наличием собственной производственной базы, что дает
+                                нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="div-border_1-style"></div>
+                    <div class="div-border-style"></div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-2" style="margin-right: 25px">
-            <img style="width: 130%" src="../../../catalog/view/theme/default/image/img_1.png">
-            <span class="img-title-style">The Abduction of Ganymede</span>
-        </div>
-        <div class="col-lg-2" style="margin-right: 25px">
-            <img style="width: 130%" src="../../../catalog/view/theme/default/image/img_2.png">
-            <span class="img-title-style">Vemus and  Adonis</span>
-        </div>
-        <div class="col-lg-2" style="margin-right: 25px">
-            <img style="width: 127%" src="../../../catalog/view/theme/default/image/img_3.png">
-            <span class="img-title-style">Throne Nymphs Offering</span>
-        </div>
-        <div class="col-lg-2" style="margin-right: 25px">
-            <img style="width: 130%" src="../../../catalog/view/theme/default/image/img_4.png">
-            <span class="img-title-style">Mythological Scene</span>
-        </div>
-        <div class="col-lg-2" style="margin-right: 25px">
-            <img style="width: 130%" src="../../../catalog/view/theme/default/image/img_5.png">
-            <span class="img-title-style">Вид на цветущий сад</span>
+    </div>
+    <div class="container div-home-contact-style no-padding">
+        <div class="row no-margin" style="padding-bottom: 10px">
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding">
+                  <span class="footer-contact-text-left-style">
+                      Контакты:
+                  </span>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <div class="row">
+                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                        <img src="../../../catalog/view/theme/default/image/phone.png">
+                    </div>
+                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style">
+                        <span class="footer-contact-text-right-style"><?php echo $telephone; ?></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <div class="row">
+                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                        <img src="../../../catalog/view/theme/default/image/phone.png">
+                    </div>
+                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style" >
+                        <span class="footer-contact-text-right-style"><?php echo $telephone; ?></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <div class="row">
+                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                        <img src="../../../catalog/view/theme/default/image/mail.png">
+                    </div>
+                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-email-text-style">
+                        <span class="footer-contact-text-right-style"><?php echo $email; ?></span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

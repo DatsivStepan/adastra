@@ -315,8 +315,8 @@ div.required .control-label:before {
 }
 /* footer */
 footer {
-	margin-top: 30px;
-	padding-top: 30px;
+	/*margin-top: 30px;*/
+	/*padding-top: 30px;*/
 	color: #e2e2e2;
 }
 footer hr {
@@ -982,4 +982,142 @@ h2.price {
 	font-weight: 700;
 	font-size: 15px;
 	color: #0b0b0b;
+}
+.div-home-contact-style{
+    padding-top: 2%;
+}
+.div-advantages-bg{
+    background: url("../image/home-bg.png") center no-repeat;
+    background-size: cover;
+}
+.advantages-style{
+    font-family: 'Philosopher';
+    font-weight: 700;
+    font-size: 40px;
+    color: #0b0b0b;
+    line-height: 40px;
+}
+.advantages-container-style{
+    text-align: center;
+    margin-top: 30px;
+}
+.advantages_1-style{
+    font-family: 'Philosopher';
+    color: #0b0b0b;
+}
+.advantages_1-div-style{
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+.advantages-div-style{
+    border-top:2px solid #0b0b0b;
+    border-left:2px solid #0b0b0b;
+    border-right:2px solid #0b0b0b;
+	position: relative;
+}
+.advantages-content-title-style{
+    font-family: 'Philosopher';
+    font-weight: 700;
+    font-size: 20px;
+    color: #0b0b0b;
+}
+.advantages-content_1-div-style{
+	padding-top: 25.5px;
+	padding-bottom: 25.5px;
+	float: right;
+}
+.advantages-content_2-div-style{
+	float: right;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.advantages-content-style{
+	font-family: 'Philosopher';
+	font-size: 15px;
+	color: #0b0b0b;
+}
+.row-advantages-style{
+	padding-bottom: 20px;
+}
+.advantages-number_1-style{
+	font-family: 'Philosopher';
+	font-size: 100px;
+	color: #0b0b0b;
+	display: block;
+	line-height: 60px;
+}
+.advantages-number_2-style{
+	font-family: 'Philosopher';
+	font-size: 100px;
+	color: #0b0b0b;
+	display: block;
+	line-height: 60px;
+	margin-left: -45%;
+}
+.advantages-number_3-style{
+	font-family: 'Philosopher';
+	font-size: 100px;
+	color: #0b0b0b;
+	display: block;
+	line-height: 60px;
+	margin-left: -60%;
+}
+.advantages-number_4-style{
+	font-family: 'Philosopher';
+	font-size: 100px;
+	color: #0b0b0b;
+	display: block;
+	line-height: 60px;
+	margin-left: -60%;
+}
+.advantages-number_5-style{
+	font-family: 'Philosopher';
+	font-size: 100px;
+	color: #0b0b0b;
+	display: block;
+	line-height: 60px;
+	margin-left: -60%;
+}
+.advantages-number_6-style{
+	font-family: 'Philosopher';
+	font-size: 100px;
+	color: #0b0b0b;
+	display: block;
+	line-height: 60px;
+	margin-left: -60%;
+}
+.advantages-number_1-div-style{
+	position: absolute;
+	z-index: 100;
+	bottom: -2px;
+	width: 12%;
+	left: 20px;
+}
+.advantages-number_2-div-style{
+	position: absolute;
+	z-index: 100;
+	border-bottom: 2px solid rgba(255,255,255,0.99);
+	bottom: -2px;
+	width: 15%;
+	left: 18px;
+}
+.div-border-style{
+    margin-right: -17px;
+    border-bottom: 2px solid #0b0b0b;
+    float: right;
+    width: 87%;
+}
+.div-border_1-style{
+    margin-left: -15px;
+    float: left;
+    border-bottom: 2px solid #0b0b0b;
+    width: 8%;
+}
+#parallelogram {
+    width: 150px;
+    height: 100px;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    background: red;
 }
