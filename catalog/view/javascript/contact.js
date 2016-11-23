@@ -1,20 +1,27 @@
 $(document).ready(function () {
-    var map;
 
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('mapa'), {
-            center: {lat: 55.798732, lng: 37.394294},
-            zoom: 15,
-            scrollwheel: false
+    ymaps.ready(init);
+    var myMap,
+        myPlacemark;
+
+    function init(){
+        myMap = new ymaps.Map("map", {
+            center: [55.702531, 37.928893],
+            zoom: 17
         });
-        var map = new google.maps.Marker({
-            position: {lat: 55.798732, lng: 37.394294},
-            map: map,
-            title: 'Таллинская улица дом 6, Москва, город Москва, Россия'
+
+        myPlacemark = new ymaps.Placemark([55.702531, 37.928893], {
         });
+
+        myMap.geoObjects
+            .add(new ymaps.Placemark([55.702531, 37.928893], {
+                iconCaption: 'Покровская улица'
+            }, {
+                preset: 'islands#greenDotIconWithCaption',
+                iconColor: '#ed4543'
+            }))
+
     }
-
-    initMap();
 
 
 
@@ -134,5 +141,21 @@ $(document).ready(function () {
             console.log('Incorrectly completed forms');
         }
 
+    });
+    $('#products').on('click', function () {
+        $('#product_1').toggleClass('fa-angle-up');
+        $('#product_1').toggleClass('fa-angle-down');
+        $('#products_id').slideToggle("fast");
+    });
+    $('#products_id_md').on('click', function () {
+        console.log('awdwd');
+        $('#products_md').slideToggle("fast");
+    });
+    $("#contact").click(function() {
+        $("#myModal").modal('show');
+    });
+
+    $("#phone_id").click(function() {
+        $('#id_phone').slideToggle("fast");
     });
 });

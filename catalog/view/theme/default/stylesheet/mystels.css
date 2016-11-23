@@ -1,11 +1,5 @@
 @import "../fonts/Philosofer/philosopher.css";
-/*.spanprod{
-  !* display: none;*!
-}
-.container_spanprod:hover .spanprod{
-    display: block;
-}*/
-.mapa {
+.map {
     width: 100%;
     height: 600px;
 }
@@ -36,6 +30,7 @@ h1.heading_title {
     font-family: 'Philosopher';
     font-size: 36px;
     color: #0b0b0b;
+    margin-bottom: 3%;
 }
 strong.text{
     font-family: 'Philosopher';
@@ -120,7 +115,7 @@ h1.text_comment{
     font-family: 'Philosopher';
     font-size: 14px;
 }
-.pull-right_KP{
+a.pull-right_KP{
     font-family: 'Philosopher';
     font-size: 13px;
     font-weight: 900;
@@ -160,7 +155,7 @@ h1.text_comment{
     padding: 20px;
     width: 75%;
     min-height: 270px;
-    margin: -322px 0 0 13%;
+    margin: -296px 0 0 13%;
     position: relative;
 }
 .korzuna_style-2{
@@ -170,13 +165,13 @@ h1.text_comment{
     margin: 27px 0 0 47%;
     border: none;
 }
-.pull-right_KP_2{
+a.pull-right_KP_2{
     font-family: 'Philosopher';
     font-size: 35px;
     font-weight: 900;
     color: #ffffff;
 }
-.pull-right_KP_2-1{
+a.pull-right_KP_2-1{
     border-bottom: 1px solid #ffffff;
     width: 100px;
     margin-left: 42%;
@@ -249,12 +244,12 @@ img.image_responsive{
     background: url(../image/Korzuna_golovna.png) right center no-repeat;
     width: 64px;
     height: 72px;
-    margin: -15px 0 0 34%;
+    margin: -15px 0 0 25%;
     border: none;
     text-align: center;
     cursor: pointer;
 }
-.pull-right_KP_3 {
+a.pull-right_KP_3 {
     font-family: 'Philosopher';
     font-size: 24px;
     font-weight: 500;
@@ -272,7 +267,7 @@ img.image_responsive{
     font-weight: 500;
     color: #ffffff;
 }
-.pull-right_KP_2-3{
+a.pull-right_KP_2-3{
     border-bottom: 1px solid #ffffff;
     width: 100px;
     margin-left: 20%;
@@ -283,11 +278,28 @@ img.image_responsive{
     position: absolute;
     top: 25%;
     left: 26%;
+}
+.conteiner_proz_2{
+    background: rgba(0,0,0,0.45);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+
+}
+.conteiner_proz_3{
+    background: rgba(0,0,0,0.45);
+    padding: 20px;
+    width: 75%;
+    min-height: 270px;
+    margin: -296px 0 0 13%;
+    position: relative;
 
 }
 /**/
+
 @media (min-width: 600px)and (max-width: 767px){
-    .mapa {
+    .map {
         width: 100%;
         height: 600px;
     }
@@ -348,7 +360,7 @@ img.image_responsive{
 
 }
 @media (min-width: 768px) {
-    .mapa {
+    .map {
         width: 50%;
         height: 600px;
     }
@@ -383,7 +395,7 @@ img.image_responsive{
 }
 
 @media (min-width: 992px) {
-    .mapa {
+    .map {
         width: 50%;
         height: 600px;
     }
@@ -401,7 +413,7 @@ img.image_responsive{
     }
 }
 @media (min-width: 1200px) {
-    .mapa {
+    .map {
         width: 600px;
         height: 600px;
     }

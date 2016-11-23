@@ -12,7 +12,7 @@
             <?php } ?>
         </ul>
     </div>
-    <div class="row"><?php echo $column_left; ?>
+    <div class="row" style="    margin-bottom: 30%;"><?php echo $column_left; ?>
         <?php if ($column_left && $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } elseif ($column_left || $column_right) { ?>
@@ -79,7 +79,7 @@
                 </form>
             </div>
             </div>
-            <div class="mapa col-xs-12 col-sm-5 col-md-5 col-lg-5" id="mapa" style=""></div>
+            <div class="map col-xs-12 col-sm-5 col-md-5 col-lg-5" id="map" style=""></div>
         </div>
         <?php echo $column_right; ?></div>
 </div>
