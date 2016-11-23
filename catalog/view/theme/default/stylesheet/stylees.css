@@ -93,6 +93,12 @@
     color: #6e6565 !important;
     margin-top: 50px;
 }
+.tovar_adas_text{
+    font-family: 'Philosopher' !important;
+    font-size: 18px !important;
+    color: #6e6565 !important;
+    margin: 1px;
+}
 .adas_new_text{
     text-align: center;
 }
@@ -171,4 +177,31 @@
     .p_text_adas_2{
         font-size: 15px;
     }
+    .last_img_2{
+        width: 44%!important;
+        float: left!important;
+        margin: 0 0% 0 4%!important;
+    }
+}
+.last_h3_text{
+    font-family: 'Philosopher';
+    font-size: 25px;
+    font-weight: 600;
+}
+.panel_h4_text{
+    font-family: 'Philosopher';
+    font-size: 25px;
+    font-weight: 600;
+}
+.mar_left_cont{
+    margin: 0 -19px 0 -5px
+}
+.last_img{
+    width: 16.9%;
+    float: left;
+    margin: 0px -6.6% 0px 7%;
+}
+.product-thumb .caption {
+    padding: 0px 20px!important;
+    min-height: 65px!important;
 }
