@@ -2,6 +2,8 @@
 class ControllerModuleCategory extends Controller {
 	public function index() {
 		$this->load->language('module/category');
+		$this->document->addScript('catalog/view/javascript/contact.js');
+
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
