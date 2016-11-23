@@ -1000,6 +1000,8 @@ h2.price {
 .advantages-container-style{
     text-align: center;
     margin-top: 30px;
+	margin-left: 8%;
+	margin-right: 8%;
 }
 .advantages_1-style{
     font-family: 'Philosopher';
@@ -1014,6 +1016,7 @@ h2.price {
     border-left:2px solid #0b0b0b;
     border-right:2px solid #0b0b0b;
 	position: relative;
+	margin-bottom: 1%;
 }
 .advantages-content-title-style{
     font-family: 'Philosopher';
@@ -1112,6 +1115,58 @@ h2.price {
     float: left;
     border-bottom: 2px solid #0b0b0b;
     width: 8%;
+}
+.mobile-contact-div-style{
+	padding-bottom: 25px;
+}
+@media (max-width: 767px) and (min-width: 256px )   {
+	.advantages-number_1-style{
+		font-family: 'Philosopher';
+		font-size: 100px;
+		color: #0b0b0b;
+		display: block;
+		line-height: 60px;
+	}
+	.advantages-number_2-style{
+		font-family: 'Philosopher';
+		font-size: 100px;
+		color: #0b0b0b;
+		display: block;
+		line-height: 60px;
+		margin-left: 2%;
+	}
+	.advantages-number_3-style{
+		font-family: 'Philosopher';
+		font-size: 100px;
+		color: #0b0b0b;
+		display: block;
+		line-height: 60px;
+		margin-left: 2%;
+	}
+	.advantages-number_4-style{
+		font-family: 'Philosopher';
+		font-size: 100px;
+		color: #0b0b0b;
+		display: block;
+		line-height: 60px;
+		margin-left: 2%;
+	}
+	.advantages-number_5-style{
+		font-family: 'Philosopher';
+		font-size: 100px;
+		color: #0b0b0b;
+		display: block;
+		line-height: 60px;
+		margin-left: 2%;
+	}
+	.advantages-number_6-style{
+		font-family: 'Philosopher';
+		font-size: 100px;
+		color: #0b0b0b;
+		display: block;
+		line-height: 60px;
+		margin-left: 2%;
+	}
 }
 #parallelogram {
     width: 150px;

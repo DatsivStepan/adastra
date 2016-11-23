@@ -54,6 +54,7 @@
 	top: 50%;
 }
 .owl-controls {
+	height: 0;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
@@ -113,7 +114,7 @@
 }
 .owl-pagination {
 	text-align: center;
-	top: 20px;
+	top: -20px;
 	position: relative;
 }
 .owl-controls .owl-page {

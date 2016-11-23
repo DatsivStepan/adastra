@@ -1,5 +1,5 @@
 <?php echo $header;?>
-<div id="content" class="<?php echo $class; ?>" xmlns="http://www.w3.org/1999/html">
+<div id="content" class="" xmlns="http://www.w3.org/1999/html">
 <!--<?php
     $count = count($arr);
 ?>-->
@@ -34,6 +34,7 @@
             </ul>
         </div>
         <div class="tab-content">
+
             <div id="panely1" class="tab-pane fade in active">
                 <?php if(isset($content_bottom['modules'][0])){
                 echo $content_bottom['modules'][0];
@@ -51,7 +52,13 @@
             </div>
         </div>
     </div>
-    <div class="row div-advantages-bg">
+    <div class="">
+        <?php
+    if(isset($content_bottom['modules'][3])){
+                    echo $content_bottom['modules'][3];
+                    } ?>
+    </div>
+    <div class="row div-advantages-bg no-margin">
         <div class="container advantages-container-style">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <span class="advantages-style">
@@ -64,7 +71,7 @@
                 </span>
             </div>
             <div class="row  row-advantages-style">
-                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" >
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_1-style">1</span>
@@ -102,7 +109,7 @@
                 </div>
             </div>
             <div class="row  row-advantages-style">
-                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" >
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_3-style">3</span>
@@ -140,7 +147,7 @@
                 </div>
             </div>
             <div class="row  row-advantages-style">
-                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" >
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_5-style">5</span>
@@ -179,7 +186,7 @@
             </div>
         </div>
     </div>
-    <div class="container div-home-contact-style no-padding">
+    <div class="hidden-xs container div-home-contact-style no-padding">
         <div class="row no-margin" style="padding-bottom: 10px">
             <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding">
                   <span class="footer-contact-text-left-style">
@@ -218,6 +225,34 @@
             </div>
         </div>
     </div>
-</div>
 
+    <div class="hidden-sm hidden-md hidden-lg hidden-xl container div-home-contact-style no-padding">
+        <div class="row no-margin" style="padding-bottom: 10px; text-align: center">
+            <div class="col-xs-12 mobile-contact-div-style">
+                  <span class="footer-contact-text-left-style">
+                      Контакты:
+                  </span>
+            </div>
+                <div style="width: 100%">
+                    <div class="col-xs-12 mobile-contact-div-style">
+                        <img src="../../../catalog/view/theme/default/image/phone.png">
+                        <span class="footer-contact-text-right-style"><?php echo $telephone; ?></span>
+                    </div>
+                </div>
+                <div style="width: 100%">
+                    <div class="col-xs-12 mobile-contact-div-style">
+                        <img src="../../../catalog/view/theme/default/image/phone.png">
+                        <span class="footer-contact-text-right-style"><?php echo $telephone; ?></span>
+                    </div>
+                </div>
+                <div style="width: 100%">
+                    <div class="col-xs-12 mobile-contact-div-style">
+                        <img src="../../../catalog/view/theme/default/image/mail.png">
+                        <span class="footer-contact-text-right-style"><?php echo $email; ?></span>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+</div>
 <?php echo $footer; ?>
