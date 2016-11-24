@@ -121,7 +121,7 @@
     border-bottom: 3px solid;
 }
 .nav-tabs>li>a:hover {
-    border-color: none;
+    border-color: none ;
 }
 .a_adas_sul{
     font-family: 'Philosopher';
@@ -177,11 +177,6 @@
     .p_text_adas_2{
         font-size: 15px;
     }
-    .last_img_2{
-        width: 44%!important;
-        float: left!important;
-        margin: 0 0% 0 4%!important;
-    }
 }
 .last_h3_text{
     font-family: 'Philosopher';
@@ -192,16 +187,121 @@
     font-family: 'Philosopher';
     font-size: 25px;
     font-weight: 600;
+    margin: 0 0 0 -29px;
 }
 .mar_left_cont{
-    margin: 0 -19px 0 -5px
+    margin: 0 -8.7px 0 -16px;
 }
-.last_img{
-    width: 16.9%;
-    float: left;
-    margin: 0px -6.6% 0px 7%;
+.last_img {
+    width: 15.2%!important;
+    float: left!important;
+    margin: 0 -6.6% 0 7%!important;
 }
 .product-thumb .caption {
     padding: 0px 20px!important;
     min-height: 65px!important;
 }
+@media (max-width: 1199px) and (min-width: 992px) {
+    #content .col-md-2:nth-child(6n+1), #content .col-md-2:nth-child(6n+1), #content .col-md-3:nth-child(4n+1), #content .col-md-4:nth-child(3n+1), #content .col-md-6:nth-child(2n+1) {
+        clear: none !important;
+    }
+}
+@media (min-width: 1200px) {
+    #content .col-lg-2:nth-child(6n+1), #content .col-lg-2:nth-child(6n+1), #content .col-lg-3:nth-child(4n+1), #content .col-lg-4:nth-child(3n+1), #content .col-lg-6:nth-child(2n+1) {
+        clear: none !important;
+    }
+}
+@media (min-width: 1200px) {
+    .last_h3_text {
+        font-family: 'Philosopher';
+        font-size: 25px;
+        font-weight: 600;
+        margin: 0 0 0 80px;
+    }
+    .last_img{
+        width: 16.9%;
+        float: left;
+        margin: 0px -6.6% 0px 7%;
+    }
+}
+@media (min-width: 992px) {
+
+    .last_h3_text {
+        font-family: 'Philosopher';
+        font-size: 25px;
+        font-weight: 600;
+        margin: 0 0 0 -20px;
+    }
+
+    .mar_left_cont {
+        margin: 0 -8.7px 0 -16px !important;
+    }
+
+    .last_img {
+        width: 21.7% !important;
+        float: left !important;
+        margin: 0 10.3px 0 -6px !important;
+    }
+}
+@media (min-width: 749px) and (max-width: 991px) {
+    .mar_left_cont {
+        margin: 0 -5.7px 0 -20px!important;
+    }
+    .last_img {
+        width: 20%!important;
+        float: left!important;
+        margin: 0 13px 0 -10px!important;
+    }
+    .last_h3_text {
+        font-family: 'Philosopher';
+        font-size: 25px;
+        font-weight: 600;
+        margin: 0 0 0 -16px;
+
+    }
+}
+.product-thumb {
+    border: none!important;
+    margin-bottom: 20px!important;
+    overflow: auto!important;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+    .mar_left_cont {
+        margin: 0 -32px 0px 7px !important;
+    }
+
+    .last_img_4 {
+        width: 43%!important;
+        float: left !important;
+        margin: 0 -32.5px 0 36.9px !important;
+        padding: 0;
+    }
+
+    .panel_h4_text {
+        font-family: 'Philosopher';
+        font-size: 25px !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+    }
+
+    .last_h3_text {
+        font-family: 'Philosopher';
+        font-size: 25px !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+    }
+}
+.carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 105px;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    filter: alpha(opacity=50);
+    opacity: .3;
+}
+
