@@ -38,7 +38,6 @@ class ControllerModuleProductcategory extends Controller {
 					$parts = explode('_', (string)$this->request->get['path']);
 
 					$category_id = (int)array_pop($parts);
-					var_dump($category_id);
 				}
 				if (isset($category_id)) {
 					# code...
