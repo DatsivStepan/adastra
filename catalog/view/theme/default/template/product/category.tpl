@@ -80,10 +80,8 @@
             <div class="row">
                 <?php foreach ($products as $product) { ?>
                 <div class="product-layout col-sm-6 col-md-3 col-lg-3 col-xs-12" style="padding: 5px;">
-                    <div class="product-thumb_style" style="">
-                        <div class="image hidden-xs"><a href="<?php echo $product['href']; ?>"><img
-                                        src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>"
-                                        title="<?php echo $product['name']; ?>" class="img-responsive"/></a>
+                    <div class="product-thumb_style">
+                        <div class="image hidden-xs"><a class="imga_catalog" href="<?php echo $product['href']; ?>" style="background: url('<?php echo $product['thumb']; ?>') no-repeat; "></a>
                         </div>
                         <div class="image hidden-sm hidden-md hidden-lg"><a href="<?php echo $product['href']; ?>"><img
                                         src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>"
@@ -109,8 +107,8 @@
                                 </button>
                             </div>
                             <div class="caption_style col-sm-8 col-md-8 col-lg-8 hidden-xs"
-                                 style="     margin-top: 7px;   padding-left: 5px;">
-                                <h4 style="    margin: 0;"><a class="pull-right_KP"
+                                 style="     margin-top: 7px;   padding: 0 0 0 5px;">
+                                <h4 style="    margin: 0;"><a class="pull-right_KP "
                                                               href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                                 </h4>
                                 <span class="ribbon pull-right_KP"><?php echo $text_price; ?>
