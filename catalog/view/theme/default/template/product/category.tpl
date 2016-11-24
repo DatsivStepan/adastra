@@ -22,11 +22,10 @@
         <?php } else { ?>
         <?php $class = 'col-sm-12'; ?>
         <?php } ?>
-
+        
         <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
             <?php if ($products) { ?>
-            <div class="row hidden-xs col-sm-12 col-md-12 col-lg-12"
-                 style="border-top: 3px solid #f0ebe2; border-bottom: 1px solid #f0ebe2;width: 100%;padding: 4px 0 0 0;     margin-left: -9px;">
+            <div class="row hidden-xs" style="border-top: 3px solid #f0ebe2; border-bottom: 1px solid #f0ebe2;padding-top:5px;padding-bottom:5px;">
                 <div class="hidden-xs hidden-sm hidden-md  hidden-lg">
                     <div class="btn-group">
                         <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip"
@@ -35,11 +34,11 @@
                                 title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
                     </div>
                 </div>
-                <div class="container  col-sm-6 col-md-5 col-lg-5">
+                <div class="col-sm-6 col-md-5 col-lg-5">
                     <div class="col-sm-6 col-md-5 col-lg-4 text-right" style="text-align: left; padding: 0">
                         <label class="control-label label_text_sort" for="input-sort"><?php echo $text_sort; ?></label>
                     </div>
-                    <div class=" col-sm-6 col-md-7 col-lg-8 text-right" style="text-align: left; padding: 0;">
+                    <div class="col-sm-6 col-md-7 col-lg-8 text-right" style="text-align: left; padding: 0;">
                         <select class="input-sort_KP label_text_sort" id="input-sort" onchange="location = this.value;">
                             <?php foreach ($sorts as $sorts) { ?>
                             <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
@@ -53,7 +52,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="container col-sm-4 col-sm-offset-1  col-md-4 col-md-offset-3 col-lg-4 col-lg-offset-3"
+                <div class="col-sm-6 col-sm-offset-1  col-md-4 col-md-offset-3 col-lg-4 col-lg-offset-3"
                      style="text-align: right; padding: 0;">
                     <div class=" col-sm-7 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-4 col-lg-offset-6 text-right"
                          style="padding: 0;">
@@ -76,7 +75,7 @@
                 </div>
 
             </div>
-            <br/>
+            
             <div class="row">
                 <?php foreach ($products as $product) { ?>
                 <div class="product-layout col-sm-6 col-md-3 col-lg-3 col-xs-12" style="padding: 5px;">
