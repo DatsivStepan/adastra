@@ -147,15 +147,4 @@ $(document).ready(function () {
         $('#product_1').toggleClass('fa-angle-down');
         $('#products_id').slideToggle("fast");
     });
-    $('#products_id_md').on('click', function () {
-        console.log('awdwd');
-        $('#products_md').slideToggle("fast");
-    });
-    $("#contact").click(function() {
-        $("#myModal").modal('show');
-    });
-
-    $("#phone_id").click(function() {
-        $('#id_phone').slideToggle("fast");
-    });
 });
