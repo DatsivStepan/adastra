@@ -1302,7 +1302,21 @@ h2.price {
 		font-size: 13px;
 	}
 }
-@media (max-width: 1121px) and (min-width: 990px )   {
+@media (max-width: 960px) and (min-width: 768px ){
+	.banner-text-style{
+		font-family: 'Philosopher';
+		font-weight: 100;
+		font-size: 12px;
+		color: #000;
+	}
+	.banner-logo-size{
+		width: 50% !important;
+	}
+}
+.banner-logo-size{
+	width: 70%;
+}
+@media (max-width: 1121px) and (min-width: 990px ){
 	.advantages-number_1-div-style{
 		position: absolute;
 		z-index: 100;

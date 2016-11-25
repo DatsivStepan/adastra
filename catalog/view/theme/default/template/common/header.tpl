@@ -41,8 +41,10 @@
 <?php echo $analytic; ?>
 <?php } ?>
 </head>
+
+
 <body class="<?php echo $class; ?>">
-<div id="myModal" class="modal fade">
+<div id="contactForm" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
       <!-- Заголовок модального окна -->
@@ -121,8 +123,7 @@
             <a href=""><span class="header-menu-text-style">Доставка</span></a>
             <a href="/index.php?route=information/contact"><span class="header-menu-text-style">Контакты</span></a>
             <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работи</span></a>
-            <a href="/index.php?route=information/information&information_id=8"><span class="header-menu-text-style">Материалы</span></a>
-            <a href="/index.php?route=information/information&information_id=8"><span class="header-menu-text-style">Цены</span></a>
+            <a href="/index.php?route=information/information&information_id=8"><span class="header-menu-text-style">Материалы и Цены</span></a>
           </div>
           <?php echo $currency; ?>
           <?php echo $language; ?>
@@ -136,8 +137,8 @@
               </div>
             </div>
             <div id="contact" class="row header-div-contact-style">
-              <span class="header-contact-text-style-1">Обратный звонок</span></br>
-              <span class="header-contact-text-style-2">We speak english</span>
+              <span class="header-contact-text-style-1" data-toggle="modal" data-target="#contactForm">Обратный звонок</span></br>
+              <span class="header-contact-text-style-2"  data-toggle="modal" data-target="#contactForm">We speak english</span>
             </div>
           </div>
           <div class="div-cart-style"><?php echo $cart; ?></div>
@@ -174,13 +175,12 @@
         <div id="products_md" class="row " style="display: none">
           <div class=" container" style="text-align: center">
             <div class=" div-menu-mb-style" style="font-size: 25px; width: 100%;">
-              <a href="index.php?route=common/home"><span class="header-menu-text-style">Как купить?</span></a></br>
+              <a href="/index.php?route=information/information&information_id=4"><span class="header-menu-text-style">Как купить?</span></a></br>
               <a href=""><span class="header-menu-text-style">Оплата</span></a></br>
               <a href=""><span class="header-menu-text-style">Доставка</span></a></br>
-              <a href=""><span class="header-menu-text-style">Контакты</span></a></br>
-              <a href=""><span class="header-menu-text-style">География работи</span></a></br>
-              <a href=""><span class="header-menu-text-style">Материалы</span></a></br>
-              <a href=""><span class="header-menu-text-style">Цены</span></a></br>
+              <a href="/index.php?route=information/contact"><span class="header-menu-text-style">Контакты</span></a></br>
+              <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работи</span></a></br>
+              <a href="/index.php?route=information/information&information_id=8"><span class="header-menu-text-style">Материалы и Цены</span></a></br>
             </div>
             <?php foreach ($categories as $category) { ?>
             <?php if ($category['children']) { ?>
@@ -240,13 +240,12 @@
     <div id="products_md" class="row hide-header-content-style" style="display: none">
       <div class=" container" style="text-align: center">
         <div class=" div-menu-mb-style" style="font-size: 25px; width: 100%;">
-          <a href="index.php?route=common/home"><span class="header-menu-text-style">Как купить?</span></a></br>
+          <a href="/index.php?route=information/information&information_id=4"><span class="header-menu-text-style">Как купить?</span></a></br>
           <a href=""><span class="header-menu-text-style">Оплата</span></a></br>
           <a href=""><span class="header-menu-text-style">Доставка</span></a></br>
-          <a href=""><span class="header-menu-text-style">Контакты</span></a></br>
-          <a href=""><span class="header-menu-text-style">География работи</span></a></br>
-          <a href=""><span class="header-menu-text-style">Материалы</span></a></br>
-          <a href=""><span class="header-menu-text-style">Цены</span></a></br>
+          <a href="/index.php?route=information/contact"><span class="header-menu-text-style">Контакты</span></a></br>
+          <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работи</span></a></br>
+          <a href="/index.php?route=information/information&information_id=8"><span class="header-menu-text-style">Материалы и Цены</span></a></br>
         </div>
         <?php foreach ($categories as $category) { ?>
         <?php if ($category['children']) { ?>
@@ -310,13 +309,12 @@
             </div>
           </div>
           <div class=" div-menu-style">
-            <a href="index.php?route=common/home"><span class="header-menu-text-style">Как купить?</span></a>
+            <a href="/index.php?route=information/information&information_id=4"><span class="header-menu-text-style">Как купить?</span></a>
             <a href=""><span class="header-menu-text-style">Оплата</span></a>
             <a href=""><span class="header-menu-text-style">Доставка</span></a>
-            <a href=""><span class="header-menu-text-style">Контакты</span></a>
-            <a href=""><span class="header-menu-text-style">География работи</span></a>
-            <a href=""><span class="header-menu-text-style">Материалы</span></a>
-            <a href=""><span class="header-menu-text-style">Цены</span></a>
+            <a href="/index.php?route=information/contact"><span class="header-menu-text-style">Контакты</span></a>
+            <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работи</span></a>
+            <a href="/index.php?route=information/information&information_id=8"><span class="header-menu-text-style">Материалы и Цены</span></a>
           </div>
           <?php echo $currency; ?>
           <?php echo $language; ?>
@@ -330,8 +328,8 @@
               </div>
             </div>
             <div id="contact" class="row header-div-contact-style">
-              <span class="header-contact-text-style-1">Обратный звонок</span></br>
-              <span class="header-contact-text-style-2">We speak english</span>
+              <span class="header-contact-text-style-1" data-toggle="modal" data-target="#contactForm">Обратный звонок</span></br>
+              <span class="header-contact-text-style-2" data-toggle="modal" data-target="#contactForm">We speak english</span>
             </div>
           </div>
           <div class="div-cart-style"><?php echo $cart; ?></div>
