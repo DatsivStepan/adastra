@@ -1,5 +1,6 @@
 <div class="hidden-xs">
-    <h3><?php echo $heading_title; ?></h3>
+<span style="color: #fff">wwd</span>
+
 </div>
 <div class="row hidden-xs">
     <div id="masonry_hybrid_demo1">

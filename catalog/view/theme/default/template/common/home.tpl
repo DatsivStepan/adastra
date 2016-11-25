@@ -58,12 +58,12 @@
                     echo $content_bottom['modules'][4];
                     } ?>
     </div>
-    <div class="">
+   <!-- <div class="">
         <?php
     if(isset($content_bottom['modules'][3])){
                     echo $content_bottom['modules'][3];
                     } ?>
-    </div>
+    </div>-->
     <div class="middle-home-img-div-style">
         <span class="middle-home-text-title">География работы</span>
         <div class="container middle-home-div-text">
