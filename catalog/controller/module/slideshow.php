@@ -2,7 +2,6 @@
 class ControllerModuleSlideshow extends Controller {
 	public function index($setting) {
 		static $module = 0;
-
 		$this->load->model('design/banner');
 		$this->load->model('tool/image');
 
@@ -18,10 +17,11 @@ class ControllerModuleSlideshow extends Controller {
 				$data['banners'][] = array(
 					'title' => $result['title'],
 					'link'  => $result['link'],
-					'image' => $this->model_tool_image->resize($result['image'], 0, 0)
+                    'image' => $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height'])
 				);
 			}
 		}
+
 
 		$data['module'] = $module++;
 

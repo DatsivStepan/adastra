@@ -90,7 +90,7 @@
             </div>
           </div>
           <div id="products" class="products-style fa fa-bars  no-padding div-products-style">
-            <span class="title header-text-style" style="padding-left: 5px">ПРОДУКЦИЯ <span id="product_1" class="fa fa-angle-down" style="font-size: 20px"></span></span>
+            <span class="title header-text-style" style="padding-left: 5px">ПРОДУКЦИЯ <span id="product_1" class="fa fa-angle-down product-icon-size"></span></span>
           </div>
           <div id="products_id" class="row header-products-div-style">
             <div class=" container" style="">
@@ -158,12 +158,13 @@
             <?php } ?>
           </div>
         </div>
-        <div id="phone_id" class="col-xs-3  no-padding mb-div-phone-style">
+         <div class="col-xs-2 no-padding" style="text-align: right; float: right">
+            <?php echo $cart; ?>
+         </div>
+        <div id="phone_id" class="col-xs-3  no-padding mb-div-phone-style" style="float: right">
           <img style="width: 22%" src="../../../catalog/view/theme/default/image/phone.png">
         </div>
-        <div class="col-xs-3 no-padding" style="text-align: right">
-          <?php echo $cart; ?>
-        </div>
+
         </div>
         <div id="id_phone" class="row hide-phone-div">
           <span class="mb-phone-style">
@@ -208,6 +209,69 @@
     <!--Mobile header end-->
       <div class=""><?php echo $slider; ?></div>
   <?php }else{ ?>
+  <!--Mobile header begin-->
+  <div class="container div-md-header-style1 hidden-sm hidden-md hidden-lg hidden-xl">
+    <div class="row no-margin">
+      <div id="products_id_md" class="products-style no-padding div-products-mb-style col-xs-2">
+        <img src="../../../catalog/view/theme/default/image/menu-bar.png">
+      </div>
+      <div class="col-xs-3">
+        <div id="logo">
+          <?php if ($logo) { ?>
+          <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
+          <?php } else { ?>
+          <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
+          <?php } ?>
+        </div>
+      </div>
+      <div class="col-xs-2 no-padding" style="text-align: right; float: right">
+        <?php echo $cart; ?>
+      </div>
+      <div id="phone_id" class="col-xs-3  no-padding mb-div-phone-style" style="float: right">
+        <img style="width: 22%" src="../../../catalog/view/theme/default/image/phone.png">
+      </div>
+
+    </div>
+    <div id="id_phone" class="row hide-phone-div hide-phone-div-style">
+          <span class="mb-phone-style">
+            <?php echo $telephone; ?>
+          </span>
+    </div>
+    <div id="products_md" class="row hide-header-content-style" style="display: none">
+      <div class=" container" style="text-align: center">
+        <div class=" div-menu-mb-style" style="font-size: 25px; width: 100%;">
+          <a href="index.php?route=common/home"><span class="header-menu-text-style">Как купить?</span></a></br>
+          <a href=""><span class="header-menu-text-style">Оплата</span></a></br>
+          <a href=""><span class="header-menu-text-style">Доставка</span></a></br>
+          <a href=""><span class="header-menu-text-style">Контакты</span></a></br>
+          <a href=""><span class="header-menu-text-style">География работи</span></a></br>
+          <a href=""><span class="header-menu-text-style">Материалы</span></a></br>
+          <a href=""><span class="header-menu-text-style">Цены</span></a></br>
+        </div>
+        <?php foreach ($categories as $category) { ?>
+        <?php if ($category['children']) { ?>
+        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 product-div-style">
+          <div class="product-div-title-style">
+              <span class="products-title-style"><?php echo $category['name']; ?>
+          </div>
+          <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
+          <span class="">
+              <?php foreach ($children as $child) { ?>
+            <span class=""><a class="products-category-style" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span></br>
+            <?php } ?>
+            </span>
+          <?php } ?>
+        </div>
+        </span>
+        <?php } else { ?>
+        <span class="products-category-style"><?php echo $category['name']; ?></span>
+        <?php } ?>
+        <?php } ?>
+      </div>
+    </div>
+
+
+  </div>
       <div class="container div-header-style-1 hidden-xs">
         <nav >
           <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">

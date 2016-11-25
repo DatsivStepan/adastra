@@ -468,9 +468,11 @@ $('#button-cart').on('click', function() {
 			}
 
 			if (json['success']) {
-				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+//				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				$('#cart > button').html('<i class="fa fa-shopping-cart"></i> ' + json['total']);
+				$('#cart > a > span ').html('<span  style="padding-left: 30%;" class="hidden-xs"><img src="../../../catalog/view/theme/default/image/korzuna.png"></br></span> ' + '<span class="hidden-xs">' + json['total'] + '</span>');
+				$('#cart > a > span ').html('<span  style="padding-left: 30%;" class="hidden-sm hidden-md hidden-lg hidden-xl"><img src="../../../catalog/view/theme/default/image/mbCartIcon.png"></br></span> ' +
+                        '<span class="hidden-sm hidden-md hidden-lg hidden-xl cart-text-style1">' + json['total'] + '</span>');
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 

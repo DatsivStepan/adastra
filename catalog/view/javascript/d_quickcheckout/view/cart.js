@@ -56,7 +56,7 @@ qc.CartView = qc.View.extend({
 
 	updateHeaderCart: function(total){
 		setTimeout(function () {
-			$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + total+ '</span>');
+			$('#cart > button').html('<span class="cart-text-style" id="cart-total" ><img src="../../../catalog/view/theme/default/image/korzuna.png"></br> ' + total+ '</span>');
 		}, 100);
 		$('#cart > ul').load('index.php?route=common/cart/info ul li');
 	},

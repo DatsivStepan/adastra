@@ -54,9 +54,27 @@
     </div>
     <div class="">
         <?php
+    if(isset($content_bottom['modules'][4])){
+                    echo $content_bottom['modules'][4];
+                    } ?>
+    </div>
+    <div class="">
+        <?php
     if(isset($content_bottom['modules'][3])){
                     echo $content_bottom['modules'][3];
                     } ?>
+    </div>
+    <div class="middle-home-img-div-style">
+        <span class="middle-home-text-title">География работы</span>
+        <div class="container middle-home-div-text">
+            <span class="middle-home-text">
+                Мы работаем со всей Россией (упор на Москву, Питер, Ростов, Сочи), а также зарубежьем. Мы готовы продукцию
+                отправлять транспортными компаниями за границу. Мы работаем со всей Россией (упор на Москву, Питер, Ростов, Сочи), а также зарубежьем. Мы готовы продукцию
+                отправлять транспортными компаниями за границу. Мы работаем со всей Россией (упор на Москву, Питер, Ростов, Сочи), а также зарубежьем. Мы готовы продукцию
+                отправлять транспортными компаниями за границу.
+            </span>
+        </div>
+
     </div>
     <div class="row div-advantages-bg no-margin">
         <div class="container advantages-container-style">
