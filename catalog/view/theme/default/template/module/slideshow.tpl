@@ -1,10 +1,29 @@
+<div class="hidden-xs banner-div-text">
+    <img src="../../../catalog/view/theme/default/image/sliderBanner.png" style="width: 70%"></br>
+    <span class="banner-text-style">
+        интернер магазин креативных картин предлагает самые лучшие</br>
+        и самые креативные картины в интернете по самым низким</br>
+        ценам от производителя.</br>
+        <a class="banner-linc-style" href="">Подробнее о нас<img src="../../../catalog/view/theme/default/image/bannerLinkIcon.png" style="width: 4%"></br></a>
+    </span>
+</div>
+<div class="hidden-xs banner-div-text">
+    <img src="../../../catalog/view/theme/default/image/sliderBanner.png" style="width: 70%"></br>
+    <span class="banner-text-style">
+        интернер магазин креативных картин предлагает самые лучшие</br>
+        и самые креативные картины в интернете по самым низким</br>
+        ценам от производителя.</br>
+        <a class="banner-linc-style" href="">Подробнее о нас<img src="../../../catalog/view/theme/default/image/bannerLinkIcon.png" style="width: 4%"></br></a>
+    </span>
+</div>
+
 <div id="slideshow<?php echo $module; ?>" class="owl-carousel" style="opacity: 1; margin: 0">
   <?php foreach ($banners as $banner) { ?>
   <div class="item">
     <?php if ($banner['link']) { ?>
     <a href="<?php echo $banner['link']; ?>"><img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" /></a>
     <?php } else { ?>
-    <img style="width: 100%" src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" />
+    <img  src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive slider-img-style" />
     <?php } ?>
   </div>
   <?php } ?>

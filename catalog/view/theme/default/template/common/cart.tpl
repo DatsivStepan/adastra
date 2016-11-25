@@ -1,9 +1,15 @@
 <div id="cart" class="" style="cursor: pointer">
-  <span  data-toggle="dropdown" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle">
-    <span style="padding-left: 25%;"><i style="font-size: 25px" class="fa fa-shopping-cart"></i></span></br>
-    <span id="cart-total"><?php echo $text_items; ?></span>
-  </span>
-  <ul class="dropdown-menu pull-right">
+  <a href="<?php echo $cart; ?>" class="cart-linc-style">
+  <span   data-toggle="" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle hidden-xs">
+    <span  style="padding-left: 30%;"><img src="../../../catalog/view/theme/default/image/korzuna.png"></br></span>
+    <span class="cart-text-style" id="cart-total">В корзине <?php echo $text_items; ?> шт.</span>
+  </span></a>
+  <a href="<?php echo $cart; ?>" class="cart-linc-style">
+  <span   data-toggle="" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle hidden-sm hidden-md hidden-lg hidden-xl">
+    <span><img src="../../../catalog/view/theme/default/image/mbCartIcon.png"></br></span>
+    <span class="cart-text-style1" id="cart-total"><?php echo $text_items; ?></span>
+  </span></a>
+  <!--<ul class="dropdown-menu pull-right">
     <?php if ($products || $vouchers) { ?>
     <li>
       <table class="table table-striped">
@@ -57,5 +63,5 @@
       <p class="text-center"><?php echo $text_empty; ?></p>
     </li>
     <?php } ?>
-  </ul>
+  </ul>-->
 </div>
