@@ -27,10 +27,10 @@
     </div>
         <div class="col-sm-12 col-xs-12 col-lg-12 col-md-12 adas_new_text" style="">
             <!-- Nav tabs -->
-            <ul style="margin-left: 36%" class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a  class="a_adas_sul news" href="#panely1" aria-controls="home" role="tab" data-toggle="tab">Новинки</a></li>
-                <li role="presentation"><a class="a_adas_sul hyty_prod" href="#panely2" aria-controls="profile" role="tab" data-toggle="tab">Хиты продаж</a></li>
-                <li role="presentation"><a class="a_adas_sul stocks" href="#panely3" aria-controls="messages" role="tab" data-toggle="tab">Акции</a></li>
+            <ul class="nav nav-tabs ul_centr" role="tablist">
+                <li role="presentation" class="active"><a  class="a_adas_sul news text_tabs" href="#panely1" aria-controls="home" role="tab" data-toggle="tab">Новинки</a></li>
+                <li role="presentation"><a class="a_adas_sul hyty_prod text_tabs" href="#panely2" aria-controls="profile" role="tab" data-toggle="tab">Хиты продаж</a></li>
+                <li role="presentation"><a class="a_adas_sul stocks text_tabs" href="#panely3" aria-controls="messages" role="tab" data-toggle="tab">Акции</a></li>
             </ul>
         </div>
         <div class="tab-content">
