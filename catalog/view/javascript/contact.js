@@ -142,9 +142,4 @@ $(document).ready(function () {
         }
 
     });
-    $('#products').on('click', function () {
-        $('#product_1').toggleClass('fa-angle-up');
-        $('#product_1').toggleClass('fa-angle-down');
-        $('#products_id').slideToggle("fast");
-    });
 });

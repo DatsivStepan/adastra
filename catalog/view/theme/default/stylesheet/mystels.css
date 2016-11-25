@@ -255,6 +255,7 @@ div.product-layout:hover .korzuna_style{
 div.product-layout:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+
     /*golovna*/
 .korzuna_style-3 {
     background: url(../image/Korzuna_golovna.png) right center no-repeat;
@@ -437,6 +438,11 @@ ul.ul_centr{
         height: 300px;
         display: block;
     }
+    .product-layout{
+        min-height: 360px !important;
+        max-width: 247px !important;
+        margin-right: 30px !important;
+    }
 }
 
 @media (min-width: 992px) {
@@ -461,6 +467,11 @@ ul.ul_centr{
         height: 300px;
         display: block;
     }
+    .product-layout{
+        min-height: 360px !important;
+        max-width: 247px !important;
+        margin-right: 0px !important;
+    }
 }
 @media (min-width: 1200px) {
     .map {
@@ -483,5 +494,10 @@ ul.ul_centr{
         width: 209px;
         height: 300px;
         display: block;
+    }
+    .product-layout{
+        min-height: 360px !important;
+        max-width: 247px !important;
+        margin-right: 0px !important;
     }
 }
