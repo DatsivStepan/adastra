@@ -80,7 +80,7 @@
                 <?php foreach ($products as $product) { ?>
                 <div class="product-layout col-sm-6 col-md-3 col-lg-3 col-xs-12" style="padding: 5px;">
                     <div class="product-thumb_style">
-                        <div class="image hidden-xs"><a class="imga_catalog" href="<?php echo $product['href']; ?>" style="background: url('<?php echo $product['thumb']; ?>') no-repeat; "></a>
+                        <div class="image hidden-xs"><a class="imga_catalog" href="<?php echo $product['href']; ?>" style="background: url('<?php echo $product['thumb']; ?>') center no-repeat; min-height: 300px; background-size: cover"></a>
                         </div>
                         <div class="image hidden-sm hidden-md hidden-lg"><a href="<?php echo $product['href']; ?>"><img
                                         src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>"
@@ -110,7 +110,7 @@
                                 <h4 style="    margin: 0;"><a class="pull-right_KP "
                                                               href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                                 </h4>
-                                <span class="ribbon pull-right_KP"><?php echo $text_price; ?>
+                                <span class="ribbon pull-right_KP" style="display: none"><?php echo $text_price; ?>
                                     от <?php echo $product['price']; ?></span>
 
                                 <!--<p><?php echo $product['description']; ?></p>
@@ -142,7 +142,7 @@
                             </div>
                             <div class="button-group col-sm-4 col-md-4 col-lg-4 hidden-xs"
                                  style="    margin-top: -6px;">
-                                <button class="korzuna_style" type="button"
+                                <button class="korzuna_style" style="display: none" type="button"
                                         onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
                                 </button>
                             </div>

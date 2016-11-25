@@ -246,7 +246,16 @@ img.image_responsive{
     color: #322d2d;
     margin: 0;
 }
-/*golovna*/
+div.product-layout:hover .pull-right_KP{
+    display: block !important;
+}
+div.product-layout:hover .korzuna_style{
+    display: block !important;
+}
+div.product-layout:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+    /*golovna*/
 .korzuna_style-3 {
     background: url(../image/Korzuna_golovna.png) right center no-repeat;
     width: 64px;
@@ -300,13 +309,18 @@ a.pull-right_KP_2-3{
     background: rgba(0,0,0,0.45);
     padding: 20px;
     width: 75%;
-    min-height: 270px;
-    margin: -296px 0 0 13%;
-    position: relative;
+    position: absolute;
+    left: 13%;
+    bottom: -55px;
 
 }
+ul.ul_centr{
+    margin-left: 36%;
+}
 /**/
+@media (min-width: 320px)and (max-width: 599px) {
 
+}
 @media (min-width: 600px)and (max-width: 767px){
     .map {
         width: 100%;
@@ -364,9 +378,26 @@ a.pull-right_KP_2-3{
         font-family: 'Philosopher';
         font-size: 20px;
         color: #888888;
+
     }
+    .nav-tabs>li.active>a.text_tabs{
+        font-family: 'Philosopher';
+        border-bottom: 2px solid #000000;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        padding: 11px 0 0 0;
 
+    }
+    li>a.text_tabs{
+        font-family: 'Philosopher';
+        font-size: 22px;
+        letter-spacing: 5px;
 
+    }
+    ul.ul_centr{
+        margin: 6%;
+    }
 }
 @media (min-width: 768px) {
     .map {
