@@ -34,8 +34,8 @@
                                 title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-5 col-lg-5">
-                    <div class="col-sm-6 col-md-5 col-lg-4 text-right" style="text-align: left; padding: 0">
+                <div class="col-sm-8 col-md-5 col-lg-5">
+                    <div class="col-sm-4 col-md-5 col-lg-4 text-right" style="text-align: left; padding: 0">
                         <label class="control-label label_text_sort" for="input-sort"><?php echo $text_sort; ?></label>
                     </div>
                     <div class="col-sm-6 col-md-7 col-lg-8 text-right" style="text-align: left; padding: 0;">
@@ -52,7 +52,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-6 col-sm-offset-1  col-md-4 col-md-offset-3 col-lg-4 col-lg-offset-3"
+                <div class="col-sm-4  col-md-4 col-md-offset-3 col-lg-4 col-lg-offset-3"
                      style="text-align: right; padding: 0;">
                     <div class=" col-sm-7 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-4 col-lg-offset-6 text-right"
                          style="padding: 0;">
@@ -76,35 +76,13 @@
 
             </div>
             
-            <div class="row">
+            <div class="row hidden-xs">
                 <?php foreach ($products as $product) { ?>
                 <div class="product-layout col-sm-6 col-md-3 col-lg-3 col-xs-12" style="padding: 5px;">
                     <div class="product-thumb_style">
                         <div class="image hidden-xs"><a class="imga_catalog" href="<?php echo $product['href']; ?>" style="background: url('<?php echo $product['thumb']; ?>') center no-repeat; min-height: 300px; background-size: cover"></a>
                         </div>
-                        <div class="image hidden-sm hidden-md hidden-lg"><a href="<?php echo $product['href']; ?>"><img
-                                        src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>"
-                                        title="<?php echo $product['name']; ?>" class="img-responsive"
-                                        style="    width: 75%; margin-left: 13%;"/></a>
-                        </div>
                         <div>
-                            <div class="conteiner_proz hidden-sm hidden-md hidden-lg" style="margin-bottom: 55px;">
-                                <h4 style="    text-align: center; margin-top: 25px;"><a class="pull-right_KP_2"
-                                                                                         href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
-                                </h4>
-                                <div class="pull-right_KP_2-1">
-
-                                </div>
-                                <h5 class="text_style_1" style="text-align: center;  padding-top: 15px;">
-                                    5 видов фактур на выбор
-                                </h5>
-                                <h5 class="text_style_2" style="text-align: center">
-                                    22 стандартных размера
-                                </h5>
-                                <button class="korzuna_style-2" type="button"
-                                        onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
-                                </button>
-                            </div>
                             <div class="caption_style col-sm-8 col-md-8 col-lg-8 hidden-xs"
                                  style="     margin-top: 7px;   padding: 0 0 0 5px;">
                                 <h4 style="    margin: 0;"><a class="pull-right_KP "
@@ -147,6 +125,33 @@
                                 </button>
                             </div>
                         </div>
+                    </div>
+
+                </div>
+                <?php } ?>
+            </div>
+            <div class="row hidden-sm hidden-md hidden-lg">
+                <?php foreach ($products as $product) { ?>
+                <div class="img" style="position: relative; margin-bottom: 8%;margin-top: 8%;">
+                    <img src="<?php echo $product['thumb']; ?>" style="width:75%;     margin-left: 13%;     min-height: 340px">
+
+                    <div class="conteiner_proz_3 hidden-sm hidden-md hidden-lg" style="margin-bottom: 55px;">
+                        <h4 style="    text-align: center; margin-top: 25px;"><a class="pull-right_KP_2"
+                                                                                 href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+                        </h4>
+                        <div class="pull-right_KP_2-1"
+                             style="border-bottom: 1px solid #fff; width: 100px; margin-left: 40%; margin-top: 4%;">
+
+                        </div>
+                        <h5 class="text_style_1" style="text-align: center;  padding-top: 15px;">
+                            5 видов фактур на выбор
+                        </h5>
+                        <h5 class="text_style_2" style="text-align: center">
+                            22 стандартных размера
+                        </h5>
+                        <button class="korzuna_style-2" type="button"
+                                onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
+                        </button>
                     </div>
                 </div>
                 <?php } ?>
