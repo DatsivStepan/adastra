@@ -1,5 +1,5 @@
 <div class="hidden-xs">
-  <h3><?php echo $heading_title; ?></h3>
+<span style="color: #fff">wdwd</span>
 </div>
 <div class="row">
   <div id="masonry_hybrid_demo2">
