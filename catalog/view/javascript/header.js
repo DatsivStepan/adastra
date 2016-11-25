@@ -8,10 +8,10 @@ $(document).ready(function () {
 		console.log('awdwd');
 		$('#products_md').slideToggle("fast");
 	});
-	$("#contact").click(function() {
+/*	$("#contact").click(function() {
 		$("#myModal").modal('show');
 	});
-
+*/
 	$("#phone_id").click(function() {
 		$('#id_phone').slideToggle("fast");
 	});

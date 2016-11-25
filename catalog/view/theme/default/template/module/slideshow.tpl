@@ -1,5 +1,5 @@
 <div class="hidden-xs banner-div-text">
-    <img src="../../../catalog/view/theme/default/image/sliderBanner.png" style="width: 70%"></br>
+    <img class="banner-logo-size" src="../../../catalog/view/theme/default/image/sliderBanner.png" ></br>
     <span class="banner-text-style">
         интернер магазин креативных картин предлагает самые лучшие</br>
         и самые креативные картины в интернете по самым низким</br>
@@ -7,7 +7,7 @@
         <a class="banner-linc-style" href="">Подробнее о нас<img src="../../../catalog/view/theme/default/image/bannerLinkIcon.png" style="width: 4%"></br></a>
     </span>
 </div>
-<div class="hidden-xs banner-div-text">
+<div class="hidden-xs hidden-sm hidden-md hidden-lg hidden-xl banner-div-text">
     <img src="../../../catalog/view/theme/default/image/sliderBanner.png" style="width: 70%"></br>
     <span class="banner-text-style">
         интернер магазин креативных картин предлагает самые лучшие</br>
