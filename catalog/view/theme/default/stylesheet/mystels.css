@@ -117,10 +117,11 @@ h1.text_comment{
 }
 a.pull-right_KP{
     font-family: 'Philosopher';
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 900;
     color: #322d2d;
-    margin: 0;
+    margin: 0px 0 0 0;
+    line-height: 18px;
 }
 .h2_KP{
     font-family: 'Philosopher';
@@ -241,7 +242,7 @@ img.image_responsive{
 }
 .ribbon{
     font-family: 'Philosopher';
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 900;
     color: #322d2d;
     margin: 0;
@@ -253,7 +254,7 @@ div.product-layout:hover .korzuna_style{
     display: block !important;
 }
 div.product-layout:hover {
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 1px rgba(0,0,0,0.5);
 }
 
     /*golovna*/
@@ -439,7 +440,7 @@ ul.ul_centr{
         display: block;
     }
     .product-layout{
-        min-height: 360px !important;
+        min-height: 375px !important;
         max-width: 247px !important;
         margin-right: 30px !important;
     }
@@ -468,9 +469,13 @@ ul.ul_centr{
         display: block;
     }
     .product-layout{
-        min-height: 360px !important;
+        min-height: 391px !important;
         max-width: 247px !important;
         margin-right: 0px !important;
+    }
+    .button-group_KP{
+        margin-top: -6px!important;
+        margin-left: -16px!important;
     }
 }
 @media (min-width: 1200px) {
@@ -496,8 +501,13 @@ ul.ul_centr{
         display: block;
     }
     .product-layout{
-        min-height: 360px !important;
+        min-height: 375px !important;
         max-width: 247px !important;
+        margin-right: 0px !important;
+    }
+    .product-layout_modul{
+        min-height: 375px !important;
+        max-width: 220px !important;
         margin-right: 0px !important;
     }
 }
