@@ -11,6 +11,7 @@ class ControllerModuleLastview extends Controller {
         $data['button_cart'] = $this->language->get('button_cart');
         $data['button_wishlist'] = $this->language->get('button_wishlist');
         $data['button_compare'] = $this->language->get('button_compare');
+        $data['text_price'] = $this->language->get('text_price');
 
         $this->load->model('catalog/product');
 
@@ -62,9 +63,9 @@ class ControllerModuleLastview extends Controller {
             $i = 0;
             foreach ($results as $result) {
                 if ($result['image']) {
-                    $image = $this->model_tool_image->resize($result['image'], $setting['width'], $setting['height']);
+                    $image = HTTP_SERVER.'image/'.$result['image'];
                 } else {
-                    $image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
+                    $image = $this->model_tool_image->resize('placeholder.png', 0, 0);
                 }
                 $data['products'][] = array(
                     'product_id' => $result['product_id'],

@@ -118,7 +118,7 @@
                                 </p>
                                 <?php } ?>-->
                             </div>
-                            <div class="button-group col-sm-4 col-md-4 col-lg-4 hidden-xs"
+                            <div class="button-group col-sm-4 col-md-4 col-lg-4 hidden-xs button-group_KP"
                                  style="    margin-top: -6px;">
                                 <button class="korzuna_style" style="display: none" type="button"
                                         onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
@@ -167,9 +167,17 @@
                                             class="btn btn-primary"><?php echo $button_continue; ?></a></div>
             </div>
             <?php } ?>
-            <?php echo $content_bottom; ?></div>
+
+
+
+        </div>
         <?php echo $column_right; ?></div>
+
 </div>
+<div class="container">
+    <?php echo $content_bottom; ?>
+</div>
+
 <div class="container conteiner_botton hidden-xs"
      style="width: 100%; height: 243px; background: url('../../../catalog/view/theme/default/image/Pictures_catalog.png') center no-repeat;">
     <div class="container text_na_kartuni">
