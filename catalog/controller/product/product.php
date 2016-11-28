@@ -288,10 +288,12 @@ class ControllerProductProduct extends Controller {
 			}
 
 			if ($product_info['image']) {
+				//$data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height'));
 				$data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height'));
 			} else {
 				$data['thumb'] = '';
 			}
+
 
 			$data['images'] = array();
 
@@ -350,7 +352,8 @@ class ControllerProductProduct extends Controller {
 							'product_option_value_id' => $option_value['product_option_value_id'],
 							'option_value_id'         => $option_value['option_value_id'],
 							'name'                    => $option_value['name'],
-							'image'                   => $this->model_tool_image->resize($option_value['image'], 50, 50),
+							//'image'                   => $this->model_tool_image->resize($option_value['image'], 50, 50),
+							'image'                   => "image/".$option_value['image'],
 							'price'                   => $price,
 							'price_prefix'            => $option_value['price_prefix']
 						);

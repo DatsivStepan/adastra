@@ -658,7 +658,7 @@ h2.price {
 	}
 }
 .thumbnails {
-	overflow: auto;
+	/*overflow: auto;*/
 	clear: both;
 	list-style: none;
 	padding: 0;
@@ -810,7 +810,7 @@ h2.price {
 	color: #0b0b0b;
 }
 .footer-bottom-div-style{
-    border-top: 1px solid #5e5e5e ;
+    /*border-top: 1px solid #5e5e5e ;*/
 
 	padding-top: 10px;
 	padding-bottom: 10px;

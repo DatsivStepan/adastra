@@ -1,0 +1,298 @@
+.container-pc1{
+
+}
+.product_image-pc {
+    float: right;
+    width: 100%;
+    padding-left: 20px;
+}
+.deliveryBox{
+    float: left;
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-family: 'Philosopher';
+    font-size: 14px;
+}
+.deliveryBoxTitle{
+    font-weight:bold;
+}
+.deliveryBoxText{}
+
+.product_description-pc{
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 16px;
+}
+.productTitle,
+.productPrice{
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 30px;
+}
+#hSlider,
+#wSlider{
+    height: 5px;
+}
+
+.sliderContainer{
+    height: 50px;
+    position: relative;
+}
+#column-left{
+    padding: 0px;
+}
+.my_cropper_container{
+    border: 1px solid #F00;
+    max-width: 400px;
+}
+.my_cropper_container > img{
+    max-width: 100%;
+}
+.clickToBuy{
+    height: 50px;
+    width: 50%;
+    border-radius: 50px;
+    color: #322d2d;
+    border: 1px solid #322d2d;
+    background: transparent;
+    font-size: 18px;
+    font-family: 'Philosopher';
+    float: left;
+}
+.clickToBuy p{
+    width:190px;
+    padding-top: 2px;
+}
+.clickToBuy p:before{
+    content: url("../image/clickToBuy.png");
+    height: 50px;
+    display: block;
+    float: left;
+    padding-left: 25px;
+    padding-top: 8px;
+}
+
+.addToCart{
+    height: 50px;
+    width: 50%;
+    border-radius: 50px;
+    color: #fff;
+    border: 1px solid #322d2d;
+    background: #322d2d;
+    font-size: 22px;
+    font-family: 'Philosopher';
+}
+.addToCart:hover{
+    background: #322d2d;
+}
+.addToCart p{
+    width: 195px;
+    padding-top: 12px;
+}
+.addToCart p:before{
+    content: url("../image/addToCart.png");
+    height: 50px;
+    display: block;
+    float: left;
+    padding-left: 30px;
+    transform: translateY(-4px);
+}
+.optionsContainer{
+    background-color: #f5f5f5;
+    padding: 10px 10px 0 10px;
+    margin-top: 10px;
+}
+.my-custom-label,
+.my-custom-labelFrame{
+    display:inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: #f5f5f5;
+    text-align: center;
+    padding: 0px;
+}
+
+.my-custom-label{
+    border-radius: 50px;
+}
+.my-custom-labelFrame{
+    border-radius: 10px;
+}
+.my-custom-label > input[type=radio],
+.my-custom-labelFrame > input[type=radio]{
+    display: none;
+}
+
+.my-custom-label > span,
+.my-custom-labelFrame > span{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.my-custom-label > span{
+    border-radius: 50px;
+}
+.my-custom-labelFrame > span{
+    border-radius: 10px;
+}
+
+.my-custom-label > input[type=radio]:checked + span,
+.my-custom-labelFrame > input[type=radio]:checked + span{
+    border-style: inset;
+}
+
+.underframeContainer{
+    min-height: 45px;
+    border: 1px solid #000000;
+}
+.underframeMain{
+    transform: translateY(-13px);
+    padding: 0 5px 0 5px;
+    background: #f5f5f5;
+    left: 35px;
+    display: block;
+    position: absolute;
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 15px;
+}
+.underframeSecondary{
+    padding-top: 10px;
+    padding-left: 10px;
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 15px;
+}
+.underframeSecondary input,
+.underframeMain input{
+    transform: translateY(2px)
+}
+.colorBox{
+    float: left;
+    width: 17%;
+    margin-top: 5px;
+}
+.colorBoxContainer{
+    width: 100%;
+    min-height: 100px;
+    border: 1px solid #000;
+    margin-top: 10px;
+    float: left;
+}
+.smallTitleBox{
+    width: 15%;
+    float: left;
+    padding: 0 10px;
+    padding-top: 20px;
+    /* height: 100%; */
+    min-height: 98px;
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 15px;
+}
+.frameBox{
+    float: left;
+    width: 17%;
+    margin-top: 5px;
+}
+.frameBoxContainer{
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid #000;
+    margin-top: 10px;
+    float: left;
+}
+.textureContainer{
+
+}
+.textureTitle{
+    transform: translateY(-13px);
+    padding: 0 5px 0 5px;
+    background: #f5f5f5;
+    left: 35px;
+    display: block;
+    position: absolute;
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 15px;
+}
+.smallTitleBox{
+    width: 15%;
+    float: left;
+    padding: 0 10px;
+    padding-top: 15px;
+    /* height: 100%; */
+    /*min-height: 98px;*/
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 15px;
+}
+.leftRullerCutter{
+    border-left: 2px solid #000;
+    height: 10px;
+    margin-left: 1px;
+    position: absolute;
+    left: 1px;
+    top: 6px;
+}
+.leftRullerValue,
+.rightRullerValue{
+    height: 10px;
+    margin-left: 1px;
+    position: absolute;
+    top: 13px;
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 15px;
+}
+.leftRullerValue{
+    left: 1px;
+}
+.rightRullerValue{
+    right: 1px;
+}
+.rightRullerCutter{
+    border-left: 2px solid #000;
+    height: 10px;
+    margin-left: 1px;
+    position: absolute;
+    right: 1px;
+    top: 6px;
+}
+.rightRullerValue{
+    height: 10px;
+    margin-left: 1px;
+    position: absolute;
+    right: 1px;
+    top: 13px;
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 15px;
+}
+.noUi-horizontal .noUi-handle {
+    width: 15px;
+    height: 15px;
+    left: -9px;
+    top: -6px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+}
+.noUi-handle:before{
+    content: "1234";
+    display: block;
+    position: absolute;
+    background: transparent;
+    left: -7px;
+    top: -20px;
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 15px;
+}
+.noUi-handle:after {
+      display: none;
+}
+.noUi-connect {
+    border-radius: 10px;
+}
