@@ -27,6 +27,17 @@
 <link href="catalog/view/theme/default/stylesheet/mystels.css" rel="stylesheet">
 <script src="catalog/view/javascript/header.js" type="text/javascript"></script>
 
+  <!-- START PRODUCT_CARD STYLES&SCRIPTS -->
+  <link  href="catalog/view/css/cropper.css" rel="stylesheet">
+  <script src="catalog/view/javascript/cropper.min.js" type="text/javascript"></script>
+
+  <link  href="catalog/view/css/nouislider.css" rel="stylesheet">
+  <script src="catalog/view/javascript/nouislider.min.js" type="text/javascript"></script>
+
+  <link  href="catalog/view/theme/default/stylesheet/product_card_1.css" rel="stylesheet">
+  <script src="catalog/view/javascript/product_cards.js" type="text/javascript"></script>
+  <!-- END PRODUCT_CARD STYLES&SCRIPTS -->
+
   <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
