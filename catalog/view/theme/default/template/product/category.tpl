@@ -1,7 +1,7 @@
 <?php echo $header; ?>
 <div class="container">
     <div class="container_breadcrumb hidden-xs">
-        <ul class="breadcrumb_contact hidden-xs  col-sm-12 col-md-12 col-lg-12" style=" padding-left: 25%; ">
+        <ul class="breadcrumb_contact hidden-xs  col-sm-12 col-md-12 col-lg-12">
             <?php foreach ($breadcrumbs as $breadcrumb) { ?>
             <?php if ($breadcrumb ['href']==('')){ ?>
             <li class="breadcrumb_text"><?php echo $breadcrumb['text']; ?></li>
@@ -14,18 +14,13 @@
             <?php } ?>
         </ul>
     </div>
-    <div class="row"> <?php echo $column_left; ?>
-        <?php if ($column_left && $column_right) { ?>
-        <?php $class = 'col-sm-6'; ?>
-        <?php } elseif ($column_left || $column_right) { ?>
-        <?php $class = 'col-sm-9'; ?>
-        <?php } else { ?>
-        <?php $class = 'col-sm-12'; ?>
-        <?php } ?>
-        
-        <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+    <div class="container KP">
+        <div class="KP_20">
+            <?php echo $column_left; ?>
+        </div>
+        <div class="KP_80"><?php echo $content_top; ?>
             <?php if ($products) { ?>
-            <div class="row hidden-xs" style="border-top: 3px solid #f0ebe2; border-bottom: 1px solid #f0ebe2;padding-top:5px;padding-bottom:5px;">
+            <div class="hidden-xs" style="border-top: 3px solid #f0ebe2; border-bottom: 1px solid #f0ebe2; padding-top:5px; padding-bottom:5px; width: 100%; float: left;">
                 <div class="hidden-xs hidden-sm hidden-md  hidden-lg">
                     <div class="btn-group">
                         <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip"
@@ -35,7 +30,7 @@
                     </div>
                 </div>
                 <div class="col-sm-8 col-md-5 col-lg-5">
-                    <div class="col-sm-4 col-md-5 col-lg-4 text-right" style="text-align: left; padding: 0">
+                    <div class="col-sm-5 col-md-5 col-lg-4 text-right" style="text-align: left; padding: 0">
                         <label class="control-label label_text_sort" for="input-sort"><?php echo $text_sort; ?></label>
                     </div>
                     <div class="col-sm-6 col-md-7 col-lg-8 text-right" style="text-align: left; padding: 0;">
@@ -75,55 +70,27 @@
                 </div>
 
             </div>
-            
-            <div class="row hidden-xs">
+
+            <div class="KP">
                 <?php foreach ($products as $product) { ?>
-                <div class="product-layout col-sm-6 col-md-3 col-lg-3 col-xs-12" style="padding: 5px;">
+                <div class="KP_25">
                     <div class="product-thumb_style">
-                        <div class="image hidden-xs"><a class="imga_catalog" href="<?php echo $product['href']; ?>" style="background: url('<?php echo $product['thumb']; ?>') center no-repeat; min-height: 300px; background-size: cover"></a>
+                        <div class="image hidden-xs"><a class="imga_catalog" href="<?php echo $product['href']; ?>" style="background: url('<?php echo $product['thumb']; ?>') center no-repeat; min-height: 300px; background-size: cover;min-width: 219px;"></a>
                         </div>
                         <div>
-                            <div class="caption_style col-sm-8 col-md-8 col-lg-8 hidden-xs"
-                                 style="     margin-top: 7px;   padding: 0 0 0 5px;">
-                                <h4 style="    margin: 0;"><a class="pull-right_KP "
+                            <div class="caption_style hidden-xs"
+                                 style="width: 100% ;    margin-top: 7px;   padding: 0 0 0 5px;">
+                                <h4 style="margin: 0 0 0 10px; width: 79%; float: left;"><a class="pull-right_KP "
                                                               href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                                 </h4>
-                                <span class="ribbon pull-right_KP" style="display: none"><?php echo $text_price; ?>
-                                    от <?php echo $product['price']; ?></span>
+                                    <button class="korzuna_style" style="display: none; width: 10%; float: left" type="button"
+                                            onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
+                                    </button>
+                                    <div style="clear: both"></div>
+                                        <span class="ribbon pull-right_KP" style="display: none; margin-left: 10px"><?php echo $text_price; ?>
+                                            от <?php echo $product['price']; ?></span>
+                            </div>
 
-                                <!--<p><?php echo $product['description']; ?></p>
-                                <?php if ($product['rating']) { ?>
-                                <div class="rating">
-                                    <?php for ($i = 1; $i <= 5; $i++) { ?>
-                                    <?php if ($product['rating'] < $i) { ?>
-                                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                    <?php } else { ?>
-                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i
-                                                class="fa fa-star-o fa-stack-2x"></i></span>
-                                    <?php } ?>
-                                    <?php } ?>
-                                </div>
-                                <?php } ?>
-                                <?php if ($product['price']) { ?>
-                                <p class="price">
-                                    <?php if (!$product['special']) { ?>
-                                    <?php echo $product['price']; ?>
-                                    <?php } else { ?>
-                                    <span class="price-new"><?php echo $product['special']; ?></span> <span
-                                            class="price-old"><?php echo $product['price']; ?></span>
-                                    <?php } ?>
-                                    <?php if ($product['tax']) { ?>
-                                    <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-                                    <?php } ?>
-                                </p>
-                                <?php } ?>-->
-                            </div>
-                            <div class="button-group col-sm-4 col-md-4 col-lg-4 hidden-xs button-group_KP"
-                                 style="    margin-top: -6px;">
-                                <button class="korzuna_style" style="display: none" type="button"
-                                        onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
-                                </button>
-                            </div>
                         </div>
                     </div>
 
