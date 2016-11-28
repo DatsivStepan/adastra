@@ -108,7 +108,6 @@ h1.text_comment{
     background: url('../image/korzuna.png') right center no-repeat;
     width: 25px;
     height: 30px;
-    margin: 15px 0 0 18px;
     border: none;
 }
 .label_text_sort{
@@ -247,13 +246,22 @@ img.image_responsive{
     color: #322d2d;
     margin: 0;
 }
-div.product-layout:hover .pull-right_KP{
+div.KP_25:hover .pull-right_KP{
     display: block !important;
 }
-div.product-layout:hover .korzuna_style{
+div.KP_25:hover .korzuna_style{
     display: block !important;
 }
-div.product-layout:hover {
+div.KP_25:hover {
+    box-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+div.KP_25_mod:hover .pull-right_KP{
+    display: block !important;
+}
+div.KP_25_mod:hover .korzuna_style{
+    display: block !important;
+}
+div.KP_25_mod:hover {
     box-shadow: 0 0 1px rgba(0,0,0,0.5);
 }
 
@@ -320,6 +328,34 @@ ul.ul_centr{
     margin-left: 36%;
 }
 /**/
+.a-category-style{
+    font-family: 'Philosopher';
+    font-size: 15px;
+    color: #585858;
+}
+li>a.active{
+    font-family: 'Philosopher';
+    font-size: 15px;
+    color: #fff;
+    background-color: #0b0b0b;
+}
+.a-category-child-style{
+    font-family: 'Philosopher';
+    font-size: 15px;
+    color: #585858;
+}
+.category-icon-style{
+    width: 10px;
+    height: 10px;
+    background: url("../image/Znak-min.png")center no-repeat;
+    display: inline-block;
+}
+.category-icon-style_1{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background: url("../image/Znak-+.png")center no-repeat;
+}
 @media (min-width: 320px)and (max-width: 599px) {
 
 }
@@ -401,7 +437,11 @@ ul.ul_centr{
         margin: 6%;
     }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px){
+    .breadcrumb_contact{
+        padding-left: 33%;
+        margin-top: 22px;
+    }
     .map {
         width: 50%;
         height: 600px;
@@ -431,22 +471,103 @@ ul.ul_centr{
     }
     .text_na_kartuni {
         position: absolute;
-        margin: 17% 0% 0% 28%;
+        margin: 131px 0% 0% 33%;
         width: 56%;
     }
     .imga_catalog{
-        width: 238px;
+        width: 230px;
         height: 300px;
         display: block;
     }
-    .product-layout{
+    .KP_25{
         min-height: 375px !important;
-        max-width: 247px !important;
+        max-width: 230px !important;
         margin-right: 30px !important;
+    }
+    .product-layout_modul{
+        min-height: 375px !important;
+        max-width: 230px !important;
+        margin-right: 0px !important;
+    }
+    div.KP_25:nth-child(2n){
+        margin: 10px 0 0 0 !important;
+    }
+    .KP_20{
+        width: 230px !important;
+        padding: 0 !important;
+        margin: 0 14px 0 0 !important;
+        float: left;
+    }
+    .KP_25{
+        min-height: 375px !important;
+        width: 230px !important;
+        padding: 0 !important;
+        margin: 10px 14px 0 0 !important;
+        float: left;
+    }
+
+    .KP_80{
+        width: 66% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+    .KP{
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .KP_25_mod{
+        min-height: 375px !important;
+        width: 230 !important;
+        padding: 0 !important;
+        margin: 10px 14px 0 0 !important;
+        float: left;
+    }
+    .text_mod_h3{
+        margin-left: 1%!important;
+        text-align: left!important;
+    }
+    .imga_catalog_mod{
+        width: 230px;
+        height: 300px;
+        display: block;
+    }
+    .KP_25_mod{
+        min-height: 375px !important;
+        width: 230px !important;
+        padding: 0 !important;
+        margin: 10px 14px 0 0 !important;
+        float: left;
+    }
+    .text_mod_h3{
+        margin-left: 1%;
+    }
+    .imga_catalog_mod{
+        width: 230px;
+        height: 300px;
+        display: block;
+    }
+    .breadcrumb_contact{
+        padding-left: 34%;
+    }
+    div.KP_25_mod:nth-child(3n){
+        margin: 10px 0 0 0 !important;
+    }
+    div.KP_25_mod:nth-child(4n){
+       display: none!important;
+    }
+    div.KP_25_mod:nth-child(5n){
+       display: none!important;
     }
 }
 
-@media (min-width: 992px) {
+
+@media (min-width: 992px) and (max-width: 1199px){
+    .breadcrumb_contact{
+        padding-left: 25%;
+        margin-top: 22px;
+    }
     .map {
         width: 50%;
         height: 600px;
@@ -456,29 +577,98 @@ ul.ul_centr{
         font-size: 35px;
         font-weight: bold;
         position: absolute;
-        margin: -36px 0 0px 207px;
+        margin: -36px 0 0px 262px;
     }
     .text_na_kartuni{
         position: absolute;
-        margin: 13% 0% 0% 34%;
+        margin: 120px 0% 0% 35%;
         width: 56%;
     }
-    .imga_catalog{
-        width: 172px;
+    a.imga_catalog{
+        width: 224px;
         height: 300px;
         display: block;
-    }
-    .product-layout{
-        min-height: 391px !important;
-        max-width: 247px !important;
-        margin-right: 0px !important;
     }
     .button-group_KP{
         margin-top: -6px!important;
         margin-left: -16px!important;
     }
+    .product-layout_modul{
+        min-height: 375px !important;
+        max-width: 220px !important;
+        margin-right: 0px !important;
+    }
+    div.KP_25:nth-child(3n){
+        margin: 10px 0 0 0 !important;
+    }
+    .KP_20{
+        width: 224px !important;
+        padding: 0 !important;
+        margin: 0 14px 0 0 !important;
+        float: left;
+
+    }
+    .KP_25{
+        min-height: 375px !important;
+        width: 224px !important;
+        padding: 0 !important;
+        margin: 10px 14px 0 0 !important;
+        float: left;
+    }
+
+    .KP_80{
+        width: 74.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+    .KP{
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .KP_25_mod{
+        min-height: 375px !important;
+        width: 25% !important;
+        padding: 0 !important;
+        margin: 10px 14px 0 0 !important;
+        float: left;
+    }
+    .text_mod_h3{
+        margin-left: 1%;
+    }
+    div.KP_25_mod:nth-child(5n){
+       display: none;
+    }
+    div.KP_25_mod:nth-child(4n){
+       margin-right: 0!important;
+    }
+    .imga_catalog_mod{
+        width: 226px;
+        height: 300px;
+        display: block;
+    }
+    .KP_25_mod{
+        min-height: 375px !important;
+        width: 224px !important;
+        padding: 0 !important;
+        margin: 10px 14px 0 0 !important;
+        float: left;
+    }
+    .text_mod_h3{
+        margin-left: 1%;
+    }
+    .imga_catalog_mod{
+        width: 224px;
+        height: 300px;
+        display: block;
+    }
 }
 @media (min-width: 1200px) {
+    .breadcrumb_contact{
+        padding-left: 20%;
+        margin-top: 22px;
+    }
     .map {
         width: 600px;
         height: 600px;
@@ -488,11 +678,11 @@ ul.ul_centr{
         font-size: 48px;
         font-weight: bold;
         position: absolute;
-        margin: -41px 0 0px 204px;
+        margin: -41px 0 0px 262px;
     }
     .text_na_kartuni{
         position: absolute;
-        margin: 9% 0% 0% 37%;
+        margin: 120px 0% 0% 37%;
         width: 56%;
     }
     .imga_catalog{
@@ -500,14 +690,56 @@ ul.ul_centr{
         height: 300px;
         display: block;
     }
-    .product-layout{
-        min-height: 375px !important;
-        max-width: 247px !important;
-        margin-right: 0px !important;
-    }
     .product-layout_modul{
         min-height: 375px !important;
         max-width: 220px !important;
         margin-right: 0px !important;
     }
+    div.KP_25:nth-child(4n){
+        margin: 10px 0 0 0 !important;
+    }
+    .KP_20{
+        width: 219px !important;
+        padding: 0 !important;
+        margin: 0 10px 0 0 !important;
+        float: left;
+    }
+    .KP_25{
+        min-height: 375px !important;
+        width: 219px !important;
+        padding: 0 !important;
+        margin: 10px 10px 0 0 !important;
+        float: left;
+    }
+
+    .KP_80{
+        width: 79.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+    .KP{
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .KP_25_mod{
+        min-height: 375px !important;
+        width: 219px !important;
+        padding: 0 !important;
+        margin: 10px 10px 0 0 !important;
+        float: left;
+    }
+    .text_mod_h3{
+        margin-left: 1%;
+    }
+    .imga_catalog_mod{
+        width: 209px;
+        height: 300px;
+        display: block;
+    }
+    div.KP_25_mod:nth-child(5n){
+        margin: 10px 0 0 0 !important;
+    }
 }
+

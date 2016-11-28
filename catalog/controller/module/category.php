@@ -1,9 +1,11 @@
 <?php
 class ControllerModuleCategory extends Controller {
-	public function index() {
+	public function index($setting) {
 		$this->load->language('module/category');
 
 		$data['heading_title'] = $this->language->get('heading_title');
+		$data['more_product'] = $this->language->get('more_product');
+		$data['min_product'] = $this->language->get('min_product');
 
 		if (isset($this->request->get['path'])) {
 			$parts = explode('_', (string)$this->request->get['path']);
@@ -23,6 +25,9 @@ class ControllerModuleCategory extends Controller {
 			$data['child_id'] = 0;
 		}
 
+		$this->load->model('extension/extension');
+		$this->load->model('tool/image');
+
 		$this->load->model('catalog/category');
 
 		$this->load->model('catalog/product');
@@ -30,6 +35,7 @@ class ControllerModuleCategory extends Controller {
 		$data['categories'] = array();
 
 		$categories = $this->model_catalog_category->getCategories(0);
+
 		foreach ($categories as $category) {
 			$children_data = array();
 
@@ -81,8 +87,6 @@ class ControllerModuleCategory extends Controller {
 				'href'        => $this->url->link('product/category', 'path=' . $category['category_id'])
 			);
 		}
-
-
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/category.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/module/category.tpl', $data);
