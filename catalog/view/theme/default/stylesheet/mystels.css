@@ -544,7 +544,7 @@ a.a-category-child-style{
         min-height: 375px !important;
         width: 230px !important;
         padding: 0 !important;
-        margin: 10px 14px 0 0 !important;
+        margin: 10px 12px 0 0 !important;
         float: left;
     }
     .text_mod_h3{
@@ -567,16 +567,8 @@ a.a-category-child-style{
     div.KP_25_mod:nth-child(5n){
        display: none!important;
     }
-    .KP_25{
-        min-height: 375px !important;
-        width: 219px !important;
-        padding: 0 !important;
-        margin: 10px 10px 0 0 !important;
-        float: left;
-    }
-
     .KP_80{
-        width: 79.5% !important;
+        width: 65.5% !important;
         padding: 0 !important;
         margin: 0 !important;
         float: left;
@@ -596,13 +588,6 @@ a.a-category-child-style{
         width: 35.5% !important;
         padding: 0 !important;
         margin: 0 !important;
-        float: left;
-    }
-    .KP_25{
-        min-height: 375px !important;
-        width: 219px !important;
-        padding: 0 !important;
-        margin: 10px 10px 0 0 !important;
         float: left;
     }
 
@@ -633,13 +618,6 @@ a.a-category-child-style{
         width: 20% !important;
         padding: 0 !important;
         margin: 0 10px 0 0 !important;
-        float: left;
-    }
-
-    .KP_80{
-        width: 79.5% !important;
-        padding: 0 !important;
-        margin: 0 !important;
         float: left;
     }
     .KP_40{
