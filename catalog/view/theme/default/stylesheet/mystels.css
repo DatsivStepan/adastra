@@ -330,19 +330,22 @@ ul.ul_centr{
 /**/
 .a-category-style{
     font-family: 'Philosopher';
-    font-size: 15px;
+    font-size: 14px;
     color: #585858;
 }
-li>a.active{
+a.a_text_KP{
     font-family: 'Philosopher';
-    font-size: 15px;
+    font-size: 14px;
     color: #fff;
-    background-color: #0b0b0b;
+    margin-left: 14px;
+
 }
-.a-category-child-style{
+a.a-category-child-style{
     font-family: 'Philosopher';
-    font-size: 15px;
+    font-size: 14px;
     color: #585858;
+    margin-left: 14px;
+
 }
 .category-icon-style{
     width: 10px;
@@ -438,6 +441,10 @@ li>a.active{
     }
 }
 @media (min-width: 768px) and (max-width: 991px){
+    .breadcrumb_product{
+        padding-left: 21%;
+        margin-top: 22px;
+    }
     .breadcrumb_contact{
         padding-left: 33%;
         margin-top: 22px;
@@ -560,6 +567,93 @@ li>a.active{
     div.KP_25_mod:nth-child(5n){
        display: none!important;
     }
+    .KP_25{
+        min-height: 375px !important;
+        width: 219px !important;
+        padding: 0 !important;
+        margin: 10px 10px 0 0 !important;
+        float: left;
+    }
+
+    .KP_80{
+        width: 79.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+    .KP{
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .KP_40{
+        width: 42.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: right;
+    }
+    .KP_40_2{
+        width: 35.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+    .KP_25{
+        min-height: 375px !important;
+        width: 219px !important;
+        padding: 0 !important;
+        margin: 10px 10px 0 0 !important;
+        float: left;
+    }
+
+    .KP_80_2{
+        width: 79.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+    .KP{
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .KP_40{
+        width: 42.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: right;
+    }
+    .KP_40_2{
+        width: 35.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+    .KP_20_2{
+        width: 20% !important;
+        padding: 0 !important;
+        margin: 0 10px 0 0 !important;
+        float: left;
+    }
+
+    .KP_80{
+        width: 79.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+    .KP_40{
+        width: 80% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: right;
+    }
+    .KP_40_2{
+        width: 80% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
 }
 
 
@@ -663,8 +757,64 @@ li>a.active{
         height: 300px;
         display: block;
     }
+    .KP_25{
+        min-height: 375px !important;
+        width: 223px !important;
+        padding: 0 !important;
+        margin: 10px 14px 0 0 !important;
+        float: left;
+    }
+
+    .KP_80_2{
+        width: 79.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+    .KP{
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .KP_40{
+        width: 42.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: right;
+    }
+    .KP_40_2{
+        width: 35.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+    .KP_20_2{
+        width: 20% !important;
+        padding: 0 !important;
+        margin: 0 10px 0 0 !important;
+        float: left;
+    }
+
+    .KP_40{
+        width: 42% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: right;
+    }
+    .KP_40_2{
+        width: 35.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+
+
 }
 @media (min-width: 1200px) {
+    .breadcrumb_product{
+        padding-left: 21%;
+        margin-top: 22px;
+    }
     .breadcrumb_contact{
         padding-left: 20%;
         margin-top: 22px;
@@ -712,12 +862,6 @@ li>a.active{
         float: left;
     }
 
-    .KP_80{
-        width: 79.5% !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        float: left;
-    }
     .KP{
         width: 100% !important;
         padding: 0 !important;
@@ -741,5 +885,37 @@ li>a.active{
     div.KP_25_mod:nth-child(5n){
         margin: 10px 0 0 0 !important;
     }
+    .KP_20_2{
+        width: 20% !important;
+        padding: 0 !important;
+        margin: 0 10px 0 0 !important;
+        float: left;
+    }
+    .KP_80{
+        width: 79.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+
+    .KP_80_2{
+        width: 79.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+    .KP_40{
+        width: 42.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: right;
+    }
+    .KP_40_2{
+        width: 35.5% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
+
 }
 

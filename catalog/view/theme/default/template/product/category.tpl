@@ -123,7 +123,7 @@
                 </div>
                 <?php } ?>
             </div>
-            <div class="row">
+            <div class="KP_80">
                 <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
             </div>
             <?php } ?>

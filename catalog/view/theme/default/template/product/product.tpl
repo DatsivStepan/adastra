@@ -1,6 +1,6 @@
 <?php echo $header; ?>
 <div class="container-pc1 container">
-    <ul class="breadcrumb_contact hidden-xs  col-sm-12 col-md-12 col-lg-12">
+    <ul class="breadcrumb_product hidden-xs  col-sm-12 col-md-12 col-lg-12">
         <?php foreach ($breadcrumbs as $breadcrumb) { ?>
         <?php if ($breadcrumb ['href']==('')){ ?>
         <li class="breadcrumb_text"><?php echo $breadcrumb['text']; ?></li>
@@ -12,22 +12,12 @@
         <?php } ?>
         <?php } ?>
     </ul>
-    <div class="row"><?php echo $column_left; ?>
-        <?php if ($column_left && $column_right) { ?>
-        <?php $class = 'col-sm-6'; ?>
-        <?php } elseif ($column_left || $column_right) { ?>
-        <?php $class = 'col-sm-9'; ?>
-        <?php } else { ?>
-        <?php $class = 'col-sm-12'; ?>
-        <?php } ?>
-        <div id="content" class="<?php echo $class; ?>" style="padding: 0;">
-            <div class="row">
-                <?php if ($column_left || $column_right) { ?>
-                <?php $class = 'col-sm-6'; ?>
-                <?php } else { ?>
-                <?php $class = 'col-sm-8'; ?>
-                <?php } ?>
-                <div class="<?php echo $class; ?>">
+    <div class="container KP">
+        <div class="KP_20_2">
+            <?php echo $column_left; ?>
+        </div>
+        <div class="container kp_80_2">
+                <div class="container KP_40_2">
                     <?php if ($thumb || $images) { ?>
                     <div class="product_image-pc thumbnails">
                         <?php if ($thumb) { ?>
@@ -57,12 +47,7 @@
 
                     </div>
                 </div>
-                <?php if ($column_left || $column_right) { ?>
-                <?php $class = 'col-sm-6'; ?>
-                <?php } else { ?>
-                <?php $class = 'col-sm-4'; ?>
-                <?php } ?>
-                <div class="<?php echo $class; ?>">
+                <div class="container KP_40">
                     <h1 class="productTitle"><?php echo $heading_title; ?></h1>
                     <div class="product_description-pc">
                         <div>
@@ -84,7 +69,7 @@
                         $height = 0;
                         $width  = 0;
                     ?>
-                    <div id="product" style="width: 100%;">
+                    <div id="product" style="width: 100%;margin: 25px 0 20px 0;">
                         <input type="hidden" name="quantity" value="<?php echo $minimum; ?>" size="2"
                                id="input-quantity" class="form-control"/>
                         <input type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
