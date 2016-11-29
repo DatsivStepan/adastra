@@ -9,11 +9,11 @@ class ControllerCheckoutCart extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'href' => $this->url->link('common/home'),
-			'text' => $this->language->get('text_home')
+			'text' => 'Главная'
 		);
 
 		$data['breadcrumbs'][] = array(
-			'href' => $this->url->link('checkout/cart'),
+			'href' => '',
 			'text' => $this->language->get('heading_title')
 		);
 

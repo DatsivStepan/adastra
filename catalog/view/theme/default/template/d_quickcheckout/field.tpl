@@ -44,7 +44,7 @@
 			        data-sort="<%= f.sort_order %>">
 			        <div class="<%= col_left %>">
 			        	<label class="control-label">
-			        		<span <%= f.tooltip ? 'data-toggle="tooltip"' : '' %> title="<%= f.tooltip %>"><%= htmlDecode(f.title) %></span> 
+			        		<span <%= f.tooltip ? 'data-toggle="tooltip"' : '' %> title="<%= f.tooltip %>"><%= htmlDecode(f.title) %></span>
 			        	</label>
 			        </div>
 			        <div class="<%= col_right %>">
@@ -121,7 +121,7 @@
 		        data-sort="<%= f.sort_order %>">
 		        <div class="<%= col_left %>">
 		          <label class="control-label" for="<%= model.config.id %>_<%= f.id %>"> 
-		            <span class="text" <%= f.tooltip ? 'data-toggle="tooltip"' : '' %> title="<%= f.tooltip %>"> <%= htmlDecode(f.title) %></span> 
+		            <span class="text" <%= f.tooltip ? 'data-toggle="tooltip"' : '' %> title="<%= f.tooltip %>"> <%= htmlDecode(f.title) %></span>
 		          </label>
 		        </div>
 		        <div class="<%= col_right %>"> 
@@ -142,48 +142,41 @@
 		        </div>
 		      </div>
 
+
 		<% }else if(f.type == "textarea"){ %>
-      		<div id="<%= model.config.id %>_<%= f.id %>_input" 
-		        class="text-input form-group  sort-item <%= display ? '' : 'hidden' %> <%= f.class ? f.class : '' %> <%= require ? 'required' : '' %>" 
+      		<div id="<%= model.config.id %>_<%= f.id %>_input"
+		        class="text-input form-group  sort-item <%= display ? '' : 'hidden' %> <%= f.class ? f.class : '' %> <%= require ? 'required' : '' %>"
 		        data-sort="<%= f.sort_order %>">
-		        <div class="col-xs-12">
-		          <label class="control-label" for="<%= model.config.id %>_<%= f.id %>"> 
-		            <span class="text" <%= f.tooltip ? 'data-toggle="tooltip"' : '' %> title="<%= f.tooltip %>"> <%= htmlDecode(f.title) %></span> 
-		          </label>
-		        </div>
-		        <div class="col-xs-12"> 
+		        <div class="col-xs-12 padding_margin padding_margin2" style="padding: 0 14px 0 0;margin: 0 0 0 7px;">
 		          <textarea
-		            name="<%= model.config.id %>.<%= f.id %>" 
+		            name="<%= model.config.id %>.<%= f.id %>"
 		            id="<%= model.config.id %>_<%= f.id %>"
-		            class="form-control validate <%= require ? 'required' : 'not-required' %> <%= f.type %> <%= f.id %>" 
-		            autocomplite="on" 
-		            <% if(Number(config.design.placeholder)) {  %>placeholder="<%= require ? '*' : '' %> <%= htmlDecode(f.title).replace(':', '') %>"<% } %> 
+		            class="form-control validate <%= require ? 'required' : 'not-required' %> <%= f.type %> <%= f.id %> form_border_rad1"
+		            autocomplite="on"
+		            <% if(Number(config.design.placeholder)) {  %>placeholder="<%= require ? '*' : '' %> <%= htmlDecode(f.title).replace(':', '') %>"<% } %>
 		            <%= setValidateRules(f.error) %> ><%= model[model.config.id][f.id] %></textarea>
 		        </div>
-		      </div>
-
+		        </div>
+			</div>
     	<% }else{ %>
     		<div id="<%= model.config.id %>_<%= f.id %>_input" 
 		        class="text-input form-group  sort-item <%= display ? '' : 'hidden' %> <%= f.class ? f.class : '' %> <%= require ? 'required' : '' %>" 
 		        data-sort="<%= f.sort_order %>">
-		        <div class="<%= col_left %>">
-		          <label class="control-label" for="<%= model.config.id %>_<%= f.id %>"> 
-		            <span class="text" <%= f.tooltip ? 'data-toggle="tooltip"' : '' %> title="<%= f.tooltip %>"> <%= htmlDecode(f.title) %></span> 
-		          </label>
-		        </div>
-		        <div class="<%= col_right %>"> 
-		          <input type="<%= f.type %>" 
-		            name="<%= model.config.id %>.<%= f.id %>" 
-		            id="<%= model.config.id %>_<%= f.id %>" 
-		            value="<%= model[model.config.id][f.id] %>" 
-		            class="form-control <%= f.mask ? 'mask': '' %> <%= require ? 'required' : 'not-required' %> <%= f.id %>" 
-		            autocomplite="on"
-		            <% if(f.mask){ %>
-		            data-mask="<%= f.mask %>"
-		            <% } %> 
-		            <% if(Number(config.design.placeholder)) {  %>placeholder="<%= require ? '*' : '' %> <%= htmlDecode(f.title).replace(':', '') %>"<% } %> 
-		            <%= setValidateRules(f.error) %> />
-		        </div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					  <input type="<%= f.type %>"
+						name="<%= model.config.id %>.<%= f.id %>"
+						id="<%= model.config.id %>_<%= f.id %>"
+						value="<%= model[model.config.id][f.id] %>"
+						class="form-control <%= f.mask ? 'mask': '' %> <%= require ? 'required' : 'not-required' %> <%= f.id %> form_border_rad"
+						autocomplite="on"
+						<% if(f.mask){ %>
+						data-mask="<%= f.mask %>"
+						<% } %>
+						<% if(Number(config.design.placeholder)) {  %>placeholder="<%= require ? '*' : '' %> <%= htmlDecode(f.title).replace(':', '') %>"<% } %>
+						<%= setValidateRules(f.error) %> />
+					</div>
+				</div>
 		      </div>
     	<% } %>
 	<% } %>

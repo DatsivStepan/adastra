@@ -85,7 +85,6 @@ class ControllerDQuickcheckoutShippingMethod extends Controller {
         if(empty($this->session->data['shipping_method'])){
             $this->session->data['shipping_method'] = $this->model_d_quickcheckout_method->getFirstShippingMethod(); 
         }
-       
 
         $json['show_shipping_method'] = $this->model_d_quickcheckout_method->shippingRequired();
         $json['shipping_methods'] = $this->session->data['shipping_methods'];

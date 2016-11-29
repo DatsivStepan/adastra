@@ -78,6 +78,7 @@
     font-size: 18px !important;
     color: #6e6565 !important;
     margin-top: 50px;
+    margin-bottom: 5%;!important;
 }
 .tovar_adas_text{
     font-family: 'Philosopher' !important;
@@ -441,4 +442,133 @@
         position: relative;
         margin-top: 1px;
     }
+}
+.img_car_shipping{
+    position: absolute;
+    left: 34%;
+    top: 32px;
+}
+.img_car_payment{
+    position: absolute;
+    left: 34%;
+    top: 22px;
+}
+.panel-default {
+    border-top: none!important;
+    border-bottom: none!important;
+    border-left: none!important;
+    border-right: none!important;
+    background-color: #FFF!important;
+    border-radius: 0!important;
+}
+.shipping_bord{
+    border-top: 2px solid#000!important;
+    border-bottom: 2px solid#000!important;
+    border-left: none!important;
+    border-right: none!important;
+    background-color: #FFF!important;
+    box-shadow: none!important;
+}
+.shipping_bord2{
+    border-top: none!important;
+    border-bottom: 2px solid#000!important;
+    border-left: none!important;
+    border-right: none!important;
+    background-color: #FFF!important;
+    box-shadow: none!important;
+}
+.text_dost{
+    font-family: 'Philosopher'!important;
+    font-size: 15px!important;
+    color: #494545!important;
+    font-weight: 600;
+}
+.text_dost1{
+    font-family: 'Philosopher'!important;
+    font-size: 14px!important;
+    color: #322d2d!important;
+}
+.text_dost2{
+    font-family: 'Philosopher'!important;
+    font-size: 26px!important;
+    color: #000!important;
+    font-weight: 600;
+}
+.border_button{
+    font-family: 'Philosopher'!important;
+    border-radius: 50px 50px!important;
+    background: #322d2d!important;
+    font-size: 19px!important;
+    color: #f5f5f5!important;
+}
+.form_border_rad{
+    font-family: 'Philosopher'!important;
+    display: block;
+    width: 100%;
+    height: 45px!important;
+    padding: 6px 17px!important;
+    font-size: 14px!important;
+    border: 1px solid #322d2d!important;
+    border-radius: 0!important;
+}
+.form_border_rad1{
+    font-family: 'Philosopher'!important;
+    display: block;
+    width: 100%;
+    height: 110px!important;
+    padding: 6px 17px!important;
+    font-size: 14px!important;
+    border: 1px solid #322d2d!important;
+    border-radius: 0!important;
+}
+.padding_margin{
+    padding: 0 14px 0 0;
+    margin: 0 0 0 7px;
+}
+@media (max-width: 767px) {
+    .padding_margin2{
+        padding: 0 5px 0 0!important;
+        margin: 0 0 0 2px!important;
+    }
+    .panel-title{
+        padding: 0 0 20px 0!important;
+    }
+    .pai_met_act{
+        padding: 8px 0 8px 0;
+    }
+    .pai_met_act{
+        border: 2px solid #2d2a23!important;
+        border-radius: 7px 7px!important;
+        padding: 5px 8px!important;
+    }
+    .text_dost1{
+        font-family: 'Philosopher'!important;
+        font-size: 13px!important;
+        color: #322d2d!important;
+    }
+    .text_dost3 {
+        font-family: 'Philosopher' !important;
+        font-size: 22px !important;
+        color: #322d2d !important;
+    }
+    .ship_met_mar2{
+
+    }
+    .img_car_shipping2{
+        position: absolute!important;
+        left: 34%!important;
+        top: 77px!important;
+    }
+    .pai_met_act4{
+        background-color: #0b0b0b;
+        border: 2px solid #2d2a23!important;
+        border-radius: 7px 7px!important;
+        padding: 5px 8px!important;
+    }
+    .text_dost4{
+        font-family: 'Philosopher' !important;
+        color: #fff !important;
+        font-size: 13px!important;
+    }
+
 }
