@@ -11,60 +11,67 @@
 		<div class="error"><%= model.error_warning %></div>
 	<% } %>
 	<% if (model.payment_methods) { %>
-		<div class="panel panel-default" >
-			<div class="panel-heading">
-				<h4 class="panel-title">
-					<span class="icon">
-						<i class="<%= model.config.icon %>"></i>
-					</span> 
-					<span class="text"><%= model.config.title %></span>
-				</h4>
-			</div>
+		<div class="panel panel-default shipping_bord2" >
 			<div class="panel-body">
-				<% if(model.error){ %>
-					<div class="alert alert-danger">
-						<i class="fa fa-exclamation-circle"></i> <%= model.error %>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 panel-heading">
+					<div class="img_car_payment">
+						<img src="../../../catalog/view/theme/default/image/Shape-2.png" style="">
 					</div>
-				<% } %>
-				<% if (model.config.description) { %> 
-					<p class="description"><%= model.config.description %></p>
-				<% } %>
-				<div id="payment_method_list" class="<%= parseInt(model.config.display_options) ? '' : 'hidden' %>">
-				<% if(model.config.input_style == 'select') { %>
-					<div class="select-input form-group">
-						<select name="payment_method" class="form-control payment-method-select" data-refresh="6" >
-						<% _.each(model.payment_methods, function(payment_method) { %>
-							<% if (payment_method.code == model.payment_method.code) { %>
-								<option  value="<%= payment_method.code %>" id="<%= payment_method.code %>" selected="selected" ><%= payment_method.title %> <span class="price"><%= (payment_method.cost) ? payment_method.cost : '' %></span></option>
-							<% } else { %>
-								<option  value="<%= payment_method.code %>" id="<%= payment_method.code %>" ><%= payment_method.title %> <span class="price"><%= (payment_method.cost) ? payment_method.cost : '' %></span></option>
-							<% } %>
-						<% }) %>
-						</select>
+				</div>
+				<div class="col-lg-10 col-md-10 col-sm-10 col-xs-8" style="margin: -20px 0 0 0;">
+					<div class="panel-heading panel-title" style="padding: 0;">
+							<span class="active text text_dost"><%= model.config.title %></span>
 					</div>
-				<% }else{ %>
-					<% _.each(model.payment_methods, function(payment_method) { %>
-						<div class="radio-input radio">
-							<label for="<%= payment_method.code %>">
+					<div id="payment_method_list" class="<%= parseInt(model.config.display_options) ? '' : 'hidden' %>" style="margin: 0 -29px 0 0!important;">
+					<% if(model.config.input_style == 'select') { %>
+						<div class="select-input form-group">
+							<select name="payment_method" class="form-control payment-method-select" data-refresh="6" >
+							<% _.each(model.payment_methods, function(payment_method) { %>
 								<% if (payment_method.code == model.payment_method.code) { %>
-									<input type="radio" name="payment_method" value="<%= payment_method.code %>" id="<%= payment_method.code %>" checked="checked" class="styled"  data-refresh="6"/>
+									<option  value="<%= payment_method.code %>" id="<%= payment_method.code %>" selected="selected" ><%= payment_method.title %> <span class="price"><%= (payment_method.cost) ? payment_method.cost : '' %></span></option>
 								<% } else { %>
-									<input type="radio" name="payment_method" value="<%= payment_method.code %>" id="<%= payment_method.code %>" class="styled"  data-refresh="6"/>
+									<option  value="<%= payment_method.code %>" id="<%= payment_method.code %>" ><%= payment_method.title %> <span class="price"><%= (payment_method.cost) ? payment_method.cost : '' %></span></option>
+								<% } %>
+							<% }) %>
+							</select>
+						</div>
+					<% }else{ %>
+						<% _.each(model.payment_methods, function(payment_method) { %>
+						<div class="hidden-xs radio-input radio">
+							<label for="<%= payment_method.code %>"class="text_dost1 pai_met_act">
+								<% if (payment_method.code == model.payment_method.code) { %>
+								<input type="radio" name="payment_method" value="<%= payment_method.code %>" id="<%= payment_method.code %>" checked="checked" class="styled"  data-refresh="6"/>
+								<% } else { %>
+								<input type="radio" name="payment_method" value="<%= payment_method.code %>" id="<%= payment_method.code %>" class="styled"  data-refresh="6"/>
 								<% } %>
 
-								<% if(parseInt(model.config.display_images)) { %>
-									<img class="payment-image" src="<%= payment_method.image %>" />
-								<% } %>
-      
 								<%= payment_method.title %>
 								<span class="price"><%= payment_method.cost ? payment_method.cost : '' %></span>
 							</label>
 						</div>
-					<% }) %>
-				<% } %>
-				</div>									
+						<% if (payment_method.code == model.payment_method.code) { %>
+						<div class="hidden-lg hidden-md hidden-sm radio-input radio">
+							<label for="<%= payment_method.code %>" class="text_dost4 pai_met_act4" style="padding: 0 0 0 3px;">
+								<%= payment_method.title %>
+								<span class="price"><%= payment_method.cost ? payment_method.cost : '' %></span>
+							</label>
+						</div>
+						<% }else{ %>
+						<div class="hidden-lg hidden-md hidden-sm radio-input radio">
+							<label for="<%= payment_method.code %>" class="text_dost pai_met_act" style="padding: 0 0 0 3px;">
+								<%= payment_method.title %>
+								<span class="price"><%= payment_method.cost ? payment_method.cost : '' %></span>
+							</label>
+						</div>
+						<% }%>
+
+						<% }) %>
+					<% } %>
+					</div>
+			   </div>
 			</div>
 		</div>
+
 	<% } %>
 </form>
 </script>

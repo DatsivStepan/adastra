@@ -16,7 +16,6 @@
 				<span class="text"><%= model.config.title %> <%= (model.cart_weight) ? '('+model.cart_weight+')' : '' %></span>
 			</h4>
 		</div>
-
 		<div class="qc-checkout-product panel-body" >
 			<% if(model.error){ %>
 				<div class="alert alert-danger">
@@ -203,7 +202,6 @@
 			</div>
 			<% } %>
 			<div class="preloader row"><img class="icon" src="image/<%= config.general.loader %>" /></div>
-		
 		</div>
 	</div>
 

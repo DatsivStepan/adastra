@@ -145,6 +145,8 @@ class ControllerDQuickcheckoutPaymentAddress extends Controller {
         }
 
         $json['payment_address'] = $this->session->data['payment_address'];
+        var_dump($json);
+        exit;
 
         return $json;
 
