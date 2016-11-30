@@ -18,6 +18,28 @@ function ready() {
     var hSliderMinValue = 0;
     var hSliderMaxValue = image.offsetHeight;
 
+
+    //id опций
+
+    //COLOR OPTIONS
+    var CONTRAST_MIN50_ID  = "contrast(0.5)";
+    var CONTRAST_MIN25_ID  = "contrast(0.75)";
+    var CONTRAST_0_ID      = "clear";
+    var CONTRAST_PLUS25_ID = "contrast(1.25)";
+    var CONTRAST_PLUS50_ID = "contrast(1.5)";
+    var GRAYSCALECOLD_ID   = "cold_grey";
+    var GRAYSCALEWARM_ID   = "warm_grey";
+    var SEPIA_ID           = "sepia";
+    var BROWN_ID           = "brown";
+    var OCHRE_ID           = "ochre";
+
+    //SIZE OPTIONS
+    var WIDTH_ID         = "Ширина";
+    var HEIGHT_ID        = "Высота";
+    var WIDTH_OFFSET_ID  = "горизонтальноеСмещение";
+    var HEIGHT_OFFSET_ID = "вертикальноеСмещение";
+
+
     var cropper = new Cropper(image, {
         //aspectRatio: 16 / 9,
         //Enable to move the image
@@ -50,14 +72,14 @@ function ready() {
 
 
             //ширина
-            document.querySelector("input#input-option243").value = wSliderRealMaxValue;
+            document.querySelector("input#"+WIDTH_ID).value = wSliderRealMaxValue;
             //горизонтальное смещение
-            document.querySelector("input#input-option242").value = 'нет';
+            document.querySelector("input#"+WIDTH_OFFSET_ID).value = 'нет';
 
             //высота
-            document.querySelector("input#input-option241").value = hSliderRealMaxValue;
+            document.querySelector("input#"+HEIGHT_ID).value = hSliderRealMaxValue;
             //вертикальное смещение
-            document.querySelector("input#input-option240").value = 'нет';
+            document.querySelector("input#"+HEIGHT_OFFSET_ID).value = 'нет';
 
         },
         crop: function (e) {
@@ -80,14 +102,14 @@ function ready() {
             document.styleSheets[0].insertRule('#wSlider .noUi-handle:before { content: "'+w+'" }', 0);
 
             //ширина
-            document.querySelector("input#input-option243").value = w;
+            document.querySelector("input#"+WIDTH_ID).value = w;
             //горизонтальное смещение
-            document.querySelector("input#input-option242").value = wOffset;
+            document.querySelector("input#"+WIDTH_OFFSET_ID).value = wOffset;
 
             //высота
-            document.querySelector("input#input-option241").value = h;
+            document.querySelector("input#"+HEIGHT_ID).value = h;
             //вертикальное смещение
-            document.querySelector("input#input-option240").value = hOffset;
+            document.querySelector("input#"+HEIGHT_OFFSET_ID).value = hOffset;
 
         }
     });
@@ -136,68 +158,68 @@ function ready() {
         cropper.setCropBoxData(cropperSize);
     });
 
-    var contrast_min50 = document.getElementById('option[29]');
+    var contrast_min50 = document.getElementById(CONTRAST_MIN50_ID);
     contrast_min50.addEventListener("click", function(){
         document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(50%)";
         document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(50%)";
 
     });
-    var contrast_min25 = document.getElementById('option[30]');
+    var contrast_min25 = document.getElementById(CONTRAST_MIN25_ID);
     contrast_min25.addEventListener("click", function(){
         document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(75%)";
         document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(75%)";
 
     });
 
-    var contrast_0 = document.getElementById('option[34]');
+    var contrast_0 = document.getElementById(CONTRAST_0_ID);
     contrast_0.addEventListener("click", function(){
         document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(100%)";
         document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(100%)";
 
     });
 
-    var contrast_plus25 = document.getElementById('option[35]');
+    var contrast_plus25 = document.getElementById(CONTRAST_PLUS25_ID);
     contrast_plus25.addEventListener("click", function(){
         document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(125%)";
         document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(125%)";
 
     });
-    var contrast_plus50 = document.getElementById('option[36]');
+    var contrast_plus50 = document.getElementById(CONTRAST_PLUS50_ID);
     contrast_plus50.addEventListener("click", function(){
         document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(150%)";
         document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(150%)";
 
     });
 
-    var grayscaleCold = document.getElementById('option[37]');
+    var grayscaleCold = document.getElementById(GRAYSCALECOLD_ID);
     grayscaleCold.addEventListener("click", function(){
         document.querySelector("div.cropper-canvas > img").style.webkitFilter = "grayscale(100%)";
         document.querySelector("span.cropper-view-box > img").style.webkitFilter = "grayscale(100%)";
 
     });
-    var grayscaleWarm = document.getElementById('option[38]');
+    var grayscaleWarm = document.getElementById(GRAYSCALEWARM_ID);
     grayscaleWarm.addEventListener("click", function(){
         document.querySelector("div.cropper-canvas > img").style.webkitFilter = "grayscale(90%)";
         document.querySelector("span.cropper-view-box > img").style.webkitFilter = "grayscale(90%)";
 
     });
-    var sepia = document.getElementById('option[39]');
+    var sepia = document.getElementById(SEPIA_ID);
     sepia.addEventListener("click", function(){
         document.querySelector("div.cropper-canvas > img").style.webkitFilter = "sepia(100%)";
         document.querySelector("span.cropper-view-box > img").style.webkitFilter = "sepia(100%)";
 
     });
 
-    var brown = document.getElementById('option[40]');
+    var brown = document.getElementById(BROWN_ID);
     brown.addEventListener("click", function(){
-        /*document.querySelector("div.cropper-canvas > img").style.webkitFilter = "url(mona.png)";
-        document.querySelector("span.cropper-view-box > img").style.webkitFilter = "url(mona.png)";*/
+        document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(100%)";
+        document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(100%)";
 
     });
-    var ochre  = document.getElementById('option[41]');
+    var ochre  = document.getElementById(OCHRE_ID);
     ochre .addEventListener("click", function(){
-        /*document.querySelector("div.cropper-canvas > img").style.webkitFilter = "url(mona.png)";
-        document.querySelector("span.cropper-view-box > img").style.webkitFilter = "url(mona.png)";*/
+        document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(100%)";
+        document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(100%)";
 
     });
 
@@ -205,7 +227,7 @@ function ready() {
 
     var myFunction = function() {
         var txtSrc = this.getAttribute("txtSrc");
-        console.log(txtSrc);
+        //console.log(txtSrc);
 
         document.querySelector("div.cropper-canvas > img").style.backgroundImage = "url("+image.src+"), url("+txtSrc+")";
         document.querySelector("div.cropper-canvas > img").style.backgroundBlendMode = "multiply";

@@ -101,7 +101,7 @@
                             <label class="control-label"
                                    for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
                             <select name="option[<?php echo $option['product_option_id']; ?>]"
-                                    id="input-option<?php echo $option['product_option_id']; ?>" class="form-control">
+                                    id="<?php echo $option['name']; ?>" class="form-control">
                                 <option value=""><?php echo $text_select; ?></option>
                                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                                 <option value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
@@ -247,7 +247,7 @@
                                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                                 <div class="colorBox">
                                     <label class="my-custom-label"
-                                           id="option[<?php echo $option_value['product_option_value_id']; ?>]">
+                                           id="<?php echo $option_value['name']; ?>">
                                         <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
                                                value="<?php echo $option_value['product_option_value_id']; ?>"/>
                                         <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
@@ -336,7 +336,7 @@
                             <div class="rightRullerValue" id="maxHeight"><?php echo $height ?></div>
                             <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]"
                                    value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
-                                   id="input-option<?php echo $option['product_option_id']; ?>" class="form-control"/>
+                                   id="<?php echo $option['name']; ?>" class="form-control"/>
                         </div>
                         <?php
                                 break;
@@ -350,25 +350,25 @@
                             <div class="rightRullerValue" id="maxWidth"><?php echo $width ?></div>
                             <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]"
                                    value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
-                                   id="input-option<?php echo $option['product_option_id']; ?>" class="form-control"/>
+                                   id="<?php echo $option['name']; ?>" class="form-control"/>
                         </div>
                         <?php
                                 break;
-                                case 'вертикальное смещение':
+                                case 'вертикальноесмещение':
                                 ?>
                         <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
                             <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]"
                                    value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
-                                   id="input-option<?php echo $option['product_option_id']; ?>" class="form-control"/>
+                                   id="<?php echo $option['name']; ?>" class="form-control"/>
                         </div>
                         <?php
                                 break;
-                                case 'горизонтальное смещение':
+                                case 'горизонтальноесмещение':
                                 ?>
                         <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
                             <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]"
                                    value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
-                                   id="input-option<?php echo $option['product_option_id']; ?>" class="form-control"/>
+                                   id="<?php echo $option['name']; ?>" class="form-control"/>
                         </div>
                         <?php
                                 break;
