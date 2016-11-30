@@ -37,6 +37,7 @@
 
                 <div class="productDescriptionBox">
                     <h1 class="productTitle"><?php echo $heading_title; ?></h1>
+                    <h2 style="display: none;"> Автор </h2>
                     <div class="product_description-pc">
                         <div>
                             <?php echo $description; ?>
@@ -77,6 +78,7 @@
 
                     </div>
                 </div>
+
                 <div class="productPriceBox xs-hidden">
                     <?php if ($price) { ?>
                     <div class="list-unstyled">
