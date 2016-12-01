@@ -128,7 +128,7 @@
 <div class="hidden-sm hidden-md hidden-lg mod_category" style="width: 100%">
     <div class="menuname text-center category-name-padding " style="     margin: 6% 0 12px 0; border-bottom: 2px solid #e0deda; padding-bottom: 5%;" ><a class="Catalog">КАТАЛОГ</a></div>
     <div class="listcat">
-        <ul class="customdrop ul-category-style" style="padding: 0; margin: 0">
+        <ul class="customdrop ul-category-style" style="padding: 0; margin: 0;">
 
             <?php foreach ($categories as $category) { ?>
             <?php
@@ -141,8 +141,8 @@
                             $icon = ' category-icon-style_mob ';
                         }
                     ?>
-            <li class='<?= $classes; ?> li-category-style'
-                style="list-style-type: none;    margin-bottom: 22px;">
+            <li class='<?= $classes; ?> li-category-style_mob'
+                style=" list-style-type: none; margin-bottom: 22px; border-bottom: 1px solid #e0deda; padding-bottom: 15px">
                 <a class='clickParentMenu ' title="<?php echo $category['name'];?>">
                     <div class="<?= $icon; ?>"></div>
                             <span data-href="<?= $category['href']; ?>" style="cursor:pointer;"

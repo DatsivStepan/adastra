@@ -2,7 +2,7 @@
 <div class="panel-heading">
 	<h4 class="panel-title panel_h4_text"><?php echo $category['name']; ?></h4>
 </div>
-<div class="row mar_left_cont">
+<div class="row mar_left_cont KP_80" style="float: right">
   <?php foreach ($category['products'] as $product) { ?>
   <div class="product-layout col-lg-3 col-md-3 col-sm-3 hidden-xs mar_left_cont" >
     <div class="product-thumb transition">
