@@ -75,7 +75,7 @@
 </div>-->
 <div class="hidden-xs mod_category" style="width: 100%">
     <div class="listcat">
-        <ul class="customdrop ul-category-style" style="padding: 0; margin: 0">
+        <ul class="customdrop ul-category-style" style="padding-left: 20px; margin: 0">
 
             <?php foreach ($categories as $category) { ?>
             <?php
