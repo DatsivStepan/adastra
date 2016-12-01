@@ -1,3 +1,5 @@
+<script src="catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js"></script>
+<link href="catalog/view/javascript/jquery/owl-carousel/owl.carousel.css" media="screen" />
 <div class="hidden-xs banner-div-text">
     <img class="banner-logo-size" src="../../../catalog/view/theme/default/image/sliderBanner.png" ></br>
     <span class="banner-text-style">
@@ -18,7 +20,7 @@
 </div>
 
 <div id="slideshow<?php echo $module; ?>" class="owl-carousel" style="opacity: 1; margin: 0">
-  <?php foreach ($banners as $banner) { ?>
+    <?php foreach ($banners as $banner) { ?>
   <div class="item">
     <?php if ($banner['link']) { ?>
     <a href="<?php echo $banner['link']; ?>"><img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" /></a>
@@ -28,6 +30,7 @@
   </div>
   <?php } ?>
 </div>
+
 <script type="text/javascript"><!--
 $('#slideshow<?php echo $module; ?>').owlCarousel({
 	items: 6,
