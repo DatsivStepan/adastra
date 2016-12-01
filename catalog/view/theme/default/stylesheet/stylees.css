@@ -572,3 +572,57 @@
     }
 
 }
+
+.mfi_hea_title{
+    font-family: 'Philosopher' !important;
+    font-weight: 600;
+    cursor: pointer;
+    background: none!important;
+    font-size: 17px!important;
+    border: none!important;
+}
+.mfi_opt_cont_border{
+    border: none!important;
+}
+.mfi_tb_as_td_bord{
+    font-family: 'Philosopher' !important;
+    border: none!important;
+    font-size: 15px!important;
+    display: inline-block!important;
+    border-radius: 5px 5px!important;
+    padding: 0 7px 0px 7px!important;
+}
+.mfi_cont_box_bord{
+    border: none!important;
+    margin: -20px 0 0 0!important;
+}
+.mfi_tb_as_td_bord1{
+    border: none!important;
+    display: none!important;
+
+}
+.mfi_tb_as_td_bord1:checked + label{
+    background: #322d2d;
+    color: white!important;
+}
+.h3_box_hea_size{
+    font-family: 'Philosopher' !important;
+    background: #f0ebe2!important;
+    font-size: 16px!important;
+    padding: 12px 7px 12px 13px;
+}
+.mfi_opt_cont_mfi{
+    padding: 17px 0 22px 0!important;
+}
+.mfi_bord_bot_rig{
+    border-bottom: 1px solid #cdc1aa;
+
+}
+.box_mfi1_bord_rig{
+}
+.mfi_heading_text_marg{
+    margin: 16px 4px 0 -13px!important;
+}
+.bord_left_marg{
+    border-right: 1px solid #cdc1aa!important;
+}

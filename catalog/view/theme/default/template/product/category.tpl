@@ -15,7 +15,7 @@
         </ul>
     </div>
     <div class="container KP">
-        <div class="KP_20">
+        <div class="KP_20" style="border-right: 1px solid #cdc1aa;">
             <?php echo $column_left; ?>
         </div>
         <div class="KP_80"><?php echo $content_top; ?>
