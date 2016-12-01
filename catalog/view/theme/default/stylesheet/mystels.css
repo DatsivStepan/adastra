@@ -225,7 +225,7 @@ img.image_responsive{
 }
 .category-style_KP{
     font-family: 'Philosopher';
-    font-size: 30px;
+    font-size: 29px;
     font-weight: 300;
     color: #585858;
     list-style-type: none;
@@ -333,19 +333,48 @@ ul.ul_centr{
     font-size: 14px;
     color: #585858;
 }
+.a-category-style_mob{
+    font-family: 'Philosopher';
+    font-size: 30px;
+    color: #585858;
+}
 a.a_text_KP{
     font-family: 'Philosopher';
     font-size: 14px;
     color: #fff;
     margin-left: 14px;
-
+}
+a.a_text_KP_mob{
+    font-family: 'Philosopher';
+    font-size: 30px;
+    color: #fff;
+    margin-left: 14px;
 }
 a.a-category-child-style{
     font-family: 'Philosopher';
     font-size: 14px;
     color: #585858;
     margin-left: 14px;
-
+}
+a.a-category-child-style_mob{
+    font-family: 'Philosopher';
+    font-size: 30px;
+    color: #585858;
+    margin-left: 14px;
+}
+.category-icon-style_mob{
+    width: 19px;
+    height: 19px;
+    background: url("../image/Mala-strilka-vnuz.png")right center no-repeat;
+    display: inline-block;
+    float: right;
+}
+.category-icon-style_mob_1{
+    width: 19px;
+    height: 19px;
+    background: url("../image/Mala-strilka.png")right center no-repeat;
+    display: inline-block;
+    float: right;
 }
 .category-icon-style{
     width: 10px;
@@ -359,8 +388,112 @@ a.a-category-child-style{
     display: inline-block;
     background: url("../image/Znak-+.png")center no-repeat;
 }
+.ghhh{
+    background: url("../image/Veluka-strilka-vpravo.png")right center no-repeat!important;
+    margin-bottom: 10px !important;
+}
+.Catalog{
+    padding-right: 40px !important;
+}
+a.Catalog{
+    background: url("../image/Veluka-strilka-v-nuz-1.png")right center no-repeat;
+    cursor: pointer;
+    color: #585858;
+}
 @media (min-width: 320px)and (max-width: 599px) {
+    .map {
+        width: 100%;
+        height: 600px;
+    }
+    .email_adminy{
+        margin-left: 50px;
+    }
+    input.form-control_style {
+        font-family: 'Philosopher';
+        display: block;
+        width: 100%;
+        height: 50px;
+        padding: 6px 12px;
+        font-size: 20px;
+        line-height: 1.42857143;
+        color: #322d2d;
+        border: 1px solid #322d2d;
+    }
+    .form-control_style{
+        width: 100%;
+        height: 150px;
+        resize: none;
+        border: 1px solid #322d2d;
+        font-family: 'Philosopher';
+        padding: 6px 12px;
+        font-size: 20px;
+    }
+    h1.heading_title {
+        font-family: 'Philosopher';
+        font-size: 36px;
+        color: #585858;
+        text-align: center;
+        margin-bottom: 50px;
+        border-bottom: 3px solid#e0deda;
+        padding-bottom: 20px;
+    }
+    h1.text_comment {
+        font-family: 'Philosopher';
+        font-weight: 700;
+        font-size: 24px;
+        color: #0b0b0b;
+        font-style: italic;
+    }  .product-thumb_style .caption_style {
+           padding: 0 20px;
+           min-height: 0;
+       }
+    .text_katalog{
+        font-family: 'Philosopher';
+        font-size: 48px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .text_pid-kartunkov{
+        font-family: 'Philosopher';
+        font-size: 20px;
+        color: #888888;
 
+    }
+    .nav-tabs>li.active>a.text_tabs{
+        font-family: 'Philosopher';
+        border-bottom: 2px solid #000000;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        padding: 11px 0 0 0;
+
+    }
+    li>a.text_tabs{
+        font-family: 'Philosopher';
+        font-size: 22px;
+        letter-spacing: 5px;
+
+    }
+    ul.ul_centr{
+        margin: 6%;
+    }
+    .KP_25_mod{
+        min-height: 375px !important;
+        width: 230px !important;
+        padding: 0 !important;
+        margin: 10px 14px 0 0 !important;
+        float: left;
+    }
+    #owl-demo .item{
+        background: #42bdc2;
+        padding: 30px 0px;
+        margin: 5px;
+        color: #FFF;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        text-align: center;
+    }
 }
 @media (min-width: 600px)and (max-width: 767px){
     .map {
@@ -438,6 +571,13 @@ a.a-category-child-style{
     }
     ul.ul_centr{
         margin: 6%;
+    }
+    .KP_25_mod{
+        min-height: 375px !important;
+        width: 230px !important;
+        padding: 0 !important;
+        margin: 10px 14px 0 0 !important;
+        float: left;
     }
 }
 @media (min-width: 768px) and (max-width: 991px){
@@ -521,7 +661,7 @@ a.a-category-child-style{
     }
     .KP_25_mod{
         min-height: 375px !important;
-        width: 230 !important;
+        width: 230px !important;
         padding: 0 !important;
         margin: 10px 14px 0 0 !important;
         float: left;
@@ -626,6 +766,16 @@ a.a-category-child-style{
         padding: 0 !important;
         margin: 0 !important;
         float: left;
+    }
+    #owl-demo .item{
+        background: #42bdc2;
+        padding: 30px 0px;
+        margin: 5px;
+        color: #FFF;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        text-align: center;
     }
 }
 

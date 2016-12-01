@@ -2,14 +2,17 @@
 class ControllerModulelastbought extends Controller {
 	public function index($setting) {
 		$this->load->language('module/lastbought');
+		$this->document->addScript("https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js");
+		$this->document->addStyle("https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css");
 
 		$data['lang'] = $this->language->get('code');
 
-		$data['heading_title'] = $this->language->get('heading_title');
+		$data['heading_title'] = 'Только что купили';
 		$data['text_tax'] = $this->language->get('text_tax');
 		$data['button_cart'] = $this->language->get('button_cart');
 		$data['button_wishlist'] = $this->language->get('button_wishlist');
 		$data['button_compare'] = $this->language->get('button_compare');
+		$data['text_price'] = 'Цена:';
 
 		$this->load->model('catalog/category');
 
