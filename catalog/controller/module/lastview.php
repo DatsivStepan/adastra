@@ -3,6 +3,8 @@ class ControllerModuleLastview extends Controller {
     public function index($setting)
     {
         $this->load->language('module/lastview');
+        $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+        $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
 
         $data['heading_title'] = $this->language->get('heading_title');
 

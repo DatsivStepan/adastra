@@ -1,3 +1,5 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" rel="stylesheet" media="screen" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js" type="text/javascript"></script>
 <div class="hidden-xs banner-div-text">
     <img class="banner-logo-size" src="../../../catalog/view/theme/default/image/sliderBanner.png" ></br>
     <span class="banner-text-style">
@@ -29,10 +31,13 @@
   <?php } ?>
 </div>
 <script type="text/javascript"><!--
-$('#slideshow<?php echo $module; ?>').owlCarousel({
-	items: 6,
-	autoPlay: 3000,
-	singleItem: true,
-	pagination: true
-});
+
+    $(document).ready(function(){
+        $('#slideshow<?php echo $module; ?>').owlCarousel({
+            items: 6,
+            autoPlay: 3000,
+            singleItem: true,
+            pagination: true
+        });
+    })
 --></script>
