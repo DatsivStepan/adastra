@@ -2,8 +2,8 @@
 class ControllerModulelastbought extends Controller {
 	public function index($setting) {
 		$this->load->language('module/lastbought');
-		$this->document->addScript("https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js");
-		$this->document->addStyle("https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css");
+		$this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+		$this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
 
 		$data['lang'] = $this->language->get('code');
 
