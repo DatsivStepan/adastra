@@ -77,6 +77,7 @@ class ControllerCommonHeader extends Controller {
             $data['is_home'] = 'home';
         }elseif($this->request->get['route'] == 'common/home'){
             $data['is_home'] = 'home';
+
         }
 
 		$data['wishlist'] = $this->url->link('account/wishlist', '', 'SSL');
