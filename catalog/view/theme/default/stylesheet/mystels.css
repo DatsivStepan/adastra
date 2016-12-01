@@ -337,6 +337,7 @@ ul.ul_centr{
     font-family: 'Philosopher';
     font-size: 30px;
     color: #585858;
+    margin-left: 5%;
 }
 a.a_text_KP{
     font-family: 'Philosopher';
@@ -348,7 +349,7 @@ a.a_text_KP_mob{
     font-family: 'Philosopher';
     font-size: 30px;
     color: #fff;
-    margin-left: 14px;
+    margin-left: 10%;
 }
 a.a-category-child-style{
     font-family: 'Philosopher';
@@ -360,7 +361,7 @@ a.a-category-child-style_mob{
     font-family: 'Philosopher';
     font-size: 30px;
     color: #585858;
-    margin-left: 14px;
+    margin-left: 10%;
 }
 .category-icon-style_mob{
     width: 19px;
@@ -399,6 +400,11 @@ a.Catalog{
     background: url("../image/Veluka-strilka-v-nuz-1.png")right center no-repeat;
     cursor: pointer;
     color: #585858;
+}
+.li-category-style_mob:last-child{
+    margin: 6% 0 12px 0 !important;
+    border-bottom: 3px solid #585858!important;
+    padding-bottom: 5%!important;
 }
 @media (min-width: 320px)and (max-width: 599px) {
     .map {
