@@ -79,7 +79,8 @@
         [1400, 13],
         [1600, 15]
       ],
-      navigation : true
+      navigation : true,
+      autoPlay: true
 
     });
 
