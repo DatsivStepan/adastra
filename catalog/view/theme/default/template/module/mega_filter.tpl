@@ -43,7 +43,12 @@ $buttons[$bKey] = $bVal ? sprintf( $button_template, $bKey, implode( '', $bVal )
 
 	<div class="box mfilter-box mfilter-<?php echo $_position; ?><?php echo ! empty( $hide_container ) ? ' mfilter-hide-container' : '' ?><?php echo ! empty( $_displayOptionsAs ) && $_displayOptionsAs == 'modern_horizontal' ? ' mfilter-hide' : ''; ?> box_mfi1_bord_rig" id="mfilter-box-<?php echo (int) $_idx; ?>">
 		<?php if( $heading_title ) { ?>
-		<h3 class="box-heading h3_box_hea_size"><?php echo $heading_title; ?></h3>
+		<div class="hidden-xs">
+			<h3 class="box-heading h3_box_hea_size"><?php echo $heading_title; ?></h3>
+		</div>
+		<div class=" hidden-lg hidden-md hidden-sm">
+			<h3 class="box-heading h3_box_hea_size"><a class="Catalog1"><?php echo $heading_title; ?></a></h3>
+		</div>
 		<?php } ?>
 		<div class="box-content mfilter-content mfi_cont_box_bord<?php echo empty( $settings['calculate_number_of_products'] ) || empty( $settings['show_number_of_products'] ) ? ' mfilter-hide-counter' : ''; ?>">
 			<?php echo $buttons['top']; ?>
@@ -95,6 +100,7 @@ $buttons[$bKey] = $bVal ? sprintf( $button_template, $bKey, implode( '', $bVal )
 						?> mfi_hea_title">
 					<div class="mfilter-heading-content">
 						<div class="mfilter-heading-text mfi_heading_text_marg mfi_heading_text_marg"><span><?php echo $filter['name']; ?></span></div>
+						<div class="hidden-lg hidden-md hidden-sm"><i class="mfilter-head-icon mfi_opt_cont_mfi"></i></div>
 					</div>
 				</div>
 				<?php } ?>
@@ -110,7 +116,7 @@ $buttons[$bKey] = $bVal ? sprintf( $button_template, $bKey, implode( '', $bVal )
 						?>>
 				<div class="mfilter-opts-container mfi_opt_cont_border mfi_opt_cont_mfi">
 					<div class="mfilter-content-wrapper">
-						<div class="mfilter-options">
+						<div class="mfilter-options" style="padding: 0">
 							<?php if( $base_type == 'categories' ) { ?>
 							<div class="mfilter-category mfilter-category-<?php echo $filter['type']; ?>">
 								<?php if( $filter['type'] == 'related' ) { ?>
@@ -308,7 +314,7 @@ $buttons[$bKey] = $bVal ? sprintf( $button_template, $bKey, implode( '', $bVal )
 						<?php echo ! empty( $params[$filter['seo_name']] ) && in_array( $option['value'], $params[$filter['seo_name']] ) ? ' checked="checked"' : ''; ?>
 						value="<?php echo str_replace( '"', '&quot;', $option['value'] ); ?>" />
 						<!--</div>-->
-						<label class="mfilter-tb-as-td mfi_tb_as_td_bord" for="mfilter-opts-attribs-<?php echo (int) $_idx; ?>-<?php echo $base_id; ?>-<?php echo $option['key']; ?>">
+						<label class="mfilter-tb-as-td mfi_tb_as_td_bord mfi_tg_td_bord" for="mfilter-opts-attribs-<?php echo (int) $_idx; ?>-<?php echo $base_id; ?>-<?php echo $option['key']; ?>">
 							<?php if( in_array( $_tmp_type, array( 'image_list_radio', 'image_list_checkbox' ) ) ) { ?>
 							<img src="<?php echo $option['image']; ?>" /> <?php echo $option['name']; ?>
 							<?php } else { ?>
@@ -370,6 +376,13 @@ $buttons[$bKey] = $bVal ? sprintf( $button_template, $bKey, implode( '', $bVal )
 <?php } ?>
 
 <script type="text/javascript">
+	$(document).ready(function () {
+
+		$('.Catalog1').click(function() {
+			$(".box-content").toggle();
+			$(this).toggleClass('ghh2');
+		});
+	});
 	MegaFilterLang.text_display = '<?php echo $text_display; ?>';
 	MegaFilterLang.text_list	= '<?php echo $text_list; ?>';
 	MegaFilterLang.text_grid	= '<?php echo $text_grid; ?>';
