@@ -2,22 +2,29 @@
 <link href="catalog/view/javascript/jquery/owl-carousel/owl.carousel.css" media="screen" />
 
 <div class="hidden-xs banner-div-text">
-    <img class="banner-logo-size" src="../../../catalog/view/theme/default/image/sliderBanner.png" ></br>
-    <span class="banner-text-style">
-        интернер магазин креативных картин предлагает самые лучшие</br>
-        и самые креативные картины в интернете по самым низким</br>
-        ценам от производителя.</br>
-        <a class="banner-linc-style" href="">Подробнее о нас<img src="../../../catalog/view/theme/default/image/bannerLinkIcon.png" style="width: 4%"></br></a>
-    </span>
+    <div class="banner-div-main">
+        <div class="desktop-img-div-style"><img class="banner-logo-size" src="../../../catalog/view/theme/default/image/sliderBanner.png" ></br></div>
+        <div class="desktop-text-div-style">
+            <span class="banner-text-style">
+                интернер магазин креативных картин предлагает самые лучшие</br>
+                и самые креативные картины в интернете по самым низким</br>
+                ценам от производителя.</br>
+                <a class="banner-linc-style" href="">Подробнее о нас<img src="../../../catalog/view/theme/default/image/bannerLinkIcon.png" style="width: 4%"></br></a>
+            </span>
+        </div>
+    </div>
 </div>
-<div class="hidden-xs hidden-sm hidden-md hidden-lg hidden-xl banner-div-text">
-    <img src="../../../catalog/view/theme/default/image/sliderBanner.png" style="width: 70%"></br>
-    <span class="banner-text-style">
-        интернер магазин креативных картин предлагает самые лучшие</br>
-        и самые креативные картины в интернете по самым низким</br>
-        ценам от производителя.</br>
-        <a class="banner-linc-style" href="">Подробнее о нас<img src="../../../catalog/view/theme/default/image/bannerLinkIcon.png" style="width: 4%"></br></a>
-    </span>
+<div class="hidden-sm hidden-md hidden-lg hidden-xl mobile-banner-div-style">
+    <div class="banner-div-main">
+        <div class="mobile-img-div-style"><img src="../../../catalog/view/theme/default/image/sliderBanner.png" style="width: 65%"></div>
+        <div class="mobile-text-div-style">
+            <span class="mobile-banner-text-style">
+                интернер магазин креативных картин предлагает самые лучшие
+                и самые креативные картины в интернете по самым низким
+                ценам от производителя.
+            </span>
+        </div>
+    </div>
 </div>
 
 <div id="slideshow<?php echo $module; ?>" class="owl-carousel" style="opacity: 1; margin: 0">

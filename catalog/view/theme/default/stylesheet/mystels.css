@@ -623,6 +623,7 @@ a.Catalog{
         margin: -34px 0 0px 200px;
     }
     .text_na_kartuni {
+        right: 0;
         position: absolute;
         margin: 131px 0% 0% 33%;
         width: 56%;
@@ -803,6 +804,7 @@ a.Catalog{
         margin: -36px 0 0px 262px;
     }
     .text_na_kartuni{
+        right: 0;
         position: absolute;
         margin: 120px 0% 0% 35%;
         width: 56%;
@@ -960,6 +962,7 @@ a.Catalog{
         margin: -41px 0 0px 262px;
     }
     .text_na_kartuni{
+        right: 0;
         position: absolute;
         margin: 120px 0% 0% 37%;
         width: 56%;
