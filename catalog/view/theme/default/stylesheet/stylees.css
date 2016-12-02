@@ -723,3 +723,14 @@
         font-size: 20px!important;
     }
 }
+@media (max-width: 380px) {
+    .h3_box_hea_size{
+        font-size: 18px!important;
+    }
+    .mfi_hea_title{
+        font-size: 18px!important;
+    }
+    .mfi_tg_td_bord{
+        font-size: 17px!important;
+    }
+}
