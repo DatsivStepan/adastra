@@ -485,20 +485,10 @@ a.Catalog{
     }
     .KP_25_mod{
         min-height: 375px !important;
-        width: 230px !important;
+        width: 93% !important;
         padding: 0 !important;
-        margin: 10px 14px 0 0 !important;
+        margin: 10px 14px 0 15px !important;
         float: left;
-    }
-    #owl-demo .item{
-        background: #42bdc2;
-        padding: 30px 0px;
-        margin: 5px;
-        color: #FFF;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-        text-align: center;
     }
 }
 @media (min-width: 600px)and (max-width: 767px){
@@ -580,10 +570,13 @@ a.Catalog{
     }
     .KP_25_mod{
         min-height: 375px !important;
-        width: 230px !important;
+        width: 86% !important;
         padding: 0 !important;
-        margin: 10px 14px 0 0 !important;
+        margin: 10px 14px 0 15px !important;
         float: left;
+    }
+    .owl-wrapper{
+        left: 10px!important;
     }
 }
 @media (min-width: 768px) and (max-width: 991px){
