@@ -1,8 +1,8 @@
-<div id="cart" class="" style="cursor: pointer">
+<div id="cart" class="" style="cursor: pointer; text-align: center;">
   <a href="<?php echo $cart; ?>" class="cart-linc-style">
   <span   data-toggle="" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle hidden-xs">
-    <span  style="padding-left: 30%;"><img src="../../../catalog/view/theme/default/image/korzuna.png"></br></span>
-    <span class="cart-text-style" id="cart-total">В корзине <?php echo $text_items; ?> шт.</span>
+    <span ><img src="../../../catalog/view/theme/default/image/korzuna.png"></br></span>
+    <span class="cart-text-style" id="cart-total">В корзине </br> <?php echo $text_items; ?> шт.</span>
   </span></a>
   <a href="<?php echo $cart; ?>" class="cart-linc-style">
   <span   data-toggle="" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle hidden-sm hidden-md hidden-lg hidden-xl">

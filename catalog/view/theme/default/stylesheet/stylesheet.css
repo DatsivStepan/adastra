@@ -793,7 +793,6 @@ h2.price {
 .div-phone-style{
 	float: left;
 	width: 14%;
-
 }
 .div-cart-style{
 	padding-top: 10px !important;
@@ -810,8 +809,7 @@ h2.price {
 	color: #0b0b0b;
 }
 .footer-bottom-div-style{
-    /*border-top: 1px solid #5e5e5e ;*/
-
+    border-top: 1px solid #5e5e5e ;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
@@ -1011,6 +1009,7 @@ h2.price {
 }
 .div-home-contact-style{
     padding-top: 2%;
+	color: #0b0b0b;
 }
 .div-advantages-bg{
     background: url("../image/home-bg.png") center no-repeat;
@@ -1168,8 +1167,7 @@ h2.price {
 }
 .banner-div-text{
 	position: absolute;
-	top: 21%;
-	left: 20%;
+	width: 100%;
 	z-index: 99;
 }
 .banner-text-style{
@@ -1183,6 +1181,7 @@ h2.price {
 	text-decoration: underline
 }
 .slider-img-style{
+	height: 380px;
 	width: 100%;
 }
 .cart-linc-style, .cart-linc-style:hover, .cart-linc-style:focus{
@@ -1205,6 +1204,51 @@ h2.price {
 }
 .product-icon-size{
 	font-size: 20px;
+}
+.mobile-cart-span-style{
+	padding-left: 30%;
+}
+.mobile-banner-div-style{
+	top: 2%;
+	position: absolute;
+	z-index: 99;
+	width: 100%;
+}
+.banner-div-main{
+	height: 374px;
+	position: relative;
+}
+.mobile-img-div-style{
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	margin-left: -128px;
+}
+.mobile-text-div-style{
+	position: absolute;
+	bottom: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 2%;
+	padding-right: 2%;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+.mobile-banner-text-style{
+	font-family: 'Philosopher';
+	font-weight: 700;
+	font-size: 20px;
+	color: #000;
+}
+.desktop-img-div-style{
+	position: absolute;
+	top: 23%;
+	left: 20%;
+}
+.desktop-text-div-style{
+	position: absolute;
+	bottom: 0;
+	left: 20%;
 }
 @media (max-width: 1216px) and (min-width: 1121px ){
 	.advantages-number_1-div-style{
@@ -1334,6 +1378,7 @@ h2.price {
 		font-family: 'Philosopher';
 		font-weight: 700;
 		font-size: 25px;
+		color: #000;
 	}
 	.div-products-style{
 		font-size: 17px;
@@ -1360,6 +1405,7 @@ h2.price {
 		font-weight: 700;
 		padding-left: 12%;
 		font-size: 15px;
+		color: #0b0b0b ;
 	}
 	.footer-contact-text-left-style{
 		font-family: 'Philosopher';
@@ -1388,7 +1434,165 @@ h2.price {
 		padding-left: 10%;
 	}
 }
+@media (max-width: 1600px) and (min-width: 1400px )   {
+	.advantages-number_1-div-style{
+		position: absolute;
+		z-index: 100;
+		bottom: -2px;
+		width: 12%;
+		left: -10px;
+	}
+	.footer-contact-text-right-style{
+		font-family: 'Philosopher';
+		font-weight: 700;
+		padding-left: 12%;
+		font-size: 15px;
+	}
+	.footer-contact-text-left-style{
+		font-family: 'Philosopher';
+		font-weight: 700;
+		font-size: 25px;
+	}
+	.div-products-style{
+		font-size: 20px;
+		padding-top: 20px !important;
+		width: 14% !important;
+		float: left;
+	}
+	.products-style .title {
+		font-size: 17px;
+		cursor: pointer;
+
+	}
+	.product-icon-size{
+		font-size: 20px;
+	}
+	.header-phone-style{
+		font-family: 'Philosopher';
+		font-weight: 700;
+		font-size: 20px;
+	}
+	.header-contact-text-style-1{
+		font-family: 'Philosopher';
+		font-weight: 400;
+		font-size: 15px;
+	}
+	.header-contact-text-style-2{
+		font-family: 'Philosopher';
+		font-weight: 700;
+		font-size: 15px;
+	}
+	.cart-text-style{
+		font-family: 'Philosopher';
+		font-weight: 200;
+		font-size: 15px;
+	}
+
+	.header-menu-text-style{
+		font-family: 'Philosopher';
+		font-weight: 400;
+		color: #0b0b0b;
+		font-size: 15px;
+		padding-left: 5px;
+	}
+	.div-cart-padding{
+		padding-left: 10%;
+	}
+}
+@media (max-width: 1900px) and (min-width: 1601px )   {
+	.advantages-number_1-div-style{
+		position: absolute;
+		z-index: 100;
+		bottom: -2px;
+		width: 12%;
+		left: -10px;
+	}
+	.footer-contact-text-right-style{
+		font-family: 'Philosopher';
+		font-weight: 700;
+		padding-left: 12%;
+		font-size: 15px;
+	}
+	.footer-contact-text-left-style{
+		font-family: 'Philosopher';
+		font-weight: 700;
+		font-size: 25px;
+	}
+	.div-products-style{
+		font-size: 25px;
+		padding-top: 20px !important;
+		width: 14% !important;
+		float: left;
+	}
+	.products-style .title {
+		font-size: 20px;
+		cursor: pointer;
+
+	}
+	.product-icon-size{
+		font-size: 25px;
+	}
+	.header-phone-style{
+		font-family: 'Philosopher';
+		font-weight: 700;
+		font-size: 20px;
+	}
+	.header-contact-text-style-1{
+		font-family: 'Philosopher';
+		font-weight: 400;
+		font-size: 16px;
+	}
+	.header-contact-text-style-2{
+		font-family: 'Philosopher';
+		font-weight: 700;
+		font-size: 16px;
+	}
+	.cart-text-style{
+		font-family: 'Philosopher';
+		font-weight: 200;
+		font-size: 15px;
+	}
+	.header-menu-text-style{
+		font-family: 'Philosopher';
+		font-weight: 400;
+		color: #0b0b0b;
+		font-size: 16px !important;
+		padding-left: 5px;
+	}
+	.div-cart-padding{
+		padding-left: 10%;
+	}
+}
+@media (max-width: 1117px) and (min-width: 919px )   {
+	.header-phone-style{
+		font-family: 'Philosopher';
+		font-weight: 700;
+		font-size: 15px;
+	}
+	.product-icon-size{
+		font-size: 16px;
+	}
+	.div-phone-style {
+		padding-top: 1%;
+		float: left;
+		width: 14%;
+	}
+	.div-products-style {
+		font-size: 17px;
+		padding-top: 30px !important;
+		width: 14% !important;
+		float: left;
+	}
+	.header-logo-div-style{
+		padding-top: 1.5%;
+	}
+}
 @media (max-width: 918px) and (min-width: 800px )   {
+	.div-phone-style{
+		padding-top: 1%;
+		float: left;
+		width: 14%;
+	}
 	.advantages-number_1-div-style{
 		position: absolute;
 		z-index: 100;
@@ -1409,9 +1613,12 @@ h2.price {
 	}
 	.div-products-style{
 		font-size: 15px;
-		padding-top: 20px !important;
+		padding-top: 28px !important;
 		width: 14% !important;
 		float: left;
+	}
+	.header-logo-div-style{
+		padding-top: 2%;
 	}
 	.products-style .title {
 		font-size: 10px;
@@ -1429,19 +1636,18 @@ h2.price {
 	.header-contact-text-style-1{
 		font-family: 'Philosopher';
 		font-weight: 400;
-		font-size: 10px;
+		font-size: 12px;
 	}
 	.header-contact-text-style-2{
 		font-family: 'Philosopher';
 		font-weight: 700;
-		font-size: 10px;
+		font-size: 12px;
 	}
 	.cart-text-style{
 		font-family: 'Philosopher';
 		font-weight: 200;
-		font-size: 9px;
+		font-size: 11px;
 	}
-	.head
 	.header-menu-text-style{
 		font-family: 'Philosopher';
 		font-weight: 400;
@@ -1454,6 +1660,14 @@ h2.price {
 	}
 }
 @media (max-width: 799px) and (min-width: 767px )   {
+	.div-phone-style{
+		padding-top: 1%;
+		float: left;
+		width: 14%;
+	}
+	.header-logo-div-style{
+		padding-top: 3%;
+	}
 	.advantages-number_1-div-style{
 		position: absolute;
 		z-index: 100;
@@ -1474,7 +1688,7 @@ h2.price {
 	}
 	.div-products-style{
 		font-size: 12px;
-		padding-top: 20px !important;
+		padding-top: 30px !important;
 		width: 14% !important;
 		float: left;
 	}
@@ -1504,9 +1718,8 @@ h2.price {
 	.cart-text-style{
 		font-family: 'Philosopher';
 		font-weight: 200;
-		font-size: 9px;
+		font-size: 11px;
 	}
-	.head
 	.header-menu-text-style{
 		font-family: 'Philosopher';
 		font-weight: 400;

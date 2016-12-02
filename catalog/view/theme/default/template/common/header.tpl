@@ -93,7 +93,7 @@
   <?php if($data['is_home'] == 'home'){ ?>
       <div class="container div-header-style hidden-xs">
         <nav >
-          <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+          <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 header-logo-div-style">
             <div id="logo">
               <?php if ($logo) { ?>
               <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
