@@ -712,7 +712,7 @@
     }
 
 }
-@media (max-width: 550px) {
+@media (max-width: 600px) {
     .h3_box_hea_size{
         font-size: 23px!important;
     }
@@ -721,6 +721,34 @@
     }
     .mfi_tg_td_bord{
         font-size: 20px!important;
+    }
+    .catalog3{
+        font-size: 36px!important;
+    }
+    .a-category-style_mob23{
+        font-size: 24px!important;
+    }
+    a.a_text_KP_mob_20{
+        font-size: 23px!important;
+    }
+    .style_mob20{
+        font-size: 23px!important;
+    }
+    .pull-right_KP_20{
+        font-size: 23px!important;
+    }
+    .text_style_20{
+        font-size: 18px!important;
+    }
+    .korzuna_style-20{
+        background: url(../image/korzuna_2.png) no-repeat!important;
+        width: 58px!important;
+        height: 64px!important;
+        margin: 1px 0 0 36%!important;
+        background-size: 70%!important;
+    }
+    .pull-right_KP_20-1{
+        margin-left: 25%!important;
     }
 }
 @media (max-width: 380px) {
@@ -733,4 +761,33 @@
     .mfi_tg_td_bord{
         font-size: 17px!important;
     }
+    .catalog3{
+        font-size: 30px!important;
+    }
+    .a-category-style_mob23{
+        font-size: 19px!important;
+    }
+    a.a_text_KP_mob_20{
+        font-size: 19px!important;
+    }
+    .style_mob20{
+        font-size: 19px!important;
+    }
+    .pull-right_KP_20{
+        font-size: 20px!important;
+    }
+    .text_style_20{
+        font-size: 15px!important;
+    }
+    .korzuna_style-20{
+        background: url(../image/korzuna_2.png) no-repeat!important;
+        width: 58px!important;
+        height: 64px!important;
+        margin: 1px 0 0 36%!important;
+        background-size: 70%!important;
+    }
+    .pull-right_KP_20-1{
+        margin-left: 20%!important;
+    }
+
 }
