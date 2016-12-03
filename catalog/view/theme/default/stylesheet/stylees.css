@@ -900,3 +900,9 @@
     padding-bottom: 18%;
     text-align: center!important;
 }
+.bot_hover_20_stile:hover{
+    border-color: #fff!important;
+    text-decoration: none!important;
+    background-color: #fff!important;
+    color: #585858!important;
+}

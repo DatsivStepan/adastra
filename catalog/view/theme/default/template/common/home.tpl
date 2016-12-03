@@ -95,11 +95,11 @@
     <div class="col-sm-12 col-xs-12 col-lg-12 col-md-12 adas_new_text" style="">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs ul_centr ul_center_20_mar" role="tablist">
-            <li role="presentation" class="active"><a class="a_adas_sul news text_tabs text_tabs_20_text" href="#panely1"
+            <li role="presentation" class="active"><a class="a_adas_sul news text_tabs text_tabs_20_text bot_hover_20_stile" href="#panely1"
                                                       aria-controls="home" role="tab" data-toggle="tab">Новинки</a></li>
-            <li role="presentation"><a class="a_adas_sul hyty_prod text_tabs text_tabs_20_text" href="#panely2" aria-controls="profile"
+            <li role="presentation"><a class="a_adas_sul hyty_prod text_tabs text_tabs_20_text bot_hover_20_stile" href="#panely2" aria-controls="profile"
                                        role="tab" data-toggle="tab">Хиты продаж</a></li>
-            <li role="presentation"><a class="a_adas_sul stocks text_tabs text_tabs_20_text" href="#panely3" aria-controls="messages"
+            <li role="presentation"><a class="a_adas_sul stocks text_tabs text_tabs_20_text bot_hover_20_stile" href="#panely3" aria-controls="messages"
                                        role="tab" data-toggle="tab">Акции</a></li>
         </ul>
     </div>
