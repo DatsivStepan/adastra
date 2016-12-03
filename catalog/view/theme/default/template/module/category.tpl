@@ -126,7 +126,7 @@
 </div>
 
 <div class="hidden-sm hidden-md hidden-lg mod_category" style="width: 100%">
-    <div class="menuname text-center category-name-padding " style="     margin: 6% 0 12px 0; border-bottom: 2px solid #e0deda; padding-bottom: 5%;" ><a class="Catalog">КАТАЛОГ</a></div>
+    <div class="menuname text-center category-name-padding " style="     margin: 6% 0 12px 0; border-bottom: 2px solid #e0deda; padding-bottom: 5%;" ><a class="Catalog catalog3">КАТАЛОГ</a></div>
     <div class="listcat">
         <ul class="customdrop ul-category-style" style="padding: 0; margin: 0;">
 
@@ -146,7 +146,7 @@
                 <a class='clickParentMenu ' title="<?php echo $category['name'];?>">
                     <div class="<?= $icon; ?>"></div>
                             <span data-href="<?= $category['href']; ?>" style="cursor:pointer;"
-                                  class="clickCategoryName a-category-style_mob">
+                                  class="clickCategoryName a-category-style_mob a-category-style_mob23">
                                 <?php echo $category['name']; ?>
                             </span>
                 </a>
@@ -161,11 +161,11 @@
     margin-left: -12px; margin-bottom: 20px; margin-top: 10px ">
 
                         <a href="<?php echo $child['href'];?>" tabindex="-1" title="<?php echo $child['name'];?>"
-                           class="a_text_KP_mob"><?php echo $child['name'];?></a>
+                           class="a_text_KP_mob a_text_KP_mob_20"><?php echo $child['name'];?></a>
                     </li>
                     <?php } else { ?>
                     <li class="li-category-child-style" style="list-style-type: none;     margin: 21px 0 10px 0;">
-                        <a href="<?php echo $child['href'];?>" class="a-category-child-style_mob" tabindex="-1"
+                        <a href="<?php echo $child['href'];?>" class="a-category-child-style_mob style_mob20" tabindex="-1"
                            title="<?php echo $child['name'];?>"><?php echo $child['name'];?></a>
 
                     </li>
