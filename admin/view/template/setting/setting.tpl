@@ -144,12 +144,15 @@
                     <?php } ?>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-config_telephone2"><?php echo $entry_telephone2; ?></label>
-                  <div class="col-sm-10">
-                    <input type="text" name="config_telephone2" value="<?php echo $config_telephone2; ?>" placeholder="<?php echo config_telephone2; ?>" id="input-config_telephone2" class="form-control" />
-                  </div>
+              <div class="form-group required">
+                <label class="col-sm-2 control-label" for="input-telephone2"><?php echo $entry_telephone2; ?></label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_telephone2" value="<?php echo $config_telephone2; ?>" placeholder="<?php echo $entry_telephone2; ?>" id="input-telephone" class="form-control" />
+                  <?php if ($error_telephone2) { ?>
+                  <div class="text-danger"><?php echo $error_telephone2; ?></div>
+                  <?php } ?>
                 </div>
+              </div>
                 <div class="form-group">
                   <label class="col-sm-2 control-label" for="input-image"><?php echo $entry_image; ?></label>
                   <div class="col-sm-10"><a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="<?php echo $thumb; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a>
