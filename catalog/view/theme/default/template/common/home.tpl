@@ -94,12 +94,12 @@
     </div>
     <div class="col-sm-12 col-xs-12 col-lg-12 col-md-12 adas_new_text" style="">
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs ul_centr" role="tablist">
-            <li role="presentation" class="active"><a class="a_adas_sul news text_tabs" href="#panely1"
+        <ul class="nav nav-tabs ul_centr ul_center_20_mar" role="tablist">
+            <li role="presentation" class="active"><a class="a_adas_sul news text_tabs text_tabs_20_text" href="#panely1"
                                                       aria-controls="home" role="tab" data-toggle="tab">Новинки</a></li>
-            <li role="presentation"><a class="a_adas_sul hyty_prod text_tabs" href="#panely2" aria-controls="profile"
+            <li role="presentation"><a class="a_adas_sul hyty_prod text_tabs text_tabs_20_text" href="#panely2" aria-controls="profile"
                                        role="tab" data-toggle="tab">Хиты продаж</a></li>
-            <li role="presentation"><a class="a_adas_sul stocks text_tabs" href="#panely3" aria-controls="messages"
+            <li role="presentation"><a class="a_adas_sul stocks text_tabs text_tabs_20_text" href="#panely3" aria-controls="messages"
                                        role="tab" data-toggle="tab">Акции</a></li>
         </ul>
     </div>
@@ -133,7 +133,7 @@
     <div class="middle-home-img-div-style">
         <div class="container">
             <span class="middle-home-text-title">География работы</span>
-            <div class="container middle-home-div-text">
+            <div class="container middle-home-div-text middle-home-div-text20">
             <span class="middle-home-text">
                 Мы работаем со всей Россией (упор на Москву, Питер, Ростов, Сочи), а также зарубежьем. Мы готовы продукцию
                 отправлять транспортными компаниями за границу. Мы работаем со всей Россией (упор на Москву, Питер, Ростов, Сочи), а также зарубежьем. Мы готовы продукцию
