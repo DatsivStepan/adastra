@@ -37,24 +37,24 @@
 
   <div class="row hidden-sm hidden-md hidden-lg">
     <?php foreach ($products as $product) { ?>
-    <div class="img" style="position: relative; margin-bottom: 8%; margin-top: 8%;">
+    <div class="img img2020" style="position: relative; margin-bottom: 8%; margin-top: 8%;">
       <img src="<?php echo $product['thumb']; ?>" style="width:75%;     margin-left: 13%;     min-height: 340px">
 
       <div class="conteiner_proz_3 hidden-sm hidden-md hidden-lg" style="margin-bottom: 55px;">
-        <h4 style="    text-align: center; margin-top: 25px;"><a class="pull-right_KP_2"
+        <h4 style="    text-align: center; margin-top: 25px;"><a class="pull-right_KP_2 pull-right_KP_20"
                                                                  href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
         </h4>
-        <div class="pull-right_KP_2-1"
+        <div class="pull-right_KP_2-1 pull-right_KP_20-120"
              style="border-bottom: 1px solid #fff; width: 100px; margin-left: 40%; margin-top: 4%;">
 
         </div>
-        <h5 class="text_style_1" style="text-align: center;  padding-top: 15px;">
+        <h5 class="text_style_1 text_style_20" style="text-align: center;  padding-top: 15px;">
           5 видов фактур на выбор
         </h5>
-        <h5 class="text_style_2" style="text-align: center">
+        <h5 class="text_style_2 text_style_2120" style="text-align: center">
           22 стандартных размера
         </h5>
-        <button class="korzuna_style-2" type="button"
+        <button class="korzuna_style-2 korzuna_style-201" type="button"
                 onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
         </button>
       </div>
