@@ -150,7 +150,7 @@
                     Наши </br> преимущества
                 </span></br>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 advantages_1-div-style">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 advantages_1-div-style advantages_1-div-style_20">
                 <span class="advantages_1-style">
                     интернет магазин фресок Галерея Адастра обладает</br>следующими преимуществами:
                 </span>
@@ -284,7 +284,7 @@
                         <img src="../../../catalog/view/theme/default/image/phone.png">
                     </div>
                     <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style">
-                        <span class="footer-contact-text-right-style"><?php echo $telephone; ?></span>
+                        <span class="footer-contact-text-right-style" style="color: #494545;"><?php echo $telephone; ?></span>
                     </div>
                 </div>
             </div>
@@ -294,7 +294,7 @@
                         <img src="../../../catalog/view/theme/default/image/phone.png">
                     </div>
                     <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style">
-                        <span class="footer-contact-text-right-style"><?php echo $telephone; ?></span>
+                        <span class="footer-contact-text-right-style" style="color: #494545;"><?php echo $telephone; ?></span>
                     </div>
                 </div>
             </div>
@@ -304,7 +304,7 @@
                         <img src="../../../catalog/view/theme/default/image/mail.png">
                     </div>
                     <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-email-text-style">
-                        <span class="footer-contact-text-right-style"><?php echo $email; ?></span>
+                        <span class="footer-contact-text-right-style" style="color: #494545;"><?php echo $email; ?></span>
                     </div>
                 </div>
             </div>
