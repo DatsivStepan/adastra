@@ -49,7 +49,7 @@
                             <input type="text" name="name" value="<?php echo $name; ?>" id="name"
                                    class="form-control_style text" placeholder="<?php echo $entry_name; ?>"/>
                             <ul id="errorMasege" style="padding-left: 15px">
-                                <code style="display: none" class="name error-style">Некоректно вказана електроная почта</code>
+                                <code style="display: none" class="name error-style">Некоректно вказано имя</code>
                             </ul>
                         </div>
                     </div>
