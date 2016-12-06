@@ -1,7 +1,7 @@
 <?php echo $header; ?>
 <div class="container ">
-    <div class="container_breadcrumb hidden-xs">
-        <ul class="breadcrumb_contact hidden-xs  col-sm-12 col-md-12 col-lg-12" style="padding: 0">
+    <div class=" container_breadcrumb hidden-xs">
+        <ul class="breadcrumb_contact_style hidden-xs  col-sm-12 col-md-12 col-lg-12 no-padding">
             <?php foreach ($breadcrumbs as $breadcrumb) { ?>
             <?php if ($breadcrumb ['href']==('')){ ?>
             <li class="breadcrumb_text"><?php echo $breadcrumb['text']; ?></li>
@@ -12,7 +12,7 @@
             <?php } ?>
         </ul>
     </div>
-    <div class="row" style="    margin-bottom: 30%;"><?php echo $column_left; ?>
+    <div class="row margin_botton_map" style="    margin-bottom: 30%;"><?php echo $column_left; ?>
         <?php if ($column_left && $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } elseif ($column_left || $column_right) { ?>
@@ -23,7 +23,7 @@
         <div id="content" class="'col-xs-12 col-sm-12 col-md-12 col-lg-12"><?php echo $content_top; ?>
             <h1 class="heading_title"><?php echo $heading_title; ?></h1>
 
-            <div class="row col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 no-padding">
                 <div class="row" style="    margin-bottom: 30px;">
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><strong class="text"><?php echo $text_address; ?></strong></div>
                 <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"><p class="address"><?php echo $address; ?></p></div>
@@ -39,7 +39,7 @@
                 <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"><p class="open"><?php echo $open; ?></p></div>
                 </div>
                 <div class="row">
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg=8"><h1 class="text_comment"><?php echo $comment; ?></h1></div>
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg=8"><h1 class="text_comment"><?php echo $comment; ?></h1></div>
                 </div>
                 <div class="row">
                 <form action="" method="post" id="contact" class="email_adminy">
@@ -79,7 +79,7 @@
                 </form>
             </div>
             </div>
-            <div class="map col-xs-12 col-sm-5 col-md-5 col-lg-5" id="map" style=""></div>
+            <div class="map col-xs-12 col-sm-5 col-md-6 col-lg-6 no-padding" id="map"></div>
         </div>
         <?php echo $column_right; ?></div>
 </div>
