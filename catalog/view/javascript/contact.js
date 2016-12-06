@@ -20,7 +20,6 @@ $(document).ready(function () {
                 preset: 'islands#greenDotIconWithCaption',
                 iconColor: '#ed4543'
             }))
-
     }
 
 

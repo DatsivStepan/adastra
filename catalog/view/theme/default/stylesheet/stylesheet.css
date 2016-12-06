@@ -762,11 +762,13 @@ h2.price {
 	padding-right: 8%;
 }
 .div-header-style-1{
-	background: rgba(252, 251, 250, 0.8);
-	width: 100%;
-    padding-top: 10px;
-	padding-left: 8%;
-	padding-right: 8%;
+	background: rgba(252, 251, 250, 0);
+	padding-top: 10px;
+
+}
+.heder_border{
+	border-bottom: 2px solid #f0ebe2;
+	margin-bottom: 20px;
 }
 .products-style .title {
     font-size: 15px;
@@ -795,7 +797,6 @@ h2.price {
 	width: 14%;
 }
 .div-cart-style{
-	padding-top: 10px !important;
 	width: 10%;
 	float: left;
 	padding-left: 2%;
@@ -858,18 +859,22 @@ h2.price {
 }
 .header-phone-style{
 	font-family: 'Philosopher';
-	font-weight: 700;
+	font-weight: 500;
 	font-size: 20px;
+	color: #322d2d;
 }
 .header-contact-text-style-1{
 	font-family: 'Philosopher';
 	font-weight: 400;
 	font-size: 15px;
+	color: #494545;
 }
 .header-contact-text-style-2{
 	font-family: 'Philosopher';
 	font-weight: 700;
 	font-size: 15px;
+	border-bottom: 1px solid #322d2d;
+	color: #322d2d;
 }
 .header-div-contact-style{
 	text-align: center;
