@@ -158,6 +158,7 @@ class ModelCatalogInformation extends Model {
 			);
 		}
 
+
 		return $information_description_data;
 	}
 

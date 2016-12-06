@@ -1250,6 +1250,100 @@ h2.price {
 	bottom: 0;
 	left: 20%;
 }
+.m-a-p-img-div{
+	height: 250px;
+	border-radius: 145px;
+	width: 21%;
+	background-size: cover;
+	float: left;
+	margin: 3%;
+	margin-top: 0;
+}
+.m-a-p-text-div{
+	width: 65%;
+	float: right;
+}
+.m-a-p-title-style{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-family: 'Philosopher';
+	font-size: 22px;
+	color: #322d2d;
+	font-weight: 600;
+}
+.m-a-p-text-style{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-family: 'Philosopher';
+	font-size: 19px;
+	color: #322d2d;
+	font-weight: 100;
+}
+.m-a-p-properties-div-style{
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.fabric_thickness-title-style{
+	font-family: 'Philosopher';
+	font-weight: 600;
+	font-size: 18px;
+	float: left;
+	width: 60%;
+	color: #0b0b0b;
+	margin-bottom: 30px;
+}
+.fabric_thickness-content-style{
+	font-family: 'Philosopher';
+	font-weight: 600;
+	font-size: 18px;
+	float: right;
+	width: 40%;
+	color: #0b0b0b;
+	margin-bottom: 30px;
+	padding-left: 20px;
+}
+
+.MPWJ-title-style{
+	font-family: 'Philosopher';
+	font-weight: 600;
+	font-size: 18px;
+	float: left;
+	width: 60%;
+	color: #0b0b0b;
+	margin-bottom: 30px;
+}
+.MPWJ-content-style{
+	font-family: 'Philosopher';
+	font-weight: 600;
+	font-size: 18px;
+	float: right;
+	width: 40%;
+	color: #0b0b0b;
+	margin-bottom: 30px;
+	padding-left: 20px;
+}
+.prices-title-style{
+	font-family: 'Philosopher';
+	font-weight: 600;
+	font-size: 18px;
+	float: left;
+	width: 60%;
+	color: #0b0b0b;
+	margin-bottom: 30px;
+}
+.prices-content-style{
+	font-family: 'Philosopher';
+	font-weight: 600;
+	font-size: 18px;
+	float: right;
+	width: 40%;
+	color: #0b0b0b;
+	margin-bottom: 30px;
+	padding-left: 20px;
+
+}
+
 @media (max-width: 1216px) and (min-width: 1121px ){
 	.advantages-number_1-div-style{
 		position: absolute;
