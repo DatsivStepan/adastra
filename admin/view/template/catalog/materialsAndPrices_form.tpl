@@ -141,7 +141,7 @@
                   <input type="hidden" name="image" value="<?php echo $image; ?>" id="input-image" />
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" style="display: none">
                 <label class="col-sm-2 control-label" for="input-keyword"><span data-toggle="tooltip" title="<?php echo $help_keyword; ?>"><?php echo $entry_keyword; ?></span></label>
                 <div class="col-sm-10">
                   <input type="text" name="keyword" value="<?php echo $keyword; ?>" placeholder="<?php echo $entry_keyword; ?>" id="input-keyword" class="form-control" />
@@ -153,7 +153,7 @@
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-bottom"><span data-toggle="tooltip" title="<?php echo $help_bottom; ?>"><?php echo $entry_bottom; ?></span></label>
                 <div class="col-sm-10">
-                  <div class="checkbox">
+                  <div class="checkbox" style="display: none">
                     <label>
                       <?php if ($bottom) { ?>
                       <input type="checkbox" name="bottom" value="1" checked="checked" id="input-bottom" />

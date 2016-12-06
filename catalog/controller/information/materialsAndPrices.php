@@ -8,7 +8,7 @@ class ControllerInformationmaterialsAndPrices extends Controller {
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+			'text' => $this->language->get('Главная'),
 			'href' => $this->url->link('common/home')
 		);
 
@@ -41,7 +41,7 @@ class ControllerInformationmaterialsAndPrices extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => 'Материалы и Цены',
-				'href' => $this->url->link('materialsAndPrices/materialsAndPrices', 'mp_id=' .  $materialsAndPrices_id)
+				'href' => ''
 			);
 
 //			$data['heading_title'] = $materialsAndPrices_info['title'];
