@@ -1,6 +1,6 @@
 .title_adas_o_galer{
     font-family:'Philosopher';
-    font-size: 38px;
+    font-size: 41px;
     color: #322d2d;
 }
 .breadcrumb_text_2{
@@ -23,6 +23,7 @@
     font-family:'Philosopher';
     font-size: 17px;
     color: #322d2d;
+    margin-bottom: 4%;
 }
 .adas_text_o_nac_nuz{
     font-family:'Philosopher';
@@ -31,7 +32,7 @@
 }
 .text_faktury_frecku{
     font-family:'Philosopher';
-    font-size: 22px;
+    font-size: 25px;
     color: #322d2d;
     font-weight: 600;
 }
@@ -919,4 +920,112 @@
 }
 .advantages_1-div-style_20{
     padding-bottom: 40px!important;
+}
+.bac_img_np_20{
+    height: 240px;
+    border-radius: 145px;
+    width: 21%;
+    background-size: cover;
+    float: left;
+    margin: 3%;
+    margin-top: 0;
+}
+.bac_img_np_20_2{
+    height: 240px;
+    border-radius: 145px;
+    width: 21%;
+    background-size: cover;
+    float: left;
+    margin: 3%;
+    margin-top: 0;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    .bac_img_np_20{
+        height: 240px;
+        width: 24%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .bac_img_np_20_2{
+        height: 254px;
+        width: 33%;
+        margin-left: 35%;
+
+    }
+}
+@media (min-width: 720px) and (max-width: 767px) {
+    .bac_img_np_20_2{
+        height: 225px;
+        width: 31%;
+        margin-left: 33%;
+    }
+}
+@media (min-width: 670px) and (max-width: 719px) {
+    .bac_img_np_20_2{
+        height: 212px;
+        width: 31%;
+        margin-left: 33%;
+    }
+}
+@media (min-width: 670px) and (max-width: 719px) {
+    .bac_img_np_20_2{
+        height: 212px;
+        width: 31%;
+        margin-left: 33%;
+    }
+}
+@media (min-width: 620px) and (max-width: 669px) {
+    .bac_img_np_20_2{
+        height: 193px;
+        width: 31%;
+        margin-left: 33%;
+    }
+}
+@media (min-width: 570px) and (max-width: 619px) {
+    .bac_img_np_20_2{
+        height: 171px;
+        width: 30%;
+        margin-left: 33%;
+    }
+}
+@media (min-width: 520px) and (max-width: 569px) {
+    .bac_img_np_20_2{
+        height: 160px;
+        width: 30%;
+        margin-left: 33%;
+    }
+}
+@media (min-width: 470px) and (max-width: 519px) {
+    .bac_img_np_20_2{
+        height: 142px;
+        width: 30%;
+        margin-left: 33%;
+    }
+}
+@media (min-width: 420px) and (max-width: 469px) {
+    .bac_img_np_20_2{
+        height: 131px;
+        width: 30%;
+        margin-left: 33%;
+    }
+}
+@media (min-width: 370px) and (max-width: 419px) {
+    .bac_img_np_20_2{
+        height: 114px;
+        width: 30%;
+        margin-left: 33%;
+    }
+}
+@media (min-width: 320px) and (max-width: 369px) {
+    .bac_img_np_20_2{
+        height: 99px;
+        width: 30%;
+        margin-left: 33%;
+    }
+}
+.text_np_20{
+    font-family: 'Philosopher';
+    color: #8a8781;
+    font-size: 17px;
+    padding: 0;
 }
