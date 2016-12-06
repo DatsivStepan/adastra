@@ -28,6 +28,7 @@ $_['text_filter']                      = 'Фильтры';
 $_['text_fraud']                       = 'Защита от мошенников';
 $_['text_geo_zone']                    = 'Географические зоны';
 $_['text_information']                 = 'Статьи';
+$_['text_materialsAndPrices']          = 'Материалы и цены';
 $_['text_installer']                   = 'Установка расширений';
 $_['text_language']                    = 'Языки';
 $_['text_layout']                      = 'Макеты';
