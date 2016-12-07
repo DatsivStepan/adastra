@@ -810,7 +810,7 @@ h2.price {
 	color: #0b0b0b;
 }
 .footer-bottom-div-style{
-    border-top: 1px solid #5e5e5e ;
+    border-top: 1px solid #000000 ;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
@@ -818,7 +818,7 @@ h2.price {
 	font-family: 'Philosopher';
 	font-weight: 400;
 	font-size: 15px;
-	color: #0b0b0b;
+	color: #767676;
 }
 .footer-bottom-text-padding{
 	padding-top: 20px;
@@ -1041,7 +1041,7 @@ h2.price {
 }
 .advantages-div-style{
     border-top:2px solid #0b0b0b;
-    border-left:2px solid #0b0b0b;
+    border-left:1px solid #0b0b0b;
     border-right:2px solid #0b0b0b;
 	position: relative;
 	margin-bottom: 1%;

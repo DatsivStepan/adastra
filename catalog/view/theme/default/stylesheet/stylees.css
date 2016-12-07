@@ -1029,3 +1029,12 @@
     font-size: 17px;
     padding: 0;
 }
+.advantages_style_20{
+    text-transform: uppercase!important;
+}
+.footer-bottom-text-padding_20{
+    font-family: 'Philosopher';
+    font-weight: 400;
+    font-size: 15px;
+    color: #262626!important;
+}

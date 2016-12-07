@@ -145,8 +145,8 @@
     </div>
     <div class="row div-advantages-bg no-margin">
         <div class="container advantages-container-style">
-            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <span class="advantages-style">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-top: 5%;">
+                <span class="advantages-style advantages_style_20">
                     Наши </br> преимущества
                 </span></br>
             </div>
