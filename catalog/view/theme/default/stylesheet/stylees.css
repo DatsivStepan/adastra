@@ -1046,3 +1046,25 @@
     right: 10px;
     top: -8%!important;
 }
+.cart-text-style1_20{
+    font-family: 'Philosopher';
+    font-weight: 200;
+    font-size: 15px;
+    position: inherit!important;
+    display: block;
+    top: 2%;
+    right: 14%;
+    margin: -50px 0px 0px 8px;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    display: block;
+    max-width: 105px;
+    height: auto;
+}
+.div-products-mb-style {
+    font-size: 40px!important;
+    padding-bottom: 0!important;
+    padding-top: 0px !important;
+    width: 14% !important;
+    float: left!important;
+}

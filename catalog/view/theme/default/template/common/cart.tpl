@@ -7,7 +7,7 @@
   <a href="<?php echo $cart; ?>" class="cart-linc-style">
   <span   data-toggle="" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle hidden-sm hidden-md hidden-lg hidden-xl">
     <span><img src="../../../catalog/view/theme/default/image/mbCartIcon.png"></br></span>
-    <span class="cart-text-style1" id="cart-total"><?php echo $text_items; ?></span>
+    <span class="cart-text-style1 cart-text-style1_20" id="cart-total"><?php echo $text_items; ?></span>
   </span></a>
   <!--<ul class="dropdown-menu pull-right">
     <?php if ($products || $vouchers) { ?>
