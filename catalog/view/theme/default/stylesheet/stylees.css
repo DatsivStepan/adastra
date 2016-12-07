@@ -910,9 +910,9 @@
     background: rgba(255,255,254, 0.8)!important;
 }
 .products-category-style:hover {
-    background-color: #322d2d;
+    /*background-color: #322d2d;*/
     color: white!important;
-    padding: 0 20px 0 8px!important;
+    /*padding: 0 20px 0 8px!important;*/
 }
 .banner-linc-style:hover{
     color: black;

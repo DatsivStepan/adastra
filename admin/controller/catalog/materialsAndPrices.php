@@ -527,35 +527,35 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
     }
 
     protected function validateDelete() {
-        if (!$this->user->hasPermission('modify', 'catalog/materialsAndPrices')) {
-            $this->error['warning'] = $this->language->get('error_permission');
-        }
-
-        $this->load->model('setting/store');
-
-        foreach ($this->request->post['selected'] as $mp_id) {
-            if ($this->config->get('config_account_id') == $mp_id) {
-                $this->error['warning'] = $this->language->get('error_account');
-            }
-
-            if ($this->config->get('config_checkout_id') == $mp_id) {
-                $this->error['warning'] = $this->language->get('error_checkout');
-            }
-
-            if ($this->config->get('config_affiliate_id') == $mp_id) {
-                $this->error['warning'] = $this->language->get('error_affiliate');
-            }
-
-            if ($this->config->get('config_return_id') == $mp_id) {
-                $this->error['warning'] = $this->language->get('error_return');
-            }
-
-            $store_total = $this->model_setting_store->getTotalStoresByInformationId($mp_id);
-
-            if ($store_total) {
-                $this->error['warning'] = sprintf($this->language->get('error_store'), $store_total);
-            }
-        }
+//        if (!$this->user->hasPermission('modify', 'catalog/materialsAndPrices')) {
+//            $this->error['warning'] = $this->language->get('error_permission');
+//        }
+//
+//        $this->load->model('setting/store');
+//
+//        foreach ($this->request->post['selected'] as $mp_id) {
+//            if ($this->config->get('config_account_id') == $mp_id) {
+//                $this->error['warning'] = $this->language->get('error_account');
+//            }
+//
+//            if ($this->config->get('config_checkout_id') == $mp_id) {
+//                $this->error['warning'] = $this->language->get('error_checkout');
+//            }
+//
+//            if ($this->config->get('config_affiliate_id') == $mp_id) {
+//                $this->error['warning'] = $this->language->get('error_affiliate');
+//            }
+//
+//            if ($this->config->get('config_return_id') == $mp_id) {
+//                $this->error['warning'] = $this->language->get('error_return');
+//            }
+//
+//            $store_total = $this->model_setting_store->getTotalStoresByInformationId($mp_id);
+//
+//            if ($store_total) {
+//                $this->error['warning'] = sprintf($this->language->get('error_store'), $store_total);
+//            }
+//        }
 
         return !$this->error;
     }
