@@ -2,7 +2,7 @@
   <div class=" hidden-xs">
       <div class="container">
           <div class="footer-div-contact-style row" style="">
-              <!--<div class="row no-margin" style="padding-bottom: 10px">
+              <div class="row no-margin" style="padding-bottom: 10px">
                   <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
                       <span class="footer-contact-text-left-style">
                           Контакты:
@@ -39,7 +39,7 @@
                       </div>
                   </div>
               </div>
-          </div> -->
+          </div>
           <div class="footer-bottom-div-style row ">
             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                 <?php if ($logo) { ?>
