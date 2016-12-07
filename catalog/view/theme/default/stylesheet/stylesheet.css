@@ -905,11 +905,14 @@ h2.price {
 	width: 300px;
 }
 .header-products-div-style{
-    display: none;
-    top:79px;
+    display: none ;
+    top:100%;
     position: absolute;
     z-index: 100;
-    background: rgba(255,255,254, 0.9);
+    background: rgba(255,255,254, 0.8);
+	width: 100%;
+	margin: 0	 4px 0 -8%;
+
 }
 .products-title-style{
     color: #0b0b0b;
@@ -917,12 +920,20 @@ h2.price {
     font-weight: 700;
     font-size:15px;
 }
-.products-category-style , .products-category-style:hover, .products-category-style:focus{
+.products-category-style{
     line-height: 25px;
     color: #0b0b0b;
     font-family: 'Helvetica';
     font-weight: 200;
     font-size:13px;
+}
+.products-category-span-style:hover{
+	display: block;
+	background-color: #0b0b0b;
+	color: #fff;
+}
+.products-category-span-style:hover a{
+	color: #fff;
 }
 .product-div-style{
     padding-left: 15px;
@@ -1348,7 +1359,7 @@ h2.price {
 	padding-left: 20px;
 
 }
-
+.
 @media (max-width: 1216px) and (min-width: 1121px ){
 	.advantages-number_1-div-style{
 		position: absolute;

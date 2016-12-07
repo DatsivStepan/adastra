@@ -104,7 +104,7 @@
           <div id="products" class="products-style fa fa-bars  no-padding div-products-style">
             <span class="title header-text-style" style="padding-left: 5px">ПРОДУКЦИЯ <span id="product_1" class="fa fa-angle-down product-icon-size"></span></span>
           </div>
-          <div id="products_id" class="header-products-div-style ged_style_np_20" style="width: 100%;margin: 0 4px 0 -8%;">
+          <div id="products_id" class="header-products-div-style " style="width: 100%;margin: 0 4px 0 -8%;">
             <div class=" container" style="">
               <?php foreach ($categories as $category) { ?>
               <?php if ($category['children']) { ?>
@@ -115,7 +115,7 @@
                 <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
                 <span class="">
               <?php foreach ($children as $child) { ?>
-                  <span class=""><a class="products-category-style" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span></br>
+                  <span class="products-category-span-style"><a class="products-category-style" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span>
                   <?php } ?>
             </span>
                 <?php } ?>
