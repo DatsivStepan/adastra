@@ -108,14 +108,14 @@
             <div class=" container" style="">
               <?php foreach ($categories as $category) { ?>
               <?php if ($category['children']) { ?>
-              <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 product-div-style">
+              <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 product-div-style" style="border-right-style: dotted;border-right-width: 1px;">
                 <div class="product-div-title-style">
               <span class="products-title-style"><?php echo $category['name']; ?>
                 </div>
                 <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
                 <span class="">
               <?php foreach ($children as $child) { ?>
-                  <span class="products-category-span-style"><a class="products-category-style" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span>
+                  <span class="products-category-span-style" style="display: block;padding: 0 0 0 6px;"><a class="products-category-style" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span>
                   <?php } ?>
             </span>
                 <?php } ?>
