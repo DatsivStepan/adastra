@@ -173,7 +173,7 @@
             <?php echo $cart; ?>
          </div>
         <div id="phone_id" class="col-xs-3  no-padding mb-div-phone-style" style="float: right">
-          <img style="width: 22%" src="../../../catalog/view/theme/default/image/phone.png">
+          <img style="width: 42px;margin: -6px 0 0 0;" src="../../../catalog/view/theme/default/image/phone.png">
         </div>
 
         </div>
@@ -194,7 +194,7 @@
             </div>
             <?php foreach ($categories as $category) { ?>
             <?php if ($category['children']) { ?>
-            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 product-div-style">
+
               <div class="product-div-title-style">
               <span class="products-title-style"><?php echo $category['name']; ?>
               </div>
@@ -206,7 +206,7 @@
             </span>
               <?php } ?>
               </span>
-            </div>
+
             <?php } else { ?>
             <span class="products-category-style"><?php echo $category['name']; ?></span>
             <?php } ?>
@@ -238,7 +238,7 @@
         <?php echo $cart; ?>
       </div>
       <div id="phone_id" class="col-xs-3  no-padding mb-div-phone-style" style="float: right">
-        <img style="width: 22%" src="../../../catalog/view/theme/default/image/phone.png">
+        <img style="width: 42px;margin: -6px 0 0 0;" src="../../../catalog/view/theme/default/image/phone.png">
       </div>
 
     </div>
@@ -259,7 +259,6 @@
         </div>
         <?php foreach ($categories as $category) { ?>
         <?php if ($category['children']) { ?>
-        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 product-div-style">
           <div class="product-div-title-style">
               <span class="products-title-style"><?php echo $category['name']; ?>
           </div>
@@ -270,7 +269,6 @@
             <?php } ?>
             </span>
           <?php } ?>
-        </div>
         </span>
         <?php } else { ?>
         <span class="products-category-style"><?php echo $category['name']; ?></span>
