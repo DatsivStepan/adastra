@@ -120,7 +120,7 @@ div.required .control-label:before {
 }
 #top .btn-link strong {
 	font-size: 14px;
-        line-height: 14px;
+	line-height: 14px;
 }
 #top-links {
 	padding-top: 6px;
@@ -545,10 +545,10 @@ footer h5 {
 	float: none;
 }
 @media (min-width: 767px) {
-.product-list .product-thumb .image {
-	float: left;
-	padding: 0 15px;
-}
+	.product-list .product-thumb .image {
+		float: left;
+		padding: 0 15px;
+	}
 }
 .product-thumb h4 {
 	font-weight: bold;
@@ -561,20 +561,20 @@ footer h5 {
 	margin-left: 230px;
 }
 @media (max-width: 1200px) {
-.product-grid .product-thumb .caption {
-	min-height: 210px;
-	padding: 0 10px;
-}
+	.product-grid .product-thumb .caption {
+		min-height: 210px;
+		padding: 0 10px;
+	}
 }
 @media (max-width: 767px) {
-.product-list .product-thumb .caption {
-	min-height: 0;
-	margin-left: 0;
-	padding: 0 10px;
-}
-.product-grid .product-thumb .caption {
-	min-height: 0;
-}
+	.product-list .product-thumb .caption {
+		min-height: 0;
+		margin-left: 0;
+		padding: 0 10px;
+	}
+	.product-grid .product-thumb .caption {
+		min-height: 0;
+	}
 }
 .product-thumb .rating {
 	padding-bottom: 10px;
@@ -717,21 +717,21 @@ h2.price {
 
 /* fixed colum left + content + right*/
 @media (min-width: 768px) {
-    #column-left  .product-layout .col-md-3 {
-       width: 100%;
-    }
+	#column-left  .product-layout .col-md-3 {
+		width: 100%;
+	}
 
 	#column-left + #content .product-layout .col-md-3 {
-       width: 50%;
-    }
+		width: 50%;
+	}
 
 	#column-left + #content + #column-right .product-layout .col-md-3 {
-       width: 100%;
-    }
+		width: 100%;
+	}
 
-    #content + #column-right .product-layout .col-md-3 {
-       width: 100%;
-    }
+	#content + #column-right .product-layout .col-md-3 {
+		width: 100%;
+	}
 }
 
 /* fixed product layouts used in left and right columns */
@@ -746,8 +746,8 @@ h2.price {
 
 /* Missing focus and border color to overwrite bootstrap */
 .btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
-    background-image: none;
-    background-color: #df5c39;
+	background-image: none;
+	background-color: #df5c39;
 }
 .no-margin{
 	margin: 0 !important;
@@ -757,7 +757,7 @@ h2.price {
 	z-index: 100;
 	background: rgba(252, 251, 250, 0.8);
 	width: 100%;
-    padding-top: 10px;
+	padding-top: 10px;
 	padding-left: 8%;
 	padding-right: 8%;
 }
@@ -771,8 +771,8 @@ h2.price {
 	margin-bottom: 20px;
 }
 .products-style .title {
-    font-size: 14px;
-    cursor: pointer;
+	font-size: 14px;
+	cursor: pointer;
 
 }
 .cart-div-style{
@@ -810,7 +810,7 @@ h2.price {
 	color: #0b0b0b;
 }
 .footer-bottom-div-style{
-    border-top: 1px solid #000000 ;
+	border-top: 1px solid #000000 ;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
@@ -905,27 +905,27 @@ h2.price {
 	width: 300px;
 }
 .header-products-div-style{
-    display: none ;
-    top:100px;
-    position: absolute;
-    z-index: 100;
-    background: rgba(255,255,254, 0.8);
+	display: none ;
+	top: 86px;
+	position: absolute;
+	z-index: 100;
+	background: rgba(255,255,254, 0.8);
 	width: 100%;
 	margin: 0	 4px 0 -8%;
 
 }
 .products-title-style{
-    color: #0b0b0b;
-    font-family: 'Helvetica';
-    font-weight: 700;
-    font-size:13px;
+	color: #0b0b0b;
+	font-family: 'Helvetica';
+	font-weight: 700;
+	font-size:13px;
 }
 .products-category-style{
-    line-height: 25px;
-    color: #0b0b0b;
-    font-family: 'Helvetica';
-    font-weight: 200;
-    font-size:13px;
+	line-height: 25px;
+	color: #0b0b0b;
+	font-family: 'Helvetica';
+	font-weight: 200;
+	font-size:13px;
 }
 .products-category-span-style:hover{
 	display: block;
@@ -936,12 +936,12 @@ h2.price {
 	color: #fff;
 }
 .product-div-style{
-    padding-left: 15px;
-    padding-top: 20px;
-    padding-bottom: 10px;
+	padding-left: 15px;
+	padding-top: 20px;
+	padding-bottom: 10px;
 }
 .product-div-title-style{
-    padding-bottom: 10px;
+	padding-bottom: 10px;
 }
 .div-products-mb-style{
 	font-size: 40px;
@@ -1024,44 +1024,44 @@ h2.price {
 	color: #0b0b0b;
 }
 .div-home-contact-style{
-    padding-top: 2%;
+	padding-top: 2%;
 	color: #0b0b0b;
 }
 .div-advantages-bg{
-    background: url("../image/home-bg.png") center no-repeat;
-    background-size: cover;
+	background: url("../image/home-bg.png") center no-repeat;
+	background-size: cover;
 }
 .advantages-style{
-    font-family: 'Philosopher';
-    font-weight: 700;
-    font-size: 40px;
-    color: #0b0b0b;
-    line-height: 40px;
+	font-family: 'Philosopher';
+	font-weight: 700;
+	font-size: 40px;
+	color: #0b0b0b;
+	line-height: 40px;
 }
 .advantages-container-style{
-    text-align: center;
-    margin-top: 30px;
+	text-align: center;
+	margin-top: 30px;
 }
 .advantages_1-style{
-    font-family: 'Philosopher';
-    color: #0b0b0b;
+	font-family: 'Philosopher';
+	color: #0b0b0b;
 }
 .advantages_1-div-style{
-    padding-top: 17px;
-    padding-bottom: 17px;
+	padding-top: 17px;
+	padding-bottom: 17px;
 }
 .advantages-div-style{
-    border-top:2px solid #0b0b0b;
-    border-left:1px solid #0b0b0b;
-    border-right:2px solid #0b0b0b;
+	border-top:2px solid #0b0b0b;
+	border-left:1px solid #0b0b0b;
+	border-right:2px solid #0b0b0b;
 	position: relative;
 	margin-bottom: 1%;
 }
 .advantages-content-title-style{
-    font-family: 'Philosopher';
-    font-weight: 700;
-    font-size: 20px;
-    color: #0b0b0b;
+	font-family: 'Philosopher';
+	font-weight: 700;
+	font-size: 20px;
+	color: #0b0b0b;
 }
 .advantages-content_1-div-style{
 	padding-top: 25.5px;
@@ -1144,16 +1144,16 @@ h2.price {
 	left: 18px;
 }
 .div-border-style{
-    margin-right: -17px;
-    border-bottom: 2px solid #0b0b0b;
-    float: right;
-    width: 87%;
+	margin-right: -17px;
+	border-bottom: 2px solid #0b0b0b;
+	float: right;
+	width: 87%;
 }
 .div-border_1-style{
-    margin-left: -15px;
-    float: left;
-    border-bottom: 2px solid #0b0b0b;
-    width: 8%;
+	margin-left: -15px;
+	float: left;
+	border-bottom: 2px solid #0b0b0b;
+	width: 8%;
 }
 .mobile-contact-div-style{
 	padding-bottom: 25px;
@@ -1197,7 +1197,6 @@ h2.price {
 	text-decoration: underline
 }
 .slider-img-style{
-	height: 380px;
 	width: 100%;
 }
 .cart-linc-style, .cart-linc-style:hover, .cart-linc-style:focus{
@@ -1231,7 +1230,7 @@ h2.price {
 	width: 100%;
 }
 .banner-div-main{
-	height: 374px;
+	height: 367px;
 	position: relative;
 }
 .mobile-img-div-style{
@@ -1460,11 +1459,11 @@ h2.price {
 	.banner-text-style{
 		font-family: 'Philosopher';
 		font-weight: 100;
-		font-size: 12px;
+		font-size: 16px;
 		color: #000;
 	}
 	.banner-logo-size{
-		width: 50% !important;
+		width: 94% !important;
 	}
 }
 .banner-logo-size{
@@ -1845,7 +1844,7 @@ h2.price {
 	.slider-img-style{
 		width: inherit;
 		max-width: none;
-		height: 100%;
+		height: 100%!important;
 	}
 	.banner-div-text{
 		position: absolute;
@@ -1913,10 +1912,10 @@ h2.price {
 	}
 }
 #parallelogram {
-    width: 150px;
-    height: 100px;
-    -webkit-transform: skew(20deg);
-    -moz-transform: skew(20deg);
-    -o-transform: skew(20deg);
-    background: red;
+	width: 150px;
+	height: 100px;
+	-webkit-transform: skew(20deg);
+	-moz-transform: skew(20deg);
+	-o-transform: skew(20deg);
+	background: red;
 }
