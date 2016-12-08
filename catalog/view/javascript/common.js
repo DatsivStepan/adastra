@@ -166,7 +166,7 @@ var cart = {
 					// Need to set timeout otherwise it wont update the total
 					setTimeout(function () {
 						console.log(json);
-						$('#cart > a > span').html('<span data-toggle="" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle hidden-xs"><span><img src="../../../catalog/view/theme/default/image/korzuna.png"></br></span> ' + '<span class="cart-text-style" id="cart-total">В корзине</br> ' + json['total'] + ' шт.' + '</span></span>' + '<span   data-toggle="" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle hidden-sm hidden-md hidden-lg hidden-xl"><span><img src="../../../catalog/view/theme/default/image/mbCartIcon.png"></br></span>' + '<span class="cart-text-style1" id="cart-total">' + json['total'] + '</span></span>');
+						$('#cart > a > span').html('<span data-toggle="" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle hidden-xs"><span><img src="../../../catalog/view/theme/default/image/korzuna.png"></br></span> ' + '<span class="cart-text-style" id="cart-total">В корзине</br> ' + json['total'] + ' шт.' + '</span></span>' + '<span   data-toggle="" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle hidden-sm hidden-md hidden-lg hidden-xl"><span><img src="../../../catalog/view/theme/default/image/mbCartIcon.png"></br></span>' + '<span class="cart-text-style1 cart-text-style1_20" id="cart-total">' + json['total'] + '</span></span>');
 					}, 100);
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
