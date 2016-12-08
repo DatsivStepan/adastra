@@ -30,6 +30,7 @@
   <!-- START PRODUCT_CARD STYLES&SCRIPTS -->
   <link  href="catalog/view/css/cropper.css" rel="stylesheet">
   <script src="catalog/view/javascript/cropper.min.js" type="text/javascript"></script>
+  <script src="catalog/view/javascript/VanillaMasker.js" type="text/javascript"></script>
 
   <link  href="catalog/view/css/nouislider.css" rel="stylesheet">
   <script src="catalog/view/javascript/nouislider.min.js" type="text/javascript"></script>

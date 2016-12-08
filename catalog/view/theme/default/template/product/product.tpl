@@ -1,4 +1,12 @@
 <?php echo $header; ?>
+<?
+
+    $MAX_CROPPER_WIDTH  = 100;
+    $MAX_CROPPER_HEIGHT = 100;
+
+
+
+?>
 <div class="container-pc1 container">
     <ul class="breadcrumb_product hidden-xs  col-sm-12 col-md-12 col-lg-12">
         <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -18,7 +26,7 @@
         </div>
         <div class="container KP_80_2">
             <div class="container">
-
+                <input type="hidden" id="serverName" value="<?php echo(HTTPS_SERVER) ?>">
                 <?php
                     $height = 0;
                     $width  = 0;
@@ -46,16 +54,28 @@
                 </div>
 
 
-
                 <div class="productImageBox">
                     <?php if ($thumb || $images) { ?>
-                    <div class="product_image-pc thumbnails">
+                    <div  class="product_image-pc thumbnails">
+
                         <?php if ($thumb) { ?>
-                        <div class="my_cropper_container">
-                            <input type="hidden" value="<?php echo $thumb; ?>">
-                            <img class="main_image" id="image" src="<?php echo $thumb; ?>">
+                        <div id="frame">
+                            <div class="n"></div>
+                            <div class="ne"></div>
+                            <div class="e"></div>
+                            <div class="se"></div>
+                            <div class="s"></div>
+                            <div class="sw"></div>
+                            <div class="w"></div>
+                            <div class="nw"></div>
+
+                            <div id="picture" class="my_cropper_container">
+                                <input type="hidden" value="<?php echo $thumb; ?>">
+                                <img class="main_image" id="image" src="<?php echo $thumb; ?>">
+                            </div>
                         </div>
                         <?php } ?>
+
                     </div>
                     <?php } ?>
 
@@ -89,6 +109,7 @@
                         <?php } ?>
                     </div>
                     <?php } ?>
+
                 </div>
 
                 <div class="productBuyButtonsBox xs-hidden">
@@ -254,7 +275,8 @@
                         switch (mb_strtolower($option['name'])) {
                             case 'цвет':
                                 ?>
-                    <div class="colorBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                    <div tooltip='Цветопередача вашего экрана может не соответствовать действительному результату!'
+                         class="colorBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
                         <div class="smallTitleBox">Цвет</div>
                         <div id="input-option<?php echo $option['product_option_id']; ?>">
                             <?php foreach ($option['product_option_value'] as $option_value) { ?>
@@ -281,6 +303,24 @@
                                 <label class="my-custom-labelFrame">
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                    <span class="frameSelector" txtSrc="<?php echo $option_value['image']; ?>" style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
+                                </label>
+                            </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <?php
+                                break;
+                            case 'крепление':
+                               ?>
+                    <div class="frameBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                        <div style="min-height: 50px;" class="smallTitleBox">Крепления</div>
+                        <div id="input-option<?php echo $option['product_option_id']; ?>">
+                            <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                            <div class="frameBox">
+                                <label class="my-custom-labelFrame">
+                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                           value="<?php echo $option_value['product_option_value_id']; ?>"/>
                                     <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
                                 </label>
                             </div>
@@ -299,8 +339,8 @@
                                 <label>
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>"/>
-                                        <span class="textureSelector"
-                                              txtSrc="<?php echo $option_value['image']; ?>"><?php echo $option_value['name'] ?></span>
+                                    <span class="textureSelector"
+                                          txtSrc="<?php echo $option_value['image']; ?>"><?php echo $option_value['name'] ?></span>
                                 </label>
                             </div>
                             <?php } ?>
@@ -341,13 +381,19 @@
                         switch (mb_strtolower($option['name'])) {
                             case 'высота':
                                 ?>
-                    <div class="sliderContainer">
+                    <div tooltip='При размерах свыше ШхВ <?php echo $MAX_CROPPER_WIDTH ?> х <?php echo $MAX_CROPPER_HEIGHT ?> картина будет из составных частей'
+                         class="sliderContainer">
+                        <div>Высота</div>
+                        <div>Фиксировать размерность <input type="checkbox" id="maxCropperSize"
+                                                            att_height="<?php echo $MAX_CROPPER_HEIGHT ?>"
+                                                            att_width="<?php echo $MAX_CROPPER_WIDTH ?>"><span></span>
+                        </div>
                         <div id="hSlider"></div>
                         <div class="leftRullerCutter"></div>
                         <div class="leftRullerValue" id="minHeight">1</div>
                         <div class="rightRullerCutter"></div>
                         <div class="rightRullerValue" id="maxHeight"><?php echo $height ?></div>
-                        <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]"
+                        <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
                                value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
                                id="<?php echo $option['name']; ?>" class="form-control"/>
                     </div>
@@ -355,13 +401,15 @@
                                 break;
                             case 'ширина':
                                 ?>
-                    <div class="sliderContainer">
+                    <div tooltip='При размерах свыше ШхВ <?php echo $MAX_CROPPER_WIDTH ?> х <?php echo $MAX_CROPPER_HEIGHT ?> картина будет из составных частей'
+                         class="sliderContainer">
+                        <div>Ширина</div>
                         <div id="wSlider"></div>
                         <div class="leftRullerCutter"></div>
                         <div class="leftRullerValue" id="minWidth">1</div>
                         <div class="rightRullerCutter"></div>
                         <div class="rightRullerValue" id="maxWidth"><?php echo $width ?></div>
-                        <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]"
+                        <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
                                value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
                                id="<?php echo $option['name']; ?>" class="form-control"/>
                     </div>
@@ -404,10 +452,10 @@
                     <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
                         <label class="control-label"
                                for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
-                            <textarea name="option[<?php echo $option['product_option_id']; ?>]" rows="5"
-                                      placeholder="<?php echo $option['name']; ?>"
-                                      id="input-option<?php echo $option['product_option_id']; ?>"
-                                      class="form-control"><?php echo $option['value']; ?></textarea>
+                        <textarea name="option[<?php echo $option['product_option_id']; ?>]" rows="5"
+                                  placeholder="<?php echo $option['name']; ?>"
+                                  id="input-option<?php echo $option['product_option_id']; ?>"
+                                  class="form-control"><?php echo $option['value']; ?></textarea>
                     </div>
                     <?php } ?>
                     <?php if ($option['type'] == 'file') { ?>
@@ -429,7 +477,7 @@
                                    value="<?php echo $option['value']; ?>" data-date-format="YYYY-MM-DD"
                                    id="input-option<?php echo $option['product_option_id']; ?>"
                                    class="form-control"/>
-                <span class="input-group-btn">
+                            <span class="input-group-btn">
                 <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
                 </span></div>
                     </div>
@@ -443,7 +491,7 @@
                                    value="<?php echo $option['value']; ?>" data-date-format="YYYY-MM-DD HH:mm"
                                    id="input-option<?php echo $option['product_option_id']; ?>"
                                    class="form-control"/>
-                <span class="input-group-btn">
+                            <span class="input-group-btn">
                 <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                 </span></div>
                     </div>
@@ -457,7 +505,7 @@
                                    value="<?php echo $option['value']; ?>" data-date-format="HH:mm"
                                    id="input-option<?php echo $option['product_option_id']; ?>"
                                    class="form-control"/>
-                <span class="input-group-btn">
+                            <span class="input-group-btn">
                 <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                 </span>
                         </div>
