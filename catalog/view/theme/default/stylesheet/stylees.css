@@ -1026,7 +1026,7 @@
 .text_np_20{
     font-family: 'Philosopher';
     color: #8a8781;
-    font-size: 17px;
+    font-size: 15px;
     padding: 0;
 }
 .advantages_style_20{
@@ -1067,4 +1067,9 @@
     padding-top: 0px !important;
     width: 14% !important;
     float: left!important;
+}
+@media (max-width: 1200px) and (min-width: 1118px) {
+    .product-icon-size {
+        font-size: 20px;
+    }
 }

@@ -271,45 +271,6 @@
             </div>
         </div>
     </div>
-    <div class="hidden-xs container div-home-contact-style no-padding">
-        <div class="row no-margin" style="padding-bottom: 10px">
-            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding">
-                  <span class="footer-contact-text-left-style">
-                      Контакты:
-                  </span>
-            </div>
-            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <div class="row">
-                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
-                        <img src="../../../catalog/view/theme/default/image/phone.png">
-                    </div>
-                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style">
-                        <span class="footer-contact-text-right-style" style="color: #494545;"><?php echo $telephone; ?></span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <div class="row">
-                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
-                        <img src="../../../catalog/view/theme/default/image/phone.png">
-                    </div>
-                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style">
-                        <span class="footer-contact-text-right-style" style="color: #494545;"><?php echo $telephone; ?></span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <div class="row">
-                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
-                        <img src="../../../catalog/view/theme/default/image/mail.png">
-                    </div>
-                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-email-text-style">
-                        <span class="footer-contact-text-right-style" style="color: #494545;"><?php echo $email; ?></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="hidden-sm hidden-md hidden-lg hidden-xl container div-home-contact-style no-padding">
         <div class="row no-margin" style="padding-bottom: 10px; text-align: center">
