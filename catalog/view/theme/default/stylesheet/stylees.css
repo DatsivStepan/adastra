@@ -122,6 +122,10 @@
         height: 300px;
         width: 100%;
     }
+    .img-responsive_22{
+
+    }
+
     .a_kat_adas{
         font-family:'Philosopher';
         font-size: 14px;
@@ -615,7 +619,7 @@
 }
 .mfi_opt_cont_mfi{
     padding: 17px 0px 22px 6px!important;
- }
+}
 .mfi_bord_bot_rig{
     border-bottom: 1px solid #cdc1aa;
 
@@ -1060,6 +1064,21 @@
     display: block;
     max-width: 105px;
     height: auto;
+}
+.img-responsive_20{
+    height: 550px!important;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive_20, .thumbnail a>img, .thumbnail>img {
+    max-width: 3088px!important;
+}
+.desktop-img-div-style_20{
+    top: 31%!important;
+}
+.banner-logo-size_20{
+    top: 100%!important;
+}
+.desktop-text-div-style_20{
+    top: 100%!important;
 }
 .div-products-mb-style {
     font-size: 40px!important;
