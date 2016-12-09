@@ -39,10 +39,11 @@
 #hSlider,
 #wSlider {
     height: 5px;
+    margin-top: 30px;
 }
 
 .sliderContainer {
-    height: 50px;
+    height: 100px;
     position: relative;
 }
 
@@ -51,8 +52,8 @@
 }
 
 .my_cropper_container {
-    border: 1px solid #F00;
-    max-width: 400px;
+    /*border: 1px solid #F00;*/
+    max-width: 450px;
 }
 
 .my_cropper_container > img {
@@ -175,7 +176,6 @@
     transform: translateY(-13px);
     padding: 0 5px 0 5px;
     background: #f5f5f5;
-    left: 58%;
     display: block;
     position: absolute;
     font-family: 'Philosopher';
@@ -208,6 +208,7 @@
     border: 1px solid #000;
     margin-top: 10px;
     float: left;
+    position: relative;
 }
 
 .smallTitleBox {
@@ -237,14 +238,22 @@
 }
 
 .textureContainer {
-
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid #000;
+    margin-top: 10px;
+    float: left;
 }
 
+.textureSelector {
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 16px;
+}
 .textureTitle {
     transform: translateY(-13px);
     padding: 0 5px 0 5px;
     background: #f5f5f5;
-    left: 58%;
     display: block;
     position: absolute;
     font-family: 'Philosopher';
@@ -270,7 +279,7 @@
     margin-left: 1px;
     position: absolute;
     left: 1px;
-    top: 6px;
+    top: 40px;
 }
 
 .leftRullerValue,
@@ -278,7 +287,7 @@
     height: 10px;
     margin-left: 1px;
     position: absolute;
-    top: 13px;
+    top: 22px;
     font-family: 'Philosopher';
     font-weight: bold;
     font-size: 15px;
@@ -298,7 +307,7 @@
     margin-left: 1px;
     position: absolute;
     right: 1px;
-    top: 6px;
+    top: 40px;
 }
 
 .rightRullerValue {
@@ -306,7 +315,7 @@
     margin-left: 1px;
     position: absolute;
     right: 1px;
-    top: 13px;
+    top: 22px;
     font-family: 'Philosopher';
     font-weight: bold;
     font-size: 15px;
@@ -419,11 +428,11 @@
 
 @media (min-width: 1200px) {
     .textureTitle {
-        left: 60% !important;
+        margin-left: 20px;
     }
 
     .underframeMain {
-        left: 60% !important;
+        margin-left: 20px;
     }
 }
 
@@ -505,3 +514,118 @@
         display: none;
     }
 }
+
+/*TOOLTIP START*/
+*[tooltip]:hover:after {
+    content: attr(tooltip);
+    border: #777;
+    background-color: #aaa;
+    padding: 5px;
+    display: block;
+    position: absolute;
+    top: -30px;
+    z-index: 99;
+}
+/*TOOLTIP END*/
+/*FRAME START*/
+#picture{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+#frame{
+    position: relative;
+}
+.frameSide{
+
+}
+#frame .n,
+#frame .w,
+#frame .s,
+#frame .e{
+    position: absolute;
+    background-size: contain;
+    z-index: 99;
+}
+#frame .n,
+#frame .s{
+    height:50px;
+    width:100%;
+}
+#frame .w,
+#frame .e{
+    width: 50px;
+    background-size: contain;
+    /*background: url(frame_h.png);*/
+}
+#frame .ne,
+#frame .nw,
+#frame .se,
+#frame .sw{
+    height: 50px;
+    width: 50px;
+    /*background: url(frame_v.png);*/
+    position: absolute;
+    background-size: contain;
+
+}
+#frame .n{
+    overflow: hidden;
+}
+#frame .n:before{
+    content: "";
+    position: absolute;
+    width: 50px;
+    z-index: 99;
+    /*background: url(frame_h.png)repeat;*/
+    transform: rotate(270deg);
+    background-size: 100%;
+}
+#frame .ne{
+    background-position: 0px 0px;
+    transform: rotate(0deg);
+    top: 0px;
+}
+#frame .e{
+    right: 0px;
+    position: absolute;
+    top: 50px;
+}
+#frame .se{
+    background-position: 0px 0px;
+    transform: rotate(90deg);
+    bottom: 0px;
+    right: 0px;
+}
+#frame .s{
+
+    overflow: hidden;
+}
+#frame .s:before{
+    content: "";
+    position: absolute;
+    width: 50px;
+    z-index: 99;
+    /*background: url(frame_h.png)repeat;*/
+    transform: rotate(90deg);
+    background-size: 100%;
+}
+#frame .sw{
+    background-position: 0px 0px;
+    transform: rotate(180deg);
+    bottom: 0px;
+    left: 0px;
+}
+#frame .w{
+    left: 0px;
+    position: absolute;
+    top: 50px;
+    transform: rotate(180deg);
+}
+#frame .nw{
+    background-position: 0px 0px;
+    transform: rotate(270deg);
+    top: 0px;
+    left: 0px;
+}
+/*FRAME END*/

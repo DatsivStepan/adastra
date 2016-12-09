@@ -36,6 +36,11 @@
       <li><a href="<?php echo $captcha; ?>"><?php echo $text_captcha; ?></a></li>
       <li><a href="<?php echo $fraud; ?>"><?php echo $text_fraud; ?></a></li>
 		
+
+                            <?php if ($module_installed) { ?>
+                                <li><a href="<?php echo  $magicslideshow_module_link; ?>"><img style="width:32px; margin-bottom: -1px;" src="<?php echo HTTP_SERVER; ?>controller/module/magicslideshow-opencart-module/magicslideshow.png" />MagicSlideshow</a></li>
+                            <?php } ?>
+                        
       <?php if ($openbay_show_menu == 1) { ?>
       <li><a class="parent"><?php echo $text_openbay_extension; ?></a>
         <ul>

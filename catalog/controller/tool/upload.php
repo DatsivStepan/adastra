@@ -62,7 +62,8 @@ class ControllerToolUpload extends Controller {
 		if (!$json) {
 			$file = $filename . '.' . token(32);
 
-			move_uploaded_file($this->request->files['file']['tmp_name'], DIR_UPLOAD . $file);
+			//move_uploaded_file($this->request->files['file']['tmp_name'], DIR_UPLOAD . $file);
+			move_uploaded_file($this->request->files['file']['tmp_name'], CUSTOM_DIR_UPLOAD . $file);
 
 			// Hide the uploaded file name so people can not link to it directly.
 			$this->load->model('tool/upload');
@@ -70,6 +71,7 @@ class ControllerToolUpload extends Controller {
 			$json['code'] = $this->model_tool_upload->addUpload($filename, $file);
 
 			$json['success'] = $this->language->get('text_upload');
+			$json['new_file'] = HTTP_SERVER.CUSTOM_ROUTE_UPLOAD . $file;
 		}
 
 		$this->response->addHeader('Content-Type: application/json');
