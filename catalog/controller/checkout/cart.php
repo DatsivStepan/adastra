@@ -89,7 +89,34 @@ class ControllerCheckoutCart extends Controller {
 				}
 
 				if ($product['image']) {
+
 					$image = $this->model_tool_image->resize($product['image'], $this->config->get('config_image_cart_width'), $this->config->get('config_image_cart_height'));
+                    $custom_tmp = new Image(DIR_IMAGE.$product['image']);
+
+                    $custom_topX = $custom_topY = $custom_width = $custom_height= 0;
+                    foreach ( $product['option'] as $option) {
+                        switch($option['name']){
+                            case 'вертикальноеСмещение':
+                                $custom_topY = $option['value'];
+                                break;
+                             case 'горизонтальноеСмещение':
+                                 $custom_topX = $option['value'];
+                                break;
+                             case 'Высота':
+                                 $custom_height = $option['value'];
+                                break;
+                             case 'Ширина':
+                                 $custom_width = $option['value'];
+                                break;
+                        }
+                    }
+
+                    $custom_tmp->crop($custom_topX, $custom_topY, ($custom_topX+$custom_width), ($custom_topX+$custom_height));
+                    $custom_path = $custom_tmp->getFile();
+                    $custom_type = pathinfo($custom_path, PATHINFO_EXTENSION);
+                    $custom_data = file_get_contents($custom_path);
+                    $custom_base64 = 'data:image/' . $custom_type . ';base64,' . base64_encode($custom_data);
+
 				} else {
 					$image = '';
 				}
@@ -339,7 +366,9 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			if (!$json) {
-				$this->cart->add($this->request->post['product_id'], $quantity, $option, $recurring_id);
+
+
+				$this->cart->add($this->request->post['product_id'], $quantity, $option, $recurring_id, '');
 
 				$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
 
