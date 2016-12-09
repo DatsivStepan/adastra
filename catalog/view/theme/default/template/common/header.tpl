@@ -201,7 +201,7 @@
               <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
               <span class="">
               <?php foreach ($children as $child) { ?>
-                <span class=""><a class="products-category-style " href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span></br>
+                <span class=""><a class="products-category-style products-category-style_20" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span></br>
                 <?php } ?>
             </span>
               <?php } ?>
@@ -265,7 +265,7 @@
           <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
           <span class="">
               <?php foreach ($children as $child) { ?>
-            <span class=""><a class="products-category-style" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span></br>
+            <span class=""><a class="products-category-style products-category-style_20" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span></br>
             <?php } ?>
             </span>
           <?php } ?>
@@ -304,7 +304,7 @@
                 <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
                 <span class="">
               <?php foreach ($children as $child) { ?>
-                  <span class=""><a class="products-category-style" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span></br>
+                  <span class=""><a class="products-category-style products-category-style_20" style="display: block;padding: 0 0 0 6px;" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span></br>
                   <?php } ?>
             </span>
                 <?php } ?>
