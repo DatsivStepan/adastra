@@ -301,7 +301,7 @@
                             <div class="frameBox frameSelector" txtSrc="<?php echo $option_value['image']; ?>">
                                 <label class="my-custom-labelFrame">
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                           data-frame="true" value="<?php echo $option_value['product_option_value_id']; ?>"/>
                                     <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
                                 </label>
                             </div>
