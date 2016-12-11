@@ -412,10 +412,12 @@ function ready() {
         document.querySelector("div.cropper-canvas > img").style.backgroundImage = "url(" + image.src + "), url(" + txtSrc + ")";
         document.querySelector("div.cropper-canvas > img").style.backgroundBlendMode = "multiply";
         document.querySelector("div.cropper-canvas > img").style.size = "100% 100%";
+        document.querySelector("div.cropper-canvas > img").style.backgroundSize = "cover";
 
         document.querySelector("span.cropper-view-box > img").style.backgroundImage = "url(" + image.src + "), url(" + txtSrc + ")";
         document.querySelector("span.cropper-view-box > img").style.backgroundBlendMode = "multiply";
         document.querySelector("span.cropper-view-box > img").style.size = "100% 100%";
+        document.querySelector("span.cropper-view-box > img").style.backgroundSize = "cover";
     };
 
     for (var i = 0; i < classname.length; i++) {

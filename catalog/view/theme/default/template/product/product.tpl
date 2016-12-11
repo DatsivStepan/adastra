@@ -217,7 +217,9 @@
                                 <label class="underframeMain">
                                     <input type="radio"
                                            name="option[<?php echo $option['product_option_id']; ?>][]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           data-subframe="none"
+                                    />
                                     <?php echo $option_value['name']; ?>
                                 </label>
                                 <?php
@@ -226,7 +228,9 @@
                                 <label class="underframeSecondary">
                                     <input type="radio"
                                            name="option[<?php echo $option['product_option_id']; ?>][]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           data-subframe="big"
+                                    />
                                     <?php echo $option_value['name']; ?>
                                 </label>
                                 <?php
@@ -235,7 +239,9 @@
                                 <label class="underframeSecondary">
                                     <input type="radio"
                                            name="option[<?php echo $option['product_option_id']; ?>][]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           data-subframe="small"
+                                    />
                                     <?php echo $option_value['name']; ?>
                                 </label>
                             </div>
