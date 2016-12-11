@@ -8,14 +8,7 @@
 <script type="text/html" id="cart_template">
 
 	<div class="panel panel-default <%= model.config.display ? '' : 'hidden' %>">
-		<div class="panel-heading">
-			<h4 class="panel-title">
-				<span class="icon">
-					<i class="<%= model.config.icon %>"></i>
-				</span>
-				<span class="text"><%= model.config.title %> <%= (model.cart_weight) ? '('+model.cart_weight+')' : '' %></span>
-			</h4>
-		</div>
+		
 		<div class="qc-checkout-product panel-body" >
 			<% if(model.error){ %>
 				<div class="alert alert-danger">
@@ -127,7 +120,7 @@
 						</div>
 					</div>
 					<% _.each(model.coupon, function(voucher) { %>
-			        
+
 			        <% }) %>
 				</div>
 				<div class=" form-group qc-voucher <%= parseInt(model.config.option.voucher.display) ? '' : 'hidden' %>">

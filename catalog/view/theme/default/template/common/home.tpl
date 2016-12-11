@@ -269,6 +269,45 @@
                     <div class="div-border-style"></div>
                 </div>
             </div>
+            <div class="footer-div-contact-style hidden-xs" >
+                <div class="row no-margin" style="padding-bottom: 10px">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                      <span class="footer-contact-text-left-style home_contact">
+                          Контакты:
+                      </span>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="row">
+                            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                                <img src="../../../catalog/view/theme/default/image/phone.png">
+                            </div>
+                            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style">
+                                <span class="footer-contact-text-right-style"><?php echo $telephone; ?></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="row">
+                            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                                <img src="../../../catalog/view/theme/default/image/phone.png">
+                            </div>
+                            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style" >
+                                <span class="footer-contact-text-right-style"><?php echo $telephone; ?></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="row">
+                            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                                <img src="../../../catalog/view/theme/default/image/mail.png">
+                            </div>
+                            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-email-text-style">
+                                <span class="footer-contact-text-right-style"><?php echo $email; ?></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
