@@ -3,7 +3,7 @@ class ModelCatalogmaterialsAndPrices extends Model {
     public function addmaterialsAndPrices($data) {
         $this->event->trigger('pre.admin.materialsAndPrices.add', $data);
 
-        $this->db->query("INSERT INTO " . DB_PREFIX . "mp_information SET sort_order = '" . (int)$data['sort_order'] . "', bottom = '" . (isset($data['bottom']) ? (int)$data['bottom'] : 0) . "', status = '" . (int)$data['status'] . "', fabric_thickness = '" . $data['fabric_thickness'] . "', prices = '" . $data['prices'] . "', MPWJ = '" . $data['MPWJ'] ."'");
+        $this->db->query("INSERT INTO " . DB_PREFIX . "mp_information SET sort_order = '" . (int)$data['sort_order'] . "', bottom = '" . (isset($data['bottom']) ? (int)$data['bottom'] : 0) . "', status = '" . (int)$data['status'] . "', fabric_thickness = '" . $data['fabric_thickness'] . "', prices = '" . $data['prices'] . "', MPWJ = '" . $data['MPWJ'] . "', category = '" . $data['category'] ."'");
 
         $mp_id = $this->db->getLastId();
 
@@ -37,11 +37,21 @@ class ModelCatalogmaterialsAndPrices extends Model {
 
         return $mp_id;
     }
+    public function editInformationCategory($mp_c_id, $data) {
+
+        $this->db->query("UPDATE " . DB_PREFIX . "mp_category SET name = '" . $data['category_info'] .
+            "', description = '" .  $this->db->escape($data['information_description'][1]['description']) .
+            "' WHERE mp_c_id = '" . (int)$mp_c_id . "'");
+    }
+    public function addInformationCategory($data) {
+        $this->db->query("INSERT INTO " . DB_PREFIX . "mp_category SET name = '" . $data['category_info'] .
+            "', description = '" .  $this->db->escape($data['information_description'][1]['description']));
+    }
 
     public function editInformation($mp_id, $data) {
         $this->event->trigger('pre.admin.information.edit', $data);
 
-        $this->db->query("UPDATE " . DB_PREFIX . "mp_information SET sort_order = '" . (int)$data['sort_order'] . "', bottom = '" . (isset($data['bottom']) ? (int)$data['bottom'] : 0) . "', status = '" . (int)$data['status'] . "', fabric_thickness = '" . $data['fabric_thickness'] . "', prices = '" . $data['prices'] . "', MPWJ = '" . $data['MPWJ'] . "' WHERE mp_id = '" . (int)$mp_id . "'");
+        $this->db->query("UPDATE " . DB_PREFIX . "mp_information SET sort_order = '" . (int)$data['sort_order'] . "', bottom = '" . (isset($data['bottom']) ? (int)$data['bottom'] : 0) . "', status = '" . (int)$data['status'] . "', fabric_thickness = '" . $data['fabric_thickness'] . "', prices = '" . $data['prices'] . "', MPWJ = '" . $data['MPWJ'] . "', category = '" . $data['category'] . "' WHERE mp_id = '" . (int)$mp_id . "'");
 
         if (isset($data['image'])) {
             $this->db->query("UPDATE " . DB_PREFIX . "mp_information SET image = '" . $this->db->escape($data['image']) . "' WHERE mp_id = '" . (int)$mp_id . "'");
@@ -99,8 +109,20 @@ class ModelCatalogmaterialsAndPrices extends Model {
         return $query->row;
     }
 
+    /////////////////////////////////////
+    public function getInformationsCategory() {
+
+
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "mp_category ");
+
+        return $query->rows;
+    }
+
+    /////////////////////////////////////
+
     public function getInformations($data = array()) {
         if ($data) {
+
             $sql = "SELECT * FROM " . DB_PREFIX . "mp_information i LEFT JOIN " . DB_PREFIX . "mp_information_description id ON (i.mp_id = id.mp_id) WHERE id.language_id = '" . (int)$this->config->get('config_language_id') . "'";
 
             $sort_data = array(
@@ -150,12 +172,25 @@ class ModelCatalogmaterialsAndPrices extends Model {
         }
 
     }
+    //////////////////////////////////////////////////////////////////////////////
+    public function getMpCategory($mp_c_id) {
+        $information_description_data = array();
+        $query_c = $this->db->query("SELECT * FROM " . DB_PREFIX . "mp_category WHERE mp_c_id = '" . (int)$mp_c_id . "'");
+        foreach ($query_c->rows as $result_c ){
+            $information_description_data[$result_c['mp_c_id']] = array(
+                'name'            => $result_c['name'],
+                'description'      => $result_c['description'],
+            );
+        }
+        return $information_description_data;
+    }
+    //////////////////////////////////////////////////////////////////////////////
+
 
     public function getInformationDescriptions($mp_id) {
         $information_description_data = array();
 
         $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "mp_information_description WHERE mp_id = '" . (int)$mp_id . "'");
-//        var_dump($query);exit();
         foreach ($query->rows as $result) {
             $information_description_data[$result['language_id']] = array(
                 'title'            => $result['title'],

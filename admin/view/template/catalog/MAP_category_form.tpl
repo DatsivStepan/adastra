@@ -3,14 +3,14 @@
   <div class="page-header">
     <div class="container-fluid">
       <div class="pull-right">
-        <button type="submit" form="form-materialsAndPrices" data-toggle="tooltip" title="<?php echo $button_save; ?>" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <button type="submit" form="form-mpCategory" data-toggle="tooltip" title="<?php echo $button_save; ?>" class="btn btn-primary"><i class="fa fa-save"></i></button>
         <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
       <h1><?php echo $heading_title; ?></h1>
-      <ul class="breadcrumb">
+   <!--   <ul class="breadcrumb">
         <?php foreach ($breadcrumbs as $breadcrumb) { ?>
         <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
         <?php } ?>
-      </ul>
+      </ul> -->
     </div>
   </div>
   <div class="container-fluid">
@@ -27,8 +27,8 @@
         <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-materialsAndPrices" class="form-horizontal">
           <ul class="nav nav-tabs">
             <li class="active"><a href="#tab-general" data-toggle="tab"><?php echo $tab_general; ?></a></li>
-            <li><a href="#tab-data" data-toggle="tab"><?php echo $tab_data; ?></a></li>
-            <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+          <!--  <li><a href="#tab-data" data-toggle="tab"><?php echo $tab_data; ?></a></li>
+            <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li> -->
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="tab-general">
@@ -38,63 +38,32 @@
                 <?php } ?>
               </ul>
               <div class="tab-content">
-                <?php foreach ($languages as $language) {  ?>
+                <?php foreach ($languages as $language) { ?>
+                <?php foreach ($category_mp as $category_mp_c) { ?>
                 <div class="tab-pane" id="language<?php echo $language['language_id']; ?>">
                   <div class="form-group required">
-                    <label class="col-sm-2 control-label" for="input-title<?php echo $language['language_id']; ?>"><?php echo $entry_title; ?></label>
+                    <label class="col-sm-2 control-label" for="input-title<?php echo $language['language_id']; ?>"><?php echo $entry_category; ?></label>
                     <div class="col-sm-10">
-                      <input type="text" name="information_description[<?php echo $language['language_id']; ?>][title]" value="<?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['title'] : ''; ?>" placeholder="<?php echo $entry_title; ?>" id="input-title<?php echo $language['language_id']; ?>" class="form-control" />
+                      <input type="text" name="category_info" value="<?php echo $category_mp_c['name']; ?>" placeholder="<?php echo $entry_category; ?>" id="input-title<?php echo $language['language_id']; ?>" class="form-control" />
                       <?php if (isset($error_title[$language['language_id']])) { ?>
-                      <div class="text-danger"><?php echo $error_title[$language['language_id']]; ?></div>
+                      <div class="text-danger"><?php echo $entry_category[$language['language_id']]; ?></div>
                       <?php } ?>
                     </div>
                   </div>
-                  <!-------------------------->
-                  <div class="form-group required" style="">
-                    <label class="col-sm-2 control-label" for="input-category"><?php echo $entry_category; ?></label>
-                    <div class="col-sm-10">
-                      <input type="text" name="category" value="<?php echo $category; ?>" placeholder="<?php echo $entry_category; ?>" id="input-category" class="form-control" />
-                      <?php if ($error_keyword) { ?>
-                      <div class="text-danger"><?php echo $error_keyword; ?></div>
-                      <?php } ?>
-                    </div>
-                  </div>
-                  <!-------------------------->
                   <div class="form-group required">
-                    <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description; ?></label>
+                    <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description_category; ?></label>
                     <div class="col-sm-10">
-                      <textarea name="information_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description; ?>" id="input-description<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['description'] : ''; ?></textarea>
+                      <textarea name="information_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description_category; ?>" id="input-description<?php echo $language['language_id']; ?>" class="form-control"><?php echo $category_mp_c['description']; ?></textarea>
                       <?php if (isset($error_description[$language['language_id']])) { ?>
                       <div class="text-danger"><?php echo $error_description[$language['language_id']]; ?></div>
                       <?php } ?>
                     </div>
                   </div>
-                  <div class="form-group required">
-                    <label class="col-sm-2 control-label" for="input-meta-title<?php echo $language['language_id']; ?>"><?php echo $entry_meta_title; ?></label>
-                    <div class="col-sm-10">
-                      <input type="text" name="information_description[<?php echo $language['language_id']; ?>][meta_title]" value="<?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['meta_title'] : ''; ?>" placeholder="<?php echo $entry_meta_title; ?>" id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control" />
-                      <?php if (isset($error_meta_title[$language['language_id']])) { ?>
-                      <div class="text-danger"><?php echo $error_meta_title[$language['language_id']]; ?></div>
-                      <?php } ?>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label" for="input-meta-description<?php echo $language['language_id']; ?>"><?php echo $entry_meta_description; ?></label>
-                    <div class="col-sm-10">
-                      <textarea name="information_description[<?php echo $language['language_id']; ?>][meta_description]" rows="5" placeholder="<?php echo $entry_meta_description; ?>" id="input-meta-description<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['meta_description'] : ''; ?></textarea>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label" for="input-meta-keyword<?php echo $language['language_id']; ?>"><?php echo $entry_meta_keyword; ?></label>
-                    <div class="col-sm-10">
-                      <textarea name="information_description[<?php echo $language['language_id']; ?>][meta_keyword]" rows="5" placeholder="<?php echo $entry_meta_keyword; ?>" id="input-meta-keyword<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($information_description[$language['language_id']]) ? $information_description[$language['language_id']]['meta_keyword'] : ''; ?></textarea>
-                    </div>
-                  </div>
                 </div>
-                <?php } ?>
+                <?php } } ?>
               </div>
             </div>
-            <div class="tab-pane" id="tab-data">
+          <!--  <div class="tab-pane" id="tab-data">
               <div class="form-group">
                 <label class="col-sm-2 control-label"><?php echo $entry_store; ?></label>
                 <div class="col-sm-10">
@@ -127,7 +96,7 @@
                 </div>
               </div>
               <!------------------------------------------------------------------------->
-              <div class="form-group">
+           <!--   <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-keyword"><span data-toggle="tooltip" title="<?php echo $help_fabric_thickness; ?>"><?php echo $entry_fabric_thickness; ?></span></label>
                 <div class="col-sm-10">
                   <input type="text" name="fabric_thickness" value="<?php echo $fabric_thickness; ?>" placeholder="<?php echo $entry_fabric_thickness; ?>" id="input-fabric_thickness" class="form-control" />
@@ -146,7 +115,7 @@
                 </div>
               </div>
               <!------------------------------------------------------------------------->
-              <div class="form-group">
+          <!--    <div class="form-group">
                 <label class="col-sm-2 control-label"><?php echo $entry_image; ?></label>
                 <div class="col-sm-10"><a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="<?php echo $thumb; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a>
                   <input type="hidden" name="image" value="<?php echo $image; ?>" id="input-image" />
@@ -195,7 +164,7 @@
                   <input type="text" name="sort_order" value="<?php echo $sort_order; ?>" placeholder="<?php echo $entry_sort_order; ?>" id="input-sort-order" class="form-control" />
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="tab-pane" id="tab-design">
               <div class="table-responsive">
                 <table class="table table-bordered table-hover">
