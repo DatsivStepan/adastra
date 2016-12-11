@@ -15,6 +15,9 @@ class ControllerCommonHome extends Controller {
 
         $categories = $this->model_catalog_category->getCategories(0);
 
+        $this->load->model('catalog/product');
+        $optionData = $this->model_catalog_product->getOptions(25);
+        //var_dump($optionData);exit;
         $a = 0;
         foreach ($categories as $category) {
             if ($a <= 4){
