@@ -11,7 +11,107 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
 
         $this->getList();
     }
+    //////////////////////////////////////////////////////////////////////
+    public function addCategory(){
+        $this->language->load('catalog/materialsAndPrices');
+        $this->load->model('localisation/language');
+        $data['languages'] = $this->model_localisation_language->getLanguages();
 
+
+        $data['header'] = $this->load->controller('common/header');
+        $data['column_left'] = $this->load->controller('common/column_left');
+        $data['footer'] = $this->load->controller('common/footer');
+        $data['heading_title'] = $this->language->get('heading_title');
+        $data['tab_general'] = $this->language->get('tab_general');
+        $data['entry_description_category'] = $this->language->get('entry_description_category');
+        $data['entry_category'] = $this->language->get('entry_category');
+        $data['button_save'] = $this->language->get('button_save');
+        $data['button_cancel'] = $this->language->get('button_cancel');
+        $url = '';
+        $data['cancel'] = $this->url->link('catalog/materialsAndPrices', 'token=' . $this->session->data['token'] . $url, 'SSL');
+
+        if (!isset($this->request->get['mp_c_id'])) {
+            $data['action'] = $this->url->link('catalog/materialsAndPrices/addCategory', 'token=' . $this->session->data['token'] . $url, 'SSL');
+        } else {
+            $data['action'] = $this->url->link('catalog/materialsAndPrices/editCategory', 'token=' . $this->session->data['token'] . '&mp_c_id=' . $this->request->get['mp_c_id'] . $url, 'SSL');
+        }
+
+        $this->load->model('localisation/language');
+        $data['languages'] = $this->model_localisation_language->getLanguages();
+
+        if (isset($this->error['warning'])) {
+            $data['error_warning'] = $this->error['warning'];
+        } else {
+            $data['error_warning'] = '';
+        }
+
+
+        if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
+            $this->model_catalog_materialsAndPrices->addInformationCategory($this->request->get['mp_c_id'], $this->request->post);
+            $url = '';
+            $this->response->redirect($this->url->link('catalog/materialsAndPrices', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+        }
+
+        $data['text_form'] = !isset($this->request->get['mp_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
+        $this->response->setOutput($this->load->view('catalog/MAP_category_form.tpl', $data));
+
+
+
+
+    }
+    public function formCategory() {
+        $this->language->load('catalog/materialsAndPrices');
+        $this->load->model('localisation/language');
+        $data['languages'] = $this->model_localisation_language->getLanguages();
+
+        $data['header'] = $this->load->controller('common/header');
+        $data['column_left'] = $this->load->controller('common/column_left');
+        $data['footer'] = $this->load->controller('common/footer');
+        $data['heading_title'] = $this->language->get('heading_title');
+        $data['tab_general'] = $this->language->get('tab_general');
+        $data['entry_description_category'] = $this->language->get('entry_description_category');
+        $data['entry_category'] = $this->language->get('entry_category');
+        $data['button_save'] = $this->language->get('button_save');
+        $data['button_cancel'] = $this->language->get('button_cancel');
+
+        $url = '';
+        $data['cancel'] = $this->url->link('catalog/materialsAndPrices', 'token=' . $this->session->data['token'] . $url, 'SSL');
+
+
+        if (!isset($this->request->get['mp_c_id'])) {
+            $data['action'] = $this->url->link('catalog/materialsAndPrices/addCategory', 'token=' . $this->session->data['token'] . $url, 'SSL');
+        } else {
+            $data['action'] = $this->url->link('catalog/materialsAndPrices/editCategory', 'token=' . $this->session->data['token'] . '&mp_c_id=' . $this->request->get['mp_c_id'] . $url, 'SSL');
+        }
+
+
+
+        $this->load->model('localisation/language');
+        $data['languages'] = $this->model_localisation_language->getLanguages();
+
+        if (isset($this->error['warning'])) {
+            $data['error_warning'] = $this->error['warning'];
+        } else {
+            $data['error_warning'] = '';
+        }
+
+        $category_info = $this->model_catalog_materialsAndPrices->getMpCategory($this->request->get['mp_c_id']);
+        foreach($category_info as $category_info_pm){
+            $data['category_mp'][] = array(
+                'name'             => $category_info_pm['name'],
+                'description'      => $category_info_pm['description'],
+            );
+        }
+
+
+
+
+        $data['text_form'] = !isset($this->request->get['mp_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
+        $this->response->setOutput($this->load->view('catalog/MAP_category_form.tpl', $data));
+
+    }
+
+    //////////////////////////////////////////////////////////////////////
     public function add() {
         $this->language->load('catalog/materialsAndPrices');
 
@@ -20,11 +120,9 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
         $this->load->model('catalog/materialsAndPrices');
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-//            var_dump($this->model_catalog_materialsAndPrices);
             $this->model_catalog_materialsAndPrices->addmaterialsAndPrices($this->request->post);
 
             $this->session->data['success'] = $this->language->get('text_success');
-
             $url = '';
 
             if (isset($this->request->get['sort'])) {
@@ -44,6 +142,23 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
 
         $this->getForm();
     }
+    ///////////////////////////////////////////
+    public function editCategory() {
+        $this->language->load('catalog/materialsAndPrices');
+        $this->document->setTitle($this->language->get('heading_title'));
+        $this->load->model('catalog/materialsAndPrices');
+
+        if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
+            $this->model_catalog_materialsAndPrices->editInformationCategory($this->request->get['mp_c_id'], $this->request->post);
+            $url = '';
+            $this->response->redirect($this->url->link('catalog/materialsAndPrices', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+        }
+        $this->formCategory();
+
+    }
+
+    ///////////////////////////////////////////
+
 
     public function edit() {
         $this->language->load('catalog/materialsAndPrices');
@@ -157,6 +272,7 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
         );
 
         $data['add'] = $this->url->link('catalog/materialsAndPrices/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
+        $data['add_category'] = $this->url->link('catalog/materialsAndPrices/addCategory', 'token=' . $this->session->data['token'] . $url, 'SSL');
         $data['delete'] = $this->url->link('catalog/materialsAndPrices/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
         $data['informations'] = array();
@@ -170,11 +286,22 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
 
         $information_total = $this->model_catalog_materialsAndPrices->getTotalInformations();
 
+        $results_c = $this->model_catalog_materialsAndPrices->getInformationsCategory();
+        foreach ($results_c as $result_c) {
+            $data['mp_category'][] = array(
+                'mp_c_id'          => $result_c['mp_c_id'],
+                'name'             => $result_c['name'],
+                'description'      => $result_c['description'],
+                'edit_c'             => $this->url->link('catalog/materialsAndPrices/editCategory', 'token=' . $this->session->data['token'] . '&mp_c_id=' . $result_c['mp_c_id'] . $url, 'SSL')
+                );
+        }
+
         $results = $this->model_catalog_materialsAndPrices->getInformations($filter_data);
+
 
         foreach ($results as $result) {
             $data['materialsAndPricess'][] = array(
-                'mp_id' => $result['mp_id'],
+                'mp_id'          => $result['mp_id'],
                 'title'          => $result['title'],
                 'sort_order'     => $result['sort_order'],
                 'edit'           => $this->url->link('catalog/materialsAndPrices/edit', 'token=' . $this->session->data['token'] . '&mp_id=' . $result['mp_id'] . $url, 'SSL')
@@ -269,6 +396,7 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
         $data['text_disabled'] = $this->language->get('text_disabled');
 
         $data['entry_title'] = $this->language->get('entry_title');
+        $data['entry_category'] = $this->language->get('entry_category');
         $data['entry_description'] = $this->language->get('entry_description');
         $data['entry_meta_title'] = $this->language->get('entry_meta_title');
         $data['entry_meta_description'] = $this->language->get('entry_meta_description');
@@ -288,6 +416,7 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
         $data['help_prices'] = $this->language->get('help_prices');
         $data['help_MPWJ'] = $this->language->get('help_MPWJ');
         $data['help_bottom'] = $this->language->get('help_bottom');
+        $data['help_category'] = $this->language->get('help_category');
 
         $data['button_save'] = $this->language->get('button_save');
         $data['button_cancel'] = $this->language->get('button_cancel');
@@ -400,7 +529,6 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
             $data['keyword'] = '';
         }
 ////////////////////////////////////////////////////////////////////
-
         if (isset($this->request->post['fabric_thickness'])) {
             $data['fabric_thickness'] = $this->request->post['fabric_thickness'];
         } elseif (!empty($information_info)) {
@@ -408,6 +536,7 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
         } else {
             $data['fabric_thickness'] = '';
         }
+
         if (isset($this->request->post['prices'])) {
             $data['prices'] = $this->request->post['prices'];
         } elseif (!empty($information_info)) {
@@ -421,6 +550,13 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
             $data['MPWJ'] = $information_info['MPWJ'];
         } else {
             $data['MPWJ'] = '';
+        }
+        if (isset($this->request->post['category'])) {
+            $data['category'] = $this->request->post['category'];
+        } elseif (!empty($information_info)) {
+            $data['category'] = $information_info['category'];
+        } else {
+            $data['category'] = '';
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
         if (isset($this->request->post['image'])) {

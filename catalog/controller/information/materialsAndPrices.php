@@ -24,11 +24,13 @@ class ControllerInformationmaterialsAndPrices extends Controller {
 		if ($materialsAndPrices_info) {
             foreach ($materialsAndPrices_info as $materialsAndPrice_info){
 //                var_dump($materialsAndPrice_info);
+
                 $data['materialsAndPrice'][] = array(
                     'image' => $materialsAndPrice_info['image'],
                     'fabric_thickness' => $materialsAndPrice_info['fabric_thickness'],
                     'prices' => $materialsAndPrice_info['prices'],
                     'MPWJ' => $materialsAndPrice_info['MPWJ'],
+                    'category' => $materialsAndPrice_info['category'],
                     'title' => $materialsAndPrice_info['title'],
                     'description' => strip_tags(html_entity_decode($materialsAndPrice_info['description'], ENT_QUOTES, 'UTF-8')),
 

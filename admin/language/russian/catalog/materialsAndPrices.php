@@ -16,7 +16,9 @@ $_['column_action']          = 'Действие';
 
 // Entry
 $_['entry_title']            = 'Название статьи';
+$_['entry_category']         = 'Название категории';
 $_['entry_description']      = 'Описание';
+$_['entry_description_category']= 'Описание';
 $_['entry_store']            = 'Магазины';
 $_['entry_meta_title'] 	     = 'Мета-тег Title';
 $_['entry_meta_keyword'] 	 = 'Мета-тег Keywords';
@@ -36,7 +38,8 @@ $_['help_keyword']           = 'Должно быть уникальным на 
 $_['help_bottom']            = 'Показывать в нижней части сайта (футер, подвал)';
 $_['help_fabric_thickness']  = 'Толщина полотна ';
 $_['help_prices']            = 'Цена';
-$_['help_MPWJ']             = 'Возможно изготовление изделия без стыков';
+$_['help_MPWJ']              = 'Возможно изготовление изделия без стыков';
+$_['help_category']          = 'Название категории';
 
 // Error
 $_['error_warning']          = 'Внимательно проверьте форму на ошибки!';

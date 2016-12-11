@@ -7,7 +7,7 @@ class ModelCatalogmaterialsAndPrices extends Model {
 	}
 
 	public function getInformations() {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "mp_information i LEFT JOIN " . DB_PREFIX . "mp_information_description id ON (i.mp_id = id.mp_id) LEFT JOIN " . DB_PREFIX . "mp_information_to_store i2s ON (i.mp_id = i2s.mp_id) WHERE id.language_id = '" . (int)$this->config->get('config_language_id') . "' AND i2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND i.status = '1' ORDER BY i.sort_order, LCASE(id.title) ASC");
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "mp_information i LEFT JOIN " . DB_PREFIX . "mp_information_description id ON (i.mp_id = id.mp_id) LEFT JOIN " . DB_PREFIX . "mp_information_to_store i2s ON (i.mp_id = i2s.mp_id) WHERE id.language_id = '" . (int)$this->config->get('config_language_id') . "' AND i2s.store_id = '" . (int)$this->config->get('config_store_id') . "' AND i.status = '1' ORDER BY i.category ASC");
 
 		return $query->rows;
 	}

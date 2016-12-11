@@ -21,13 +21,15 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+      <?php $category_tmp = ''; ?>
       <?php foreach ($data['materialsAndPrice'] as $data_1){ ?>
+     <?php if($data_1['category'] != $category_tmp){ ?>
+      <div class="container">
+        <?php echo $data_1['category'] ?>
+      </div>
+      <?php $category_tmp = $data_1['category'];?>
+      <?php } ?>
       <div class="row" style="margin-top: 4%">
-       <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0;">
-          <h1 class="col-lg-12 col-md-12 hidden-sm hidden-xs title_adas_o_galer" style="padding:0;"><?php echo $data_1['title']; ?></h1>
-          <h1 class="hidden-lg hidden-md col-sm-12 col-xs-12 title_adas_o_galer_2"><?php echo $data_1['title']; ?></h1>
-        </div> -->
-
         <div class="col-lg-3 col-md-3 hidden-sm hidden-xs bac_img_np_20" style="background-image: url('image/<?php echo $data_1['image']; ?>')"></div>
         <div class="hidden-lg hidden-md col-sm-12 col-xs-12 bac_img_np_20_2" style="background-image: url('image/<?php echo $data_1['image']; ?>')"></div>
           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="padding: 0;">
