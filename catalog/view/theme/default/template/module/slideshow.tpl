@@ -9,7 +9,7 @@
                 интернер магазин креативных картин предлагает самые лучшие</br>
                 и самые креативные картины в интернете по самым низким</br>
                 ценам от производителя.</br>
-                <a class="banner-linc-style" href="">Подробнее о нас<img src="../../../catalog/view/theme/default/image/bannerLinkIcon.png" style="width: 4%"></br></a>
+                <a class="banner-linc-style" href="/index.php?route=information/information&information_id=4">Подробнее о нас<img src="../../../catalog/view/theme/default/image/bannerLinkIcon.png" style="width: 4%"></br></a>
             </span>
         </div>
     </div>

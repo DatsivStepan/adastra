@@ -133,8 +133,8 @@
             <a href=""><span class="header-menu-text-style">Оплата</span></a>
             <a href=""><span class="header-menu-text-style">Доставка</span></a>
             <a href="/index.php?route=information/contact"><span class="header-menu-text-style">Контакты</span></a>
-            <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работи</span></a>
-            <a href="/index.php?route=information/materialsAndPrices"><span class="header-menu-text-style">Материалы и Цены</span></a>
+            <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работы</span></a>
+            <a href="/index.php?route=information/materialsAndPrices"><span class="header-menu-text-style">Материалы и цены</span></a>
           </div>
           <?php echo $currency; ?>
           <?php echo $language; ?>
@@ -190,8 +190,8 @@
               <a href=""><span class="header-menu-text-style">Оплата</span></a></br>
               <a href=""><span class="header-menu-text-style">Доставка</span></a></br>
               <a href="/index.php?route=information/contact"><span class="header-menu-text-style">Контакты</span></a></br>
-              <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работи</span></a></br>
-              <a href="/index.php?route=information/materialsAndPrices"><span class="header-menu-text-style">Материалы и Цены</span></a></br>
+              <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работы</span></a></br>
+              <a href="/index.php?route=information/materialsAndPrices"><span class="header-menu-text-style">Материалы и цены</span></a></br>
             </div>
             <?php foreach ($categories as $category) { ?>
             <?php if ($category['children']) { ?>
@@ -255,8 +255,8 @@
           <a href=""><span class="header-menu-text-style">Оплата</span></a></br>
           <a href=""><span class="header-menu-text-style">Доставка</span></a></br>
           <a href="/index.php?route=information/contact"><span class="header-menu-text-style">Контакты</span></a></br>
-          <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работи</span></a></br>
-          <a href="/index.php?route=information/materialsAndPrices"><span class="header-menu-text-style">Материалы и Цены</span></a></br>
+          <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работы</span></a></br>
+          <a href="/index.php?route=information/materialsAndPrices"><span class="header-menu-text-style">Материалы и цены</span></a></br>
         </div>
         <?php foreach ($categories as $category) { ?>
         <?php if ($category['children']) { ?>
@@ -322,8 +322,8 @@
             <a href=""><span class="header-menu-text-style">Оплата</span></a>
             <a href=""><span class="header-menu-text-style">Доставка</span></a>
             <a href="/index.php?route=information/contact"><span class="header-menu-text-style">Контакты</span></a>
-            <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работи</span></a>
-            <a href="/index.php?route=information/materialsAndPrices"><span class="header-menu-text-style">Материалы и Цены</span></a>
+            <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работы</span></a>
+            <a href="/index.php?route=information/materialsAndPrices"><span class="header-menu-text-style">Материалы и цены</span></a>
           </div>
           <?php echo $currency; ?>
           <?php echo $language; ?>

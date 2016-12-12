@@ -2174,25 +2174,29 @@ h2.price {
 	border: 2px solid #0072b6!important;
 }
 @media (max-width: 801px) {
-    .itm_name{
-        width: 70%;
-    }
-    .qc-totals div{
-        text-align: center!important;
-    }
-    .qc-name-price{
-        margin-top: 10px!important;
-    font-family: 'Philosopher'!important;
-    font-size: 20pt!important;
-    color: #322d2d!important;
-    }
-    .itm_nuumber {
-    margin: 29px 0 0 160px;
-}
-    .itm_sum {
-        width: 200px;
-         font-family: 'Philosopher'!important;
-    font-size: 20pt!important;
-    color: #322d2d!important;
-    }
+	.itm_name {
+		width: 70%;
+	}
 
+	.qc-totals div {
+		text-align: center !important;
+	}
+
+	.qc-name-price {
+		margin-top: 10px !important;
+		font-family: 'Philosopher' !important;
+		font-size: 20pt !important;
+		color: #322d2d !important;
+	}
+
+	.itm_nuumber {
+		margin: 29px 0 0 160px;
+	}
+
+	.itm_sum {
+		width: 200px;
+		font-family: 'Philosopher' !important;
+		font-size: 20pt !important;
+		color: #322d2d !important;
+	}
+}
