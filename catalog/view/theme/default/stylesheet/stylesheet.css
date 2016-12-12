@@ -1956,11 +1956,24 @@ h2.price {
 	margin: 0 auto;
 }
 .it_section_name {
+        width: 1140px;
+        padding-bottom: 17px;
+    border-bottom: 2px solid#000!important;
+    font-weight: bold!important;
+    font-family: 'Philosopher';
+    font-size: 14px;
+    font-weight: 900;
+    color: #322d2d;
 	margin: 0;
 	text-align: center;
 	text-transform: uppercase;
 }
 .it_section_name > div {
+    font-weight: bold!important;
+    font-family: 'Philosopher';
+    font-size: 14px;
+    font-weight: 900;
+    color: #322d2d;
 	float: left;
 	font: 12px 'nsr';
 	color: #000;
@@ -2000,6 +2013,7 @@ h2.price {
 	margin: 0 0 0 0 !important;
 }
 .baskr_item_box {
+    padding: 10px;
 	width: 1168px !important;
 	margin: 16px auto 20px auto !important;
 	transition: all 0.3s;
@@ -2028,19 +2042,42 @@ h2.price {
 	margin: 23px 0 0 27px;
 	padding: 0 0 0 0;
 }
+.itm_name div{
+	font-family: 'Philosopher';
+    font-size: 14px;
+    font-weight: 900;
+    color: #322d2d;
+    margin: 0;
+}
+.itm_name a{
+	font-family: 'Philosopher';
+    font-size: 16px;
+    font-weight: 900;
+    color: #322d2d!important;
+    margin: 0px 0 0 0;
+    line-height: 18px;
+}
 .itm_price {
+    font-weight: bold!important;
+    font-family: 'System';
+    font-size: 16px;
+    color: #2f0000;
 	width: 130px;
 	text-align: center;
 	margin: 29px 0 0 120px;
 	font: 18px 'nsb';
 }
 .itm_nuumber {
-	margin: 29px 0 0 157px;
+	margin: 29px 0 0 147px;
 }
 .itm_sum {
-	width: 180px;
-	text-align: center;
-	margin: 29px 0 0 62px;
+    font-weight: bold!important;
+    font-family: 'System';
+    font-size: 16px;
+    color: #2f0000;
+	    width: 100px;
+    text-align: right;
+	margin: 29px 0 0 80px;
 	font: 18px 'nsb';
 }
 .namber_box {
@@ -2089,7 +2126,7 @@ h2.price {
 }
 .minus {
 	width: 25px;
-	height: 24px;
+	height: 38px!important;
 	font-size: 0 !important;
 	border: 1px solid #dedddd;
 	outline: none;
@@ -2103,7 +2140,7 @@ h2.price {
 	right: 0;
 	left: auto;
 	width: 25px;
-	height: 24px;
+	height: 38px!important;
 	border: 1px solid #dedddd;
 	outline: none;
 	border-radius: 0!important;
@@ -2113,12 +2150,35 @@ h2.price {
 	background-position: -24px 0!important;
 }
 .minus:hover {
-	height: 24px!important;
+	    height: 38px!important;
 	background-position: 0 -25px!important;
 	border: 2px solid #0072b6!important;
 }
 .plus:hover {
-	height: 24px!important;
+	    height: 38px!important;
 	background-position: -24px -25px!important;
 	border: 2px solid #0072b6!important;
+}
+@media (max-width: 801px) {
+    .itm_name{
+        width: 70%;
+    }
+    .qc-totals div{
+        text-align: center!important;
+    }
+    .qc-name-price{
+        margin-top: 10px!important;
+    font-family: 'Philosopher'!important;
+    font-size: 20pt!important;
+    color: #322d2d!important;
+    }
+    .itm_nuumber {
+    margin: 29px 0 0 160px;
+}
+    .itm_sum {
+        width: 200px;
+         font-family: 'Philosopher'!important;
+    font-size: 20pt!important;
+    color: #322d2d!important;
+    }
 }
