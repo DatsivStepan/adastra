@@ -39,12 +39,35 @@
               </ul>
               <div class="tab-content">
                 <?php foreach ($languages as $language) { ?>
-                <?php foreach ($category_mp as $category_mp_c) { ?>
+                <?php if($category_mp != ''){ ?>
+                  <?php foreach ($category_mp as $category_mp_c) { ?>
+                    <div class="tab-pane" id="language<?php echo $language['language_id']; ?>">
+                      <div class="form-group required">
+                        <label class="col-sm-2 control-label" for="input-title<?php echo $language['language_id']; ?>"><?php echo $entry_category; ?></label>
+                        <div class="col-sm-10">
+                          <input type="text" name="category_info" value="<?php echo $category_mp_c['name']; ?>" placeholder="<?php echo $entry_category; ?>" id="input-title<?php echo $language['language_id']; ?>" class="form-control" />
+                          <?php if (isset($error_title[$language['language_id']])) { ?>
+                          <div class="text-danger"><?php echo $entry_category[$language['language_id']]; ?></div>
+                          <?php } ?>
+                        </div>
+                      </div>
+                      <div class="form-group required">
+                        <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description_category; ?></label>
+                        <div class="col-sm-10">
+                          <textarea name="information_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description_category; ?>" id="input-description<?php echo $language['language_id']; ?>" class="form-control"><?php echo $category_mp_c['description']; ?></textarea>
+                          <?php if (isset($error_description[$language['language_id']])) { ?>
+                          <div class="text-danger"><?php echo $error_description[$language['language_id']]; ?></div>
+                          <?php } ?>
+                        </div>
+                      </div>
+                    </div>
+                <?php } ?>
+                <?php }else{ ?>
                 <div class="tab-pane" id="language<?php echo $language['language_id']; ?>">
                   <div class="form-group required">
                     <label class="col-sm-2 control-label" for="input-title<?php echo $language['language_id']; ?>"><?php echo $entry_category; ?></label>
                     <div class="col-sm-10">
-                      <input type="text" name="category_info" value="<?php echo $category_mp_c['name']; ?>" placeholder="<?php echo $entry_category; ?>" id="input-title<?php echo $language['language_id']; ?>" class="form-control" />
+                      <input type="text" name="category_info" value="" placeholder="<?php echo $entry_category; ?>" id="input-title<?php echo $language['language_id']; ?>" class="form-control" />
                       <?php if (isset($error_title[$language['language_id']])) { ?>
                       <div class="text-danger"><?php echo $entry_category[$language['language_id']]; ?></div>
                       <?php } ?>
@@ -53,14 +76,16 @@
                   <div class="form-group required">
                     <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description_category; ?></label>
                     <div class="col-sm-10">
-                      <textarea name="information_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description_category; ?>" id="input-description<?php echo $language['language_id']; ?>" class="form-control"><?php echo $category_mp_c['description']; ?></textarea>
+                      <textarea name="information_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description_category; ?>" id="input-description<?php echo $language['language_id']; ?>" class="form-control"></textarea>
                       <?php if (isset($error_description[$language['language_id']])) { ?>
                       <div class="text-danger"><?php echo $error_description[$language['language_id']]; ?></div>
                       <?php } ?>
                     </div>
                   </div>
                 </div>
-                <?php } } ?>
+                <?php }  ?>
+
+                <?php } ?>
               </div>
             </div>
           <!--  <div class="tab-pane" id="tab-data">
