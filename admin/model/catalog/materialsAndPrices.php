@@ -38,14 +38,13 @@ class ModelCatalogmaterialsAndPrices extends Model {
         return $mp_id;
     }
     public function editInformationCategory($mp_c_id, $data) {
-
         $this->db->query("UPDATE " . DB_PREFIX . "mp_category SET name = '" . $data['category_info'] .
             "', description = '" .  $this->db->escape($data['information_description'][1]['description']) .
             "' WHERE mp_c_id = '" . (int)$mp_c_id . "'");
     }
     public function addInformationCategory($data) {
-        $this->db->query("INSERT INTO " . DB_PREFIX . "mp_category SET name = '" . $data['category_info'] .
-            "', description = '" .  $this->db->escape($data['information_description'][1]['description']));
+
+        $this->db->query("INSERT INTO " . DB_PREFIX . "mp_category SET name = '" . $data['category_info'] . "', description = '" . $data['information_description'][1]['description'] . "'");
     }
 
     public function editInformation($mp_id, $data) {
@@ -89,7 +88,9 @@ class ModelCatalogmaterialsAndPrices extends Model {
 
         $this->event->trigger('post.admin.information.edit', $mp_id);
     }
-
+    public function deleteInformationCategory($mp_c_id) {
+        $this->db->query("DELETE FROM " . DB_PREFIX . "mp_category WHERE mp_c_id = '" . (int)$mp_c_id . "'");
+    }
     public function deleteInformation($mp_id) {
         $this->event->trigger('pre.admin.information.delete', $mp_id);
         $this->db->query("DELETE FROM " . DB_PREFIX . "mp_information WHERE mp_id = '" . (int)$mp_id . "'");
@@ -178,7 +179,7 @@ class ModelCatalogmaterialsAndPrices extends Model {
         $query_c = $this->db->query("SELECT * FROM " . DB_PREFIX . "mp_category WHERE mp_c_id = '" . (int)$mp_c_id . "'");
         foreach ($query_c->rows as $result_c ){
             $information_description_data[$result_c['mp_c_id']] = array(
-                'name'            => $result_c['name'],
+                'name'             => $result_c['name'],
                 'description'      => $result_c['description'],
             );
         }

@@ -15,6 +15,7 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
     public function addCategory(){
         $this->language->load('catalog/materialsAndPrices');
         $this->load->model('localisation/language');
+        $this->load->model('catalog/materialsAndPrices');
         $data['languages'] = $this->model_localisation_language->getLanguages();
 
 
@@ -27,6 +28,7 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
         $data['entry_category'] = $this->language->get('entry_category');
         $data['button_save'] = $this->language->get('button_save');
         $data['button_cancel'] = $this->language->get('button_cancel');
+        $data['category_mp'] = '';
         $url = '';
         $data['cancel'] = $this->url->link('catalog/materialsAndPrices', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
@@ -46,11 +48,12 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
         }
 
 
-        if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
-            $this->model_catalog_materialsAndPrices->addInformationCategory($this->request->get['mp_c_id'], $this->request->post);
+        if (($this->request->server['REQUEST_METHOD'] == 'POST') ) {
+            $this->model_catalog_materialsAndPrices->addInformationCategory($this->request->post);
             $url = '';
             $this->response->redirect($this->url->link('catalog/materialsAndPrices', 'token=' . $this->session->data['token'] . $url, 'SSL'));
         }
+
 
         $data['text_form'] = !isset($this->request->get['mp_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
         $this->response->setOutput($this->load->view('catalog/MAP_category_form.tpl', $data));
@@ -292,7 +295,7 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
                 'mp_c_id'          => $result_c['mp_c_id'],
                 'name'             => $result_c['name'],
                 'description'      => $result_c['description'],
-                'edit_c'             => $this->url->link('catalog/materialsAndPrices/editCategory', 'token=' . $this->session->data['token'] . '&mp_c_id=' . $result_c['mp_c_id'] . $url, 'SSL')
+                'edit_c'           => $this->url->link('catalog/materialsAndPrices/editCategory', 'token=' . $this->session->data['token'] . '&mp_c_id=' . $result_c['mp_c_id'] . $url, 'SSL')
                 );
         }
 
