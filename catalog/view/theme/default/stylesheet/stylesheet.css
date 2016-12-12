@@ -787,6 +787,20 @@ h2.price {
 	width: 14% !important;
 	float: left;
 }
+.map-category-style{
+	color: rgb(0, 0, 0);
+	font-family: Philosopher;
+	font-size: 20px;
+	padding-top: 20px;
+	line-height: 25px;
+}
+.map-category-title-style{
+	color: rgb(0, 0, 0);
+	font-family: Philosopher;
+	font-size: 50px;
+	margin-top: 60px;
+	margin-bottom: 55px;
+}
 .div-menu-style{
 	padding-top: 20px;
 	width: 45%;
@@ -2181,4 +2195,4 @@ h2.price {
     font-size: 20pt!important;
     color: #322d2d!important;
     }
-}
+
