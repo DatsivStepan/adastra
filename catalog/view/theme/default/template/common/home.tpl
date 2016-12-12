@@ -129,6 +129,7 @@
                     } ?>
     </div>
 </div>
+
 <div class="row" style="margin: 0;">
     <div class="middle-home-img-div-style">
         <div class="container">
@@ -155,6 +156,7 @@
                     интернет магазин фресок Галерея Адастра обладает</br>следующими преимуществами:
                 </span>
             </div>
+
             <div class="row  row-advantages-style">
                 <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
                     <div class="row" style="position: relative; margin: 0 ">
@@ -231,6 +233,7 @@
                     <div class="div-border-style"></div>
                 </div>
             </div>
+
             <div class="row  row-advantages-style">
                 <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
                     <div class="row" style="position: relative; margin: 0 ">
