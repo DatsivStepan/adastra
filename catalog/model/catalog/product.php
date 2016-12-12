@@ -348,11 +348,16 @@ class ModelCatalogProduct extends Model {
                 foreach ($option_query->rows as $option) {
 			$option_value_data = array();
                         
-                        $option_value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "option_value WHERE ".DB_PREFIX."option_value.option_id = ".$option['option_id']." ORDER BY ".DB_PREFIX."option_value.sort_order ");
+            $option_value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "option_value opv
+             LEFT JOIN `" . DB_PREFIX . "option_value_description` opvd ON (opvd.option_value_id = opv.option_value_id) 
+             WHERE opv.option_id = ".$option['option_id']." 
+             ORDER BY opv.sort_order ");
+
 			foreach ($option_value_query->rows as $option_value) {
 				$option_value_data[] = array(
 					'option_value_id'         => $option_value['option_value_id'],
 					'image'                   => $option_value['image'],
+					'name'                   => $option_value['name'],
 				);
 			}
 
