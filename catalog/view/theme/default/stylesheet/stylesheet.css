@@ -2166,4 +2166,19 @@ h2.price {
     .qc-totals div{
         text-align: center!important;
     }
+    .qc-name-price{
+        margin-top: 10px!important;
+    font-family: 'Philosopher'!important;
+    font-size: 20pt!important;
+    color: #322d2d!important;
+    }
+    .itm_nuumber {
+    margin: 29px 0 0 160px;
+}
+    .itm_sum {
+        width: 200px;
+         font-family: 'Philosopher'!important;
+    font-size: 20pt!important;
+    color: #322d2d!important;
+    }
 }

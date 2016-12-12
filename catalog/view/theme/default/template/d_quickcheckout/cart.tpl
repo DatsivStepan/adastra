@@ -11,7 +11,7 @@
 	<div class="chekoutdiv <%= model.config.display ? '' : 'hidden' %>">
 
 		<div class="cont_text fix_p cb mw clf" >
-			<div class="hidden-sm hidden-md it_section_name bw clf">
+			<div class="hidden-sm hidden-md hidden-xs it_section_name bw clf">
 				<div class="sect_name clf"><?php echo $column_name; ?></div>
 				<div class="sect_price clf"><?php echo $column_price; ?></div>
 				<div class="sect_keywrd clf"><?php echo $column_quantity; ?></div>
@@ -24,6 +24,7 @@
 				<%  _.each(model.products, function(product) { %>
 
 				<div class="baskr_item_box mw clf" <%= product.stock ? '' : 'class="stock"' %> style="<% if(i%2){ %>    background-color: #f5f1e9; <%  } i++; %>position:relative;">
+
 				<div class="itm_img fl clf">
 
 							<% if(product.thumb != ''){ %>
@@ -54,7 +55,7 @@
 					<% } %>
 				</div>
 
-				<div class="itm_price fl clf" style="color: #2f0000;">
+				<div class="hidden-xs itm_price fl clf" style="color: #2f0000;">
 					<%= product.price %>
 				</div>
 
@@ -81,6 +82,7 @@
 				</div>
 
 				<div class="itm_sum fl clf" style="color: #2f0000;">
+				<p class="visible-xs" style="    display: inline!important;">Сумма: </p>		
 					<%= product.total %>
 				</div>
 
@@ -102,7 +104,7 @@
 
 	<% if(model.show_price){ %>
 	<div class="form-horizontal qc-totals" style="top: 330px; position: relative;">
-		<% console.log(model.totals[2]['value']); %>
+	
 
 		<div class="row text-right" style="font-family: 'Philosopher';
     font-size: 30px;
