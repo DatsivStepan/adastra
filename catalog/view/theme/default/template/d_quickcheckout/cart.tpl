@@ -1,4 +1,4 @@
-<!-- 
+Ôªø<!-- 
 	Ajax Quick Checkout 
 	v6.0.0
 	Dreamvention.com 
@@ -11,7 +11,7 @@
 	<div class="chekoutdiv <%= model.config.display ? '' : 'hidden' %>">
 
 		<div class="cont_text fix_p cb mw clf" >
-			<div class="it_section_name bw clf">
+			<div class="hidden-sm hidden-md it_section_name bw clf">
 				<div class="sect_name clf"><?php echo $column_name; ?></div>
 				<div class="sect_price clf"><?php echo $column_price; ?></div>
 				<div class="sect_keywrd clf"><?php echo $column_quantity; ?></div>
@@ -23,11 +23,7 @@
 				<% i=0; %>
 				<%  _.each(model.products, function(product) { %>
 
-				<div class="baskr_item_box mw clf" <%= product.stock ? '' : 'class="stock"' %> style="position:relative;">
-
-
-
-
+				<div class="baskr_item_box mw clf" <%= product.stock ? '' : 'class="stock"' %> style="<% if(i%2){ %>    background-color: #f5f1e9; <%  } i++; %>position:relative;">
 				<div class="itm_img fl clf">
 
 							<% if(product.thumb != ''){ %>
@@ -65,13 +61,17 @@
 				<div class="itm_nuumber fl clf">
 					<div class="namber_box section number-plus-minus fr clf">
 						<div class="jq-number">
-							<div class="jq-number__field" style="    width: 90px; border: 0px!important;">
+							<div class="jq-number__field" style="    width: 110px; border: 0px!important;">
 
                                	<span class="input-group-btn" style="    float: left;    width: 25px;">
 									<button style="border: 1px solid #ccc;" id="min<%= product.id %>" class="btn btn-link decrease minus " data-product="<%= product.key %>">-</button>
 								</span>
-								<input id="inp<%= product.id %>" style="padding: 0px; float: left; border-top: 1px solid #dedddd !important;
-    border-bottom: 1px solid #dedddd !important;    width: 30px; height: 24px;" min="0" type="text" data-mask="9?999999999999999" value="<%= product.quantity %>" class="qc-product-qantity form-control text-center" name="cart.<%= product.key %>"  data-refresh="2"/>
+								<input id="inp<%= product.id %>" style="    font-weight: bold!important;
+    font-family: 'System';
+    font-size: 16px;
+    color: #2f0000;
+								padding: 0px; float: left; border-top: 1px solid #dedddd !important;
+    border-bottom: 1px solid #dedddd !important;    width: 48px; height: 38px!important;" min="0" type="text" data-mask="9?999999999999999" value="<%= product.quantity %>" class="qc-product-qantity form-control text-center" name="cart.<%= product.key %>"  data-refresh="2"/>
 								<span class="input-group-btn" style="    float: left;    width: 25px;">
 									<button style="border: 1px solid #ccc;" class="btn btn-link increase plus" data-product="<%= product.key %>"></button>
 
@@ -104,9 +104,13 @@
 	<div class="form-horizontal qc-totals" style="top: 330px; position: relative;">
 		<% console.log(model.totals[2]['value']); %>
 
-		<div class="row">
-			<label class="col-sm-9 col-xs-6 control-label" >—ÛÏÏ‡</label>
-			<div class="col-sm-3 col-xs-6 form-control-static text-right"><%= model.totals[2]['value'] %></div>
+		<div class="row text-right" style="font-family: 'Philosopher';
+    font-size: 30px;
+    color: #322d2d!important;
+	    border-top: none;
+		font-weight: bold!important;">
+			
+			–°—É–º–º–∞: <%= model.totals[2]['value'] %> —Ä—É–±.
 		</div>
 
 	</div>
