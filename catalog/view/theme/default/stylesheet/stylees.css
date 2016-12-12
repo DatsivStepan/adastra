@@ -1097,3 +1097,33 @@
         font-size: 20px;
     }
 }
+.car_ow_np_20{
+    margin-bottom: 2px!important;
+    width: 98%;
+}
+.rows_2 .owl-next{
+    margin: -2% 7% 0% 0%!important;
+}
+.rows_2 .owl-prev{
+    margin: -2% 0% 0% 7%!important;
+}
+.div_muzey_text{
+    text-align: center;margin-bottom: 2%;
+    font-family: 'Philosopher';
+    color:#000000;font-weight: 600;
+    background-size: cover;font-size: 35px;
+    text-transform: uppercase
+}
+.div_item_text{
+    width: 99.3%;
+    height: 200px;
+    float: left;
+}
+.text_title_np_21{
+    font-family: 'Philosopher';
+    font-size: 23px;
+    text-align: center;
+    color: white;
+    letter-spacing: 3px;
+    margin-top: 23%;
+}

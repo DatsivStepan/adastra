@@ -129,7 +129,23 @@
                     } ?>
     </div>
 </div>
+<div class="row rows_2 no-margin">
+    <?php foreach ($category_muse as $musey) { ?>
+    <div class="div_muzey_text"><?php echo($musey['name'])?></div>
+        <div id="owl-carousel" class="owl-carousel owl-theme  car_ow_np_20" data-ride="carousel">
 
+
+                    <?php foreach($musey['option_value'] as $option){ ?>
+                        <div class="item">
+                            <div class="div_item_text" style="background: url(image/<?php echo $option['image'];?>) center no-repeat;">
+                                <div class="text_title_np_21" style=""><?php echo $option['name'];?></div>
+                            </div>
+                        </div>
+                    <?php } ?>
+           <?php } ?>
+        </div>
+</div>
+<div style="clear:both;"></div>
 <div class="row" style="margin: 0;">
     <div class="middle-home-img-div-style">
         <div class="container">

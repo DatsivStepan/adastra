@@ -1,9 +1,12 @@
 <?php
 class ControllerCommonHome extends Controller {
 	public function index() {
+
 		$this->document->setTitle($this->config->get('config_meta_title'));
 		$this->document->setDescription($this->config->get('config_meta_description'));
 		$this->document->setKeywords($this->config->get('config_meta_keyword'));
+        $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+        $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
 
 		if (isset($this->request->get['route'])) {
 			$this->document->addLink(HTTP_SERVER, 'canonical');
@@ -16,8 +19,10 @@ class ControllerCommonHome extends Controller {
         $categories = $this->model_catalog_category->getCategories(0);
 
         $this->load->model('catalog/product');
+
         $data['category_muse'] = $this->model_catalog_product->getOptions(25);
-        //var_dump($optionData);exit;
+
+
         $a = 0;
         foreach ($categories as $category) {
             if ($a <= 4){
