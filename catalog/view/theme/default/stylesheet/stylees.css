@@ -1098,7 +1098,7 @@
     }
 }
 .car_ow_np_20{
-    margin-bottom: 2px!important;
+    margin-bottom: 1px!important;
     width: 98%;
 }
 .rows_2 .owl-next{
@@ -1115,7 +1115,7 @@
     text-transform: uppercase
 }
 .div_item_text{
-    width: 99.3%;
+    width: 99.5%;
     height: 200px;
     float: left;
 }
@@ -1124,6 +1124,6 @@
     font-size: 23px;
     text-align: center;
     color: white;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     margin-top: 23%;
 }

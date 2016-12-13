@@ -22,7 +22,6 @@ class ControllerCommonHome extends Controller {
 
         $data['category_muse'] = $this->model_catalog_product->getOptions(25);
 
-
         $a = 0;
         foreach ($categories as $category) {
             if ($a <= 4){
