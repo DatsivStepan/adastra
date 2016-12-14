@@ -43,13 +43,11 @@ class ModelCatalogmaterialsAndPrices extends Model {
             "' WHERE mp_c_id = '" . (int)$mp_c_id . "'");
     }
     public function addInformationCategory($data) {
-
         $this->db->query("INSERT INTO " . DB_PREFIX . "mp_category SET name = '" . $data['category_info'] . "', description = '" . $data['information_description'][1]['description'] . "'");
     }
 
     public function editInformation($mp_id, $data) {
         $this->event->trigger('pre.admin.information.edit', $data);
-
         $this->db->query("UPDATE " . DB_PREFIX . "mp_information SET sort_order = '" . (int)$data['sort_order'] . "', bottom = '" . (isset($data['bottom']) ? (int)$data['bottom'] : 0) . "', status = '" . (int)$data['status'] . "', fabric_thickness = '" . $data['fabric_thickness'] . "', prices = '" . $data['prices'] . "', MPWJ = '" . $data['MPWJ'] . "', category = '" . $data['category'] . "' WHERE mp_id = '" . (int)$mp_id . "'");
 
         if (isset($data['image'])) {

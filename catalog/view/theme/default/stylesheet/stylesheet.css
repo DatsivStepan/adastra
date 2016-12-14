@@ -1173,7 +1173,7 @@ h2.price {
 	padding-bottom: 25px;
 }
 .middle-home-img-div-style{
-	background: url("../image/img01.png") center no-repeat;
+	background: url("../image/img011.png") center no-repeat;
 	background-size: cover;
 	text-align: center;
 	padding-top: 7%;
@@ -2198,5 +2198,41 @@ h2.price {
 		font-family: 'Philosopher' !important;
 		font-size: 20pt !important;
 		color: #322d2d !important;
+	}
+}
+.adv_con_tit_np_6{
+	padding-bottom: 99px;
+}
+.adv_con_tit_np_4{
+	padding-bottom: 57px;
+}
+@media (max-width: 1200px) and (min-width: 992px) {
+	.adv_con_tit_np_1{
+		padding-bottom: 46px;
+	}
+}
+@media (max-width: 991px) and (min-width: 768px) {
+	.adv_con_tit_np_1{
+		padding-bottom: 46px;
+	}
+	.adv_con_tit_np_4{
+		padding-bottom: 78px;
+	}
+	.adv_con_tit_np_6 {
+		padding-bottom: 139px;
+	}
+}
+@media (max-width: 767px) and (min-width: 320px) {
+	.adv_con_tit_np_1{
+		padding-bottom: 27px;
+	}
+	.adv_con_tit_np_4{
+		padding-bottom: 20px;
+	}
+	.adv_con_tit_np_6 {
+		padding-bottom: 19px;
+	}
+	.adv_np_20_20{
+		float: none!important;
 	}
 }

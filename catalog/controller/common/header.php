@@ -183,6 +183,7 @@ class ControllerCommonHeader extends Controller {
         if ($user_query->num_rows) {
             $admin_email = $user_query->row['email'];
         }
+        var_dump($_POST);
         $mailContent = '
             <table>
                 <tr>
@@ -199,27 +200,6 @@ class ControllerCommonHeader extends Controller {
                 </tr>
             </table>
         ';
-
-//        $mail = new Mail();
-//        $mail->protocol = $this->config->get('config_mail')['protocol'];
-//        $mail->parameter = $this->config->get('config_mail')['parameter'];
-//        $mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
-//        $mail->smtp_username = $this->config->get('config_mail_smtp_username');
-//        $mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
-//        $mail->smtp_port = $this->config->get('config_mail_smtp_port');
-//        $mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
-//
-////		$mail->setTo($this->config->get('config_email'));
-//        $mail->setTo($admin_email);
-//        $mail->setFrom('no-reply@perila.com');
-//        $mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
-//        $mail->setSubject(html_entity_decode('Обратный звонок',ENT_QUOTES, 'UTF-8'));
-//        $mail->setText($mailContent);
-//        $mail->send();
-//        var_dump($mail);
-//        $this->response->redirect($this->url->link('information/contact/success'));
-
-
 
         $mail = new Mail();
         $mail->protocol = $this->config->get('config_mail_protocol');
@@ -238,5 +218,6 @@ class ControllerCommonHeader extends Controller {
         $mail->setText($mailContent);
         $mail->send();
         $this->response->redirect($this->url->link('information/contact/success'));
+
     }
 }
