@@ -122,12 +122,12 @@
                  } ?>
         </div>
     </div>
-    <div class="">
+   <!-- <div class="">
         <?php
     if(isset($content_bottom['modules'][3])){
-                    echo $content_bottom['modules'][3];
+                     echo $content_bottom['modules'][3];
                     } ?>
-    </div>
+    </div> -->
 </div>
 <div class="row rows_2 no-margin">
     <?php foreach ($category_muse as $musey) { ?>
