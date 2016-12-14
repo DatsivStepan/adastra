@@ -17,7 +17,7 @@
           <span >Материалы и цены</span>
         </div>
         <?php foreach($product_array as $category){ ?>
-          <h1><?= $category['category_name']; ?></h1>
+    <p><span style="color: rgb(50, 45, 45); font-family: Philosopher; font-size: 25px; font-weight: 600; padding-top: 1.5%; display: block;"><?= $category['category_name']; ?></span><br></p>
           <div class="map-category-style">
             <span><?= $category['category_description']; ?></span>
           </div>
@@ -25,8 +25,8 @@
               <?php foreach($category['category_product'] as $product){ ?>
                 <?php foreach($product as $product_c){ ?>
                   <div class="row" style="margin-top: 4%">
-                    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs bac_img_np_20" style="background-image: url('image/<?php echo $product_c['image']; ?>')"></div>
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="padding: 0;">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bac_img_np_20" style="background-image: url('/image/<?php echo $product_c['image']; ?>')"></div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding: 0;">
                       <div class="col-lg-12 col-md-12 hidden-sm hidden-xs " style="padding: 0;margin-bottom: 3%;">
                         <span class="col-lg-12 col-md-12 hidden-sm hidden-xs text_faktury_gold" style="padding-bottom: 2%;padding-left: 0;"><?php echo $product_c['title']; ?></span>
                       </div>

@@ -298,7 +298,6 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
                 'edit_c'           => $this->url->link('catalog/materialsAndPrices/editCategory', 'token=' . $this->session->data['token'] . '&mp_c_id=' . $result_c['mp_c_id'] . $url, 'SSL')
                 );
         }
-
         $results = $this->model_catalog_materialsAndPrices->getInformations($filter_data);
 
 
@@ -503,6 +502,9 @@ class ControllerCatalogMaterialsAndPrices extends Controller {
         $this->load->model('localisation/language');
 
         $data['languages'] = $this->model_localisation_language->getLanguages();
+
+        $category_select = $this->model_catalog_materialsAndPrices->getInformationsCategory();
+        $data['category_s']=$category_select;
 
         if (isset($this->request->post['information_description'])) {
             $data['information_description'] = $this->request->post['information_description'];

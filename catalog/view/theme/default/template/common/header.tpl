@@ -7,7 +7,7 @@
 <!--<![endif]-->
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="min-width=600px, initial-scale=0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title><?php echo $title; ?></title>
 <base href="<?php echo $base; ?>" />
@@ -25,9 +25,10 @@
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
 <link href="catalog/view/theme/default/stylesheet/mystels.css" rel="stylesheet">
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modal.js" type="text/javascript"></script>-->
 <script src="catalog/view/javascript/header.js" type="text/javascript"></script>
 
-  <!-- START PRODUCT_CARD STYLES&SCRIPTS -->
+  <!-- START PRODUCT_CARD STYLES&SCRIPTS
   <link  href="catalog/view/css/cropper.css" rel="stylesheet">
   <script src="catalog/view/javascript/cropper.min.js" type="text/javascript"></script>
   <script src="catalog/view/javascript/VanillaMasker.js" type="text/javascript"></script>
@@ -35,7 +36,7 @@
   <link  href="catalog/view/css/nouislider.css" rel="stylesheet">
   <script src="catalog/view/javascript/nouislider.min.js" type="text/javascript"></script>
 
-  <link  href="catalog/view/theme/default/stylesheet/product_card_1.css" rel="stylesheet">
+  <link  href="catalog/view/theme/default/stylesheet/product_card_1.css" rel="stylesheet">-->
   <!-- END PRODUCT_CARD STYLES&SCRIPTS -->
 
   <?php foreach ($styles as $style) { ?>
@@ -55,7 +56,41 @@
 
 
 <body class="<?php echo $class; ?>">
-<div id="contactForm" class="modal fade">
+<!--
+<div id="contactForm_ru" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header" style="border: 0">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+
+            <div class="modal-body" style="text-align: center;">
+                <div class="modal-title-style">Сообщение</div>
+                <div>
+                    <form id="contactForm_ru" action="" method="post">
+                        <ul id="errorMasege" style="padding-left: 0">
+                            <span style="display: none; color: red" class="row name">Некоректно заполнено Имя пользователя</span>
+                            <span style="display: none; color: red" class="row email ">Некоректно заполнено Email</span>
+                            <span style="display: none; color: red" class="row message ">Минимальная длина сообщения десеть знаков</span>
+                        </ul>
+                        <div class="row modal-div-input-stile">
+                            <input class="modal-input-style contactItem" id="name_ru" name="name_ru" type="text" placeholder="Ваше имя">
+                        </div>
+                        <div class="row modal-div-input-stile">
+                            <input class="modal-input-style contactItem" id="email_ru" name="email_ru" type="text" placeholder="E-MAIL">
+                        </div>
+                        <div class="row modal-div-input-stile">
+                            <textarea  name="message_ru" placeholder="Ваше сообщение" rows="5" id="message_ru" class="contactItem modal-textarea-style"></textarea>
+                        </div>
+                        <button id="sendMessage_ru" type="button" class="btn modal-btn-style">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div id="contactForm_en" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
       <!-- Заголовок модального окна -->
@@ -148,8 +183,8 @@
               </div>
             </div>
             <div id="contact" class="row header-div-contact-style">
-              <span class="header-contact-text-style-1" data-toggle="modal" data-target="#contactForm">Обратный звонок</span></br>
-              <span class="header-contact-text-style-2"  data-toggle="modal" data-target="#contactForm">We speak english</span>
+              <span class="header-contact-text-style-1" data-toggle="modal" data-target="#contactForm_ru">Обратный звонок</span></br>
+              <span class="header-contact-text-style-2"  data-toggle="modal" data-target="#contactForm_en">We speak english</span>
             </div>
           </div>
           <div class="div-cart-style"><?php echo $cart; ?></div>
@@ -337,8 +372,8 @@
               </div>
             </div>
             <div id="contact" class="row header-div-contact-style">
-              <span class="header-contact-text-style-1" data-toggle="modal" data-target="#contactForm">Обратный звонок</span></br>
-              <span class="header-contact-text-style-2" data-toggle="modal" data-target="#contactForm">We speak english</span>
+              <span class="header-contact-text-style-1" data-toggle="modal" data-target="#contactForm_ru">Обратный звонок</span></br>
+              <span class="header-contact-text-style-2" data-toggle="modal" data-target="#contactForm_en">We speak english</span>
             </div>
           </div>
           <div class="div-cart-style"><?php echo $cart; ?></div>
@@ -349,40 +384,4 @@
   </div>
   <?php } ?>
   <!--Desktop header end-->
-
 </header>
-
-
-
-<!--<?php if ($categories) { ?>
-<div class="container">
-  <nav id="menu" class="navbar">
-    <div class="navbar-header"><span id="category" class="visible-xs"><?php echo $text_category; ?></span>
-      <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
-    </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav">
-        <?php foreach ($categories as $category) { ?>
-        <?php if ($category['children']) { ?>
-        <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?></a>
-          <div class="dropdown-menu">
-            <div class="dropdown-inner">
-              <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-              <ul class="list-unstyled">
-                <?php foreach ($children as $child) { ?>
-                <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
-                <?php } ?>
-              </ul>
-              <?php } ?>
-            </div>
-            <a href="<?php echo $category['href']; ?>" class="see-all"><?php echo $text_all; ?> <?php echo $category['name']; ?></a> </div>
-        </li>
-        <?php } else { ?>
-        <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-        <?php } ?>
-        <?php } ?>
-      </ul>
-    </div>
-  </nav>
-</div>
-<?php } ?>-->

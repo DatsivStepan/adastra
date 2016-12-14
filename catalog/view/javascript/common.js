@@ -1,26 +1,3 @@
-$(document).ready(function() {
-
-    var owl = $("#owl-carousel");
-
-    owl.owlCarousel({
-
-        itemsCustom : [
-            [0, 1],
-            [450, 2],
-            [600, 2],
-            [700, 3],
-            [1000, 5],
-            [1200, 5],
-            [1400, 5],
-            [1600, 5]
-        ],
-        navigation : true,
-        autoPlay: true,
-        navigationText: ['<img src="/catalog/view/theme/default/image/owlCarusel_strilka_vlivo.png" />', '<img src="/catalog/view/theme/default/image/owlCarusel_strilka_vpravo.png" />'],
-        pagination: false
-    });
-
-});
 function getURLVar(key) {
 	var value = [];
 

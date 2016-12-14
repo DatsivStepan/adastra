@@ -178,13 +178,13 @@
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_1-style">1</span>
                         </div>
-                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_1">
                             <span class="advantages-content-title-style">
                                 Экологически чистые материалы
                             </span></br>
                             <span class="advantages-content-style">
-                                При изготовлении нашей продукции используются только экологически чистые материалы, корорые не наносят
-                                вред вашему здоровью
+                                При изготовлении нашей продукции используются только экологически чистые материалы,
+                                которые не наносят вред вашему здоровью
                             </span>
                         </div>
                     </div>
@@ -196,13 +196,13 @@
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_2-style">2</span>
                         </div>
-                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style adv_con_tit_np_2">
                             <span class="advantages-content-title-style">
                                 Мы являемся производителями
                             </span></br>
                             <span class="advantages-content-style">
-                                Мы являемся производителями с наличием собственной производственной базы, что дает
-                                нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий.
+                                Мы являемся производителями с наличием собственной производственной базы,
+                                что дает нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий
                             </span>
                         </div>
                     </div>
@@ -216,31 +216,29 @@
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_3-style">3</span>
                         </div>
-                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_3">
                             <span class="advantages-content-title-style">
-                                Экологически чистые материалы
+                                Бесшовная печать
                             </span></br>
                             <span class="advantages-content-style">
-                                При изготовлении нашей продукции используются только экологически чистые материалы, корорые не наносят
-                                вред вашему здоровью
+                                Бесшовная печать фресок и фотообоев до 3,20 метров в высоту и до  36 метров в длину
                             </span>
                         </div>
                     </div>
                     <div class="div-border_1-style"></div>
                     <div class="div-border-style"></div>
                 </div>
-                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="float: right">
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style adv_np_20_20" style="float: right">
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_4-style">4</span>
                         </div>
-                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style adv_con_tit_np_4">
                             <span class="advantages-content-title-style">
-                                Мы являемся производителями
+                                Большой выбор
                             </span></br>
                             <span class="advantages-content-style">
-                                Мы являемся производителями с наличием собственной производственной базы, что дает
-                                нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий.
+                                Широкий выбор фактур фотообоев и фресок
                             </span>
                         </div>
                     </div>
@@ -255,13 +253,14 @@
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_5-style">5</span>
                         </div>
-                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_5">
                             <span class="advantages-content-title-style">
-                                Экологически чистые материалы
+                               Эксклюзивный макет
                             </span></br>
                             <span class="advantages-content-style">
-                                При изготовлении нашей продукции используются только экологически чистые материалы, корорые не наносят
-                                вред вашему здоровью
+                                Также наши дизайнеры могут изготовить для вас эксклюзивный макет с применением техники коллажа,
+                                дорисовки изображений с учетом конфигурации помещения, которое вы хотите украсить нашими изделиями, или же нарисовать макет,
+                                соответствующий вашим персональным пожеланиям
                             </span>
                         </div>
                     </div>
@@ -273,13 +272,13 @@
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_6-style">6</span>
                         </div>
-                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style adv_con_tit_np_6">
                             <span class="advantages-content-title-style">
-                                Мы являемся производителями
+                                Репродукции картин
                             </span></br>
                             <span class="advantages-content-style">
-                                Мы являемся производителями с наличием собственной производственной базы, что дает
-                                нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий.
+                               Репродукции картин маслом на холсте любого размера по желанию заказчика.
+                               Наши художники выполнят для Вас копии любых шедевров живописи в высочайшем качестве!
                             </span>
                         </div>
                     </div>
@@ -360,3 +359,28 @@
 </div>
 
 <?php echo $footer; ?>
+<script>
+    $(document).ready(function() {
+
+        var owl = $("#owl-carousel");
+
+        owl.owlCarousel({
+
+            itemsCustom : [
+                [0, 1],
+                [450, 2],
+                [600, 2],
+                [700, 3],
+                [1000, 5],
+                [1200, 5],
+                [1400, 5],
+                [1600, 5]
+            ],
+            navigation : true,
+            autoPlay: true,
+            navigationText: ['<img src="/catalog/view/theme/default/image/owlCarusel_strilka_vlivo.png" />', '<img src="/catalog/view/theme/default/image/owlCarusel_strilka_vpravo.png" />'],
+            pagination: false
+        });
+
+    });
+</script>

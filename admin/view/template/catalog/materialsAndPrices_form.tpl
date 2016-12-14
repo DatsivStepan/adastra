@@ -53,10 +53,11 @@
                   <div class="form-group required" style="">
                     <label class="col-sm-2 control-label" for="input-category"><?php echo $entry_category; ?></label>
                     <div class="col-sm-10">
-                      <input type="text" name="category" value="<?php echo $category; ?>" placeholder="<?php echo $entry_category; ?>" id="input-category" class="form-control" />
-                      <?php if ($error_keyword) { ?>
-                      <div class="text-danger"><?php echo $error_keyword; ?></div>
-                      <?php } ?>
+                      <select class="form-control" id="sel1" name="category">
+                        <?php foreach($category_s as $select_category){ ?>
+                        <option value="<?php echo $select_category['mp_c_id']; ?>"><?php echo $select_category['name']; ?></option>
+                        <?php } ?>
+                      </select>
                     </div>
                   </div>
                   <!-------------------------->
