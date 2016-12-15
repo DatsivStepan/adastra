@@ -28,7 +28,7 @@
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modal.js" type="text/javascript"></script>-->
 <script src="catalog/view/javascript/header.js" type="text/javascript"></script>
 
-  <!-- START PRODUCT_CARD STYLES&SCRIPTS
+  <!-- START PRODUCT_CARD STYLES&SCRIPTS-->
   <link  href="catalog/view/css/cropper.css" rel="stylesheet">
   <script src="catalog/view/javascript/cropper.min.js" type="text/javascript"></script>
   <script src="catalog/view/javascript/VanillaMasker.js" type="text/javascript"></script>
@@ -36,7 +36,7 @@
   <link  href="catalog/view/css/nouislider.css" rel="stylesheet">
   <script src="catalog/view/javascript/nouislider.min.js" type="text/javascript"></script>
 
-  <link  href="catalog/view/theme/default/stylesheet/product_card_1.css" rel="stylesheet">-->
+  <link  href="catalog/view/theme/default/stylesheet/product_card_1.css" rel="stylesheet">
   <!-- END PRODUCT_CARD STYLES&SCRIPTS -->
 
   <?php foreach ($styles as $style) { ?>
