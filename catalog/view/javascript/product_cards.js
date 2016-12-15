@@ -212,6 +212,7 @@ function ready() {
 
         setFrame(frameName_corner);
         checkTooltip();
+        recalculateprice();
     });
 
     hSlider.noUiSlider.on('update', function () {
@@ -248,6 +249,7 @@ function ready() {
 
         setFrame(frameName_corner);
         checkTooltip();
+        recalculateprice();
     });
 
     setSliderLabels(wSlider.noUiSlider.get() * 1, hSlider.noUiSlider.get() * 1);
@@ -633,6 +635,9 @@ function ready() {
     });
     /*FILE END*/
 
+    var classname = document.getElementsByClassName("textureSelector");
+    classname[1].dispatchEvent(new Event("click"));
+    classname[0].dispatchEvent(new Event("click"));
 }
 
 //document.addEventListener("DOMContentLoaded", ready);
