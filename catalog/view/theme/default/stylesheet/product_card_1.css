@@ -1,7 +1,9 @@
 .container-pc1 {
 
 }
-
+.productContainer{
+    width: 100%;
+}
 .product_image-pc {
     float: right;
     width: 100%;
@@ -43,7 +45,7 @@
 }
 
 .sliderContainer {
-    height: 100px;
+    height: auto;
     position: relative;
 }
 
@@ -62,7 +64,7 @@
 
 .clickToBuy {
     height: 50px;
-    width: 49%;
+    width: 48%;
     border-radius: 50px;
     color: #322d2d;
     border: 1px solid #322d2d;
@@ -89,7 +91,7 @@
 
 .addToCart {
     height: 50px;
-    width: 49%;
+    width: 48%;
     border-radius: 50px;
     color: #fff;
     border: 1px solid #322d2d;
@@ -518,13 +520,24 @@
 /*TOOLTIP START*/
 *[tooltip]:hover:after {
     content: attr(tooltip);
-    border: #777;
-    background-color: #aaa;
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 14px;
     padding: 5px;
     display: block;
     position: absolute;
-    top: -30px;
+    top: -62px;
     z-index: 99;
+    color: red;
+    background: rgba(125,125,125, 0.5);
+}
+#wHint,
+#hHint{
+    display: block;
+    font-family: Philosopher;
+    font-weight: bold;
+    font-size: 16px;
+    color: red;
 }
 /*TOOLTIP END*/
 /*FRAME START*/
@@ -532,9 +545,13 @@
     position: absolute;
     top: 30px;
     left: 30px;
+    width: 100%;
+    background-size: contain;
 }
 #frame{
     position: relative;
+    margin: 0 auto;
+
 }
 .frameSide{
 
@@ -589,7 +606,8 @@
 #frame .e{
     right: 0px;
     position: absolute;
-    top: 50px;
+    top: 15px;
+    z-index: -1;
 }
 #frame .se{
     background-position: 0px 0px;
@@ -619,8 +637,9 @@
 #frame .w{
     left: 0px;
     position: absolute;
-    top: 50px;
+    top: 15px;
     transform: rotate(180deg);
+    z-index: -1;
 }
 #frame .nw{
     background-position: 0px 0px;

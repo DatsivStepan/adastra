@@ -4,19 +4,37 @@
 
 function ready() {
 
-    var wSliderRealMinValue = parseInt(document.getElementById('minWidth').innerHTML);
-    var wSliderRealMaxValue = parseInt(document.getElementById('maxWidth').innerHTML);
-
-    var hSliderRealMinValue = parseInt(document.getElementById('minHeight').innerHTML);
-    var hSliderRealMaxValue = parseInt(document.getElementById('maxHeight').innerHTML);
+    var setFrame = function () {};
+    var checkTooltip = function(){};
 
     var image = document.getElementById('image');
+    var picture =  document.getElementById('picture');
+    var imageContainer = document.getElementById('product_image-pc');
+    var imageContainerWidth = imageContainer.offsetWidth;
+    imageContainer.style.height = imageContainer.offsetWidth+"px";
+    var frameWidth     = imageContainerWidth;
+    var imageMaxWidth  = frameWidth - 60;
 
-    var wSliderMinValue = 0;
-    var wSliderMaxValue = image.offsetWidth + 2;
+    var calcFrameBox = function(){
 
-    var hSliderMinValue = 0;
-    var hSliderMaxValue = image.offsetHeight + 2;
+        picture.style.width = "100%";
+        picture.style.maxWidth = (frameWidth - 60)+"px";
+
+        image.style.width = "100%";
+        image.style.maxWidth = (frameWidth - 60)+"px";
+
+        document.styleSheets[0].addRule('#frame', 'height: ' + (image.offsetHeight + 60) + 'px; width: ' + frameWidth + 'px');
+        document.styleSheets[0].insertRule('#frame { height: ' + (image.offsetHeight + 60) + 'px; width: ' + frameWidth + 'px }', 0);
+    };
+    calcFrameBox();
+
+    //document.getElementById('product_image-pc').style.height = (image.offsetHeight + 60) + 'px';
+
+    picture.style.background = "url("+image.src+")";
+    picture.style.backgroundSize = "contain";
+
+    picture.style.height = image.offsetHeight+"px";
+    image.style.display = "none";
 
     //id опций
 
@@ -35,126 +53,115 @@ function ready() {
     //SIZE OPTIONS ID
     var WIDTH_ID = "Ширина";
     var HEIGHT_ID = "Высота";
-    var WIDTH_OFFSET_ID = "горизонтальноеСмещение";
-    var HEIGHT_OFFSET_ID = "вертикальноеСмещение";
 
-    //CROPPER CUSTOM OPTIONS
-    var CROPPER_ASPECT_RATIO = .8;
-
-
-    var cropperSize = {
-        "left": ((wSliderMaxValue - wSliderMaxValue * CROPPER_ASPECT_RATIO) / 2),
-        "top": ((hSliderMaxValue - hSliderMaxValue * CROPPER_ASPECT_RATIO) / 2),
-        "width": wSliderMaxValue * CROPPER_ASPECT_RATIO,
-        "height": hSliderMaxValue * CROPPER_ASPECT_RATIO
-    };
-
+    //потом
     var MAX_CROPPER_SIZE_ID = "maxCropperSize";
 
     var MAX_CROPPER_SIZE = document.getElementById(MAX_CROPPER_SIZE_ID);
 
     //ELEMENTS DEFINITION
+    var frameName_corner = "";
+
+
     var heightInput = document.querySelector("input#" + HEIGHT_ID);
     var widthInput = document.querySelector("input#" + WIDTH_ID);
+    widthInput.onChange = function(){};
+    heightInput.onChange = function(){};
 
-    var frameWidth = wSliderMaxValue + 60;
-    var frameHeight = hSliderMaxValue + 60;
+    var wSliderRealMinValue = 1;
+    var wSliderRealMaxValue = 2;
 
-    document.styleSheets[0].addRule('#frame', 'height: ' + frameHeight + 'px; width: ' + frameWidth + 'px');
-    document.styleSheets[0].insertRule('#frame { height: ' + frameHeight + 'px; width: ' + frameWidth + 'px }', 0);
+    var hSliderRealMinValue = 1;
+    var hSliderRealMaxValue = 2;
 
+    var classname = document.getElementsByClassName("textureSelector");
+
+    var setTexture = function () {
+        var txtSrc = this.getAttribute("txtSrc");
+
+        picture.style.backgroundImage = "url(" + image.src + "), url(" + txtSrc + ")";
+        picture.style.backgroundBlendMode = "multiply";
+        picture.style.background = "url('" + image.src + "') 0% 0% / contain, url('"+ txtSrc +"') 100% 100% / cover";
+
+        textureWidth   = parseInt(this.children[0].getAttribute('textureWidth'));
+        textureHeight  = parseInt(this.children[0].getAttribute('textureHeight'));
+
+        if(MAX_CROPPER_SIZE.checked){
+            MAX_CROPPER_SIZE.dispatchEvent(new Event("click"));
+        }
+        checkTooltip();
+        /*var event = new Event("change");
+        widthInput.dispatchEvent(event);
+        heightInput.dispatchEvent(event);*/
+    };
+
+    var textureWidth  = 0;
+    var textureHeight = 0;
+    for (var i = 0; i < classname.length; i++) {
+        classname[i].addEventListener('click', setTexture, false);
+        if(classname[i].children[0].checked){
+            textureWidth  = parseInt(classname[i].children[0].getAttribute("textureWidth"));
+            textureHeight = parseInt(classname[i].children[0].getAttribute("textureHeight"));
+        }
+        checkTooltip();
+    }
+    classname[0].click();
+
+    var pictureRealHeight = parseInt(image.getAttribute('realheight'));
+    var pictureRealWidth  = parseInt(image.getAttribute('realwidth'));
+
+    var checkSliderSize = function(){
+        if(pictureRealWidth <= textureWidth){
+            wSliderRealMaxValue = textureWidth;
+        }else{
+            wSliderRealMaxValue = Math.ceil(pictureRealWidth/textureWidth)*textureWidth;
+        }
+
+        if(pictureRealHeight <= textureHeight){
+            hSliderRealMaxValue = textureHeight;
+        }else{
+            hSliderRealMaxValue = Math.ceil(pictureRealHeight/textureHeight)*textureHeight;
+        }
+    }
+    checkSliderSize();
+
+    document.getElementById('maxWidth').innerHTML = wSliderRealMaxValue;
+    document.getElementById('maxHeight').innerHTML = hSliderRealMaxValue;
+
+    var wSliderMinValue = 0;
+    var wSliderMaxValue = picture.offsetWidth;
+
+    var hSliderMinValue = 0;
+    var hSliderMaxValue = picture.offsetHeight;
+
+    var hStart = hSliderMaxValue*pictureRealHeight/hSliderRealMaxValue;
+    var wStart = wSliderMaxValue*pictureRealWidth/wSliderRealMaxValue;
+
+    heightInput.value = pictureRealHeight;
+    widthInput.value = pictureRealWidth;
     var setSliderLabels = function (width, height) {
 
-        //var width = wSlider.noUiSlider.get()*1;
-        cropperSize = cropper.getCropBoxData();
-
-        var wOffset = Math.round(cropperSize.left * wSliderRealMaxValue / wSliderMaxValue);
         var w = Math.round(width * wSliderRealMaxValue / wSliderMaxValue);
 
         document.styleSheets[0].addRule('#wSlider .noUi-handle:before', 'content: "' + w + '"');
         document.styleSheets[0].insertRule('#wSlider .noUi-handle:before { content: "' + w + '" }', 0);
         //ширина
         widthInput.value = w;
-        //горизонтальное смещение
-        document.querySelector("input#" + WIDTH_OFFSET_ID).value = wOffset;
-
-        //var height = hSlider.noUiSlider.get()*1;
-        cropperSize = cropper.getCropBoxData();
 
         var h = Math.round(height * hSliderRealMaxValue / hSliderMaxValue);
-        var hOffset = Math.round(cropperSize.top * hSliderRealMaxValue / hSliderMaxValue);
 
         document.styleSheets[0].addRule('#hSlider .noUi-handle:before', 'content: "' + h + '"');
         document.styleSheets[0].insertRule('#hSlider .noUi-handle:before { content: "' + h + '" }', 0);
 
         //высота
         heightInput.value = h;
-        //вертикальное смещение
-        document.querySelector("input#" + HEIGHT_OFFSET_ID).value = hOffset;
     };
-
-    var cropperReadyFunc = function (e) {
-        document.querySelector("div.cropper-canvas > img").src = "";
-        document.querySelector("span.cropper-view-box > img").src = "";
-
-        document.querySelector("div.cropper-canvas > img").style.backgroundImage = "url(" + image.src + ")";
-        document.querySelector("div.cropper-canvas > img").style.backgroundBlendMode = "multiply";
-        document.querySelector("div.cropper-canvas > img").style.backgroundSize = "contain";
-        document.querySelector("div.cropper-canvas > img").style.size = "100% 100%";
-
-        document.querySelector("span.cropper-view-box > img").style.backgroundImage = "url(" + image.src + ")";
-        document.querySelector("span.cropper-view-box > img").style.backgroundBlendMode = "multiply";
-        document.querySelector("span.cropper-view-box > img").style.backgroundSize = "contain";
-        document.querySelector("span.cropper-view-box > img").style.size = "100% 100%";
-
-        cropper.setCropBoxData(cropperSize);
-
-        var tmp = cropper.getCropBoxData();
-
-        setSliderLabels(tmp.width, tmp.height);
-
-    };
-
-    var options = {
-        //aspectRatio: 16 / 9,
-        //Enable to move the image
-        movable: false,
-        //Enable to rotate the image.
-        rotatable: false,
-        //Enable to scale the image.
-        scalable: false,
-        //Enable to zoom the image.
-        zoomable: false,
-        //Enable to zoom the image by dragging touch.
-        zoomOnTouch: false,
-        //Enable to zoom the image by wheeling mouse.
-        zoomOnWheel: false,
-        autoCropArea: CROPPER_ASPECT_RATIO,
-        viewMode: 3,
-        ready: cropperReadyFunc,
-        cropstart: function () {
-
-        },
-        cropend: function () {
-
-        },
-        cropmove: function (e) {
-            var d = cropper.getCropBoxData();
-            setSliderLabels(d.width, d.height);
-            hSlider.noUiSlider.set(d.height);
-            wSlider.noUiSlider.set(d.width);
-        },
-        crop: function () {
-
-        }
-    };
-
-    var cropper = new Cropper(image, options);
 
     var wSlider = document.getElementById('wSlider');
+    var hSlider = document.getElementById('hSlider');
 
     noUiSlider.create(wSlider, {
-        start: wSliderMaxValue * CROPPER_ASPECT_RATIO,
+        start: wStart,
         connect: [true, false],
         animate: false,
         range: {
@@ -162,32 +169,8 @@ function ready() {
             'max': wSliderMaxValue
         }
     });
-    wSlider.noUiSlider.on('slide', function () {
-        var height = hSlider.noUiSlider.get() * 1;
-        var width = wSlider.noUiSlider.get() * 1;
-        setSliderLabels(width, height);
-    });
-    wSlider.noUiSlider.on('slide', function () {
-        var height = hSlider.noUiSlider.get() * 1;
-        var width = wSlider.noUiSlider.get() * 1;
-        cropperSize = cropper.getCropBoxData();
-        var difWidth = cropperSize.width - width;
-        cropperSize.width = width;
-        cropperSize.left = cropperSize.left + difWidth / 2;
-
-        setSliderLabels(width, height);
-        cropper.setCropBoxData({
-            "left": (cropperSize.left + difWidth / 2),
-            "top": cropperSize.top,
-            "width": width,
-            "height": cropperSize.height
-        });
-    });
-
-    var hSlider = document.getElementById('hSlider');
-
     noUiSlider.create(hSlider, {
-        start: hSliderMaxValue * CROPPER_ASPECT_RATIO,
+        start: hStart,
         connect: [true, false],
         animate: false,
         range: {
@@ -195,131 +178,196 @@ function ready() {
             'max': hSliderMaxValue
         }
     });
-    hSlider.noUiSlider.on('slide', function () {
-        var height = hSlider.noUiSlider.get() * 1;
-        var width = wSlider.noUiSlider.get() * 1;
-        setSliderLabels(width, height);
-    });
-    hSlider.noUiSlider.on('slide', function () {
-        var height = hSlider.noUiSlider.get() * 1;
-        var width = wSlider.noUiSlider.get() * 1;
-        cropperSize = cropper.getCropBoxData();
-        var difHeight = cropperSize.height - height;
-        cropperSize.height = height;
-        cropperSize.top = cropperSize.top + difHeight / 2;
 
-        setSliderLabels(width, height);
-        cropper.setCropBoxData({
-            "left": cropperSize.left,
-            "top": (cropperSize.top + difHeight / 2),
-            "width": cropperSize.width,
-            "height": height
-        });
-    });
+    wSlider.noUiSlider.on('update', function () {
+        setSliderLabels(wSlider.noUiSlider.get() * 1, hSlider.noUiSlider.get() * 1);
 
-    VMasker(widthInput).maskNumber();
-    widthInput.addEventListener("onKeyDown", function () {
+        var height = parseFloat(heightInput.value);
+        var width  = parseFloat(widthInput.value);
 
-        var width = parseInt(this.value);
-        if (width > wSliderRealMaxValue) {
-            width = wSliderRealMaxValue;
-            this.value = wSliderRealMaxValue;
+        var aspectRatio = imageContainer.offsetWidth/imageContainer.offsetHeight;
+
+        var frame = document.getElementById('frame');
+        //var frameHeight = imageContainer.offsetHeight - 60;
+        //var frameWidth  = imageContainer.offsetWidth - 20;
+
+        var w, h;
+        if(width > height){
+            w = (imageContainer.offsetWidth-60);
+
+            h = (imageContainer.offsetHeight-60)*(height/width);
+        }else{
+            w = width/height*(imageContainer.offsetWidth-60);
+
+            h = imageContainer.offsetHeight - 60;
         }
 
-        wSlider.noUiSlider.set(Math.round(width * wSliderMaxValue / wSliderRealMaxValue));
+
+        picture.style.maxWidth = (w)+"px";
+        picture.style.height = (h)+"px";
+
+        document.styleSheets[0].addRule('#frame', 'height: ' + (h+60) + 'px; width: ' + (w+60) + 'px');
+        document.styleSheets[0].insertRule('#frame { height: ' + (h+60) + 'px; width: ' + (w+60) + 'px }', 0);
+
+
+        setFrame(frameName_corner);
+        checkTooltip();
+    });
+
+    hSlider.noUiSlider.on('update', function () {
+        setSliderLabels(wSlider.noUiSlider.get() * 1, hSlider.noUiSlider.get() * 1);
+
+        var height = parseFloat(heightInput.value);
+        var width  = parseFloat(widthInput.value);
+
+        var aspectRatio = imageContainer.offsetWidth/imageContainer.offsetHeight;
+
+        var frame = document.getElementById('frame');
+        //var frameHeight = imageContainer.offsetHeight - 60;
+        //var frameWidth  = imageContainer.offsetWidth - 20;
+
+        var w, h;
+        if(width > height){
+            w = (imageContainer.offsetWidth-60);
+
+            h = (imageContainer.offsetHeight-60)*(height/width);
+        }else{
+            w = width/height*(imageContainer.offsetWidth-60);
+
+            h = imageContainer.offsetHeight - 60;
+        }
+
+        w = w < 40 ? 40 : w;
+        h = h < 20 ? 20 : h;
+        picture.style.maxWidth = (w)+"px";
+        picture.style.height = (h)+"px";
+
+        document.styleSheets[0].addRule('#frame', 'height: ' + (h+60) + 'px; width: ' + (w+60) + 'px');
+        document.styleSheets[0].insertRule('#frame { height: ' + (h+60) + 'px; width: ' + (w+60) + 'px }', 0);
+
+
+        setFrame(frameName_corner);
+        checkTooltip();
+    });
+
+    setSliderLabels(wSlider.noUiSlider.get() * 1, hSlider.noUiSlider.get() * 1);
+
+    VMasker(widthInput).maskNumber();
+    widthInput.addEventListener("change", function () {
+
+        if(parseInt(this.value) > 10000){
+            this.value = 10000;
+        }
+
+        if(MAX_CROPPER_SIZE.checked){
+            if(parseInt(this.value) > textureWidth){
+                this.value = textureWidth;
+            }
+        }
+        wSliderRealMaxValue = Math.ceil(this.value/textureWidth)*textureWidth;
+
+        document.getElementById('maxWidth').innerHTML = wSliderRealMaxValue;
+
+        var w = this.value * wSliderMaxValue / wSliderRealMaxValue;
+
+        wSlider.noUiSlider.set([w, null]);
+
+        setSliderLabels(w, hSlider.noUiSlider.get() * 1);
+        checkTooltip();
     });
 
     VMasker(heightInput).maskNumber();
-    heightInput.addEventListener("onKeyDown", function () {
+    heightInput.addEventListener("change", function () {
 
-        var height = parseInt(this.value);
-        if (height > hSliderRealMaxValue) {
-            height = hSliderRealMaxValue;
-            this.value = hSliderRealMaxValue;
+        if(parseInt(this.value) > 10000){
+            this.value = 10000;
+        }
+        if(MAX_CROPPER_SIZE.checked){
+            if(parseInt(this.value) > textureHeight){
+                this.value = textureHeight;
+            }
         }
 
-        hSlider.noUiSlider.set(Math.round(height * hSliderMaxValue / hSliderRealMaxValue));
+        hSliderRealMaxValue = Math.ceil(this.value/textureHeight)*textureHeight;
+
+        document.getElementById('maxHeight').innerHTML = hSliderRealMaxValue;
+
+        var h = this.value * hSliderMaxValue / hSliderRealMaxValue;
+
+        hSlider.noUiSlider.set([h, null]);
+
+        setSliderLabels(wSlider.noUiSlider.get() * 1, h);
+        checkTooltip();
     });
-    setSliderLabels(wSliderMaxValue * CROPPER_ASPECT_RATIO, hSliderMaxValue * CROPPER_ASPECT_RATIO);
+
+    //setSliderLabels(wSliderMaxValue * CROPPER_ASPECT_RATIO, hSliderMaxValue * CROPPER_ASPECT_RATIO);
 
     MAX_CROPPER_SIZE.addEventListener("click", function () {
-        cropperSize = cropper.getCropBoxData();
+        if(this.checked){
+            var classname = document.getElementsByClassName("textureSelector");
+            for (var i = 0; i < classname.length; i++) {
+                classname[i].addEventListener('click', setTexture, false);
+                if(classname[i].children[0].checked){
+                    var textureWidth  = parseInt(classname[i].children[0].getAttribute("textureWidth"));
+                    var textureHeight = parseInt(classname[i].children[0].getAttribute("textureHeight"));
+                }
+            }
 
-        if (MAX_CROPPER_SIZE.checked) {
+            hSliderRealMaxValue = textureHeight;
+            wSliderRealMaxValue = textureWidth;
 
-            var height = MAX_CROPPER_SIZE.getAttribute('att_height') * 1;
-            var width = MAX_CROPPER_SIZE.getAttribute('att_width') * 1;
+            document.getElementById('maxHeight').innerHTML = hSliderRealMaxValue;
+            document.getElementById('maxWidth').innerHTML = wSliderRealMaxValue;
 
-            hSlider.noUiSlider.set(height);
-            wSlider.noUiSlider.set(width);
+            if(parseInt(heightInput.value) > textureHeight){
+                var h = hSliderMaxValue;
+            }else{
+                var h = hSlider.noUiSlider.get()*1;
+            }
 
-            var difHeight = cropperSize.height - height;
-            var difWidth = cropperSize.width - width;
+            if(parseInt(widthInput.value) > textureWidth){
+                var w = wSliderMaxValue;
+            }else{
+                var w = wSlider.noUiSlider.get()*1;
+            }
+            hSlider.noUiSlider.set([h, null]);
+            wSlider.noUiSlider.set([w, null]);
 
-            cropperSize.height = height;
-            cropperSize.width = width;
-
-            cropperSize.top = cropperSize.top + difHeight / 2;
-            cropperSize.left = cropperSize.left + difWidth / 2;
-
-            // To disable
-            hSlider.setAttribute('disabled', true);
-            wSlider.setAttribute('disabled', true);
-
-            widthInput.value = Math.round(width * wSliderRealMaxValue / wSliderMaxValue);
-            heightInput.value = Math.round(height * hSliderRealMaxValue / hSliderMaxValue);
-
-            heightInput.disabled = true;
-            widthInput.disabled = true;
-
-            options["cropBoxResizable"] = false;
-
-            cropper.destroy();
-            cropper = new Cropper(image, options);
-        } else {
-            // To re-enable
-            hSlider.removeAttribute('disabled');
-            wSlider.removeAttribute('disabled');
-
-            heightInput.disabled = false;
-            widthInput.disabled = false;
-
-            options["cropBoxResizable"] = true;
-            cropper.destroy();
-            cropper = new Cropper(image, options);
+            setSliderLabels(w, h);
         }
+        checkTooltip();
     });
 
     var contrast_min50 = document.getElementById(CONTRAST_MIN50_ID);
     if (contrast_min50) {
         contrast_min50.addEventListener("click", function () {
-            document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(50%)";
-            document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(50%)";
+            picture.style.webkitFilter = "contrast(50%)";
+            picture.style.webkitFilter = "contrast(50%)";
 
-            document.querySelector("div.cropper-canvas > img").style.backgroundColor = "rgba(255, 255, 255,0)";
-            document.querySelector("span.cropper-view-box > img").style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
     var contrast_min25 = document.getElementById(CONTRAST_MIN25_ID);
     if (contrast_min25) {
         contrast_min25.addEventListener("click", function () {
-            document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(75%)";
-            document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(75%)";
+            picture.style.webkitFilter = "contrast(75%)";
+            picture.style.webkitFilter = "contrast(75%)";
 
-            document.querySelector("div.cropper-canvas > img").style.backgroundColor = "rgba(255, 255, 255,0)";
-            document.querySelector("span.cropper-view-box > img").style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
     var contrast_0 = document.getElementById(CONTRAST_0_ID);
     if (contrast_0) {
         contrast_0.addEventListener("click", function () {
-            document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(100%)";
-            document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(100%)";
+            picture.style.webkitFilter = "contrast(100%)";
+            picture.style.webkitFilter = "contrast(100%)";
 
-            document.querySelector("div.cropper-canvas > img").style.backgroundColor = "rgba(255, 255, 255,0)";
-            document.querySelector("span.cropper-view-box > img").style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
@@ -327,55 +375,55 @@ function ready() {
     var contrast_plus25 = document.getElementById(CONTRAST_PLUS25_ID);
     if (contrast_plus25) {
         contrast_plus25.addEventListener("click", function () {
-            document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(125%)";
-            document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(125%)";
+            picture.style.webkitFilter = "contrast(125%)";
+            picture.style.webkitFilter = "contrast(125%)";
 
-            document.querySelector("div.cropper-canvas > img").style.backgroundColor = "rgba(255, 255, 255,0)";
-            document.querySelector("span.cropper-view-box > img").style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
     var contrast_plus50 = document.getElementById(CONTRAST_PLUS50_ID);
     if (contrast_plus50) {
         contrast_plus50.addEventListener("click", function () {
-            document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(150%)";
-            document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(150%)";
+            picture.style.webkitFilter = "contrast(150%)";
+            picture.style.webkitFilter = "contrast(150%)";
 
-            document.querySelector("div.cropper-canvas > img").style.backgroundColor = "rgba(255, 255, 255,0)";
-            document.querySelector("span.cropper-view-box > img").style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
     var grayscaleCold = document.getElementById(GRAYSCALECOLD_ID);
     if (grayscaleCold) {
         grayscaleCold.addEventListener("click", function () {
-            document.querySelector("div.cropper-canvas > img").style.webkitFilter = "grayscale(100%)";
-            document.querySelector("span.cropper-view-box > img").style.webkitFilter = "grayscale(100%)";
+            picture.style.webkitFilter = "grayscale(100%)";
+            picture.style.webkitFilter = "grayscale(100%)";
 
-            document.querySelector("div.cropper-canvas > img").style.backgroundColor = "rgba(255, 255, 255,0)";
-            document.querySelector("span.cropper-view-box > img").style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
     var grayscaleWarm = document.getElementById(GRAYSCALEWARM_ID);
     if (grayscaleWarm) {
         grayscaleWarm.addEventListener("click", function () {
-            document.querySelector("div.cropper-canvas > img").style.webkitFilter = "grayscale(90%)";
-            document.querySelector("span.cropper-view-box > img").style.webkitFilter = "grayscale(90%)";
+            picture.style.webkitFilter = "grayscale(90%)";
+            picture.style.webkitFilter = "grayscale(90%)";
 
-            document.querySelector("div.cropper-canvas > img").style.backgroundColor = "rgba(255, 255, 255,0)";
-            document.querySelector("span.cropper-view-box > img").style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
     var sepia = document.getElementById(SEPIA_ID);
     if (sepia) {
         sepia.addEventListener("click", function () {
-            document.querySelector("div.cropper-canvas > img").style.webkitFilter = "sepia(100%)";
-            document.querySelector("span.cropper-view-box > img").style.webkitFilter = "sepia(100%)";
+            picture.style.webkitFilter = "sepia(100%)";
+            picture.style.webkitFilter = "sepia(100%)";
 
-            document.querySelector("div.cropper-canvas > img").style.backgroundColor = "rgba(255, 255, 255,0)";
-            document.querySelector("span.cropper-view-box > img").style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
@@ -383,11 +431,11 @@ function ready() {
     var brown = document.getElementById(BROWN_ID);
     if (brown) {
         brown.addEventListener("click", function () {
-            document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(100%)";
-            document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(100%)";
+            picture.style.webkitFilter = "contrast(100%)";
+            picture.style.webkitFilter = "contrast(100%)";
 
-            document.querySelector("div.cropper-canvas > img").style.backgroundColor = "rgba(65,43,22,0.4)";
-            document.querySelector("span.cropper-view-box > img").style.backgroundColor = "rgba(65,43,22,0.4)";
+            picture.style.backgroundColor = "rgba(65,43,22,0.4)";
+            picture.style.backgroundColor = "rgba(65,43,22,0.4)";
 
         });
     }
@@ -395,44 +443,19 @@ function ready() {
     var ochre = document.getElementById(OCHRE_ID);
     if (ochre) {
         ochre.addEventListener("click", function () {
-            document.querySelector("div.cropper-canvas > img").style.webkitFilter = "contrast(100%)";
-            document.querySelector("span.cropper-view-box > img").style.webkitFilter = "contrast(100%)";
+            picture.style.webkitFilter = "contrast(100%)";
+            picture.style.webkitFilter = "contrast(100%)";
 
-            document.querySelector("div.cropper-canvas > img").style.backgroundColor = "rgba(210,114,27,0.4)";
-            document.querySelector("span.cropper-view-box > img").style.backgroundColor = "rgba(210,114,27,0.4)";
+            picture.style.backgroundColor = "rgba(210,114,27,0.4)";
+            picture.style.backgroundColor = "rgba(210,114,27,0.4)";
         });
     }
 
 
-    var classname = document.getElementsByClassName("textureSelector");
 
-    var setTexture = function () {
-        var txtSrc = this.getAttribute("txtSrc");
-
-        document.querySelector("div.cropper-canvas > img").style.backgroundImage = "url(" + image.src + "), url(" + txtSrc + ")";
-        document.querySelector("div.cropper-canvas > img").style.backgroundBlendMode = "multiply";
-        document.querySelector("div.cropper-canvas > img").style.size = "100% 100%";
-        document.querySelector("div.cropper-canvas > img").style.backgroundSize = "cover";
-
-        document.querySelector("span.cropper-view-box > img").style.backgroundImage = "url(" + image.src + "), url(" + txtSrc + ")";
-        document.querySelector("span.cropper-view-box > img").style.backgroundBlendMode = "multiply";
-        document.querySelector("span.cropper-view-box > img").style.size = "100% 100%";
-        document.querySelector("span.cropper-view-box > img").style.backgroundSize = "cover";
-    };
-
-    for (var i = 0; i < classname.length; i++) {
-        classname[i].addEventListener('click', setTexture, false);
-    }
 
     /*FRAME START*/
     var classname = document.getElementsByClassName("frameSelector");
-
-
-    var frameWidth = wSliderMaxValue + 60;
-    var frameHeight = hSliderMaxValue + 60;
-
-    document.styleSheets[0].addRule('#frame', 'height: ' + frameHeight + 'px; width: ' + frameWidth + 'px');
-    document.styleSheets[0].insertRule('#frame { height: ' + frameHeight + 'px; width: ' + frameWidth + 'px }', 0);
 
     var showFrame = function(){
         document.styleSheets[0].addRule('.frameSide', 'display: block; ');
@@ -444,8 +467,8 @@ function ready() {
     }
 
 
-    var setFrame = function () {
-        var frameName_corner = this.getAttribute("txtSrc");
+    setFrame = function (frameName_corner) {
+        //var frameName_corner = this.getAttribute("txtSrc");
 
         var frameName_line = frameName_corner.replace("_corner.png", "_line.png");
         var serverName = document.getElementById("serverName").value;
@@ -463,8 +486,8 @@ function ready() {
         document.styleSheets[0].insertRule('#frame .ne { background: url("' + serverName + frameName_corner + '"); left:' + (imageWidth + 8) + 'px; }', 0);
 
         //e
-        document.styleSheets[0].addRule('#frame .e', 'background: url("' + serverName + frameName_line + '"); height: ' + (imageHeight - 40) + 'px; left:' + (imageWidth + 8) + 'px;');
-        document.styleSheets[0].insertRule('#frame .e { background: url("' + serverName + frameName_line + '"); height: ' + (imageHeight - 40) + 'px; left:' + (imageWidth + 8) + 'px; }', 0);
+        document.styleSheets[0].addRule('#frame .e', 'background: url("' + serverName + frameName_line + '"); height: ' + (imageHeight + 28) + 'px; left:' + (imageWidth + 8) + 'px;');
+        document.styleSheets[0].insertRule('#frame .e { background: url("' + serverName + frameName_line + '"); height: ' + (imageHeight + 28) + 'px; left:' + (imageWidth + 8) + 'px; }', 0);
 
         //se
         document.styleSheets[0].addRule('#frame .se', 'background: url("' + serverName + frameName_corner + '"); left:' + (imageWidth + 8) + 'px; top:' + (imageHeight + 8) + 'px;');
@@ -482,8 +505,8 @@ function ready() {
         document.styleSheets[0].insertRule('#frame .sw { background: url("' + serverName + frameName_corner + '"); top:' + (imageHeight + 8) + 'px;  }', 0);
 
         //w
-        document.styleSheets[0].addRule('#frame .w', 'background: url("' + serverName + frameName_line + '"); height: ' + (imageHeight - 40) + 'px;');
-        document.styleSheets[0].insertRule('#frame .w { background: url("' + serverName + frameName_line + '"); height: ' + (imageHeight - 40) + 'px; }', 0);
+        document.styleSheets[0].addRule('#frame .w', 'background: url("' + serverName + frameName_line + '"); height: ' + (imageHeight +28) + 'px;');
+        document.styleSheets[0].insertRule('#frame .w { background: url("' + serverName + frameName_line + '"); height: ' + (imageHeight +28) + 'px; }', 0);
 
         //nw
         document.styleSheets[0].addRule('#frame .nw', 'background: url("' + serverName + frameName_corner + '")');
@@ -493,11 +516,31 @@ function ready() {
     };
 
     for (var i = 0; i < classname.length; i++) {
-        classname[i].addEventListener('click', setFrame, false);
+        classname[i].addEventListener('click', function(){
+            frameName_corner = this.getAttribute("txtSrc");
+            setFrame(frameName_corner);
+        }, false);
     }
 
-
     /*FRAME END*/
+
+    checkTooltip = function(){
+        if(parseInt(widthInput.value) > textureWidth){
+            var wHint = "Выбранное значение превышает ширину текстуры ("+textureWidth+"см). Картина будет с вертикальным(и) стыком";
+            document.getElementById('wHint').innerHTML = wHint;
+            document.getElementById('wHint').style.display = "block";
+        }else{
+            document.getElementById('wHint').style.display = "none";
+        }
+        if(parseInt(heightInput.value) > textureHeight){
+            var hHint = "Выбранное значение превышает высоту текстуры ("+textureHeight+"см). Картина будет с горизонтальным(и) стыком";
+            document.getElementById('hHint').innerHTML = hHint;
+            document.getElementById('hHint').style.display = "block";
+        }else{
+            document.getElementById('hHint').style.display = "none";
+        }
+    };
+    checkTooltip();
 
     /*FILE START*/
     $('button[id^=\'button-upload\']').on('click', function () {
@@ -537,58 +580,47 @@ function ready() {
 
                             /*CUSTOM CODE START*/
 
-                            document.getElementById('image').src = json['new_file'];
-                            cropper.destroy();
-                            cropper = new Cropper(image, options);
-
-                            wSliderMaxValue = image.offsetWidth + 2;
-                            hSliderMaxValue = image.offsetHeight + 2;
-
-
-                            hSlider.noUiSlider.updateOptions({
-                                range: {
-                                    'min': hSliderMinValue,
-                                    'max': hSliderMaxValue
-                                }
-                            });
-                            wSlider.noUiSlider.updateOptions({
-                                range: {
-                                    'min': wSliderMinValue,
-                                    'max': wSliderMaxValue
-                                }
-                            });
-
                             var loaded = false;
-                             var img = document.createElement('img');
+                            var img = document.createElement('img');
 
-                             img.onload = function () { loaded = true; };
-                             img.src = json['new_file'];
+                            img.onload = function () { loaded = true; };
+                            img.src = json['new_file'];
 
-                             var wait = setInterval(function () {
-                             if (loaded) {
-                             clearInterval(wait);
-                             } else {
-                                console.log(img.naturalWidth, img.naturalHeight);
-                                var tmp = document.getElementById('picture');
-                                 frameWidth  = tmp.naturalWidth + 60;
-                                 frameHeight = tmp.naturalHeight + 60;
+                            var wait = setInterval(function () {
+                                if (loaded) {
+                                    clearInterval(wait);
 
-                                 document.styleSheets[0].addRule('#frame', 'height: ' + frameHeight + 'px; width: ' + frameWidth + 'px');
-                                 document.styleSheets[0].insertRule('#frame { height: ' + frameHeight + 'px; width: ' + frameWidth + 'px }', 0);
-                                 hideFrame();
+                                    console.log(img.naturalWidth, img.naturalHeight);
+                                    var tmp = document.getElementById('picture');
 
-                                 /*classname = document.getElementsByClassName("frameSelector");
-                                 for (var i = 0; i < classname.length; i++) {
-                                     classname[i].children[0].children[0].checked = false;
-                                     classname[i].addEventListener('click', setFrame, false);
-                                 }*/
-                             }
-                             }, 0);
+                                    var classname = document.getElementsByClassName("textureSelector");
+                                    for (var i = 0; i < classname.length; i++) {
+                                        classname[i].addEventListener('click', setTexture, false);
+                                        if(classname[i].children[0].checked){
+                                            var textureSrc  = classname[i].getAttribute("txtSrc");
+                                        }
+                                        checkTooltip();
+                                    }
+
+                                    document.getElementById('image').src = json['new_file'];
+                                    document.getElementById('picture').style.background = "url("+json['new_file']+") 0% 0% / contain, url("+textureSrc+") 100% 100% / cover";
+
+                                    frameWidth  = tmp.naturalWidth + 60;
+                                    frameHeight = tmp.naturalHeight + 60;
+
+                                    document.styleSheets[0].addRule('#frame', 'height: ' + frameHeight + 'px; width: ' + frameWidth + 'px');
+                                    document.styleSheets[0].insertRule('#frame { height: ' + frameHeight + 'px; width: ' + frameWidth + 'px }', 0);
+                                    hideFrame();
+                                } else {
+
+                                }
+                            }, 0);
 
 
 
                             //document.querySelector("div.cropper-canvas > img").style.backgroundImage = "url(" + json['new_file'] + ")";
                             //document.querySelector("span.cropper-view-box > img").style.backgroundImage = "url(" + json['new_file'] + ")";
+
                             /*CUSTOM CODE END*/
                         }
                     },
@@ -603,4 +635,6 @@ function ready() {
 
 }
 
-document.addEventListener("DOMContentLoaded", ready);
+//document.addEventListener("DOMContentLoaded", ready);
+
+window.onload = ready;
