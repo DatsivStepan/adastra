@@ -764,6 +764,7 @@ h2.price {
 .div-header-style-1{
 	background: rgba(252, 251, 250, 0);
 	padding-top: 10px;
+	border-bottom: 2px solid #f0ebe2;
 
 }
 .heder_border{
@@ -783,8 +784,6 @@ h2.price {
 }
 .div-products-style{
 	font-size: 20px;
-	padding-top: 20px !important;
-	width: 14% !important;
 	float: left;
 }
 .map-category-style{
@@ -802,8 +801,6 @@ h2.price {
 	margin-bottom: 55px;
 }
 .div-menu-style{
-	padding-top: 20px;
-	width: 45%;
 	float: left;
 }
 .div-phone-style{
@@ -872,6 +869,7 @@ h2.price {
 	padding-left: 15px;
 }
 .header-phone-style{
+	margin-left: 5px;
 	font-family: 'Philosopher';
 	font-weight: 500;
 	font-size: 20px;
@@ -1373,7 +1371,16 @@ h2.price {
 	padding-left: 20px;
 
 }
-.
+@media (max-width: 1338px) and (min-width: 1000px ){
+    .header-phone-style {
+        margin-left: 5px;
+        font-family: 'Philosopher';
+        font-weight: 500;
+        font-size: 17px;
+        color: #322d2d;
+    }
+}
+
 @media (max-width: 1216px) and (min-width: 1121px ){
 	.advantages-number_1-div-style{
 		position: absolute;
@@ -1506,8 +1513,6 @@ h2.price {
 	}
 	.div-products-style{
 		font-size: 17px;
-		padding-top: 20px !important;
-		width: 14% !important;
 		float: left;
 	}
 	.products-style .title {
@@ -1538,8 +1543,6 @@ h2.price {
 	}
 	.div-products-style{
 		font-size: 15px;
-		padding-top: 20px !important;
-		width: 14% !important;
 		float: left;
 	}
 	.products-style .title {
@@ -1579,8 +1582,6 @@ h2.price {
 	}
 	.div-products-style{
 		font-size: 20px;
-		padding-top: 20px !important;
-		width: 14% !important;
 		float: left;
 	}
 	.products-style .title {
@@ -1644,8 +1645,6 @@ h2.price {
 	}
 	.div-products-style{
 		font-size: 25px;
-		padding-top: 20px !important;
-		width: 14% !important;
 		float: left;
 	}
 	.products-style .title {
@@ -1703,8 +1702,6 @@ h2.price {
 	}
 	.div-products-style {
 		font-size: 17px;
-		padding-top: 30px !important;
-		width: 14% !important;
 		float: left;
 	}
 	.header-logo-div-style{
@@ -1737,8 +1734,6 @@ h2.price {
 	}
 	.div-products-style{
 		font-size: 15px;
-		padding-top: 28px !important;
-		width: 14% !important;
 		float: left;
 	}
 	.header-logo-div-style{
@@ -1812,8 +1807,6 @@ h2.price {
 	}
 	.div-products-style{
 		font-size: 12px;
-		padding-top: 30px !important;
-		width: 14% !important;
 		float: left;
 	}
 	.products-style .title {
