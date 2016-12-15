@@ -125,8 +125,9 @@
 </div>
 <header>
   <!--Desktop header begin-->
+  <div class="row no-margin div-header-style">
   <?php if($data['is_home'] == 'home'){ ?>
-      <div class="container div-header-style hidden-xs">
+      <div class="container hidden-xs">
   <?php }else{ ?>
         <div class="container div-header-style-1 hidden-xs">
      <?php } ?>
@@ -228,6 +229,7 @@
               <?php } ?>
             </div>
           </div>
+      </div>
       </div>
 <!--Desktop header end-->
 <!--Mobile header begin-->
