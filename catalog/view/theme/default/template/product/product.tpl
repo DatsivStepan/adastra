@@ -1,8 +1,8 @@
 <?php echo $header; ?>
 <?
 
-    $MAX_CROPPER_WIDTH  = 100;
-    $MAX_CROPPER_HEIGHT = 100;
+    $MAX_CROPPER_WIDTH  = 50;
+    $MAX_CROPPER_HEIGHT = 50;
 
 ?>
 <div class="container-pc1 container">
@@ -23,7 +23,7 @@
             <?php echo $column_left; ?>
         </div>
         <div class="container KP_80_2">
-            <div class="container">
+            <div class="container productContainer">
                 <input type="hidden" id="serverName" value="<?php echo(HTTPS_SERVER) ?>">
                 <?php
                     $height = 0;
@@ -54,7 +54,7 @@
 
                 <div class="productImageBox">
                     <?php if ($thumb || $images) { ?>
-                    <div class="product_image-pc thumbnails">
+                    <div id="product_image-pc" class="thumbnails">
 
                         <?php if ($thumb) { ?>
                         <div id="frame">
@@ -67,9 +67,9 @@
                             <div class="w  frameSide"></div>
                             <div class="nw frameSide"></div>
 
-                            <div id="picture" class="my_cropper_container">
+                            <div id="picture">
                                 <input type="hidden" value="<?php echo $thumb; ?>">
-                                <img class="main_image" id="image" src="<?php echo $thumb; ?>">
+                                <img class="main_image" id="image" src="<?php echo $thumb; ?>" realWidth="<?php echo $width; ?>" realHeight="<?php echo $height; ?>">
                             </div>
                         </div>
                         <?php } ?>
@@ -339,16 +339,47 @@
                     <div class="textureContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
                         <div class="textureTitle">Фактура</div>
                         <div id="input-option<?php echo $option['product_option_id']; ?>"  style="padding: 10px;">
-                            <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                            <?php
+                            $i = 0;
+                            foreach ($option['product_option_value'] as $option_value) {
+                                if($i == 0){
+                                ?>
                             <div class="">
-                                <label>
+                                <label class="textureSelector"
+                                       txtSrc="<?php echo $option_value['image']; ?>">
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"/>
-                                    <span class="textureSelector"
-                                          txtSrc="<?php echo $option_value['image']; ?>"><?php echo $option_value['name'] ?></span>
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" checked
+                                           data-texture="true"
+                                           textureWidth="320"
+                                           textureHeight="900"
+                                    />
+                                    <span><?php echo $option_value['name'] ?></span>
                                 </label>
                             </div>
-                            <?php } ?>
+
+                                <?php
+                                }else{
+                                ?>
+                            <div class="">
+                                <label class="textureSelector"
+                                       txtSrc="<?php echo $option_value['image']; ?>">
+                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           data-texture="true"
+                                           textureWidth="1000"
+                                           textureHeight="2000"
+                                    />
+                                    <span><?php echo $option_value['name'] ?></span>
+                                </label>
+                            </div>
+                                <?php
+                                }
+
+
+                            ?>
+                            <?php
+                            $i++;
+                            } ?>
                         </div>
                     </div>
                     <?php
@@ -386,37 +417,45 @@
                         switch (mb_strtolower($option['name'])) {
                             case 'высота':
                                 ?>
-                    <div class="product_description-pc">Без стыков <input type="checkbox" id="maxCropperSize"
-                                                                          att_height="<?php echo $MAX_CROPPER_HEIGHT ?>"
-                                                                          att_width="<?php echo $MAX_CROPPER_WIDTH ?>"><span></span>
+                    <div id="product_description-pc">Без стыков <input type="checkbox" id="maxCropperSize"
+                                                                 data-height=""
+                                                                 data-width="" ><span></span>
                     </div>
-                    <div tooltip='При размерах свыше ШхВ <?php echo $MAX_CROPPER_WIDTH ?> х <?php echo $MAX_CROPPER_HEIGHT ?> полотно будет со стыком'
+                    <div id="hSliderContainer"
                          class="sliderContainer">
-                        <div class="product_description-pc">Высота полотна:</div>
+                        <div class="product_description-pc">Высота полотна (см):</div>
                         <div id="hSlider"></div>
                         <div class="leftRullerCutter"></div>
                         <div class="leftRullerValue" id="minHeight">1</div>
                         <div class="rightRullerCutter"></div>
-                        <div class="rightRullerValue" id="maxHeight"><?php echo $height ?></div>
+                        <div class="rightRullerValue" id="maxHeight"></div>
                         <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
                                value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
                                id="<?php echo $option['name']; ?>" class="form-control"/>
+
+                        <div id="hHint">
+
+                        </div>
                     </div>
                     <?php
                                 break;
                             case 'ширина':
                                 ?>
-                    <div tooltip='При размерах свыше ШхВ <?php echo $MAX_CROPPER_WIDTH ?> х <?php echo $MAX_CROPPER_HEIGHT ?> картина будет из составных частей'
+                    <div id="wSliderContainer"
                          class="sliderContainer">
-                        <div class="product_description-pc">Ширина полотна:</div>
+                        <div class="product_description-pc">Ширина полотна (см):</div>
                         <div id="wSlider"></div>
                         <div class="leftRullerCutter"></div>
                         <div class="leftRullerValue" id="minWidth">1</div>
                         <div class="rightRullerCutter"></div>
-                        <div class="rightRullerValue" id="maxWidth"><?php echo $width ?></div>
+                        <div class="rightRullerValue" id="maxWidth"></div>
                         <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
                                value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
                                id="<?php echo $option['name']; ?>" class="form-control"/>
+                        <div id="wHint">
+
+                        </div>
+
                     </div>
                     <?php
                                 break;
