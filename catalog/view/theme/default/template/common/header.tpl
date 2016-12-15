@@ -145,7 +145,7 @@
               <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4  no-padding">
                   <i>
-                    <img style="width: 20px" src="../../../catalog/view/theme/default/image/phone.png">
+                    <img class="header-phone-icon-width"  src="../../../catalog/view/theme/default/image/phone.png">
                   </i>
                   <span class="header-phone-style">
                     <?php echo $telephone; ?>
@@ -153,7 +153,7 @@
                 </div>
                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
                   <i>
-                    <img style="width: 20px" src="../../../catalog/view/theme/default/image/phone.png">
+                    <img class="header-phone-icon-width"  src="../../../catalog/view/theme/default/image/phone.png">
                   </i>
                   <span class="header-phone-style">
                     <?php echo $telephone; ?>
@@ -161,7 +161,7 @@
                 </div>
                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
                   <i>
-                    <img style="margin-top: -6px; width: 25px;" src="../../../catalog/view/theme/default/image/mail.png">
+                    <img class="header-email-icon-width"  src="../../../catalog/view/theme/default/image/mail.png">
                   </i>
                   <span class="header-phone-style">
                     <?php echo $email; ?>
@@ -176,29 +176,6 @@
                     </div>
                   </div>
                   <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9 no-padding">
-                    <div id="products_id" class="header-products-div-style " style="width: 100%;margin: 0 4px 0 -8%;">
-                      <div class=" container" style="">
-                        <?php foreach ($categories as $category) { ?>
-                        <?php if ($category['children']) { ?>
-                        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 product-div-style" style="border-right-style: dotted;border-right-width: 1px;">
-                          <div class="product-div-title-style">
-                        <span class="products-title-style"><?php echo $category['name']; ?>
-                          </div>
-                          <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-                          <span class="">
-                        <?php foreach ($children as $child) { ?>
-                            <span class="products-category-span-style" style="display: block;padding: 0 0 0 6px;"><a class="products-category-style" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span>
-                            <?php } ?>
-                      </span>
-                          <?php } ?>
-                        </div>
-                        </span>
-                        <?php } else { ?>
-                        <span class="products-category-style"><?php echo $category['name']; ?></span>
-                        <?php } ?>
-                        <?php } ?>
-                      </div>
-                    </div>
                     <div class=" div-menu-style">
                       <a href="/index.php?route=information/information&information_id=4"><span class="header-menu-text-style">Как купить?</span></a>
                       <a href=""><span class="header-menu-text-style">Оплата</span></a>
@@ -228,6 +205,29 @@
             </div>
           </div>
         </nav>
+          <div id="products_id" class="header-products-div-style " style="width: 100%;margin: 0 4px 0 -8%;">
+            <div class=" container" style="">
+              <?php foreach ($categories as $category) { ?>
+              <?php if ($category['children']) { ?>
+              <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 product-div-style" style="border-right-style: dotted;border-right-width: 1px;">
+                <div class="product-div-title-style">
+                        <span class="products-title-style"><?php echo $category['name']; ?>
+                </div>
+                <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
+                <span class="">
+                        <?php foreach ($children as $child) { ?>
+                  <span class="products-category-span-style" style="display: block;padding: 0 0 0 6px;"><a class="products-category-style" href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span>
+                  <?php } ?>
+                      </span>
+                <?php } ?>
+              </div>
+              </span>
+              <?php } else { ?>
+              <span class="products-category-style"><?php echo $category['name']; ?></span>
+              <?php } ?>
+              <?php } ?>
+            </div>
+          </div>
       </div>
 <!--Desktop header end-->
 <!--Mobile header begin-->
