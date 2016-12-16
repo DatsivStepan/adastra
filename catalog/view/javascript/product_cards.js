@@ -23,7 +23,7 @@ function ready() {
         image.style.width = "100%";
         image.style.maxWidth = (frameWidth - 60)+"px";
 
-        document.styleSheets[0].addRule('#frame', 'height: ' + (image.offsetHeight + 60) + 'px; width: ' + frameWidth + 'px');
+        //document.styleSheets[0].addRule('#frame', 'height: ' + (image.offsetHeight + 60) + 'px; width: ' + frameWidth + 'px');
         document.styleSheets[0].insertRule('#frame { height: ' + (image.offsetHeight + 60) + 'px; width: ' + frameWidth + 'px }', 0);
     };
     calcFrameBox();
@@ -81,7 +81,8 @@ function ready() {
 
         picture.style.backgroundImage = "url(" + image.src + "), url(" + txtSrc + ")";
         picture.style.backgroundBlendMode = "multiply";
-        picture.style.background = "url('" + image.src + "') 0% 0% / contain, url('"+ txtSrc +"') 100% 100% / cover";
+        picture.style.background = "url('" + image.src + "'), url('"+ txtSrc +"')";
+        picture.style.backgroundSize = "100% 100%";
 
         textureWidth   = parseInt(this.children[0].getAttribute('textureWidth'));
         textureHeight  = parseInt(this.children[0].getAttribute('textureHeight'));
@@ -105,7 +106,7 @@ function ready() {
         }
         checkTooltip();
     }
-    classname[0].click();
+    if(classname[0]){classname[0].click();}
 
     var pictureRealHeight = parseInt(image.getAttribute('realheight'));
     var pictureRealWidth  = parseInt(image.getAttribute('realwidth'));
@@ -206,7 +207,7 @@ function ready() {
         picture.style.maxWidth = (w)+"px";
         picture.style.height = (h)+"px";
 
-        document.styleSheets[0].addRule('#frame', 'height: ' + (h+60) + 'px; width: ' + (w+60) + 'px');
+        //document.styleSheets[0].addRule('#frame', 'height: ' + (h+60) + 'px; width: ' + (w+60) + 'px');
         document.styleSheets[0].insertRule('#frame { height: ' + (h+60) + 'px; width: ' + (w+60) + 'px }', 0);
 
 
@@ -243,7 +244,7 @@ function ready() {
         picture.style.maxWidth = (w)+"px";
         picture.style.height = (h)+"px";
 
-        document.styleSheets[0].addRule('#frame', 'height: ' + (h+60) + 'px; width: ' + (w+60) + 'px');
+        //document.styleSheets[0].addRule('#frame', 'height: ' + (h+60) + 'px; width: ' + (w+60) + 'px');
         document.styleSheets[0].insertRule('#frame { height: ' + (h+60) + 'px; width: ' + (w+60) + 'px }', 0);
 
 
@@ -460,11 +461,11 @@ function ready() {
     var classname = document.getElementsByClassName("frameSelector");
 
     var showFrame = function(){
-        document.styleSheets[0].addRule('.frameSide', 'display: block; ');
+        //document.styleSheets[0].addRule('.frameSide', 'display: block; ');
         document.styleSheets[0].insertRule('.frameSide { display: block }', 0);
     }
     var hideFrame = function(){
-        document.styleSheets[0].addRule('.frameSide', 'display: none; ');
+        //document.styleSheets[0].addRule('.frameSide', 'display: none; ');
         document.styleSheets[0].insertRule('.frameSide { display: none }', 0);
     }
 
@@ -605,12 +606,13 @@ function ready() {
                                     }
 
                                     document.getElementById('image').src = json['new_file'];
-                                    document.getElementById('picture').style.background = "url("+json['new_file']+") 0% 0% / contain, url("+textureSrc+") 100% 100% / cover";
+                                    document.getElementById('picture').style.background = "url("+json['new_file']+"), url("+textureSrc+")";
+                                    document.getElementById('picture').style.backgroundSize = "100% 100%";
 
                                     frameWidth  = tmp.naturalWidth + 60;
                                     frameHeight = tmp.naturalHeight + 60;
 
-                                    document.styleSheets[0].addRule('#frame', 'height: ' + frameHeight + 'px; width: ' + frameWidth + 'px');
+                                    //document.styleSheets[0].addRule('#frame', 'height: ' + frameHeight + 'px; width: ' + frameWidth + 'px');
                                     document.styleSheets[0].insertRule('#frame { height: ' + frameHeight + 'px; width: ' + frameWidth + 'px }', 0);
                                     hideFrame();
                                 } else {
@@ -636,8 +638,21 @@ function ready() {
     /*FILE END*/
 
     var classname = document.getElementsByClassName("textureSelector");
-    classname[1].dispatchEvent(new Event("click"));
-    classname[0].dispatchEvent(new Event("click"));
+    if(classname[0]){
+        classname[1].dispatchEvent(new Event("click"));
+        classname[0].dispatchEvent(new Event("click"));
+    }
+
+    $("#clearFilters").click(function(){
+        picture.style.webkitFilter = "contrast(100%)";
+        picture.style.webkitFilter = "contrast(100%)";
+
+        picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+        picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+
+        $(".colorSelector").prop( "checked", false );
+    });
+
 }
 
 //document.addEventListener("DOMContentLoaded", ready);
