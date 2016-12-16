@@ -29,6 +29,9 @@
     font-family:'Philosopher';
     font-size: 18px;
     color: #6d6b6b;
+    padding: 0;
+    padding-bottom: 25px !important;
+    line-height: 30px!important;
 }
 .text_faktury_frecku{
     font-family:'Philosopher';
