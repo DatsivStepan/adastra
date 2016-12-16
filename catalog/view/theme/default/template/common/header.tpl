@@ -125,12 +125,12 @@
 </div>
 <header>
   <!--Desktop header begin-->
-  <div class="row no-margin div-header-style">
   <?php if($data['is_home'] == 'home'){ ?>
-      <div class="container hidden-xs">
+  <div class="row no-margin div-header-style">
   <?php }else{ ?>
-        <div class="container div-header-style-1 hidden-xs">
+        <div class="row div-header-style-1">
      <?php } ?>
+          <div class="container hidden-xs">
         <nav >
           <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 header-logo-div-style">
             <div id="logo">
@@ -206,6 +206,7 @@
             </div>
           </div>
         </nav>
+      </div>
           <div id="products_id" class="header-products-div-style " style="width: 100%;margin: 0 4px 0 -8%;">
             <div class=" container" style="">
               <?php foreach ($categories as $category) { ?>
@@ -229,7 +230,6 @@
               <?php } ?>
             </div>
           </div>
-      </div>
       </div>
 <!--Desktop header end-->
 <!--Mobile header begin-->

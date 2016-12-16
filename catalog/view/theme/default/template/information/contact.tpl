@@ -42,11 +42,11 @@
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg=8"><h1 class="text_comment"><?php echo $comment; ?></h1></div>
                 </div>
                 <div class="row">
-                <form action="" method="post" id="contact" class="email_adminy">
+                <form action="" method="post" id="contact_c" class="email_adminy">
                     <h1 class="vopros"><?php echo $text_contact; ?></h1>
                     <div class="form-group required">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <input type="text" name="name" value="<?php echo $name; ?>" id="name"
+                            <input type="text" name="name_c" value="<?php echo $name; ?>" id="name_c"
                                    class="form-control_style text" placeholder="<?php echo $entry_name; ?>"/>
                             <ul id="errorMasege" style="padding-left: 15px">
                                 <code style="display: none" class="name error-style">Некоректно вказано имя</code>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="form-group required">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <input type="text" name="email" value="<?php echo $email; ?>" id="email"
+                            <input type="text" name="email_c" value="<?php echo $email; ?>" id="email_c"
                                    class="form-control_style text" placeholder="<?php echo $entry_email; ?>"/>
                             <ul id="errorMasege" style="padding-left: 15px">
                                 <code style="display: none" class="email error-style">Некоректно вказана електроная почта</code>

@@ -195,11 +195,11 @@ class ControllerInformationContact extends Controller {
             <table>
                 <tr>
                     <td>Имя:</td>
-                    <td>'.$this->request->post['name'].'</td>
+                    <td>'.$this->request->post['name_c'].'</td>
                 </tr>
                 <tr>
                     <td>Електроная почта:</td>
-                    <td>'.$this->request->post['email'].'</td>
+                    <td>'.$this->request->post['email_c'].'</td>
                 </tr>
                 <tr>
                     <td>Сообщение:</td>
@@ -218,9 +218,9 @@ class ControllerInformationContact extends Controller {
 		$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
 
 		$mail->setTo($admin_email);
-		$mail->setFrom($this->request->post['email']);
-		$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
-		$mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
+		$mail->setFrom($this->request->post['email_c']);
+		$mail->setSender(html_entity_decode($this->request->post['name_c'], ENT_QUOTES, 'UTF-8'));
+		$mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name_c']), ENT_QUOTES, 'UTF-8'));
 		$mail->setHtml($mailContent);
 		$mail->send();
 

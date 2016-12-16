@@ -1376,11 +1376,11 @@ h2.price {
         margin-left: 5px;
         font-family: 'Philosopher';
         font-weight: 500;
-        font-size: 17px;
+        font-size: 16px;
         color: #322d2d;
     }
 	.div-products-style {
-		font-size: 18px;
+		font-size: 15px;
 		float: left;
 	}
 	.products-style .title {
@@ -1416,7 +1416,7 @@ h2.price {
 		margin-left: 5px;
 		font-family: 'Philosopher';
 		font-weight: 500;
-		font-size: 13px;
+		font-size: 12px;
 		color: #322d2d;
 	}
 	.div-products-style {
@@ -1663,7 +1663,7 @@ h2.price {
 		float: left;
 	}
 	.products-style .title {
-		font-size: 11px;
+		font-size: 10px;
 		cursor: pointer;
 
 	}
