@@ -162,7 +162,7 @@
                                     <input type="radio"
                                            name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>"
-                                           data-coating="false"
+                                           data-coating="true"
                                     />
                                     <?php echo $option_value['name']; ?>
                                 </label>
@@ -173,7 +173,7 @@
                                     <input type="radio"
                                            name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>"
-                                           data-coating="true"
+                                           data-coating="false"
                                     />
                                     <?php echo $option_value['name']; ?>
                                 </label>
@@ -423,7 +423,7 @@
                     if ($option['type'] == 'custom') { ?>
                     <?php
                         switch (mb_strtolower($option['name'])) {
-                            case 'своя_фактура':
+                            case 'фактура':
                                 ?>
                     <div class="textureContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
                         <div class="textureTitle">Фактура</div>
@@ -473,7 +473,7 @@
                     </div>
                     <?php
                             break;
-                            case 'своя_рама':
+                            case 'рама':
                             ?>
                     <div class="frameBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
                         <div style="min-height: 50px;" class="smallTitleBox">Рама</div>
