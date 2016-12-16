@@ -135,7 +135,9 @@
     text-align: center;
     padding: 0px;
 }
-
+#clearFilters{
+    font-size: 40px;
+}
 .my-custom-label {
     border-radius: 50px;
 }
@@ -547,6 +549,7 @@
     left: 30px;
     width: 100%;
     background-size: contain;
+    min-width: 40px;
 }
 #frame{
     position: relative;
