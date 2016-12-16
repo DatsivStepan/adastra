@@ -434,4 +434,11 @@ class ModelSaleOrder extends Model {
 
 		return $query->row['total'];
 	}
+
+	public function getCustomPhotoUrl($code){
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "upload WHERE code = '".$code."'");
+
+        $url = "http://".$_SERVER['SERVER_NAME']."/".CUSTOM_ROUTE_UPLOAD.$query->row['filename'];
+        return $url;
+    }
 }
