@@ -162,7 +162,7 @@
                                     <input type="radio"
                                            name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>"
-                                           data-coating="true"
+                                           data-coating="false"
                                     />
                                     <?php echo $option_value['name']; ?>
                                 </label>
@@ -172,7 +172,9 @@
                                 <label class="underframeSecondary">
                                     <input type="radio"
                                            name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           data-coating="true"
+                                    />
                                     <?php echo $option_value['name']; ?>
                                 </label>
                             </div>
@@ -284,13 +286,16 @@
                                 ?>
                     <div tooltip='Цветопередача вашего монитора может отличаться от заявленной'
                          class="colorBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                        <div class="smallTitleBox">Цвет</div>
+                        <div class="smallTitleBox">
+                            <p>Цвет</p>
+                            <p><i class="fa fa-refresh" id="clearFilters" aria-hidden="true"></i></p>
+                        </div>
                         <div id="input-option<?php echo $option['product_option_id']; ?>">
                             <?php foreach ($option['product_option_value'] as $option_value) { ?>
                             <div class="colorBox">
                                 <label class="my-custom-label"
                                        id="<?php echo $option_value['name']; ?>">
-                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                    <input type="radio" class="colorSelector" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>"/>
                                     <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
                                 </label>
@@ -413,6 +418,85 @@
                         ?>
                     <?php } ?>
                     <!-- CUSTOM IMAGE OPTION END (рама, цвет) -->
+                    <!-- CUSTOM OPTION START (текстура, рама) -->
+                    <?php
+                    if ($option['type'] == 'custom') { ?>
+                    <?php
+                        switch (mb_strtolower($option['name'])) {
+                            case 'своя_фактура':
+                                ?>
+                    <div class="textureContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                        <div class="textureTitle">Фактура</div>
+                        <div id="input-option<?php echo $option['product_option_id']; ?>"  style="padding: 10px;">
+                            <?php
+                            $i = 0;
+                            foreach ($option['product_option_value'] as $option_value) {
+                                if($i == 0){
+                                ?>
+                            <div class="">
+                                <label class="textureSelector"
+                                       txtSrc="<?php echo $option_value['image']; ?>">
+                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" checked
+                                           data-texture="true"
+                                           textureWidth="<?php echo $option_value['field1']; ?>"
+                                           textureHeight="<?php echo $option_value['field2']; ?>"
+                                    />
+                                    <span><?php echo $option_value['name'] ?></span>
+                                </label>
+                            </div>
+
+                            <?php
+                                }else{
+                                ?>
+                            <div class="">
+                                <label class="textureSelector"
+                                       txtSrc="<?php echo $option_value['image']; ?>">
+                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           data-texture="true"
+                                           textureWidth="<?php echo $option_value['field1']; ?>"
+                                           textureHeight="<?php echo $option_value['field2']; ?>"
+                                    />
+                                    <span><?php echo $option_value['name'] ?></span>
+                                </label>
+                            </div>
+                            <?php
+                                }
+
+
+                            ?>
+                            <?php
+                            $i++;
+                            } ?>
+                        </div>
+                    </div>
+                    <?php
+                            break;
+                            case 'своя_рама':
+                            ?>
+                    <div class="frameBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                        <div style="min-height: 50px;" class="smallTitleBox">Рама</div>
+                        <div id="input-option<?php echo $option['product_option_id']; ?>">
+                            <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                            <div class="frameBox frameSelector" txtSrc="<?php echo $option_value['image']; ?>">
+                                <label class="my-custom-labelFrame">
+                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                           data-frame="true" value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           data-wframe="<?php echo $option_value['field1']; ?>"
+                                    />
+                                    <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
+                                </label>
+                            </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <?php
+                        }
+                        ?>
+                    <?php } ?>
+                    <!-- CUSTOM IMAGE OPTION END (рама, цвет) -->
+
                     <!-- SIZE OPTION START -->
                     <?php if ($option['type'] == 'text') { ?>
                     <?php
