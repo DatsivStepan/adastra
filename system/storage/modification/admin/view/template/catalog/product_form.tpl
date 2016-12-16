@@ -565,8 +565,11 @@
                             </span></div>
                         </div>
                       </div>
-                      <?php } ?>
-                      <?php if ($product_option['type'] == 'select' || $product_option['type'] == 'radio' || $product_option['type'] == 'checkbox' || $product_option['type'] == 'image') { ?>
+                      <?php }
+
+//print_r($option_values);
+?>
+                      <?php if ($product_option['type'] == 'select' || $product_option['type'] == 'radio' || $product_option['type'] == 'checkbox' || $product_option['type'] == 'image' || $product_option['type'] == 'custom') { ?>
                       <div class="table-responsive">
                         <table id="option-value<?php echo $option_row; ?>" class="table table-striped table-bordered table-hover">
                           <thead>
@@ -1204,7 +1207,7 @@ $('input[name=\'option\']').autocomplete({
 			html += '	</div>';
 		}
 
-		if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
+		if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image' || item['type'] == 'custom') {
 			html += '<div class="table-responsive">';
 			html += '  <table id="option-value' + option_row + '" class="table table-striped table-bordered table-hover">';
 			html += '  	 <thead>';
@@ -1266,7 +1269,8 @@ $('input[name=\'option\']').autocomplete({
 var option_value_row = <?php echo $option_value_row; ?>;
 
 function addOptionValue(option_row) {
-	html  = '<tr id="option-value-row' + option_value_row + '">';
+	console.log(option_row);
+    html  = '<tr id="option-value-row' + option_value_row + '">';
 	html += '  <td class="text-left"><select name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][option_value_id]" class="form-control">';
 	html += $('#option-values' + option_row).html();
 	html += '  </select><input type="hidden" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][product_option_value_id]" value="" /></td>';
