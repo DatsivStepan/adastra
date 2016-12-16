@@ -528,11 +528,23 @@ class ControllerSaleOrder extends Controller {
 			$products = $this->model_sale_order->getOrderProducts($this->request->get['order_id']);
 
 			foreach ($products as $product) {
+			    /*CUSTOM CODE START*/
+			    $tmp = $this->model_sale_order->getOrderOptions($this->request->get['order_id'], $product['order_product_id']);
+			    $i=0;
+			    foreach($tmp as $tmp_option){
+			        if($tmp_option['name'] == "Фотография"){
+
+                        $tmp[$i]['value'] = $this->model_sale_order->getCustomPhotoUrl($tmp_option['value']);
+                    }
+                    $i++;
+                }
+                /*CUSTOM CODE END*/
 				$data['order_products'][] = array(
 					'product_id' => $product['product_id'],
 					'name'       => $product['name'],
 					'model'      => $product['model'],
-					'option'     => $this->model_sale_order->getOrderOptions($this->request->get['order_id'], $product['order_product_id']),
+					//'option'     => $this->model_sale_order->getOrderOptions($this->request->get['order_id'], $product['order_product_id']),
+					'option'     => $tmp,
 					'quantity'   => $product['quantity'],
 					'price'      => $product['price'],
 					'total'      => $product['total'],
@@ -540,6 +552,7 @@ class ControllerSaleOrder extends Controller {
 				);
 			}
 
+			//var_dump($data['order_products']);
 			// Vouchers
 			$data['order_vouchers'] = $this->model_sale_order->getOrderVouchers($this->request->get['order_id']);
 
