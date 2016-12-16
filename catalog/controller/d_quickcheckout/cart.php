@@ -148,7 +148,7 @@ class ControllerDQuickcheckoutCart extends Controller {
                 if ($option['type'] != 'file') {
                     $value = $option['value'];
                 } else {
-                    $this->load->mode('tool/upload');
+                    $this->load->model('tool/upload');
                     $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
 
                     if ($upload_info) {

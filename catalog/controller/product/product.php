@@ -356,7 +356,9 @@ class ControllerProductProduct extends Controller {
 							//'image'                   => $this->model_tool_image->resize($option_value['image'], 50, 50),
 							'image'                   => "image/".$option_value['image'],
 							'price'                   => $price,
-							'price_prefix'            => $option_value['price_prefix']
+							'price_prefix'            => $option_value['price_prefix'],
+							'field1'            => $option_value['field1'],
+							'field2'            => $option_value['field2']
 						);
 					}
 				}
