@@ -620,11 +620,6 @@ function ready() {
                                 }
                             }, 0);
 
-
-
-                            //document.querySelector("div.cropper-canvas > img").style.backgroundImage = "url(" + json['new_file'] + ")";
-                            //document.querySelector("span.cropper-view-box > img").style.backgroundImage = "url(" + json['new_file'] + ")";
-
                             /*CUSTOM CODE END*/
                         }
                     },
