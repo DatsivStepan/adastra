@@ -202,7 +202,7 @@
 
 .colorBox {
     float: left;
-    width: 17%;
+    width: 16%;
     margin-top: 5px;
 }
 
@@ -216,7 +216,8 @@
 }
 
 .smallTitleBox {
-    width: 15%;
+    padding-right: 15px !important;
+    /*width: 15%;*/
     float: left;
     padding: 0 10px;
     padding-top: 20px;
@@ -229,7 +230,7 @@
 
 .frameBox {
     float: left;
-    width: 17%;
+    width: 14%;
     margin-top: 5px;
 }
 
@@ -266,7 +267,8 @@
 }
 
 .smallTitleBox {
-    width: 15%;
+    padding-right: 15px !important;
+    /*width: 15%;*/
     float: left;
     padding: 0 10px;
     padding-top: 15px;
@@ -445,7 +447,7 @@
 .productBuyButtonsBox,
 .optionsContainer,
 .productDeliveryBox {
-    width: 50%;
+    width: 100%;
 }
 
 .productImageBox {
@@ -469,7 +471,14 @@
 }
 
 .productDeliveryBox {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
     float: left;
+    font-family: 'Philosopher';
+    font-weight: 300;
+    line-height: 20px;
+    font-size: 17px;
 }
 
 @media (min-width: 768px){
@@ -529,8 +538,9 @@
     position: absolute;
     top: -62px;
     z-index: 99;
-    color: red;
-    background: rgba(125,125,125, 0.5);
+    color: #fff;
+    background: rgba(0,0,0, 1);
+    margin:-1px;
 }
 #wHint,
 #hHint{

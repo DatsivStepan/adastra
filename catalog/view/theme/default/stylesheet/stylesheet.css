@@ -130,7 +130,7 @@ div.required .control-label:before {
 }
 /* logo */
 #logo {
-	margin: 0 0 10px 0;
+	margin: 10px 0 10px 0;
 }
 /* search */
 #search {
@@ -758,8 +758,6 @@ h2.price {
 	background: rgba(252, 251, 250, 0.8);
 	width: 100%;
 	padding-top: 10px;
-	padding-left: 8%;
-	padding-right: 8%;
 }
 .div-header-style-1{
 	background: rgba(252, 251, 250, 0);
@@ -923,7 +921,6 @@ h2.price {
 	z-index: 100;
 	background: rgba(255,255,254, 0.8);
 	width: 100%;
-	margin: 0	 4px 0 -8%;
 
 }
 .products-title-style{
@@ -1371,6 +1368,13 @@ h2.price {
 	padding-left: 20px;
 
 }
+.product-options-padding{
+	padding-left: 26px;
+}
+.product-content_bottom-padding{
+	padding-bottom: 20px;
+}
+
 @media (max-width: 1338px) and (min-width: 1165px ){
     .header-phone-style {
         margin-left: 5px;
@@ -1813,7 +1817,8 @@ h2.price {
 		float: left;
 	}
 	.header-logo-div-style{
-		padding-top: 1.5%;
+
+		margin-top: 3%;
 	}
 }
 @media (max-width: 918px) and (min-width: 800px )   {

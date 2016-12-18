@@ -635,6 +635,33 @@ class ControllerSettingSetting extends Controller {
 			$data['config_admin_language'] = $this->config->get('config_admin_language');
 		}
 
+
+        if (isset($this->request->post['config_currency2'])) {
+            $data['config_currency2'] = $this->request->post['config_currency2'];
+        } else {
+            $data['config_currency2'] = $this->config->get('config_currency2');
+        }
+        if (isset($this->request->post['config_autocalc_option_special'])) {
+            $data['config_autocalc_option_special'] = $this->request->post['config_autocalc_option_special'];
+        } else {
+            $data['config_autocalc_option_special'] = $this->config->get('config_autocalc_option_special');
+        }        
+        if (isset($this->request->post['config_autocalc_option_discount'])) {
+            $data['config_autocalc_option_discount'] = $this->request->post['config_autocalc_option_discount'];
+        } else {
+            $data['config_autocalc_option_discount'] = $this->config->get('config_autocalc_option_discount');
+        }
+        if (isset($this->request->post['config_autocalc_not_mul_qty'])) {
+            $data['config_autocalc_not_mul_qty'] = $this->request->post['config_autocalc_not_mul_qty'];
+        } else {
+            $data['config_autocalc_not_mul_qty'] = $this->config->get('config_autocalc_not_mul_qty');
+        }
+        if (isset($this->request->post['config_autocalc_select_first'])) {
+            $data['config_autocalc_select_first'] = $this->request->post['config_autocalc_select_first'];
+        } else {
+            $data['config_autocalc_select_first'] = $this->config->get('config_autocalc_select_first');
+        }
+      
 		if (isset($this->request->post['config_currency'])) {
 			$data['config_currency'] = $this->request->post['config_currency'];
 		} else {

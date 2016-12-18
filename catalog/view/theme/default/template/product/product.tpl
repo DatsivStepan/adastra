@@ -39,8 +39,57 @@
                         }
                     }
                 ?>
+                <div class="col-lg-6">
+                    <div class="productImageBox">
+                        <?php if ($thumb || $images) { ?>
+                        <div id="product_image-pc" class="thumbnails">
 
+                            <?php if ($thumb) { ?>
+                            <div id="frame">
+                                <div class="n  frameSide">
+                                    <div class="nbefore"></div>
+                                </div>
+                                <div class="ne frameSide"></div>
+                                <div class="e  frameSide"></div>
+                                <div class="se frameSide"></div>
+                                <div class="s  frameSide">
+                                    <div class="sbefore"></div>
+                                </div>
+                                <div class="sw frameSide"></div>
+                                <div class="w  frameSide"></div>
+                                <div class="nw frameSide"></div>
 
+                                <div id="picture">
+                                    <input type="hidden" value="<?php echo $thumb; ?>">
+                                    <img class="main_image" id="image" src="<?php echo $thumb; ?>" realWidth="<?php echo $width; ?>" realHeight="<?php echo $height; ?>">
+                                </div>
+                            </div>
+                            <?php } ?>
+
+                        </div>
+                        <?php } ?>
+
+                        <div class="productDeliveryBox xs-hidden">
+                            <p class="deliveryBoxTitle">Доставка:</p>
+                            <p>
+                            <table>
+                                <tr>
+                                    <td class="deliveryBoxTitle" style="width: 75%;">Доставка по Москве:</td>
+                                    <td>500 руб.</td>
+                                </tr>
+                                <tr>
+                                    <td class="deliveryBoxTitle" style="width: 75%;">За МКАД:</td>
+                                    <td>+20 руб./км.</td>
+                                </tr>
+                            </table>
+                            </p>
+                            <p>Бесплатная доставка по Москве и области при покупке от 20 000 рублей. Доставка до
+                                транспортной компании “Байкал” и транспортной компании “Деловые линии” бесплатно</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
                 <div class="productDescriptionBox">
                     <h1 class="productTitle"><?php echo $heading_title; ?></h1>
                     <h2 style="display: none;"> Автор </h2>
@@ -50,57 +99,6 @@
                         </div>
                     </div>
                 </div>
-
-
-                <div class="productImageBox">
-                    <?php if ($thumb || $images) { ?>
-                    <div id="product_image-pc" class="thumbnails">
-
-                        <?php if ($thumb) { ?>
-                        <div id="frame">
-                            <div class="n  frameSide">
-                                <div class="nbefore"></div>
-                            </div>
-                            <div class="ne frameSide"></div>
-                            <div class="e  frameSide"></div>
-                            <div class="se frameSide"></div>
-                            <div class="s  frameSide">
-                                <div class="sbefore"></div>
-                            </div>
-                            <div class="sw frameSide"></div>
-                            <div class="w  frameSide"></div>
-                            <div class="nw frameSide"></div>
-
-                            <div id="picture">
-                                <input type="hidden" value="<?php echo $thumb; ?>">
-                                <img class="main_image" id="image" src="<?php echo $thumb; ?>" realWidth="<?php echo $width; ?>" realHeight="<?php echo $height; ?>">
-                            </div>
-                        </div>
-                        <?php } ?>
-
-                    </div>
-                    <?php } ?>
-
-                    <div class="productDeliveryBox xs-hidden">
-                        <p class="deliveryBoxTitle">Доставка:</p>
-                        <p>
-                        <table>
-                            <tr>
-                                <td class="deliveryBoxTitle" style="width: 75%;">Доставка по Москве:</td>
-                                <td>500 руб.</td>
-                            </tr>
-                            <tr>
-                                <td class="deliveryBoxTitle" style="width: 75%;">За МКАД:</td>
-                                <td>+20 руб./км.</td>
-                            </tr>
-                        </table>
-                        </p>
-                        <p>Бесплатная доставка по Москве и области при покупке от 20 000 рублей. Доставка до
-                            транспортной компании “Байкал” и транспортной компании “Деловые линии” бесплатно</p>
-
-                    </div>
-                </div>
-
                 <div class="productPriceBox xs-hidden">
                     <?php if ($price) { ?>
                     <div class="list-unstyled">
@@ -140,9 +138,9 @@
                                 id="<?php echo $option['name']; ?>" class="form-control">
                             <option value=""><?php echo $text_select; ?></option>
                             <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                            <option value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
+                            <option value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"><?php echo $option_value['name']; ?>
                                 <?php if ($option_value['price']) { ?>
-                                (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+                                (<?php echo ($option_value['price_prefix'] == '+' || $option_value['price_prefix'] == '-' ? $option_value['price_prefix'] : '') . $option_value['price']; ?>)
                                 <?php } ?>
                             </option>
                             <?php } ?>
@@ -165,7 +163,7 @@
                                 <label class="underframeSecondary">
                                     <input type="radio"
                                            name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-coating="true"
                                     />
                                     <?php echo $option_value['name']; ?>
@@ -176,7 +174,7 @@
                                 <label class="underframeSecondary">
                                     <input type="radio"
                                            name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-coating="false"
                                     />
                                     <?php echo $option_value['name']; ?>
@@ -195,10 +193,10 @@
                             <div class="radio">
                                 <label>
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
                                     <?php echo $option_value['name']; ?>
                                     <?php if ($option_value['price']) { ?>
-                                    (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>
+                                    (<?php echo ($option_value['price_prefix'] == '+' || $option_value['price_prefix'] == '-' ? $option_value['price_prefix'] : '') . $option_value['price']; ?>
                                     )
                                     <?php } ?>
                                 </label>
@@ -225,7 +223,7 @@
                                 <label class="underframeMain">
                                     <input type="radio"
                                            name="option[<?php echo $option['product_option_id']; ?>][]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-subframe="none"
                                     />
                                     <?php echo $option_value['name']; ?>
@@ -236,7 +234,7 @@
                                 <label class="underframeSecondary">
                                     <input type="radio"
                                            name="option[<?php echo $option['product_option_id']; ?>][]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-subframe="big"
                                     />
                                     <?php echo $option_value['name']; ?>
@@ -247,7 +245,7 @@
                                 <label class="underframeSecondary">
                                     <input type="radio"
                                            name="option[<?php echo $option['product_option_id']; ?>][]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-subframe="small"
                                     />
                                     <?php echo $option_value['name']; ?>
@@ -267,10 +265,10 @@
                                 <label>
                                     <input type="checkbox"
                                            name="option[<?php echo $option['product_option_id']; ?>][]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
                                     <?php echo $option_value['name']; ?>
                                     <?php if ($option_value['price']) { ?>
-                                    (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>
+                                    (<?php echo ($option_value['price_prefix'] == '+' || $option_value['price_prefix'] == '-' ? $option_value['price_prefix'] : '') . $option_value['price']; ?>
                                     )
                                     <?php } ?>
                                 </label>
@@ -300,7 +298,7 @@
                                 <label class="my-custom-label"
                                        id="<?php echo $option_value['name']; ?>">
                                     <input type="radio" class="colorSelector" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
                                     <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
                                 </label>
                             </div>
@@ -318,7 +316,7 @@
                             <div class="frameBox frameSelector" txtSrc="<?php echo $option_value['image']; ?>">
                                 <label class="my-custom-labelFrame">
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           data-frame="true" value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                           data-frame="true" value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
                                     <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
                                 </label>
                             </div>
@@ -336,7 +334,7 @@
                             <div class="frameBox">
                                 <label class="my-custom-labelFrame">
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
                                     <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
                                 </label>
                             </div>
@@ -359,7 +357,7 @@
                                 <label class="textureSelector"
                                        txtSrc="<?php echo $option_value['image']; ?>">
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>" checked
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>" checked
                                            data-texture="true"
                                            textureWidth="320"
                                            textureHeight="900"
@@ -375,7 +373,7 @@
                                 <label class="textureSelector"
                                        txtSrc="<?php echo $option_value['image']; ?>">
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-texture="true"
                                            textureWidth="1000"
                                            textureHeight="2000"
@@ -404,12 +402,12 @@
                             <div class="radio">
                                 <label>
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
                                     <img src="<?php echo $option_value['image']; ?>"
                                          alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>"
                                          class="img-thumbnail"/> <?php echo $option_value['name']; ?>
                                     <?php if ($option_value['price']) { ?>
-                                    (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>
+                                    (<?php echo ($option_value['price_prefix'] == '+' || $option_value['price_prefix'] == '-' ? $option_value['price_prefix'] : '') . $option_value['price']; ?>
                                     )
                                     <?php } ?>
                                 </label>
@@ -441,7 +439,7 @@
                                 <label class="textureSelector"
                                        txtSrc="<?php echo $option_value['image']; ?>">
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>" checked
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>" checked
                                            data-texture="true"
                                            textureWidth="<?php echo $option_value['field1']; ?>"
                                            textureHeight="<?php echo $option_value['field2']; ?>"
@@ -457,7 +455,7 @@
                                 <label class="textureSelector"
                                        txtSrc="<?php echo $option_value['image']; ?>">
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-texture="true"
                                            textureWidth="<?php echo $option_value['field1']; ?>"
                                            textureHeight="<?php echo $option_value['field2']; ?>"
@@ -486,7 +484,7 @@
                             <div class="frameBox frameSelector" txtSrc="<?php echo $option_value['image']; ?>">
                                 <label class="my-custom-labelFrame">
                                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           data-frame="true" value="<?php echo $option_value['product_option_value_id']; ?>"
+                                           data-frame="true" value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-wframe="<?php echo $option_value['field1']; ?>"
                                     />
                                     <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
@@ -687,7 +685,7 @@
                     </div>
                     <?php } ?>
                 </div>
-
+            </div>
                 <div class="productPriceBox sm-hidden">
                     <?php if ($price) { ?>
                     <div class="list-unstyled">
@@ -866,4 +864,290 @@
         });
     });
     //--></script>
+
+<script type="text/javascript"><!--
+function price_format(price)
+{ 
+    c = <?php echo (empty($autocalc_currency['decimals']) ? "0" : $autocalc_currency['decimals'] ); ?>;
+    d = '<?php echo $autocalc_currency['decimal_point']; ?>'; // decimal separator
+    t = '<?php echo $autocalc_currency['thousand_point']; ?>'; // thousands separator
+    s_left = '<?php echo str_replace("'", "\'", $autocalc_currency['symbol_left']); ?>';
+    s_right = '<?php echo str_replace("'", "\'", $autocalc_currency['symbol_right']); ?>';
+    n = price * <?php echo $autocalc_currency['value']; ?>;
+    i = parseInt(n = Math.abs(n).toFixed(c)) + ''; 
+    j = ((j = i.length) > 3) ? j % 3 : 0; 
+    price_text = s_left + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '') + s_right; 
+    
+    <?php if (!empty($autocalc_currency2)) { ?>
+    c = <?php echo (empty($autocalc_currency2['decimals']) ? "0" : $autocalc_currency2['decimals'] ); ?>;
+    d = '<?php echo $autocalc_currency2['decimal_point']; ?>'; // decimal separator
+    t = '<?php echo $autocalc_currency2['thousand_point']; ?>'; // thousands separator
+    s_left = '<?php echo str_replace("'", "\'", $autocalc_currency2['symbol_left']); ?>';
+    s_right = '<?php echo str_replace("'", "\'", $autocalc_currency2['symbol_right']); ?>';
+    n = price * <?php echo $autocalc_currency2['value']; ?>;
+    i = parseInt(n = Math.abs(n).toFixed(c)) + ''; 
+    j = ((j = i.length) > 3) ? j % 3 : 0; 
+    price_text += '  <span class="currency2">(' + s_left + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '') + s_right + ')</span>'; 
+    <?php } ?>
+    
+    return price_text;
+}
+
+function calculate_tax(price)
+{
+    <?php // Process Tax Rates
+      if (isset($tax_rates) && $tax) {
+         foreach ($tax_rates as $tax_rate) {
+           if ($tax_rate['type'] == 'F') {
+             echo 'price += '.$tax_rate['rate'].';';
+           } elseif ($tax_rate['type'] == 'P') {
+             echo 'price += (price * '.$tax_rate['rate'].') / 100.0;';
+           }
+         }
+      }
+    ?>
+    return price;
+}
+
+function process_discounts(price, quantity)
+{
+    <?php
+      foreach ($dicounts_unf as $discount) {
+        echo 'if ((quantity >= '.$discount['quantity'].') && ('.$discount['price'].' < price)) price = '.$discount['price'].';'."\n";
+      }
+    ?>
+    return price;
+}
+
+
+animate_delay = 20;
+
+main_price_final = calculate_tax(<?php echo $price_value; ?>);
+main_price_start = calculate_tax(<?php echo $price_value; ?>);
+main_step = 0;
+main_timeout_id = 0;
+
+function animateMainPrice_callback() {
+    main_price_start += main_step;
+    
+    if ((main_step > 0) && (main_price_start > main_price_final)){
+        main_price_start = main_price_final;
+    } else if ((main_step < 0) && (main_price_start < main_price_final)) {
+        main_price_start = main_price_final;
+    } else if (main_step == 0) {
+        main_price_start = main_price_final;
+    }
+    
+    $('.autocalc-product-price').html( price_format(main_price_start) );
+    
+    if (main_price_start != main_price_final) {
+        main_timeout_id = setTimeout(animateMainPrice_callback, animate_delay);
+    }
+}
+
+function animateMainPrice(price) {
+    main_price_start = main_price_final;
+    main_price_final = price;
+    main_step = (main_price_final - main_price_start) / 10;
+    
+    clearTimeout(main_timeout_id);
+    main_timeout_id = setTimeout(animateMainPrice_callback, animate_delay);
+}
+
+
+<?php if ($special) { ?>
+special_price_final = calculate_tax(<?php echo $special_value; ?>);
+special_price_start = calculate_tax(<?php echo $special_value; ?>);
+special_step = 0;
+special_timeout_id = 0;
+
+function animateSpecialPrice_callback() {
+    special_price_start += special_step;
+    
+    if ((special_step > 0) && (special_price_start > special_price_final)){
+        special_price_start = special_price_final;
+    } else if ((special_step < 0) && (special_price_start < special_price_final)) {
+        special_price_start = special_price_final;
+    } else if (special_step == 0) {
+        special_price_start = special_price_final;
+    }
+    
+    $('.autocalc-product-special').html( price_format(special_price_start) );
+    
+    if (special_price_start != special_price_final) {
+        special_timeout_id = setTimeout(animateSpecialPrice_callback, animate_delay);
+    }
+}
+
+function animateSpecialPrice(price) {
+    special_price_start = special_price_final;
+    special_price_final = price;
+    special_step = (special_price_final - special_price_start) / 10;
+    
+    clearTimeout(special_timeout_id);
+    special_timeout_id = setTimeout(animateSpecialPrice_callback, animate_delay);
+}
+<?php } ?>
+
+
+function recalculateprice()
+{
+    var main_price = <?php echo (float)$price_value; ?>;
+    var input_quantity = Number($('input[name="quantity"]').val());
+    var special = <?php echo (float)$special_value; ?>;
+    var tax = 0;
+    discount_coefficient = 1;
+    
+    if (isNaN(input_quantity)) input_quantity = 0;
+    
+    <?php if ($special) { ?>
+        special_coefficient = <?php echo ((float)$price_value/(float)$special_value); ?>;
+    <?php } else { ?>
+        <?php if (empty($autocalc_option_discount)) { ?>
+            main_price = process_discounts(main_price, input_quantity);
+            tax = process_discounts(tax, input_quantity);
+        <?php } else { ?>
+            if (main_price) discount_coefficient = process_discounts(main_price, input_quantity) / main_price;
+        <?php } ?>
+    <?php } ?>
+    
+    
+    var option_price = 0;
+    
+    <?php if ($points) { ?>
+      var points = <?php echo (float)$points_value; ?>;
+      $('input:checked,option:selected').each(function() {
+          if ($(this).data('points')) points += Number($(this).data('points'));
+      });
+      $('.autocalc-product-points').html(points);
+    <?php } ?>
+    
+    $('input:checked,option:selected').each(function() {
+      if ($(this).data('prefix') == '=') {
+        option_price += Number($(this).data('price'));
+        main_price = 0;
+        special = 0;
+      }
+    });
+	
+    var frame_height = parseInt(document.querySelector("input#Высота").value);
+	var frame_width = parseInt(document.querySelector("input#Ширина").value);
+	var frame_size = (frame_height + frame_width)*2;
+	var texture_size = frame_height*frame_width;
+	
+    $('input:checked,option:selected').each(function() {
+      if ($(this).data('prefix') == '+') {
+	  
+        if($(this).data('frame')){
+			option_price += (frame_size + 8*Number($(this).data('wframe')) )/100 * Number($(this).data('price'));
+		}else if($(this).data('subframe')){
+			switch($(this).data('subframe')){
+				case "big":
+					option_price += frame_size/100 * Number($(this).data('price'));
+				break;
+				case "small":
+					option_price += frame_size/100 * Number($(this).data('price'));
+				break;
+			}
+		}else if($(this).data('texture')){
+			option_price += frame_height*frame_width/10000 * Number($(this).data('price'));
+		}else{
+			option_price += Number($(this).data('price'));
+		}
+		if($(this).data('coating')){
+			option_price += main_price * 0.2;
+		}
+		
+      }
+      if ($(this).data('prefix') == '-') {
+        option_price -= Number($(this).data('price'));
+      }
+      if ($(this).data('prefix') == 'u') {
+        pcnt = 1.0 + (Number($(this).data('price')) / 100.0);
+        option_price *= pcnt;
+        main_price *= pcnt;
+        special *= pcnt;
+      }
+      if ($(this).data('prefix') == 'd') {
+        pcnt = 1.0 - (Number($(this).data('price')) / 100.0);
+        option_price *= pcnt;
+        main_price *= pcnt;
+        special *= pcnt;
+      }
+      if ($(this).data('prefix') == '*') {
+        option_price *= Number($(this).data('price'));
+        main_price *= Number($(this).data('price'));
+        special *= Number($(this).data('price'));
+      }
+      if ($(this).data('prefix') == '/') {
+        option_price /= Number($(this).data('price'));
+        main_price /= Number($(this).data('price'));
+        special /= Number($(this).data('price'));
+      }
+    });
+    
+    special += option_price;
+    main_price += option_price;
+
+    <?php if ($special) { ?>
+      <?php if (empty($autocalc_option_special))  { ?>
+        main_price = special * special_coefficient;
+      <?php } else { ?>
+        special = main_price / special_coefficient;
+      <?php } ?>
+      tax = special;
+    <?php } else { ?>
+      <?php if (!empty($autocalc_option_discount)) { ?>
+          main_price *= discount_coefficient;
+      <?php } ?>
+      tax = main_price;
+    <?php } ?>
+    
+    // Process TAX.
+    main_price = calculate_tax(main_price);
+    special = calculate_tax(special);
+    
+    <?php if (!$autocalc_not_mul_qty) { ?>
+    main_price *= input_quantity;
+    special *= input_quantity;
+    tax *= input_quantity;
+    <?php } ?>
+
+    // Display Main Price
+    animateMainPrice(main_price);
+      
+    <?php if ($special) { ?>
+      animateSpecialPrice(special);
+    <?php } ?>
+}
+
+$(document).ready(function() {
+    $('input[type="checkbox"]').bind('change', function() { recalculateprice(); });
+    $('input[type="radio"]').bind('change', function() { recalculateprice(); });
+    $('select').bind('change', function() { recalculateprice(); });
+    
+    $quantity = $('input[name="quantity"]');
+    $quantity.data('val', $quantity.val());
+    (function() {
+        if ($quantity.val() != $quantity.data('val')){
+            $quantity.data('val',$quantity.val());
+            recalculateprice();
+        }
+        setTimeout(arguments.callee, 250);
+    })();
+
+    <?php if ($autocalc_select_first) { ?>
+    $('select[name^="option"] option[value=""]').remove();
+    last_name = '';
+    $('input[type="radio"][name^="option"]').each(function(){
+        if ($(this).attr('name') != last_name) $(this).prop('checked', true);
+        last_name = $(this).attr('name');
+    });
+    <?php } ?>
+    
+    recalculateprice();
+});
+
+//--></script>
+      
 <?php echo $footer; ?>

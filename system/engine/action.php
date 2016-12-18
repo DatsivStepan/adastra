@@ -36,7 +36,7 @@ class Action {
 		}
 
 		if (is_file($this->file)) {
-			include_once($this->file);
+			include_once(modification($this->file));
 
 			$class = $this->class;
 

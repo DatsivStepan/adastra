@@ -16,7 +16,7 @@
 <link href="view/stylesheet/bootstrap.css" type="text/css" rel="stylesheet" />
 <link href="view/javascript/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
 <link href="view/javascript/summernote/summernote.css" rel="stylesheet" />
-<script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+<script type="text/javascript" src="view/javascript/summernote/summernote-rus.js"></script>
 <script src="view/javascript/jquery/datetimepicker/moment.js" type="text/javascript"></script>
 <script src="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
 <link href="view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen" />
@@ -24,6 +24,15 @@
 <?php foreach ($styles as $style) { ?>
 <link type="text/css" href="<?php echo $style['href']; ?>" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
+
+<script type="text/javascript" src="view/javascript/jquery/translit.js"></script>
+
+<style>
+#column-left.active {width: 250px !important;}
+#column-left.active + #content {margin-left: 250px !important;}
+#menu > li > ul {width: 235px !important;}
+</style>
+		
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>
@@ -69,9 +78,15 @@
         <?php } ?>
         <li class="divider"></li>
         <li class="dropdown-header"><?php echo $text_help; ?> <i class="fa fa-life-ring"></i></li>
-        <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
-        <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
-        <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+        
+		<li><a href="http://opencart-russia.ru/" target="_blank"><?php echo $text_homepage; ?></a></li>
+		
+        
+		<li><a href="http://forum.opencart-russia.ru/threads/soderzhanie.5/" target="_blank"><?php echo $text_documentation; ?></a></li>
+		
+        
+		<li><a href="http://forum.opencart-russia.ru" target="_blank"><?php echo $text_support; ?></a></li>
+		
       </ul>
     </li>
     <li><a href="<?php echo $logout; ?>"><span class="hidden-xs hidden-sm hidden-md"><?php echo $text_logout; ?></span> <i class="fa fa-sign-out fa-lg"></i></a></li>
