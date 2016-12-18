@@ -209,7 +209,7 @@
 .colorBoxContainer {
     width: 100%;
     min-height: 100px;
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
     margin-top: 10px;
     float: left;
     position: relative;
@@ -237,7 +237,7 @@
 .frameBoxContainer {
     width: 100%;
     min-height: 50px;
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
     margin-top: 10px;
     float: left;
 }
@@ -354,7 +354,11 @@
 .noUi-connect {
     border-radius: 10px;
 }
-
+.fixed:after{
+    display: block;
+    content: '';
+    clear: both;
+}
 @media (min-width: 768px) and (max-width: 991px) {
     .clickToBuy p {
         width: 190px !important;

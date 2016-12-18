@@ -40,52 +40,53 @@
                     }
                 ?>
                 <div class="col-lg-6">
-                    <div class="productImageBox">
-                        <?php if ($thumb || $images) { ?>
-                        <div id="product_image-pc" class="thumbnails">
+                    <div class="fixed">
+                        <div class="productImageBox">
+                            <?php if ($thumb || $images) { ?>
+                            <div id="product_image-pc" class="thumbnails">
 
-                            <?php if ($thumb) { ?>
-                            <div id="frame">
-                                <div class="n  frameSide">
-                                    <div class="nbefore"></div>
-                                </div>
-                                <div class="ne frameSide"></div>
-                                <div class="e  frameSide"></div>
-                                <div class="se frameSide"></div>
-                                <div class="s  frameSide">
-                                    <div class="sbefore"></div>
-                                </div>
-                                <div class="sw frameSide"></div>
-                                <div class="w  frameSide"></div>
-                                <div class="nw frameSide"></div>
+                                <?php if ($thumb) { ?>
+                                <div id="frame">
+                                    <div class="n  frameSide">
+                                        <div class="nbefore"></div>
+                                    </div>
+                                    <div class="ne frameSide"></div>
+                                    <div class="e  frameSide"></div>
+                                    <div class="se frameSide"></div>
+                                    <div class="s  frameSide">
+                                        <div class="sbefore"></div>
+                                    </div>
+                                    <div class="sw frameSide"></div>
+                                    <div class="w  frameSide"></div>
+                                    <div class="nw frameSide"></div>
 
-                                <div id="picture">
-                                    <input type="hidden" value="<?php echo $thumb; ?>">
-                                    <img class="main_image" id="image" src="<?php echo $thumb; ?>" realWidth="<?php echo $width; ?>" realHeight="<?php echo $height; ?>">
+                                    <div id="picture">
+                                        <input type="hidden" value="<?php echo $thumb; ?>">
+                                        <img class="main_image" id="image" src="<?php echo $thumb; ?>" realWidth="<?php echo $width; ?>" realHeight="<?php echo $height; ?>">
+                                    </div>
                                 </div>
+                                <?php } ?>
+
                             </div>
                             <?php } ?>
 
-                        </div>
-                        <?php } ?>
-
-                        <div class="productDeliveryBox xs-hidden">
-                            <p class="deliveryBoxTitle">Доставка:</p>
-                            <p>
-                            <table>
-                                <tr>
-                                    <td class="deliveryBoxTitle" style="width: 75%;">Доставка по Москве:</td>
-                                    <td>500 руб.</td>
-                                </tr>
-                                <tr>
-                                    <td class="deliveryBoxTitle" style="width: 75%;">За МКАД:</td>
-                                    <td>+20 руб./км.</td>
-                                </tr>
-                            </table>
-                            </p>
-                            <p>Бесплатная доставка по Москве и области при покупке от 20 000 рублей. Доставка до
-                                транспортной компании “Байкал” и транспортной компании “Деловые линии” бесплатно</p>
-
+                            <div class="productDeliveryBox xs-hidden">
+                                <p class="deliveryBoxTitle">Доставка:</p>
+                                <p>
+                                <table>
+                                    <tr>
+                                        <td class="deliveryBoxTitle" style="width: 75%;">Доставка по Москве:</td>
+                                        <td>500 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="deliveryBoxTitle" style="width: 75%;">За МКАД:</td>
+                                        <td>+20 руб./км.</td>
+                                    </tr>
+                                </table>
+                                </p>
+                                <p>Бесплатная доставка по Москве и области при покупке от 20 000 рублей. Доставка до
+                                    транспортной компании “Байкал”.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -478,19 +479,23 @@
                             case 'рама':
                             ?>
                     <div class="frameBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                        <div style="min-height: 50px;" class="smallTitleBox">Рама</div>
-                        <div id="input-option<?php echo $option['product_option_id']; ?>">
-                            <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                            <div class="frameBox frameSelector" txtSrc="<?php echo $option_value['image']; ?>">
-                                <label class="my-custom-labelFrame">
-                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                           data-frame="true" value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
-                                           data-wframe="<?php echo $option_value['field1']; ?>"
-                                    />
-                                    <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
-                                </label>
+                        <div class="col-lg-1 no-padding">
+                            <div style="min-height: 50px;" class="smallTitleBox">Рама</div>
+                        </div>
+                        <div class="col-lg-11 no-padding"  style="padding-left: 15px">
+                            <div id="input-option<?php echo $option['product_option_id']; ?>">
+                                <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                                <div class="frameBox frameSelector" txtSrc="<?php echo $option_value['image']; ?>">
+                                    <label class="my-custom-labelFrame">
+                                        <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                               data-frame="true" value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
+                                               data-wframe="<?php echo $option_value['field1']; ?>"
+                                        />
+                                        <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
+                                    </label>
+                                </div>
+                                <?php } ?>
                             </div>
-                            <?php } ?>
                         </div>
                     </div>
                     <?php
@@ -537,7 +542,7 @@
                         <div class="leftRullerValue" id="minWidth">1</div>
                         <div class="rightRullerCutter"></div>
                         <div class="rightRullerValue" id="maxWidth"></div>
-                        <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
+                        <input type="text" style="margin-bottom:15px " name="option[<?php echo $option['product_option_id']; ?>]"
                                value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
                                id="<?php echo $option['name']; ?>" class="form-control"/>
                         <div id="wHint">
@@ -727,20 +732,42 @@
                     </table>
                     </p>
                     <p>Бесплатная доставка по Москве и области при покупке от 20 000 рублей. Доставка до
-                        транспортной компании “Байкал” и транспортной компании “Деловые линии” бесплатно</p>
+                        транспортной компании “Байкал”.</p>
 
                 </div>
 
             </div>
         </div>
-        <?php echo $content_top; ?>
     </div>
-    <div class="row">
-        <?php echo $content_bottom; ?>
+    <div class="stopFixed">
+        <div class="row no-margin">
+            <?php echo $content_top; ?>
+        </div>
+        <div class="row no-margin">
+            <?php echo $content_bottom; ?>
+        </div>
+        <div class="row no-margin">
+            <?php echo $column_right; ?>
+        </div>
     </div>
-
-    <?php echo $column_right; ?>
 </div>
+<script type="text/javascript"><!--
+    $(document).ready(function () {
+        var offset = $('.fixed').offset();
+        var stopOffset = $('.stopFixed').offset();
+        var topPadding = -20;
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > offset.top && $(window).scrollTop() <= stopOffset.top - 680) {
+                $('.fixed').stop().animate({marginTop: $(window).scrollTop() - offset.top + topPadding});
+            }
+            else if($(window).scrollTop() < offset.top){
+                $('.fixed').stop().animate({marginTop: 0});
+            }else if($(window).scrollTop() > stopOffset.top - 680){
+                $('.fixed').stop().animate({marginTop: stopOffset.top - 680});
+            }
+        });
+    });
+--></script>
 
 <script type="text/javascript"><!--
     $('select[name=\'recurring_id\'], input[name="quantity"]').change(function () {
@@ -1149,5 +1176,6 @@ $(document).ready(function() {
 });
 
 //--></script>
-      
-<?php echo $footer; ?>
+<div class="row no-margin" style="margin-top: 25px !important;">
+    <?php echo $footer; ?>
+</div>
