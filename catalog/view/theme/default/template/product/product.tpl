@@ -58,11 +58,15 @@
 
                         <?php if ($thumb) { ?>
                         <div id="frame">
-                            <div class="n  frameSide"></div>
+                            <div class="n  frameSide">
+                                <div class="nbefore"></div>
+                            </div>
                             <div class="ne frameSide"></div>
                             <div class="e  frameSide"></div>
                             <div class="se frameSide"></div>
-                            <div class="s  frameSide"></div>
+                            <div class="s  frameSide">
+                                <div class="sbefore"></div>
+                            </div>
                             <div class="sw frameSide"></div>
                             <div class="w  frameSide"></div>
                             <div class="nw frameSide"></div>

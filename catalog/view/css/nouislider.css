@@ -122,7 +122,6 @@
  */
 .noUi-handle:before,
 .noUi-handle:after {
-	content: "";
 	display: block;
 	position: absolute;
 	height: 14px;

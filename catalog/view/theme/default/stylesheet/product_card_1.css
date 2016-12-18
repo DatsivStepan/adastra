@@ -334,8 +334,7 @@
     box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
-.noUi-handle:before {
-    content: "1234";
+.noUi-tooltip{
     display: block;
     position: absolute;
     background: transparent;
@@ -576,7 +575,6 @@
 #frame .e{
     width: 50px;
     background-size: contain;
-    /*background: url(frame_h.png);*/
 }
 #frame .ne,
 #frame .nw,
@@ -584,7 +582,6 @@
 #frame .sw{
     height: 50px;
     width: 50px;
-    /*background: url(frame_v.png);*/
     position: absolute;
     background-size: contain;
 
@@ -592,12 +589,11 @@
 #frame .n{
     overflow: hidden;
 }
-#frame .n:before{
+.nbefore{
     content: "";
     position: absolute;
     width: 50px;
     z-index: 99;
-    /*background: url(frame_h.png)repeat;*/
     transform: rotate(270deg);
     background-size: 100%;
 }
@@ -622,12 +618,11 @@
 
     overflow: hidden;
 }
-#frame .s:before{
+.sbefore{
     content: "";
     position: absolute;
     width: 50px;
     z-index: 99;
-    /*background: url(frame_h.png)repeat;*/
     transform: rotate(90deg);
     background-size: 100%;
 }
