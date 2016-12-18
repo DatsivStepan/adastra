@@ -547,13 +547,19 @@ class ModelCheckoutOrder extends Model {
 						if ($option['type'] != 'file') {
 							$value = $option['value'];
 						} else {
-							$upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+						    if($option['name']='Фотография'){
+                                $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "upload WHERE code = '".$option['value']."'");
+                                $url = "http://".$_SERVER['SERVER_NAME']."/".CUSTOM_ROUTE_UPLOAD.$query->row['filename'];
+                                $value = "<a href='".$url."'>Ссылка</a>";
+                            }else{
+                                $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
 
-							if ($upload_info) {
-								$value = $upload_info['name'];
-							} else {
-								$value = '';
-							}
+                                if ($upload_info) {
+                                    $value = $upload_info['name'];
+                                } else {
+                                    $value = '';
+                                }
+                            }
 						}
 
 						$option_data[] = array(
@@ -620,17 +626,23 @@ class ModelCheckoutOrder extends Model {
 					$order_option_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_option WHERE order_id = '" . (int)$order_id . "' AND order_product_id = '" . $product['order_product_id'] . "'");
 
 					foreach ($order_option_query->rows as $option) {
-						if ($option['type'] != 'file') {
-							$value = $option['value'];
-						} else {
-							$upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+                        if ($option['type'] != 'file') {
+                            $value = $option['value'];
+                        } else {
+                            if($option['name']='Фотография'){
+                                $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "upload WHERE code = '".$option['value']."'");
+                                $url = "http://".$_SERVER['SERVER_NAME']."/".CUSTOM_ROUTE_UPLOAD.$query->row['filename'];
+                                $value = "<a href='".$url."'>Ссылка</a>";
+                            }else{
+                                $upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
 
-							if ($upload_info) {
-								$value = $upload_info['name'];
-							} else {
-								$value = '';
-							}
-						}
+                                if ($upload_info) {
+                                    $value = $upload_info['name'];
+                                } else {
+                                    $value = '';
+                                }
+                            }
+                        }
 
 						$text .= chr(9) . '-' . $option['name'] . ' ' . (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value) . "\n";
 					}
@@ -736,9 +748,15 @@ class ModelCheckoutOrder extends Model {
 							if ($option['type'] != 'file') {
 								$value = $option['value'];
 							} else {
-								$value = utf8_substr($option['value'], 0, utf8_strrpos($option['value'], '.'));
-							}
+                                if($option['name']='Фотография'){
+                                    $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "upload WHERE code = '".$option['value']."'");
+                                    $url = "http://".$_SERVER['SERVER_NAME']."/".CUSTOM_ROUTE_UPLOAD.$query->row['filename'];
+                                    $value = $url;
+                                }else{
+                                    $value = utf8_substr($option['value'], 0, utf8_strrpos($option['value'], '.'));
+                                }
 
+							}
 							$text .= chr(9) . '-' . $option['name'] . ' ' . (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value) . "\n";
 						}
 					}
