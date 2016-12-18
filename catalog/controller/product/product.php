@@ -1,4 +1,43 @@
 <?php
+
+			
+    global $aFolder;
+    if (!defined('HTTP_ADMIN')) {
+    	$root_dir = DIR_APPLICATION.'../';
+    	$folder_contents = scandir($root_dir);
+		if (!(in_array('admin', $folder_contents) && file_exists($root_dir.'admin/config.php'))) {
+			foreach ($folder_contents as $value) {
+				if (is_dir($root_dir.$value) && $value != '.' && $value != '..'){
+					if (file_exists($root_dir.$value.'/config.php')) {
+						$admin_folder_name = $value;
+						continue;
+					}
+				}
+			}
+		}
+    	if (isset($admin_folder_name)) {
+    		define('HTTP_ADMIN',$admin_folder_name);
+    	} else {
+    		define('HTTP_ADMIN','admin');
+    	}
+    	
+    }
+    
+    global $modulesPath;
+    if (version_compare(VERSION,'2.3','>=')) { //newer than 2.2.x
+        $modulesPath = 'extension/module';
+    } else {
+        $modulesPath = 'module';
+    }
+    
+    $aFolder = preg_replace('/.*\/([^\/].*)\//is','$1',HTTP_ADMIN);
+    if (!isset($GLOBALS['magictoolbox']['magicslideshow']) && !isset($GLOBALS['magicslideshow_module_loaded'])) {
+
+	include (preg_match("/components\/com_(ayelshop|aceshop|mijoshop)\/opencart\//ims",__FILE__,$matches)?'components/com_'.$matches[1].'/opencart/':'').$aFolder.'/controller/'.$modulesPath.'/magicslideshow-opencart-module/module.php';
+    };
+			
+			
+			
 class ControllerProductProduct extends Controller {
 	private $error = array();
 
@@ -284,6 +323,7 @@ class ControllerProductProduct extends Controller {
 
 			if ($product_info['image']) {
 				$data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height'));
+$data['popup'] = $data['popup'].'" id="mainimage';
 			} else {
 				$data['popup'] = '';
 			}
@@ -299,10 +339,11 @@ class ControllerProductProduct extends Controller {
 			$data['images'] = array();
 
 			$results = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
+$product_info['images'] = $results;
 
 			foreach ($results as $result) {
 				$data['images'][] = array(
-					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height')),
+					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height')).'" id="selector',
 					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_additional_width'), $this->config->get('config_image_additional_height'))
 				);
 			}
@@ -336,6 +377,58 @@ class ControllerProductProduct extends Controller {
 				);
 			}
 
+
+          $data['raw_price'] = $data['price'];
+          $data['raw_special'] = $data['special'];
+        
+          if ($data['price']) {
+              $data['price'] = '<span class=\'autocalc-product-price\'>' . $data['price'] . '</span>';
+          }
+          if ($data['special']) {
+              $data['special'] = '<span class=\'autocalc-product-special\'>' . $data['special'] . '</span>';
+          }
+          if ($data['points']) {
+              $data['points'] = '<span class=\'autocalc-product-points\'>' . $data['points'] . '</span>';
+          }
+          
+          $data['price_value'] = $product_info['price'];
+          $data['special_value'] = $product_info['special'];
+          $data['tax_value'] = (float)$product_info['special'] ? $product_info['special'] : $product_info['price'];
+          $data['points_value'] = $product_info['points'];
+          
+          $var_currency = array();
+          $currency_code = !empty($this->session->data['currency']) ? $this->session->data['currency'] : $this->config->get('config_currency');
+          $var_currency['value'] = $this->currency->getValue($currency_code);
+          $var_currency['symbol_left'] = $this->currency->getSymbolLeft($currency_code);
+          $var_currency['symbol_right'] = $this->currency->getSymbolRight($currency_code);
+          $var_currency['decimals'] = $this->currency->getDecimalPlace($currency_code);
+          $var_currency['decimal_point'] = $this->language->get('decimal_point');
+          $var_currency['thousand_point'] = $this->language->get('thousand_point');
+          $data['autocalc_currency'] = $var_currency;
+
+          $currency2_code = $this->config->get('config_currency2');
+          if ($this->currency->has($currency2_code) && $currency2_code != $currency_code) {
+              $var_currency = array();
+              $currency_code = $currency2_code;
+              $var_currency['value'] = $this->currency->getValue($currency_code);
+              $var_currency['symbol_left'] = $this->currency->getSymbolLeft($currency_code);
+              $var_currency['symbol_right'] = $this->currency->getSymbolRight($currency_code);
+              $var_currency['decimals'] = $this->currency->getDecimalPlace($currency_code);
+              $var_currency['decimal_point'] = $this->language->get('decimal_point');
+              $var_currency['thousand_point'] = $this->language->get('thousand_point');
+              $data['autocalc_currency2'] = $var_currency;
+          }
+          
+          $data['dicounts_unf'] = $discounts;
+
+          $data['tax_class_id'] = $product_info['tax_class_id'];
+          $data['tax_rates'] = $this->tax->getRates(0, $product_info['tax_class_id']);
+        
+          $data['autocalc_option_special'] = $this->config->get('config_autocalc_option_special');
+          $data['autocalc_option_discount'] = $this->config->get('config_autocalc_option_discount');
+          $data['autocalc_not_mul_qty'] = $this->config->get('config_autocalc_not_mul_qty');
+          $data['autocalc_select_first'] = $this->config->get('config_autocalc_select_first');
+      
 			$data['options'] = array();
 
 			foreach ($this->model_catalog_product->getProductOptions($this->request->get['product_id']) as $option) {
@@ -350,6 +443,10 @@ class ControllerProductProduct extends Controller {
 						}
 
 						$product_option_value_data[] = array(
+
+          'price_value'                   => $option_value['price'],
+          'points_value'                  => intval($option_value['points_prefix'].$option_value['points']),
+      
 							'product_option_value_id' => $option_value['product_option_value_id'],
 							'option_value_id'         => $option_value['option_value_id'],
 							'name'                    => $option_value['name'],
@@ -480,9 +577,9 @@ class ControllerProductProduct extends Controller {
 			$data['header'] = $this->load->controller('common/header');
 
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
-				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/product/product.tpl', $data));
+				$this->response->setOutput(magicslideshow($this->load->view($this->config->get('config_template') . '/template/product/product.tpl', $data),$this,'product',$product_info));
 			} else {
-				$this->response->setOutput($this->load->view('default/template/product/product.tpl', $data));
+				$this->response->setOutput(magicslideshow($this->load->view('default/template/product/product.tpl', $data),$this,'product',$product_info));
 			}
 		} else {
 			$url = '';

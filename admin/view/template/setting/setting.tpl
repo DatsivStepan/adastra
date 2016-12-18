@@ -258,6 +258,115 @@
                 </div>
               </div>
               <div class="form-group">
+
+          <label class="col-sm-2 control-label" for="input-currency"><span data-toggle="tooltip" title="Выводится модулем autocalc_price_option в карточке товара">Дополнительная валюта <i>(autocalc)</i>:</span></label>
+          <div class="col-sm-10">
+            <select name="config_currency2" id="input-currency" class="form-control">
+              <option value=""><?php echo $text_none; ?></option>
+              <?php foreach ($currencies as $currency) { ?>
+              <?php if ($currency['code'] == $config_currency2) { ?>
+              <option value="<?php echo $currency['code']; ?>" selected="selected"><?php echo $currency['title']; ?></option>
+              <?php } else { ?>
+              <option value="<?php echo $currency['code']; ?>"><?php echo $currency['title']; ?></option>
+              <?php } ?>
+              <?php } ?>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="input-currency"><span data-toggle="tooltip" title="Акция на опции пропорционально акции на товар (autocalc_price_option)">Акция на опции <i>(autocalc)</i>:</span></label>
+          <div class="col-sm-10">
+            <label class="radio-inline">
+              <?php if ($config_autocalc_option_special) { ?>
+              <input type="radio" name="config_autocalc_option_special" value="1" checked="checked" />
+              <?php echo $text_yes; ?>
+              <?php } else { ?>
+              <input type="radio" name="config_autocalc_option_special" value="1" />
+              <?php echo $text_yes; ?>
+              <?php } ?>
+            </label>
+            <label class="radio-inline">
+              <?php if (!$config_autocalc_option_special) { ?>
+              <input type="radio" name="config_autocalc_option_special" value="0" checked="checked" />
+              <?php echo $text_no; ?>
+              <?php } else { ?>
+              <input type="radio" name="config_autocalc_option_special" value="0" />
+              <?php echo $text_no; ?>
+              <?php } ?>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="input-currency"><span data-toggle="tooltip" title="Скидка на опции пропорционально скидке на товар (autocalc_price_option)">Скидка на опции <i>(autocalc)</i>:</span></label>
+          <div class="col-sm-10">
+            <label class="radio-inline">
+              <?php if ($config_autocalc_option_discount) { ?>
+              <input type="radio" name="config_autocalc_option_discount" value="1" checked="checked" />
+              <?php echo $text_yes; ?>
+              <?php } else { ?>
+              <input type="radio" name="config_autocalc_option_discount" value="1" />
+              <?php echo $text_yes; ?>
+              <?php } ?>
+            </label>
+            <label class="radio-inline">
+              <?php if (!$config_autocalc_option_discount) { ?>
+              <input type="radio" name="config_autocalc_option_discount" value="0" checked="checked" />
+              <?php echo $text_no; ?>
+              <?php } else { ?>
+              <input type="radio" name="config_autocalc_option_discount" value="0" />
+              <?php echo $text_no; ?>
+              <?php } ?>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="input-currency"><span data-toggle="tooltip" title="Отключении функции умножения на количество (autocalc_price_option)">Не умножать на количество <i>(autocalc)</i>:</span></label>
+          <div class="col-sm-10">
+            <label class="radio-inline">
+              <?php if ($config_autocalc_not_mul_qty) { ?>
+              <input type="radio" name="config_autocalc_not_mul_qty" value="1" checked="checked" />
+              <?php echo $text_yes; ?>
+              <?php } else { ?>
+              <input type="radio" name="config_autocalc_not_mul_qty" value="1" />
+              <?php echo $text_yes; ?>
+              <?php } ?>
+            </label>
+            <label class="radio-inline">
+              <?php if (!$config_autocalc_not_mul_qty) { ?>
+              <input type="radio" name="config_autocalc_not_mul_qty" value="0" checked="checked" />
+              <?php echo $text_no; ?>
+              <?php } else { ?>
+              <input type="radio" name="config_autocalc_not_mul_qty" value="0" />
+              <?php echo $text_no; ?>
+              <?php } ?>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="input-currency"><span data-toggle="tooltip" title="Автоматический выбор первой опции (radio,select). (autocalc_price_option)">Выбор первой опции <i>(autocalc)</i>:</span></label>
+          <div class="col-sm-10">
+            <label class="radio-inline">
+              <?php if ($config_autocalc_select_first) { ?>
+              <input type="radio" name="config_autocalc_select_first" value="1" checked="checked" />
+              <?php echo $text_yes; ?>
+              <?php } else { ?>
+              <input type="radio" name="config_autocalc_select_first" value="1" />
+              <?php echo $text_yes; ?>
+              <?php } ?>
+            </label>
+            <label class="radio-inline">
+              <?php if (!$config_autocalc_select_first) { ?>
+              <input type="radio" name="config_autocalc_select_first" value="0" checked="checked" />
+              <?php echo $text_no; ?>
+              <?php } else { ?>
+              <input type="radio" name="config_autocalc_select_first" value="0" />
+              <?php echo $text_no; ?>
+              <?php } ?>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+      
                 <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="<?php echo $help_currency_auto; ?>"><?php echo $entry_currency_auto; ?></span></label>
                 <div class="col-sm-10">
                   <label class="radio-inline">
