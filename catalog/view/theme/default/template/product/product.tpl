@@ -39,7 +39,16 @@
                         }
                     }
                 ?>
-                <div class="col-lg-6">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 col-xl-6">
+                    <div class="productDescriptionBox hidden-sm hidden-md hidden-lg hidden-xl">
+                        <h1 class="productTitle"><?php echo $heading_title; ?></h1>
+                        <h2 style="display: none;"> Автор </h2>
+                        <div class="product_description-pc">
+                            <div>
+                                <?php echo $description; ?>
+                            </div>
+                        </div>
+                    </div>
                     <div class="fixed">
                         <div class="productImageBox">
                             <?php if ($thumb || $images) { ?>
@@ -90,8 +99,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                <div class="productDescriptionBox">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 col-xl-6">
+                <div class="productDescriptionBox hidden-xs">
                     <h1 class="productTitle"><?php echo $heading_title; ?></h1>
                     <h2 style="display: none;"> Автор </h2>
                     <div class="product_description-pc">
@@ -691,7 +700,7 @@
                     <?php } ?>
                 </div>
             </div>
-                <div class="productPriceBox sm-hidden">
+                <div class="productPriceBox sm-hidden" style="margin-top: 10px">
                     <?php if ($price) { ?>
                     <div class="list-unstyled">
                         <?php if (!$special) { ?>
@@ -733,7 +742,6 @@
                     </p>
                     <p>Бесплатная доставка по Москве и области при покупке от 20 000 рублей. Доставка до
                         транспортной компании “Байкал”.</p>
-
                 </div>
 
             </div>
@@ -753,6 +761,9 @@
 </div>
 <script type="text/javascript"><!--
     $(document).ready(function () {
+        console.log($(window).width());
+
+      if($(window).width() >= 768 ){
         var offset = $('.fixed').offset();
         var stopOffset = $('.stopFixed').offset();
         var topPadding = -20;
@@ -766,9 +777,9 @@
                 $('.fixed').stop().animate({marginTop: stopOffset.top - 680});
             }
         });
+      }
     });
 --></script>
-
 <script type="text/javascript"><!--
     $('select[name=\'recurring_id\'], input[name="quantity"]').change(function () {
         $.ajax({
@@ -891,7 +902,6 @@
         });
     });
     //--></script>
-
 <script type="text/javascript"><!--
 function price_format(price)
 { 
@@ -1176,6 +1186,7 @@ $(document).ready(function() {
 });
 
 //--></script>
+
 <div class="row no-margin" style="margin-top: 25px !important;">
     <?php echo $footer; ?>
 </div>
