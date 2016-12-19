@@ -309,7 +309,7 @@
                                 <img src="../../../catalog/view/theme/default/image/phone.png">
                             </div>
                             <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style" >
-                                <span class="footer-contact-text-right-style"><?php echo $telephone; ?></span>
+                                <span class="footer-contact-text-right-style"><?php echo $telephone2; ?></span>
                             </div>
                         </div>
                     </div>

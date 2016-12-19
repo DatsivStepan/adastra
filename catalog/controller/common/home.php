@@ -43,6 +43,7 @@ class ControllerCommonHome extends Controller {
         $data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
         $data['telephone'] = $this->config->get('config_telephone');
+        $data['telephone2'] = $this->config->get('config_telephone2');
         $data['email'] = $this->config->get('config_email');
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/home.tpl')) {

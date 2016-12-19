@@ -99,7 +99,7 @@
       </div>
       <!-- Основное содержимое модального окна -->
       <div class="modal-body" style="text-align: center;">
-        <div class="modal-title-style">MESSAGE</div>
+        <div class="modal-title-style">Обратная связь</div>
         <div>
           <form id="contactForm" action="" method="post">
             <ul id="errorMasege" style="padding-left: 0">
@@ -108,15 +108,15 @@
               <span style="display: none; color: red" class="row message ">Минимальная длина сообщения десеть знаков</span>
             </ul>
             <div class="row modal-div-input-stile">
-              <input class="modal-input-style contactItem" id="name" name="name" type="text" placeholder="NAME">
+              <input class="modal-input-style contactItem" id="name" name="name" type="text" placeholder="ВАШЕ ИМЯ">
             </div>
             <div class="row modal-div-input-stile">
-              <input class="modal-input-style contactItem" id="email" name="email" type="text" placeholder="EMAIL">
+              <input class="modal-input-style contactItem" id="email" name="email" type="text" placeholder="E-MAIL">
             </div>
             <div class="row modal-div-input-stile">
-              <textarea  name="message" placeholder="MESSAGE" rows="5" id="message" class="contactItem modal-textarea-style"></textarea>
+              <textarea  name="message" placeholder="СООБЩЕНИЕ" rows="5" id="message" class="contactItem modal-textarea-style"></textarea>
             </div>
-            <button id="sendMessage" type="button" class="btn modal-btn-style">Send message</button>
+            <button id="sendMessage" type="button" class="btn modal-btn-style">Отправить</button>
           </form>
         </div>
       </div>
@@ -157,7 +157,7 @@
                     <img class="header-phone-icon-width"  src="../../../catalog/view/theme/default/image/phone.png">
                   </i>
                   <span class="header-phone-style">
-                    <?php echo $telephone; ?>
+                    <?php echo $telephone2; ?>
                   </span>
                 </div>
                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 no-padding">
@@ -178,8 +178,8 @@
                   </div>
                   <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9 no-padding">
                     <div class=" div-menu-style">
-                      <a href="/index.php?route=information/information&information_id=10"><span class="header-menu-text-style">Как купить?</span></a>
-                      <a href="/index.php?route=information/information&information_id=9"><span class="header-menu-text-style">Оплата</span></a>
+                      <a href="/index.php?route=information/information&information_id=9"><span class="header-menu-text-style">Как купить?</span></a>
+                      <a href="/index.php?route=information/information&information_id=10"><span class="header-menu-text-style">Оплата</span></a>
                       <a href="/index.php?route=information/information&information_id=6"><span class="header-menu-text-style">Доставка</span></a>
                       <a href="/index.php?route=information/contact"><span class="header-menu-text-style">Контакты</span></a>
                       <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работы</span></a>
@@ -266,8 +266,8 @@
           <div id="products_md" class="row " style="display: none">
             <div class=" container" style="text-align: center">
               <div class=" div-menu-mb-style" style="font-size: 25px; width: 100%;">
-                <a href="/index.php?route=information/information&information_id=10"><span class="header-menu-text-style">Как купить?</span></a></br>
-                <a href="/index.php?route=information/information&information_id=9"><span class="header-menu-text-style">Оплата</span></a></br>
+                <a href="/index.php?route=information/information&information_id=9"><span class="header-menu-text-style">Как купить?</span></a></br>
+                <a href="/index.php?route=information/information&information_id=10"><span class="header-menu-text-style">Оплата</span></a></br>
                 <a href="/index.php?route=information/information&information_id=6"><span class="header-menu-text-style">Доставка</span></a></br>
                 <a href="/index.php?route=information/contact"><span class="header-menu-text-style">Контакты</span></a></br>
                 <a href="/index.php?route=information/information&information_id=7"><span class="header-menu-text-style">География работы</span></a></br>
