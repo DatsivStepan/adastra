@@ -261,6 +261,9 @@
           <div id="id_phone" class="row hide-phone-div">
             <span class="mb-phone-style">
               <?php echo $telephone; ?>
+            </span><span class="mb-phone-style">/</span>
+            <span class="mb-phone-style">
+              <?php echo $telephone2; ?>
             </span>
           </div>
           <div id="products_md" class="row " style="display: none">

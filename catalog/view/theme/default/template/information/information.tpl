@@ -13,7 +13,7 @@
       <?php } ?>
     </ul>
   </div>
-  <div class="row"><?php echo $column_left; ?>
+  <div class="row no-margin"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>
@@ -22,7 +22,7 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>" style="font-family: Philosopher"><?php echo $content_top; ?>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0;">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left: 0px;">
           <h1 class="col-lg-12 col-md-12 col-sm-12 hidden-xs title_adas_o_galer" style="padding:0;"><?php echo $heading_title; ?></h1>
           <h1 class="hidden-lg hidden-md hidden-sm col-xs-12 title_adas_o_galer_2"><?php echo $heading_title; ?></h1>
       </div>
