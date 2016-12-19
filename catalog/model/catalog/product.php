@@ -337,6 +337,40 @@ class ModelCatalogProduct extends Model {
 		return $product_attribute_group_data;
 	}
 
+        public function getOptions($option_id = null) {
+                $option_data = array();
+                if($option_id == null){
+                    $option_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "option po LEFT JOIN `" . DB_PREFIX . "option` o ON (po.option_id = o.option_id) LEFT JOIN " . DB_PREFIX . "option_description od ON (o.option_id = od.option_id)"." ");
+                }else{
+                    $option_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "option po LEFT JOIN `" . DB_PREFIX . "option` o ON (po.option_id = o.option_id) LEFT JOIN " . DB_PREFIX . "option_description od ON (o.option_id = od.option_id) WHERE po.option_id = '".$option_id."' ");
+                }
+                
+                foreach ($option_query->rows as $option) {
+			$option_value_data = array();
+                        
+            $option_value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "option_value opv
+             LEFT JOIN `" . DB_PREFIX . "option_value_description` opvd ON (opvd.option_value_id = opv.option_value_id) 
+             WHERE opv.option_id = ".$option['option_id']." 
+             ORDER BY opv.sort_order ");
+
+			foreach ($option_value_query->rows as $option_value) {
+				$option_value_data[] = array(
+					'option_value_id'         => $option_value['option_value_id'],
+					'image'                   => $option_value['image'],
+					'name'                   => $option_value['name'],
+				);
+			}
+
+			$option_data[] = array(
+				'option_value' => $option_value_data,
+				'option_id'            => $option['option_id'],
+				'name'                 => $option['name'],
+				'type'                 => $option['type'],
+			);
+		}
+                return $option_data;
+        }
+        
 	public function getProductOptions($product_id) {
 		$product_option_data = array();
 
@@ -357,6 +391,10 @@ class ModelCatalogProduct extends Model {
 					'subtract'                => $product_option_value['subtract'],
 					'price'                   => $product_option_value['price'],
 					'price_prefix'            => $product_option_value['price_prefix'],
+
+          'points'        => $product_option_value['points'],
+          'points_prefix' => $product_option_value['points_prefix'],
+      
 					'weight'                  => $product_option_value['weight'],
 					'weight_prefix'           => $product_option_value['weight_prefix'],
 					'field1'           => $product_option_value['field1'],

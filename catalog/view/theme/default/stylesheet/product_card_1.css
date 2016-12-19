@@ -202,21 +202,22 @@
 
 .colorBox {
     float: left;
-    width: 17%;
+    width: 16%;
     margin-top: 5px;
 }
 
 .colorBoxContainer {
     width: 100%;
     min-height: 100px;
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
     margin-top: 10px;
     float: left;
     position: relative;
 }
 
 .smallTitleBox {
-    width: 15%;
+    padding-right: 15px !important;
+    /*width: 15%;*/
     float: left;
     padding: 0 10px;
     padding-top: 20px;
@@ -229,14 +230,14 @@
 
 .frameBox {
     float: left;
-    width: 17%;
+    width: 14%;
     margin-top: 5px;
 }
 
 .frameBoxContainer {
     width: 100%;
     min-height: 50px;
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
     margin-top: 10px;
     float: left;
 }
@@ -266,7 +267,8 @@
 }
 
 .smallTitleBox {
-    width: 15%;
+    padding-right: 15px !important;
+    /*width: 15%;*/
     float: left;
     padding: 0 10px;
     padding-top: 15px;
@@ -352,7 +354,11 @@
 .noUi-connect {
     border-radius: 10px;
 }
-
+.fixed:after{
+    display: block;
+    content: '';
+    clear: both;
+}
 @media (min-width: 768px) and (max-width: 991px) {
     .clickToBuy p {
         width: 190px !important;
@@ -445,7 +451,7 @@
 .productBuyButtonsBox,
 .optionsContainer,
 .productDeliveryBox {
-    width: 50%;
+    width: 100%;
 }
 
 .productImageBox {
@@ -469,7 +475,14 @@
 }
 
 .productDeliveryBox {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
     float: left;
+    font-family: 'Philosopher';
+    font-weight: 300;
+    line-height: 20px;
+    font-size: 17px;
 }
 
 @media (min-width: 768px){
@@ -529,8 +542,9 @@
     position: absolute;
     top: -62px;
     z-index: 99;
-    color: red;
-    background: rgba(125,125,125, 0.5);
+    color: #fff;
+    background: rgba(0,0,0, 1);
+    margin:-1px;
 }
 #wHint,
 #hHint{
@@ -539,6 +553,7 @@
     font-weight: bold;
     font-size: 16px;
     color: red;
+    margin-bottom: 10px;
 }
 /*TOOLTIP END*/
 /*FRAME START*/

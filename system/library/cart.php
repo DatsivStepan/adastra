@@ -215,6 +215,22 @@ class Cart {
 				$product_discount_query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product_discount WHERE product_id = '" . (int)$cart['product_id'] . "' AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND quantity <= '" . (int)$discount_quantity . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY quantity DESC, priority ASC, price ASC LIMIT 1");
 
 				if ($product_discount_query->num_rows) {
+
+        if ((float)$product_discount_query->row['price'] && (float)$product_query->row['price'] && $this->config->get('config_autocalc_option_discount')) {
+          $discount_coefficient = (float)$product_discount_query->row['price'] / (float)$product_query->row['price'];
+          if (is_array($option_price)) {
+            foreach($option_price as $key1=>$operations){
+              foreach($operations as $operation=>$value){
+                if (($operation == '+' || $operation == '-' || $operation == '=')) {
+                  $option_price[$key1][$operation] = $value * $discount_coefficient;
+                }
+              }
+            }
+          } else {
+            $option_price *= $discount_coefficient;
+          }
+        }
+      
 					$price = $product_discount_query->row['price'];
 				}
 
@@ -222,6 +238,22 @@ class Cart {
 				$product_special_query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product_special WHERE product_id = '" . (int)$cart['product_id'] . "' AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY priority ASC, price ASC LIMIT 1");
 
 				if ($product_special_query->num_rows) {
+
+        if ($product_special_query->row['price'] > 0.0 && $this->config->get('config_autocalc_option_special')) {
+          $special_koefficient = (float)$product_query->row['price'] / (float)$product_special_query->row['price'];
+          if (is_array($option_price)) {
+            foreach($option_price as $key1=>$operations){
+              foreach($operations as $operation=>$value){
+                if (($operation == '+' || $operation == '-' || $operation == '=') && (float)$special_koefficient ) {
+                  $option_price[$key1][$operation] = $value / $special_koefficient;
+                }
+              }
+            }
+          } else if ((float)$special_koefficient) {
+            $option_price /= $special_koefficient;
+          }
+        }
+      
 					$price = $product_special_query->row['price'];
 				}
 

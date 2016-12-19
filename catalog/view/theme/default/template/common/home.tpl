@@ -122,13 +122,29 @@
                  } ?>
         </div>
     </div>
-    <div class="">
+   <!-- <div class="">
         <?php
     if(isset($content_bottom['modules'][3])){
-                    echo $content_bottom['modules'][3];
+                     echo $content_bottom['modules'][3];
                     } ?>
-    </div>
+    </div> -->
 </div>
+<div class="row rows_2 no-margin">
+    <?php foreach ($category_muse as $musey) { ?>
+    <div class="div_muzey_text"><?php echo($musey['name'])?></div>
+        <div id="owl-carousel" class="owl-carousel owl-theme  car_ow_np_20" data-ride="carousel">
+                    <?php foreach($musey['option_value'] as $option){ ?>
+                        <div class="item">
+                            <div class="div_item_text" style="background: url(image/<?php echo $option['image'];?>) center no-repeat;">
+                                <a href="http://adastra.local/index.php?route=product/category&path=20_28&mfp=36-muzey[<?php echo $option['name'];?>]">
+                                <div class="text_title_np_21" style=""><?php echo $option['name'];?></div></a>
+                            </div>
+                        </div>
+                    <?php } ?>
+           <?php } ?>
+        </div>
+</div>
+<div style="clear:both;"></div>
 <div class="row" style="margin: 0;">
     <div class="middle-home-img-div-style">
         <div class="container">
@@ -155,19 +171,20 @@
                     интернет магазин фресок Галерея Адастра обладает</br>следующими преимуществами:
                 </span>
             </div>
+
             <div class="row  row-advantages-style">
                 <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_1-style">1</span>
                         </div>
-                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_1">
                             <span class="advantages-content-title-style">
                                 Экологически чистые материалы
                             </span></br>
                             <span class="advantages-content-style">
-                                При изготовлении нашей продукции используются только экологически чистые материалы, корорые не наносят
-                                вред вашему здоровью
+                                При изготовлении нашей продукции используются только экологически чистые материалы,
+                                которые не наносят вред вашему здоровью
                             </span>
                         </div>
                     </div>
@@ -179,13 +196,13 @@
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_2-style">2</span>
                         </div>
-                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style adv_con_tit_np_2">
                             <span class="advantages-content-title-style">
                                 Мы являемся производителями
                             </span></br>
                             <span class="advantages-content-style">
-                                Мы являемся производителями с наличием собственной производственной базы, что дает
-                                нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий.
+                                Мы являемся производителями с наличием собственной производственной базы,
+                                что дает нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий
                             </span>
                         </div>
                     </div>
@@ -199,31 +216,29 @@
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_3-style">3</span>
                         </div>
-                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_3">
                             <span class="advantages-content-title-style">
-                                Экологически чистые материалы
+                                Бесшовная печать
                             </span></br>
                             <span class="advantages-content-style">
-                                При изготовлении нашей продукции используются только экологически чистые материалы, корорые не наносят
-                                вред вашему здоровью
+                                Бесшовная печать фресок и фотообоев до 3,20 метров в высоту и до  36 метров в длину
                             </span>
                         </div>
                     </div>
                     <div class="div-border_1-style"></div>
                     <div class="div-border-style"></div>
                 </div>
-                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="float: right">
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style adv_np_20_20" style="float: right">
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_4-style">4</span>
                         </div>
-                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style adv_con_tit_np_4">
                             <span class="advantages-content-title-style">
-                                Мы являемся производителями
+                                Большой выбор
                             </span></br>
                             <span class="advantages-content-style">
-                                Мы являемся производителями с наличием собственной производственной базы, что дает
-                                нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий.
+                                Широкий выбор фактур фотообоев и фресок
                             </span>
                         </div>
                     </div>
@@ -231,19 +246,21 @@
                     <div class="div-border-style"></div>
                 </div>
             </div>
+
             <div class="row  row-advantages-style">
                 <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_5-style">5</span>
                         </div>
-                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_5">
                             <span class="advantages-content-title-style">
-                                Экологически чистые материалы
+                               Эксклюзивный макет
                             </span></br>
                             <span class="advantages-content-style">
-                                При изготовлении нашей продукции используются только экологически чистые материалы, корорые не наносят
-                                вред вашему здоровью
+                                Также наши дизайнеры могут изготовить для вас эксклюзивный макет с применением техники коллажа,
+                                дорисовки изображений с учетом конфигурации помещения, которое вы хотите украсить нашими изделиями, или же нарисовать макет,
+                                соответствующий вашим персональным пожеланиям
                             </span>
                         </div>
                     </div>
@@ -255,13 +272,13 @@
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
                             <span class="advantages-number_6-style">6</span>
                         </div>
-                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style adv_con_tit_np_6">
                             <span class="advantages-content-title-style">
-                                Мы являемся производителями
+                                Репродукции картин
                             </span></br>
                             <span class="advantages-content-style">
-                                Мы являемся производителями с наличием собственной производственной базы, что дает
-                                нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий.
+                               Репродукции картин маслом на холсте любого размера по желанию заказчика.
+                               Наши художники выполнят для Вас копии любых шедевров живописи в высочайшем качестве!
                             </span>
                         </div>
                     </div>
@@ -269,42 +286,42 @@
                     <div class="div-border-style"></div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="hidden-xs container div-home-contact-style no-padding">
-        <div class="row no-margin" style="padding-bottom: 10px">
-            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 no-padding">
-                  <span class="footer-contact-text-left-style">
-                      Контакты:
-                  </span>
-            </div>
-            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <div class="row">
-                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
-                        <img src="../../../catalog/view/theme/default/image/phone.png">
+            <div class="footer-div-contact-style hidden-xs" >
+                <div class="row no-margin" style="padding-bottom: 10px">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                      <span class="footer-contact-text-left-style home_contact">
+                          Контакты:
+                      </span>
                     </div>
-                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style">
-                        <span class="footer-contact-text-right-style" style="color: #494545;"><?php echo $telephone; ?></span>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="row">
+                            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                                <img src="../../../catalog/view/theme/default/image/phone.png">
+                            </div>
+                            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style">
+                                <span class="footer-contact-text-right-style"><?php echo $telephone; ?></span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <div class="row">
-                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
-                        <img src="../../../catalog/view/theme/default/image/phone.png">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="row">
+                            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                                <img src="../../../catalog/view/theme/default/image/phone.png">
+                            </div>
+                            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style" >
+                                <span class="footer-contact-text-right-style"><?php echo $telephone; ?></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-phone-text-style">
-                        <span class="footer-contact-text-right-style" style="color: #494545;"><?php echo $telephone; ?></span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <div class="row">
-                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
-                        <img src="../../../catalog/view/theme/default/image/mail.png">
-                    </div>
-                    <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-email-text-style">
-                        <span class="footer-contact-text-right-style" style="color: #494545;"><?php echo $email; ?></span>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="row">
+                            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
+                                <img src="../../../catalog/view/theme/default/image/mail.png">
+                            </div>
+                            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-email-text-style">
+                                <span class="footer-contact-text-right-style"><?php echo $email; ?></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -342,3 +359,28 @@
 </div>
 
 <?php echo $footer; ?>
+<script>
+    $(document).ready(function() {
+
+        var owl = $("#owl-carousel");
+
+        owl.owlCarousel({
+
+            itemsCustom : [
+                [0, 1],
+                [450, 2],
+                [600, 2],
+                [700, 3],
+                [1000, 5],
+                [1200, 5],
+                [1400, 5],
+                [1600, 5]
+            ],
+            navigation : true,
+            autoPlay: true,
+            navigationText: ['<img src="/catalog/view/theme/default/image/owlCarusel_strilka_vlivo.png" />', '<img src="/catalog/view/theme/default/image/owlCarusel_strilka_vpravo.png" />'],
+            pagination: false
+        });
+
+    });
+</script>

@@ -1,6 +1,6 @@
 <?php echo $header; ?>
 <div class="container">
-  <div class="col-lg-12 col-md-12 hidden-sm hidden-xs container_breadcrumb_2" style="padding: 0;">
+  <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs container_breadcrumb_2" style="padding: 0;">
     <ul class="breadcrumb_contact col-lg-12"style="padding: 0;">
       <?php foreach ($breadcrumbs as $breadcrumb) { ?>
       <?php if ($breadcrumb ['href']==('')){ ?>
@@ -21,12 +21,13 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+    <div id="content" class="<?php echo $class; ?>" style="font-family: Philosopher"><?php echo $content_top; ?>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0;">
-          <h1 class="col-lg-12 col-md-12 hidden-sm hidden-xs title_adas_o_galer" style="padding:0;"><?php echo $heading_title; ?></h1>
-          <h1 class="hidden-lg hidden-md col-sm-12 col-xs-12 title_adas_o_galer_2"><?php echo $heading_title; ?></h1>
+          <h1 class="col-lg-12 col-md-12 col-sm-12 hidden-xs title_adas_o_galer" style="padding:0;"><?php echo $heading_title; ?></h1>
+          <h1 class="hidden-lg hidden-md hidden-sm col-xs-12 title_adas_o_galer_2"><?php echo $heading_title; ?></h1>
       </div>
-      <?php echo $description; ?><?php echo $content_bottom; ?></div>
+      <?php echo $description; ?>
+      <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
 <?php echo $footer; ?>

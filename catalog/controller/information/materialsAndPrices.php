@@ -18,38 +18,26 @@ class ControllerInformationmaterialsAndPrices extends Controller {
 			$materialsAndPrices_id = 0;
 		}
 
-		$materialsAndPrices_info = $this->model_catalog_materialsAndPrices->getInformations();
-//        var_dump($materialsAndPrices_info);exit;
-
-		if ($materialsAndPrices_info) {
-            foreach ($materialsAndPrices_info as $materialsAndPrice_info){
-//                var_dump($materialsAndPrice_info);
-                $data['materialsAndPrice'][] = array(
-                    'image' => $materialsAndPrice_info['image'],
-                    'fabric_thickness' => $materialsAndPrice_info['fabric_thickness'],
-                    'prices' => $materialsAndPrice_info['prices'],
-                    'MPWJ' => $materialsAndPrice_info['MPWJ'],
-                    'title' => $materialsAndPrice_info['title'],
-                    'description' => strip_tags(html_entity_decode($materialsAndPrice_info['description'], ENT_QUOTES, 'UTF-8')),
-
-                );
+        $materialsAndPrices_category = $this->model_catalog_materialsAndPrices->getInformationsCategory();
+            $product_array = [];
+        if ($materialsAndPrices_category) {
+            foreach ($materialsAndPrices_category as $materialsAndPrice_c) {
+                $product_array[$materialsAndPrice_c['mp_c_id']]['category_name'] = $materialsAndPrice_c['name'];
+                $product_array[$materialsAndPrice_c['mp_c_id']]['category_description'] =  html_entity_decode($materialsAndPrice_c['description'], ENT_QUOTES, 'UTF-8');
+                $category_products = $this->model_catalog_materialsAndPrices->getInformations($materialsAndPrice_c['mp_c_id']);
+                $product_array[$materialsAndPrice_c['mp_c_id']]['category_product'][] =  $category_products;
             }
-
+        }
+         $data['product_array'] = $product_array;
+//		if ($materialsAndPrices_info) {
 			$this->document->setTitle('Материалы и Цены');
-//			$this->document->setDescription($materialsAndPrices_info['meta_description']);
-//			$this->document->setKeywords($materialsAndPrices_info['meta_keyword']);
-
 			$data['breadcrumbs'][] = array(
 				'text' => 'Материалы и Цены',
 				'href' => ''
 			);
 
-//			$data['heading_title'] = $materialsAndPrices_info['title'];
-//			$data['fabric_thickness'] = $materialsAndPrices_info['fabric_thickness'];
-//
-			$data['button_continue'] = $this->language->get('button_continue');
 
-//			$data['description'] = html_entity_decode($materialsAndPrices_info['description'], ENT_QUOTES, 'UTF-8');
+			$data['button_continue'] = $this->language->get('button_continue');
 
 			$data['continue'] = $this->url->link('common/home');
 
@@ -65,7 +53,7 @@ class ControllerInformationmaterialsAndPrices extends Controller {
 			} else {
 				$this->response->setOutput($this->load->view('default/template/information/materialsAndPrices.tpl', $data));
 			}
-		} else {
+//		} else {
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_error'),
 				'href' => $this->url->link('materialsAndPrices/materialsAndPrices', 'mp_id=' . $materialsAndPrices_id)
@@ -95,7 +83,7 @@ class ControllerInformationmaterialsAndPrices extends Controller {
 			} else {
 				$this->response->setOutput($this->load->view('default/template/error/not_found.tpl', $data));
 			}
-		}
+//		}
 	}
 
 	public function agree() {

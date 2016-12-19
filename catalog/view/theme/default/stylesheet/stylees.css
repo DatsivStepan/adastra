@@ -29,6 +29,9 @@
     font-family:'Philosopher';
     font-size: 18px;
     color: #6d6b6b;
+    padding: 0;
+    padding-bottom: 25px !important;
+    line-height: 30px!important;
 }
 .text_faktury_frecku{
     font-family:'Philosopher';
@@ -122,6 +125,10 @@
         height: 300px;
         width: 100%;
     }
+    .img-responsive_22{
+
+    }
+
     .a_kat_adas{
         font-family:'Philosopher';
         font-size: 14px;
@@ -615,7 +622,7 @@
 }
 .mfi_opt_cont_mfi{
     padding: 17px 0px 22px 6px!important;
- }
+}
 .mfi_bord_bot_rig{
     border-bottom: 1px solid #cdc1aa;
 
@@ -915,6 +922,11 @@
     color: white!important;
     /*padding: 0 20px 0 8px!important;*/
 }
+.products-category-style_20:hover {
+    background-color: #322d2d;
+    color: white!important;
+    padding: 0 20px 0 8px!important;
+}
 .banner-linc-style:hover{
     color: black;
 }
@@ -1026,7 +1038,7 @@
 .text_np_20{
     font-family: 'Philosopher';
     color: #8a8781;
-    font-size: 17px;
+    font-size: 15px;
     padding: 0;
 }
 .advantages_style_20{
@@ -1045,4 +1057,76 @@
 .owl-controls .owl-buttons .owl-next {
     right: 10px;
     top: -8%!important;
+}
+.cart-text-style1_20{
+    font-family: 'Philosopher';
+    font-weight: 200;
+    font-size: 15px;
+    position: inherit!important;
+    display: block;
+    top: 2%;
+    right: 14%;
+    margin: -50px 0px 0px 8px;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    display: block;
+    max-width: 105px;
+    height: auto;
+}
+.img-responsive_20{
+    height: 550px!important;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive_20, .thumbnail a>img, .thumbnail>img {
+    max-width: 3088px!important;
+}
+.desktop-img-div-style_20{
+    top: 31%!important;
+}
+.banner-logo-size_20{
+    top: 100%!important;
+}
+.desktop-text-div-style_20{
+    top: 100%!important;
+}
+.div-products-mb-style {
+    font-size: 40px!important;
+    padding-bottom: 0!important;
+    padding-top: 0px !important;
+    width: 14% !important;
+    float: left!important;
+}
+@media (max-width: 1200px) and (min-width: 1118px) {
+    .product-icon-size {
+        font-size: 20px;
+    }
+}
+.car_ow_np_20{
+    margin-bottom: 1px!important;
+    width: 98%;
+}
+.rows_2 .owl-next{
+    margin: -2% 7% 0% 0%!important;
+}
+.rows_2 .owl-prev{
+    margin: -2% 0% 0% 7%!important;
+}
+.div_muzey_text{
+    text-align: center;margin-bottom: 2%;
+    font-family: 'Philosopher';
+    color:#000000;font-weight: 600;
+    background-size: cover;font-size: 35px;
+    text-transform: uppercase
+}
+.div_item_text{
+    width: 99.5%;
+    height: 200px;
+    float: left;
+}
+.text_title_np_21{
+    font-family: 'Philosopher';
+    font-size: 23px;
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+    margin-top: 23%;
 }

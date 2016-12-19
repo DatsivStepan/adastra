@@ -1096,6 +1096,11 @@ a.Catalog{
         margin: 0 !important;
         float: left;
     }
-
+    .footer-contact-text-left-style{
+        font-family: 'Philosopher'!important;
+        font-weight: 700!important;
+        font-size: 40px!important;
+        margin-left: -100px!important;
+    }
 }
 

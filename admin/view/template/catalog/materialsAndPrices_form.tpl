@@ -38,7 +38,7 @@
                 <?php } ?>
               </ul>
               <div class="tab-content">
-                <?php foreach ($languages as $language) { ?>
+                <?php foreach ($languages as $language) {  ?>
                 <div class="tab-pane" id="language<?php echo $language['language_id']; ?>">
                   <div class="form-group required">
                     <label class="col-sm-2 control-label" for="input-title<?php echo $language['language_id']; ?>"><?php echo $entry_title; ?></label>
@@ -49,6 +49,18 @@
                       <?php } ?>
                     </div>
                   </div>
+                  <!-------------------------->
+                  <div class="form-group required" style="">
+                    <label class="col-sm-2 control-label" for="input-category"><?php echo $entry_category; ?></label>
+                    <div class="col-sm-10">
+                      <select class="form-control" id="sel1" name="category">
+                        <?php foreach($category_s as $select_category){ ?>
+                        <option value="<?php echo $select_category['mp_c_id']; ?>"><?php echo $select_category['name']; ?></option>
+                        <?php } ?>
+                      </select>
+                    </div>
+                  </div>
+                  <!-------------------------->
                   <div class="form-group required">
                     <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description; ?></label>
                     <div class="col-sm-10">

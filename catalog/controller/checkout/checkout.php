@@ -39,18 +39,14 @@ class ControllerCheckoutCheckout extends Controller {
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
+			'text' => $this->language->get('Главная'),
 			'href' => $this->url->link('common/home')
 		);
 
-		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_cart'),
-			'href' => $this->url->link('checkout/cart')
-		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('checkout/checkout', '', 'SSL')
+			'href' => ''
 		);
 
 		$data['heading_title'] = $this->language->get('heading_title');

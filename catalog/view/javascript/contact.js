@@ -67,22 +67,22 @@ $(document).ready(function () {
                 break;
             default:
                 var errorCount = 0;
-                if (!($('#name').val())) {
-                    $('#name').css('border', '1px solid red');
+                if (!($('#name_c').val())) {
+                    $('#name_c').css('border', '1px solid red');
                     errorCount++;
                     $('#errorMasege > .name').show();
                 } else {
                     $('#errorMasege > .name').text('');
-                    $('#name').css('border', '1px solid green');
+                    $('#name_c').css('border', '1px solid green');
                     $('#errorMasege > .name').hide();
                 }
-                if (!($('#email').val().match(/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/i))) {
-                    $('#email').css('border', '1px solid red');
+                if (!($('#email_c').val().match(/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/i))) {
+                    $('#email_c').css('border', '1px solid red');
                     errorCount++;
                     $('#errorMasege > .email').show();
                 } else {
                     $('#errorMasege > .email').text('');
-                    $('#email').css('border', '1px solid green');
+                    $('#email_c').css('border', '1px solid green');
                     $('#errorMasege > .email').hide();
                 }
                 if (!($('#enquiry').val())) {
@@ -103,18 +103,16 @@ $(document).ready(function () {
         }
     }
     $('.text').on('blur', function () {
-        //console.log($(this).attr('id'));
         checkForm($(this).attr('id'));
     });
     $('#button').on('click', function (even) {
         even.preventDefault();
-        if (checkForm()) {
-            var res = $('#contact').serializeArray();
+         if (checkForm()) {
+            var res = $('#contact_c').serializeArray();
             var arr = {};
             $.each(res, function (result) {
                 var $index = res[result].name;
                 arr[$index] = res[result].value;
-                console.log(arr[$index] = res[result].value);
             });
             $.ajax({
                 url: 'index.php?route=information/contact/contact',
@@ -122,7 +120,6 @@ $(document).ready(function () {
                 dataType: 'json',
                 data: arr,
                 success: function (data) {
-                    console.log(data);
                 }
             });
 
@@ -131,9 +128,9 @@ $(document).ready(function () {
                 '',
                 'success'
             );
-            $('#contact')[0].reset();
-            $('#name').css('border', '1px solid  #322d2d');
-            $('#email').css('border', '1px solid  #322d2d');
+            $('#contact_c')[0].reset();
+            $('#name_c').css('border', '1px solid  #322d2d');
+            $('#email_c').css('border', '1px solid  #322d2d');
             $('#enquiry').css('border', '1px solid  #322d2d');
 
         } else {

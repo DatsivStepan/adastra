@@ -28,6 +28,16 @@ class ControllerCommonFooter extends Controller {
         $data['telephone'] = $this->config->get('config_telephone');
         $data['email'] = $this->config->get('config_email');
 
+		$data['name'] = $this->config->get('config_name');
+		
+		$data['home'] = $this->url->link('common/home');
+		$data['is_home'] = '';
+		if(!isset($this->request->get['route'])){
+			$data['is_home'] = 'home';
+		}elseif($this->request->get['route'] == 'common/home'){
+			$data['is_home'] = 'home';
+
+		}
 		$this->load->model('catalog/information');
 
 		$data['informations'] = array();

@@ -104,6 +104,7 @@ $(document).ready(function () {
 		even.preventDefault();
 		if (checkForm()) {
 			var res = $('#contactForm').serializeArray();
+			console.log(res);
 			var arr = {};
 			$.each(res, function (result) {
 				var $index = res[result].name;
@@ -112,7 +113,7 @@ $(document).ready(function () {
 			$('#name').val('');
 			$('#email').val('');
 			$('#message').val('');
-			$('#myModal').modal('hide');
+			$('#contactForm_en').modal('hide');
 			$.ajax({
 				url: 'index.php?route=common/header/contactForm',
 				type: 'post',
