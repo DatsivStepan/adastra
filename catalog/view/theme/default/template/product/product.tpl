@@ -307,8 +307,10 @@
                             <div class="colorBox">
                                 <label class="my-custom-label"
                                        id="<?php echo $option_value['name']; ?>">
+
                                     <input type="radio" class="colorSelector" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
+
                                     <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
                                 </label>
                             </div>
