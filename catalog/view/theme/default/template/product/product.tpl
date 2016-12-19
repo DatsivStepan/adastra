@@ -299,7 +299,7 @@
                             <div class="colorBox">
                                 <label class="my-custom-label"
                                        id="<?php echo $option_value['name']; ?>">
-                                    <input type="radio" class="colorSelector" name="option[<?php echo $option['product_option_id']; ?>]"
+                                    <input class="colorSelector" type="radio" class="colorSelector" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>"/>
                                     <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
                                 </label>

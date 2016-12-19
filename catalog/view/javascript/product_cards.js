@@ -613,8 +613,13 @@ function ready() {
 
     $("#clearFilters").click(function () {
         picture.style.webkitFilter = "contrast(100%)";
-
         picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+
+        var tmp = document.getElementsByClassName("colorSelector");
+        for (var i = 0; i < tmp.length; i++) {
+            $(tmp[i]).prop('checked', false);
+        }
+
     });
 
 }
