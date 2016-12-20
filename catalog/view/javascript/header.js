@@ -113,15 +113,17 @@ $(document).ready(function () {
 			$('#name').val('');
 			$('#email').val('');
 			$('#message').val('');
+			swal("Сообщение отправлено", "", "success");
+			$('#contactForm_en').removeClass('in');
+			$('.modal-backdrop').removeClass('in');
 			$.ajax({
 				url: 'index.php?route=common/header/contactForm',
 				type: 'post',
 				dataType: 'json',
 				data: arr,
 				success: function (data) {
-					 swal("Сообщение отправлено", "", "success");
-						$('#contactForm_en').removeClass('in');
-						$('.modal-backdrop').removeClass('in');
+					
+
 				}
 			});
 		} else {

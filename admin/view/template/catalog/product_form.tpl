@@ -105,8 +105,10 @@
               <div class="form-group required">
                 <label class="col-sm-2 control-label" for="input-model"><?php echo $entry_model; ?></label>
                   
+                  
                 <div class="col-sm-9">
                   <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+		
 		
                   <?php if ($error_model) { ?>
                   <div class="text-danger"><?php echo $error_model; ?></div>
@@ -120,9 +122,18 @@
 			 </div>
 			  
               <div class="collapse" id="pcollapse">
+               
+
+ 				<div class="col-sm-1 text-right">
+					<a type="button"  title="Показать/Скрыть - Дополнительные поля " class="btn btn-info " data-toggle="collapse" data-parent="#accordion" href="#pcollapse"><i class="fa fa-arrows-v"></i></a>
+				</div>
+			 </div>
+			  
+              <div class="collapse" id="pcollapse">
 			  <div class="form-group">
 		
                <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+		
 		
                 <div class="col-sm-10">
                   <input type="text" name="sku" value="<?php echo $sku; ?>" placeholder="<?php echo $entry_sku; ?>" id="input-sku" class="form-control" />
@@ -158,6 +169,9 @@
                   <input type="text" name="mpn" value="<?php echo $mpn; ?>" placeholder="<?php echo $entry_mpn; ?>" id="input-mpn" class="form-control" />
                 </div>
               </div>
+
+			  </div>
+		
 
 			  </div>
 		

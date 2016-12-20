@@ -127,9 +127,6 @@
                         <input type="hidden" name="quantity" value="<?php echo $minimum; ?>" size="2"
                                id="input-quantity" class="form-control"/>
                         <input type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
-                        <button class="clickToBuy">
-                            <p>Заказать в<br>один клик</p>
-                        </button>
                         <button type="button" class="addToCart" id="button-cart">
                             <p>В корзину</p>
                         </button>
@@ -906,17 +903,17 @@
     //--></script>
 <script type="text/javascript"><!--
 function price_format(price)
-{ 
+{
     c = <?php echo (empty($autocalc_currency['decimals']) ? "0" : $autocalc_currency['decimals'] ); ?>;
     d = '<?php echo $autocalc_currency['decimal_point']; ?>'; // decimal separator
     t = '<?php echo $autocalc_currency['thousand_point']; ?>'; // thousands separator
     s_left = '<?php echo str_replace("'", "\'", $autocalc_currency['symbol_left']); ?>';
     s_right = '<?php echo str_replace("'", "\'", $autocalc_currency['symbol_right']); ?>';
     n = price * <?php echo $autocalc_currency['value']; ?>;
-    i = parseInt(n = Math.abs(n).toFixed(c)) + ''; 
-    j = ((j = i.length) > 3) ? j % 3 : 0; 
-    price_text = s_left + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '') + s_right; 
-    
+    i = parseInt(n = Math.abs(n).toFixed(c)) + '';
+    j = ((j = i.length) > 3) ? j % 3 : 0;
+    price_text = s_left + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '') + s_right;
+
     <?php if (!empty($autocalc_currency2)) { ?>
     c = <?php echo (empty($autocalc_currency2['decimals']) ? "0" : $autocalc_currency2['decimals'] ); ?>;
     d = '<?php echo $autocalc_currency2['decimal_point']; ?>'; // decimal separator
@@ -924,11 +921,11 @@ function price_format(price)
     s_left = '<?php echo str_replace("'", "\'", $autocalc_currency2['symbol_left']); ?>';
     s_right = '<?php echo str_replace("'", "\'", $autocalc_currency2['symbol_right']); ?>';
     n = price * <?php echo $autocalc_currency2['value']; ?>;
-    i = parseInt(n = Math.abs(n).toFixed(c)) + ''; 
-    j = ((j = i.length) > 3) ? j % 3 : 0; 
-    price_text += '  <span class="currency2">(' + s_left + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '') + s_right + ')</span>'; 
+    i = parseInt(n = Math.abs(n).toFixed(c)) + '';
+    j = ((j = i.length) > 3) ? j % 3 : 0;
+    price_text += '  <span class="currency2">(' + s_left + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '') + s_right + ')</span>';
     <?php } ?>
-    
+
     return price_text;
 }
 
@@ -968,7 +965,7 @@ main_timeout_id = 0;
 
 function animateMainPrice_callback() {
     main_price_start += main_step;
-    
+
     if ((main_step > 0) && (main_price_start > main_price_final)){
         main_price_start = main_price_final;
     } else if ((main_step < 0) && (main_price_start < main_price_final)) {
@@ -976,9 +973,9 @@ function animateMainPrice_callback() {
     } else if (main_step == 0) {
         main_price_start = main_price_final;
     }
-    
+
     $('.autocalc-product-price').html( price_format(main_price_start) );
-    
+
     if (main_price_start != main_price_final) {
         main_timeout_id = setTimeout(animateMainPrice_callback, animate_delay);
     }
@@ -988,7 +985,7 @@ function animateMainPrice(price) {
     main_price_start = main_price_final;
     main_price_final = price;
     main_step = (main_price_final - main_price_start) / 10;
-    
+
     clearTimeout(main_timeout_id);
     main_timeout_id = setTimeout(animateMainPrice_callback, animate_delay);
 }
@@ -1002,7 +999,7 @@ special_timeout_id = 0;
 
 function animateSpecialPrice_callback() {
     special_price_start += special_step;
-    
+
     if ((special_step > 0) && (special_price_start > special_price_final)){
         special_price_start = special_price_final;
     } else if ((special_step < 0) && (special_price_start < special_price_final)) {
@@ -1010,9 +1007,9 @@ function animateSpecialPrice_callback() {
     } else if (special_step == 0) {
         special_price_start = special_price_final;
     }
-    
+
     $('.autocalc-product-special').html( price_format(special_price_start) );
-    
+
     if (special_price_start != special_price_final) {
         special_timeout_id = setTimeout(animateSpecialPrice_callback, animate_delay);
     }
@@ -1022,7 +1019,7 @@ function animateSpecialPrice(price) {
     special_price_start = special_price_final;
     special_price_final = price;
     special_step = (special_price_final - special_price_start) / 10;
-    
+
     clearTimeout(special_timeout_id);
     special_timeout_id = setTimeout(animateSpecialPrice_callback, animate_delay);
 }
@@ -1036,9 +1033,9 @@ function recalculateprice()
     var special = <?php echo (float)$special_value; ?>;
     var tax = 0;
     discount_coefficient = 1;
-    
+
     if (isNaN(input_quantity)) input_quantity = 0;
-    
+
     <?php if ($special) { ?>
         special_coefficient = <?php echo ((float)$price_value/(float)$special_value); ?>;
     <?php } else { ?>
@@ -1049,10 +1046,10 @@ function recalculateprice()
             if (main_price) discount_coefficient = process_discounts(main_price, input_quantity) / main_price;
         <?php } ?>
     <?php } ?>
-    
-    
+
+
     var option_price = 0;
-    
+
     <?php if ($points) { ?>
       var points = <?php echo (float)$points_value; ?>;
       $('input:checked,option:selected').each(function() {
@@ -1060,7 +1057,7 @@ function recalculateprice()
       });
       $('.autocalc-product-points').html(points);
     <?php } ?>
-    
+
     $('input:checked,option:selected').each(function() {
       if ($(this).data('prefix') == '=') {
         option_price += Number($(this).data('price'));
@@ -1068,15 +1065,15 @@ function recalculateprice()
         special = 0;
       }
     });
-	
+
     var frame_height = parseInt(document.querySelector("input#Высота").value);
 	var frame_width = parseInt(document.querySelector("input#Ширина").value);
 	var frame_size = (frame_height + frame_width)*2;
 	var texture_size = frame_height*frame_width;
-	
+
     $('input:checked,option:selected').each(function() {
       if ($(this).data('prefix') == '+') {
-	  
+
         if($(this).data('frame')){
 			option_price += (frame_size + 8*Number($(this).data('wframe')) )/100 * Number($(this).data('price'));
 		}else if($(this).data('subframe')){
@@ -1096,7 +1093,7 @@ function recalculateprice()
 		if($(this).data('coating')){
 			option_price += main_price * 0.2;
 		}
-		
+
       }
       if ($(this).data('prefix') == '-') {
         option_price -= Number($(this).data('price'));
@@ -1124,7 +1121,7 @@ function recalculateprice()
         special /= Number($(this).data('price'));
       }
     });
-    
+
     special += option_price;
     main_price += option_price;
 
@@ -1141,11 +1138,11 @@ function recalculateprice()
       <?php } ?>
       tax = main_price;
     <?php } ?>
-    
+
     // Process TAX.
     main_price = calculate_tax(main_price);
     special = calculate_tax(special);
-    
+
     <?php if (!$autocalc_not_mul_qty) { ?>
     main_price *= input_quantity;
     special *= input_quantity;
@@ -1154,7 +1151,7 @@ function recalculateprice()
 
     // Display Main Price
     animateMainPrice(main_price);
-      
+
     <?php if ($special) { ?>
       animateSpecialPrice(special);
     <?php } ?>
@@ -1164,7 +1161,7 @@ $(document).ready(function() {
     $('input[type="checkbox"]').bind('change', function() { recalculateprice(); });
     $('input[type="radio"]').bind('change', function() { recalculateprice(); });
     $('select').bind('change', function() { recalculateprice(); });
-    
+
     $quantity = $('input[name="quantity"]');
     $quantity.data('val', $quantity.val());
     (function() {
@@ -1183,7 +1180,7 @@ $(document).ready(function() {
         last_name = $(this).attr('name');
     });
     <?php } ?>
-    
+
     recalculateprice();
 });
 

@@ -7,7 +7,7 @@
 <!--<![endif]-->
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="min-width=600px, initial-scale=0">
+<meta name="viewport" content="min-width=600px, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title><?php echo $title; ?></title>
 <base href="<?php echo $base; ?>" />
@@ -52,6 +52,12 @@
 <?php foreach ($analytics as $analytic) { ?>
 <?php echo $analytic; ?>
 <?php } ?>
+
+				<script src="catalog/view/javascript/jquery/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+				<link href="catalog/view/javascript/jquery/fancybox/jquery.fancybox.css" rel="stylesheet" media="screen" />
+				<script src="catalog/view/javascript/buyoneclick.js" type="text/javascript"></script>
+				<link href="catalog/view/theme/default/stylesheet/buyoneclick.css" rel="stylesheet">
+            
 </head>
 
 
@@ -62,7 +68,7 @@
         <div class="modal-content">
 
             <div class="modal-header" style="border: 0">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
             </div>
 
             <div class="modal-body" style="text-align: center;">
@@ -95,7 +101,7 @@
     <div class="modal-content">
       <!-- Заголовок модального окна -->
       <div class="modal-header" style="border: 0">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
       </div>
       <!-- Основное содержимое модального окна -->
       <div class="modal-body" style="text-align: center;">

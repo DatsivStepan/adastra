@@ -33,6 +33,40 @@
     if (!isset($GLOBALS['magictoolbox']['magicslideshow']) && !isset($GLOBALS['magicslideshow_module_loaded'])) {
 	include (preg_match("/components\/com_(ayelshop|aceshop|mijoshop)\/opencart\//ims",__FILE__,$matches)?'components/com_'.$matches[1].'/opencart/':'').$aFolder.'/controller/'.$modulesPath.'/magicslideshow-opencart-module/module.php';
     };
+
+    global $aFolder;
+    if (!defined('HTTP_ADMIN')) {
+    	$root_dir = DIR_APPLICATION.'../';
+    	$folder_contents = scandir($root_dir);
+		if (!(in_array('admin', $folder_contents) && file_exists($root_dir.'admin/config.php'))) {
+			foreach ($folder_contents as $value) {
+				if (is_dir($root_dir.$value) && $value != '.' && $value != '..'){
+					if (file_exists($root_dir.$value.'/config.php')) {
+						$admin_folder_name = $value;
+						continue;
+					}
+				}
+			}
+		}
+    	if (isset($admin_folder_name)) {
+    		define('HTTP_ADMIN',$admin_folder_name);
+    	} else {
+    		define('HTTP_ADMIN','admin');
+    	}
+    	
+    }
+    
+    global $modulesPath;
+    if (version_compare(VERSION,'2.3','>=')) { //newer than 2.2.x
+        $modulesPath = 'extension/module';
+    } else {
+        $modulesPath = 'module';
+    }
+    
+    $aFolder = preg_replace('/.*\/([^\/].*)\//is','$1',HTTP_ADMIN);
+    if (!isset($GLOBALS['magictoolbox']['magicslideshow']) && !isset($GLOBALS['magicslideshow_module_loaded'])) {
+	include (preg_match("/components\/com_(ayelshop|aceshop|mijoshop)\/opencart\//ims",__FILE__,$matches)?'components/com_'.$matches[1].'/opencart/':'').$aFolder.'/controller/'.$modulesPath.'/magicslideshow-opencart-module/module.php';
+    };
 class ControllerModuleFeatured extends Controller {
 	public function index($setting) {
 		$this->load->language('module/featured');
@@ -60,6 +94,9 @@ class ControllerModuleFeatured extends Controller {
 
 			foreach ($products as $product_id) {
 				$product_info = $this->model_catalog_product->getProduct($product_id);
+
+                            $product_infos[] = $product_info;
+                        
 
                             $product_infos[] = $product_info;
                         
@@ -116,9 +153,17 @@ class ControllerModuleFeatured extends Controller {
 			    global $aFolder;
                             global $modulesPath;
                             include($aFolder.'/controller/'.$modulesPath.'/magicslideshow-opencart-module/boxes.inc');
+			    $contents = $contents;
+			    global $aFolder;
+                            global $modulesPath;
+                            include($aFolder.'/controller/'.$modulesPath.'/magicslideshow-opencart-module/boxes.inc');
 			    return $contents;
 			} else {
 				$contents = $this->load->view('default/template/module/featured.tpl', $data);
+			    global $aFolder;
+                            global $modulesPath;
+                            include($aFolder.'/controller/'.$modulesPath.'/magicslideshow-opencart-module/boxes.inc');
+			    $contents = $contents;
 			    global $aFolder;
                             global $modulesPath;
                             include($aFolder.'/controller/'.$modulesPath.'/magicslideshow-opencart-module/boxes.inc');

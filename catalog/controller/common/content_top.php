@@ -60,6 +60,11 @@ class ControllerCommonContentTop extends Controller {
 			   }
 			  
 
+			   if ($setting_info) {
+			      $setting_info['position'] = 'content_top';
+			   }
+			  
+
 				if ($setting_info && $setting_info['status']) {
 					$data['modules'][] = $this->load->controller('module/' . $part[0], $setting_info);
 				}
