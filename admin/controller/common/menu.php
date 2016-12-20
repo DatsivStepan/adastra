@@ -193,6 +193,13 @@ class ControllerCommonMenu extends Controller {
                             
                             $data['magicslideshow_module_link'] = $this->url->link('module/magicslideshow', 'token=' . $this->session->data['token'], true);
                         
+
+                            
+                            $rez = $this->db->query("SELECT * FROM ".DB_PREFIX."extension WHERE code = 'magicslideshow'");
+                            $data['module_installed'] = $rez->num_rows;
+                            
+                            $data['magicslideshow_module_link'] = $this->url->link('module/magicslideshow', 'token=' . $this->session->data['token'], true);
+                        
 		$data['openbay_link_extension'] = $this->url->link('extension/openbay', 'token=' . $this->session->data['token'], 'SSL');
 		$data['openbay_link_orders'] = $this->url->link('extension/openbay/orderlist', 'token=' . $this->session->data['token'], 'SSL');
 		$data['openbay_link_items'] = $this->url->link('extension/openbay/items', 'token=' . $this->session->data['token'], 'SSL');

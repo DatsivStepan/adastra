@@ -65,6 +65,39 @@ class ControllerCommonFooter extends Controller {
 
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
 
+				// BuyOneClick
+				$this->load->model('setting/setting');
+				$current_language_id = $this->config->get('config_language_id');
+				$data['buyoneclick_name'] = $this->config->get('buyoneclick_name_'.$current_language_id);
+				$data['buyoneclick_preorder_name'] = $this->config->get('buyoneclick_preorder_name_'.$current_language_id);
+				$data['buyoneclick_status'] = $this->config->get('buyoneclick_status');
+				$data['buyoneclick_field1_status'] = $this->config->get('buyoneclick_field1_status');
+				$data['buyoneclick_field1_required'] = $this->config->get('buyoneclick_field1_required');
+				$data['buyoneclick_field2_status'] = $this->config->get('buyoneclick_field2_status');
+				$data['buyoneclick_field2_required'] = $this->config->get('buyoneclick_field2_required');
+				$data['buyoneclick_field3_status'] = $this->config->get('buyoneclick_field3_status');
+				$data['buyoneclick_field3_required'] = $this->config->get('buyoneclick_field3_required');
+				$data['buyoneclick_field4_status'] = $this->config->get('buyoneclick_field4_status');
+				$data['buyoneclick_field4_required'] = $this->config->get('buyoneclick_field4_required');
+				$data['buyoneclick_ya_identificator'] = $this->config->get('buyoneclick_ya_identificator');
+				$data['buyoneclick_ya_counter'] = $this->config->get('buyoneclick_ya_counter');				
+				$data['buyoneclick_yandex_status'] = $this->config->get('buyoneclick_yandex_status');				
+				$data['buyoneclick_admin_email'] = $this->config->get('config_email');
+				
+				$this->load->language('module/buyoneclick');
+				$data['buyoneclick_button'] = $this->language->get('buyoneclick_button');
+				$data['buyoneclick_field1_title'] = $this->language->get('buyoneclick_field1_title');
+				$data['buyoneclick_field2_title'] = $this->language->get('buyoneclick_field2_title');
+				$data['buyoneclick_field3_title'] = $this->language->get('buyoneclick_field3_title');
+				$data['buyoneclick_field4_title'] = $this->language->get('buyoneclick_field4_title');
+				$data['buyoneclick_button_order'] = $this->language->get('buyoneclick_button_order');
+				$data['buyoneclick_required_text'] = $this->language->get('buyoneclick_required_text');
+				$data['buyoneclick_success'] = $this->language->get('buyoneclick_success');
+				$data['buyoneclick_error_required'] = $this->language->get('buyoneclick_error_required');
+				$data['buyoneclick_error_sending'] = $this->language->get('buyoneclick_error_sending');
+				// BuyOneClickEnd
+            
+
 		// Whos Online
 		if ($this->config->get('config_customer_online')) {
 			$this->load->model('tool/online');

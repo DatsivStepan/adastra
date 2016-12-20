@@ -33,6 +33,15 @@
 #menu > li > ul {width: 235px !important;}
 </style>
 		
+
+<script type="text/javascript" src="view/javascript/jquery/translit.js"></script>
+
+<style>
+#column-left.active {width: 250px !important;}
+#column-left.active + #content {margin-left: 250px !important;}
+#menu > li > ul {width: 235px !important;}
+</style>
+		
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>

@@ -38,6 +38,45 @@
 			
 			
 			
+
+			
+    global $aFolder;
+    if (!defined('HTTP_ADMIN')) {
+    	$root_dir = DIR_APPLICATION.'../';
+    	$folder_contents = scandir($root_dir);
+		if (!(in_array('admin', $folder_contents) && file_exists($root_dir.'admin/config.php'))) {
+			foreach ($folder_contents as $value) {
+				if (is_dir($root_dir.$value) && $value != '.' && $value != '..'){
+					if (file_exists($root_dir.$value.'/config.php')) {
+						$admin_folder_name = $value;
+						continue;
+					}
+				}
+			}
+		}
+    	if (isset($admin_folder_name)) {
+    		define('HTTP_ADMIN',$admin_folder_name);
+    	} else {
+    		define('HTTP_ADMIN','admin');
+    	}
+    	
+    }
+    
+    global $modulesPath;
+    if (version_compare(VERSION,'2.3','>=')) { //newer than 2.2.x
+        $modulesPath = 'extension/module';
+    } else {
+        $modulesPath = 'module';
+    }
+    
+    $aFolder = preg_replace('/.*\/([^\/].*)\//is','$1',HTTP_ADMIN);
+    if (!isset($GLOBALS['magictoolbox']['magicslideshow']) && !isset($GLOBALS['magicslideshow_module_loaded'])) {
+
+	include (preg_match("/components\/com_(ayelshop|aceshop|mijoshop)\/opencart\//ims",__FILE__,$matches)?'components/com_'.$matches[1].'/opencart/':'').$aFolder.'/controller/'.$modulesPath.'/magicslideshow-opencart-module/module.php';
+    };
+			
+			
+			
 class ControllerProductManufacturer extends Controller {
 	public function index() {
 		$this->load->language('product/manufacturer');

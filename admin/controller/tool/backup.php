@@ -38,6 +38,9 @@ class ControllerToolBackup extends Controller {
 		$data['entry_export'] = $this->language->get('entry_export');
 		
 
+		$data['entry_export'] = $this->language->get('entry_export');
+		
+
 		$data['button_export'] = $this->language->get('button_export');
 		$data['button_import'] = $this->language->get('button_import');
 

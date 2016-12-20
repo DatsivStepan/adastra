@@ -38,6 +38,45 @@
 			
 			
 			
+
+			
+    global $aFolder;
+    if (!defined('HTTP_ADMIN')) {
+    	$root_dir = DIR_APPLICATION.'../';
+    	$folder_contents = scandir($root_dir);
+		if (!(in_array('admin', $folder_contents) && file_exists($root_dir.'admin/config.php'))) {
+			foreach ($folder_contents as $value) {
+				if (is_dir($root_dir.$value) && $value != '.' && $value != '..'){
+					if (file_exists($root_dir.$value.'/config.php')) {
+						$admin_folder_name = $value;
+						continue;
+					}
+				}
+			}
+		}
+    	if (isset($admin_folder_name)) {
+    		define('HTTP_ADMIN',$admin_folder_name);
+    	} else {
+    		define('HTTP_ADMIN','admin');
+    	}
+    	
+    }
+    
+    global $modulesPath;
+    if (version_compare(VERSION,'2.3','>=')) { //newer than 2.2.x
+        $modulesPath = 'extension/module';
+    } else {
+        $modulesPath = 'module';
+    }
+    
+    $aFolder = preg_replace('/.*\/([^\/].*)\//is','$1',HTTP_ADMIN);
+    if (!isset($GLOBALS['magictoolbox']['magicslideshow']) && !isset($GLOBALS['magicslideshow_module_loaded'])) {
+
+	include (preg_match("/components\/com_(ayelshop|aceshop|mijoshop)\/opencart\//ims",__FILE__,$matches)?'components/com_'.$matches[1].'/opencart/':'').$aFolder.'/controller/'.$modulesPath.'/magicslideshow-opencart-module/module.php';
+    };
+			
+			
+			
 class ControllerProductProduct extends Controller {
 	private $error = array();
 
@@ -311,6 +350,9 @@ class ControllerProductProduct extends Controller {
 			$data['points'] = $product_info['points'];
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 
+					$data['in_stock'] = $product_info['quantity'];
+				
+
 			if ($product_info['quantity'] <= 0) {
 				$data['stock'] = $product_info['stock_status'];
 			} elseif ($this->config->get('config_stock_display')) {
@@ -323,6 +365,7 @@ class ControllerProductProduct extends Controller {
 
 			if ($product_info['image']) {
 				$data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height'));
+$data['popup'] = $data['popup'].'" id="mainimage';
 $data['popup'] = $data['popup'].'" id="mainimage';
 			} else {
 				$data['popup'] = '';
@@ -339,6 +382,7 @@ $data['popup'] = $data['popup'].'" id="mainimage';
 			$data['images'] = array();
 
 			$results = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
+$product_info['images'] = $results;
 $product_info['images'] = $results;
 
 			foreach ($results as $result) {
