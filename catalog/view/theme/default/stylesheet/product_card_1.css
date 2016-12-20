@@ -491,6 +491,10 @@
         display: none;
     }
 }
+.pod-ram-width{
+    width: 48%;
+    float: left;
+}
 @media (max-width: 767px) {
     .productImageBox,
     .productDescriptionBox,
@@ -498,8 +502,111 @@
     .productBuyButtonsBox,
     .optionsContainer,
     .productDeliveryBox {
-        border: 1px solid black;
+        /*border: 1px solid black;*/
+        text-align: justify;
         width: 100%;
+        float: left;
+    }
+    .productPrice {
+        font-family: 'Philosopher';
+        font-weight: 300;
+        font-size: 30px;
+        margin: 0;
+    }
+    .pod-ram-width{
+        width: 100%;
+        float: none;
+    }
+    .underframeMain {
+        transform: translateY(0px);
+        padding: 0 5px 0 5px;
+        background: #f5f5f5;
+        display: inline;
+        position: relative;
+        font-family: 'Philosopher';
+        font-weight: bold;
+        font-size: 19px;
+        border: 1px solid;
+        border-radius: 20px;
+        padding: 13px;
+        margin-left: 40px;
+    }
+
+    .underframeSecondary {
+        padding-top: 10px;
+        padding-left: 10px;
+        font-family: 'Philosopher';
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 20px;
+        border: 1px solid;
+        padding: 13px;
+        margin-left: 26px;;
+    }
+    #hSlider,
+    #wSlider{
+        height: 30px;
+        margin-top: 30px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+    .noUi-tooltip {
+        display: block;
+        position: absolute;
+        background: transparent;
+        left: 5px;
+        top: 40px;
+        font-family: 'Philosopher';
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .radio-input-hidden{
+        display: none;
+    }
+    .underframeContainer {
+        min-height: 45px;
+        border: none;
+    }
+    .noUi-horizontal .noUi-handle {
+        width: 35px;
+        height: 35px;
+        left: -19px;
+        top: -6px;
+        border-radius: 20px;
+        box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+
+    .option-checked-style{
+        border: none;
+        background-color: #fff;
+        color: #322d2d;
+    }
+    .option-checked-style:checked{
+        border: none;
+        background-color: #322d2d;
+        color: #fff;
+    }
+
+
+
+    .productPrice-align{
+        text-align: center;
+    }
+    .option314-label-style{
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+    }
+    .option314-div-style{
+        padding-left: 18px;
+    }
+    .textureContainer {
+        width: 100%;
+        min-height: 50px;
+        border: none;
+        margin-top: 10px;
         float: left;
     }
 

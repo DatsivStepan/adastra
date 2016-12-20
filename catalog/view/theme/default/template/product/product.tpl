@@ -41,7 +41,9 @@
                 ?>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 col-xl-6">
                     <div class="productDescriptionBox hidden-sm hidden-md hidden-lg hidden-xl">
-                        <h1 class="productTitle"><?php echo $heading_title; ?></h1>
+                        <div style="text-align: center; padding-bottom: 20px">
+                            <h1 class="productTitle"><?php echo $heading_title; ?></h1>
+                        </div>
                         <h2 style="display: none;"> Автор </h2>
                         <div class="product_description-pc">
                             <div>
@@ -159,16 +161,16 @@
                         switch (mb_strtolower($option['name'])) {
                             case 'покрытие':
                         ?>
-                    <div style="width: 48%; float: right;"
-                         class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                    <div
+                         class="pod-ram-width form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
                         <div id="input-option<?php echo $option['product_option_id']; ?>">
-                            <div class="underframeContainer">
-                                <label class="underframeMain">Покрытие :</label>
+                            <div class="underframeContainer option314-div-style">
+                                <label class="underframeMain hidden-xs">Покрытие :</label>
                                 <?php
                                     $option_value = $option['product_option_value'][0];
                                     ?>
-                                <label class="underframeSecondary">
-                                    <input type="radio"
+                                <label class="underframeSecondary option314-label-style">
+                                    <input type="radio" class="option-checked-style radio-input-hidden"
                                            name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-coating="true"
@@ -178,8 +180,8 @@
                                 <?php
                                     $option_value = $option['product_option_value'][1];
                                     ?>
-                                <label class="underframeSecondary">
-                                    <input type="radio"
+                                <label class="underframeSecondary option314-label-style">
+                                    <input type="radio" class="radio-input-hidden"
                                            name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-coating="false"
@@ -199,7 +201,7 @@
                             <?php foreach ($option['product_option_value'] as $option_value) { ?>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                    <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
                                     <?php echo $option_value['name']; ?>
                                     <?php if ($option_value['price']) { ?>
@@ -220,15 +222,15 @@
                         switch (mb_strtolower($option['name'])) {
                             case 'подрамник':
                         ?>
-                    <div style="width: 48%; float: left;"
-                         class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                    <div
+                         class="pod-ram-width form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
                         <div id="input-option<?php echo $option['product_option_id']; ?>">
-                            <div class="underframeContainer">
+                            <div class="underframeContainer ">
                                 <?php
                                     $option_value = $option['product_option_value'][0];
                                     ?>
                                 <label class="underframeMain">
-                                    <input type="radio"
+                                    <input type="radio" class="radio-input-hidden"
                                            name="option[<?php echo $option['product_option_id']; ?>][]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-subframe="none"
@@ -239,7 +241,7 @@
                                     $option_value = $option['product_option_value'][1];
                                     ?>
                                 <label class="underframeSecondary">
-                                    <input type="radio"
+                                    <input type="radio" class="radio-input-hidden"
                                            name="option[<?php echo $option['product_option_id']; ?>][]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-subframe="big"
@@ -250,7 +252,7 @@
                                     $option_value = $option['product_option_value'][2];
                                     ?>
                                 <label class="underframeSecondary">
-                                    <input type="radio"
+                                    <input type="radio" class="radio-input-hidden"
                                            name="option[<?php echo $option['product_option_id']; ?>][]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-subframe="small"
@@ -324,7 +326,7 @@
                             <?php foreach ($option['product_option_value'] as $option_value) { ?>
                             <div class="frameBox frameSelector" txtSrc="<?php echo $option_value['image']; ?>">
                                 <label class="my-custom-labelFrame">
-                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                    <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
                                            data-frame="true" value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
                                     <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
                                 </label>
@@ -342,7 +344,7 @@
                             <?php foreach ($option['product_option_value'] as $option_value) { ?>
                             <div class="frameBox">
                                 <label class="my-custom-labelFrame">
-                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                    <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
                                     <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
                                 </label>
@@ -365,7 +367,7 @@
                             <div class="">
                                 <label class="textureSelector"
                                        txtSrc="<?php echo $option_value['image']; ?>">
-                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                    <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>" checked
                                            data-texture="true"
                                            textureWidth="320"
@@ -381,7 +383,7 @@
                             <div class="">
                                 <label class="textureSelector"
                                        txtSrc="<?php echo $option_value['image']; ?>">
-                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                    <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-texture="true"
                                            textureWidth="1000"
@@ -410,7 +412,7 @@
                             <?php foreach ($option['product_option_value'] as $option_value) { ?>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                    <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
                                     <img src="<?php echo $option_value['image']; ?>"
                                          alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>"
@@ -447,7 +449,7 @@
                             <div class="">
                                 <label class="textureSelector"
                                        txtSrc="<?php echo $option_value['image']; ?>">
-                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                    <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>" checked
                                            data-texture="true"
                                            textureWidth="<?php echo $option_value['field1']; ?>"
@@ -463,7 +465,7 @@
                             <div class="">
                                 <label class="textureSelector"
                                        txtSrc="<?php echo $option_value['image']; ?>">
-                                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                    <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                            data-texture="true"
                                            textureWidth="<?php echo $option_value['field1']; ?>"
@@ -495,7 +497,7 @@
                                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                                 <div class="frameBox frameSelector" txtSrc="<?php echo $option_value['image']; ?>">
                                     <label class="my-custom-labelFrame">
-                                        <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
+                                        <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
                                                data-frame="true" value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
                                                data-wframe="<?php echo $option_value['field1']; ?>"
                                         />
@@ -703,9 +705,13 @@
                     <?php if ($price) { ?>
                     <div class="list-unstyled">
                         <?php if (!$special) { ?>
-                        <h2 class="productPrice">Цена: <?php echo $price; ?></h2>
+                        <div class="productPrice-align">
+                            <h2 class="productPrice">Цена: <?php echo $price; ?></h2>
+                        </div>
                         <?php } else { ?>
-                        <h2 class="productPrice">Цена: <?php echo $special; ?></h2>
+                        <div class="productPrice-align">
+                            <h2 class="productPrice">Цена: <?php echo $special; ?></h2>
+                        </div>
                         <?php } ?>
                     </div>
                     <?php } ?>
@@ -762,7 +768,7 @@
     $(document).ready(function () {
         console.log($(window).width());
 
-      if($(window).width() >= 768 ){
+      if($(window).width() >= 780 ){
         var offset = $('.fixed').offset();
         var stopOffset = $('.stopFixed').offset();
         var topPadding = -20;
