@@ -3,61 +3,61 @@
     <div class="hidden-sm hidden-xs">
         <?php foreach ($category_home as $key => $category) { ?>
         <?php if(($key == 0)){ ?>
-        <div class="add" style="background: url(<?php echo $category['image'];?>)center no-repeat;">
-            <div class="adas_img_mar">
-                <div class="text_kat_name">
-                    <h1><?php echo $category['name']; ?></h1>
-                    <div class="border_kat">
-                        <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
-                    </div>
+        <div class="add">
+        <div  style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover; "></div>
+            <div id="parallelogram_1"></div>
+            <div class="text_kat_name">
+                <span><?php echo $category['name']; ?></span>
+                <div class="border_kat">
+                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
                 </div>
             </div>
         </div>
         <?php } ?>
         <?php if(($key == 1)){ ?>
-        <div class="add1" style="background: url(<?php echo $category['image'];?>)center no-repeat;">
-            <div class="adas_img_mar">
-                <div class="text_kat_name">
-                    <h1><?php echo $category['name']; ?></h1>
-                    <div class="border_kat">
-                        <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
-                    </div>
+        <div class="add1">
+            <div  style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
+            <div id="parallelogram"></div>
+            <div class="text_kat_name">
+                <span><?php echo $category['name']; ?></span>
+                <div class="border_kat">
+                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
                 </div>
             </div>
         </div>
         <?php } ?>
         <?php if(($key == 2)){ ?>
-        <div class="add2" style="background: url(<?php echo $category['image'];?>)center no-repeat;">
-            <div class="adas_img_mar">
-                <div class="text_kat_name">
-                    <h1><?php echo $category['name']; ?></h1>
-                    <div class="border_kat">
-                        <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
-                    </div>
+        <div class="add2">
+        <div style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
+            <div id="parallelogram"></div>
+            <div class="text_kat_name">
+                <span><?php echo $category['name']; ?></span>
+                <div class="border_kat">
+                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
                 </div>
             </div>
         </div>
         <?php } ?>
         <?php if(($key == 3)){ ?>
-        <div class="add3" style="background: url(<?php echo $category['image'];?>)center no-repeat;">
-            <div class="adas_img_mar">
-                <div class="text_kat_name">
-                    <h1><?php echo $category['name']; ?></h1>
-                    <div class="border_kat">
-                        <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
-                    </div>
+        <div class="add3">
+        <div  style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
+            <div id="parallelogram"></div>
+            <div class="text_kat_name">
+                <span><?php echo $category['name']; ?></span>
+                <div class="border_kat">
+                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
                 </div>
             </div>
         </div>
         <?php } ?>
         <?php if(($key == 4)){ ?>
-        <div class="add4" style="background: url(<?php echo $category['image'];?>)center no-repeat;">
-            <div class="adas_img_mar">
-                <div class="text_kat_name">
-                    <h1><?php echo $category['name']; ?></h1>
-                    <div class="border_kat">
-                        <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
-                    </div>
+        <div class="add4">
+            <div style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
+            <div id="parallelogram_5"></div>
+            <div class="text_kat_name">
+                <span><?php echo $category['name']; ?></span>
+                <div class="border_kat">
+                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
             <div class="adas_img_mar2">
                 <div class="col-sm-6 col-xs-12 text_box">
                     <div class="">
-                        <h1><?php echo $category['name']; ?></h1>
+                        <span><?php echo $category['name']; ?></span>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xs-12 text_box2">

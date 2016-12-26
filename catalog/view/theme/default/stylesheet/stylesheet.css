@@ -2067,14 +2067,6 @@ h2.price {
 		margin-left: -10%;
 	}
 }
-#parallelogram {
-	width: 150px;
-	height: 100px;
-	-webkit-transform: skew(20deg);
-	-moz-transform: skew(20deg);
-	-o-transform: skew(20deg);
-	background: red;
-}
 /* cart */
 .cont_text.fix_p {
 	width: 1200px;
@@ -2389,4 +2381,22 @@ h2.price {
 	font-family: 'Times New Roman';
 	float: left;
 	margin-right: 4px;
+}
+#toTop {
+	border-radius: 50px;
+	color: #322d2d;
+	border: 1px solid #322d2d;
+	background: transparent;
+	font-size: 18px;
+	font-family: 'Philosopher';
+	float: left;
+	margin-right: 4px;
+	height: 33px;
+	width: 100px;
+	text-align: center;
+	padding: 5px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	cursor: pointer;
 }
