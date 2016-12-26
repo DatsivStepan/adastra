@@ -122,27 +122,27 @@
                  } ?>
         </div>
     </div>
-   <!-- <div class="">
-        <?php
-    if(isset($content_bottom['modules'][3])){
-                     echo $content_bottom['modules'][3];
-                    } ?>
-    </div> -->
+    <!-- <div class="">
+         <?php
+     if(isset($content_bottom['modules'][3])){
+                      echo $content_bottom['modules'][3];
+                     } ?>
+     </div> -->
 </div>
 <div class="row rows_2 no-margin">
     <?php foreach ($category_muse as $musey) { ?>
     <div class="div_muzey_text"><?php echo($musey['name'])?></div>
-        <div id="owl-carousel" class="owl-carousel owl-theme  car_ow_np_20" data-ride="carousel">
-                    <?php foreach($musey['option_value'] as $option){ ?>
-                        <div class="item">
-                            <div class="div_item_text" style="background: url(image/<?php echo $option['image'];?>) center no-repeat;">
-                                <a href="http://adastra.local/index.php?route=product/category&path=20_28&mfp=36-muzey[<?php echo $option['name'];?>]">
-                                <div class="text_title_np_21" style=""><?php echo $option['name'];?></div></a>
-                            </div>
-                        </div>
-                    <?php } ?>
-           <?php } ?>
+    <div id="owl-carousel" class="owl-carousel owl-theme  car_ow_np_20" data-ride="carousel">
+        <?php foreach($musey['option_value'] as $option){ ?>
+        <div class="item">
+            <div class="div_item_text" style="background: url(image/<?php echo $option['image'];?>) center no-repeat;">
+                <a href="http://adastra.local/index.php?route=product/category&path=20_28&mfp=36-muzey[<?php echo $option['name'];?>]">
+                    <div class="text_title_np_21" style=""><?php echo $option['name'];?></div></a>
+            </div>
         </div>
+        <?php } ?>
+        <?php } ?>
+    </div>
 </div>
 <div style="clear:both;"></div>
 <div class="row" style="margin: 0;">
@@ -175,10 +175,8 @@
             <div class="row  row-advantages-style">
                 <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
                     <div class="row" style="position: relative; margin: 0 ">
-                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
-                            <span class="advantages-number_1-style">1</span>
-                        </div>
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_1">
+                            <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
                             <span class="advantages-content-title-style">
                                 Экологически чистые материалы
                             </span></br>
@@ -188,15 +186,11 @@
                             </span>
                         </div>
                     </div>
-                    <div class="div-border_1-style"></div>
-                    <div class="div-border-style"></div>
                 </div>
                 <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="float: right">
                     <div class="row" style="position: relative; margin: 0 ">
-                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
-                            <span class="advantages-number_2-style">2</span>
-                        </div>
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style adv_con_tit_np_2">
+                            <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
                             <span class="advantages-content-title-style">
                                 Мы являемся производителями
                             </span></br>
@@ -206,17 +200,13 @@
                             </span>
                         </div>
                     </div>
-                    <div class="div-border_1-style"></div>
-                    <div class="div-border-style"></div>
                 </div>
             </div>
             <div class="row  row-advantages-style">
                 <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
                     <div class="row" style="position: relative; margin: 0 ">
-                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
-                            <span class="advantages-number_3-style">3</span>
-                        </div>
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_3">
+                            <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
                             <span class="advantages-content-title-style">
                                 Бесшовная печать
                             </span></br>
@@ -225,15 +215,11 @@
                             </span>
                         </div>
                     </div>
-                    <div class="div-border_1-style"></div>
-                    <div class="div-border-style"></div>
                 </div>
                 <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style adv_np_20_20" style="float: right">
                     <div class="row" style="position: relative; margin: 0 ">
-                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
-                            <span class="advantages-number_4-style">4</span>
-                        </div>
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style adv_con_tit_np_4">
+                            <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
                             <span class="advantages-content-title-style">
                                 Большой выбор
                             </span></br>
@@ -242,37 +228,29 @@
                             </span>
                         </div>
                     </div>
-                    <div class="div-border_1-style"></div>
-                    <div class="div-border-style"></div>
                 </div>
             </div>
 
             <div class="row  row-advantages-style">
                 <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
                     <div class="row" style="position: relative; margin: 0 ">
-                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
-                            <span class="advantages-number_5-style">5</span>
-                        </div>
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_5">
+                            <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
                             <span class="advantages-content-title-style">
                                Эксклюзивный макет
                             </span></br>
                             <span class="advantages-content-style">
                                 Также наши дизайнеры могут изготовить для вас эксклюзивный макет с применением техники коллажа,
-                                дорисовки изображений с учетом конфигурации помещения, которое вы хотите украсить нашими изделиями, или же нарисовать макет,
-                                соответствующий вашим персональным пожеланиям
+                                дорисовки изображений с учетом конфигурации помещения, которое вы хотите украсить нашими изделиями,
+                                или же нарисовать макет, соответствующий вашим персональным пожеланиям.
                             </span>
                         </div>
                     </div>
-                    <div class="div-border_1-style"></div>
-                    <div class="div-border-style"></div>
                 </div>
                 <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="float: right">
                     <div class="row" style="position: relative; margin: 0 ">
-                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 advantages-number_1-div-style">
-                            <span class="advantages-number_6-style">6</span>
-                        </div>
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style adv_con_tit_np_6">
+                            <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
                             <span class="advantages-content-title-style">
                                 Репродукции картин
                             </span></br>
@@ -282,8 +260,6 @@
                             </span>
                         </div>
                     </div>
-                    <div class="div-border_1-style"></div>
-                    <div class="div-border-style"></div>
                 </div>
             </div>
             <div class="footer-div-contact-style hidden-xs" >
