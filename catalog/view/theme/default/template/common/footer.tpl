@@ -41,6 +41,7 @@
     </div>
 
 </footer>
+<div id="toTop">Вверх</div>
 </body></html>
 
 				<?php if ($buyoneclick_status) { ?>

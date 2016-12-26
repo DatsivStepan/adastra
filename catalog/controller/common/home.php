@@ -28,7 +28,7 @@ class ControllerCommonHome extends Controller {
             if ($a <= 4){
                 $data['category_home'][] = array(
                     'name'                    => $category['name'],
-                    'image'                   => $this->model_tool_image->resize($category['image'], 600, 450),
+                    'image'                   => '../../image/'.$category['image'],
                     'href'        => $this->url->link('product/category', 'path=' . $category['category_id'])
                 );
             }else{

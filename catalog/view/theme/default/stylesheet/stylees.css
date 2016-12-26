@@ -1,10 +1,10 @@
 .title_adas_o_galer{
-    font-family:'Philosopher';
+    font-family:'Times New Roman';
     font-size: 41px;
     color: #322d2d;
 }
 .breadcrumb_text_2{
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     font-size: 17px;
     list-style-type: none;
     color: #8a8781;
@@ -13,20 +13,20 @@
     margin: 0 1% 0 0;
 }
 .title_adas_o_galer_2{
-    font-family:'Philosopher';
+    font-family:'Times New Roman';
     text-align: center;
     text-transform: uppercase;
     font-size: 26px;
     color: #322d2d;
 }
 .adas_text_o_nac{
-    font-family:'Philosopher';
+    font-family:'Times New Roman';
     font-size: 17px;
     color: #322d2d;
     margin-bottom: 4%;
 }
 .adas_text_o_nac_nuz{
-    font-family:'Philosopher';
+    font-family:'Times New Roman';
     font-size: 18px;
     color: #6d6b6b;
     padding: 0;
@@ -34,25 +34,25 @@
     line-height: 30px!important;
 }
 .text_faktury_frecku{
-    font-family:'Philosopher';
+    font-family:'Times New Roman';
     font-size: 25px;
     color: #322d2d;
     font-weight: 600;
 }
 .text_faktury_gold{
-    font-family:'Philosopher';
+    font-family:'Times New Roman';
     font-size: 22px;
     color: #322d2d;
     font-weight: 600;
 }
 .text_faktury_gold_2{
-    font-family:'Philosopher';
+    font-family:'Times New Roman';
     font-size: 20x;
     color: #322d2d;
     font-weight: 600;
 }
 .text_factura_bold{
-    font-family:'Philosopher';
+    font-family:'Times New Roman';
     font-size: 18px;
     color: #322d2d;
     font-weight: 600;
@@ -65,26 +65,26 @@
     margin-top: 6px;
 }
 .adas_img_mar{
-    height: 400px;
-    width: 100%;
+    /*height: 400px;*/
+    /*width: 100%;*/
     float: left;
     /* margin-top: 6px; */
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     left: 0;
-    background: rgba(0,0,0,0.5);
+    /*background: rgba(0,0,0,0.5);*/
 }
 
 
 .home_adas_text{
-    font-family: 'Philosopher' !important;
+    font-family: 'Times New Roman' !important;
     display: inline-block !important;
     font-size: 18px !important;
     color: #6e6565 !important;
     margin-top: 36px;
 }
 .tovar_adas_text{
-    font-family: 'Philosopher' !important;
+    font-family: 'Times New Roman' !important;
     font-size: 18px !important;
     color: #6e6565 !important;
     margin: 1px;
@@ -101,7 +101,7 @@
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
     color: #000;
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     font-size: 18px;
     cursor: default;
     border: none;
@@ -114,7 +114,7 @@
     border-color: none ;
 }
 .a_adas_sul{
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     font-size: 18px;
     color: #585858;
     border: 1px solid #000000;
@@ -130,10 +130,10 @@
     }
 
     .a_kat_adas{
-        font-family:'Philosopher';
+        font-family:'Times New Roman';
         font-size: 14px;
         font-weight: 600;
-        color: #ffde00;
+        color: #000;
         margin: 0 0 0 15%;
         background: url("/../catalog/view/theme/default/image/Forma-1-copy.png")right no-repeat;
         padding: 0 15% 0 0;
@@ -152,12 +152,12 @@
     }
 }
 .last_h3_text{
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     font-size: 25px;
     font-weight: 600;
 }
 .panel_h4_text{
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     font-size: 25px;
     font-weight: 600;
     margin: 0 0 0 250px;
@@ -186,7 +186,7 @@
 }
 @media (min-width: 1200px) {
     .last_h3_text {
-        font-family: 'Philosopher';
+        font-family: 'Times New Roman';
         font-size: 25px;
         font-weight: 600;
         margin: 0 0 0 80px;
@@ -200,7 +200,7 @@
 @media (min-width: 992px) {
 
     .last_h3_text {
-        font-family: 'Philosopher';
+        font-family: 'Times New Roman';
         font-size: 25px;
         font-weight: 600;
         margin: 0 0 0 -20px;
@@ -226,7 +226,7 @@
         margin: 0 13px 0 -10px!important;
     }
     .last_h3_text {
-        font-family: 'Philosopher';
+        font-family: 'Times New Roman';
         font-size: 25px;
         font-weight: 600;
         margin: 0 0 0 -16px;
@@ -251,14 +251,14 @@
     }
 
     .panel_h4_text {
-        font-family: 'Philosopher';
+        font-family: 'Times New Roman';
         font-size: 25px !important;
         font-weight: 600 !important;
         text-align: center !important;
     }
 
     .last_h3_text {
-        font-family: 'Philosopher';
+        font-family: 'Times New Roman';
         font-size: 25px !important;
         font-weight: 600 !important;
         text-align: center !important;
@@ -281,7 +281,6 @@
     width: 25.8%;
     height: 400px;
     float: left;
-    background: #1e90ff;
     -webkit-clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%);
     clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%);
     position: relative;
@@ -293,7 +292,7 @@
     width: 25.8%;
     height: 400px;
     float: left;
-    background: #1e90ff;
+    /*background: #1e90ff;*/
     -webkit-clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
     clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
 }
@@ -303,7 +302,7 @@
     width: 25.8%;
     height: 400px;
     float: left;
-    background: #1e90ff;
+    /*background: #1e90ff;*/
     -webkit-clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
     clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
 }
@@ -313,17 +312,17 @@
     width: 25.8%;
     height: 400px;
     float: left;
-    background: #1e90ff;
     -webkit-clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
     clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
 }
 .add4{
+    overflow: hidden;
     margin: 6px 0 0 74.2%;
     position: absolute;
     width: 25.8%;
     height: 400px;
     float: left;
-    background: #1e90ff;
+    /*background: #1e90ff;*/
     -webkit-clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
 }
@@ -332,44 +331,81 @@
 }
 
 .text_kat_name {
-    font-family: 'Philosopher';
-    font-size: 20px;
-    color: #fff!important;
-    font-weight: 600;
-    text-align: left;
-    width: 60%;
+    z-index: 101;
     position: absolute;
-    bottom: 40px;
+    bottom: 4%;
     left: 20%;
+    font-family: 'Times New Roman';
+    font-size: 15px;
+    color: #000!important;
+    font-weight: 300;
+    text-align: left;
+
 }
 .adas_img_mar h1{
-    color: white;
+    color: #000;
     font-size: 25px;
 }
 
 .a_kat_adas{
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     font-size: 17px;
     font-weight: 600;
-    color: #ffde00;
+    color: #000;
     background: url(/../catalog/view/theme/default/image/Forma-1-copy.png)right no-repeat;
     padding: 0 36px 0 0;
     text-decoration: underline;
 }
 .a_kat_adas:hover{
-    color: #ffde00;
+    color: #000;
     text-decoration: none;
 }
+#parallelogram {
+    margin-left: 13px;
+    margin-top: 5px;
+    border: 1px solid #000;
+    width: 69%;
+    height: 95px;
+    /*background: #8734f7;*/
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    -o-transform: skew(-15deg);
+    transform: skew(-15deg);
+}
+#parallelogram_1 {
+     margin-left: -15px;
+     margin-top: 5px;
+     border: 1px solid #000;
+     width: 77%;
+     height: 95px;
+     /*background: #8734f7;*/
+     -webkit-transform: skew(-15deg);
+     -moz-transform: skew(-15deg);
+     -o-transform: skew(-15deg);
+     transform: skew(-15deg);
+ }
+#parallelogram_5 {
+    margin-left: 14px;
+    margin-top: 5px;
+    border: 1px solid #000;
+    width: 100%;
+    height: 95px;
+    /*background: #8734f7;*/
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    -o-transform: skew(-15deg);
+    transform: skew(-15deg);
+}
 .a_kat_adast{
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     font-size: 18px;
     font-weight: 600;
-    color: #ffde00;
+    color: #000;
     background: url(/../catalog/view/theme/default/image/Forma-1-copy.png)right no-repeat;
     padding: 0 40px 0 0;
 }
 .a_kat_adast:hover{
-    color: #ffde00;
+    color: #000;
     text-decoration: none;
 }
 .border_kat{
@@ -388,7 +424,7 @@
     font-size: 32px;
 }
 .text_box{
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     font-size: 20px;
     color: #fff!important;
     font-weight: 600;
@@ -399,7 +435,7 @@
     left: 8%;
 }
 .text_box2{
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     font-size: 20px;
     color: #fff!important;
     font-weight: 600;
@@ -485,31 +521,31 @@
     box-shadow: none!important;
 }
 .text_dost{
-    font-family: 'Philosopher'!important;
+    font-family: 'Times New Roman'!important;
     font-size: 15px!important;
     color: #494545!important;
     font-weight: 600;
 }
 .text_dost1{
-    font-family: 'Philosopher'!important;
+    font-family: 'Times New Roman'!important;
     font-size: 14px!important;
     color: #322d2d!important;
 }
 .text_dost2{
-    font-family: 'Philosopher'!important;
+    font-family: 'Times New Roman'!important;
     font-size: 26px!important;
     color: #000!important;
     font-weight: 600;
 }
 .border_button{
-    font-family: 'Philosopher'!important;
+    font-family: 'Times New Roman'!important;
     border-radius: 50px 50px!important;
     background: #322d2d!important;
     font-size: 19px!important;
     color: #f5f5f5!important;
 }
 .form_border_rad{
-    font-family: 'Philosopher'!important;
+    font-family: 'Times New Roman'!important;
     display: block;
     width: 100%;
     height: 45px!important;
@@ -519,7 +555,7 @@
     border-radius: 0!important;
 }
 .form_border_rad1{
-    font-family: 'Philosopher'!important;
+    font-family: 'Times New Roman'!important;
     display: block;
     width: 100%;
     height: 110px!important;
@@ -549,12 +585,12 @@
         padding: 5px 8px!important;
     }
     .text_dost1{
-        font-family: 'Philosopher'!important;
+        font-family: 'Times New Roman'!important;
         font-size: 13px!important;
         color: #322d2d!important;
     }
     .text_dost3 {
-        font-family: 'Philosopher' !important;
+        font-family: 'Times New Roman' !important;
         font-size: 22px !important;
         color: #322d2d !important;
     }
@@ -573,7 +609,7 @@
         padding: 5px 8px!important;
     }
     .text_dost4{
-        font-family: 'Philosopher' !important;
+        font-family: 'Times New Roman' !important;
         color: #fff !important;
         font-size: 13px!important;
     }
@@ -581,7 +617,7 @@
 }
 
 .mfi_hea_title{
-    font-family: 'Philosopher' !important;
+    font-family: 'Times New Roman' !important;
     font-weight: 600;
     cursor: pointer;
     background: none!important;
@@ -592,7 +628,7 @@
     border: none!important;
 }
 .mfi_tb_as_td_bord{
-    font-family: 'Philosopher' !important;
+    font-family: 'Times New Roman' !important;
     border: none!important;
     font-size: 15px!important;
     display: inline-block!important;
@@ -613,7 +649,7 @@
     color: white!important;
 }
 .h3_box_hea_size{
-    font-family: 'Philosopher' !important;
+    font-family: 'Times New Roman' !important;
     background: #f0ebe2!important;
     font-size: 16px!important;
     padding: 12px 7px 12px 13px;
@@ -643,7 +679,7 @@
 }
 @media (max-width: 767px) {
     .h3_box_hea_size {
-        font-family: 'Philosopher' !important;
+        font-family: 'Times New Roman' !important;
         background: #f0ebe2!important;
         font-size: 29px!important;
         padding: 17px 7px 17px 13px;
@@ -651,7 +687,7 @@
         text-align: center;
     }
     .mfi_hea_title {
-        font-family: 'Philosopher' !important;
+        font-family: 'Times New Roman' !important;
         font-weight: normal;
         cursor: pointer;
         background: #f8f6f1!important;
@@ -661,7 +697,7 @@
     }
 
     .mfi_tb_as_td_bord {
-        font-family: 'Philosopher' !important;
+        font-family: 'Times New Roman' !important;
         border: none!important;
         font-size: 25px!important;
         display: none;
@@ -687,7 +723,7 @@
         color: white!important;
     }
     .mfi_tg_td_bord{
-        font-family: 'Philosopher' !important;
+        font-family: 'Times New Roman' !important;
         border: none!important;
         font-size: 25px!important;
         display: block!important;
@@ -1036,7 +1072,7 @@
     }
 }
 .text_np_20{
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     color: #8a8781;
     font-size: 15px;
     padding: 0;
@@ -1045,7 +1081,7 @@
     text-transform: uppercase!important;
 }
 .footer-bottom-text-padding_20{
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     font-weight: 400;
     font-size: 15px;
     color: #262626!important;
@@ -1059,7 +1095,7 @@
     top: -8%!important;
 }
 .cart-text-style1_20{
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     font-weight: 200;
     font-size: 15px;
     position: inherit!important;
@@ -1112,7 +1148,7 @@
 }
 .div_muzey_text{
     text-align: center;margin-bottom: 2%;
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     color:#000000;font-weight: 600;
     background-size: cover;font-size: 35px;
     text-transform: uppercase
@@ -1123,7 +1159,7 @@
     float: left;
 }
 .text_title_np_21{
-    font-family: 'Philosopher';
+    font-family: 'Times New Roman';
     font-size: 23px;
     text-align: center;
     color: white;

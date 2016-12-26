@@ -57,7 +57,34 @@
 				<link href="catalog/view/javascript/jquery/fancybox/jquery.fancybox.css" rel="stylesheet" media="screen" />
 				<script src="catalog/view/javascript/buyoneclick.js" type="text/javascript"></script>
 				<link href="catalog/view/theme/default/stylesheet/buyoneclick.css" rel="stylesheet">
-            
+
+  <script type="text/javascript">
+
+    $(function() {
+
+      $(window).scroll(function() {
+
+        if($(this).scrollTop() != 0) {
+
+          $('#toTop').fadeIn();
+
+        } else {
+
+          $('#toTop').fadeOut();
+
+        }
+
+      });
+
+      $('#toTop').click(function() {
+
+        $('body,html').animate({scrollTop:0},800);
+
+      });
+
+    });
+
+  </script>
 </head>
 
 
