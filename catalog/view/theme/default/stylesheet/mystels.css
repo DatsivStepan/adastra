@@ -103,7 +103,7 @@ h1.text_comment{
 !important;
 }
 .korzuna_style{
-    !important;
+!important;
     background: url('../image/korzuna.png') right center no-repeat;
     width: 25px;
     height: 30px;
@@ -274,7 +274,7 @@ div.KP_25_mod_productcategory:hover {
     box-shadow: 0 0 1px rgba(0,0,0,0.5);
 }
 
-    /*golovna*/
+/*golovna*/
 .korzuna_style-3 {
     background: url(../image/Korzuna_golovna.png) right center no-repeat;
     width: 64px;
@@ -552,9 +552,9 @@ a.Catalog{
         color: #0b0b0b;
         font-style: italic;
     }  .product-thumb_style .caption_style {
-        padding: 0 20px;
-        min-height: 0;
-    }
+           padding: 0 20px;
+           min-height: 0;
+       }
     .text_katalog{
         font-family: 'Philosopher';
         font-size: 48px;
@@ -721,10 +721,10 @@ a.Catalog{
         margin: 10px 0 0 0 !important;
     }
     div.KP_25_mod:nth-child(4n){
-       display: none!important;
+        display: none!important;
     }
     div.KP_25_mod:nth-child(5n){
-       display: none!important;
+        display: none!important;
     }
     div.KP_25_mod_productcategory:nth-child(4n){
         display: none!important;
@@ -893,13 +893,13 @@ a.Catalog{
         margin-left: 1%;
     }
     div.KP_25_mod:nth-child(5n){
-       display: none;
+        display: none;
     }
     div.KP_25_mod:nth-child(4n){
-       margin-right: 0!important;
+        margin-right: 0!important;
     }
     div.KP_25_mod_productcategory:nth-child(4n){
-       display: none!important;
+        display: none!important;
     }
     div.KP_25_mod_productcategory:nth-child(3n){
         margin: 10px 0 0 0 !important;
@@ -1097,7 +1097,7 @@ a.Catalog{
         float: left;
     }
     .footer-contact-text-left-style{
-        font-family: 'Philosopher'!important;
+        font-family: 'Times New Roman'!important;
         font-weight: 700!important;
         font-size: 40px!important;
         margin-left: -100px!important;
