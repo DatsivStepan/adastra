@@ -31,6 +31,7 @@
 }
 
 .productTitle,
+.productTitleMain,
 .productPrice {
     font-family: 'Philosopher';
     font-weight: bold;
@@ -76,8 +77,9 @@
 }
 
 .clickToBuy p {
-    width: 190px;
+    width: 160px;
     padding-top: 2px;
+    line-height: 17px;
 }
 
 .clickToBuy p:before {
@@ -85,8 +87,7 @@
     height: 50px;
     display: block;
     float: left;
-    padding-left: 25px;
-    padding-top: 8px;
+    padding-left: 20px;
 }
 
 .addToCart {
@@ -661,3 +662,9 @@
     left: 0px;
 }
 /*FRAME END*/
+
+.option-checked-style {
+    border: none;
+    background-color: #322d2d;
+    color: #fff;
+}

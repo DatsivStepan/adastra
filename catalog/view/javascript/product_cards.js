@@ -622,6 +622,30 @@ function ready() {
 
     });
 
+    $(".radioSelector").each(function() {
+        $(this).click(function() {
+            $(".radioSelector").each(function() {
+                if(this.children[0].checked){
+                    $(this).addClass("option-checked-style");
+                }else{
+                    $(this).removeClass("option-checked-style");
+                }
+            })
+        });
+    });
+
+    $(".textureSelector").each(function() {
+        $(this).click(function() {
+            $(".textureSelector").each(function() {
+                if(this.children[0].checked){
+                    $(this).addClass("option-checked-style");
+                }else{
+                    $(this).removeClass("option-checked-style");
+                }
+            })
+        });
+    });
+
 }
 
 //document.addEventListener("DOMContentLoaded", ready);

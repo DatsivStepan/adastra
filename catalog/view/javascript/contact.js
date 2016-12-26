@@ -6,16 +6,16 @@ $(document).ready(function () {
 
     function init(){
         myMap = new ymaps.Map("map", {
-            center: [55.702531, 37.928893],
+            center: [55.757648, 37.682655],
             zoom: 17
         });
 
-        myPlacemark = new ymaps.Placemark([55.702531, 37.928893], {
+        myPlacemark = new ymaps.Placemark([55.757648, 37.682655], {
         });
 
         myMap.geoObjects
-            .add(new ymaps.Placemark([55.702531, 37.928893], {
-                iconCaption: 'Покровская улица'
+            .add(new ymaps.Placemark([55.757648, 37.682655], {
+                iconCaption: 'Слободской переулок, д.6'
             }, {
                 preset: 'islands#greenDotIconWithCaption',
                 iconColor: '#ed4543'

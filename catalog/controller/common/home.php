@@ -20,7 +20,7 @@ class ControllerCommonHome extends Controller {
 
         $this->load->model('catalog/product');
 
-        $data['category_muse'] = $this->model_catalog_product->getOptions(40);
+        $data['category_muse'] = $this->model_catalog_product->getOptions(42);
 
 
         $a = 0;

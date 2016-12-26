@@ -5,7 +5,7 @@ class ControllerInformationContact extends Controller {
 	public function index() {
 		$this->load->language('information/contact');
 		$this->document->addScript('catalog/view/javascript/contact.js');
-		$this->document->addScript("https://api-maps.yandex.ru/2.1/?lang=tr_TR\" type=\"text/javascript");
+		$this->document->addScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU\" type=\"text/javascript");
 		$this->document->addScript("https://cdn.jsdelivr.net/sweetalert2/6.0.1/sweetalert2.min.js");
 		$this->document->addStyle("https://cdn.jsdelivr.net/sweetalert2/6.0.1/sweetalert2.min.css");
 

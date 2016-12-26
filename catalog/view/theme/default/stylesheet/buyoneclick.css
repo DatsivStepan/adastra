@@ -1,0 +1,153 @@
+/************************ popup ************************/
+.request-popup {
+	display:none;
+}
+.fancybox-skin {
+   border: 0px solid #ffffff;
+   background: #006699;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+   background: -webkit-linear-gradient(top, #ffffff, #ffffff);
+   background: -moz-linear-gradient(top, #ffffff, #ffffff);
+   background: -ms-linear-gradient(top, #ffffff, #ffffff);
+   background: -o-linear-gradient(top, #ffffff, #ffffff);
+   background-image: -ms-linear-gradient(top, #3399cc 0%, #006699 100%);
+   -webkit-box-shadow: rgba(000,000,000,0.9) 0 0px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+   -moz-box-shadow: rgba(000,000,000,0.9) 0 0px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+   box-shadow: rgba(000,000,000,0.9) 0 0px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+   font-family: 'Helvetica Neue',Helvetica,sans-serif;
+   text-decoration: none;
+   vertical-align: middle;
+   min-width:500px;
+   padding:20px;
+   width:500px;
+}
+.fancybox-inner {
+    margin: 0 auto;
+}
+.request-popup {
+	padding:0 10px;
+}
+.fancy_heading h2{
+   text-shadow: 1px 1px 0 #000;
+   color:#fff;
+   margin: 15px 0 0 0;
+   font-weight:bold;
+   text-align:center;
+}
+.fancy_heading h3{
+   text-shadow: 1px 1px 0 #000;
+   color:#fff;
+   margin: 15px 0 0 0;
+   font-weight:bold;
+   text-align:center;
+}
+.form-title {
+   margin-bottom:10px;
+   color: #ffffff;
+   text-shadow: #000000 0 1px 0;
+}
+:focus::-webkit-input-placeholder {color: transparent}
+:focus::-moz-placeholder          {color: transparent}
+:focus:-moz-placeholder           {color: transparent}
+:focus:-ms-input-placeholder      {color: transparent}
+
+.request-popup .fancy_form_row {
+   margin:10px auto;
+   min-height:1em;
+   text-align:center;
+}
+.request-popup  input, .request-popup  textarea{
+   border: 1px solid #000000;
+   background: #ffffff;
+   color: #666666;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
+   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
+   padding:8px;
+   width:280px;
+   font-size:1.25em;
+}
+.request-popup  input:focus, .request-popup  textarea:focus {
+   background: #ffffff;
+   color: #000000;
+}
+.request-popup  input.error, .request-popup  textarea.error {
+   border: 1px solid #990000;
+   background: #ff6666;
+}
+.request-popup .fancy_form_row.fancy_form_submit {
+	text-align:center;
+	margin-bottom:15px;
+}
+.fancy_form_error_text{
+	color:#fff;
+	min-height:1.5em;
+}
+.request-popup  input[type="submit"] {
+    height: 50px;
+    width: 100%;
+    border-radius: 50px;
+    color: #fff;
+    border: 1px solid #322d2d;
+    background: #322d2d;
+    font-size: 22px;
+    font-family: 'Philosopher';
+    margin-left: 5px;
+}
+
+
+.popup-holder
+{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    color: #fff;
+    background: url(fancybox_overlay.png);
+}
+.success-popup
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    overflow: hidden;
+
+	border: 0px solid #ffffff;
+	background: #006699;
+	background: -webkit-gradient(linear, left top, left bottom, from(#3399cc), to(#006699));
+	background: -webkit-linear-gradient(top, #3399cc, #006699);
+	background: -moz-linear-gradient(top, #3399cc, #006699);
+	background: -ms-linear-gradient(top, #3399cc, #006699);
+	background: -o-linear-gradient(top, #3399cc, #006699);
+	background-image: -ms-linear-gradient(top, #3399cc 0%, #006699 100%);
+	-webkit-box-shadow: rgba(000,000,000,0.9) 0 0px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+	-moz-box-shadow: rgba(000,000,000,0.9) 0 0px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+	box-shadow: rgba(000,000,000,0.9) 0 0px 2px, inset rgba(255,255,255,0.4) 0 0px 0;
+	font-family: 'Helvetica Neue',Helvetica,sans-serif;
+	text-decoration: none;
+	vertical-align: middle;
+	min-width:300px;
+	padding:20px;
+	width:300px;
+	min-height:100px;
+	margin-top: -100px;
+	margin-left: -150px;
+	text-align:center;
+	font-size:1.25em;
+}
+.b1c_title{
+	color: #322d2d;
+    margin: 15px 0 0 0;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Philosopher';
+    font-weight: bold;
+    font-size: 22px;
+}

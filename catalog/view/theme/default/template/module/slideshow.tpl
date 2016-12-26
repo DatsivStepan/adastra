@@ -6,7 +6,7 @@
         <div class="desktop-img-div-style desktop-img-div-style_20"><img class="banner-logo-size banner-logo-size_20" src="../../../catalog/view/theme/default/image/sliderBanner.png" style="width: 100%" ></br></div>
         <div class="desktop-text-div-style desktop-text-div-style_20">
             <span class="banner-text-style">
-                интернер магазин креативных картин предлагает самые лучшие</br>
+                Интернет магазин креативных картин предлагает самые лучшие</br>
                 и самые креативные картины в интернете по самым низким</br>
                 ценам от производителя.</br>
                 <a class="banner-linc-style" href="/index.php?route=information/information&information_id=4">Подробнее о нас<img src="../../../catalog/view/theme/default/image/bannerLinkIcon.png" style="width: 4%"></br></a>
@@ -19,7 +19,7 @@
         <div class="mobile-img-div-style"><img src="../../../catalog/view/theme/default/image/sliderBanner.png" style="width: 270px;"></div>
         <div class="mobile-text-div-style">
             <span class="mobile-banner-text-style">
-                интернер магазин креативных картин предлагает самые лучшие
+                Интернет магазин креативных картин предлагает самые лучшие
                 и самые креативные картины в интернете по самым низким
                 ценам от производителя.
             </span>
