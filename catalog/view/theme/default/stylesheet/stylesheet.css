@@ -2386,8 +2386,9 @@ h2.price {
 	border-radius: 50px;
 	color: #322d2d;
 	border: 1px solid #322d2d;
+	background: #fff;
 	font-size: 18px;
-	font-family: 'Philosopher';
+	font-family: 'Times New Roman';
 	float: left;
 	margin-right: 4px;
 	height: 33px;
