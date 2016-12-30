@@ -89,7 +89,7 @@
 
 
 <body class="<?php echo $class; ?>">
-<!--
+
 <div id="contactForm_ru" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -122,7 +122,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 <div id="contactForm_en" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -132,24 +132,24 @@
       </div>
       <!-- Основное содержимое модального окна -->
       <div class="modal-body" style="text-align: center;">
-        <div class="modal-title-style">Обратная связь</div>
+        <div class="modal-title-style">MASSAGE</div>
         <div>
           <form id="contactForm" action="" method="post">
             <ul id="errorMasege" style="padding-left: 0">
-              <span style="display: none; color: red" class="row name">Некоректно заполнено Имя пользователя</span>
-              <span style="display: none; color: red" class="row email ">Некоректно заполнено Email</span>
-              <span style="display: none; color: red" class="row message ">Минимальная длина сообщения десеть знаков</span>
+              <span style="display: none; color: red" class="row name">Incorrectly filled Username</span>
+              <span style="display: none; color: red" class="row email ">Incorrectly filled Email</span>
+              <span style="display: none; color: red" class="row message ">The minimum length of the message signs ten</span>
             </ul>
             <div class="row modal-div-input-stile">
-              <input class="modal-input-style contactItem" id="name" name="name" type="text" placeholder="ВАШЕ ИМЯ">
+              <input class="modal-input-style contactItem" id="name" name="name" type="text" placeholder="NAME">
             </div>
             <div class="row modal-div-input-stile">
               <input class="modal-input-style contactItem" id="email" name="email" type="text" placeholder="E-MAIL">
             </div>
             <div class="row modal-div-input-stile">
-              <textarea  name="message" placeholder="СООБЩЕНИЕ" rows="5" id="message" class="contactItem modal-textarea-style"></textarea>
+              <textarea  name="message" placeholder="MASSAGE" rows="5" id="message" class="contactItem modal-textarea-style"></textarea>
             </div>
-            <button id="sendMessage" type="button" class="btn modal-btn-style">Отправить</button>
+            <button id="sendMessage" type="button" class="btn modal-btn-style">Send</button>
           </form>
         </div>
       </div>
