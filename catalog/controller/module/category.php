@@ -88,6 +88,7 @@ class ControllerModuleCategory extends Controller {
 			);
 		}
 
+
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/category.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/module/category.tpl', $data);
 		} else {

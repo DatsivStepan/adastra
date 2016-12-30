@@ -171,10 +171,6 @@
               </div>
 
 			  </div>
-		
-
-			  </div>
-		
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
                 <div class="col-sm-10">
