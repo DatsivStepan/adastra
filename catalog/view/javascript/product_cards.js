@@ -579,6 +579,16 @@ function ready() {
                                     document.getElementById('picture').style.background = "url(" + json['new_file'] + "), url(" + textureSrc + ")";
                                     document.getElementById('picture').style.backgroundSize = "100% 100%";
 
+
+                                    $("#image").attr("uploadFileExt", json['file_extension']);
+                                    console.log($("#image").attr("uploadFileExt"));
+
+                                    $("#image").attr("uploadFileName", json['file_name']);
+                                    console.log($("#image").attr("uploadFileName"));
+
+                                    $("#image").attr("uploadFileToken", json['file_token']);
+                                    console.log($("#image").attr("uploadFileName"));
+
                                     frameWidth = tmp.naturalWidth + 60;
                                     frameHeight = tmp.naturalHeight + 60;
 
@@ -602,6 +612,87 @@ function ready() {
                 });
             }
         }, 500);
+    });
+
+    $('.btnPhotoRotateLeft').on('click', function () {
+                //console.log('index.php?route=tool/rotateImage&rotate=left&ext='+$("#image").attr("uploadFileExt")+"&filename="+$("#image").attr("uploadFileName"));
+                $.ajax({
+                    url: 'index.php?route=tool/rotateImage&rotate=left&ext='+$("#image").attr("uploadFileExt")+"&filename="+$("#image").attr("uploadFileName")+"&filetoken"+$("#image").attr("uploadFileToken"),
+                    type: 'post',
+                    //dataType: 'json',
+                    data: "",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    beforeSend: function () {
+                        //$(node).button('loading');
+                    },
+                    complete: function () {
+                        //$(node).button('reset');
+                    },
+                    success: function (json) {
+                        var classname = document.getElementsByClassName("textureSelector");
+                        for (var i = 0; i < classname.length; i++) {
+                            classname[i].addEventListener('click', setTexture, false);
+                            if (classname[i].children[0].checked) {
+                                var textureSrc = classname[i].getAttribute("txtSrc");
+                            }
+                            checkTooltip();
+                        }
+
+                        var tmp_src = document.getElementById('image').src;
+                        document.getElementById('image').src = "";
+                        document.getElementById('image').src = tmp_src;
+
+
+                        document.getElementById('picture').style.background = "url(" + tmp_src + "?"+ Math.random()+"), url(" + textureSrc + ")";
+                        document.getElementById('picture').style.backgroundSize = "100% 100%";
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                    }
+                });
+
+    });
+    $('.btnPhotoRotateRight').on('click', function () {
+        //console.log('index.php?route=tool/rotateImage&rotate=left&ext='+$("#image").attr("uploadFileExt")+"&filename="+$("#image").attr("uploadFileName"));
+        $.ajax({
+            url: 'index.php?route=tool/rotateImage&rotate=right&ext='+$("#image").attr("uploadFileExt")+"&filename="+$("#image").attr("uploadFileName")+"&filetoken"+$("#image").attr("uploadFileToken"),
+            type: 'post',
+            //dataType: 'json',
+            data: "",
+            cache: false,
+            contentType: false,
+            processData: false,
+            beforeSend: function () {
+                //$(node).button('loading');
+            },
+            complete: function () {
+                //$(node).button('reset');
+            },
+            success: function (json) {
+                var classname = document.getElementsByClassName("textureSelector");
+                for (var i = 0; i < classname.length; i++) {
+                    classname[i].addEventListener('click', setTexture, false);
+                    if (classname[i].children[0].checked) {
+                        var textureSrc = classname[i].getAttribute("txtSrc");
+                    }
+                    checkTooltip();
+                }
+
+                var tmp_src = document.getElementById('image').src;
+                document.getElementById('image').src = "";
+                document.getElementById('image').src = tmp_src;
+
+
+                document.getElementById('picture').style.background = "url(" + tmp_src + "?"+ Math.random()+"), url(" + textureSrc + ")";
+                document.getElementById('picture').style.backgroundSize = "100% 100%";
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            }
+        });
+
     });
     /*FILE END*/
 

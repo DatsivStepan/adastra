@@ -24,7 +24,7 @@
             <?php if($category['category_name']){ ?>
               <?php foreach($category['category_product'] as $product){ ?>
                 <?php foreach($product as $product_c){ ?>
-                  <div class="row no-margin" style="margin-top: 4%; padding-left: 10px ">
+                  <div class="row no-margin" style="padding-left: 10px; padding: 25px 0; ">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 bac_img_np_20 bac_img_np_20_2" style="background-image: url('/image/<?php echo $product_c['image']; ?>')"></div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding: 0;">
                       <div class="col-lg-12 col-md-12 hidden-sm hidden-xs " style="padding: 0;margin-bottom: 3%;">

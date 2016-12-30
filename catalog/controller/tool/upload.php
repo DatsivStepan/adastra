@@ -60,7 +60,9 @@ class ControllerToolUpload extends Controller {
 		}
 
 		if (!$json) {
-			$file = $filename . '.' . token(32);
+		    $file_token = token(32);
+			$file = $filename . '.' . $file_token;
+
             $file = str_replace(" ", "", $file);
 			//move_uploaded_file($this->request->files['file']['tmp_name'], DIR_UPLOAD . $file);
 			move_uploaded_file($this->request->files['file']['tmp_name'], CUSTOM_DIR_UPLOAD . $file);
@@ -72,6 +74,10 @@ class ControllerToolUpload extends Controller {
 
 			$json['success'] = $this->language->get('text_upload');
 			$json['new_file'] = HTTP_SERVER.CUSTOM_ROUTE_UPLOAD . $file;
+			$json['file_extension'] =  substr(strrchr($filename, '.'), 1);
+			$json['file_name'] =  $file;
+			$json['file_token'] =  $file_token;
+
 		}
 
 		$this->response->addHeader('Content-Type: application/json');
