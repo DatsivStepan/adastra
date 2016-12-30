@@ -450,6 +450,7 @@
     border-radius: 40px 40px;
     padding: 20px 10px;
     text-align: center;
+    background: #fff;
 }
 .adas_img_mar2{
     height: 300px;
@@ -459,7 +460,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(0,0,0,0.5);
 }
 @media (max-width: 540px) {
     .adas_img_sm h1 {

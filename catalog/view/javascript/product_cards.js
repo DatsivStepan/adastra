@@ -610,6 +610,36 @@ function ready() {
         classname[1].dispatchEvent(new Event("click"));
         classname[0].dispatchEvent(new Event("click"));
     }
+    $(".radioSelector").each(function() {
+        $(this).click(function() {
+            $(".radioSelector").each(function() {
+                if(this.children[0].checked){
+                    $(this).addClass("option-checked-style");
+                }else{
+                    $(this).removeClass("option-checked-style");
+                }
+            })
+        });
+    });
+
+    $(".textureSelector").each(function() {
+        $(this).click(function() {
+            $(".textureSelector").each(function() {
+                if(this.children[0].checked){
+                    $(this).addClass("option-checked-style");
+                }else{
+                    $(this).removeClass("option-checked-style");
+                }
+            })
+        });
+    });
+        $(MAX_CROPPER_SIZE).click(function() {
+                if(MAX_CROPPER_SIZE.checked){
+                    $("#sizeLockLabel").addClass("option-checked-style");
+                }else{
+                    $("#sizeLockLabel").removeClass("option-checked-style");
+                }
+        });
 
     $("#clearFilters").click(function () {
         picture.style.webkitFilter = "contrast(100%)";

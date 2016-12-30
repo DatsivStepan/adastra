@@ -35,11 +35,11 @@
    text-align:center;
 }
 .fancy_heading h3{
-   text-shadow: 1px 1px 0 #000;
-   color:#fff;
-   margin: 15px 0 0 0;
-   font-weight:bold;
-   text-align:center;
+    /* text-shadow: 1px 1px 0 #000; */
+    color: #000;
+    margin: 15px 0 0 0;
+    font-weight: bold;
+    text-align: center;
 }
 .form-title {
    margin-bottom:10px;
