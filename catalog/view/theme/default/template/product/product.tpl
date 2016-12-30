@@ -27,7 +27,7 @@
             <?php } ?>
             <?php $i++;}
 ?>
-            <a href="<?php echo $btnLink?>" class="backToCat">Назад в каталог</a>
+            <a href="<?php echo $btnLink?>" class="backToCat">Назад</a>
         </ul>
         <div class="container">
             <div class="row">
@@ -52,7 +52,7 @@
                         <div class="productDescriptionBox hidden-sm hidden-md hidden-lg hidden-xl">
                             <div style="text-align: center; padding-bottom: 20px">
                                 <div style="width: 100%; height: 30px;">
-                                    <a href="<?php echo $btnLink?>" class="backToCat">Назад в каталог</a>
+                                    <a href="<?php echo $btnLink?>" class="backToCat">Назад</a>
                                 </div>
                                 <h1 class="productTitle" id="mainTitle"><?php echo $heading_title; ?></h1>
 
@@ -106,10 +106,10 @@
                             case 'фотография':
                             ?>
                                         <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                                            <button class="btnPhotoRotateLeft btn btn-default btn-block">
+                                            <button class="btnPhotoRotateLeft btn btn-default btn-block" id="btnPhotoRotateLeft">
                                                 <i class="fa fa-undo" aria-hidden="true" style="font-size: 25px"></i>
                                             </button>
-                                            <button class="btnPhotoRotateRight btn btn-default btn-block">
+                                            <button class="btnPhotoRotateRight btn btn-default btn-block" id="btnPhotoRotateRight">
                                                 <i class="fa fa-repeat" aria-hidden="true" style="font-size: 25px"></i>
                                             </button>
                                             <button type="button"
