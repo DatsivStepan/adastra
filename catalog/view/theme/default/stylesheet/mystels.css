@@ -325,7 +325,6 @@ a.pull-right_KP_2-3{
 
 }
 .conteiner_proz_3{
-    background: rgba(0,0,0,0.45);
     padding: 20px;
     width: 75%;
     position: absolute;
@@ -607,7 +606,6 @@ a.Catalog{
 }
 @media (min-width: 768px) and (max-width: 991px){
     .breadcrumb_product{
-        padding-left: 21%;
         margin-top: 22px;
     }
     .breadcrumb_contact{
@@ -985,7 +983,6 @@ a.Catalog{
 }
 @media (min-width: 1200px) {
     .breadcrumb_product{
-        padding-left: 21%;
         margin-top: 22px;
     }
     .breadcrumb_contact{

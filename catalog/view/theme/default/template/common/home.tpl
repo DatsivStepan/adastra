@@ -64,9 +64,11 @@
         <?php } ?>
         <?php } ?>
     </div>
-    <?php foreach ($category_home as $category) { ?>
+    <?php
+    $i = 1;
+    foreach ($category_home as $category) { ?>
     <div class="hidden-lg hidden-md">
-        <div class="adas_img_sm adas_img_sm2"
+        <div class="adas_img_sm adas_img_sm2 <?php if($i == 1){echo 'cat1xsFix';} if($i == 5){echo 'cat5xsFix';} ?>"
              style="background: url(<?php echo $category['image'];?>)center no-repeat;">
             <div class="adas_img_mar2">
                 <div class="col-sm-6 col-xs-12 text_box">
@@ -82,7 +84,7 @@
             </div>
         </div>
     </div>
-    <?php } ?>
+    <?php $i++;} ?>
 
     <!--<?php
         $count = count($arr);

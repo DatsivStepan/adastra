@@ -6,26 +6,28 @@
 
 ?>
 <div class="container-pc1 container">
-    <ul class="breadcrumb_product hidden-xs  col-sm-12 col-md-12 col-lg-12">
-        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-        <?php if ($breadcrumb ['href']==('')){ ?>
-        <li class="breadcrumb_text"><?php echo $breadcrumb['text']; ?></li>
-        <?php }else{ ?>
-        <li class="breadcrumb_text"
-        ><a class="text" href="<?php echo $breadcrumb['href']; ?>"
-            style="padding-right: 12px; background: url('../../../catalog/view/theme/default/image/strilka.png') right center no-repeat;"><?php echo $breadcrumb['text']; ?></a>
-        </li>
-        <?php } ?>
-        <?php } ?>
-    </ul>
-    <div class="container KP">
-        <div class="KP_20_2">
-            <?php echo $column_left; ?>
-        </div>
-        <div class="container KP_80_2">
-            <div class="container productContainer">
-                <input type="hidden" id="serverName" value="<?php echo(HTTPS_SERVER) ?>">
-                <?php
+    <div class="row">
+        <ul class="breadcrumb_product hidden-xs  col-sm-12 col-md-12 col-lg-12">
+            <?php
+             $k = count($breadcrumbs);
+
+            foreach ($breadcrumbs as $breadcrumb) { ?>
+            <?php if ($breadcrumb ['href']==('')){ ?>
+            <li class="breadcrumb_text"><?php echo $breadcrumb['text']; ?></li>
+            <?php }else{ ?>
+            <li class="breadcrumb_text"
+            ><a class="text" href="<?php echo $breadcrumb['href']; ?>"
+                style="padding-right: 12px; background: url('../../../catalog/view/theme/default/image/strilka.png') right center no-repeat;"><?php echo $breadcrumb['text']; ?></a>
+            </li>
+            <?php } ?>
+            <?php } ?>
+        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="container">
+
+                    <input type="hidden" id="serverName" value="<?php echo(HTTPS_SERVER) ?>">
+                    <?php
                     $height = 0;
                     $width  = 0;
                     foreach ($attribute_groups as $attribute_group) {
@@ -39,752 +41,866 @@
                         }
                     }
                 ?>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 col-xl-6">
-                    <div class="productDescriptionBox hidden-sm hidden-md hidden-lg hidden-xl">
-                        <div style="text-align: center; padding-bottom: 20px">
-                            <h1 class="productTitle"><?php echo $heading_title; ?></h1>
-                        </div>
-                        <h2 style="display: none;"> Автор </h2>
-                        <div class="product_description-pc">
-                            <div>
-                                <?php echo $description; ?>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                        <div class="productDescriptionBox hidden-sm hidden-md hidden-lg hidden-xl">
+                            <div style="text-align: center; padding-bottom: 20px">
+                                <h1 class="productTitle" id="mainTitle"><?php echo $heading_title; ?></h1>
+                            </div>
+                            <h2 style="display: none;"> Автор </h2>
+                            <div class="product_description-pc">
+                                <div>
+                                    <?php echo $description; ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="fixed">
-                        <div class="productImageBox">
-                            <?php if ($thumb || $images) { ?>
-                            <div id="product_image-pc" class="thumbnails">
+                        <div class="">
+                            <div class="productImageBox">
+                                <?php if ($thumb || $images) { ?>
+                                <div id="product_image-pc" class="thumbnails">
 
-                                <?php if ($thumb) { ?>
-                                <div id="frame">
-                                    <div class="n  frameSide">
-                                        <div class="nbefore"></div>
-                                    </div>
-                                    <div class="ne frameSide"></div>
-                                    <div class="e  frameSide"></div>
-                                    <div class="se frameSide"></div>
-                                    <div class="s  frameSide">
-                                        <div class="sbefore"></div>
-                                    </div>
-                                    <div class="sw frameSide"></div>
-                                    <div class="w  frameSide"></div>
-                                    <div class="nw frameSide"></div>
+                                    <?php if ($thumb) { ?>
+                                    <div id="frame">
+                                        <div class="n  frameSide">
+                                            <div class="nbefore"></div>
+                                        </div>
+                                        <div class="ne frameSide"></div>
+                                        <div class="e  frameSide"></div>
+                                        <div class="se frameSide"></div>
+                                        <div class="s  frameSide">
+                                            <div class="sbefore"></div>
+                                        </div>
+                                        <div class="sw frameSide"></div>
+                                        <div class="w  frameSide"></div>
+                                        <div class="nw frameSide"></div>
 
-                                    <div id="picture">
-                                        <input type="hidden" value="<?php echo $thumb; ?>">
-                                        <img class="main_image" id="image" src="<?php echo $thumb; ?>" realWidth="<?php echo $width; ?>" realHeight="<?php echo $height; ?>">
+                                        <div id="picture">
+                                            <input type="hidden" value="<?php echo $thumb; ?>">
+                                            <img class="main_image" id="image" src="<?php echo $thumb; ?>"
+                                                 realWidth="<?php echo $width; ?>" realHeight="<?php echo $height; ?>">
+                                        </div>
                                     </div>
+                                    <?php } ?>
+
                                 </div>
                                 <?php } ?>
 
+                                <div class="fileOptionBox">
+                                    <div class="optionsContainer" id="product">
+                                        <?php if ($options) { ?>
+                                        <?php foreach ($options as $option) { ?>
+
+                                        <?php if ($option['type'] == 'file') { ?>
+                                        <?php
+                        switch (mb_strtolower($option['name'])) {
+                            case 'фотография':
+                            ?>
+                                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                            <button class="btnPhotoRotateLeft btn btn-default btn-block">
+                                                <i class="fa fa-undo" aria-hidden="true" style="font-size: 25px"></i>
+                                            </button>
+                                            <button class="btnPhotoRotateRight btn btn-default btn-block">
+                                                <i class="fa fa-repeat" aria-hidden="true" style="font-size: 25px"></i>
+                                            </button>
+                                            <button type="button"
+                                                    id="button-upload<?php echo $option['product_option_id']; ?>"
+                                                    data-loading-text="<?php echo $text_loading; ?>"
+                                                    class="btn btn-default btn-block btnPhotoUpload">
+                                                Загрузить фото
+                                            </button>
+                                            <input type="hidden"
+                                                   name="option[<?php echo $option['product_option_id']; ?>]" value=""
+                                                   id="input-option<?php echo $option['product_option_id']; ?>"/>
+                                        </div>
+                                        <?php
+                                    break;
+                        }
+?>
+                                        <?php } ?>
+                                        <?php } ?>
+                                        <?php } ?>
+                                        <?php if ($recurrings) { ?>
+                                        <hr>
+                                        <h3><?php echo $text_payment_recurring ?></h3>
+                                        <div class="form-group required">
+                                            <select name="recurring_id" class="form-control">
+                                                <option value=""><?php echo $text_select; ?></option>
+                                                <?php foreach ($recurrings as $recurring) { ?>
+                                                <option value="<?php echo $recurring['recurring_id'] ?>"><?php echo $recurring['name'] ?></option>
+                                                <?php } ?>
+                                            </select>
+                                            <div class="help-block" id="recurring-description"></div>
+                                        </div>
+                                        <?php } ?>
+                                        <div class="form-group">
+
+                                        </div>
+                                        <?php if ($minimum > 1) { ?>
+                                        <div class="alert alert-info"><i
+                                                    class="fa fa-info-circle"></i> <?php echo $text_minimum; ?>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="productDeliveryBox xs-hidden">
+                                    <p class="deliveryBoxTitle">Доставка:</p>
+                                    <p>
+                                    <table>
+                                        <tr>
+                                            <td class="deliveryBoxTitle" style="width: 75%;">Доставка по Москве:</td>
+                                            <td>500 руб.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="deliveryBoxTitle" style="width: 75%;">За МКАД:</td>
+                                            <td>+20 руб./км.</td>
+                                        </tr>
+                                    </table>
+                                    </p>
+                                    <p>Бесплатная доставка по Москве и области при покупке от 20 000 рублей. Доставка до
+                                        транспортной компании “Байкал”.</p>
+                                </div>
                             </div>
-                            <?php } ?>
-
-                            <div class="productDeliveryBox xs-hidden">
-                                <p class="deliveryBoxTitle">Доставка:</p>
-                                <p>
-                                <table>
-                                    <tr>
-                                        <td class="deliveryBoxTitle" style="width: 75%;">Доставка по Москве:</td>
-                                        <td>500 руб.</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="deliveryBoxTitle" style="width: 75%;">За МКАД:</td>
-                                        <td>+20 руб./км.</td>
-                                    </tr>
-                                </table>
-                                </p>
-                                <p>Бесплатная доставка по Москве и области при покупке от 20 000 рублей. Доставка до
-                                    транспортной компании “Байкал”.</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                        <div class="productDescriptionBox hidden-xs">
+                            <h1 class="productTitle"><?php echo $heading_title; ?></h1>
+                            <h2 style="display: none;"> Автор </h2>
+                            <div class="product_description-pc">
+                                <div>
+                                    <?php echo $description; ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 col-xl-6">
-                    <div class="productDescriptionBox hidden-xs">
-                        <h1 class="productTitle"><?php echo $heading_title; ?></h1>
-                        <h2 style="display: none;"> Автор </h2>
-                        <div class="product_description-pc">
-                            <div>
-                                <?php echo $description; ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="productPriceBox xs-hidden">
-                        <?php if ($price) { ?>
-                        <div class="list-unstyled">
-                            <?php if (!$special) { ?>
-                            <h2 class="productPrice">Цена: <?php echo $price; ?></h2>
-                            <?php } else { ?>
-                            <h2 class="productPrice">Цена: <?php echo $special; ?></h2>
-                            <?php } ?>
-                        </div>
-                        <?php } ?>
-
-                    </div>
-
-                    <div class="productBuyButtonsBox xs-hidden">
-                        <div id="product" style="width: 100%;margin: 25px 0 20px 0;">
-                            <input type="hidden" name="quantity" value="<?php echo $minimum; ?>" size="2"
-                                   id="input-quantity" class="form-control"/>
-                            <input type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
-                            <button type="button" class="addToCart" id="button-cart">
-                                <p>В корзину</p>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- OPTIONS HERE-->
-                    <div class="optionsContainer" id="product">
-                        <?php if ($options) { ?>
-                        <?php foreach ($options as $option) { ?>
-                        <?php if ($option['type'] == 'select') { ?>
-                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <label class="control-label"
-                                   for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
-                            <select name="option[<?php echo $option['product_option_id']; ?>]"
-                                    id="<?php echo $option['name']; ?>" class="form-control">
-                                <option value=""><?php echo $text_select; ?></option>
-                                <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                                <option value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"><?php echo $option_value['name']; ?>
-                                    <?php if ($option_value['price']) { ?>
-                                    (<?php echo ($option_value['price_prefix'] == '+' || $option_value['price_prefix'] == '-' ? $option_value['price_prefix'] : '') . $option_value['price']; ?>)
-                                    <?php } ?>
-                                </option>
+                        <div class="productPriceBox xs-hidden">
+                            <?php if ($price) { ?>
+                            <div class="list-unstyled">
+                                <?php if (!$special) { ?>
+                                <h2 class="productPrice">Цена: <?php echo $price; ?></h2>
+                                <?php } else { ?>
+                                <h2 class="productPrice">Цена: <?php echo $special; ?></h2>
                                 <?php } ?>
-                            </select>
+                            </div>
+                            <?php } ?>
+
                         </div>
-                        <?php } ?>
-                        <?php if ($option['type'] == 'radio') { ?>
-                        <?php
+
+                        <div class="productBuyButtonsBox xs-hidden">
+                            <div id="product" style="width: 100%;margin: 25px 0 20px 0;">
+                                <input type="hidden" name="quantity" value="<?php echo $minimum; ?>" size="2"
+                                       id="input-quantity" class="form-control"/>
+                                <input type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
+                                <button type="button" class="addToCart" id="button-cart">
+                                    <p>В корзину</p>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- OPTIONS HERE-->
+                        <div class="optionsContainer" id="product">
+                            <?php if ($options) { ?>
+                            <?php foreach ($options as $option) { ?>
+                            <?php if ($option['type'] == 'select') { ?>
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"
+                                       for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+                                <select name="option[<?php echo $option['product_option_id']; ?>]"
+                                        id="<?php echo $option['name']; ?>" class="form-control">
+                                    <option value=""><?php echo $text_select; ?></option>
+                                    <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                                    <option value="<?php echo $option_value['product_option_value_id']; ?>"
+                                            data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                            data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                            data-price="<?php echo $option_value['price_value']; ?>"><?php echo $option_value['name']; ?>
+                                        <?php if ($option_value['price']) { ?>
+                                        (<?php echo ($option_value['price_prefix'] == '+' || $option_value['price_prefix'] == '-' ? $option_value['price_prefix'] : '') . $option_value['price']; ?>
+                                        )
+                                        <?php } ?>
+                                    </option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <?php } ?>
+                            <?php if ($option['type'] == 'radio') { ?>
+                            <?php
                         switch (mb_strtolower($option['name'])) {
                             case 'покрытие':
                         ?>
-                        <div
-                                class="pod-ram-width form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <div id="input-option<?php echo $option['product_option_id']; ?>">
-                                <div class="underframeContainer option314-div-style">
-                                    <label class="underframeMain hidden-xs">Покрытие :</label>
-                                    <?php
+                            <div class="optionBox">
+                                <span class="optionTitle">Покрытие</span>
+                                <a href="" class="spoiler_links">показать</a>
+                                <div class="spoiler_body">
+                                    <div
+                                            class="marginB_min15px form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                        <div id="input-option<?php echo $option['product_option_id']; ?>">
+                                            <div class="underframeContainer option314-div-style">
+                                                <label class="underframeSecondary hidden-xs"></label>
+                                                <?php
                                     $option_value = $option['product_option_value'][0];
                                     ?>
-                                    <label class="underframeSecondary radioSelector option314-label-style">
-                                        <input type="radio" class="option-checked-style radio-input-hidden"
-                                               name="option[<?php echo $option['product_option_id']; ?>]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
-                                               data-coating="true"
-                                        />
-                                        <?php echo $option_value['name']; ?>
-                                    </label>
-                                    <?php
+                                                <label class="underframeSecondary radioSelector option314-label-style">
+                                                    <input type="radio" class="option-checked-style radio-input-hidden"
+                                                           name="option[<?php echo $option['product_option_id']; ?>]"
+                                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                           data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                           data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                           data-price="<?php echo $option_value['price_value']; ?>"
+                                                           data-coating="true"
+                                                    />
+                                                    <?php echo $option_value['name']; ?>
+                                                </label>
+                                                <?php
                                     $option_value = $option['product_option_value'][1];
                                     ?>
-                                    <label class="underframeSecondary radioSelector option314-label-style">
-                                        <input type="radio" class="radio-input-hidden"
-                                               name="option[<?php echo $option['product_option_id']; ?>]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
-                                               data-coating="false"
-                                        />
-                                        <?php echo $option_value['name']; ?>
-                                    </label>
+                                                <label class="underframeSecondary radioSelector option314-label-style">
+                                                    <input type="radio" class="radio-input-hidden"
+                                                           name="option[<?php echo $option['product_option_id']; ?>]"
+                                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                           data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                           data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                           data-price="<?php echo $option_value['price_value']; ?>"
+                                                           data-coating="false"
+                                                    />
+                                                    <?php echo $option_value['name']; ?>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <?php
+
+                            <?php
                                 break;
                                 default:
                          ?>
-                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <label class="control-label"><?php echo $option['name']; ?></label>
-                            <div id="input-option<?php echo $option['product_option_id']; ?>">
-                                <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                                <div class="radio">
-                                    <label>
-                                        <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
-                                        <?php echo $option_value['name']; ?>
-                                        <?php if ($option_value['price']) { ?>
-                                        (<?php echo ($option_value['price_prefix'] == '+' || $option_value['price_prefix'] == '-' ? $option_value['price_prefix'] : '') . $option_value['price']; ?>
-                                        )
-                                        <?php } ?>
-                                    </label>
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"><?php echo $option['name']; ?></label>
+                                <div id="input-option<?php echo $option['product_option_id']; ?>">
+                                    <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                                    <div class="radio">
+                                        <label>
+                                            <input class="radio-input-hidden" type="radio"
+                                                   name="option[<?php echo $option['product_option_id']; ?>]"
+                                                   value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                   data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                   data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                   data-price="<?php echo $option_value['price_value']; ?>"/>
+                                            <?php echo $option_value['name']; ?>
+                                            <?php if ($option_value['price']) { ?>
+                                            (<?php echo ($option_value['price_prefix'] == '+' || $option_value['price_prefix'] == '-' ? $option_value['price_prefix'] : '') . $option_value['price']; ?>
+                                            )
+                                            <?php } ?>
+                                        </label>
+                                    </div>
+                                    <?php } ?>
                                 </div>
-                                <?php } ?>
                             </div>
-                        </div>
-                        <?php
+                            <?php
                         }
                         ?>
-                        <?php } ?>
-                        <?php if ($option['type'] == 'checkbox') { ?>
-                        <?php
+                            <?php } ?>
+                            <?php if ($option['type'] == 'checkbox') { ?>
+                            <?php
                         switch (mb_strtolower($option['name'])) {
                             case 'подрамник':
                         ?>
-                        <div
-                                class="pod-ram-width form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <div id="input-option<?php echo $option['product_option_id']; ?>">
-                                <div class="underframeContainer ">
-                                    <?php
+                            <div class="optionBox">
+                                <span class="optionTitle">Подрамник</span>
+                                <a href="" class="spoiler_links">показать</a>
+                                <div class="spoiler_body">
+                                    <div
+                                            class="marginB_min15px form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                        <div id="input-option<?php echo $option['product_option_id']; ?>">
+                                            <div class="underframeContainer ">
+                                                <?php
                                     $option_value = $option['product_option_value'][0];
                                     ?>
-                                    <label class="underframeMain radioSelector">
-                                        <input type="radio" class="radio-input-hidden"
-                                               name="option[<?php echo $option['product_option_id']; ?>][]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
-                                               data-subframe="none"
-                                        />
-                                        <?php echo $option_value['name']; ?>
-                                    </label>
-                                    <?php
+                                                <label class="underframeSecondary radioSelector">
+                                                    <input type="radio" class="radio-input-hidden"
+                                                           name="option[<?php echo $option['product_option_id']; ?>][]"
+                                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                           data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                           data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                           data-price="<?php echo $option_value['price_value']; ?>"
+                                                           data-subframe="none"
+                                                    />
+                                                    <?php echo $option_value['name']; ?>
+                                                </label>
+                                                <?php
                                     $option_value = $option['product_option_value'][1];
                                     ?>
-                                    <label class="underframeSecondary radioSelector">
-                                        <input type="radio" class="radio-input-hidden"
-                                               name="option[<?php echo $option['product_option_id']; ?>][]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
-                                               data-subframe="big"
-                                        />
-                                        <?php echo $option_value['name']; ?>
-                                    </label>
-                                    <?php
+                                                <label class="underframeSecondary radioSelector">
+                                                    <input type="radio" class="radio-input-hidden"
+                                                           name="option[<?php echo $option['product_option_id']; ?>][]"
+                                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                           data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                           data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                           data-price="<?php echo $option_value['price_value']; ?>"
+                                                           data-subframe="big"
+                                                    />
+                                                    <?php echo $option_value['name']; ?>
+                                                </label>
+                                                <?php
                                     $option_value = $option['product_option_value'][2];
                                     ?>
-                                    <label class="underframeSecondary radioSelector">
-                                        <input type="radio" class="radio-input-hidden"
-                                               name="option[<?php echo $option['product_option_id']; ?>][]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
-                                               data-subframe="small"
-                                        />
-                                        <?php echo $option_value['name']; ?>
-                                    </label>
+                                                <label class="underframeSecondary radioSelector">
+                                                    <input type="radio" class="radio-input-hidden"
+                                                           name="option[<?php echo $option['product_option_id']; ?>][]"
+                                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                           data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                           data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                           data-price="<?php echo $option_value['price_value']; ?>"
+                                                           data-subframe="small"
+                                                    />
+                                                    <?php echo $option_value['name']; ?>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <?php
+                            <?php
                                 break;
                                 default:
                          ?>
-                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <label class="control-label"><?php echo $option['name']; ?></label>
-                            <div id="input-option<?php echo $option['product_option_id']; ?>">
-                                <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"
-                                               name="option[<?php echo $option['product_option_id']; ?>][]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
-                                        <?php echo $option_value['name']; ?>
-                                        <?php if ($option_value['price']) { ?>
-                                        (<?php echo ($option_value['price_prefix'] == '+' || $option_value['price_prefix'] == '-' ? $option_value['price_prefix'] : '') . $option_value['price']; ?>
-                                        )
-                                        <?php } ?>
-                                    </label>
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"><?php echo $option['name']; ?></label>
+                                <div id="input-option<?php echo $option['product_option_id']; ?>">
+                                    <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"
+                                                   name="option[<?php echo $option['product_option_id']; ?>][]"
+                                                   value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                   data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                   data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                   data-price="<?php echo $option_value['price_value']; ?>"/>
+                                            <?php echo $option_value['name']; ?>
+                                            <?php if ($option_value['price']) { ?>
+                                            (<?php echo ($option_value['price_prefix'] == '+' || $option_value['price_prefix'] == '-' ? $option_value['price_prefix'] : '') . $option_value['price']; ?>
+                                            )
+                                            <?php } ?>
+                                        </label>
+                                    </div>
+                                    <?php } ?>
                                 </div>
-                                <?php } ?>
                             </div>
-                        </div>
-                        <?php
+                            <?php
                         }?>
 
-                        <?php } ?>
-                        <!-- CUSTOM IMAGE OPTION START (рама, цвет) -->
-                        <?php if ($option['type'] == 'image') { ?>
-                        <?php
+                            <?php } ?>
+                            <!-- CUSTOM IMAGE OPTION START (крепление, цвет) -->
+                            <?php if ($option['type'] == 'image') { ?>
+                            <?php
                         switch (mb_strtolower($option['name'])) {
                             case 'цвет':
                                 ?>
-                        <div tooltip='Цветопередача вашего монитора может отличаться от заявленной'
-                             class="colorBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <div class="smallTitleBox">
-                                <p>Цвет</p>
-                                <p><i class="fa fa-refresh" id="clearFilters" aria-hidden="true"></i></p>
-                            </div>
-                            <div id="input-option<?php echo $option['product_option_id']; ?>">
-                                <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                                <div class="colorBox">
-                                    <label class="my-custom-label"
-                                           id="<?php echo $option_value['name']; ?>">
+                            <div class="optionBox">
+                                <span class="optionTitle">Цвет</span>
+                                <a href="" class="spoiler_links">показать</a>
+                                <div class="spoiler_body">
+                                    <div tooltip='Цветопередача вашего монитора может отличаться от заявленной'
+                                         class="colorBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                        <div class="clearFilters">
+                                            <i class="fa fa-refresh" id="clearFilters" aria-hidden="true"></i>
+                                        </div>
+                                        <div id="input-option<?php echo $option['product_option_id']; ?>">
+                                            <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                                            <div class="colorBox">
+                                                <label class="my-custom-label"
+                                                       id="<?php echo $option_value['name']; ?>">
 
-                                        <input type="radio" class="colorSelector" name="option[<?php echo $option['product_option_id']; ?>]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
+                                                    <input type="radio" class="colorSelector"
+                                                           name="option[<?php echo $option['product_option_id']; ?>]"
+                                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                           data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                           data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                           data-price="<?php echo $option_value['price_value']; ?>"/>
 
-                                        <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
-                                    </label>
+                                                    <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
+                                                </label>
+                                            </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
                                 </div>
-                                <?php } ?>
                             </div>
-                        </div>
-                        <?php
+                            <?php
                                 break;
-                            case 'рама':
+                                case 'крепление':
                                ?>
-                        <div class="frameBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <div style="min-height: 50px;" class="smallTitleBox">Рама</div>
-                            <div id="input-option<?php echo $option['product_option_id']; ?>">
-                                <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                                <div class="frameBox frameSelector" txtSrc="<?php echo $option_value['image']; ?>">
-                                    <label class="my-custom-labelFrame">
-                                        <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                               data-frame="true" value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
-                                        <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
-                                    </label>
-                                </div>
-                                <?php } ?>
-                            </div>
-                        </div>
-                        <?php
-                                break;
-                            case 'крепление':
-                               ?>
-                        <div class="frameBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <div style="min-height: 50px;" class="smallTitleBox">Крепления</div>
-                            <div id="input-option<?php echo $option['product_option_id']; ?>">
-                                <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                                <div class="frameBox">
-                                    <label class="my-custom-labelFrame">
-                                        <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
-                                        <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
-                                    </label>
-                                </div>
-                                <?php } ?>
-                            </div>
-                        </div>
-                        <?php
-                                break;
-                            case 'фактура':
-                        ?>
-                        <div class="textureContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <div class="textureTitle hidden-xs">Фактура</div>
-                            <div id="input-option<?php echo $option['product_option_id']; ?>"  style="padding: 10px;">
-                                <?php
-                            $i = 0;
-                            foreach ($option['product_option_value'] as $option_value) {
-                                if($i == 0){
-                                ?>
-                                <div class="col-xs-2 no-padding">
-                                    <label class="textureSelector "
-                                           txtSrc="<?php echo $option_value['image']; ?>">
-                                        <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>" checked
-                                               data-texture="true"
-                                               textureWidth="320"
-                                               textureHeight="900"
-                                        />
-                                        <span><?php echo $option_value['name'] ?></span>
-                                    </label>
-                                </div>
-
-                                <?php
-                                }else{
-                                ?>
-                                <div class="">
-                                    <label class="textureSelector"
-                                           txtSrc="<?php echo $option_value['image']; ?>">
-                                        <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
-                                               data-texture="true"
-                                               textureWidth="1000"
-                                               textureHeight="2000"
-                                        />
-                                        <span><?php echo $option_value['name'] ?></span>
-                                    </label>
-                                </div>
-                                <?php
-                                }
-
-
-                            ?>
-                                <?php
-                            $i++;
-                            } ?>
-                            </div>
-                        </div>
-                        <?php
-                            break;
-                            default:
-                               ?>
-                        <div class="frameBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <label class="control-label"><?php echo $option['name']; ?></label>
-                            <div id="input-option<?php echo $option['product_option_id']; ?>">
-                                <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                                <div class="radio">
-                                    <label>
-                                        <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"/>
-                                        <img src="<?php echo $option_value['image']; ?>"
-                                             alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>"
-                                             class="img-thumbnail"/> <?php echo $option_value['name']; ?>
-                                        <?php if ($option_value['price']) { ?>
-                                        (<?php echo ($option_value['price_prefix'] == '+' || $option_value['price_prefix'] == '-' ? $option_value['price_prefix'] : '') . $option_value['price']; ?>
-                                        )
-                                        <?php } ?>
-                                    </label>
-                                </div>
-                                <?php } ?>
-                            </div>
-                        </div>
-                        <?php
-                        }
-                        ?>
-                        <?php } ?>
-                        <!-- CUSTOM IMAGE OPTION END (рама, цвет) -->
-                        <!-- CUSTOM OPTION START (текстура, рама) -->
-                        <?php
-                    if ($option['type'] == 'custom') { ?>
-                        <?php
-                        switch (mb_strtolower($option['name'])) {
-                            case 'фактура':
-                                ?>
-                        <div class="textureContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <div class="textureTitle">Фактура</div>
-                            <div id="input-option<?php echo $option['product_option_id']; ?>"  style="padding: 10px; ">
-                                <?php
-                            $i = 0;
-                            foreach ($option['product_option_value'] as $option_value) {
-                                if($i == 0){
-                                ?>
-                                <div class="col-xs-6 no-padding">
-                                    <label class="textureSelector option-checked-style"
-                                           txtSrc="<?php echo $option_value['image']; ?>">
-                                        <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>" checked
-                                               data-texture="true"
-                                               textureWidth="<?php echo $option_value['field1']; ?>"
-                                               textureHeight="<?php echo $option_value['field2']; ?>"
-                                        />
-                                        <span><?php echo $option_value['name'] ?></span>
-                                    </label>
-                                </div>
-
-                                <?php
-                                }else{
-                                ?>
-                                <div class="col-xs-6 no-padding">
-                                    <label class="textureSelector"
-                                           txtSrc="<?php echo $option_value['image']; ?>">
-                                        <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                               value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
-                                               data-texture="true"
-                                               textureWidth="<?php echo $option_value['field1']; ?>"
-                                               textureHeight="<?php echo $option_value['field2']; ?>"
-                                        />
-                                        <span><?php echo $option_value['name'] ?></span>
-                                    </label>
-                                </div>
-                                <?php
-                                }
-
-
-                            ?>
-                                <?php
-                            $i++;
-                            } ?>
-                            </div>
-                        </div>
-                        <?php
-                            break;
-                            case 'рама':
-                            ?>
-                        <div class="frameBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <div class="col-lg-1 col-xs-12 no-padding">
-                                <div style="min-height: 50px;" class="smallTitleBox">Рама</div>
-                            </div>
-                            <div class="col-lg-11 col-xs-12 no-padding"  style="padding-left: 15px">
+                            <div class="frameBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <div style="min-height: 50px;" class="smallTitleBox">Крепления</div>
                                 <div id="input-option<?php echo $option['product_option_id']; ?>">
                                     <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                                    <div class="frameBox frameSelector" txtSrc="<?php echo $option_value['image']; ?>">
+                                    <div class="frameBox">
                                         <label class="my-custom-labelFrame">
-                                            <input class="radio-input-hidden" type="radio" name="option[<?php echo $option['product_option_id']; ?>]"
-                                                   data-frame="true" value="<?php echo $option_value['product_option_value_id']; ?>" data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>" data-prefix="<?php echo $option_value['price_prefix']; ?>" data-price="<?php echo $option_value['price_value']; ?>"
-                                                   data-wframe="<?php echo $option_value['field1']; ?>"
-                                            />
+                                            <input class="radio-input-hidden" type="radio"
+                                                   name="option[<?php echo $option['product_option_id']; ?>]"
+                                                   value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                   data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                   data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                   data-price="<?php echo $option_value['price_value']; ?>"/>
                                             <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
                                         </label>
                                     </div>
                                     <?php } ?>
                                 </div>
                             </div>
-                        </div>
-                        <?php
+                            <?php
+                                break;
+                                default:
+                               ?>
+                            <div class="frameBoxContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"><?php echo $option['name']; ?></label>
+                                <div id="input-option<?php echo $option['product_option_id']; ?>">
+                                    <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                                    <div class="radio">
+                                        <label>
+                                            <input class="radio-input-hidden" type="radio"
+                                                   name="option[<?php echo $option['product_option_id']; ?>]"
+                                                   value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                   data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                   data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                   data-price="<?php echo $option_value['price_value']; ?>"/>
+                                            <img src="<?php echo $option_value['image']; ?>"
+                                                 alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>"
+                                                 class="img-thumbnail"/> <?php echo $option_value['name']; ?>
+                                            <?php if ($option_value['price']) { ?>
+                                            (<?php echo ($option_value['price_prefix'] == '+' || $option_value['price_prefix'] == '-' ? $option_value['price_prefix'] : '') . $option_value['price']; ?>
+                                            )
+                                            <?php } ?>
+                                        </label>
+                                    </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <?php
                         }
                         ?>
-                        <?php } ?>
-                        <!-- CUSTOM IMAGE OPTION END (рама, цвет) -->
+                            <?php } ?>
+                            <!-- CUSTOM IMAGE OPTION END (крепление, цвет) -->
+                            <!-- CUSTOM OPTION START (текстура, рама) -->
+                            <?php
+                    if ($option['type'] == 'custom') { ?>
+                            <?php
+                        switch (mb_strtolower($option['name'])) {
+                            case 'фактура':
+                                ?>
 
-                        <!-- SIZE OPTION START -->
-                        <?php if ($option['type'] == 'text') { ?>
-                        <?php
+                            <div class="optionBox textureContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                    <span class="optionTitle">Фактура</span>
+                                    <a href="" class="spoiler_links">показать(<?php echo count($option['product_option_value']); ?>)</a>
+                                    <div class="spoiler_head">
+                                        <div id="input-option<?php echo $option['product_option_id']; ?>"
+                                             style="padding: 10px; ">
+                                            <?php
+                            $i = 0;
+                            $k = 1;
+                            foreach ($option['product_option_value'] as $option_value) {
+                            if($k < 5){
+                                if($i == 0){
+                                ?>
+                                            <div class="col-xs-6 no-padding">
+                                                <label class="textureSelector option-checked-style"
+                                                       txtSrc="<?php echo $option_value['image']; ?>">
+                                                    <input class="radio-input-hidden" type="radio"
+                                                           name="option[<?php echo $option['product_option_id']; ?>]"
+                                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                           data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                           data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                           data-price="<?php echo $option_value['price_value']; ?>"
+                                                           checked
+                                                           data-texture="true"
+                                                           textureWidth="<?php echo $option_value['field1']; ?>"
+                                                           textureHeight="<?php echo $option_value['field2']; ?>"
+                                                    />
+                                                    <span><?php echo $option_value['name'] ?></span>
+                                                </label>
+                                            </div>
+
+                                            <?php
+                                }else{
+                                ?>
+                                            <div class="col-xs-6 no-padding">
+                                                <label class="textureSelector"
+                                                       txtSrc="<?php echo $option_value['image']; ?>">
+                                                    <input class="radio-input-hidden" type="radio"
+                                                           name="option[<?php echo $option['product_option_id']; ?>]"
+                                                           value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                           data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                           data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                           data-price="<?php echo $option_value['price_value']; ?>"
+                                                           data-texture="true"
+                                                           textureWidth="<?php echo $option_value['field1']; ?>"
+                                                           textureHeight="<?php echo $option_value['field2']; ?>"
+                                                    />
+                                                    <span><?php echo $option_value['name'] ?></span>
+                                                </label>
+                                            </div>
+                                            <?php
+                                }
+
+
+                            ?>
+                                            <?php
+                            }
+
+                            $i++;
+                            $k++;
+                            } ?>
+                                        </div>
+                                    </div>
+                                    <div class="spoiler_body">
+
+                                        <?php
+                            $i = 0;
+                            $k = 1;
+                            foreach ($option['product_option_value'] as $option_value) {
+                            if($k > 4){
+                                        ?>
+                                        <div id="input-option<?php echo $option['product_option_id']; ?>"
+                                             style="padding: 10px; ">
+                                        <div class="col-xs-6 no-padding">
+                                            <label class="textureSelector"
+                                                   txtSrc="<?php echo $option_value['image']; ?>">
+                                                <input class="radio-input-hidden" type="radio"
+                                                       name="option[<?php echo $option['product_option_id']; ?>]"
+                                                       value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                       data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                       data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                       data-price="<?php echo $option_value['price_value']; ?>"
+                                                       data-texture="true"
+                                                       textureWidth="<?php echo $option_value['field1']; ?>"
+                                                       textureHeight="<?php echo $option_value['field2']; ?>"
+                                                />
+                                                <span><?php echo $option_value['name'] ?></span>
+                                            </label>
+                                        </div>
+                                        </div>
+
+                                        <?php
+                            }
+
+                            $i++;
+                            $k++;
+                            } ?>
+                                    </div>
+                            </div>
+                            <?php
+                            break;
+                            case 'рама':
+                            ?>
+                            <div class="optionBox textureContainer form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <span class="optionTitle">Рама</span>
+                                <a href="" class="spoiler_links">показать(<?php echo count($option['product_option_value']); ?>)</a>
+                                <div class="spoiler_head"
+                                     style="width: 100%; float: left;"
+                                >
+                                    <?php
+                                    $k = 1;
+                                    foreach ($option['product_option_value'] as $option_value) {
+                                         if($k <= 5){
+                                    ?>
+                                    <div class="frameBox frameSelector"
+                                         txtSrc="<?php echo $option_value['image']; ?>">
+                                        <label class="my-custom-labelFrame">
+                                            <input class="radio-input-hidden" type="radio"
+                                                   name="option[<?php echo $option['product_option_id']; ?>]"
+                                                   data-frame="true"
+                                                   value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                   data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                   data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                   data-price="<?php echo $option_value['price_value']; ?>"
+                                                   data-wframe="<?php echo $option_value['field1']; ?>"
+                                            />
+                                            <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
+                                        </label>
+                                    </div>
+                                    <?php
+                                         }
+                                         $k++;
+                                    }
+                                    ?>
+                                </div>
+                                <div class="spoiler_body"
+                                     style="width: 100%; float: left;"
+                                >
+                                    <?php
+                                    $k = 1;
+                                    foreach ($option['product_option_value'] as $option_value) {
+                                         if($k > 5){
+                                    ?>
+                                    <div class="frameBox frameSelector"
+                                         txtSrc="<?php echo $option_value['image']; ?>">
+                                        <label class="my-custom-labelFrame">
+                                            <input class="radio-input-hidden" type="radio"
+                                                   name="option[<?php echo $option['product_option_id']; ?>]"
+                                                   data-frame="true"
+                                                   value="<?php echo $option_value['product_option_value_id']; ?>"
+                                                   data-points="<?php echo (isset($option_value['points_value']) ? $option_value['points_value'] : 0); ?>"
+                                                   data-prefix="<?php echo $option_value['price_prefix']; ?>"
+                                                   data-price="<?php echo $option_value['price_value']; ?>"
+                                                   data-wframe="<?php echo $option_value['field1']; ?>"
+                                            />
+                                            <span style="background-image: url(<?php echo $option_value['image']; ?>); background-size: cover;"></span>
+                                        </label>
+                                    </div>
+                                    <?php
+                                         }
+                                         $k++;
+                                    }
+                                    ?>
+                                </div>
+
+                            </div>
+                            <?php
+                        }
+                        ?>
+                            <?php } ?>
+                            <!-- CUSTOM IMAGE OPTION END (рама, цвет) -->
+
+                            <!-- SIZE OPTION START -->
+                            <?php if ($option['type'] == 'text') { ?>
+                            <?php
                         switch (mb_strtolower($option['name'])) {
                             case 'высота':
                                 ?>
-                        <div id="product_description-pc" class="customClass">Без стыков <input type="checkbox" id="maxCropperSize"
-                                                                                               data-height=""
-                                                                                               data-width="" ><span></span>
-                        </div>
-                        <div id="hSliderContainer"
-                             class="sliderContainer">
-                            <div class="product_description-pc">Высота полотна (см):</div>
-                            <div id="hSlider"></div>
-                            <div class="leftRullerCutter"></div>
-                            <div class="leftRullerValue" id="minHeight">1</div>
-                            <div class="rightRullerCutter"></div>
-                            <div class="rightRullerValue" id="maxHeight"></div>
-                            <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
-                                   value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
-                                   id="<?php echo $option['name']; ?>" class="form-control"/>
+                            <div class="optionBox">
+                                <div class="">
+                                    <label id="sizeLockLabel">
+                                    Без стыков <input type="checkbox"
+                                                                                                       id="maxCropperSize"
+                                                                                                       data-height=""
+                                                                                                       data-width="">
+                                    </label>
+                                </div>
+                                <div id="hSliderContainer"
+                                     class="sliderContainer">
+                                    <div class="product_description-pc">Высота полотна (см):</div>
+                                    <div id="hSlider"></div>
+                                    <div class="leftRullerCutter"></div>
+                                    <div class="leftRullerValue" id="minHeight">1</div>
+                                    <div class="rightRullerCutter"></div>
+                                    <div class="rightRullerValue" id="maxHeight"></div>
+                                    <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
+                                           value="<?php echo $option['value']; ?>"
+                                           placeholder="<?php echo $option['name']; ?>"
+                                           id="<?php echo $option['name']; ?>" class="form-control sizeInput"
+                                    />
 
-                            <div id="hHint">
+                                    <div id="hHint">
 
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <?php
+
+                            <?php
                                 break;
                             case 'ширина':
                                 ?>
-                        <div id="wSliderContainer"
-                             class="sliderContainer">
-                            <div class="product_description-pc">Ширина полотна (см):</div>
-                            <div id="wSlider"></div>
-                            <div class="leftRullerCutter"></div>
-                            <div class="leftRullerValue" id="minWidth">1</div>
-                            <div class="rightRullerCutter"></div>
-                            <div class="rightRullerValue" id="maxWidth"></div>
-                            <input type="text" style="margin-bottom:15px " name="option[<?php echo $option['product_option_id']; ?>]"
-                                   value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
-                                   id="<?php echo $option['name']; ?>" class="form-control"/>
-                            <div id="wHint">
+                            <div class="optionBox">
+                                <div id="wSliderContainer"
+                                     class="sliderContainer ">
+                                    <div class="product_description-pc">Ширина полотна (см):</div>
+                                    <div id="wSlider"></div>
+                                    <div class="leftRullerCutter"></div>
+                                    <div class="leftRullerValue" id="minWidth">1</div>
+                                    <div class="rightRullerCutter"></div>
+                                    <div class="rightRullerValue" id="maxWidth"></div>
+                                    <input type="text" style="margin-bottom:15px "
+                                           name="option[<?php echo $option['product_option_id']; ?>]"
+                                           value="<?php echo $option['value']; ?>"
+                                           placeholder="<?php echo $option['name']; ?>"
+                                           id="<?php echo $option['name']; ?>" class="form-control sizeInput"
+                                    />
+                                    <div id="wHint">
 
+                                    </div>
+
+                                </div>
                             </div>
 
-                        </div>
-                        <?php
-                                break;
-                                case 'вертикальноесмещение':
-                                ?>
-                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]"
-                                   value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
-                                   id="<?php echo $option['name']; ?>" class="form-control"/>
-                        </div>
-                        <?php
-                                break;
-                                case 'горизонтальноесмещение':
-                                ?>
-                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]"
-                                   value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
-                                   id="<?php echo $option['name']; ?>" class="form-control"/>
-                        </div>
-                        <?php
+                            <?php
                                 break;
                             default:
                                 ?>
-                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <label class="control-label"
-                                   for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
-                            <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
-                                   value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>"
-                                   id="input-option<?php echo $option['product_option_id']; ?>" class="form-control"/>
-                        </div>
-                        <?php
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"
+                                       for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+                                <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
+                                       value="<?php echo $option['value']; ?>"
+                                       placeholder="<?php echo $option['name']; ?>"
+                                       id="input-option<?php echo $option['product_option_id']; ?>"
+                                       class="form-control"/>
+                            </div>
+                            <?php
                                 break;
                         }
                         ?>
-                        <?php } ?>
-                        <!-- SIZE OPTION END -->
-                        <?php if ($option['type'] == 'textarea') { ?>
-                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <label class="control-label"
-                                   for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
-                            <textarea name="option[<?php echo $option['product_option_id']; ?>]" rows="5"
-                                      placeholder="<?php echo $option['name']; ?>"
-                                      id="input-option<?php echo $option['product_option_id']; ?>"
-                                      class="form-control"><?php echo $option['value']; ?></textarea>
-                        </div>
-                        <?php } ?>
-                        <?php if ($option['type'] == 'file') { ?>
-                        <?php
-                        switch (mb_strtolower($option['name'])) {
-                            case 'фотография':
-                    ?>
-                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <button type="button" id="button-upload<?php echo $option['product_option_id']; ?>"
-                                    data-loading-text="<?php echo $text_loading; ?>" class="btn btn-default btn-block">
-                                <i class="fa fa-upload"></i> Загрузить фото</button>
-                            <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]" value=""
-                                   id="input-option<?php echo $option['product_option_id']; ?>"/>
-                        </div>
-                        <?php
-                                break;
-                            default:
-                    ?>
-                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <label class="control-label"><?php echo $option['name']; ?></label>
-                            <button type="button" id="button-upload<?php echo $option['product_option_id']; ?>"
-                                    data-loading-text="<?php echo $text_loading; ?>" class="btn btn-default btn-block">
-                                <i class="fa fa-upload"></i> <?php echo $button_upload; ?></button>
-                            <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]" value=""
-                                   id="input-option<?php echo $option['product_option_id']; ?>"/>
-                        </div>
-                        <?php
-                             break;
-                                }
-                    ?>
-                        <?php } ?>
-                        <?php if ($option['type'] == 'date') { ?>
-                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <label class="control-label"
-                                   for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
-                            <div class="input-group date">
-                                <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
-                                       value="<?php echo $option['value']; ?>" data-date-format="YYYY-MM-DD"
-                                       id="input-option<?php echo $option['product_option_id']; ?>"
-                                       class="form-control"/>
-                                <span class="input-group-btn">
+                            <?php } ?>
+                            <!-- SIZE OPTION END -->
+                            <?php if ($option['type'] == 'textarea') { ?>
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"
+                                       for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+                                <textarea name="option[<?php echo $option['product_option_id']; ?>]" rows="5"
+                                          placeholder="<?php echo $option['name']; ?>"
+                                          id="input-option<?php echo $option['product_option_id']; ?>"
+                                          class="form-control"><?php echo $option['value']; ?></textarea>
+                            </div>
+                            <?php } ?>
+                            <?php if ($option['type'] == 'file') {
+                            if(mb_strtolower($option['name'])=="фотография"){
+
+                            }else{
+                            ?>
+                                <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"><?php echo $option['name']; ?></label>
+                                <button type="button" id="button-upload<?php echo $option['product_option_id']; ?>"
+                                        data-loading-text="<?php echo $text_loading; ?>"
+                                        class="btn btn-default btn-block">
+                                    <i class="fa fa-upload"></i> <?php echo $button_upload; ?></button>
+                                <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]" value=""
+                                       id="input-option<?php echo $option['product_option_id']; ?>"/>
+                            </div>
+                            <?php
+                            }
+                            ?>
+
+                            <?php } ?>
+                            <?php if ($option['type'] == 'date') { ?>
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"
+                                       for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+                                <div class="input-group date">
+                                    <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
+                                           value="<?php echo $option['value']; ?>" data-date-format="YYYY-MM-DD"
+                                           id="input-option<?php echo $option['product_option_id']; ?>"
+                                           class="form-control"/>
+                                    <span class="input-group-btn">
                 <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
                 </span></div>
-                        </div>
-                        <?php } ?>
-                        <?php if ($option['type'] == 'datetime') { ?>
-                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <label class="control-label"
-                                   for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
-                            <div class="input-group datetime">
-                                <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
-                                       value="<?php echo $option['value']; ?>" data-date-format="YYYY-MM-DD HH:mm"
-                                       id="input-option<?php echo $option['product_option_id']; ?>"
-                                       class="form-control"/>
-                                <span class="input-group-btn">
+                            </div>
+                            <?php } ?>
+                            <?php if ($option['type'] == 'datetime') { ?>
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"
+                                       for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+                                <div class="input-group datetime">
+                                    <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
+                                           value="<?php echo $option['value']; ?>" data-date-format="YYYY-MM-DD HH:mm"
+                                           id="input-option<?php echo $option['product_option_id']; ?>"
+                                           class="form-control"/>
+                                    <span class="input-group-btn">
                 <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                 </span></div>
-                        </div>
-                        <?php } ?>
-                        <?php if ($option['type'] == 'time') { ?>
-                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-                            <label class="control-label"
-                                   for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
-                            <div class="input-group time">
-                                <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
-                                       value="<?php echo $option['value']; ?>" data-date-format="HH:mm"
-                                       id="input-option<?php echo $option['product_option_id']; ?>"
-                                       class="form-control"/>
-                                <span class="input-group-btn">
+                            </div>
+                            <?php } ?>
+                            <?php if ($option['type'] == 'time') { ?>
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"
+                                       for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+                                <div class="input-group time">
+                                    <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
+                                           value="<?php echo $option['value']; ?>" data-date-format="HH:mm"
+                                           id="input-option<?php echo $option['product_option_id']; ?>"
+                                           class="form-control"/>
+                                    <span class="input-group-btn">
                 <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                 </span>
+                                </div>
                             </div>
-                        </div>
-                        <?php } ?>
-                        <?php } ?>
-                        <?php } ?>
-                        <?php if ($recurrings) { ?>
-                        <hr>
-                        <h3><?php echo $text_payment_recurring ?></h3>
-                        <div class="form-group required">
-                            <select name="recurring_id" class="form-control">
-                                <option value=""><?php echo $text_select; ?></option>
-                                <?php foreach ($recurrings as $recurring) { ?>
-                                <option value="<?php echo $recurring['recurring_id'] ?>"><?php echo $recurring['name'] ?></option>
-                                <?php } ?>
-                            </select>
-                            <div class="help-block" id="recurring-description"></div>
-                        </div>
-                        <?php } ?>
-                        <div class="form-group">
+                            <?php } ?>
+                            <?php } ?>
+                            <?php } ?>
+                            <?php if ($recurrings) { ?>
+                            <hr>
+                            <h3><?php echo $text_payment_recurring ?></h3>
+                            <div class="form-group required">
+                                <select name="recurring_id" class="form-control">
+                                    <option value=""><?php echo $text_select; ?></option>
+                                    <?php foreach ($recurrings as $recurring) { ?>
+                                    <option value="<?php echo $recurring['recurring_id'] ?>"><?php echo $recurring['name'] ?></option>
+                                    <?php } ?>
+                                </select>
+                                <div class="help-block" id="recurring-description"></div>
+                            </div>
+                            <?php } ?>
+                            <div class="form-group">
 
+                            </div>
+                            <?php if ($minimum > 1) { ?>
+                            <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?>
+                            </div>
+                            <?php } ?>
                         </div>
-                        <?php if ($minimum > 1) { ?>
-                        <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?>
+                    </div>
+                    <div class="productPriceBox sm-hidden" style="margin-top: 10px">
+                        <?php if ($price) { ?>
+                        <div class="list-unstyled">
+                            <?php if (!$special) { ?>
+                            <div class="productPrice-align">
+                                <h2 class="productPrice">Цена: <?php echo $price; ?></h2>
+                            </div>
+                            <?php } else { ?>
+                            <div class="productPrice-align">
+                                <h2 class="productPrice">Цена: <?php echo $special; ?></h2>
+                            </div>
+                            <?php } ?>
                         </div>
                         <?php } ?>
                     </div>
-                </div>
-                <div class="productPriceBox sm-hidden" style="margin-top: 10px">
-                    <?php if ($price) { ?>
-                    <div class="list-unstyled">
-                        <?php if (!$special) { ?>
-                        <div class="productPrice-align">
-                            <h2 class="productPrice">Цена: <?php echo $price; ?></h2>
+
+                    <div class="productBuyButtonsBox sm-hidden">
+                        <div id="product" style="width: 100%;margin: 25px 0 20px 0;">
+                            <input type="hidden" name="quantity" value="<?php echo $minimum; ?>" size="2"
+                                   id="input-quantity" class="form-control"/>
+                            <input type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
+                            <button class="clickToBuy">
+                                <p>Заказать в один клик</p>
+                            </button>
+                            <button type="button" class="addToCart" id="button-cart">
+                                <p>В корзину</p>
+                            </button>
                         </div>
-                        <?php } else { ?>
-                        <div class="productPrice-align">
-                            <h2 class="productPrice">Цена: <?php echo $special; ?></h2>
-                        </div>
-                        <?php } ?>
                     </div>
-                    <?php } ?>
-                </div>
 
-                <div class="productBuyButtonsBox sm-hidden">
-                    <div id="product" style="width: 100%;margin: 25px 0 20px 0;">
-                        <input type="hidden" name="quantity" value="<?php echo $minimum; ?>" size="2"
-                               id="input-quantity" class="form-control"/>
-                        <input type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
-                        <button class="clickToBuy">
-                            <p>Заказать в<br>один клик</p>
-                        </button>
-                        <button type="button" class="addToCart" id="button-cart">
-                            <p>В корзину</p>
-                        </button>
+                    <div class="productDeliveryBox sm-hidden">
+                        <p class="deliveryBoxTitle">Доставка:</p>
+                        <p>
+                        <table>
+                            <tr>
+                                <td class="deliveryBoxTitle" style="width: 75%;">Доставка по Москве:</td>
+                                <td>500 руб.</td>
+                            </tr>
+                            <tr>
+                                <td class="deliveryBoxTitle" style="width: 75%;">За МКАД:</td>
+                                <td>+20 руб./км.</td>
+                            </tr>
+                        </table>
+                        </p>
+                        <p>Бесплатная доставка по Москве и области при покупке от 20 000 рублей. Доставка до
+                            транспортной компании “Байкал”.</p>
                     </div>
-                </div>
 
-                <div class="productDeliveryBox sm-hidden">
-                    <p class="deliveryBoxTitle">Доставка:</p>
-                    <p>
-                    <table>
-                        <tr>
-                            <td class="deliveryBoxTitle" style="width: 75%;">Доставка по Москве:</td>
-                            <td>500 руб.</td>
-                        </tr>
-                        <tr>
-                            <td class="deliveryBoxTitle" style="width: 75%;">За МКАД:</td>
-                            <td>+20 руб./км.</td>
-                        </tr>
-                    </table>
-                    </p>
-                    <p>Бесплатная доставка по Москве и области при покупке от 20 000 рублей. Доставка до
-                        транспортной компании “Байкал”.</p>
                 </div>
+            </div>
 
+        </div>
+        <div class="stopFixed">
+            <div class="row no-margin">
+                <?php echo $content_top; ?>
+            </div>
+            <div class="row no-margin">
+                <?php echo $content_bottom; ?>
+            </div>
+            <div class="row no-margin">
+                <?php echo $column_right; ?>
             </div>
         </div>
     </div>
-    <div class="stopFixed">
-        <div class="row no-margin">
-            <?php echo $content_top; ?>
-        </div>
-        <div class="row no-margin">
-            <?php echo $content_bottom; ?>
-        </div>
-        <div class="row no-margin">
-            <?php echo $column_right; ?>
-        </div>
-    </div>
-</div>
-<script type="text/javascript"><!--
-    $(document).ready(function () {
-        console.log($(window).width());
 
-        if($(window).width() >= 780 ){
-            var offset = $('.fixed').offset();
-            var stopOffset = $('.stopFixed').offset();
-            var topPadding = -20;
-            $(window).scroll(function() {
-                if ($(window).scrollTop() > offset.top && $(window).scrollTop() <= stopOffset.top - 680) {
-                    $('.fixed').stop().animate({marginTop: $(window).scrollTop() - offset.top + topPadding});
-                }
-                else if($(window).scrollTop() < offset.top){
-                    $('.fixed').stop().animate({marginTop: 0});
-                }else if($(window).scrollTop() > stopOffset.top - 680){
-                    $('.fixed').stop().animate({marginTop: stopOffset.top - 680});
-                }
-            });
-        }
-    });
-    --></script>
+</div>
 <script type="text/javascript"><!--
     $('select[name=\'recurring_id\'], input[name="quantity"]').change(function () {
         $.ajax({
@@ -954,7 +1070,7 @@
     function process_discounts(price, quantity)
     {
     <?php
-            foreach ($dicounts_unf as $discount) {
+        foreach ($dicounts_unf as $discount) {
         echo 'if ((quantity >= '.$discount['quantity'].') && ('.$discount['price'].' < price)) price = '.$discount['price'].';'."\n";
     }
         ?>
@@ -1191,7 +1307,15 @@
     });
 
     //--></script>
-
+<!-- SPOILER -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.spoiler_links').click(function () {
+            $(this).parent().children('div.spoiler_body').toggle('normal');
+            return false;
+        });
+    });
+</script>
 <div class="row no-margin" style="margin-top: 25px !important;">
     <?php echo $footer; ?>
 </div>

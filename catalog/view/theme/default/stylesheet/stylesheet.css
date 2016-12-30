@@ -2399,4 +2399,14 @@ h2.price {
 	bottom: 10px;
 	right: 10px;
 	cursor: pointer;
+	background: #fff;
+	z-index: 999;
+}
+@media (max-width: 767px){
+	.cat1xsFix{
+		background-position-y: -290px !important;
+	}
+	.cat5xsFix{
+		background-position-y: -95px !important;
+	}
 }

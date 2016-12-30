@@ -99,8 +99,8 @@
 								$("#button-cart").after('<a href="#order" <?php if ($buyoneclick_yandex_status) {echo addslashes('onclick="yaCounter' . $buyoneclick_ya_counter . '.reachGoal(\'' . $buyoneclick_ya_identificator . '\'); return true;"');} ?> class="clickToBuy popup-btn order btn " style="margin-left:0px"><p>Заказать в<br>один клик</p></a>');
 							}
 							$(".popup-btn.order").click(function(){
-								$("#order").find("h3").text($(".productTitle").text());
-								$("#order").find('input[name="product"]').val("<a href='" + window.location.href + "'>" + $(".productTitle").html() + "</a>");
+								$("#order").find("h3").text($("#mainTitle").text());
+								$("#order").find('input[name="product"]').val("<a href='" + window.location.href + "'>" + $("#mainTitle").html() + "</a>");
 								//console.log($("h1").html());
 							});			
 						});
