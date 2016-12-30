@@ -337,10 +337,11 @@ ul.ul_centr{
     margin-left: 36%;
 }
 /**/
-.a-category-style{
+.a-category-style,
+.a-category-style:hover {
     font-family: 'Times New Roman';
     font-size: 14px;
-    color: #585858;
+    color: #585858 !important;
 }
 .a-category-style_mob{
     font-family: 'Times New Roman';

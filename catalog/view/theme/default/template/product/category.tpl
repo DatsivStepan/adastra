@@ -6,8 +6,8 @@
             <?php if ($breadcrumb ['href']==('')){ ?>
             <li class="breadcrumb_text"><?php echo $breadcrumb['text']; ?></li>
             <?php }else{ ?>
-            <li class="breadcrumb_text"
-            ><a class="text" href="<?php echo $breadcrumb['href']; ?>"
+            <li class="breadcrumb_text">
+                <a class="text" href="<?php echo $breadcrumb['href']; ?>"
                 style="padding-right: 12px; background: url('../../../catalog/view/theme/default/image/strilka.png') right center no-repeat;"><?php echo $breadcrumb['text']; ?></a>
             </li>
             <?php } ?>
@@ -68,9 +68,7 @@
                         </select>
                     </div>
                 </div>
-
             </div>
-
             <div class="KP">
                 <?php foreach ($products as $product) { ?>
                 <div class="KP_25">

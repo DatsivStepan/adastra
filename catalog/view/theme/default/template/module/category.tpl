@@ -76,7 +76,6 @@
 <div class="hidden-xs mod_category" style="width: 100%">
     <div class="listcat">
         <ul class="customdrop ul-category-style" style="padding-left: 20px; margin: 0">
-
             <?php foreach ($categories as $category) { ?>
             <?php
                         $classes = '';
@@ -94,7 +93,7 @@
                     <div class="<?= $icon; ?>"></div>
                             <span data-href="<?= $category['href']; ?>" style="cursor:pointer;"
                                   class="clickCategoryName a-category-style">
-                                <?php echo $category['name']; ?>
+                               <a class="a-category-style" href="<?php echo $category['href'];?>"><?php echo $category['name']; ?></a>
                             </span>
                 </a>
                 <?php if($category['children']) { ?>

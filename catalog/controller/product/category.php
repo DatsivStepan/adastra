@@ -153,11 +153,10 @@ class ControllerProductCategory extends Controller {
 				}
 
 				$category_info = $this->model_catalog_category->getCategory($path_id);
-
 				if ($category_info) {
 					$data['breadcrumbs'][] = array(
 						'text' => $category_info['name'],
-						'href' => $this->url->link('common/home')
+						'href' => $this->url->link('product/category', 'path='.$category_info['category_id'])
 					);
 				}
 			}
@@ -257,7 +256,6 @@ class ControllerProductCategory extends Controller {
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
 			$results = $this->model_catalog_product->getProducts($filter_data);
-
 			foreach ($results as $result) {
 				if ($result['image']) {
 					$image = HTTP_SERVER.'image/'.$result['image'];
