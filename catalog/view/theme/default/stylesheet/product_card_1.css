@@ -949,3 +949,21 @@
         width: 25%;
     }
 }
+.backToCat{
+    color: #fff !important;
+    background: #000;
+    float: right;
+    display: block;
+    height: 25px;
+    padding: 2px 10px;
+    font-family: 'Times NEW Roman';
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none !important;
+}
+
+@media (max-width: 767px){
+    .backToCat{
+
+    }
+}

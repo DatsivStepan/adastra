@@ -10,8 +10,13 @@
         <ul class="breadcrumb_product hidden-xs  col-sm-12 col-md-12 col-lg-12">
             <?php
              $k = count($breadcrumbs);
+             $i = 1;
 
-            foreach ($breadcrumbs as $breadcrumb) { ?>
+            foreach ($breadcrumbs as $breadcrumb) {
+            if($i == $k-1){
+                $btnLink = $breadcrumb['href'];
+            }
+            ?>
             <?php if ($breadcrumb ['href']==('')){ ?>
             <li class="breadcrumb_text"><?php echo $breadcrumb['text']; ?></li>
             <?php }else{ ?>
@@ -20,7 +25,9 @@
                 style="padding-right: 12px; background: url('../../../catalog/view/theme/default/image/strilka.png') right center no-repeat;"><?php echo $breadcrumb['text']; ?></a>
             </li>
             <?php } ?>
-            <?php } ?>
+            <?php $i++;}
+?>
+            <a href="<?php echo $btnLink?>" class="backToCat">Назад в каталог</a>
         </ul>
         <div class="container">
             <div class="row">
@@ -44,7 +51,11 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                         <div class="productDescriptionBox hidden-sm hidden-md hidden-lg hidden-xl">
                             <div style="text-align: center; padding-bottom: 20px">
+                                <div style="width: 100%; height: 30px;">
+                                    <a href="<?php echo $btnLink?>" class="backToCat">Назад в каталог</a>
+                                </div>
                                 <h1 class="productTitle" id="mainTitle"><?php echo $heading_title; ?></h1>
+
                             </div>
                             <h2 style="display: none;"> Автор </h2>
                             <div class="product_description-pc">
