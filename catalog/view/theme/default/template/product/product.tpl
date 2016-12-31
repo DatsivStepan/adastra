@@ -898,20 +898,46 @@
             </div>
 
         </div>
-        <div class="stopFixed">
-            <div class="row no-margin">
-                <?php echo $content_top; ?>
-            </div>
-            <div class="row no-margin">
-                <?php echo $content_bottom; ?>
-            </div>
-            <div class="row no-margin">
-                <?php echo $column_right; ?>
-            </div>
-        </div>
     </div>
-
 </div>
+<div class="container">
+    <div class="row no-margin">
+        <?php echo $content_top; ?>
+    </div>
+</div>
+            <div class="row card-phone-div-style">
+                <div class="row card-form-div-style">
+                    <div class="col-lg-6 col-xl-7 card-div-content-style">
+                        <div style="float: right">
+                            <span class="card-text-span-style_1">затрудняетесь с выбором  рамы</br> и фактуры?</span></br>
+                            <span class="card-text-span-style_2">Подберите их в нашем шоуруме</span><br>
+                            <span class="card-text-span-style_3"><i><img style="width: 4%" src="../catalog/view/theme/default/image/map-marcer-icon.png" alt=""></i> г.Москва, ул.Советская 189</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-xl-5">
+                        <form action="" method="post" id="contact_c_card" class="email_adminy">
+                            <div class="modal-div-input-stile">
+                                <input class="modal-input-style" id="name_card" name="name_card" type="text"
+                                       placeholder="Ваше имя">
+                            </div>
+                            <div class="modal-div-input-stile">
+                                <input class="modal-input-style" id="phone_card" name="phone_card" type="text"
+                                       placeholder="Телефон">
+                            </div>
+                            <button id="sendMessage_card" type="button" class="btn card-modal-btn-style">Позвоните мне</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+<div class="container">
+    <div class="row no-margin">
+        <?php echo $content_bottom; ?>
+    </div>
+    <div class="row no-margin">
+        <?php echo $column_right; ?>
+    </div>
+</div>
+
 <script type="text/javascript"><!--
     $('select[name=\'recurring_id\'], input[name="quantity"]').change(function () {
         $.ajax({
