@@ -5,7 +5,7 @@ $(document).ready(function () {
         $('#products_id').slideToggle("fast");
 	});
 	$('#products_id_md').on('click', function () {
-		console.log('awdwd');
+
 		$('#products_md').slideToggle("fast");
 	});
 /*	$("#contact").click(function() {
@@ -96,7 +96,6 @@ $(document).ready(function () {
 	}
 
 	$('.contactItem').on('blur', function () {
-		console.log($(this).attr('id'));
 		checkForm($(this).attr('id'));
 	});
 
@@ -104,7 +103,7 @@ $(document).ready(function () {
 		even.preventDefault();
 		if (checkForm()) {
 			var res = $('#contactForm').serializeArray();
-			console.log(res);
+
 			var arr = {};
 			$.each(res, function (result) {
 				var $index = res[result].name;
@@ -122,12 +121,31 @@ $(document).ready(function () {
 				dataType: 'json',
 				data: arr,
 				success: function (data) {
-					
-
 				}
 			});
 		} else {
 			console.log('Incorrectly completed forms');
 		}
 	});
+
+	$('#sendMessage_card').on('click', function (even) {
+		even.preventDefault();
+			var res = $('#contact_c_card').serializeArray();
+			var arr = {};
+			$.each(res, function (result) {
+				var $index = res[result].name;
+				arr[$index] = res[result].value;
+			});
+			swal("Сообщение отправлено", "", "success");
+			$.ajax({
+				url: 'index.php?route=product/product/contactFormCard',
+				type: 'post',
+				dataType: 'json',
+				data: arr,
+				success: function (data) {
+				}
+			});
+	});
+
+
 });
