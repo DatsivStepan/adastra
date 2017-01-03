@@ -2424,6 +2424,7 @@ h2.price {
 	overflow: hidden;
 	background-image: url("../image/cartocka_phone.png");
 	background-size: cover;
+	background-position: center;
 }
 .card-form-div-style{
 	line-height: 27px;
