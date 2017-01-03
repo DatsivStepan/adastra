@@ -175,7 +175,7 @@
             </div>
 
             <div class="row  row-advantages-style">
-                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style">
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_1">
                             <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
@@ -205,7 +205,7 @@
                 </div>
             </div>
             <div class="row  row-advantages-style">
-                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style">
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_3">
                             <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
@@ -234,7 +234,7 @@
             </div>
 
             <div class="row  row-advantages-style">
-                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" style="margin-bottom: 30px">
+                <div class="col-sm-5 col-md-5 col-lg-5 col-xl-5 advantages-div-style" >
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_5">
                             <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>

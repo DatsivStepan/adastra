@@ -329,7 +329,7 @@ class ControllerCommonHeader extends Controller {
 
 
         $mail->setTo($admin_email);
-        $mail->setFrom('no-reply@perila.com');
+        $mail->setFrom('no-reply@artadastra.ru');
         $mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
         $mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
         $mail->setText($mailContent);
@@ -373,7 +373,7 @@ class ControllerCommonHeader extends Controller {
 
 
         $mail->setTo($admin_email);
-        $mail->setFrom('no-reply@perila.com');
+        $mail->setFrom('no-reply@artadastra.ru');
         $mail->setSender(html_entity_decode($this->request->post['name_ru'], ENT_QUOTES, 'UTF-8'));
         $mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name_ru']), ENT_QUOTES, 'UTF-8'));
         $mail->setText($mailContent);

@@ -214,7 +214,7 @@ $(document).ready(function () {
         even.preventDefault();
         console.log('wqdwqd');
         if (checkFormRu()) {
-            var res = $('#contactForm_ru').serializeArray();
+            var res = $('#contactForm_rus').serializeArray();
 
             var arr = {};
             $.each(res, function (result) {
@@ -228,7 +228,7 @@ $(document).ready(function () {
             $('#contactForm_ru').removeClass('in');
             $('.modal-backdrop').removeClass('in');
             $.ajax({
-                url: 'index.php?route=common/header/contactFormRu',
+                url: 'index.php?route=common/header/contactForm',
                 type: 'post',
                 dataType: 'json',
                 data: arr,
