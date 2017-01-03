@@ -93,32 +93,30 @@
 
 
 <body class="<?php echo $class; ?>">
-<!--
+
 <div id="contactForm_ru" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-
             <div class="modal-header" style="border: 0">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
             </div>
-
             <div class="modal-body" style="text-align: center;">
-                <div class="modal-title-style">Сообщение</div>
+                <div class="modal-title-style">Обратная связь</div>
                 <div>
                     <form id="contactForm_ru" action="" method="post">
-                        <ul id="errorMasege" style="padding-left: 0">
-                            <span style="display: none; color: red" class="row name">Некоректно заполнено Имя пользователя</span>
-                            <span style="display: none; color: red" class="row email ">Некоректно заполнено Email</span>
-                            <span style="display: none; color: red" class="row message ">Минимальная длина сообщения десеть знаков</span>
+                        <ul id="errorMasege_ru" style="padding-left: 0">
+                            <span style="display: none; color: red" class="row name_ru">Некоректно заполнено Имя пользователя</span>
+                            <span style="display: none; color: red" class="row email_ru">Некоректно заполнено Email</span>
+                            <span style="display: none; color: red" class="row message_ru">Минимальная длина сообщения десять знаков</span>
                         </ul>
                         <div class="row modal-div-input-stile">
-                            <input class="modal-input-style contactItem" id="name_ru" name="name_ru" type="text" placeholder="Ваше имя">
+                            <input class="modal-input-style contactItem_ru" id="name_ru" name="name_ru" type="text" placeholder="Ваше имя">
                         </div>
                         <div class="row modal-div-input-stile">
-                            <input class="modal-input-style contactItem" id="email_ru" name="email_ru" type="text" placeholder="E-MAIL">
+                            <input class="modal-input-style contactItem_ru" id="email_ru" name="email_ru" type="text" placeholder="E-MAIL">
                         </div>
                         <div class="row modal-div-input-stile">
-                            <textarea  name="message_ru" placeholder="Ваше сообщение" rows="5" id="message_ru" class="contactItem modal-textarea-style"></textarea>
+                            <textarea  name="message_ru" placeholder="Ваше сообщение" rows="5" id="message_ru" class="contactItem_ru modal-textarea-style"></textarea>
                         </div>
                         <button id="sendMessage_ru" type="button" class="btn modal-btn-style">Отправить сообщение</button>
                     </form>
@@ -126,7 +124,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 <div id="contactForm_en" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -136,27 +134,27 @@
             </div>
             <!-- Основное содержимое модального окна -->
             <div class="modal-body" style="text-align: center;">
-                <div class="modal-title-style">Обратная связь</div>
+                <div class="modal-title-style">Feedback</div>
                 <div>
                     <form id="contactForm" action="" method="post">
                         <ul id="errorMasege" style="padding-left: 0">
-                            <span style="display: none; color: red" class="row name">Некоректно заполнено Имя пользователя</span>
-                            <span style="display: none; color: red" class="row email ">Некоректно заполнено Email</span>
-                            <span style="display: none; color: red" class="row message ">Минимальная длина сообщения десеть знаков</span>
+                            <span style="display: none; color: red" class="row name">Incorrectly filled Username</span>
+                            <span style="display: none; color: red" class="row email ">Incorrectly filled Email</span>
+                            <span style="display: none; color: red" class="row message ">The minimum length of ten characters posts</span>
                         </ul>
                         <div class="row modal-div-input-stile">
                             <input class="modal-input-style contactItem" id="name" name="name" type="text"
-                                   placeholder="ВАШЕ ИМЯ">
+                                   placeholder="NAME">
                         </div>
                         <div class="row modal-div-input-stile">
                             <input class="modal-input-style contactItem" id="email" name="email" type="text"
                                    placeholder="E-MAIL">
                         </div>
                         <div class="row modal-div-input-stile">
-                            <textarea name="message" placeholder="СООБЩЕНИЕ" rows="5" id="message"
+                            <textarea name="message" placeholder="MASSAGE" rows="5" id="message"
                                       class="contactItem modal-textarea-style"></textarea>
                         </div>
-                        <button id="sendMessage" type="button" class="btn modal-btn-style">Отправить</button>
+                        <button id="sendMessage" type="button" class="btn modal-btn-style">SEND</button>
                     </form>
                 </div>
             </div>
@@ -210,8 +208,8 @@
                                                  src="../../../catalog/view/theme/default/image/mail.png">
                                         </i>
                                         <span class="header-phone-style">
-                    <?php echo $email; ?>
-                  </span>
+                                            <a class="header-phone-style" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 no-padding" style="margin-top: 15px">

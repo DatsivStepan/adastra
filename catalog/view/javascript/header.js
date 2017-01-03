@@ -127,8 +127,122 @@ $(document).ready(function () {
 			console.log('Incorrectly completed forms');
 		}
 	});
+  
+      function checkFormRu(id) {
+        if(typeof id != 'undefined'){
+            if($('#'+id).val() == ''){
+                return 0;
+            }
+        }
+        switch (id) {
+            case 'name_ru':
+                if (!($('#' + id).val().match(/^[a-zA-Zа-яА-Я]+$/)) || ($('#name_ru').val().length < 3)) {
+                    $('#errorMasege_ru > .' + id).text('Некоректно заполнено Имя пользователя');
+                    $('#' + id).css('border', '1px solid red');
+                    $('#errorMasege_ru > .' + id).show();
+                } else {
+                    $('#errorMasege_ru > .' + id).text('');
+                    $('#' + id).css('border', '1px solid green');
+                    $('#errorMasege_ru > .' + id).hide();
+                }
+                break;
+            case 'email_ru':
+                if (!($('#' + id).val().match(/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i))) {
+                    $('#errorMasege_ru > .' + id).text('Некоректно заполнено Email');
+                    $('#' + id).css('border', '1px solid red');
+                    $('#errorMasege_ru > .' + id).show();
+                } else {
+                    $('#errorMasege_ru > .' + id).text('');
+                    $('#' + id).css('border', '1px solid green');
+                    $('#errorMasege_ru > .' + id).hide();
+                }
+                break;
+            case 'message_ru':
+                if (!($('#' + id).val().length >= 10)) {
+                    $('#errorMasege_ru > .' + id).text('Минимальная длина сообщения десеть знаков');
+                    $('#' + id).css('border', '1px solid red')
+                    $('#errorMasege_ru > .' + id).show();
+                } else {
+                    $('#errorMasege_ru > .' + id).text('');
+                    $('#' + id).css('border', '1px solid green');
+                    $('#errorMasege_ru > .' + id).hide();
+                }
+                break;
+            default:
+                var errorCount = 0;
+                if (!($('#name_ru').val().match(/^[a-zA-Zа-яА-Я]+$/))) {
+                    $('#name_ru').css('border', '1px solid red');
+                    errorCount++;
+                    $('#errorMasege_ru > .name_ru').show();
+                } else {
+                    $('#errorMasege_ru > .name_ru').text('');
+                    $('#name_ru').css('border', '1px solid green');
+                    $('#errorMasege_ru > .name_ru').hide();
+                }
+                if (!($('#email_ru').val().match(/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i))) {
+                    $('#email_ru').css('border', '1px solid red');
+                    errorCount++;
+                    $('#errorMasege_ru > .email_ru').show();
+                } else {
+                    $('#errorMasege_ru > .email_ru').text('');
+                    $('#email_ru').css('border', '1px solid green');
+                    $('#errorMasege_ru > .email_ru').hide();
+                }
+                if (!($('#message_ru').val().length >= 10)) {
+                    $('#message_ru').css('border', '1px solid red');
+                    errorCount++;
+                    $('#errorMasege_ru > .message_ru').show();
+                } else {
+                    $('#errorMasege_ru > .message_ru').text('');
+                    $('#message_ru').css('border', '1px solid green');
+                    $('#errorMasege_ru > .message_ru').hide();
+                }
+                if (errorCount == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+                break;
+        }
+    }
 
-	$('#sendMessage_card').on('click', function (even) {
+    $('.contactItem_ru').on('blur', function () {
+        checkFormRu($(this).attr('id'));
+    });
+
+    $('#sendMessage_ru').on('click', function (even) {
+        even.preventDefault();
+        console.log('wqdwqd');
+        if (checkFormRu()) {
+            var res = $('#contactForm_ru').serializeArray();
+
+            var arr = {};
+            $.each(res, function (result) {
+                var $index = res[result].name;
+                arr[$index] = res[result].value;
+            });
+            $('#name_ru').val('');
+            $('#email_ru').val('');
+            $('#message_ru').val('');
+            swal("Сообщение отправлено", "", "success");
+            $('#contactForm_ru').removeClass('in');
+            $('.modal-backdrop').removeClass('in');
+            $.ajax({
+                url: 'index.php?route=common/header/contactFormRu',
+                type: 'post',
+                dataType: 'json',
+                data: arr,
+                success: function (data) {
+                }
+            });
+        } else {
+            console.log('Incorrectly completed forms');
+        }
+    });
+
+
+
+    $('#sendMessage_card').on('click', function (even) {
 		even.preventDefault();
 			var res = $('#contact_c_card').serializeArray();
 			var arr = {};

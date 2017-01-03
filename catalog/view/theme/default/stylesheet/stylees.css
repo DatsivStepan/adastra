@@ -1167,3 +1167,24 @@
     letter-spacing: 2px;
     margin-top: 23%;
 }
+.header-phone-style,
+.header-phone-style:hover,
+.header-phone-style:focus,
+.header-phone-style:active{
+    text-decoration: none;
+    margin-left: 5px;
+    font-family: 'Times New Roman';
+    font-weight: 500;
+    font-size: 18px;
+    color: #322d2d !important;
+}
+.footer-contact-text-right-style,
+.footer-contact-text-right-style:hover,
+.footer-contact-text-right-style:focus,
+.footer-contact-text-right-style:active{
+    font-family: 'Times New Roman';
+    font-weight: 700;
+    font-size: 25px;
+    color: #0b0b0b !important;
+    text-decoration: none;
+}

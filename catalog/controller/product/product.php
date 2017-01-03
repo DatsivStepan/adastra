@@ -867,7 +867,7 @@ $product_info['images'] = $results;
                 </tr>
                 <tr>
                     <td>Telephone</td>
-                    <td>'.$_POST['email_card'].'</td>
+                    <td>'.$_POST['phone_card'].'</td>
                 </tr>
                 
             </table>
@@ -885,8 +885,8 @@ $product_info['images'] = $results;
 
         $mail->setTo($admin_email);
         $mail->setFrom('no-reply@perila.com');
-        $mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
-        $mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
+        $mail->setSender(html_entity_decode($this->request->post['name_card'], ENT_QUOTES, 'UTF-8'));
+        $mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name_card']), ENT_QUOTES, 'UTF-8'));
         $mail->setText($mailContent);
         $mail->send();
         $this->response->redirect($this->url->link('information/contact/success'));
