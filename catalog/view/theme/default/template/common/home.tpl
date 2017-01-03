@@ -137,7 +137,7 @@
     <div id="owl-carousel" class="owl-carousel owl-theme  car_ow_np_20" data-ride="carousel">
         <?php foreach($musey['option_value'] as $option){ ?>
         <div class="item">
-            <div class="div_item_text" style="background: url(image/<?php echo $option['image'];?>) center no-repeat;">
+            <div class="div_item_text" style="background: url(image/<?php echo $option['image'];?>) center no-repeat; background-size: cover">
                 <a href="http://adastra.local/index.php?route=product/category&path=20_28&mfp=36-muzey[<?php echo $option['name'];?>]">
                     <div class="text_title_np_21" style=""><?php echo $option['name'];?></div></a>
             </div>
