@@ -925,7 +925,7 @@ $product_info['images'] = $results;
 
 
         $mail->setTo($admin_email);
-        $mail->setFrom('no-reply@perila.com');
+        $mail->setFrom('no-reply@artadastra.ru');
         $mail->setSender(html_entity_decode($this->request->post['name_card'], ENT_QUOTES, 'UTF-8'));
         $mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name_card']), ENT_QUOTES, 'UTF-8'));
         $mail->setText($mailContent);
