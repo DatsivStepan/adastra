@@ -103,20 +103,20 @@
             <div class="modal-body" style="text-align: center;">
                 <div class="modal-title-style">Обратная связь</div>
                 <div>
-                    <form id="contactForm_ru" action="" method="post">
+                    <form id="contactForm_rus" action="" method="post">
                         <ul id="errorMasege_ru" style="padding-left: 0">
                             <span style="display: none; color: red" class="row name_ru">Некоректно заполнено Имя пользователя</span>
                             <span style="display: none; color: red" class="row email_ru">Некоректно заполнено Email</span>
                             <span style="display: none; color: red" class="row message_ru">Минимальная длина сообщения десять знаков</span>
                         </ul>
                         <div class="row modal-div-input-stile">
-                            <input class="modal-input-style contactItem_ru" id="name_ru" name="name_ru" type="text" placeholder="Ваше имя">
+                            <input class="modal-input-style contactItem_ru" id="name_ru" name="name" type="text" placeholder="Ваше имя">
                         </div>
                         <div class="row modal-div-input-stile">
-                            <input class="modal-input-style contactItem_ru" id="email_ru" name="email_ru" type="text" placeholder="E-MAIL">
+                            <input class="modal-input-style contactItem_ru" id="email_ru" name="email" type="text" placeholder="E-MAIL">
                         </div>
                         <div class="row modal-div-input-stile">
-                            <textarea  name="message_ru" placeholder="Ваше сообщение" rows="5" id="message_ru" class="contactItem_ru modal-textarea-style"></textarea>
+                            <textarea  name="message" placeholder="Ваше сообщение" rows="5" id="message_ru" class="contactItem_ru modal-textarea-style"></textarea>
                         </div>
                         <button id="sendMessage_ru" type="button" class="btn modal-btn-style">Отправить сообщение</button>
                     </form>
