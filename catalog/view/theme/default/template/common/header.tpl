@@ -208,8 +208,8 @@
                                                  src="../../../catalog/view/theme/default/image/mail.png">
                                         </i>
                                         <span class="header-phone-style">
-                    <?php echo $email; ?>
-                  </span>
+                                            <a class="header-phone-style" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 no-padding" style="margin-top: 15px">

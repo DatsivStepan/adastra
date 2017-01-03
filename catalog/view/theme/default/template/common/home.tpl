@@ -297,7 +297,9 @@
                                 <img src="../../../catalog/view/theme/default/image/mail.png">
                             </div>
                             <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 footer-email-text-style">
-                                <span class="footer-contact-text-right-style"><?php echo $email; ?></span>
+                                <span class="footer-contact-text-right-style">
+                                    <a class="footer-contact-text-right-style" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -328,7 +330,10 @@
             <div style="width: 100%">
                 <div class="col-xs-12 mobile-contact-div-style">
                     <img src="../../../catalog/view/theme/default/image/mail.png">
-                    <span class="footer-contact-text-right-style"><?php echo $email; ?></span>
+                    <span class="footer-contact-text-right-style">
+                        <a class="footer-contact-text-right-style" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+
+                    </span>
                 </div>
 
             </div>
