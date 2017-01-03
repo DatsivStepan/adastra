@@ -106,7 +106,7 @@
 	<div class="form-horizontal qc-totals" style="top: 330px; position: relative;">
 	
 
-		<div class="row text-right" style="font-family: 'Philosopher';
+		<div class="row text-right" style="font-family: 'Times New Roman';
     font-size: 30px;
     color: #322d2d!important;
 	    border-top: none;

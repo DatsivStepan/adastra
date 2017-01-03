@@ -352,7 +352,7 @@
     font-size: 17px;
     font-weight: 600;
     color: #000;
-    background: url(/../catalog/view/theme/default/image/Forma-1-copy.png)right no-repeat;
+    /*background: url(/../catalog/view/theme/default/image/Forma-1-copy.png)right no-repeat;*/
     padding: 0 36px 0 0;
     text-decoration: underline;
 }
@@ -401,8 +401,6 @@
     font-size: 18px;
     font-weight: 600;
     color: #000;
-    background: url(/../catalog/view/theme/default/image/Forma-1-copy.png)right no-repeat;
-    padding: 0 40px 0 0;
 }
 .a_kat_adast:hover{
     color: #000;
@@ -442,11 +440,11 @@
     text-align: left;
     width: 40%;
     position: absolute;
-    bottom: 70px;
-    left: 45%;
+    bottom: 40px;
+    left: 55%;
 }
 .border_kat2 {
-    border: 1px solid #ffde00;
+    border: 1px solid #000;
     border-radius: 40px 40px;
     padding: 20px 10px;
     text-align: center;
@@ -1147,11 +1145,14 @@
     margin: -2% 0% 0% 7%!important;
 }
 .div_muzey_text{
-    text-align: center;margin-bottom: 2%;
-    font-family: 'Times New Roman';
-    color:#000000;font-weight: 600;
-    background-size: cover;font-size: 35px;
-    text-transform: uppercase
+    text-align: center;
+    margin-bottom: 3%;
+    font-family: 'AristonNormal';
+    color: #000000;
+    background-size: cover;
+    font-size: 80px;
+    text-transform: capitalize;
+    margin-top: 1%;
 }
 .div_item_text{
     width: 99.5%;

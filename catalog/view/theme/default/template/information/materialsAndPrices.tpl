@@ -13,11 +13,11 @@
     </ul>
   </div>
   <div class="row">
-        <div class="map-category-title-style">
+        <div class="map-category-title-style" style="text-align: center">
           <span >Материалы и цены</span>
         </div>
         <?php foreach($product_array as $category){ ?>
-    <p><span style="color: rgb(50, 45, 45); font-family: Philosopher; font-size: 25px; font-weight: 600; padding-top: 1.5%; padding-left: 10px; display: block;"><?= $category['category_name']; ?></span><br></p>
+    <p><span style="color: rgb(50, 45, 45); font-family: 'Times New Roman'; font-size: 25px; font-weight: 600; padding-top: 1.5%; padding-left: 10px; display: block;"><?= $category['category_name']; ?></span><br></p>
           <div class="map-category-style">
             <span><?= $category['category_description']; ?></span>
           </div>

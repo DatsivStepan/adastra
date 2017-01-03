@@ -103,7 +103,7 @@
                                     {
                                 ?>
                     <?php if ($child['category_id'] == $child_id) { ?>
-                    <li class="li-category-child-style active" style="list-style-type: none;  background-color: #322d2d; font-family: 'Philosopher'; font-size: 14px;color: #fff!important;     padding: 10px 0px 10px 14px;
+                    <li class="li-category-child-style active" style="list-style-type: none;  background-color: #322d2d; font-family: 'Times New Roman'; font-size: 14px;color: #fff!important;     padding: 10px 0px 10px 14px;
     margin-left: -12px; margin-bottom: 20px; margin-top: 10px ">
 
                         <a href="<?php echo $child['href'];?>" tabindex="-1" title="<?php echo $child['name'];?>"
@@ -156,7 +156,7 @@
                                     {
                                 ?>
                     <?php if ($child['category_id'] == $child_id) { ?>
-                    <li class="li-category-child-style active" style="list-style-type: none;  background-color: #322d2d; font-family: 'Philosopher'; font-size: 14px;color: #fff!important;     padding: 10px 0px 10px 14px;
+                    <li class="li-category-child-style active" style="list-style-type: none;  background-color: #322d2d; font-family: 'Times New Roman'; font-size: 14px;color: #fff!important;     padding: 10px 0px 10px 14px;
     margin-left: -12px; margin-bottom: 20px; margin-top: 10px ">
 
                         <a href="<?php echo $child['href'];?>" tabindex="-1" title="<?php echo $child['name'];?>"

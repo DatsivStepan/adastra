@@ -1042,11 +1042,11 @@ h2.price {
 	background-size: cover;
 }
 .advantages-style{
-	font-family: 'Times New Roman';
-	font-weight: 300;
-	font-size: 50px;
+	font-family: 'AristonNormal';
+	font-size: 70px;
 	color: #0b0b0b;
 	line-height: 40px;
+	text-transform: capitalize;
 }
 .advantages-container-style{
 	text-align: center;
@@ -1177,10 +1177,10 @@ h2.price {
 	padding-top: 7%;
 }
 .middle-home-text-title{
-	font-family: 'Times New Roman';
-	font-weight: 700;
-	font-size: 50px;
+	font-family: 'AristonNormal';
+	font-size: 70px;
 	color: #fff;
+	font-weight: bold;
 }
 .middle-home-text{
 	font-family: 'Times New Roman';
@@ -1746,7 +1746,7 @@ h2.price {
 		font-family: 'Times New Roman';
 		font-weight: 400;
 		color: #0b0b0b;
-		font-size: 15px;
+		font-size: 14px;
 		padding-left: 5px;
 	}
 	.div-cart-padding{
@@ -2393,7 +2393,7 @@ h2.price {
 	float: left;
 	margin-right: 4px;
 	height: 33px;
-	width: 100px;
+	width: 130px;
 	text-align: center;
 	padding: 5px;
 	position: fixed;
@@ -2462,4 +2462,22 @@ h2.price {
 		padding-right: 0px;
 		margin-left: 20px;
 	}
+}
+.customBtn,
+.customBtn:hover,
+.customBtn:focus,
+.customBtn:active{
+	height: 40px;
+	border-radius: 50px;
+	color: #fff;
+	border: 1px solid #322d2d;
+	background: #322d2d;
+	font-size: 16px;
+	font-family: 'Times New Roman';
+	margin-left: 5px;
+}
+.emtyCat{
+	font-size: 16px;
+	font-family: 'Times New Roman';
+	color: #666;
 }
