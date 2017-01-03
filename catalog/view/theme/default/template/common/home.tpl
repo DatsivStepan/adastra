@@ -9,7 +9,7 @@
             <div class="text_kat_name">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
-                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
+                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
             <div class="text_kat_name">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
-                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
+                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
             <div class="text_kat_name">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
-                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
+                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
             <div class="text_kat_name">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
-                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
+                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
             <div class="text_kat_name">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
-                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию</a>
+                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -164,7 +164,7 @@
     <div class="row div-advantages-bg no-margin">
         <div class="container advantages-container-style">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-top: 5%;">
-                <span class="advantages-style advantages_style_20">
+                <span class="advantages-style">
                     Наши </br> преимущества
                 </span></br>
             </div>

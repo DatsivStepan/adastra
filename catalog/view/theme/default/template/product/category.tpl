@@ -126,10 +126,10 @@
             </div>
             <?php } ?>
             <?php if (!$categories && !$products) { ?>
-            <p><?php echo $text_empty; ?></p>
+            <p class="emtyCat"><?php echo $text_empty; ?></p>
             <div class="buttons">
                 <div class="pull-right "><a href="<?php echo $continue; ?>"
-                                            class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+                                            class="customBtn btn btn-primary"><?php echo $button_continue; ?></a></div>
             </div>
             <?php } ?>
 

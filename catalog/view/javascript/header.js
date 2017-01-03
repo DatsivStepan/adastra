@@ -127,8 +127,8 @@ $(document).ready(function () {
 			console.log('Incorrectly completed forms');
 		}
 	});
-
-    function checkFormRu(id) {
+  
+      function checkFormRu(id) {
         if(typeof id != 'undefined'){
             if($('#'+id).val() == ''){
                 return 0;
