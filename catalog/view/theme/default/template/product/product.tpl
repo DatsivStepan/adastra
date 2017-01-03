@@ -867,10 +867,8 @@
                             <input type="hidden" name="quantity" value="<?php echo $minimum; ?>" size="2"
                                    id="input-quantity" class="form-control"/>
                             <input type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
-                            <button class="clickToBuy">
-                                <p>Заказать в один клик</p>
-                            </button>
-                            <button type="button" class="addToCart" id="button-cart">
+                            <a href="#order" class="clickToBuy popup-btn order btn " style="margin-left:0px"><p>Заказать в один клик</p></a>
+                            <button type="button" class="addToCart" id="button-cart-xs">
                                 <p>В корзину</p>
                             </button>
                         </div>
@@ -911,7 +909,7 @@
                         <div style="float: right">
                             <span class="card-text-span-style_1">затрудняетесь с выбором  рамы</br> и фактуры?</span></br>
                             <span class="card-text-span-style_2">Подберите их в нашем шоуруме</span><br>
-                            <span class="card-text-span-style_3"><i><img style="width: 4%" src="../catalog/view/theme/default/image/map-marcer-icon.png" alt=""></i> г.Москва, ул.Советская 189</span>
+                            <span class="card-text-span-style_3"><i><img style="width: 4%" src="../catalog/view/theme/default/image/map-marcer-icon.png" alt=""></i> г. Москва, пер. Слободской, д.6</span>
                         </div>
                     </div>
                     <div class="col-lg-5 col-xl-5">
@@ -969,6 +967,50 @@
             },
             complete: function () {
                 $('#button-cart').button('reset');
+            },
+            success: function (json) {
+                $('.alert, .text-danger').remove();
+                $('.form-group').removeClass('has-error');
+                if (json['error']) {
+                    if (json['error']['option']) {
+                        for (i in json['error']['option']) {
+                            var element = $('#input-option' + i.replace('_', '-'));
+                            if (element.parent().hasClass('input-group')) {
+                                element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+                            } else {
+                                element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+                            }
+                        }
+                    }
+                    if (json['error']['recurring']) {
+                        $('select[name=\'recurring_id\']').after('<div class="text-danger">' + json['error']['recurring'] + '</div>');
+                    }
+                    // Highlight any found errors
+                    $('.text-danger').parent().addClass('has-error');
+                }
+                if (json['success']) {
+                    $('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                    $('#cart-total').html('<span data-toggle="" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle hidden-xs">' + '<span class="cart-text-style" id="cart-total">В корзине</br> ' + json['total'] + ' шт.' + '</span></span>' + '<span   data-toggle="" data-loading-text="<?php echo $text_loading; ?>" class=" dropdown-toggle hidden-sm hidden-md hidden-lg hidden-xl"><span><img src="../../../catalog/view/theme/default/image/mbCartIcon.png"></br></span>' + '<span class="cart-text-style1 cart-text-style1_20" id="cart-total">' + json['total'] + '</span></span>');
+                    $('html, body').animate({scrollTop: 0}, 'slow');
+                    $('#cart > ul').load('index.php?route=common/cart/info ul li');
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            }
+        });
+    });
+    $('#button-cart-xs').on('click', function () {
+        $.ajax({
+            url: 'index.php?route=checkout/cart/add',
+            type: 'post',
+            data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
+            dataType: 'json',
+            beforeSend: function () {
+                $('#button-cart-xs').button('loading');
+            },
+            complete: function () {
+                $('#button-cart-xs').button('reset');
             },
             success: function (json) {
                 $('.alert, .text-danger').remove();
