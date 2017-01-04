@@ -46,9 +46,9 @@ class ControllerToolrotateimage extends Controller
         $imgRotated = imagerotate($img, $deg, 0);
         imagejpeg($imgRotated, $image, $deg);  //  Новая картинка
 
-        var_dump($this->request->get);
+        //var_dump($this->request->get);
 
         $this->response->addHeader('Content-Type: application/json');
-        $this->response->setOutput($json);
+        $this->response->setOutput("");
     }
 }

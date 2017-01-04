@@ -314,7 +314,7 @@
                     <div class="col-xs-2 no-padding" style="text-align: right; float: right">
                         <?php echo $cart; ?>
                     </div>
-                    <div id="phone_id" class="col-xs-3  no-padding mb-div-phone-style" style="float: right; width: 34%;">
+                    <div id="phone_id" class="col-xs-3  no-padding mb-div-phone-style" style="float: right; width: 30%;">
                         <span class="xsHeaderPhone"><?php echo $telephone; ?></span>
                         <img style="width: 42px;margin: -6px 0 0 0;"
                              src="../../../catalog/view/theme/default/image/phone.png">
