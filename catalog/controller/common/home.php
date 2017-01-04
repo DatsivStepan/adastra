@@ -21,6 +21,7 @@ class ControllerCommonHome extends Controller {
         $this->load->model('catalog/product');
 
         $data['category_muse'] = $this->model_catalog_product->getOptions(40);
+        $data['category_artist'] = $this->model_catalog_product->getOptions(43);
 
         $a = 0;
         foreach ($categories as $category) {

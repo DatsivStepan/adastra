@@ -161,6 +161,32 @@
             </div>
         </div>
     </div>
+    <div class="row rows_2 no-margin">
+        <?php foreach ($category_artist as $artist) { ?>
+            <div class="div_muzey_text_art"><?php echo($artist['name'])?></div>
+            <div class="container">
+                <div class="row">
+                    <?php foreach ($artist['option_value'] as $artist_art) { ?>
+                            <div class="div_item_text_art col-lg-3" style="background: url(image/<?php echo $artist_art['image'];?>) center no-repeat;">
+                                <a href="http://adastra.local/index.php?route=product/category&path=20_28&mfp=36-muzey[<?php echo $artist_art['name'];?>]">
+                                    <div class="text_title_np_21_art" style=""><?php echo $artist_art['name'];?></div></a>
+                            </div>
+                    <?php } ?>
+                </div>
+            </div>
+      <!--  <div id="owl-carousel" class="owl-carousel owl-theme  car_ow_np_20" data-ride="carousel">
+            <?php foreach($artist['option_value'] as $option_art){ ?>
+            <div class="item">
+                <div class="div_item_text" style="background: url(image/<?php echo $option['image'];?>) center no-repeat; background-size: cover">
+                    <a href="http://adastra.local/index.php?route=product/category&path=20_28&mfp=36-muzey[<?php echo $option['name'];?>]">
+                        <div class="text_title_np_21" style=""><?php echo $option_art['name'];?></div></a>
+                </div>
+            </div>
+
+            <?php } ?>-->
+        <?php } ?>
+        </div>
+    </div>
     <div class="row div-advantages-bg no-margin">
         <div class="container advantages-container-style">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-top: 5%;">
