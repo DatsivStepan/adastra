@@ -320,6 +320,63 @@
     -webkit-clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
     clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
 }
+.add1_1{
+    margin-top: 6px;
+    margin-right: 7px;
+    float: left;
+    width: 20%;
+    height: 400px;
+    transform: skew(-15deg);
+    overflow: hidden;
+    position: relative;
+}
+.add1_1_1{
+    transform: skew(15deg);
+    border: 1px solid;
+    height: 300px;
+    width: 470px;
+    position: absolute;
+    left: -19%;
+}
+.add1_2{
+    margin-top: 6px;
+    margin-right: 7px;
+    margin-left: -5%;
+    float: left;
+    width: 25%;
+    height: 400px;
+    transform: skew(-15deg);
+    overflow: hidden;
+    position: relative;
+}
+.add1_1_2{
+    transform: skew(15deg);
+    border: 1px solid;
+    height: 300px;
+    width: 470px;
+    position: absolute;
+    left: -19%;
+}
+.div-ramka-style_2{
+    background: url(../image/ramka.png)center no-repeat;
+    /* background-size: cover; */
+    height: 97px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    transform: skew(0deg);
+    left: 10%;
+}
+.div-ramka-style{
+    background: url(../image/ramka.png)center no-repeat;
+    /* background-size: cover; */
+    height: 97px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    transform: skew(0deg);
+    left: 0;
+}
 .add2{
     margin: 6px 0 0 37.1%;
     position: absolute;
@@ -358,13 +415,37 @@
     z-index: 101;
     position: absolute;
     bottom: 4%;
-    left: 11%;
+    left: 17%;
     font-family: 'Times New Roman';
     font-size: 15px;
     color: #000!important;
     font-weight: 300;
     text-align: left;
-
+    transform: skew(15deg);
+}
+.text_kat_name_2 {
+    z-index: 101;
+    position: absolute;
+    bottom: 4%;
+    left: 45%;
+    font-family: 'Times New Roman';
+    font-size: 15px;
+    color: #000!important;
+    font-weight: 300;
+    text-align: left;
+    transform: skew(15deg);
+}
+.text_kat_name_3 {
+    z-index: 101;
+    position: absolute;
+    bottom: 4%;
+    left: 30%;
+    font-family: 'Times New Roman';
+    font-size: 15px;
+    color: #000!important;
+    font-weight: 300;
+    text-align: left;
+    transform: skew(15deg);
 }
 .adas_img_mar h1{
     color: #000;

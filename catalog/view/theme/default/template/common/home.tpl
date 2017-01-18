@@ -3,10 +3,10 @@
     <div class="hidden-sm hidden-xs">
         <?php foreach ($category_home as $key => $category) { ?>
         <?php if(($key == 0)){ ?>
-        <div class="add">
-        <div  style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover; "></div>
-            <div id="parallelogram_1"></div>
-            <div class="text_kat_name">
+        <div class="add1_2">
+        <div class="add1_1_2"  style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover; "></div>
+            <div class="div-ramka-style_2"></div>
+            <div class="text_kat_name_2">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
                     <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
@@ -15,10 +15,10 @@
         </div>
         <?php } ?>
         <?php if(($key == 1)){ ?>
-        <div class="add1">
-            <div  style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
-            <div id="parallelogram"></div>
-            <div class="text_kat_name">
+        <div class="add1_1">
+            <div class="add1_1_1"  style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
+            <div class="div-ramka-style"></div>
+            <div class="text_kat_name_3">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
                     <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
@@ -27,9 +27,9 @@
         </div>
         <?php } ?>
         <?php if(($key == 2)){ ?>
-        <div class="add2">
-        <div style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
-            <div id="parallelogram"></div>
+        <div class="add1_1">
+        <div class="add1_1_1" style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
+            <div class="div-ramka-style"></div>
             <div class="text_kat_name">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
@@ -39,9 +39,9 @@
         </div>
         <?php } ?>
         <?php if(($key == 3)){ ?>
-        <div class="add3">
-        <div  style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
-            <div id="parallelogram"></div>
+        <div class="add1_1">
+        <div class="add1_1_1" style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
+            <div class="div-ramka-style"></div>
             <div class="text_kat_name">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
