@@ -10,7 +10,7 @@
                 <?php } ?>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 footer-bottom-text-padding ">
-                <span class="footer-bottom-text-style footer-bottom-text-padding_20">&#169; 2008-2016. Галерея адастра Все права защищены.</span>
+                <span class="footer-bottom-text-style footer-bottom-text-padding_20">&#169; 2008-2016. Галерея Адастра Все права защищены.</span>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 footer-bottom-text-padding" style="text-align: right;">
                 <span class="footer-bottom-text-style">Разработано в <span style="text-decoration: underline">Рекламотерапия</span></span>
@@ -31,7 +31,7 @@
                         <?php } ?>
                     </div>
                     <div class=" footer-bottom-text-padding">
-                        <span class="footer-bottom-text-style">&#169; 2016. Галерея адастра Все права защищены.</span>
+                        <span class="footer-bottom-text-style">&#169; 2016. Галерея Адастра Все права защищены.</span>
                     </div>
                     <div class=" footer-bottom-text-padding">
                         <span class="">Разработано в <span style="text-decoration: underline">Рекламотерапия</span></span>
@@ -41,7 +41,7 @@
     </div>
 
 </footer>
-<div id="toTop">В НАЧАЛО</div>
+<div id="toTop"><i class="fa fa-arrow-up" aria-hidden="true" style="font-size: 18px;"></i> В НАЧАЛО</div>
 </body></html>
 
 				<?php if ($buyoneclick_status) { ?>

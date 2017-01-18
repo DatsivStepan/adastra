@@ -51,18 +51,19 @@
         </div>
         <?php } ?>
         <?php if(($key == 4)){ ?>
+
+        <?php } ?>
+        <?php } ?>
         <div class="add4">
-            <div style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
+            <div style="background: url('../../image/catalog/category_5.png')center no-repeat; height: 300px; background-size:cover;"></div>
             <div id="parallelogram_5"></div>
             <div class="text_kat_name">
-                <span><?php echo $category['name']; ?></span>
+                <span>ПЕЧАТЬ ВАШЕГО ФОТО НА ХОЛСТЕ</span>
                 <div class="border_kat">
-                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    <a class="a_kat_adas" href="http://<?php echo $_SERVER['SERVER_NAME']?>/index.php?route=product/product&product_id=62">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
-        <?php } ?>
-        <?php } ?>
     </div>
     <?php
     $i = 1;
@@ -85,7 +86,23 @@
         </div>
     </div>
     <?php $i++;} ?>
-
+    <div class="hidden-lg hidden-md">
+        <div class="adas_img_sm adas_img_sm2 <?php if($i == 1){echo 'cat1xsFix';} if($i == 5){echo 'cat5xsFix';} ?>"
+             style="background: url('../../image/catalog/category_5.png')center no-repeat;">
+            <div class="adas_img_mar2">
+                <div class="col-sm-6 col-xs-12 text_box">
+                    <div class="">
+                        <span>ПЕЧАТЬ ВАШЕГО ФОТО НА ХОЛСТЕ</span>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12 text_box2">
+                    <div class="border_kat2">
+                        <a class="a_kat_adast" href="<?php echo $category['href'];?>">В категорию</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--<?php
         $count = count($arr);
     ?>-->
@@ -131,6 +148,21 @@
                      } ?>
      </div> -->
 </div>
+<div class="row rows_2" style="    margin: 50px 0;">
+    <?php foreach ($category_artist as $artist) { ?>
+    <div class="div_muzey_text_art"><?php echo($artist['name'])?></div>
+    <div class="container">
+        <div class="row">
+            <?php foreach ($artist['option_value'] as $artist_art) { ?>
+            <div class="div_item_text_art col-lg-3 col-sm-12" style="background: url(image/<?php echo $artist_art['image'];?>) center no-repeat;">
+                <a href="http://adastra.local/index.php?route=product/category&path=20_28&mfp=36-muzey[<?php echo $artist_art['name'];?>]">
+                    <div class="text_title_np_21_art" style=""><?php echo $artist_art['name'];?></div></a>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
+    <?php } ?>
+</div>
 <div class="row rows_2 no-margin">
     <?php foreach ($category_muse as $musey) { ?>
     <div class="div_muzey_text"><?php echo($musey['name'])?></div>
@@ -138,7 +170,7 @@
         <?php foreach($musey['option_value'] as $option){ ?>
         <div class="item">
             <div class="div_item_text" style="background: url(image/<?php echo $option['image'];?>) center no-repeat; background-size: cover">
-                <a href="http://adastra.local/index.php?route=product/category&path=20_28&mfp=36-muzey[<?php echo $option['name'];?>]">
+                <a href="index.php?route=product/category&path=20_28&mfp=36-muzey[<?php echo $option['name'];?>]">
                     <div class="text_title_np_21" style=""><?php echo $option['name'];?></div></a>
             </div>
         </div>
@@ -161,24 +193,10 @@
             </div>
         </div>
     </div>
-    <div class="row rows_2 no-margin">
-        <?php foreach ($category_artist as $artist) { ?>
-            <div class="div_muzey_text_art"><?php echo($artist['name'])?></div>
-            <div class="container">
-                <div class="row">
-                    <?php foreach ($artist['option_value'] as $artist_art) { ?>
-                            <div class="div_item_text_art col-lg-3" style="background: url(image/<?php echo $artist_art['image'];?>) center no-repeat;">
-                                <a href="http://adastra.local/index.php?route=product/category&path=20_28&mfp=36-muzey[<?php echo $artist_art['name'];?>]">
-                                    <div class="text_title_np_21_art" style=""><?php echo $artist_art['name'];?></div></a>
-                            </div>
-                    <?php } ?>
-                </div>
-            </div>
-        <?php } ?>
-        </div>
+
     </div>
     <div class="row div-advantages-bg no-margin">
-        <div class="container advantages-container-style">
+        <div class="container advantages-container-style hidden-xs">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-top: 5%;">
                 <span class="advantages-style">
                     Наши </br> преимущества
@@ -320,6 +338,29 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="container advantages-container-style visible-xs">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-top: 5%;">
+                <span class="advantages-style">
+                    Здравствуйте
+                </span><br>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 advantages_1-div-style advantages_1-div-style_20">
+                <span class="advantages_1-style" style="text-align: justify;">
+                    Мы рады приветствовать Вас в Галерее Адастра!
+                </span>
+            </div>
+            <div>
+                <p class="advantages-content-style" style="padding: 20px 60px;">
+                    Мы являемся производителями с наличием собственной производственной базы, что дает нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий. При изготовлении нашей продукции используются только экологически чистые материалы, которые не наносят вред вашему здоровью.
+                </p>
+                <p class="advantages-content-style" style="padding: 20px 60px;">
+                    Мы предлагаем Вашему вниманию огромный каталог изображений и широкий выбор фактур и багетов. Технические возможности позволяют нам изготавливать бесшовные обои и фрески до 3,20 м. в высоту и 36 м. в длину.  Вы можете приобрести готовые репродукции картин маслом, заказать печать копии картины на холсте, либо распечатать свое фото, загрузив его на сайт. Кроме того, наши художники выполнят под заказ репродукции картин маслом любого размера на холсте, а дизайнеры изготовят эксклюзивный макет с применением техники коллажа, дорисовки изображений с учетом конфигурации помещения, которое Вы хотите украсить нашими изделиями.
+                </p>
+                <p class="advantages-content-style" style="padding: 20px 60px;">
+                    На сайте размещены не все образцы фактур и багета в связи с их большим количеством. Для более подробного ознакомления с ними приглашаем Вас посетить наш шоу-рум на м. Таганская.
+                </p>
             </div>
         </div>
     </div>
