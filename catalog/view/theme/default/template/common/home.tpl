@@ -1,10 +1,10 @@
 <?php echo $header;?>
 <div id="content" class="dad" xmlns="http://www.w3.org/1999/html">
-    <div class="hidden-sm hidden-xs">
+    <div class="hidden-sm hidden-xs" style="position: relative">
         <?php foreach ($category_home as $key => $category) { ?>
         <?php if(($key == 0)){ ?>
         <div class="add1_2">
-        <div class="add1_1_2"  style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover; "></div>
+        <div class="add1_1_2"  style="background: url(<?php echo $category['image'];?>)center no-repeat; background-size:100% 100%; "></div>
             <div class="div-ramka-style_2"></div>
             <div class="text_kat_name_2">
                 <span><?php echo $category['name']; ?></span>
@@ -16,7 +16,7 @@
         <?php } ?>
         <?php if(($key == 1)){ ?>
         <div class="add1_1">
-            <div class="add1_1_1"  style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
+            <div class="add1_1_1"  style="background: url(<?php echo $category['image'];?>)center no-repeat; background-size:100% 100%;"></div>
             <div class="div-ramka-style"></div>
             <div class="text_kat_name_3">
                 <span><?php echo $category['name']; ?></span>
@@ -28,7 +28,7 @@
         <?php } ?>
         <?php if(($key == 2)){ ?>
         <div class="add1_1">
-        <div class="add1_1_1" style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
+        <div class="add1_1_1" style="background: url(<?php echo $category['image'];?>)center no-repeat; background-size:100% 100%;"></div>
             <div class="div-ramka-style"></div>
             <div class="text_kat_name">
                 <span><?php echo $category['name']; ?></span>
@@ -40,7 +40,7 @@
         <?php } ?>
         <?php if(($key == 3)){ ?>
         <div class="add1_1">
-        <div class="add1_1_1" style="background: url(<?php echo $category['image'];?>)center no-repeat; height: 300px; background-size:cover;"></div>
+        <div class="add1_1_1" style="background: url(<?php echo $category['image'];?>)center no-repeat; background-size:100% 100%;"></div>
             <div class="div-ramka-style"></div>
             <div class="text_kat_name">
                 <span><?php echo $category['name']; ?></span>
@@ -54,12 +54,12 @@
 
         <?php } ?>
         <?php } ?>
-        <div class="add4">
-            <div style="background: url('../../image/catalog/category_5.png')center no-repeat; height: 300px; background-size:cover;"></div>
-            <div id="parallelogram_5"></div>
-            <div class="text_kat_name">
+        <div class="add1_3">
+            <div class="add1_1_3" style="background: url('../../image/catalog/category_5.png')center no-repeat; background-size:100% 100%;"></div>
+            <div class="div-ramka-style_3"></div>
+            <div class="text_kat_name_3">
                 <span>ПЕЧАТЬ ВАШЕГО ФОТО НА ХОЛСТЕ</span>
-                <div class="border_kat">
+                <div class="border_kat_3">
                     <a class="a_kat_adas" href="http://<?php echo $_SERVER['SERVER_NAME']?>/index.php?route=product/product&product_id=62">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>

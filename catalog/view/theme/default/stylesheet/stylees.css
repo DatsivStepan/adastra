@@ -334,7 +334,7 @@
     transform: skew(15deg);
     border: 1px solid;
     height: 300px;
-    width: 470px;
+    width: 135%;
     position: absolute;
     left: -19%;
 }
@@ -343,7 +343,7 @@
     margin-right: 7px;
     margin-left: -5%;
     float: left;
-    width: 25%;
+    width: 22%;
     height: 400px;
     transform: skew(-15deg);
     overflow: hidden;
@@ -353,23 +353,52 @@
     transform: skew(15deg);
     border: 1px solid;
     height: 300px;
-    width: 470px;
+    width: 132%;
     position: absolute;
     left: -19%;
 }
-.div-ramka-style_2{
+.add1_3{
+    margin-top: 6px;
+    margin-right: 7px;
+    margin-left: 0;
+    width: 27%;
+    height: 400px;
+    transform: skew(-15deg);
+    overflow: hidden;
+    position: absolute;
+    right: -6.6%;
+}
+.add1_1_3{
+    transform: skew(15deg);
+    border: 1px solid;
+    height: 300px;
+    width: 130%;
+    position: absolute;
+    left: -19%;
+}
+.div-ramka-style_3{
     background: url(../image/ramka.png)center no-repeat;
-    /* background-size: cover; */
+    background-size: 100% 100%;
     height: 97px;
     width: 100%;
     position: absolute;
     bottom: 0;
     transform: skew(0deg);
-    left: 10%;
+    left: 0;
+}
+.div-ramka-style_2{
+    background: url(../image/ramka.png)center no-repeat;
+    background-size: 100% 100%;
+    height: 97px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    transform: skew(0deg);
+    left: 0;
 }
 .div-ramka-style{
     background: url(../image/ramka.png)center no-repeat;
-    /* background-size: cover; */
+     background-size: 100% 100%;
     height: 97px;
     width: 100%;
     position: absolute;
@@ -409,6 +438,7 @@
 }
 .dad{
     min-height: 400px!important;
+    overflow: hidden;
 }
 
 .text_kat_name {
@@ -439,7 +469,7 @@
     z-index: 101;
     position: absolute;
     bottom: 4%;
-    left: 30%;
+    left: 14%;
     font-family: 'Times New Roman';
     font-size: 15px;
     color: #000!important;
@@ -512,6 +542,9 @@
     text-decoration: none;
 }
 .border_kat{
+    padding-top: 20px;
+}
+.border_kat_3{
     padding-top: 20px;
 }
 .adas_img_sm{
@@ -1293,193 +1326,257 @@
     color: #0b0b0b !important;
     text-decoration: none;
 }
+@media (max-width: 1100px) and (min-width: 992px) {
+    .add1_3 {
+        margin-top: 6px;
+        margin-right: 7px;
+        margin-left: 0;
+        width: 27%;
+        height: 400px;
+        transform: skew(-15deg);
+        overflow: hidden;
+        position: absolute;
+        right: -7.4%;
+    }
+    .add1_1_2 {
+        transform: skew(15deg);
+        border: 1px solid;
+        height: 300px;
+        width: 138%;
+        position: absolute;
+        left: -19%;
+    }
+    .add1_1_1 {
+        transform: skew(15deg);
+        border: 1px solid;
+        height: 300px;
+        width: 140%;
+        position: absolute;
+        left: -20%;
+    }
+}
+@media (max-width: 1200px) and (min-width: 1101px) {
+    .add1_3 {
+        margin-top: 6px;
+        margin-right: 7px;
+        margin-left: 0;
+        width: 27%;
+        height: 400px;
+        transform: skew(-15deg);
+        overflow: hidden;
+        position: absolute;
+        right: -7.0%;
+    }
+    .add1_1_2 {
+        transform: skew(15deg);
+        border: 1px solid;
+        height: 300px;
+        width: 138%;
+        position: absolute;
+        left: -19%;
+    }
+    .add1_1_1 {
+        transform: skew(15deg);
+        border: 1px solid;
+        height: 300px;
+        width: 140%;
+        position: absolute;
+        left: -20%;
+    }
+}
+@media (max-width: 1270px) and (min-width: 1201px) {
+    .add1_3 {
+        margin-top: 6px;
+        margin-right: 7px;
+        margin-left: 0;
+        width: 27%;
+        height: 400px;
+        transform: skew(-15deg);
+        overflow: hidden;
+        position: absolute;
+        right: -6.8%;
+    }
+    .add1_1_2 {
+        transform: skew(15deg);
+        border: 1px solid;
+        height: 300px;
+        width: 138%;
+        position: absolute;
+        left: -19%;
+    }
+    .add1_1_1 {
+        transform: skew(15deg);
+        border: 1px solid;
+        height: 300px;
+        width: 140%;
+        position: absolute;
+        left: -20%;
+    }
+}
+@media (max-width: 1366px) and (min-width: 1271px) {
+    .add1_1_2 {
+        transform: skew(15deg);
+        border: 1px solid;
+        height: 300px;
+        width: 133%;
+        position: absolute;
+        left: -19%;
+    }
+}
 @media (max-width: 1500px) and (min-width: 1367px) {
-    #parallelogram_1 {
-        margin-left: -15px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 77%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-16deg);
-    }
-    #parallelogram {
-        margin-left: 16px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 69%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-16deg);
-    }
-    #parallelogram_5 {
-        margin-left: 14px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 100%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-16deg);
+    .add1_3 {
+        margin-top: 6px;
+        margin-right: 7px;
+        margin-left: 0;
+        width: 27%;
+        height: 400px;
+        transform: skew(-15deg);
+        overflow: hidden;
+        position: absolute;
+        right: -6.4%;
     }
 }
 @media (max-width: 1650px) and (min-width: 1501px) {
-    #parallelogram_1 {
-        margin-left: -17px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 77%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-16deg);
-    }
-    #parallelogram {
-        margin-left: 17px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 69%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-16deg);
-    }
-    #parallelogram_5 {
-        margin-left: 19px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 100%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-16deg);
+    .add1_3 {
+        margin-top: 6px;
+        margin-right: 7px;
+        margin-left: 0;
+        width: 27%;
+        height: 400px;
+        transform: skew(-15deg);
+        overflow: hidden;
+        position: absolute;
+        right: -6.2%;
     }
 }
 @media (max-width: 1800px) and (min-width: 1651px) {
-    #parallelogram_1 {
-        margin-left: -19px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 77%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-19deg);
-    }
-    #parallelogram {
-        margin-left: 19px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 69%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-19deg);
-    }
-    #parallelogram_5 {
-        margin-left: 18px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 100%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-19deg);
+    .add1_3 {
+        margin-top: 6px;
+        margin-right: 7px;
+        margin-left: 0;
+        width: 27%;
+        height: 400px;
+        transform: skew(-15deg);
+        overflow: hidden;
+        position: absolute;
+        right: -6.0%;
     }
 }
 @media (max-width: 1920px) and (min-width: 1801px) {
-    #parallelogram_1 {
-        margin-left: -17px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 77%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-20deg);
+    .add1_3 {
+        margin-top: 6px;
+        margin-right: 7px;
+        margin-left: 0;
+        width: 27%;
+        height: 470px;
+        transform: skew(-15deg);
+        overflow: hidden;
+        position: absolute;
+        right: -5.8%;
     }
-    #parallelogram {
-        margin-left: 21px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 69%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-20deg);
+
+    .add1_1_2 {
+        transform: skew(15deg);
+        border: 1px solid;
+        height: 370px;
+        width: 132%;
+        position: absolute;
+        left: -19%;
     }
-    #parallelogram_5 {
-        margin-left: 20px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 100%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-20deg);
+    .add1_2 {
+        margin-top: 6px;
+        margin-right: 7px;
+        margin-left: -5%;
+        float: left;
+        width: 22%;
+        height: 470px;
+        transform: skew(-15deg);
+        overflow: hidden;
+        position: relative;
+    }
+    .add1_1 {
+        margin-top: 6px;
+        margin-right: 7px;
+        float: left;
+        width: 20%;
+        height: 470px;
+        transform: skew(-15deg);
+        overflow: hidden;
+        position: relative;
+    }
+    .add1_1_1 {
+        transform: skew(15deg);
+        border: 1px solid;
+        height: 370px;
+        width: 135%;
+        position: absolute;
+        left: -19%;
+    }
+    .add1_1_3 {
+        transform: skew(15deg);
+        border: 1px solid;
+         height: 370px;
+        width: 130%;
+        position: absolute;
+        left: -19%;
     }
 }
 @media (min-width: 1921px) {
-    #parallelogram_1 {
-        margin-left: -21px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 77%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-22deg);
+    .add1_3 {
+        margin-top: 6px;
+        margin-right: 7px;
+        margin-left: 0;
+        width: 27%;
+        height: 470px;
+        transform: skew(-15deg);
+        overflow: hidden;
+        position: absolute;
+        right: -5.8%;
     }
-    #parallelogram {
-        margin-left: 24px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 69%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-22deg);
+
+    .add1_1_2 {
+        transform: skew(15deg);
+        border: 1px solid;
+        height: 370px;
+        width: 132%;
+        position: absolute;
+        left: -19%;
     }
-    #parallelogram_5 {
-        margin-left: 24px;
-        margin-top: 5px;
-        border: 1px solid #000;
-        width: 100%;
-        height: 95px;
-        /* background: #8734f7; */
-        -webkit-transform: skew(-15deg);
-        -moz-transform: skew(-15deg);
-        -o-transform: skew(-15deg);
-        transform: skew(-22deg);
+    .add1_2 {
+        margin-top: 6px;
+        margin-right: 7px;
+        margin-left: -5%;
+        float: left;
+        width: 22%;
+        height: 470px;
+        transform: skew(-15deg);
+        overflow: hidden;
+        position: relative;
+    }
+    .add1_1 {
+        margin-top: 6px;
+        margin-right: 7px;
+        float: left;
+        width: 20%;
+        height: 470px;
+        transform: skew(-15deg);
+        overflow: hidden;
+        position: relative;
+    }
+    .add1_1_1 {
+        transform: skew(15deg);
+        border: 1px solid;
+        height: 370px;
+        width: 135%;
+        position: absolute;
+        left: -19%;
+    }
+    .add1_1_3 {
+        transform: skew(15deg);
+        border: 1px solid;
+        height: 370px;
+        width: 130%;
+        position: absolute;
+        left: -19%;
     }
 }
