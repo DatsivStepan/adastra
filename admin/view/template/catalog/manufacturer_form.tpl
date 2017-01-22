@@ -1,5 +1,5 @@
 <?php echo $header; ?><?php echo $column_left; ?>
-<div id="content">
+<div id="content" xmlns="http://www.w3.org/1999/html">
   <div class="page-header">
     <div class="container-fluid">
       <div class="pull-right">
@@ -29,6 +29,16 @@
             <label class="col-sm-2 control-label" for="input-name"><?php echo $entry_name; ?></label>
             <div class="col-sm-10">
               <input type="text" name="name" value="<?php echo $name; ?>" placeholder="<?php echo $entry_name; ?>" id="input-name" class="form-control" />
+              <?php if ($error_name) { ?>
+              <div class="text-danger"><?php echo $error_name; ?></div>
+              <?php } ?>
+            </div>
+          </div>
+          <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-name"><?php echo $entry_description; ?></label>
+            <div class="col-sm-10">
+
+              <textarea type="text" name="description" placeholder="<?php echo $entry_description; ?>" id="input-name" class="form-control" /><?= $description; ?></textarea>
               <?php if ($error_name) { ?>
               <div class="text-danger"><?php echo $error_name; ?></div>
               <?php } ?>
