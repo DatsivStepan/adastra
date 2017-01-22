@@ -20,6 +20,7 @@ class ControllerCatalogManufacturer extends Controller {
 		$this->load->model('catalog/manufacturer');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
+
 			$this->model_catalog_manufacturer->addManufacturer($this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
@@ -40,9 +41,8 @@ class ControllerCatalogManufacturer extends Controller {
 
 			$this->response->redirect($this->url->link('catalog/manufacturer', 'token=' . $this->session->data['token'] . $url, 'SSL'));
 		}
-
-		$this->getForm();
-	}
+        $this->getForm();
+    }
 
 	public function edit() {
 		$this->language->load('catalog/manufacturer');
@@ -52,6 +52,7 @@ class ControllerCatalogManufacturer extends Controller {
 		$this->load->model('catalog/manufacturer');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
+
 			$this->model_catalog_manufacturer->editManufacturer($this->request->get['manufacturer_id'], $this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
@@ -270,6 +271,7 @@ class ControllerCatalogManufacturer extends Controller {
 		$data['text_amount'] = $this->language->get('text_amount');
 
 		$data['entry_name'] = $this->language->get('entry_name');
+		$data['entry_description'] = $this->language->get('entry_description');
 		$data['entry_store'] = $this->language->get('entry_store');
 		$data['entry_keyword'] = $this->language->get('entry_keyword');
 		$data['entry_image'] = $this->language->get('entry_image');
@@ -346,6 +348,14 @@ class ControllerCatalogManufacturer extends Controller {
 		} else {
 			$data['name'] = '';
 		}
+
+        if (isset($this->request->post['description'])) {
+            $data['description'] = $this->request->post['description'];
+        } elseif (!empty($manufacturer_info)) {
+            $data['description'] = $manufacturer_info['description'];
+        } else {
+            $data['description'] = '';
+        }
 
 		$this->load->model('setting/store');
 

@@ -1,10 +1,10 @@
 <?php
 // Heading
-$_['heading_title']      = 'Производители';
+$_['heading_title']      = 'Музеи';
 
 // Text
 $_['text_success']       = 'Настройки успешно изменены!';
-$_['text_list']          = 'Производители';
+$_['text_list']          = 'Музеи';
 $_['text_add']          = 'Добавить';
 $_['text_edit']         = 'Редактирование';
 $_['text_default']       = 'Основной магазин';
@@ -12,12 +12,13 @@ $_['text_percent']       = 'Процент';
 $_['text_amount']        = 'Фиксированная сумма';
 
 // Column
-$_['column_name']        = 'Производитель';
+$_['column_name']        = 'Музеи';
 $_['column_sort_order']  = 'Порядок сортировки';
 $_['column_action']      = 'Действие';
 
 // Entry
-$_['entry_name']         = 'Производитель';
+$_['entry_name']         = 'Музеи';
+$_['entry_description']  = 'Описание';
 $_['entry_store']        = 'Магазины';
 $_['entry_keyword']      = 'SEO URL';
 $_['entry_image']        = 'Изображение';

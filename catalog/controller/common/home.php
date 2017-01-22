@@ -13,6 +13,16 @@ class ControllerCommonHome extends Controller {
 		}
         $this->load->model('tool/image');
         $this->load->model('catalog/category');
+        $this->load->model('catalog/manufacturer');
+
+        $manufacturers = $this->model_catalog_manufacturer->getManufacturers();
+        foreach ($manufacturers as $manufacturer){
+            $data['manufacturers'][] = array(
+                'manufacturer_id'  => $manufacturer['manufacturer_id'],
+                'name'  => $manufacturer['name'],
+                'image' => $manufacturer['image']
+            );
+        }
 
         $data['category_home'] = array();
 
