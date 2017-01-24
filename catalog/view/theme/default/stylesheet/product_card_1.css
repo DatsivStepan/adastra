@@ -760,6 +760,7 @@
     width: 100%;
     background-size: contain;
     min-width: 40px;
+    max-height: 500px;
 }
 
 #frame {
