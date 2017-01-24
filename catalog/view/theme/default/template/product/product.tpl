@@ -735,7 +735,7 @@
                                 break;
                             case 'горизонтальное_смещение':
                                 ?>
-                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>" style="display: none;">
                                 <label class="control-label"
                                        for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
                                 <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
@@ -749,7 +749,7 @@
                                 break;
                             case 'вертикальное_смещение':
                                 ?>
-                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>" style="display: none;">
                                 <label class="control-label"
                                        for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
                                 <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
@@ -763,7 +763,7 @@
                                 break;
                             case 'цифровая_высота':
                                 ?>
-                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>" style="display: none;">
                                 <label class="control-label"
                                        for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
                                 <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
@@ -777,7 +777,7 @@
                                 break;
                             case 'цифровая_ширина':
                                 ?>
-                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>" style="display: none;">
                                 <label class="control-label"
                                        for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
                                 <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"

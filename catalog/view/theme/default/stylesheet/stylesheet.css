@@ -2425,6 +2425,13 @@ h2.price {
 	background-image: url("../image/cartocka_phone.png");
 	background-size: cover;
 	background-position: center;
+	min-height: 700px;
+	margin-top: 30px;
+}
+@media (max-width: 767px){
+	.card-phone-div-style{
+		min-height: 0px;
+	}
 }
 .card-form-div-style{
 	line-height: 27px;
