@@ -54,8 +54,21 @@ function ready() {
     var WIDTH_ID = "Ширина";
     var HEIGHT_ID = "Высота";
 
+    var DIGITAL_WIDTH_ID  = "цифровая_ширина";
+    var DIGITAL_HEIGHT_ID = "цифровая_высота";
+    var HORIZONTAL_DISPLACEMENT_ID = "горизонтальное_смещение";
+    var VERTICAL_DISPLACEMENT_ID   = "вертикальное_смещение";
+
+    var DIGITAL_WIDTH  = document.getElementById(DIGITAL_WIDTH_ID);
+    var DIGITAL_HEIGHT = document.getElementById(DIGITAL_HEIGHT_ID);
+    var HORIZONTAL_DISPLACEMENT = document.getElementById(HORIZONTAL_DISPLACEMENT_ID);
+    var VERTICAL_DISPLACEMENT   = document.getElementById(VERTICAL_DISPLACEMENT_ID);
+
     //потом
     var MAX_CROPPER_SIZE_ID = "maxCropperSize";
+    var PHOTO_ON_ID = "photoOn";
+
+    var PHOTO_ON = document.getElementById(PHOTO_ON_ID);
 
     var MAX_CROPPER_SIZE = document.getElementById(MAX_CROPPER_SIZE_ID);
 
@@ -89,9 +102,10 @@ function ready() {
         textureWidth = parseInt(this.children[0].getAttribute('textureWidth'));
         textureHeight = parseInt(this.children[0].getAttribute('textureHeight'));
 
-        if (MAX_CROPPER_SIZE.checked) {
+
+        //if (MAX_CROPPER_SIZE.checked) {
             MAX_CROPPER_SIZE.dispatchEvent(new Event("click"));
-        }
+        //}
         checkTooltip();
     };
 
@@ -139,19 +153,22 @@ function ready() {
     var hStart = hSliderMaxValue * pictureRealHeight / hSliderRealMaxValue;
     var wStart = wSliderMaxValue * pictureRealWidth / wSliderRealMaxValue;
 
+    var PICTURE_ASPECT_RATIO = pictureRealWidth/pictureRealHeight;
+    var CROPPER_ASPECT_RATIO = 1;
+
     heightInput.value = pictureRealHeight;
     widthInput.value = pictureRealWidth;
     var setSliderLabels = function (width, height) {
 
         var w = Math.round(width * wSliderRealMaxValue / wSliderMaxValue);
 
-        document.querySelector("#wSlider .noUi-tooltip").innerHTML = w;
+        document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
         //ширина
         widthInput.value = w;
 
         var h = Math.round(height * hSliderRealMaxValue / hSliderMaxValue);
 
-        document.querySelector("#hSlider .noUi-tooltip").innerHTML = h;
+        document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
 
         //высота
         heightInput.value = h;
@@ -160,7 +177,620 @@ function ready() {
     var wSlider = document.getElementById('wSlider');
     var hSlider = document.getElementById('hSlider');
 
-    noUiSlider.create(wSlider, {
+    /*
+     если заданы все 4 вспомогательные опции кропика инициализируем необходимые обьекты
+     в противном случае только пропорционально меняем высоту и ширину
+     */
+    if (DIGITAL_WIDTH && DIGITAL_HEIGHT && HORIZONTAL_DISPLACEMENT && VERTICAL_DISPLACEMENT) {
+        //var image = document.getElementById('image');
+
+        var cropper = new Cropper(image, {
+            viewMode:3,
+            zoomable: false,
+            ready: function(e){
+                var crop_container = cropper.getContainerData();
+                var c_side = 0;
+                if(crop_container.width > crop_container.height){
+                    c_side = (crop_container.height/2).toFixed();
+                }else{
+                    c_side = (crop_container.width/2).toFixed();
+                }
+
+                var x = (crop_container.width/2  - c_side/2).toFixed();
+                var y = (crop_container.height/2 - c_side/2).toFixed();
+                var data = cropper.getCropBoxData();
+                data.left = x*1;
+                data.top = y*1;
+                data.width = c_side*1;
+                data.height = c_side*1;
+                cropper.setCropBoxData(data);
+            },
+            crop: function(e) {
+
+                DIGITAL_WIDTH.value  = Math.round(e.detail.width);
+                DIGITAL_HEIGHT.value = Math.round(e.detail.height);
+                HORIZONTAL_DISPLACEMENT.value = Math.round(e.detail.x);
+                VERTICAL_DISPLACEMENT.value   = Math.round(e.detail.y);
+
+                CROPPER_ASPECT_RATIO = (DIGITAL_WIDTH.value/DIGITAL_HEIGHT.value).toFixed(2);
+            },
+            cropend: function(e){
+                var c_r_width  = widthInput.value;
+                var c_r_height = heightInput.value;
+
+                var w = c_r_width;
+                var h = (c_r_width/CROPPER_ASPECT_RATIO).toFixed();
+
+                wSliderRealMaxValue = Math.ceil(w / textureWidth) * textureWidth;
+                hSliderRealMaxValue = Math.ceil(h / textureHeight) * textureHeight;
+
+                document.getElementById('maxWidth').innerHTML = wSliderRealMaxValue;
+                document.getElementById('maxHeight').innerHTML = hSliderRealMaxValue;
+
+                wSlider.noUiSlider.updateOptions({
+                    range: {
+                        'min': 0,
+                        'max': wSliderRealMaxValue
+                    }
+                });
+                hSlider.noUiSlider.updateOptions({
+                    range: {
+                        'min': 0,
+                        'max': hSliderRealMaxValue
+                    }
+                });
+
+                wSlider.noUiSlider.set([w, null]);
+                hSlider.noUiSlider.set([h, null]);
+
+                widthInput.value  = w;
+                heightInput.value = h;
+
+                document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
+                document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+
+                checkTooltip();
+                recalculateprice();
+            }
+        });
+
+        noUiSlider.create(wSlider, {
+            start: pictureRealWidth,
+            connect: [true, false],
+            animate: false,
+            tooltips: true,
+            step: 1,
+            range: {
+                'min': 0,
+                'max': wSliderRealMaxValue
+            }
+        });
+        noUiSlider.create(hSlider, {
+            start: pictureRealHeight,
+            connect: [true, false],
+            animate: false,
+            tooltips: true,
+            step: 1,
+            range: {
+                'min': 0,
+                'max': hSliderRealMaxValue
+            }
+        });
+        document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(pictureRealWidth);
+        document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(pictureRealHeight);
+
+        wSlider.noUiSlider.on('slide', function () {
+            var pre_height = parseFloat(heightInput.value);
+            var pre_width = parseFloat(widthInput.value);
+
+            var c_width  = wSlider.noUiSlider.get() * 1;
+            var c_height = hSlider.noUiSlider.get() * 1;
+
+            var w = c_width;
+            var h = pre_height;
+
+            h = Math.round(c_width/CROPPER_ASPECT_RATIO);
+
+            if(h <= 1 || h > hSliderRealMaxValue){
+                h = pre_height;
+                w = pre_width;
+
+                wSlider.noUiSlider.set(w);
+                hSlider.noUiSlider.set(h);
+            }else{
+                hSlider.noUiSlider.set(h);
+            }
+
+            heightInput.value = h;
+            widthInput.value = w;
+
+            document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
+            document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+
+            checkTooltip();
+            recalculateprice();
+        });
+
+        hSlider.noUiSlider.on('slide', function () {
+            var pre_height = parseFloat(heightInput.value);
+            var pre_width = parseFloat(widthInput.value);
+
+            var c_width  = wSlider.noUiSlider.get() * 1;
+            var c_height = hSlider.noUiSlider.get() * 1;
+
+            var w = pre_width;
+            var h = c_height;
+
+            w = Math.round(c_height*CROPPER_ASPECT_RATIO);
+
+            if(w <= 1 || w > wSliderRealMaxValue){
+                h = pre_height;
+                w = pre_width;
+
+                wSlider.noUiSlider.set(w);
+                hSlider.noUiSlider.set(h);
+            }else{
+                wSlider.noUiSlider.set(w);
+            }
+
+            heightInput.value = h;
+            widthInput.value = w;
+
+            document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
+            document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+
+            checkTooltip();
+            recalculateprice();
+        });
+
+        VMasker(widthInput).maskNumber();
+        widthInput.addEventListener("change", function () {
+            MAX_CROPPER_SIZE.checked = false;
+            var pre_height = hSlider.noUiSlider.get() * 1;
+            var pre_width  = wSlider.noUiSlider.get() * 1;
+
+            if (parseInt(this.value) > 10000) {
+                this.value = 10000;
+            }
+
+            if (MAX_CROPPER_SIZE.checked) {
+                if (parseInt(this.value) > textureWidth) {
+                    this.value = textureWidth;
+                }
+            }
+
+            var h = Math.round(this.value/CROPPER_ASPECT_RATIO);
+
+            heightInput.value = h;
+            if(h <= 1){
+                h = pre_height;
+                w = pre_width;
+
+                widthInput.value  = w;
+                heightInput.value = h;
+            }
+
+            wSliderRealMaxValue = Math.ceil(this.value / textureWidth) * textureWidth;
+            hSliderRealMaxValue = Math.ceil(h / textureHeight) * textureHeight;
+
+            document.getElementById('maxWidth').innerHTML = wSliderRealMaxValue;
+            document.getElementById('maxHeight').innerHTML = hSliderRealMaxValue;
+
+            wSlider.noUiSlider.updateOptions({
+                range: {
+                    'min': 0,
+                    'max': wSliderRealMaxValue
+                }
+            });
+            hSlider.noUiSlider.updateOptions({
+                range: {
+                    'min': 0,
+                    'max': hSliderRealMaxValue
+                }
+            });
+
+            wSlider.noUiSlider.set([this.value, null]);
+            hSlider.noUiSlider.set([h, null]);
+
+
+
+            checkTooltip();
+            recalculateprice();
+        });
+
+        VMasker(heightInput).maskNumber();
+        heightInput.addEventListener("change", function () {
+            MAX_CROPPER_SIZE.checked = false;
+            var pre_height = hSlider.noUiSlider.get() * 1;
+            var pre_width  = wSlider.noUiSlider.get() * 1;
+
+            if (parseInt(this.value) > 10000) {
+                this.value = 10000;
+            }
+
+            if (MAX_CROPPER_SIZE.checked) {
+                if (parseInt(this.value) > textureHeight) {
+                    this.value = textureHeight;
+                }
+            }
+
+            var w = Math.round(this.value*CROPPER_ASPECT_RATIO);
+
+            widthInput.value = w;
+            if(w <= 1){
+                h = pre_height;
+                w = pre_width;
+
+                widthInput.value  = w;
+                heightInput.value = h;
+            }
+
+            wSliderRealMaxValue = Math.ceil(w / textureWidth) * textureWidth;
+            hSliderRealMaxValue = Math.ceil(this.value / textureHeight) * textureHeight;
+
+            document.getElementById('maxWidth').innerHTML = wSliderRealMaxValue;
+            document.getElementById('maxHeight').innerHTML = hSliderRealMaxValue;
+
+            wSlider.noUiSlider.updateOptions({
+                range: {
+                    'min': 0,
+                    'max': wSliderRealMaxValue
+                }
+            });
+            hSlider.noUiSlider.updateOptions({
+                range: {
+                    'min': 0,
+                    'max': hSliderRealMaxValue
+                }
+            });
+
+            wSlider.noUiSlider.set([w, null]);
+            hSlider.noUiSlider.set([this.value, null]);
+
+            checkTooltip();
+            recalculateprice();
+        });
+
+        MAX_CROPPER_SIZE.addEventListener("click", function () {
+            if (this.checked) {
+                var classname = document.getElementsByClassName("textureSelector");
+                for (var i = 0; i < classname.length; i++) {
+                    classname[i].addEventListener('click', setTexture, false);
+                    if (classname[i].children[0].checked) {
+                        var textureWidth = parseInt(classname[i].children[0].getAttribute("textureWidth"));
+                        var textureHeight = parseInt(classname[i].children[0].getAttribute("textureHeight"));
+                    }
+                }
+
+                hSliderRealMaxValue = textureHeight;
+                wSliderRealMaxValue = textureWidth;
+
+                document.getElementById('maxHeight').innerHTML = hSliderRealMaxValue;
+                document.getElementById('maxWidth').innerHTML = wSliderRealMaxValue;
+
+                var h = 0;
+                var w = 0;
+                if(pictureRealHeight < pictureRealWidth){
+                    if(pictureRealWidth > textureWidth){
+                        w = textureWidth;
+                    }else{
+                        w = pictureRealWidth;
+                    }
+                    h = Math.round(w / CROPPER_ASPECT_RATIO);
+                    if(h > textureHeight){
+                        h = textureHeight;
+                    }
+                    w = Math.round(h*CROPPER_ASPECT_RATIO);
+                }else{
+                    if(pictureRealHeight > textureHeight){
+                        h = textureHeight;
+                    }else{
+                        h = pictureRealHeight;
+                    }
+                    w = Math.round(h * CROPPER_ASPECT_RATIO);
+                    if(w > textureWidth){
+                        w = textureWidth;
+                    }
+                    h = Math.round(w/CROPPER_ASPECT_RATIO);
+                }
+
+                wSlider.noUiSlider.updateOptions({
+                    range: {
+                        'min': 0,
+                        'max': wSliderRealMaxValue
+                    }
+                });
+                hSlider.noUiSlider.updateOptions({
+                    range: {
+                        'min': 0,
+                        'max': hSliderRealMaxValue
+                    }
+                });
+
+                hSlider.noUiSlider.set([h, null]);
+                wSlider.noUiSlider.set([w, null]);
+
+                widthInput.value  = w;
+                heightInput.value = h;
+
+                document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
+                document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+            }
+            checkTooltip();
+            recalculateprice();
+        });
+
+    }
+    else
+        {
+        noUiSlider.create(wSlider, {
+            start: pictureRealWidth,
+            connect: [true, false],
+            animate: false,
+            tooltips: true,
+            step: 1,
+            range: {
+                'min': 0,
+                'max': wSliderRealMaxValue
+            }
+        });
+        noUiSlider.create(hSlider, {
+            start: pictureRealHeight,
+            connect: [true, false],
+            animate: false,
+            tooltips: true,
+            step: 1,
+            range: {
+                'min': 0,
+                'max': hSliderRealMaxValue
+            }
+        });
+        document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(pictureRealWidth);
+        document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(pictureRealHeight);
+
+        wSlider.noUiSlider.on('slide', function () {
+            var pre_height = parseFloat(heightInput.value);
+            var pre_width = parseFloat(widthInput.value);
+
+            var c_width  = wSlider.noUiSlider.get() * 1;
+            var c_height = hSlider.noUiSlider.get() * 1;
+
+            var w = c_width;
+            var h = pre_height;
+
+            h = Math.round(c_width/PICTURE_ASPECT_RATIO);
+
+            if(h <= 1 || h > hSliderRealMaxValue){
+                h = pre_height;
+                w = pre_width;
+
+                wSlider.noUiSlider.set(w);
+                hSlider.noUiSlider.set(h);
+            }else{
+                hSlider.noUiSlider.set(h);
+            }
+
+            heightInput.value = h;
+            widthInput.value = w;
+
+            document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
+            document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+
+            checkTooltip();
+            recalculateprice();
+        });
+
+        hSlider.noUiSlider.on('slide', function () {
+            var pre_height = parseFloat(heightInput.value);
+            var pre_width = parseFloat(widthInput.value);
+
+            var c_width  = wSlider.noUiSlider.get() * 1;
+            var c_height = hSlider.noUiSlider.get() * 1;
+
+            var w = pre_width;
+            var h = c_height;
+
+            w = Math.round(c_height*PICTURE_ASPECT_RATIO);
+
+            if(w <= 1 || w > wSliderRealMaxValue){
+                h = pre_height;
+                w = pre_width;
+
+                wSlider.noUiSlider.set(w);
+                hSlider.noUiSlider.set(h);
+            }else{
+                wSlider.noUiSlider.set(w);
+            }
+
+            heightInput.value = h;
+            widthInput.value = w;
+
+            document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
+            document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+
+            checkTooltip();
+            recalculateprice();
+        });
+
+        VMasker(widthInput).maskNumber();
+        widthInput.addEventListener("change", function () {
+            MAX_CROPPER_SIZE.checked = false;
+            var pre_height = hSlider.noUiSlider.get() * 1;
+            var pre_width  = wSlider.noUiSlider.get() * 1;
+
+            if (parseInt(this.value) > 10000) {
+                this.value = 10000;
+            }
+
+            if (MAX_CROPPER_SIZE.checked) {
+                if (parseInt(this.value) > textureWidth) {
+                    this.value = textureWidth;
+                }
+            }
+
+            var h = Math.round(this.value/PICTURE_ASPECT_RATIO);
+
+            heightInput.value = h;
+            if(h <= 1){
+                h = pre_height;
+                w = pre_width;
+
+                widthInput.value  = w;
+                heightInput.value = h;
+            }
+
+            wSliderRealMaxValue = Math.ceil(this.value / textureWidth) * textureWidth;
+            hSliderRealMaxValue = Math.ceil(h / textureHeight) * textureHeight;
+
+            document.getElementById('maxWidth').innerHTML = wSliderRealMaxValue;
+            document.getElementById('maxHeight').innerHTML = hSliderRealMaxValue;
+
+            wSlider.noUiSlider.updateOptions({
+                range: {
+                    'min': 0,
+                    'max': wSliderRealMaxValue
+                }
+            });
+            hSlider.noUiSlider.updateOptions({
+                range: {
+                    'min': 0,
+                    'max': hSliderRealMaxValue
+                }
+            });
+
+            wSlider.noUiSlider.set([this.value, null]);
+            hSlider.noUiSlider.set([h, null]);
+
+
+
+            checkTooltip();
+            recalculateprice();
+        });
+
+        VMasker(heightInput).maskNumber();
+        heightInput.addEventListener("change", function () {
+            MAX_CROPPER_SIZE.checked = false;
+            var pre_height = hSlider.noUiSlider.get() * 1;
+            var pre_width  = wSlider.noUiSlider.get() * 1;
+
+            if (parseInt(this.value) > 10000) {
+                this.value = 10000;
+            }
+
+            if (MAX_CROPPER_SIZE.checked) {
+                if (parseInt(this.value) > textureHeight) {
+                    this.value = textureHeight;
+                }
+            }
+
+            var w = Math.round(this.value*PICTURE_ASPECT_RATIO);
+
+            widthInput.value = w;
+            if(w <= 1){
+                h = pre_height;
+                w = pre_width;
+
+                widthInput.value  = w;
+                heightInput.value = h;
+            }
+
+            wSliderRealMaxValue = Math.ceil(w / textureWidth) * textureWidth;
+            hSliderRealMaxValue = Math.ceil(this.value / textureHeight) * textureHeight;
+
+            document.getElementById('maxWidth').innerHTML = wSliderRealMaxValue;
+            document.getElementById('maxHeight').innerHTML = hSliderRealMaxValue;
+
+            wSlider.noUiSlider.updateOptions({
+                range: {
+                    'min': 0,
+                    'max': wSliderRealMaxValue
+                }
+            });
+            hSlider.noUiSlider.updateOptions({
+                range: {
+                    'min': 0,
+                    'max': hSliderRealMaxValue
+                }
+            });
+
+            wSlider.noUiSlider.set([w, null]);
+            hSlider.noUiSlider.set([this.value, null]);
+
+            checkTooltip();
+            recalculateprice();
+        });
+
+        MAX_CROPPER_SIZE.addEventListener("click", function () {
+            if (this.checked) {
+                var classname = document.getElementsByClassName("textureSelector");
+                for (var i = 0; i < classname.length; i++) {
+                    classname[i].addEventListener('click', setTexture, false);
+                    if (classname[i].children[0].checked) {
+                        var textureWidth = parseInt(classname[i].children[0].getAttribute("textureWidth"));
+                        var textureHeight = parseInt(classname[i].children[0].getAttribute("textureHeight"));
+                    }
+                }
+
+                hSliderRealMaxValue = textureHeight;
+                wSliderRealMaxValue = textureWidth;
+
+                document.getElementById('maxHeight').innerHTML = hSliderRealMaxValue;
+                document.getElementById('maxWidth').innerHTML = wSliderRealMaxValue;
+
+                var h = 0;
+                var w = 0;
+                if(pictureRealHeight < pictureRealWidth){
+                    if(pictureRealWidth > textureWidth){
+                        w = textureWidth;
+                    }else{
+                        w = pictureRealWidth;
+                    }
+                    h = Math.round(w / PICTURE_ASPECT_RATIO);
+                    if(h > textureHeight){
+                        h = textureHeight;
+                    }
+                    w = Math.round(h*PICTURE_ASPECT_RATIO);
+                }else{
+                    if(pictureRealHeight > textureHeight){
+                        h = textureHeight;
+                    }else{
+                        h = pictureRealHeight;
+                    }
+                    w = Math.round(h * PICTURE_ASPECT_RATIO);
+                    if(w > textureWidth){
+                        w = textureWidth;
+                    }
+                    h = Math.round(w/PICTURE_ASPECT_RATIO);
+                }
+
+                wSlider.noUiSlider.updateOptions({
+                    range: {
+                        'min': 0,
+                        'max': wSliderRealMaxValue
+                    }
+                });
+                hSlider.noUiSlider.updateOptions({
+                    range: {
+                        'min': 0,
+                        'max': hSliderRealMaxValue
+                    }
+                });
+
+                hSlider.noUiSlider.set([h, null]);
+                wSlider.noUiSlider.set([w, null]);
+
+                widthInput.value  = w;
+                heightInput.value = h;
+
+                document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
+                document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+            }
+            checkTooltip();
+            recalculateprice();
+        });
+    }
+
+    /*noUiSlider.create(wSlider, {
         start: wStart,
         connect: [true, false],
         animate: false,
@@ -240,11 +870,11 @@ function ready() {
         setFrame(frameName_corner);
         checkTooltip();
         recalculateprice();
-    });
+    });*/
 
-    setSliderLabels(wSlider.noUiSlider.get() * 1, hSlider.noUiSlider.get() * 1);
+    //setSliderLabels(wSlider.noUiSlider.get() * 1, hSlider.noUiSlider.get() * 1);
 
-    VMasker(widthInput).maskNumber();
+    /*VMasker(widthInput).maskNumber();
     widthInput.addEventListener("change", function () {
 
         if (parseInt(this.value) > 10000) {
@@ -290,11 +920,11 @@ function ready() {
 
         setSliderLabels(wSlider.noUiSlider.get() * 1, h);
         checkTooltip();
-    });
+    });*/
 
     //setSliderLabels(wSliderMaxValue * CROPPER_ASPECT_RATIO, hSliderMaxValue * CROPPER_ASPECT_RATIO);
 
-    MAX_CROPPER_SIZE.addEventListener("click", function () {
+    /*MAX_CROPPER_SIZE.addEventListener("click", function () {
         if (this.checked) {
             var classname = document.getElementsByClassName("textureSelector");
             for (var i = 0; i < classname.length; i++) {
@@ -328,7 +958,7 @@ function ready() {
             setSliderLabels(w, h);
         }
         checkTooltip();
-    });
+    });*/
 
     var contrast_min50 = document.getElementById(CONTRAST_MIN50_ID);
     if (contrast_min50) {

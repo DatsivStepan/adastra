@@ -105,7 +105,7 @@
                         switch (mb_strtolower($option['name'])) {
                             case 'фотография':
                             ?>
-                                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                        <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>" id="photoOn">
                                             <button class="btnPhotoRotateLeft btn btn-default btn-block" id="btnPhotoRotateLeft">
                                                 <i class="fa fa-undo" aria-hidden="true" style="font-size: 25px"></i>
                                             </button>
@@ -729,6 +729,62 @@
                                     </div>
 
                                 </div>
+                            </div>
+
+                            <?php
+                                break;
+                            case 'горизонтальное_смещение':
+                                ?>
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"
+                                       for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+                                <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
+                                       value="<?php echo $option['value']; ?>"
+                                       placeholder="<?php echo $option['name']; ?>"
+                                       id="<?php echo $option['name']; ?>"
+                                       class="form-control"/>
+                            </div>
+
+                            <?php
+                                break;
+                            case 'вертикальное_смещение':
+                                ?>
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"
+                                       for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+                                <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
+                                       value="<?php echo $option['value']; ?>"
+                                       placeholder="<?php echo $option['name']; ?>"
+                                       id="<?php echo $option['name']; ?>"
+                                       class="form-control"/>
+                            </div>
+
+                            <?php
+                                break;
+                            case 'цифровая_высота':
+                                ?>
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"
+                                       for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+                                <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
+                                       value="<?php echo $option['value']; ?>"
+                                       placeholder="<?php echo $option['name']; ?>"
+                                       id="<?php echo $option['name']; ?>"
+                                       class="form-control"/>
+                            </div>
+
+                            <?php
+                                break;
+                            case 'цифровая_ширина':
+                                ?>
+                            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+                                <label class="control-label"
+                                       for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+                                <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
+                                       value="<?php echo $option['value']; ?>"
+                                       placeholder="<?php echo $option['name']; ?>"
+                                       id="<?php echo $option['name']; ?>"
+                                       class="form-control"/>
                             </div>
 
                             <?php
