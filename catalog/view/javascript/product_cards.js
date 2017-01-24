@@ -1,7 +1,13 @@
 /**
  * Created by lexlazzy on 24.11.2016.
  */
-
+var global_img;
+var orientation = true;
+var tmp_imageClientWidth = 0;
+var tmp_imageClientHeight = 0;
+var PICTURE_ASPECT_RATIO = 1;
+var CROPPER_ASPECT_RATIO = 1;
+var frameName_corner = "";
 function ready() {
 
     var setFrame = function () {
@@ -10,6 +16,8 @@ function ready() {
     };
 
     var image = document.getElementById('image');
+    var imageClientWidth  = image.clientWidth;
+    var imageClientHeight = image.clientHeight;
     var picture = document.getElementById('picture');
     var imageContainer = document.getElementById('product_image-pc');
     var imageContainerWidth = imageContainer.offsetWidth;
@@ -18,9 +26,22 @@ function ready() {
     var imageMaxWidth = frameWidth - 60;
 
     var calcFrameBox = function () {
+        var cont_a_r = imageClientWidth/imageClientHeight;
+        var cont_w = 0;
+        var cont_h = 0;
+
+        if(imageClientWidth > imageClientHeight){
+            var cont_w = 500;
+            var cont_h = (500 / cont_a_r).toFixed();
+        }else{
+            var cont_h = 500;
+            var cont_w = (500 * cont_a_r).toFixed();
+        }
 
         picture.style.width = "100%";
-        picture.style.maxWidth = (frameWidth - 60) + "px";
+        //picture.style.maxWidth = (frameWidth - 60) + "px";
+        picture.style.maxWidth  = cont_w + "px";
+        picture.style.maxHeight = cont_h + "px";
 
         image.style.width = "100%";
         image.style.maxWidth = (frameWidth - 60) + "px";
@@ -73,7 +94,7 @@ function ready() {
     var MAX_CROPPER_SIZE = document.getElementById(MAX_CROPPER_SIZE_ID);
 
     //ELEMENTS DEFINITION
-    var frameName_corner = "";
+     frameName_corner = "";
 
 
     var heightInput = document.querySelector("input#" + HEIGHT_ID);
@@ -153,8 +174,8 @@ function ready() {
     var hStart = hSliderMaxValue * pictureRealHeight / hSliderRealMaxValue;
     var wStart = wSliderMaxValue * pictureRealWidth / wSliderRealMaxValue;
 
-    var PICTURE_ASPECT_RATIO = pictureRealWidth/pictureRealHeight;
-    var CROPPER_ASPECT_RATIO = 1;
+    PICTURE_ASPECT_RATIO = pictureRealWidth/pictureRealHeight;
+    CROPPER_ASPECT_RATIO = 1;
 
     heightInput.value = pictureRealHeight;
     widthInput.value = pictureRealWidth;
@@ -790,176 +811,6 @@ function ready() {
         });
     }
 
-    /*noUiSlider.create(wSlider, {
-        start: wStart,
-        connect: [true, false],
-        animate: false,
-        tooltips: true,
-        range: {
-            'min': wSliderMinValue,
-            'max': wSliderMaxValue
-        }
-    });
-    noUiSlider.create(hSlider, {
-        start: hStart,
-        connect: [true, false],
-        animate: false,
-        tooltips: true,
-        range: {
-            'min': hSliderMinValue,
-            'max': hSliderMaxValue
-        }
-    });
-
-    wSlider.noUiSlider.on('update', function () {
-        setSliderLabels(wSlider.noUiSlider.get() * 1, hSlider.noUiSlider.get() * 1);
-
-        var height = parseFloat(heightInput.value);
-        var width = parseFloat(widthInput.value);
-
-        var frame = document.getElementById('frame');
-
-        var w, h;
-        if (width > height) {
-            w = (imageContainer.offsetWidth - 60);
-
-            h = (imageContainer.offsetHeight - 60) * (height / width);
-        } else {
-            w = width / height * (imageContainer.offsetWidth - 60);
-
-            h = imageContainer.offsetHeight - 60;
-        }
-
-
-        picture.style.maxWidth = (w) + "px";
-        picture.style.height = (h) + "px";
-
-        $('#frame').css({"height": (h + 60) + 'px', "width": (w + 60) + 'px'});
-
-        setFrame(frameName_corner);
-        checkTooltip();
-        recalculateprice();
-    });
-
-    hSlider.noUiSlider.on('update', function () {
-        setSliderLabels(wSlider.noUiSlider.get() * 1, hSlider.noUiSlider.get() * 1);
-
-        var height = parseFloat(heightInput.value);
-        var width = parseFloat(widthInput.value);
-
-        var frame = document.getElementById('frame');
-
-        var w, h;
-        if (width > height) {
-            w = (imageContainer.offsetWidth - 60);
-
-            h = (imageContainer.offsetHeight - 60) * (height / width);
-        } else {
-            w = width / height * (imageContainer.offsetWidth - 60);
-
-            h = imageContainer.offsetHeight - 60;
-        }
-
-        w = w < 40 ? 40 : w;
-        h = h < 20 ? 20 : h;
-        picture.style.maxWidth = (w) + "px";
-        picture.style.height = (h) + "px";
-
-        $('#frame').css({"height": (h + 60) + 'px', "width": (w + 60) + 'px'});
-
-        setFrame(frameName_corner);
-        checkTooltip();
-        recalculateprice();
-    });*/
-
-    //setSliderLabels(wSlider.noUiSlider.get() * 1, hSlider.noUiSlider.get() * 1);
-
-    /*VMasker(widthInput).maskNumber();
-    widthInput.addEventListener("change", function () {
-
-        if (parseInt(this.value) > 10000) {
-            this.value = 10000;
-        }
-
-        if (MAX_CROPPER_SIZE.checked) {
-            if (parseInt(this.value) > textureWidth) {
-                this.value = textureWidth;
-            }
-        }
-        wSliderRealMaxValue = Math.ceil(this.value / textureWidth) * textureWidth;
-
-        document.getElementById('maxWidth').innerHTML = wSliderRealMaxValue;
-
-        var w = this.value * wSliderMaxValue / wSliderRealMaxValue;
-
-        wSlider.noUiSlider.set([w, null]);
-
-        setSliderLabels(w, hSlider.noUiSlider.get() * 1);
-        checkTooltip();
-    });
-
-    VMasker(heightInput).maskNumber();
-    heightInput.addEventListener("change", function () {
-
-        if (parseInt(this.value) > 10000) {
-            this.value = 10000;
-        }
-        if (MAX_CROPPER_SIZE.checked) {
-            if (parseInt(this.value) > textureHeight) {
-                this.value = textureHeight;
-            }
-        }
-
-        hSliderRealMaxValue = Math.ceil(this.value / textureHeight) * textureHeight;
-
-        document.getElementById('maxHeight').innerHTML = hSliderRealMaxValue;
-
-        var h = this.value * hSliderMaxValue / hSliderRealMaxValue;
-
-        hSlider.noUiSlider.set([h, null]);
-
-        setSliderLabels(wSlider.noUiSlider.get() * 1, h);
-        checkTooltip();
-    });*/
-
-    //setSliderLabels(wSliderMaxValue * CROPPER_ASPECT_RATIO, hSliderMaxValue * CROPPER_ASPECT_RATIO);
-
-    /*MAX_CROPPER_SIZE.addEventListener("click", function () {
-        if (this.checked) {
-            var classname = document.getElementsByClassName("textureSelector");
-            for (var i = 0; i < classname.length; i++) {
-                classname[i].addEventListener('click', setTexture, false);
-                if (classname[i].children[0].checked) {
-                    var textureWidth = parseInt(classname[i].children[0].getAttribute("textureWidth"));
-                    var textureHeight = parseInt(classname[i].children[0].getAttribute("textureHeight"));
-                }
-            }
-
-            hSliderRealMaxValue = textureHeight;
-            wSliderRealMaxValue = textureWidth;
-
-            document.getElementById('maxHeight').innerHTML = hSliderRealMaxValue;
-            document.getElementById('maxWidth').innerHTML = wSliderRealMaxValue;
-
-            if (parseInt(heightInput.value) > textureHeight) {
-                var h = hSliderMaxValue;
-            } else {
-                var h = hSlider.noUiSlider.get() * 1;
-            }
-
-            if (parseInt(widthInput.value) > textureWidth) {
-                var w = wSliderMaxValue;
-            } else {
-                var w = wSlider.noUiSlider.get() * 1;
-            }
-            hSlider.noUiSlider.set([h, null]);
-            wSlider.noUiSlider.set([w, null]);
-
-            setSliderLabels(w, h);
-        }
-        checkTooltip();
-    });*/
-
     var contrast_min50 = document.getElementById(CONTRAST_MIN50_ID);
     if (contrast_min50) {
         contrast_min50.addEventListener("click", function () {
@@ -1222,6 +1073,32 @@ function ready() {
                                     frameWidth = tmp.naturalWidth + 60;
                                     frameHeight = tmp.naturalHeight + 60;
 
+                                    global_img = document.createElement('img');
+
+                                    global_img.src = json['new_file'];
+                                    tmp_imageClientWidth  = global_img.naturalWidth;
+                                    tmp_imageClientHeight = global_img.naturalHeight;
+                                   PICTURE_ASPECT_RATIO = tmp_imageClientWidth/tmp_imageClientHeight;
+                                    var cont_w = 0;
+                                    var cont_h = 0;
+
+                                    if(tmp_imageClientWidth > tmp_imageClientHeight){
+                                        var cont_w = 500;
+                                        var cont_h = (500 / PICTURE_ASPECT_RATIO).toFixed();
+                                    }else{
+                                        var cont_h = 500;
+                                        var cont_w = (500 * PICTURE_ASPECT_RATIO).toFixed();
+                                    }
+
+
+
+                                    picture.style.width = "100%";
+                                    //picture.style.maxWidth = (frameWidth - 60) + "px";
+                                    picture.style.maxWidth  = cont_w + "px";
+                                    picture.style.maxHeight = cont_h + "px";
+
+                                    widthInput.dispatchEvent(new Event("change"));
+
                                     try {
                                         document.styleSheets[0].addRule('#frame', 'height: ' + frameHeight + 'px; width: ' + frameWidth + 'px');
                                     } catch (e) {
@@ -1231,6 +1108,7 @@ function ready() {
                                 } else {
 
                                 }
+                                $('.frameSide').css({"display": 'none'});
                             }, 0);
 
                             /*CUSTOM CODE END*/
@@ -1261,6 +1139,12 @@ function ready() {
                         //$(node).button('reset');
                     },
                     success: function (json) {
+                        orientation = !orientation;
+                        if(orientation){
+                            PICTURE_ASPECT_RATIO = tmp_imageClientWidth/tmp_imageClientHeight;
+                        }else{
+                            PICTURE_ASPECT_RATIO = tmp_imageClientHeight/tmp_imageClientWidth;
+                        }
                         var classname = document.getElementsByClassName("textureSelector");
                         for (var i = 0; i < classname.length; i++) {
                             classname[i].addEventListener('click', setTexture, false);
@@ -1271,12 +1155,41 @@ function ready() {
                         }
 
                         var tmp_src = document.getElementById('image').src;
+                        global_img = document.createElement('img');
+
+                        var cont_w = tmp_imageClientWidth;
+                        var cont_h = tmp_imageClientHeight;
+
+                        /*if(tmp_imageClientWidth < tmp_imageClientHeight){
+                            cont_w = 500;
+                            cont_h = (500 / PICTURE_ASPECT_RATIO).toFixed();
+                        }else{
+                            cont_h = 500;
+                            cont_w = (500 * PICTURE_ASPECT_RATIO).toFixed();
+                        }*/
+
+                        picture.style.width = "100%";
+                        //picture.style.maxWidth = (frameWidth - 60) + "px";
+                        if(orientation){
+                            picture.style.maxWidth  = cont_w + "px";
+                            picture.style.maxHeight = cont_h + "px";
+                        }else{
+                            picture.style.maxWidth  = cont_h + "px";
+                            picture.style.maxHeight = cont_w + "px";
+                        }
+
                         document.getElementById('image').src = "";
                         document.getElementById('image').src = tmp_src;
 
 
                         document.getElementById('picture').style.background = "url(" + tmp_src + "?"+ Math.random()+"), url(" + textureSrc + ")";
                         document.getElementById('picture').style.backgroundSize = "100% 100%";
+
+                        widthInput.dispatchEvent(new Event("change"));
+                        hideFrame();
+                        document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(widthInput.value);
+                        document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(heightInput.value);
+                        setFrame(frameName_corner);
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
                         console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
@@ -1301,6 +1214,12 @@ function ready() {
                 //$(node).button('reset');
             },
             success: function (json) {
+                orientation = !orientation;
+                if(orientation){
+                    PICTURE_ASPECT_RATIO = tmp_imageClientWidth/tmp_imageClientHeight;
+                }else{
+                    PICTURE_ASPECT_RATIO = tmp_imageClientHeight/tmp_imageClientWidth;
+                }
                 var classname = document.getElementsByClassName("textureSelector");
                 for (var i = 0; i < classname.length; i++) {
                     classname[i].addEventListener('click', setTexture, false);
@@ -1311,12 +1230,43 @@ function ready() {
                 }
 
                 var tmp_src = document.getElementById('image').src;
+                global_img = document.createElement('img');
+
+                var cont_w = tmp_imageClientWidth;
+                var cont_h = tmp_imageClientHeight;
+
+                /*if(tmp_imageClientWidth > tmp_imageClientHeight){
+                    var cont_w = 500;
+                    var cont_h = (500 / PICTURE_ASPECT_RATIO).toFixed();
+                }else{
+                    var cont_h = 500;
+                    var cont_w = (500 * PICTURE_ASPECT_RATIO).toFixed();
+                }*/
+
+                picture.style.width = "100%";
+                //picture.style.maxWidth = (frameWidth - 60) + "px";
+                if(orientation){
+                    picture.style.maxWidth  = cont_w + "px";
+                    picture.style.maxHeight = cont_h + "px";
+                    //PICTURE_ASPECT_RATIO = tmp_imageClientWidth/tmp_imageClientHeight;
+                }else{
+                    picture.style.maxWidth  = cont_h + "px";
+                    picture.style.maxHeight = cont_w + "px";
+                    //PICTURE_ASPECT_RATIO = tmp_imageClientHeight/tmp_imageClientWidth;
+                }
+
                 document.getElementById('image').src = "";
                 document.getElementById('image').src = tmp_src;
 
 
                 document.getElementById('picture').style.background = "url(" + tmp_src + "?"+ Math.random()+"), url(" + textureSrc + ")";
                 document.getElementById('picture').style.backgroundSize = "100% 100%";
+
+                widthInput.dispatchEvent(new Event("change"));
+                hideFrame();
+                document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(widthInput.value);
+                document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(heightInput.value);
+                setFrame(frameName_corner);
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
