@@ -2,8 +2,7 @@
 class ModelCatalogManufacturer extends Model {
 	public function addManufacturer($data) {
 		$this->event->trigger('pre.admin.manufacturer.add', $data);
-
-		$this->db->query("INSERT INTO " . DB_PREFIX . "manufacturer SET name = '" . $this->db->escape($data['name']) . "', description = '" . $this->db->escape($data['description']) . "', sort_order = '" . (int)$data['sort_order'] . "'");
+		$this->db->query("INSERT INTO " . DB_PREFIX . "manufacturer SET name = '" . $this->db->escape($data['name']) . "', description = '" . $this->db->escape($data['description']) . "', banner_id = '" . (int)$data['banner'] . "', sort_order = '" . (int)$data['sort_order'] . "'");
 
 		$manufacturer_id = $this->db->getLastId();
 
@@ -30,8 +29,7 @@ class ModelCatalogManufacturer extends Model {
 
 	public function editManufacturer($manufacturer_id, $data) {
 		$this->event->trigger('pre.admin.manufacturer.edit', $data);
-
-		$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET name = '" . $this->db->escape($data['name']) . "',description = '" . $this->db->escape($data['description']) . "', sort_order = '" . (int)$data['sort_order'] . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
+		$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET name = '" . $this->db->escape($data['name']) . "',description = '" . $this->db->escape($data['description']) . "', banner_id = '" . (int)$data['banner'] . "', sort_order = '" . (int)$data['sort_order'] . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
 
 		if (isset($data['image'])) {
 			$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET image = '" . $this->db->escape($data['image']) . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
@@ -74,6 +72,13 @@ class ModelCatalogManufacturer extends Model {
 		return $query->row;
 	}
 
+    public function getBanners($data = array()){
+        $sql_b = "SELECT * FROM " . DB_PREFIX . "banner";
+
+        $query = $this->db->query($sql_b);
+
+        return $query->rows;
+    }
 	public function getManufacturers($data = array()) {
 		$sql = "SELECT * FROM " . DB_PREFIX . "manufacturer";
 
