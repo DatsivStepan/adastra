@@ -198,7 +198,6 @@ class ControllerProductManufacturer extends Controller {
         );
 
         $manufacturer_show = $this->model_catalog_manufacturer->getManufacturer($manufacturer_id);
-
         if ($manufacturer_show) {
             $this->document->setTitle($manufacturer_show['name']);
 
@@ -228,6 +227,7 @@ class ControllerProductManufacturer extends Controller {
             $data['heading_title'] = $manufacturer_show['name'];
             $data['image'] = $manufacturer_show['image'];
             $data['description'] = $manufacturer_show['description'];
+            $data['images'] = $manufacturer_show['images'];
 
             $data['text_empty'] = $this->language->get('text_empty');
             $data['text_quantity'] = $this->language->get('text_quantity');

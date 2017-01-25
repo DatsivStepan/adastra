@@ -1,10 +1,17 @@
 <?php echo $header; ?>
 <div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
+  <div class=" container_breadcrumb hidden-xs">
+    <ul class="breadcrumb_contact_style hidden-xs  col-sm-12 col-md-12 col-lg-12 no-padding">
+      <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+      <?php if ($breadcrumb ['href']==('')){ ?>
+      <li class="breadcrumb_text"><?php echo $breadcrumb['text']; ?></li>
+      <?php }else{ ?>
+      <li class="breadcrumb_text"
+      ><a class="text" href="<?php echo $breadcrumb['href']; ?>" style="padding-right: 12px; background: url('../../../catalog/view/theme/default/image/strilka.png') right center no-repeat;"><?php echo $breadcrumb['text']; ?></a></li>
+      <?php } ?>
+      <?php } ?>
+    </ul>
+  </div>
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -14,10 +21,33 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <span><img src="../image/<?= $image; ?>"></span>
-      <h2><?php echo $heading_title; ?></h2>
-      <?= $description; ?>
-      <?php if ($products) { ?>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <span><img src="../image/<?= $image; ?>" class="museum-cart-img-size"></span>
+          </div>
+          <div class="col-lg-6">
+            <span class="museum-title-style">
+              <?php echo $heading_title; ?>
+            </span>
+            <span class="museum-description-style">
+              <?= $description; ?>
+            </span>
+          </div>
+        </div>
+        <div class="row museum-ing-bottom">
+          <span class="museum-img-div-title">фотографии</span>
+          <div class="">
+            <?php  $mus_imgs = explode('*', $images); ?>
+            <?php foreach($mus_imgs as $mus_img){ ?>
+              <div style="width: 19%; margin-right: 2px; float: left;">
+                <img src="../image/<?= $mus_img; ?>" style="width: 100%; height: 150px">
+              </div>
+            <?php } ?>
+          </div>
+        </div>
+      </div>
+    <!--  <?php if ($products) { ?>
       <p><a href="<?php echo $compare; ?>" id="compare-total"> <?php echo $text_compare; ?></a></p>
       <div class="row">
         <div class="col-sm-3">
@@ -55,7 +85,7 @@
           </select>
         </div>
       </div>
-      <br />
+      <br /> -->
    <!--   <div class="row">
         <?php foreach ($products as $product) { ?>
         <div class="product-layout product-list col-xs-12">
@@ -96,7 +126,7 @@
           </div>
         </div>
         <?php } ?>
-      </div> -->
+      </div>
       <div class="row">
         <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
         <div class="col-sm-6 text-right"><?php echo $results; ?></div>
@@ -106,7 +136,7 @@
       <div class="buttons">
         <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
       </div>
-      <?php } ?>
+      <?php } ?>-->
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>

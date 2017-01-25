@@ -37,11 +37,20 @@
           <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-name"><?php echo $entry_description; ?></label>
             <div class="col-sm-10">
-
-              <textarea type="text" name="description" placeholder="<?php echo $entry_description; ?>" id="input-name" class="form-control" /><?= $description; ?></textarea>
+              <textarea type="text" name="description" placeholder="<?php echo $entry_description; ?>" id="input-name" class="form-control" style="height: 200px;" /><?= $description; ?></textarea>
               <?php if ($error_name) { ?>
               <div class="text-danger"><?php echo $error_name; ?></div>
               <?php } ?>
+            </div>
+          </div>
+          <div class="form-group required" style="">
+            <label class="col-sm-2 control-label" for="input-category"><?php echo $entry_banner; ?></label>
+            <div class="col-sm-10">
+              <select class="form-control" id="sel1" name="banner">
+                <?php foreach($banners as $banner){ ?>
+                <option value="<?= $banner['banner_id']; ?>"><?php echo $banner['name_b']; ?></option>
+                <?php } ?>
+              </select>
             </div>
           </div>
           <div class="form-group">
