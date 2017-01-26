@@ -19,6 +19,9 @@
             <?php echo $column_left; ?>
         </div>
         <div class="KP_80"><?php echo $content_top; ?>
+            <?php if ($description) { ?>
+            <div class="col-sm-12"><?php echo $description; ?></div>
+            <?php } ?>
             <?php if ($products) { ?>
             <div class="hidden-xs" style="border-top: 3px solid #f0ebe2; border-bottom: 1px solid #f0ebe2; padding-top:5px; padding-bottom:5px; width: 100%; float: left;">
                 <div class="hidden-xs hidden-sm hidden-md  hidden-lg">
