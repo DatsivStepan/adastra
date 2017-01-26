@@ -1094,8 +1094,26 @@ function ready() {
 
                                     picture.style.width = "100%";
                                     //picture.style.maxWidth = (frameWidth - 60) + "px";
-                                    picture.style.maxWidth  = cont_w + "px";
-                                    picture.style.maxHeight = cont_h + "px";
+                                    var maxW = 0;
+                                    var maxH = 0;
+                                    var maxK = 1;
+                                    if(cont_w > 500 || cont_h > 500){
+                                        if(cont_w > cont_h){
+                                            maxK = Math.ceil(cont_w/500);
+                                            maxW = cont_w/maxK;
+                                            maxH = cont_h/maxK;
+                                        }else{
+                                            maxK = Math.ceil(cont_h/500);
+                                            maxW = cont_w/maxK;
+                                            maxH = cont_h/maxK;
+                                        }
+                                    }else{
+                                        maxW = cont_w;
+                                        maxH = cont_h;
+                                    }
+
+                                    picture.style.maxWidth  = maxW + "px";
+                                    picture.style.maxHeight = maxH + "px";
 
                                     widthInput.dispatchEvent(new Event("change"));
 
@@ -1170,12 +1188,30 @@ function ready() {
 
                         picture.style.width = "100%";
                         //picture.style.maxWidth = (frameWidth - 60) + "px";
-                        if(orientation){
-                            picture.style.maxWidth  = cont_w + "px";
-                            picture.style.maxHeight = cont_h + "px";
+                        var maxW = 0;
+                        var maxH = 0;
+                        var maxK = 1;
+                        if(cont_w > 500 || cont_h > 500){
+                            if(cont_w > cont_h){
+                                maxK = Math.ceil(cont_w/500);
+                                maxW = cont_w/maxK;
+                                maxH = cont_h/maxK;
+                            }else{
+                                maxK = Math.ceil(cont_h/500);
+                                maxW = cont_w/maxK;
+                                maxH = cont_h/maxK;
+                            }
                         }else{
-                            picture.style.maxWidth  = cont_h + "px";
-                            picture.style.maxHeight = cont_w + "px";
+                            maxW = cont_w;
+                            maxH = cont_h;
+                        }
+
+                        if(orientation){
+                            picture.style.maxWidth  = maxW + "px";
+                            picture.style.maxHeight = maxH + "px";
+                        }else{
+                            picture.style.maxWidth  = maxH + "px";
+                            picture.style.maxHeight = maxW + "px";
                         }
 
                         document.getElementById('image').src = "";
@@ -1245,14 +1281,30 @@ function ready() {
 
                 picture.style.width = "100%";
                 //picture.style.maxWidth = (frameWidth - 60) + "px";
-                if(orientation){
-                    picture.style.maxWidth  = cont_w + "px";
-                    picture.style.maxHeight = cont_h + "px";
-                    //PICTURE_ASPECT_RATIO = tmp_imageClientWidth/tmp_imageClientHeight;
+                var maxW = 0;
+                var maxH = 0;
+                var maxK = 1;
+                if(cont_w > 500 || cont_h > 500){
+                    if(cont_w > cont_h){
+                        maxK = Math.ceil(cont_w/500);
+                        maxW = cont_w/maxK;
+                        maxH = cont_h/maxK;
+                    }else{
+                        maxK = Math.ceil(cont_h/500);
+                        maxW = cont_w/maxK;
+                        maxH = cont_h/maxK;
+                    }
                 }else{
-                    picture.style.maxWidth  = cont_h + "px";
-                    picture.style.maxHeight = cont_w + "px";
-                    //PICTURE_ASPECT_RATIO = tmp_imageClientHeight/tmp_imageClientWidth;
+                    maxW = cont_w;
+                    maxH = cont_h;
+                }
+
+                if(orientation){
+                    picture.style.maxWidth  = maxW + "px";
+                    picture.style.maxHeight = maxH + "px";
+                }else{
+                    picture.style.maxWidth  = maxH + "px";
+                    picture.style.maxHeight = maxW + "px";
                 }
 
                 document.getElementById('image').src = "";

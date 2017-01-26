@@ -39,7 +39,7 @@ class ModelCheckoutOrder extends Model {
 		// Totals
 		if (isset($data['totals'])) {
 			foreach ($data['totals'] as $total) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "order_total SET order_id = '" . (int)$order_id . "', code = '" . $this->db->escape($total['code']) . "', title = '" . $this->db->escape($total['title']) . "', `value` = '" . (float)$total['value'] . "', sort_order = '" . (int)$total['sort_order'] . "'");
+				$this->db->query("INSERT INTO " . DB_PREFIX . "order_total SET order_id = '" . (int)$order_id . "', code = '" . $this->db->escape($total['code']) . "', title = '" . $this->db->escape($total['title']) . "', `value` = '" . (float)round($total['value']) . "', sort_order = '" . (int)$total['sort_order'] . "'");
 			}
 		}
 
@@ -97,7 +97,7 @@ class ModelCheckoutOrder extends Model {
 
 		if (isset($data['totals'])) {
 			foreach ($data['totals'] as $total) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "order_total SET order_id = '" . (int)$order_id . "', code = '" . $this->db->escape($total['code']) . "', title = '" . $this->db->escape($total['title']) . "', `value` = '" . (float)$total['value'] . "', sort_order = '" . (int)$total['sort_order'] . "'");
+				$this->db->query("INSERT INTO " . DB_PREFIX . "order_total SET order_id = '" . (int)$order_id . "', code = '" . $this->db->escape($total['code']) . "', title = '" . $this->db->escape($total['title']) . "', `value` = '" . (float)round($total['value']) . "', sort_order = '" . (int)$total['sort_order'] . "'");
 			}
 		}
 
@@ -564,7 +564,8 @@ class ModelCheckoutOrder extends Model {
 
 						$option_data[] = array(
 							'name'  => $option['name'],
-							'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+							//'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+							'value' => $value
 						);
 					}
 
@@ -644,7 +645,8 @@ class ModelCheckoutOrder extends Model {
                             }
                         }
 
-						$text .= chr(9) . '-' . $option['name'] . ' ' . (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value) . "\n";
+						//$text .= chr(9) . '-' . $option['name'] . ' ' . (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value) . "\n";
+						$text .= chr(9) . '-' . $option['name'] . ' ' .  $value . "\n";
 					}
 				}
 
@@ -757,7 +759,8 @@ class ModelCheckoutOrder extends Model {
                                 }
 
 							}
-							$text .= chr(9) . '-' . $option['name'] . ' ' . (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value) . "\n";
+							//$text .= chr(9) . '-' . $option['name'] . ' ' . (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value) . "\n";
+							$text .= chr(9) . '-' . $option['name'] . ' ' .  $value . "\n";
 						}
 					}
 
