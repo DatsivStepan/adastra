@@ -54,6 +54,7 @@
     </div>
 </div>
 
+
 <div class="hidden-sm hidden-md hidden-lg mod_category" style="width: 100%">
     <div class="menuname text-center category-name-padding " style="     margin: 6% 0 12px 0; border-bottom: 2px solid #e0deda; padding-bottom: 5%;" ><a class="Catalog catalog3">КАТАЛОГ</a></div>
     <div class="listcat">
