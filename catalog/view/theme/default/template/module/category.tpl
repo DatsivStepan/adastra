@@ -1,178 +1,113 @@
-<!--<div class="list-group hidden-xs" style="width: 100%">
-    <?php foreach ($categories as $category) { ?>
-    <?php if ($category['category_id'] == $category_id) { ?>
-    <a href="<?php echo $category['href']; ?>" class="list-group-item active" style="border: none;
-    background: #ffffff; font-family: 'Philosopher';
-    font-size: 14px;  text-indent: -11px;">- <?php echo $category['name']; ?></a>
-    <?php if ($category['children']) { ?>
-    <?php foreach ($category['children'] as $child) { ?>
-    <?php if ($child['category_id'] == $child_id) { ?>
-    <a href="<?php echo $child['href']; ?>" class="list-group-item active" style="border: none;
-    background: #322d2d;     color: #ffffff;font-family: 'Philosopher';
-    font-size: 14px;">&nbsp; <?php echo $child['name']; ?></a>
-    <?php } else { ?>
-    <a href="<?php echo $child['href']; ?>" class="list-group-item" style="border: none;
-    background: #ffffff;font-family: 'Philosopher';
-    font-size: 14px;color: #322d2d">&nbsp; <?php echo $child['name']; ?></a>
-    <?php } ?>
-    <?php } ?>
-    <?php } ?>
-    <?php } else { ?>
-    <a href="<?php echo $category['href']; ?>" class="list-group-item" style="border: none;font-family: 'Philosopher';
-    font-size: 14px;color: #322d2d;     text-indent: -11px;">+ <?php echo $category['name']; ?></a>
-    <?php } ?>
-    <?php } ?>
-</div>
-
-
-<div class="listcat hidden-sm hidden-md hidden-lg">
-    <div class="menuname text-center category-name-padding " style="     margin: 6% 0 12px 0; border-bottom: 2px solid #e0deda; padding-bottom: 5%;" ><a class="Catalog">КАТАЛОГ</a></div>
-    <ul class="customdrop ul-category-style">
-        <?php foreach ($categories as $category) { ?>
-        <?php
-                        $classes = '';
-                        $display = 'display:none;';
-                        $icon = ' category-icon-style_1 ';
-                        if ($category['category_id'] == $category_id) {
-                            $classes .= 'active';
-                            $display = '';
-                            $icon = ' category-icon-style ';
-                        }
-                    ?>
-
-        <li class='<?= $classes; ?> li-category-style' style="list-style-type: none;     margin-top: -13px;">
-            <a   class='clickParentMenu '  title="<?php echo $category['name'];?>">
-                <div style=" border-top: 1px solid #e0deda; margin: 0 0 15px -37px">
-
-                </div>
-                <div class="<?= $icon; ?>"></div>
-                            <span data-href="<?= $category['href']; ?>" style="cursor:pointer; " class="clickCategoryName category-style_KP">
-                                <?php echo $category['name']; ?>
-                            </span>
-                <div class="container" style="border-bottom: 1px solid #e0deda; margin: 2% 0 2% -37px;"> </div>
-            </a>
-            <?php if($category['children']) { ?>
-            <ul class="dropDownSubMenu" style='<?= $display; ?> ' >
-                <?php
-                                    foreach ($category['children'] as $child)
-                                    {
-                                ?>
-                <div style="margin-bottom:  30px "></div>
-                <li class="li-category-child-style" style="list-style-type: none;     margin-top: -13px;">
-                    <?php if ($child['category_id'] == $child_id) { ?>
-                    <a class="category-child-style_KP" href="<?php echo $child['href'];?>" tabindex="-1" title="<?php echo $child['name'];?>"><?php echo $child['name'];?></a>
-                    <?php } else { ?>
-                    <a href="<?php echo $child['href'];?>" class="category-child-style_KP" tabindex="-1" title="<?php echo $child['name'];?>"><?php echo $child['name'];?></a>
-                    <?php } ?>
-                </li>
-                <div style="margin-bottom:  30px "></div>
-                <?php } ?>
-
-            </ul>
-            <?php }  ?>
-            <?php } ?>
-    </ul>
-</div>-->
-<div class="hidden-xs mod_category" style="width: 100%">
+<div class="hidden-xs mod_category" style="width: 100%; min-height: 800px;">
     <div class="listcat">
         <ul class="customdrop ul-category-style" style="padding-left: 20px; margin: 0">
-            <?php foreach ($categories as $category) { ?>
             <?php
-                        $classes = '';
-                        $display = 'display:none;';
-                        $icon = ' category-icon-style_1 ';
-                        if ($category['category_id'] == $category_id) {
-                            $classes .= 'active';
-                            $display = '';
-                            $icon = ' category-icon-style ';
-                        }
-                    ?>
-            <li class='<?= $classes; ?> li-category-style'
-                style="list-style-type: none; text-indent: -11px;     margin-bottom: 22px;">
-                <a class='clickParentMenu ' title="<?php echo $category['name'];?>">
-                    <div class="<?= $icon; ?>"></div>
-                            <span data-href="<?= $category['href']; ?>" style="cursor:pointer;"
-                                  class="clickCategoryName a-category-style">
-                               <a class="a-category-style" href="<?php echo $category['href'];?>"><?php echo $category['name']; ?></a>
-                            </span>
-                </a>
-                <?php if($category['children']) { ?>
-                <ul class="dropDownSubMenu" style='<?= $display; ?>;  padding: 0; margin: 0'>
-                    <?php
-                                    foreach ($category['children'] as $child)
-                                    {
-                                ?>
-                    <?php if ($child['category_id'] == $child_id) { ?>
-                    <li class="li-category-child-style active" style="list-style-type: none;  background-color: #322d2d; font-family: 'Times New Roman'; font-size: 14px;color: #fff!important;     padding: 10px 0px 10px 14px;
-    margin-left: -12px; margin-bottom: 20px; margin-top: 10px ">
+    function outTree2($category, $level, $child_id, $cat_id, $level) {
+        foreach($category as $cat){
 
-                        <a href="<?php echo $child['href'];?>" tabindex="-1" title="<?php echo $child['name'];?>"
-                           class="a_text_KP"><?php echo $child['name'];?></a>
-                    </li>
-                    <?php } else { ?>
-                    <li class="li-category-child-style" style="list-style-type: none;     margin: 21px 0 10px 0;">
-                        <a href="<?php echo $child['href'];?>" class="a-category-child-style" tabindex="-1"
-                           title="<?php echo $child['name'];?>"><?php echo $child['name'];?></a>
+            if(isset($cat['children'][0])){
+?>
+            <li class="li-category-style <?php if ($cat['category_id'] == $cat_id){ echo 'active'; }?>" style="list-style-type: none; text-indent: -11px;     margin-bottom: 22px;">
+                <a class="clickParentMenu " title="<?php echo $cat['name'] ?>">
+                    <div class="<?php if ($cat['category_id'] == $cat_id){ echo 'category-icon-style'; }else{echo 'category-icon-style_1';}?>"></div>
+                    <span data-href="<?php echo $cat['href'] ?>" style="cursor:pointer;" class="clickCategoryName a-category-style">
+                               </span></a><a class="a-category-style" href="<?php echo $cat['href'] ?>"><?php echo $cat['name'] ?></a>
 
-                    </li>
-                    <?php } ?>
-                    <?php } ?>
+
+                <ul class="dropDownSubMenu" style="padding: 0px; margin: 0px; display: <?php if ($cat['category_id'] == $cat_id){ echo 'block'; }else{echo 'none';}?>;">
+
+                    <?
+                outTree2($cat['children'], $level+1, $child_id, $cat_id, $level+1);
+?>
                 </ul>
-                <?php }  ?>
-                <?php } ?>
+            </li>
+            <?php
+            }else{
+                if($level == 0){
+            ?>
+            <li class="li-category-child-style <?php if ($cat['category_id'] == $child_id){ echo 'sub_active'; }?>" style="list-style-type: none;     margin: 21px 0 10px 0;">
+                <a href="<?php echo $cat['href'] ?>" class="a-category-style" tabindex="-1" title="<?php echo $cat['name'] ?>"><?php echo $cat['name'] ?></a>
+
+            </li>
+            <?php
+                }else{
+            ?>
+            <li class="li-category-child-style <?php if ($cat['category_id'] == $child_id){ echo 'sub_active'; }?>" style="list-style-type: none;     margin: 21px 0 10px 0;">
+                <a href="<?php echo $cat['href'] ?>" class="a-category-child-style" tabindex="-1" title="<?php echo $cat['name'] ?>"><?php echo $cat['name'] ?></a>
+
+            </li>
+            <?php
+                }
+            }
+?>
+
+            <?php
+        }
+    }
+    ?>
+
+            <?php
+    outTree2($categories, 0, $child_id, $category_id, 0);/**/
+
+    ?>
         </ul>
     </div>
 </div>
+
 
 <div class="hidden-sm hidden-md hidden-lg mod_category" style="width: 100%">
     <div class="menuname text-center category-name-padding " style="     margin: 6% 0 12px 0; border-bottom: 2px solid #e0deda; padding-bottom: 5%;" ><a class="Catalog catalog3">КАТАЛОГ</a></div>
     <div class="listcat">
         <ul class="customdrop ul-category-style" style="padding: 0; margin: 0;">
-
-            <?php foreach ($categories as $category) { ?>
             <?php
-                        $classes = '';
-                        $display = 'display:none;';
-                        $icon = ' category-icon-style_mob_1 ';
-                        if ($category['category_id'] == $category_id) {
-                            $classes .= 'active';
-                            $display = '';
-                            $icon = ' category-icon-style_mob ';
-                        }
-                    ?>
-            <li class='<?= $classes; ?> li-category-style_mob'
-                style=" list-style-type: none; margin-bottom: 22px; border-bottom: 1px solid #e0deda; padding-bottom: 15px">
-                <a class='clickParentMenu ' title="<?php echo $category['name'];?>">
-                    <div class="<?= $icon; ?>"></div>
-                            <span data-href="<?= $category['href']; ?>" style="cursor:pointer;"
-                                  class="clickCategoryName a-category-style_mob a-category-style_mob23">
-                                <?php echo $category['name']; ?>
-                            </span>
-                </a>
-                <?php if($category['children']) { ?>
-                <ul class="dropDownSubMenu" style='<?= $display; ?>;  padding: 0; margin: 0'>
-                    <?php
-                                    foreach ($category['children'] as $child)
-                                    {
-                                ?>
-                    <?php if ($child['category_id'] == $child_id) { ?>
-                    <li class="li-category-child-style active" style="list-style-type: none;  background-color: #322d2d; font-family: 'Times New Roman'; font-size: 14px;color: #fff!important;     padding: 10px 0px 10px 14px;
-    margin-left: -12px; margin-bottom: 20px; margin-top: 10px ">
+    function outTree_mob($category, $level, $child_id, $cat_id, $level) {
+        foreach($category as $cat){
 
-                        <a href="<?php echo $child['href'];?>" tabindex="-1" title="<?php echo $child['name'];?>"
-                           class="a_text_KP_mob a_text_KP_mob_20"><?php echo $child['name'];?></a>
-                    </li>
-                    <?php } else { ?>
-                    <li class="li-category-child-style" style="list-style-type: none;     margin: 21px 0 10px 0;">
-                        <a href="<?php echo $child['href'];?>" class="a-category-child-style_mob style_mob20" tabindex="-1"
-                           title="<?php echo $child['name'];?>"><?php echo $child['name'];?></a>
+            if(isset($cat['children'][0])){
+?>
+            <li class="li-category-style <?php if ($cat['category_id'] == $cat_id){ echo 'active'; }?>" style="list-style-type: none; text-indent: -11px;     margin-bottom: 22px;">
+                <a class="clickParentMenu " title="<?php echo $cat['name'] ?>">
+                    <div class="<?php if ($cat['category_id'] == $cat_id){ echo 'category-icon-style_mob'; }else{echo 'category-icon-style_mob_1';}?>"></div>
+                    <span data-href="<?php echo $cat['href'] ?>" style="cursor:pointer;" class="clickCategoryName a-category-style">
+                               </span></a><a class="a-category-style_mob a-category-style_mob23" href="<?php echo $cat['href'] ?>"><?php echo $cat['name'] ?></a>
 
-                    </li>
-                    <?php } ?>
-                    <?php } ?>
+
+                <ul class="dropDownSubMenu" style="padding: 0px; margin: 0px; display: <?php if ($cat['category_id'] == $cat_id){ echo 'block'; }else{echo 'none';}?>;">
+
+                    <?
+                outTree_mob($cat['children'], $level+1, $child_id, $cat_id, $level+1);
+?>
                 </ul>
-                <?php }  ?>
-                <?php } ?>
+            </li>
+            <?php
+            }else{
+                if($level == 0){
+            ?>
+            <li class="li-category-child-style <?php if ($cat['category_id'] == $child_id){ echo 'sub_active'; }?>" style="list-style-type: none;     margin: 21px 0 10px 0;">
+                <a href="<?php echo $cat['href'] ?>" class="a-category-child-style_mob style_mob20" tabindex="-1" title="<?php echo $cat['name'] ?>" style="margin-left: 3%;"><?php echo $cat['name'] ?></a>
+
+            </li>
+            <?php
+                }else{
+            ?>
+            <li class="li-category-child-style <?php if ($cat['category_id'] == $child_id){ echo 'sub_active'; }?>" style="list-style-type: none;     margin: 21px 0 10px 0;">
+                <a href="<?php echo $cat['href'] ?>" class="a-category-child-style_mob style_mob20" tabindex="-1" title="<?php echo $cat['name'] ?>"><?php echo $cat['name'] ?></a>
+
+            </li>
+            <?php
+                }
+            }
+?>
+
+            <?php
+        }
+    }
+    ?>
+
+            <?php
+    outTree_mob($categories, 0, $child_id, $category_id, 0);/**/
+
+    ?>
         </ul>
     </div>
 </div>
@@ -185,14 +120,14 @@
         });
 
         $(".listcat"). hover(function (e) {
-                    var height = $(this).children().height();
-                    var width = $(this).children().width();
-                    $(this).children('.listcat').css({width: width, height: height});
-                    $(this).children('.listcat').show();
-                },
-                function (e) {
-                    $(this).children('.listcat').hide();
-                });
+                var height = $(this).children().height();
+                var width = $(this).children().width();
+                $(this).children('.listcat').css({width: width, height: height});
+                $(this).children('.listcat').show();
+            },
+            function (e) {
+                $(this).children('.listcat').hide();
+            });
         $(".mod_category").outerWidth(true);
 
         if (outerWidth > 767){
@@ -244,3 +179,21 @@
         }
     });
 </script>
+<style>
+    .sub_active{
+        list-style-type: none;
+        background-color: #322d2d;
+        font-family: 'Times New Roman';
+        font-size: 14px;
+        color: #fff!important;
+        padding: 10px 0px 10px 20px;
+        margin-left: -12px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        margin-left: -14px !important;
+    }
+    .sub_active a,
+    .sub_active a:hover{
+        color:#fff!important;
+    }
+</style>
