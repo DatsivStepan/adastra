@@ -38,6 +38,7 @@ $_['text_contact']                     = 'Почта';
 $_['text_marketing']                   = 'Маркетинг';
 $_['text_modification']                = 'Модификаторы';
 $_['text_manufacturer']                = 'Музеи';
+$_['text_manufacturer_art']            = 'Художники';
 $_['text_module']                      = 'Модули';
 $_['text_option']                      = 'Опции';
 $_['text_order']                       = 'Заказы';

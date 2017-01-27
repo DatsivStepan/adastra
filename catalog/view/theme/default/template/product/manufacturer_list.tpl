@@ -21,18 +21,30 @@
         &nbsp;&nbsp;&nbsp;<a href="index.php?route=product/manufacturer#<?php echo $category['name']; ?>"><?php echo $category['name']; ?></a>
         <?php } ?>
       </p>
-      <?php foreach ($categories as $category) { ?>
-      <h2 id="<?php echo $category['name']; ?>"><?php echo $category['name']; ?></h2>
-      <?php if ($category['manufacturer']) { ?>
-      <?php foreach (array_chunk($category['manufacturer'], 4) as $manufacturers) { ?>
-      <div class="row">
-        <?php foreach ($manufacturers as $manufacturer) { ?>
-        <div class="col-sm-3"><a href="<?php echo $manufacturer['href']; ?>"><?php echo $manufacturer['name']; ?></a></div>
+
+        <?php foreach ($categories as $category) { ?>
+          <h2 id="<?php echo $category['name']; ?>"><?php echo $category['name']; ?></h2>
+          <?php if ($category['manufacturer']) { ?>
+            <?php foreach (array_chunk($category['manufacturer'], 4) as $manufacturers) { ?>
+              <div class="row">
+                <?php foreach ($manufacturers as $manufacturer) { ?>
+                  <?php if($_GET['category'] == 'ru'){ ?>
+                    <?php if($manufacturer['category_name'] == 'Русские художники'){ ?>
+                      <div class="col-sm-3"><a href="index.php?route=product/manufacturerart/show&manufacturer_id=<?= $manufacturer['manufacturer_art_id'] ?>"><?php echo $manufacturer['name']; ?></a></div>
+                    <?php } ?>
+                  <?php } ?>
+                  <?php if($_GET['category'] == 'world'){ ?>
+                    <?php if($manufacturer['category_name'] == 'Зарубежные художники'){ ?>
+                      <div class="col-sm-3"><a href="index.php?route=product/manufacturerart/show&manufacturer_id=<?= $manufacturer['manufacturer_art_id'] ?>"><?php echo $manufacturer['name']; ?></a></div>
+                    <?php } ?>
+                  <?php } ?>
+                <?php } ?>
+              </div>
+            <?php } ?>
+          <?php } ?>
         <?php } ?>
-      </div>
-      <?php } ?>
-      <?php } ?>
-      <?php } ?>
+
+
       <?php } else { ?>
       <p><?php echo $text_empty; ?></p>
       <div class="buttons clearfix">

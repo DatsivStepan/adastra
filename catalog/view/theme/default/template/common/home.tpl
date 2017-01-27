@@ -149,19 +149,24 @@
      </div> -->
 </div>
 <div class="row rows_2" style="    margin: 50px 0;">
-    <?php foreach ($category_artist as $artist) { ?>
-    <div class="div_muzey_text_art"><?php echo($artist['name'])?></div>
+    <div class="div_muzey_text_art"></div>
     <div class="container">
         <div class="row">
-            <?php foreach ($artist['option_value'] as $artist_art) { ?>
-            <div class="div_item_text_art col-lg-3 col-sm-12" style="background: url(image/<?php echo $artist_art['image'];?>) center no-repeat;">
-                <a href="http://adastra.local/index.php?route=product/category&path=20_28&mfp=36-muzey[<?php echo $artist_art['name'];?>]">
-                    <div class="text_title_np_21_art" style=""><?php echo $artist_art['name'];?></div></a>
+            <div class="div_item_text_art col-lg-3 col-sm-12" style="background: url(image/catalog/art_1.png) center no-repeat;">
+                <a href="index.php?route=product/manufacturerart/&category=ru">
+                    <div class="text_title_np_21_art" style="">Русские художники</div></a>
             </div>
-            <?php } ?>
+            <div class="div_item_text_art col-lg-3 col-sm-12" style="background: url(image/catalog/art_2.png) center no-repeat;">
+                <a href="index.php?route=product/manufacturerart/&category=world">
+                    <div class="text_title_np_21_art" style="">Зарубежные художники</div></a>
+            </div>
+            <div class="div_item_text_art col-lg-3 col-sm-12" style="background: url(image/catalog/art_3.png) center no-repeat;">
+                <a href="index.php?route=product/manufacturerart/&category=other">
+                    <div class="text_title_np_21_art" style="">Роботы неизвестных художников</div></a>
+            </div>
         </div>
+
     </div>
-    <?php } ?>
 </div>
 <div class="row rows_2 no-margin">
     <?php foreach ($category_muse as $musey) { ?>
