@@ -67,6 +67,12 @@
             <?php } ?>
           </tr>
           <tr>
+            <td><?php echo $text_manufacturer_art; ?></td>
+            <?php foreach ($products as $product) { ?>
+            <td><?php echo $product['manufacturer']; ?></td>
+            <?php } ?>
+          </tr>
+          <tr>
             <td><?php echo $text_availability; ?></td>
             <?php foreach ($products as $product) { ?>
             <td><?php echo $product['availability']; ?></td>

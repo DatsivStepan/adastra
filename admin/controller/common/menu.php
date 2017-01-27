@@ -45,6 +45,7 @@ class ControllerCommonMenu extends Controller {
 		$data['text_marketing'] = $this->language->get('text_marketing');
 		$data['text_modification'] = $this->language->get('text_modification');
 		$data['text_manufacturer'] = $this->language->get('text_manufacturer');
+		$data['text_manufacturer_art'] = $this->language->get('text_manufacturer_art');
 		$data['text_module'] = $this->language->get('text_module');
 		$data['text_option'] = $this->language->get('text_option');
 		$data['text_order'] = $this->language->get('text_order');
@@ -140,6 +141,7 @@ class ControllerCommonMenu extends Controller {
 		$data['location'] = $this->url->link('localisation/location', 'token=' . $this->session->data['token'], 'SSL');
 		$data['modification'] = $this->url->link('extension/modification', 'token=' . $this->session->data['token'], 'SSL');
 		$data['manufacturer'] = $this->url->link('catalog/manufacturer', 'token=' . $this->session->data['token'], 'SSL');
+		$data['manufacturer_art'] = $this->url->link('catalog/manufacturer_art', 'token=' . $this->session->data['token'], 'SSL');
 		$data['marketing'] = $this->url->link('marketing/marketing', 'token=' . $this->session->data['token'], 'SSL');
 		$data['module'] = $this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL');
 		$data['option'] = $this->url->link('catalog/option', 'token=' . $this->session->data['token'], 'SSL');
