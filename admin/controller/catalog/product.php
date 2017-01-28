@@ -572,6 +572,7 @@ class ControllerCatalogProduct extends Controller {
 		$data['entry_image'] = $this->language->get('entry_image');
 		$data['entry_store'] = $this->language->get('entry_store');
 		$data['entry_manufacturer'] = $this->language->get('entry_manufacturer');
+		$data['entry_manufacturer_art'] = $this->language->get('entry_manufacturer_art');
 		$data['entry_download'] = $this->language->get('entry_download');
 		$data['entry_category'] = $this->language->get('entry_category');
 		$data['entry_filter'] = $this->language->get('entry_filter');
@@ -719,6 +720,7 @@ class ControllerCatalogProduct extends Controller {
 
 		if (isset($this->request->get['product_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$product_info = $this->model_catalog_product->getProduct($this->request->get['product_id']);
+
 		}
 
 		$data['token'] = $this->session->data['token'];
@@ -1019,6 +1021,30 @@ class ControllerCatalogProduct extends Controller {
 			$data['manufacturer'] = '';
 		}
 
+		///////////////////////////Artists//////////////////////////////
+        $this->load->model('catalog/manufacturerart');
+
+        if (isset($this->request->post['manufacturer_art_id'])) {
+            $data['manufacturer_art_id'] = $this->request->post['manufacturer_art_id'];
+        } elseif (!empty($product_info)) {
+            $data['manufacturer_art_id'] = $product_info['manufacturer_art_id'];
+        } else {
+            $data['manufacturer_art_id'] = 0;
+        }
+
+        if (isset($this->request->post['manufacturer_art'])) {
+            $data['manufacturer_art'] = $this->request->post['manufacturer_art'];
+        } elseif (!empty($product_info)) {
+            $manufacturerart_info = $this->model_catalog_manufacturerart->getManufacturerart($product_info['manufacturer_art_id']);
+            if ($manufacturerart_info) {
+                $data['manufacturer_art'] = $manufacturerart_info['name'];
+            } else {
+                $data['manufacturer_art'] = '';
+            }
+        } else {
+            $data['manufacturer_art'] = '';
+        }
+		///////////////////////////Artists//////////////////////////////
 		// Categories
 		$this->load->model('catalog/category');
 
@@ -1299,6 +1325,7 @@ class ControllerCatalogProduct extends Controller {
 	}
 
 	protected function validateForm() {
+
 		if (!$this->user->hasPermission('modify', 'catalog/product')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}

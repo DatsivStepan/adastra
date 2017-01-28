@@ -360,6 +360,13 @@
                 </div>
               </div>
               <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-manufacturer"><span data-toggle="tooltip" title="<?php echo $help_manufacturer; ?>"><?php echo $entry_manufacturer_art; ?></span></label>
+                <div class="col-sm-10">
+                  <input type="text" name="manufacturer_art" value="<?php echo $manufacturer_art ?>" placeholder="<?php echo $entry_manufacturer_art; ?>" id="input-manufacturer_art" class="form-control" />
+                  <input type="hidden" name="manufacturer_art_id" value="<?php echo $manufacturer_art_id; ?>" />
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-category"><span data-toggle="tooltip" title="<?php echo $help_category; ?>"><?php echo $entry_category; ?></span></label>
                 <div class="col-sm-10">
                   <input type="text" name="category" value="" placeholder="<?php echo $entry_category; ?>" id="input-category" class="form-control" />
@@ -971,6 +978,30 @@
         $('input[name=\'manufacturer_id\']').val(item['value']);
       }
     });
+      $('input[name=\'manufacturer_art\']').autocomplete({
+          'source': function(request, response) {
+              $.ajax({
+                  url: 'index.php?route=catalog/manufacturer_art/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request),
+                  dataType: 'json',
+                  success: function(json) {
+                      json.unshift({
+                          manufacturer_id: 0,
+                          name: '<?php echo $text_none; ?>'
+                      });
+                      response($.map(json, function(item) {
+                          return {
+                              label: item['name'],
+                              value: item['manufacturer_id']
+                          }
+                      }));
+                  }
+              });
+          },
+          'select': function(item) {
+              $('input[name=\'manufacturer_art\']').val(item['label']);
+              $('input[name=\'manufacturer_art_id\']').val(item['value']);
+          }
+      });
     // Category
     $('input[name=\'category\']').autocomplete({
       'source': function(request, response) {

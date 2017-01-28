@@ -488,7 +488,7 @@ class ControllerCatalogManufacturerart extends Controller {
 		$json = array();
 
 		if (isset($this->request->get['filter_name'])) {
-			$this->load->model('catalog/manufacturer_art');
+			$this->load->model('catalog/manufacturerart');
 
 			$filter_data = array(
 				'filter_name' => $this->request->get['filter_name'],
