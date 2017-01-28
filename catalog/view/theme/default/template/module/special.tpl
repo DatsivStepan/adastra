@@ -26,9 +26,6 @@
           </h5>
           <h5 class="text_style_1_3" style="text-align: center"><?php echo $text_special; ?>
             <span class="text_style_price"><?php echo $product['special']; ?></span></h5>
-          <button class="korzuna_style-3" type="button"
-                  onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
-          </button>
         </div>
       </div>
     </div>
@@ -54,9 +51,7 @@
         <h5 class="text_style_2 text_style_2120" style="text-align: center">
           22 стандартных размера
         </h5>
-        <button class="korzuna_style-2 korzuna_style-201" type="button"
-                onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
-        </button>
+
       </div>
     </div>
     <?php } ?>

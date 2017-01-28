@@ -20,7 +20,7 @@ class ModelCatalogManufacturerart extends Model {
             default:
                 break;
         }
-            $sql = "SELECT ma.*, ca.name AS category_name FROM " . DB_PREFIX . "manufacturer_art ma LEFT JOIN " . DB_PREFIX . "category_art ca ON (ma.category_art_id = ca.category_art_id) WHERE 1=1 ".$q;
+            $sql = "SELECT ma.*, ca.name AS category_name FROM " . DB_PREFIX . "manufacturer_art ma LEFT JOIN " . DB_PREFIX . "category_art ca ON (ma.category_art_id = ca.category_art_id) WHERE 1=1 ".$q." ORDER BY ma.`name` ASC";
 
         $query = $this->db->query($sql);
 

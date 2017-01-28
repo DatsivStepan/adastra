@@ -84,9 +84,6 @@
                                 <h4 style="margin: 0 0 0 10px; width: 79%; float: left;"><a class="pull-right_KP "
                                                               href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                                 </h4>
-                                    <button class="korzuna_style" style="display: none; width: 10%; float: left" type="button"
-                                            onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
-                                    </button>
                                     <div style="clear: both"></div>
                                         <span class="ribbon pull-right_KP" style="display: none; margin-left: 10px"><?php echo $text_price; ?>
                                             от <?php echo $product['price']; ?></span>
@@ -117,9 +114,6 @@
                         <h5 class="text_style_2 text_style_20" style="text-align: center">
                             22 стандартных размера
                         </h5>
-                        <button class="korzuna_style-2 korzuna_style-20" type="button"
-                                onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
-                        </button>
                     </div>
                 </div>
                 <?php } ?>
