@@ -8,9 +8,19 @@ class ModelCatalogManufacturerart extends Model {
 		return $query->row;
 	}
 
-	public function getManufacturers($data = array()) {
-            $sql = "SELECT ma.*, ca.name AS category_name FROM " . DB_PREFIX . "manufacturer_art ma LEFT JOIN " . DB_PREFIX . "category_art ca ON (ma.category_art_id = ca.category_art_id)";
-
+	public function getManufacturers($cat = 0) {
+	    $q = "";
+	    switch ($cat){
+            case "ru":
+                $q .= "AND ma.category_art_id = 1";
+                break;
+            case "world":
+                $q .= "AND ma.category_art_id = 2";
+                break;
+            default:
+                break;
+        }
+            $sql = "SELECT ma.*, ca.name AS category_name FROM " . DB_PREFIX . "manufacturer_art ma LEFT JOIN " . DB_PREFIX . "category_art ca ON (ma.category_art_id = ca.category_art_id) WHERE 1=1 ".$q;
 
         $query = $this->db->query($sql);
 

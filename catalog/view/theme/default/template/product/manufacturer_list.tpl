@@ -37,7 +37,7 @@
       <?php if ($categories) { ?>
       <div style="text-align: center" class="symbol_title">
         <?php foreach ($categories as $category) { ?>
-            <a href="index.php?route=product/manufacturer#<?php echo $category['name']; ?>" class="symbol_title_small"><?php echo $category['name']; ?></a>
+            <a href="index.php?route=product/manufacturerart/&category=<?= $_GET['category'] ?>#<?php echo $category['name']; ?>" class="symbol_title_small"><?php echo $category['name']; ?></a>
         <?php } ?>
       </div>
 
@@ -111,12 +111,6 @@
         color: #0b0b0b;
     }
     .manufacturer_list{
-        -webkit-column-count: 3;
-        -moz-column-count: 3;
-        column-count: 3;
-        -webkit-column-width: 360px;
-        -moz-column-width: 360px;
-        column-width: 360px;
         white-space: nowrap;
     }
 </style>
