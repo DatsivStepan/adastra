@@ -266,7 +266,6 @@
             <div id="products_id" class="header-products-div-style ">
                 <div class=" container" style="">
                     <?php foreach ($categories as $category) { ?>
-                    <?php var_dump($category['href']); ?>
                     <?php if ($category['children']) { ?>
                     <div class="col-sm-2 col-md-2 col-lg-3 col-xl-3 product-div-style"
                          style="border-right-style: dotted;border-right-width: 1px; min-height: 510px;">

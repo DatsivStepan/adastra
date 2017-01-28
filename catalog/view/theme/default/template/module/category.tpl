@@ -31,9 +31,19 @@
             </li>
             <?php
                 }else{
+
+                $cat_name = mb_strtolower($cat['name']);
+                $cat_name = str_replace(" ", "", $cat_name);
+                $cat_href = $cat['href'];
+                if($cat_name == "русскиехудожники"){
+                    $cat_href = "http://".$_SERVER['SERVER_NAME']."/index.php?route=product/manufacturerart/&category=ru";
+                }
+                if($cat_name == "зарубежныехудожники"){
+                    $cat_href = "http://".$_SERVER['SERVER_NAME']."/index.php?route=product/manufacturerart/&category=world";
+                }
             ?>
             <li class="li-category-child-style <?php if ($cat['category_id'] == $child_id){ echo 'sub_active'; }?>" style="list-style-type: none;     margin: 21px 0 10px 0;">
-                <a href="<?php echo $cat['href'] ?>" class="a-category-child-style" tabindex="-1" title="<?php echo $cat['name'] ?>"><?php echo $cat['name'] ?></a>
+                <a href="<?php echo $cat_href ?>" class="a-category-child-style" tabindex="-1" title="<?php echo $cat['name'] ?>"><?php echo $cat['name'] ?></a>
 
             </li>
             <?php
@@ -89,9 +99,18 @@
             </li>
             <?php
                 }else{
+                $cat_name = strtolower($cat['name']);
+                $cat_name = str_replace(" ", "", $cat_name);
+                $cat_href = $cat['href'];
+                if($cat_name == "Русскиехудожники"){
+                    $cat_href = "http://".$_SERVER['SERVER_NAME']."/index.php?route=product/manufacturerart/&category=ru";
+                }
+                if($cat_name == "Зарубежныехудожники"){
+                    $cat_href = "http://".$_SERVER['SERVER_NAME']."/index.php?route=product/manufacturerart/&category=world";
+                }
             ?>
             <li class="li-category-child-style <?php if ($cat['category_id'] == $child_id){ echo 'sub_active'; }?>" style="list-style-type: none;     margin: 21px 0 10px 0;">
-                <a href="<?php echo $cat['href'] ?>" class="a-category-child-style_mob style_mob20" tabindex="-1" title="<?php echo $cat['name'] ?>"><?php echo $cat['name'] ?></a>
+                <a href="<?php echo $cat_href ?>" class="a-category-child-style_mob style_mob20" tabindex="-1" title="<?php echo $cat['name'] ?>"><?php echo $cat['name'] ?></a>
 
             </li>
             <?php
