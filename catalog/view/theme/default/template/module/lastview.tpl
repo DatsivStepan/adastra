@@ -13,9 +13,7 @@
                         <h4 style="margin: 0 0 0 10px; width: 79%; float: left;"><a class="pull-right_KP "
                                                                                     href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                         </h4>
-                        <button class="korzuna_style" style="display: none; width: 10%; float: left" type="button"
-                                onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
-                        </button>
+
                         <div style="clear: both"></div>
                                         <span class="ribbon pull-right_KP"
                                               style="display: none; margin-left: 10px"><?php echo $text_price; ?>
@@ -44,10 +42,7 @@
                                 <h4 style="margin: 0 0 0 10px; width: 79%; float: left;"><a class="pull-right_KP "
                                                                                             href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                                 </h4>
-                                <button class="korzuna_style" style="display: none; width: 10%; float: left"
-                                        type="button"
-                                        onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
-                                </button>
+
                                 <div style="clear: both"></div>
                                         <span class="ribbon pull-right_KP"
                                               style="display: none; margin-left: 10px"><?php echo $text_price; ?>
