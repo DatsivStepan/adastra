@@ -151,6 +151,7 @@
 <div class="row rows_2" style="    margin: 50px 0;">
     <div class="div_muzey_text_art"></div>
     <div class="container">
+        <?php  ?>
         <div class="row">
             <div class="div_item_text_art col-lg-3 col-sm-12" style="background: url(image/catalog/art_1.png) center no-repeat;">
                 <a href="index.php?route=product/manufacturerart/&category=ru">

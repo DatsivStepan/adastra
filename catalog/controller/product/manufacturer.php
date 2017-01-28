@@ -147,6 +147,10 @@ class ControllerProductManufacturer extends Controller {
 
 
     public function show() {
+
+        $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+        $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+
         $this->load->language('product/manufacturer');
 
         $this->load->model('catalog/manufacturer');
