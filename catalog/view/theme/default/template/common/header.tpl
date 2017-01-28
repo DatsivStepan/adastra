@@ -266,25 +266,53 @@
             <div id="products_id" class="header-products-div-style ">
                 <div class=" container" style="">
                     <?php foreach ($categories as $category) { ?>
+                    <?php var_dump($category['href']); ?>
                     <?php if ($category['children']) { ?>
-                    <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 product-div-style"
-                         style="border-right-style: dotted;border-right-width: 1px;">
+                    <div class="col-sm-2 col-md-2 col-lg-3 col-xl-3 product-div-style"
+                         style="border-right-style: dotted;border-right-width: 1px; min-height: 510px;">
                         <div class="product-div-title-style">
                         <span class="products-title-style"><?php echo $category['name']; ?>
                         </div>
                         <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
                         <span class="">
                         <?php foreach ($children as $child) { ?>
-                            <span class="products-category-span-style" style="display: block;padding: 0 0 0 6px;"><a
+                            <span class="products-category-span-style" style="display: block;padding: 0 0 0 6px;">
+                                <?php if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'русскиехудожники'){ ?>
+                                    <a
                                         class="products-category-style"
-                                        href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span>
+                                        href="index.php?route=product/manufacturerart/&category=ru"><?php echo $child['name']; ?>
+                                    </a>
+                                <?php }else if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'зарубежныехудожники'){ ?>
+                                    <a
+                                        class="products-category-style"
+                                        href="index.php?route=product/manufacturerart/&category=world"><?php echo $child['name']; ?>
+                                    </a>
+                                <?php }else if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'работынеизвестныххудожников'){ ?>
+                                    <a
+                                        class="products-category-style"
+                                        href="index.php?route=product/category&path=18_86"><?php echo $child['name']; ?>
+                                    </a>
+                                <?php }else{ ?>
+                                    <a
+                                        class="products-category-style"
+                                        href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?>
+                                    </a>
+                                <?php } ?>
+
+                            </span>
                             <?php } ?>
                       </span>
                         <?php } ?>
                     </div>
                     </span>
                     <?php } else { ?>
-                    <span class="products-category-style"><?php echo $category['name']; ?></span>
+                        <?php if($category['name'] == 'КОПИИ КАРТИН (в наличии)'){ ?>
+                            <div class="col-sm-2 col-md-2 col-lg-3 col-xl-3 product-div-style" style="border-right-style: dotted;border-right-width: 1px; min-height: 510px;">
+                                <span class="products-title-style"><?php echo $category['name']; ?></span>
+                            </div>
+                        <?php }else{ ?>
+                            <span class="products-category-style"><?php echo $category['name']; ?></span>
+                        <?php } ?>
                     <?php } ?>
                     <?php } ?>
                 </div>
@@ -352,8 +380,25 @@
                         <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
                         <span class="">
                   <?php foreach ($children as $child) { ?>
-                            <span class=""><a class="products-category-style products-category-style_20"
-                                              href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></span></br>
+                            <span class="">
+                                <?php if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'русскиехудожники'){ ?>
+                                    <a class="products-category-style products-category-style_20"
+                                        href="index.php?route=product/manufacturerart/&category=ru"><?php echo $child['name']; ?>
+                                    </a>
+                                <?php }else if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'зарубежныехудожники'){ ?>
+                                    <a class="products-category-style products-category-style_20"
+                                       href="index.php?route=product/manufacturerart/&category=world"><?php echo $child['name']; ?>
+                                    </a>
+                                <?php }else if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'работынеизвестныххудожников'){ ?>
+                                    <a class="products-category-style products-category-style_20"
+                                       href="index.php?route=product/category&path=18_86"><?php echo $child['name']; ?>
+                                    </a>
+                                <?php }else{ ?>
+                                    <a class="products-category-style products-category-style_20"
+                                       href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?>
+                                    </a>
+                                <?php } ?>
+                            </span></br>
                             <?php } ?>
                 </span>
                         <?php } ?>
