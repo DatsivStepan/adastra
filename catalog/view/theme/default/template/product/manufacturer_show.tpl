@@ -1,6 +1,6 @@
 <?php echo $header; ?>
 <div class="container">
-  <div class=" container_breadcrumb hidden-xs">
+  <!-- <div class=" container_breadcrumb hidden-xs">
     <ul class="breadcrumb_contact_style hidden-xs  col-sm-12 col-md-12 col-lg-12 no-padding">
       <?php foreach ($breadcrumbs as $breadcrumb) { ?>
       <?php if ($breadcrumb ['href']==('')){ ?>
@@ -11,8 +11,8 @@
       <?php } ?>
       <?php } ?>
     </ul>
-  </div>
-  <div class="row"><?php echo $column_left; ?>
+  </div> -->
+  <div class="row" style="margin-top: 20px;"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>
@@ -33,6 +33,10 @@
             <span class="museum-description-style">
               <?= $description; ?>
             </span>
+            <div class="row">
+              <div class="col-lg-6"></div>
+              <div class="col-lg-6"><a href="index.php?route=product/manufacturerart/&category=<?= $_GET['category'] ?>" class="btnLink">Назад в каталог2</a></div>
+            </div>
           </div>
         </div>
         <div class="row museum-ing-bottom">
@@ -79,3 +83,20 @@
 
     });
 </script>
+<style>
+  .btnLink,
+  .btnLink:hover
+  .btnLink:focus{
+    color: #fff !important;
+    background: #000;
+    float: right;
+    display: block;
+    height: 40px;
+    padding: 9px 35px;
+    font-family: 'Times NEW Roman';
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none !important;
+    cursor: pointer;
+  }
+</style>

@@ -1,10 +1,8 @@
 <?php echo $header; ?>
+<?php
+            $tmp_string = "";
+    ?>
 <div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li> <a href="<?php echo $breadcrumb['href']; ?>"> <?php echo $breadcrumb['text']; ?> </a> </li>
-    <?php } ?>
-  </ul>
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -14,35 +12,58 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
-      <?php if ($categories) { ?>
-      <p><strong><?php echo $text_index; ?></strong>
-        <?php foreach ($categories as $category) { ?>
-        &nbsp;&nbsp;&nbsp;<a href="index.php?route=product/manufacturer#<?php echo $category['name']; ?>"><?php echo $category['name']; ?></a>
-        <?php } ?>
-      </p>
-
-        <?php foreach ($categories as $category) { ?>
-          <h2 id="<?php echo $category['name']; ?>"><?php echo $category['name']; ?></h2>
-          <?php if ($category['manufacturer']) { ?>
+        <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+            <?php foreach ($categories as $category) { ?>
+            <?php if ($category['manufacturer']) { ?>
             <?php foreach (array_chunk($category['manufacturer'], 4) as $manufacturers) { ?>
-              <div class="row">
-                <?php foreach ($manufacturers as $manufacturer) { ?>
-                  <?php if($_GET['category'] == 'ru'){ ?>
-                    <?php if($manufacturer['category_name'] == 'Русские художники'){ ?>
-                      <div class="col-sm-3"><a href="index.php?route=product/manufacturerart/show&manufacturer_id=<?= $manufacturer['manufacturer_art_id'] ?>"><?php echo $manufacturer['name']; ?></a></div>
-                    <?php } ?>
-                  <?php } ?>
-                  <?php if($_GET['category'] == 'world'){ ?>
-                    <?php if($manufacturer['category_name'] == 'Зарубежные художники'){ ?>
-                      <div class="col-sm-3"><a href="index.php?route=product/manufacturerart/show&manufacturer_id=<?= $manufacturer['manufacturer_art_id'] ?>"><?php echo $manufacturer['name']; ?></a></div>
-                    <?php } ?>
-                  <?php } ?>
-                <?php } ?>
-              </div>
+            <?php foreach ($manufacturers as $manufacturer) { ?>
+            <?php if($_GET['category'] == 'ru'){ ?>
+            <?php if($manufacturer['category_name'] == 'Русские художники'){
+                                global $tmp_string;
+                                $tmp_string = "<h1 class='list_title'>".$manufacturer['category_name']."</h1>";
+            } ?>
             <?php } ?>
-          <?php } ?>
+            <?php if($_GET['category'] == 'world'){ ?>
+            <?php if($manufacturer['category_name'] == 'Зарубежные художники'){
+                                global $tmp_string;
+                                $tmp_string = "<h1 class='list_title'>".$manufacturer['category_name']."</h1>";
+            } ?>
+            <?php } ?>
+            <?php } ?>
+            <?php } ?>
+            <?php } ?>
+            <?php } ?>
+            <?php echo $tmp_string;?>
+      <?php if ($categories) { ?>
+      <div style="text-align: center" class="symbol_title">
+        <?php foreach ($categories as $category) { ?>
+            <a href="index.php?route=product/manufacturer#<?php echo $category['name']; ?>" class="symbol_title_small"><?php echo $category['name']; ?></a>
         <?php } ?>
+      </div>
+
+        <div class="manufacturer_list">
+            <?php foreach ($categories as $category) { ?>
+            <div class="col-sm-4"><h2 id="<?php echo $category['name']; ?>" class='symbol_title'><?php echo $category['name']; ?></h2>
+            <?php if ($category['manufacturer']) { ?>
+            <?php foreach (array_chunk($category['manufacturer'], 4) as $manufacturers) { ?>
+                <?php foreach ($manufacturers as $manufacturer) { ?>
+                <?php if($_GET['category'] == 'ru'){ ?>
+                <?php if($manufacturer['category_name'] == 'Русские художники'){ ?>
+                <p><a href="index.php?route=product/manufacturerart/show&manufacturer_id=<?= $manufacturer['manufacturer_art_id'] ?>&category=<?= $_GET['category'] ?>" class="manufacturer_link"><?php echo $manufacturer['name']; ?></a></p>
+                <?php } ?>
+                <?php } ?>
+                <?php if($_GET['category'] == 'world'){ ?>
+                <?php if($manufacturer['category_name'] == 'Зарубежные художники'){ ?>
+                <p><a href="index.php?route=product/manufacturerart/show&manufacturer_id=<?= $manufacturer['manufacturer_art_id'] ?>&category=<?= $_GET['category'] ?>" class="manufacturer_link"><?php echo $manufacturer['name']; ?></a></p>
+                <?php } ?>
+                <?php } ?>
+                <?php } ?>
+            <?php } ?>
+            <?php } ?>
+            </div>
+            <?php } ?>
+        </div>
+
 
 
       <?php } else { ?>
@@ -55,3 +76,47 @@
     <?php echo $column_right; ?></div>
 </div>
 <?php echo $footer; ?>
+<style>
+    .list_title{
+        font-family: 'Times New Roman';
+        font-weight: bold;
+        font-size: 40px;
+    }
+    .symbol_title{
+        font-family: 'Times New Roman';
+        font-weight: bold;
+        font-size: 28px;
+    }
+    .manufacturer_link{
+        font-family: 'Times New Roman';
+        font-size: 21px;
+        color: #0b0b0b;
+        font-style: italic;
+    }
+    .manufacturer_link:hover,
+    .manufacturer_link:focus{
+        color: #0b0b0b;
+        text-decoration: underline;
+    }
+    .symbol_title_small{
+        font-family: 'Times New Roman';
+        font-weight: bold;
+        font-size: 22px;
+        color: #0b0b0b;
+        margin: 0px 2px;
+    }
+    .symbol_title_small:hover,
+    .symbol_title_small:focus{
+        text-decoration: underline;
+        color: #0b0b0b;
+    }
+    .manufacturer_list{
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+        -webkit-column-width: 360px;
+        -moz-column-width: 360px;
+        column-width: 360px;
+        white-space: nowrap;
+    }
+</style>
