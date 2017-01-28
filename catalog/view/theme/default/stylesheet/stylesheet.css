@@ -924,7 +924,9 @@ h2.price {
 	width: 100%;
 
 }
-.products-title-style{
+.products-title-style,
+.products-title-style:hover,
+.products-title-style:focus{
 	color: #0b0b0b;
 	font-family: 'Helvetica';
 	font-weight: 700;

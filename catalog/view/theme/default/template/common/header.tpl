@@ -266,12 +266,15 @@
             <div id="products_id" class="header-products-div-style ">
                 <div class=" container" style="">
                     <?php foreach ($categories as $category) { ?>
-                    <?php var_dump($category['href']); ?>
                     <?php if ($category['children']) { ?>
                     <div class="col-sm-2 col-md-2 col-lg-3 col-xl-3 product-div-style"
                          style="border-right-style: dotted;border-right-width: 1px; min-height: 510px;">
                         <div class="product-div-title-style">
-                        <span class="products-title-style"><?php echo $category['name']; ?>
+                        <span class="products-title-style">
+                            <a
+                                class="products-title-style"
+                                href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?>
+                            </a>
                         </div>
                         <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
                         <span class="">
@@ -308,7 +311,12 @@
                     <?php } else { ?>
                         <?php if($category['name'] == 'КОПИИ КАРТИН (в наличии)'){ ?>
                             <div class="col-sm-2 col-md-2 col-lg-3 col-xl-3 product-div-style" style="border-right-style: dotted;border-right-width: 1px; min-height: 510px;">
-                                <span class="products-title-style"><?php echo $category['name']; ?></span>
+                                <span class="products-title-style">
+                                    <a
+                                        class="products-title-style"
+                                        href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?>
+                                    </a>
+                                </span>
                             </div>
                         <?php }else{ ?>
                             <span class="products-category-style"><?php echo $category['name']; ?></span>
