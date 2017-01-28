@@ -161,7 +161,7 @@
                     <div class="text_title_np_21_art" style="">Зарубежные художники</div></a>
             </div>
             <div class="div_item_text_art col-lg-3 col-sm-12" style="background: url(image/catalog/art_3.png) center no-repeat;">
-                <a href="index.php?route=product/manufacturerart/&category=other">
+                <a href="index.php?route=product/category&path=18_86">
                     <div class="text_title_np_21_art" style="">Роботы неизвестных художников</div></a>
             </div>
         </div>
