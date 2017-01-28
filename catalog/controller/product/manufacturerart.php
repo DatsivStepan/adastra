@@ -108,7 +108,8 @@ class ControllerProductManufacturerart extends Controller {
 
 		$data['categories'] = array();
 
-		$results = $this->model_catalog_manufacturerart->getManufacturers();
+		$cat = $_GET['category'];
+		$results = $this->model_catalog_manufacturerart->getManufacturers($cat);
 
 		foreach ($results as $result) {
 			if (is_numeric(utf8_substr($result['name'], 0, 1))) {
