@@ -268,7 +268,7 @@
                     <?php foreach ($categories as $category) { ?>
                     <?php if ($category['children']) { ?>
                     <div class="col-sm-2 col-md-2 col-lg-3 col-xl-3 product-div-style"
-                         style="border-right-style: dotted;border-right-width: 1px; min-height: 510px;">
+                         style="border-right-style: dotted;border-right-width: 1px; min-height: 510px; text-align: center;">
                         <div class="product-div-title-style">
                         <span class="products-title-style">
                             <a
@@ -315,11 +315,11 @@
                     </span>
                     <?php } else { ?>
                         <?php if($category['name'] == 'КОПИИ КАРТИН (в наличии)'){ ?>
-                            <div class="col-sm-2 col-md-2 col-lg-3 col-xl-3 product-div-style" style="border-right-style: dotted;border-right-width: 1px; min-height: 510px;">
+                            <div class="col-sm-2 col-md-2 col-lg-3 col-xl-3 product-div-style" style="border-right-style: dotted;border-right-width: 1px; min-height: 510px; text-align: center;">
                                 <span class="products-title-style">
                                     <a
                                         class="products-title-style"
-                                        href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?>
+                                        href="<?php echo $category['href']; ?>">КОПИИ КАРТИН <p style="font-size: 18px;">(В НАЛИЧИИ)</p>
                                     </a>
                                 </span>
                             </div>
