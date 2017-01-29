@@ -13,59 +13,20 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
         <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-            <?php foreach ($categories as $category) { ?>
-            <?php if ($category['manufacturer']) { ?>
-            <?php foreach (array_chunk($category['manufacturer'], 4) as $manufacturers) { ?>
-            <?php foreach ($manufacturers as $manufacturer) { ?>
-            <?php if($_GET['category'] == 'ru'){ ?>
-            <?php if($manufacturer['category_name'] == 'Русские художники'){
-                                global $tmp_string;
-                                $tmp_string = "<h1 class='list_title'>".$manufacturer['category_name']."</h1>";
-            } ?>
-            <?php } ?>
-            <?php if($_GET['category'] == 'world'){ ?>
-            <?php if($manufacturer['category_name'] == 'Зарубежные художники'){
-                                global $tmp_string;
-                                $tmp_string = "<h1 class='list_title'>".$manufacturer['category_name']."</h1>";
-            } ?>
-            <?php } ?>
-            <?php } ?>
-            <?php } ?>
-            <?php } ?>
-            <?php } ?>
-            <?php echo $tmp_string;?>
       <?php if ($categories) { ?>
-      <div style="text-align: center" class="symbol_title">
-        <?php foreach ($categories as $category) { ?>
-            <a href="index.php?route=product/manufacturer#<?php echo $category['name']; ?>" class="symbol_title_small"><?php echo $category['name']; ?></a>
-        <?php } ?>
-      </div>
-
         <div class="manufacturer_list">
             <?php foreach ($categories as $category) { ?>
             <div class="col-sm-4"><h2 id="<?php echo $category['name']; ?>" class='symbol_title'><?php echo $category['name']; ?></h2>
             <?php if ($category['manufacturer']) { ?>
             <?php foreach (array_chunk($category['manufacturer'], 4) as $manufacturers) { ?>
                 <?php foreach ($manufacturers as $manufacturer) { ?>
-                <?php if($_GET['category'] == 'ru'){ ?>
-                <?php if($manufacturer['category_name'] == 'Русские художники'){ ?>
-                <p><a href="index.php?route=product/manufacturerart/show&manufacturer_id=<?= $manufacturer['manufacturer_art_id'] ?>&category=<?= $_GET['category'] ?>" class="manufacturer_link"><?php echo $manufacturer['name']; ?></a></p>
-                <?php } ?>
-                <?php } ?>
-                <?php if($_GET['category'] == 'world'){ ?>
-                <?php if($manufacturer['category_name'] == 'Зарубежные художники'){ ?>
-                <p><a href="index.php?route=product/manufacturerart/show&manufacturer_id=<?= $manufacturer['manufacturer_art_id'] ?>&category=<?= $_GET['category'] ?>" class="manufacturer_link"><?php echo $manufacturer['name']; ?></a></p>
-                <?php } ?>
-                <?php } ?>
+                <p><a href="index.php?route=product/manufacturer/show&manufacturer_id=<?=$manufacturer['manufacturer_id']; ?>" class="manufacturer_link"><?php echo $manufacturer['name']; ?></a></p>
                 <?php } ?>
             <?php } ?>
             <?php } ?>
             </div>
             <?php } ?>
         </div>
-
-
-
       <?php } else { ?>
       <p><?php echo $text_empty; ?></p>
       <div class="buttons clearfix">
@@ -73,7 +34,8 @@
       </div>
       <?php } ?>
       <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
+    <?php echo $column_right; ?>
+    </div>
 </div>
 <?php echo $footer; ?>
 <style>

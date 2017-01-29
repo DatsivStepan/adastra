@@ -122,8 +122,9 @@ class ControllerProductManufacturer extends Controller {
 			}
 
 			$data['categories'][$key]['manufacturer'][] = array(
-				'name' => $result['name'],
-				'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id'])
+				'name'            => $result['name'],
+				'manufacturer_id' => $result['manufacturer_id'],
+				'href'            => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id'])
 			);
 		}
 
@@ -136,10 +137,10 @@ class ControllerProductManufacturer extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/manufacturer_list.tpl')) {
-			$this->response->setOutput(magicslideshow($this->load->view($this->config->get('config_template') . '/template/product/manufacturer_list.tpl', $data),$this,'manufacturers',(isset($results) ? $results : array())));
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/manufacturer_m_list.tpl')) {
+			$this->response->setOutput(magicslideshow($this->load->view($this->config->get('config_template') . '/template/product/manufacturer_m_list.tpl', $data),$this,'manufacturers',(isset($results) ? $results : array())));
 		} else {
-			$this->response->setOutput(magicslideshow($this->load->view('default/template/product/manufacturer_list.tpl', $data),$this,'manufacturers',(isset($results) ? $results : array())));
+			$this->response->setOutput(magicslideshow($this->load->view('default/template/product/manufacturer_m_list.tpl', $data),$this,'manufacturers',(isset($results) ? $results : array())));
 		}
 	}
 
