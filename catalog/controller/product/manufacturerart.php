@@ -149,6 +149,10 @@ class ControllerProductManufacturerart extends Controller {
 
 
     public function show() {
+
+        $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+        $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+
         $this->load->language('product/manufacturer');
 
         $this->load->model('catalog/manufacturerart');
@@ -565,7 +569,6 @@ class ControllerProductManufacturerart extends Controller {
 		);
 
 		$manufacturer_info = $this->model_catalog_manufacturer->getManufacturer($manufacturer_id);
-
 		if ($manufacturer_info) {
 			$this->document->setTitle($manufacturer_info['name']);
 
