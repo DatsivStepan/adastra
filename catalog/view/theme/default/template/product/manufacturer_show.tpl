@@ -35,7 +35,7 @@
             </span>
             <div class="row">
               <div class="col-lg-6"></div>
-              <div class="col-lg-6"><a href="index.php" class="btnLink">Назад в каталог</a></div>
+              <div class="col-lg-6"><a href="index.php?route=product/manufacturer/" class="btnLink">Назад в каталог</a></div>
             </div>
           </div>
         </div>

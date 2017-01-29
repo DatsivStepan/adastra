@@ -295,6 +295,11 @@
                                         class="products-category-style"
                                         href="index.php?route=product/category&path=18_86"><?php echo $child['name']; ?>
                                     </a>
+                                <?php }else if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'музеиигалереимира'){ ?>
+                                    <a
+                                        class="products-category-style"
+                                        href="index.php?route=product/manufacturer/"><?php echo $child['name']; ?>
+                                    </a>
                                 <?php }else{ ?>
                                     <a
                                         class="products-category-style"
