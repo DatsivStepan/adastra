@@ -14,9 +14,9 @@
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
         <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <?php if ($categories) { ?>
-        <div class="manufacturer_list">
+        <div class="" style="margin-top: 35px;">
             <?php foreach ($categories as $category) { ?>
-            <div class="col-sm-4"><h2 id="<?php echo $category['name']; ?>" class='symbol_title'><?php echo $category['name']; ?></h2>
+            <div class="col-sm-4" style="min-height: 60px;"><!-- <h2 id="<?php echo $category['name']; ?>" class='symbol_title'><?php echo $category['name']; ?></h2> -->
             <?php if ($category['manufacturer']) { ?>
             <?php foreach (array_chunk($category['manufacturer'], 4) as $manufacturers) { ?>
                 <?php foreach ($manufacturers as $manufacturer) { ?>

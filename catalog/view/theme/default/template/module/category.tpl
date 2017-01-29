@@ -41,6 +41,9 @@
                 if($cat_name == "зарубежныехудожники"){
                     $cat_href = "http://".$_SERVER['SERVER_NAME']."/index.php?route=product/manufacturerart/&category=world";
                 }
+                if($cat_name == "музеиигалереимира"){
+                    $cat_href = "http://".$_SERVER['SERVER_NAME']."/index.php?route=product/manufacturer/";
+                }
             ?>
             <li class="li-category-child-style <?php if ($cat['category_id'] == $child_id){ echo 'sub_active'; }?>" style="list-style-type: none;     margin: 21px 0 10px 0;">
                 <a href="<?php echo $cat_href ?>" class="a-category-child-style" tabindex="-1" title="<?php echo $cat['name'] ?>"><?php echo $cat['name'] ?></a>
