@@ -2427,7 +2427,7 @@ h2.price {
 	background-image: url("../image/cartocka_phone.png");
 	background-size: cover;
 	background-position: center;
-	min-height: 700px;
+	min-height: 500px;
 	margin-top: 30px;
 }
 @media (max-width: 767px){
