@@ -1613,3 +1613,24 @@
 .museum-ing-bottom{
     margin-bottom: 35px;
 }
+.owl-pagination .owl-controls .owl-buttons .owl-prev {
+    left: 88%;
+    top: 0!important;
+}
+.owl-pagination .owl-controls .owl-buttons .owl-next {
+    right: 10px;
+    top: 0!important;
+}
+.owl-pagination .owl-buttons{
+    position: relative;
+    margin-top: 20px;
+}
+.pagination-text-style{
+    width: 150px;
+    font-family: 'Times New Roman';
+    font-size: 22px;
+    color: #060503;
+    float: right;
+    margin-right: 12%;
+    margin-top: -1.7%;
+}
