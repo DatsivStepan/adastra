@@ -1634,3 +1634,10 @@
     margin-right: 12%;
     margin-top: -1.7%;
 }
+.artists-product-text-style,
+.artists-product-text-style:hover,
+.artists-product-text-style:active{
+    font-family: 'Times New Roman';
+    color: #0b0b0b;
+    font-size: 15px;
+}

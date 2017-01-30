@@ -205,7 +205,6 @@ class ControllerProductManufacturerart extends Controller {
         );
 
         $manufacturer_show = $this->model_catalog_manufacturerart->getManufacturer($manufacturer_id);
-
         if ($manufacturer_show) {
             $this->document->setTitle($manufacturer_show['name']);
 
@@ -312,6 +311,7 @@ class ControllerProductManufacturerart extends Controller {
                     'tax'         => $tax,
                     'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
                     'rating'      => $result['rating'],
+                    'image'      => $result['image'],
                     'href'        => $this->url->link('product/product', 'manufacturer_id=' . $result['manufacturer_id'] . '&product_id=' . $result['product_id'] . $url)
                 );
             }
@@ -521,7 +521,7 @@ class ControllerProductManufacturerart extends Controller {
 	public function info() {
 		$this->load->language('product/manufacturer');
 
-		$this->load->model('catalog/manufacturer');
+		$this->load->model('catalog/manufacturerart');
 
 		$this->load->model('catalog/product');
 
@@ -570,6 +570,7 @@ class ControllerProductManufacturerart extends Controller {
 		);
 
 		$manufacturer_info = $this->model_catalog_manufacturer->getManufacturer($manufacturer_id);
+
 		if ($manufacturer_info) {
 			$this->document->setTitle($manufacturer_info['name']);
 
