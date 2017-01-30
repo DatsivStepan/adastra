@@ -24,7 +24,7 @@ $_['entry_keyword']      = 'SEO URL';
 $_['entry_image']        = 'Изображение';
 $_['entry_sort_order']   = 'Порядок сортировки';
 $_['entry_type']         = 'Тип';
-$_['entry_banner']       = 'Баннєр';
+$_['entry_banner']       = 'Баннер';
 
 // Help
 $_['help_keyword']       = 'Должно быть уникальным на всю систему и без пробелов';

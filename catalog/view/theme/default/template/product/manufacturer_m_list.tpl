@@ -40,9 +40,9 @@
 <?php echo $footer; ?>
 <style>
     .list_title{
-        font-family: 'Times New Roman';
-        font-weight: bold;
-        font-size: 40px;
+        font-family: 'BikhamCyrScript';
+        font-size: 80px !important;
+        margin: 35px 0px;
     }
     .symbol_title{
         font-family: 'Times New Roman';

@@ -7,6 +7,10 @@
     font-family: 'AristonNormal';
     src: url('../fonts/AristonNormal.ttf');
 }
+@font-face {
+    font-family: 'BikhamCyrScript';
+    src: url('../fonts/BikhamCyrScript.ttf');
+}
 .map {
     height: 600px;
 }
