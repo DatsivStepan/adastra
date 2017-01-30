@@ -149,7 +149,7 @@
      </div> -->
 </div>
 <div class="row rows_2" style="    margin: 50px 0;">
-    <div class="div_muzey_text_art"></div>
+    <div class="div_muzey_text_art">Художники</div>
     <div class="container">
         <?php  ?>
         <div class="row">

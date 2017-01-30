@@ -35,7 +35,7 @@ class ModelDQuickcheckoutOrder extends Model {
 			store_id = '" . (int)$data['store_id'] . "', 
 			store_name = '" . $this->db->escape($data['store_name']) . "', 
 			store_url = '" . $this->db->escape($data['store_url']) . "', 
-			total = '" . (float)$data['total'] . "', 
+			total = '" . (int)round($data['total']) . "', 
 			payment_country_id = '" . (int)$data['payment_country_id'] . "',  
 			payment_zone_id = '" . (int)$data['payment_zone_id'] . "', 
 			affiliate_id = '" . (int)$data['affiliate_id'] . "', 
@@ -101,7 +101,7 @@ class ModelDQuickcheckoutOrder extends Model {
 			shipping_method = '" . $this->db->escape($data['shipping_method']) . "', 
 			shipping_code = '" . $this->db->escape($data['shipping_code']) . "', 
 			comment = '" . $this->db->escape($data['comment']) . "', 
-			total = '" . (float)$data['total'] . "', 
+			total = '" . (int)round($data['total']) . "', 
 			affiliate_id = '" . (int)$data['affiliate_id'] . "', 
 			commission = '" . (float)$data['commission'] . "',"; 
 

@@ -33,7 +33,7 @@
             <?php } ?>
             <?php } ?>
             <?php } ?>
-            <?php echo $tmp_string;?>
+            <div style="text-align: center; width: 100%; font-family: 'AristonNormal'; "><?php echo $tmp_string;?></div>
       <?php if ($categories) { ?>
       <div style="text-align: center" class="symbol_title">
         <?php foreach ($categories as $category) { ?>
@@ -78,9 +78,7 @@
 <?php echo $footer; ?>
 <style>
     .list_title{
-        font-family: 'Times New Roman';
-        font-weight: bold;
-        font-size: 40px;
+        font-family: 'AristonNormal'; font-size: 60px !important;
     }
     .symbol_title{
         font-family: 'Times New Roman';

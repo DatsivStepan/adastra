@@ -271,7 +271,7 @@ class ControllerDQuickcheckoutCart extends Controller {
 
             //totals
             $json['totals'] = $this->session->data['totals'] = $this->model_d_quickcheckout_order->getTotals($total_data, $total, $taxes);
-            $json['total'] = $this->model_d_quickcheckout_order->getCartTotal($total);
+            $json['total'] = round($this->model_d_quickcheckout_order->getCartTotal($total));
 
             //confirm
             $json['show_confirm'] = $this->model_d_quickcheckout_order->showConfirm();
@@ -317,7 +317,7 @@ class ControllerDQuickcheckoutCart extends Controller {
 
         if (empty($this->request->post['reward'])) {
             $json['totals'] = $this->session->data['totals'] = $this->model_d_quickcheckout_order->getTotals($total_data, $total, $taxes);
-            $json['total'] = $this->model_d_quickcheckout_order->getCartTotal($total);
+            $json['total'] = round($this->model_d_quickcheckout_order->getCartTotal($total));
             $json['order_id'] = $this->session->data['order_id'] = $this->load->controller('d_quickcheckout/confirm/updateOrder');
             //payment
             $json = $this->load->controller('d_quickcheckout/payment/prepare', $json);
@@ -337,7 +337,7 @@ class ControllerDQuickcheckoutCart extends Controller {
             $json['cart_successes']['reward'] = $this->language->get('text_success');
 
             $json['totals'] = $this->session->data['totals'] = $this->model_d_quickcheckout_order->getTotals($total_data, $total, $taxes);
-            $json['total'] = $this->model_d_quickcheckout_order->getCartTotal($total);
+            $json['total'] = round($this->model_d_quickcheckout_order->getCartTotal($total));
             $json['order_id'] = $this->session->data['order_id'] = $this->load->controller('d_quickcheckout/confirm/updateOrder');
             //payment
             $json = $this->load->controller('d_quickcheckout/payment/prepare', $json);
@@ -388,7 +388,7 @@ class ControllerDQuickcheckoutCart extends Controller {
         if (empty($this->request->post['coupon'])) {
             unset($this->session->data['coupon']);
             $json['totals'] = $this->session->data['totals'] = $this->model_d_quickcheckout_order->getTotals($total_data, $total, $taxes);
-            $json['total'] = $this->model_d_quickcheckout_order->getCartTotal($total);
+            $json['total'] = round($this->model_d_quickcheckout_order->getCartTotal($total));
             $json['order_id'] = $this->session->data['order_id'] = $this->load->controller('d_quickcheckout/confirm/updateOrder');
             //payment
             $json = $this->load->controller('d_quickcheckout/payment/prepare', $json);
@@ -399,7 +399,7 @@ class ControllerDQuickcheckoutCart extends Controller {
             $json['cart_successes']['coupon'] =  $this->language->get('text_success');
 
             $json['totals'] = $this->session->data['totals'] = $this->model_d_quickcheckout_order->getTotals($total_data, $total, $taxes);
-            $json['total'] = $this->model_d_quickcheckout_order->getCartTotal($total);
+            $json['total'] = round($this->model_d_quickcheckout_order->getCartTotal($total));
             $json['order_id'] = $this->session->data['order_id'] = $this->load->controller('d_quickcheckout/confirm/updateOrder');
             //payment
             $json = $this->load->controller('d_quickcheckout/payment/prepare', $json);
@@ -449,7 +449,7 @@ class ControllerDQuickcheckoutCart extends Controller {
         $statistic = array();
         if (empty($this->request->post['voucher'])) {
             $json['totals'] = $this->session->data['totals'] = $this->model_d_quickcheckout_order->getTotals($total_data, $total, $taxes);
-            $json['total'] = $this->model_d_quickcheckout_order->getCartTotal($total);
+            $json['total'] = round($this->model_d_quickcheckout_order->getCartTotal($total));
             $json['order_id'] = $this->session->data['order_id'] = $this->load->controller('d_quickcheckout/confirm/updateOrder');
             //payment
             $json = $this->load->controller('d_quickcheckout/payment/prepare', $json);
@@ -464,7 +464,7 @@ class ControllerDQuickcheckoutCart extends Controller {
             $json['cart_successes']['voucher'] =  $this->language->get('text_success');
 
             $json['totals'] = $this->session->data['totals'] = $this->model_d_quickcheckout_order->getTotals($total_data, $total, $taxes);
-            $json['total'] = $this->model_d_quickcheckout_order->getCartTotal($total);
+            $json['total'] = round($this->model_d_quickcheckout_order->getCartTotal($total));
             $json['order_id'] = $this->session->data['order_id'] = $this->load->controller('d_quickcheckout/confirm/updateOrder');
             //payment
             $json = $this->load->controller('d_quickcheckout/payment/prepare', $json);
