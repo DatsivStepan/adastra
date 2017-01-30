@@ -256,17 +256,17 @@ class ControllerProductManufacturer extends Controller {
 
             $data['products'] = array();
 
-            $filter_data = array(
-                'filter_manufacturer_id' => $manufacturer_id,
+            $filter_data_m = array(
+                'filter_manufacturer_m_id' => $manufacturer_id,
                 'sort'                   => $sort,
                 'order'                  => $order,
                 'start'                  => ($page - 1) * $limit,
                 'limit'                  => $limit
             );
 
-            $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+            $product_total = $this->model_catalog_product->getTotalProducts($filter_data_m);
 
-            $results = $this->model_catalog_product->getProducts($filter_data);
+            $results = $this->model_catalog_product->getProducts($filter_data_m);
 
             foreach ($results as $result) {
                 if ($result['image']) {
@@ -309,8 +309,10 @@ class ControllerProductManufacturer extends Controller {
                     'tax'         => $tax,
                     'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
                     'rating'      => $result['rating'],
+                    'image'       => $result['image'],
                     'href'        => $this->url->link('product/product', 'manufacturer_id=' . $result['manufacturer_id'] . '&product_id=' . $result['product_id'] . $url)
                 );
+
             }
 
             $url = '';

@@ -40,25 +40,23 @@
           </div>
         </div>
         <div class="row museum-ing-bottom">
-          <span class="museum-img-div-title">фотографии</span>
-          <div class="">
-            <?php $mus_imgs = explode('*', $images); ?>
-            <div id="owl-carousel" class="owl-carousel owl-theme  car_ow_np_20 owl-pagination" data-ride="carousel">
-              <?php $i = 0; ?>
-              <?php foreach($mus_imgs as $mus_img){ ?>
-              <?php $mus_img_m = explode('@',$mus_img); ?>
-              <div class="item" style="margin: 0 2px;">
-                <div style="width: 100%; margin-right: 2px; float: left; margin-top: 15px">
-                  <a href="<?= $mus_img_m['0']; ?>">
-                    <img src="../image/<?= $mus_img_m['1']; ?>" style="width: 100%; height: 150px"></a>
-                </div>
-              </div>
-              <?php $i+=1; ?>
-              <?php } ?>
-            </div>
-            <div class="pagination-text-style">
-              <?php  echo 'Еще фото'.' '.'('.($i - 5).')'; ?>
-            </div>
+          <span class="museum-img-div-title">Картины</span>
+          <div class="row no-margin">
+            <?php foreach($products as $product){ ?>
+              <a href="<?= $product['href']; ?>" class="artists-product-text-style">
+                <div class="col-lg-2">
+                  <div style="width: 100%; margin-right: 2px; float: left; margin-top: 15px">
+                      <img src="../image/<?= $product['image']; ?>" style="width: 100%; height: 150px">
+                  </div>
+                  <div class="row no-margin" style="text-align: left">
+                    <?= $product['name']; ?>
+                  </div>
+                  <span>
+                    <?= 'Цена'.' '.$product['price']; ?>
+                  </span>
+                 </div>
+              </a>
+            <?php } ?>
           </div>
         </div>
       </div>
