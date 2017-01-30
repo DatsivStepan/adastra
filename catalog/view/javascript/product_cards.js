@@ -281,6 +281,9 @@ function ready() {
             animate: false,
             tooltips: true,
             step: 1,
+            format: wNumb({
+                decimals: 0
+            }),
             range: {
                 'min': 0,
                 'max': wSliderRealMaxValue
@@ -292,6 +295,9 @@ function ready() {
             animate: false,
             tooltips: true,
             step: 1,
+            format: wNumb({
+                decimals: 0
+            }),
             range: {
                 'min': 0,
                 'max': hSliderRealMaxValue
@@ -550,6 +556,9 @@ function ready() {
             animate: false,
             tooltips: true,
             step: 1,
+            format: wNumb({
+                decimals: 0
+            }),
             range: {
                 'min': 0,
                 'max': wSliderRealMaxValue
@@ -561,6 +570,9 @@ function ready() {
             animate: false,
             tooltips: true,
             step: 1,
+            format: wNumb({
+                decimals: 0
+            }),
             range: {
                 'min': 0,
                 'max': hSliderRealMaxValue

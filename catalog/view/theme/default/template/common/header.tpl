@@ -59,6 +59,7 @@
 
     <script src="catalog/view/javascript/jquery/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
     <link href="catalog/view/javascript/jquery/fancybox/jquery.fancybox.css" rel="stylesheet" media="screen"/>
+    <script src="catalog/view/javascript/wNumb.js" type="text/javascript"></script>
     <script src="catalog/view/javascript/buyoneclick.js" type="text/javascript"></script>
     <link href="catalog/view/theme/default/stylesheet/buyoneclick.css" rel="stylesheet">
 
