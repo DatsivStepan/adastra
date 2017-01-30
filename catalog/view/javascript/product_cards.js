@@ -8,6 +8,10 @@ var tmp_imageClientHeight = 0;
 var PICTURE_ASPECT_RATIO = 1;
 var CROPPER_ASPECT_RATIO = 1;
 var frameName_corner = "";
+var crop_can_img;
+var crop_view_box_img;
+var txtSrc;
+
 function ready() {
 
     var setFrame = function () {
@@ -112,8 +116,10 @@ function ready() {
 
     var classname = document.getElementsByClassName("textureSelector");
 
+
+
     var setTexture = function () {
-        var txtSrc = this.getAttribute("txtSrc");
+        txtSrc = this.getAttribute("txtSrc");
 
         picture.style.backgroundImage = "url(" + image.src + "), url(" + txtSrc + ")";
         picture.style.backgroundBlendMode = "multiply";
@@ -123,6 +129,19 @@ function ready() {
         textureWidth = parseInt(this.children[0].getAttribute('textureWidth'));
         textureHeight = parseInt(this.children[0].getAttribute('textureHeight'));
 
+        try {
+            crop_can_img.style.backgroundImage = "url(" + image.src + "), url(" + txtSrc + ")";
+            crop_can_img.style.backgroundBlendMode = "multiply";
+            crop_can_img.style.background = "url('" + image.src + "'), url('" + txtSrc + "')";
+            crop_can_img.style.backgroundSize = "100% 100%";
+
+            crop_view_box_img.style.backgroundImage = "url(" + image.src + "), url(" + txtSrc + ")";
+            crop_view_box_img.style.backgroundBlendMode = "multiply";
+            crop_view_box_img.style.background = "url('" + image.src + "'), url('" + txtSrc + "')";
+            crop_view_box_img.style.backgroundSize = "100% 100%";
+        } catch (e) {
+            //console.log("Help");
+        }
 
         //if (MAX_CROPPER_SIZE.checked) {
             MAX_CROPPER_SIZE.dispatchEvent(new Event("click"));
@@ -181,15 +200,15 @@ function ready() {
     widthInput.value = pictureRealWidth;
     var setSliderLabels = function (width, height) {
 
-        var w = Math.round(width * wSliderRealMaxValue / wSliderMaxValue);
+        var w =  (width * wSliderRealMaxValue / wSliderMaxValue);
 
-        document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
+        document.querySelector("#wSlider .noUi-tooltip").innerHTML =  (w);
         //ширина
         widthInput.value = w;
 
-        var h = Math.round(height * hSliderRealMaxValue / hSliderMaxValue);
+        var h =  (height * hSliderRealMaxValue / hSliderMaxValue);
 
-        document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+        document.querySelector("#hSlider .noUi-tooltip").innerHTML =  (h);
 
         //высота
         heightInput.value = h;
@@ -225,13 +244,29 @@ function ready() {
                 data.width = c_side*1;
                 data.height = c_side*1;
                 cropper.setCropBoxData(data);
+
+                crop_can_img = document.querySelector(".cropper-canvas img");
+                crop_view_box_img = document.querySelector(".cropper-view-box img");
+
+                crop_can_img.src = "";
+                crop_view_box_img.src = "";
+
+                crop_can_img.style.backgroundImage = "url(" + image.src + "), url(" + txtSrc + ")";
+                crop_can_img.style.backgroundBlendMode = "multiply";
+                crop_can_img.style.background = "url('" + image.src + "'), url('" + txtSrc + "')";
+                crop_can_img.style.backgroundSize = "100% 100%";
+
+                crop_view_box_img.style.backgroundImage = "url(" + image.src + "), url(" + txtSrc + ")";
+                crop_view_box_img.style.backgroundBlendMode = "multiply";
+                crop_view_box_img.style.background = "url('" + image.src + "'), url('" + txtSrc + "')";
+                crop_view_box_img.style.backgroundSize = "100% 100%";
             },
             crop: function(e) {
 
-                DIGITAL_WIDTH.value  = Math.round(e.detail.width);
-                DIGITAL_HEIGHT.value = Math.round(e.detail.height);
-                HORIZONTAL_DISPLACEMENT.value = Math.round(e.detail.x);
-                VERTICAL_DISPLACEMENT.value   = Math.round(e.detail.y);
+                DIGITAL_WIDTH.value  =  Math.round(e.detail.width);
+                DIGITAL_HEIGHT.value =  Math.round(e.detail.height);
+                HORIZONTAL_DISPLACEMENT.value =  Math.round(e.detail.x);
+                VERTICAL_DISPLACEMENT.value   =  Math.round(e.detail.y);
 
                 CROPPER_ASPECT_RATIO = (DIGITAL_WIDTH.value/DIGITAL_HEIGHT.value).toFixed(2);
             },
@@ -267,8 +302,8 @@ function ready() {
                 widthInput.value  = w;
                 heightInput.value = h;
 
-                document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
-                document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+                document.querySelector("#wSlider .noUi-tooltip").innerHTML =  (w);
+                document.querySelector("#hSlider .noUi-tooltip").innerHTML =  (h);
 
                 checkTooltip();
                 recalculateprice();
@@ -303,8 +338,8 @@ function ready() {
                 'max': hSliderRealMaxValue
             }
         });
-        document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(pictureRealWidth);
-        document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(pictureRealHeight);
+        document.querySelector("#wSlider .noUi-tooltip").innerHTML =  (pictureRealWidth);
+        document.querySelector("#hSlider .noUi-tooltip").innerHTML =  (pictureRealHeight);
 
         wSlider.noUiSlider.on('slide', function () {
             var pre_height = parseFloat(heightInput.value);
@@ -316,7 +351,7 @@ function ready() {
             var w = c_width;
             var h = pre_height;
 
-            h = Math.round(c_width/CROPPER_ASPECT_RATIO);
+            h =  (c_width/CROPPER_ASPECT_RATIO);
 
             if(h <= 1 || h > hSliderRealMaxValue){
                 h = pre_height;
@@ -331,8 +366,8 @@ function ready() {
             heightInput.value = h;
             widthInput.value = w;
 
-            document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
-            document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+            document.querySelector("#wSlider .noUi-tooltip").innerHTML =  (w);
+            document.querySelector("#hSlider .noUi-tooltip").innerHTML =  (h);
 
             checkTooltip();
             recalculateprice();
@@ -348,7 +383,7 @@ function ready() {
             var w = pre_width;
             var h = c_height;
 
-            w = Math.round(c_height*CROPPER_ASPECT_RATIO);
+            w =  (c_height*CROPPER_ASPECT_RATIO);
 
             if(w <= 1 || w > wSliderRealMaxValue){
                 h = pre_height;
@@ -363,8 +398,8 @@ function ready() {
             heightInput.value = h;
             widthInput.value = w;
 
-            document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
-            document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+            document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(w);
+            document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(h);
 
             checkTooltip();
             recalculateprice();
@@ -386,7 +421,7 @@ function ready() {
                 }
             }
 
-            var h = Math.round(this.value/CROPPER_ASPECT_RATIO);
+            var h =  (this.value/CROPPER_ASPECT_RATIO);
 
             heightInput.value = h;
             if(h <= 1){
@@ -441,7 +476,7 @@ function ready() {
                 }
             }
 
-            var w = Math.round(this.value*CROPPER_ASPECT_RATIO);
+            var w =  (this.value*CROPPER_ASPECT_RATIO);
 
             widthInput.value = w;
             if(w <= 1){
@@ -503,22 +538,22 @@ function ready() {
                     }else{
                         w = pictureRealWidth;
                     }
-                    h = Math.round(w / CROPPER_ASPECT_RATIO);
+                    h =  (w / CROPPER_ASPECT_RATIO);
                     if(h > textureHeight){
                         h = textureHeight;
                     }
-                    w = Math.round(h*CROPPER_ASPECT_RATIO);
+                    w =  (h*CROPPER_ASPECT_RATIO);
                 }else{
                     if(pictureRealHeight > textureHeight){
                         h = textureHeight;
                     }else{
                         h = pictureRealHeight;
                     }
-                    w = Math.round(h * CROPPER_ASPECT_RATIO);
+                    w =  (h * CROPPER_ASPECT_RATIO);
                     if(w > textureWidth){
                         w = textureWidth;
                     }
-                    h = Math.round(w/CROPPER_ASPECT_RATIO);
+                    h =  (w/CROPPER_ASPECT_RATIO);
                 }
 
                 wSlider.noUiSlider.updateOptions({
@@ -540,8 +575,8 @@ function ready() {
                 widthInput.value  = w;
                 heightInput.value = h;
 
-                document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
-                document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+                document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(w);
+                document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(h);
             }
             checkTooltip();
             recalculateprice();
@@ -578,8 +613,8 @@ function ready() {
                 'max': hSliderRealMaxValue
             }
         });
-        document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(pictureRealWidth);
-        document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(pictureRealHeight);
+        document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(pictureRealWidth);
+        document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(pictureRealHeight);
 
         wSlider.noUiSlider.on('slide', function () {
             var pre_height = parseFloat(heightInput.value);
@@ -591,7 +626,7 @@ function ready() {
             var w = c_width;
             var h = pre_height;
 
-            h = Math.round(c_width/PICTURE_ASPECT_RATIO);
+            h =  (c_width/PICTURE_ASPECT_RATIO);
 
             if(h <= 1 || h > hSliderRealMaxValue){
                 h = pre_height;
@@ -606,8 +641,8 @@ function ready() {
             heightInput.value = h;
             widthInput.value = w;
 
-            document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
-            document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+            document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(w);
+            document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(h);
 
             checkTooltip();
             recalculateprice();
@@ -623,7 +658,7 @@ function ready() {
             var w = pre_width;
             var h = c_height;
 
-            w = Math.round(c_height*PICTURE_ASPECT_RATIO);
+            w =  (c_height*PICTURE_ASPECT_RATIO);
 
             if(w <= 1 || w > wSliderRealMaxValue){
                 h = pre_height;
@@ -638,8 +673,8 @@ function ready() {
             heightInput.value = h;
             widthInput.value = w;
 
-            document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
-            document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+            document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(w);
+            document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(h);
 
             checkTooltip();
             recalculateprice();
@@ -661,7 +696,7 @@ function ready() {
                 }
             }
 
-            var h = Math.round(this.value/PICTURE_ASPECT_RATIO);
+            var h =  (this.value/PICTURE_ASPECT_RATIO);
 
             heightInput.value = h;
             if(h <= 1){
@@ -716,7 +751,7 @@ function ready() {
                 }
             }
 
-            var w = Math.round(this.value*PICTURE_ASPECT_RATIO);
+            var w =  (this.value*PICTURE_ASPECT_RATIO);
 
             widthInput.value = w;
             if(w <= 1){
@@ -778,22 +813,22 @@ function ready() {
                     }else{
                         w = pictureRealWidth;
                     }
-                    h = Math.round(w / PICTURE_ASPECT_RATIO);
+                    h =  (w / PICTURE_ASPECT_RATIO);
                     if(h > textureHeight){
                         h = textureHeight;
                     }
-                    w = Math.round(h*PICTURE_ASPECT_RATIO);
+                    w =  (h*PICTURE_ASPECT_RATIO);
                 }else{
                     if(pictureRealHeight > textureHeight){
                         h = textureHeight;
                     }else{
                         h = pictureRealHeight;
                     }
-                    w = Math.round(h * PICTURE_ASPECT_RATIO);
+                    w =  (h * PICTURE_ASPECT_RATIO);
                     if(w > textureWidth){
                         w = textureWidth;
                     }
-                    h = Math.round(w/PICTURE_ASPECT_RATIO);
+                    h =  (w/PICTURE_ASPECT_RATIO);
                 }
 
                 wSlider.noUiSlider.updateOptions({
@@ -815,8 +850,8 @@ function ready() {
                 widthInput.value  = w;
                 heightInput.value = h;
 
-                document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(w);
-                document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(h);
+                document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(w);
+                document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(h);
             }
             checkTooltip();
             recalculateprice();
@@ -828,7 +863,7 @@ function ready() {
         contrast_min50.addEventListener("click", function () {
             picture.style.webkitFilter = "contrast(50%)";
 
-            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            //picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
@@ -837,7 +872,7 @@ function ready() {
         contrast_min25.addEventListener("click", function () {
             picture.style.webkitFilter = "contrast(75%)";
 
-            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            //picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
@@ -846,7 +881,7 @@ function ready() {
         contrast_0.addEventListener("click", function () {
             picture.style.webkitFilter = "contrast(100%)";
 
-            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            //picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
@@ -856,7 +891,7 @@ function ready() {
         contrast_plus25.addEventListener("click", function () {
             picture.style.webkitFilter = "contrast(125%)";
 
-            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            //picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
@@ -865,7 +900,7 @@ function ready() {
         contrast_plus50.addEventListener("click", function () {
             picture.style.webkitFilter = "contrast(150%)";
 
-            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            //picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
@@ -874,7 +909,7 @@ function ready() {
         grayscaleCold.addEventListener("click", function () {
             picture.style.webkitFilter = "grayscale(100%)";
 
-            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            //picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
@@ -883,7 +918,7 @@ function ready() {
         grayscaleWarm.addEventListener("click", function () {
             picture.style.webkitFilter = "grayscale(90%)";
 
-            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            //picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
@@ -892,7 +927,7 @@ function ready() {
         sepia.addEventListener("click", function () {
             picture.style.webkitFilter = "sepia(100%)";
 
-            picture.style.backgroundColor = "rgba(255, 255, 255,0)";
+            //picture.style.backgroundColor = "rgba(255, 255, 255,0)";
         });
     }
 
@@ -902,7 +937,7 @@ function ready() {
         brown.addEventListener("click", function () {
             picture.style.webkitFilter = "contrast(100%)";
 
-            picture.style.backgroundColor = "rgba(65,43,22,0.4)";
+            //picture.style.backgroundColor = "rgba(65,43,22,0.4)";
 
         });
     }
@@ -912,7 +947,7 @@ function ready() {
         ochre.addEventListener("click", function () {
             picture.style.webkitFilter = "contrast(100%)";
 
-            picture.style.backgroundColor = "rgba(210,114,27,0.4)";
+            //picture.style.backgroundColor = "rgba(210,114,27,0.4)";
         });
     }
 
@@ -1235,8 +1270,8 @@ function ready() {
 
                         widthInput.dispatchEvent(new Event("change"));
                         hideFrame();
-                        document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(widthInput.value);
-                        document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(heightInput.value);
+                        document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(widthInput.value);
+                        document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(heightInput.value);
                         setFrame(frameName_corner);
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
@@ -1328,8 +1363,8 @@ function ready() {
 
                 widthInput.dispatchEvent(new Event("change"));
                 hideFrame();
-                document.querySelector("#wSlider .noUi-tooltip").innerHTML = Math.round(widthInput.value);
-                document.querySelector("#hSlider .noUi-tooltip").innerHTML = Math.round(heightInput.value);
+                document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(widthInput.value);
+                document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(heightInput.value);
                 setFrame(frameName_corner);
             },
             error: function (xhr, ajaxOptions, thrownError) {

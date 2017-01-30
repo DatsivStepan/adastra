@@ -78,7 +78,9 @@
 <?php echo $footer; ?>
 <style>
     .list_title{
-        font-family: 'AristonNormal'; font-size: 60px !important;
+        font-family: 'BikhamCyrScript';
+        font-size: 80px !important;
+        margin: 35px 0px;
     }
     .symbol_title{
         font-family: 'Times New Roman';
