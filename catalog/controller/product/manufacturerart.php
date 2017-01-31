@@ -85,7 +85,11 @@ class ControllerProductManufacturerart extends Controller {
 
 		$this->load->model('tool/image');
 
-		$this->document->setTitle($this->language->get('heading_title'));
+        if($_GET['category'] == 'world'){
+            $this->document->setTitle('Зарубежные художники');
+        }else if($_GET['category'] == 'ru'){
+            $this->document->setTitle('Русские художники');
+        }
 
 		$data['heading_title'] = $this->language->get('heading_title');
 

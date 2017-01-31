@@ -85,7 +85,7 @@ class ControllerProductManufacturer extends Controller {
 
 		$this->load->model('tool/image');
 
-		$this->document->setTitle($this->language->get('heading_title'));
+		$this->document->setTitle('Музеи');
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
@@ -109,7 +109,6 @@ class ControllerProductManufacturer extends Controller {
 		$data['categories'] = array();
 
 		$results = $this->model_catalog_manufacturer->getManufacturers();
-
 		foreach ($results as $result) {
 			if (is_numeric(utf8_substr($result['name'], 0, 1))) {
 				$key = '0 - 9';
