@@ -1641,3 +1641,23 @@
     color: #0b0b0b;
     font-size: 15px;
 }
+.artists-product-img-style{
+    width: 100%;
+    margin-right: 2px;
+    float: left;
+    margin-top: 15px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+@media (max-width: 767px) {
+    .artists-product-img-style{
+        width: 100%;
+        margin-right: 2px;
+        float: left;
+        margin-top: 15px;
+        height: 450px;
+        background-size: cover;
+        background-position: center;
+    }
+}
