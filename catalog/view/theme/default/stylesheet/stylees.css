@@ -1,5 +1,5 @@
 .div_item_text_art {
-     width: 32%;
+     width: 31%;
     height: 450px;
     margin-left: 11px;
 }
@@ -1650,7 +1650,7 @@
     background-size: cover;
     background-position: center;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .artists-product-img-style{
         width: 100%;
         margin-right: 2px;
@@ -1659,5 +1659,10 @@
         height: 450px;
         background-size: cover;
         background-position: center;
+    }
+    .div_item_text_art {
+        width: 31%;
+        height: 450px;
+        margin-left: 11px;
     }
 }
