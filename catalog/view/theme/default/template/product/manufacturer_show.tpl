@@ -45,9 +45,7 @@
             <?php foreach($products as $product){ ?>
             <a href="<?= $product['href']; ?>&museum_id=<?= $_GET['manufacturer_id'] ?>" class="artists-product-text-style">
               <div class="col-lg-2">
-                <div style="width: 100%; margin-right: 2px; float: left; margin-top: 15px">
-                  <img src="../image/<?= $product['image']; ?>" style="width: 100%; height: 150px">
-                </div>
+                <div class="artists-product-img-style" style="background: url('../image/<?= $product['image'];?>'); background-size: cover; background-position: center;"></div>
                 <div class="row no-margin" style="text-align: left">
                   <?= $product['name']; ?>
                 </div>
