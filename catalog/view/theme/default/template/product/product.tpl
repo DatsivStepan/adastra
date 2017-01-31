@@ -11,11 +11,37 @@
             <?php
              $k = count($breadcrumbs);
              $i = 1;
+             $from_cat = "";
+              if(isset($manufacturer_data)){
+                if(isset($manufacturer_data['from_id'])){
+                    if($manufacturer_data['from_id'] == 1){
+                        $from_cat = "&category=ru";
+                    }
+                    if($manufacturer_data['from_id'] == 2){
+                        $from_cat = "&category=world";
+                    }
+                }
 
+           $b_text = "<li class='breadcrumb_text'>";
+            $b_text .= "<a class='small_custom text' href='index.php?route=common/home'>Главная</a>";
+            $b_text .= "</li>";
+
+            $b_text .= "<li class='breadcrumb_text'>";
+                $b_text .= "<a class='small_custom text' href='/index.php?route=product/".$manufacturer_type."/show&manufacturer_id=".$manufacturer_data['id']."".$from_cat."'>".$manufacturer_data['name']."</a>";
+                $b_text .= "</li>";
+            $btnLink = "/index.php?route=product/".$manufacturer_type."/show&manufacturer_id=".$manufacturer_data['id']."".$from_cat;
+
+            $b_text .= "<li class='breadcrumb_text'>";
+                $b_text .= "<a class='text'  style=''>".$heading_title."</a>";
+                $b_text .= "</li>";
+
+            echo($b_text);
+              }else{
             foreach ($breadcrumbs as $breadcrumb) {
             if($i == $k-1){
-                $btnLink = $breadcrumb['href'];
+            $btnLink = $breadcrumb['href'];
             }
+
             ?>
             <?php if ($breadcrumb ['href']==('')){ ?>
             <li class="breadcrumb_text"><?php echo $breadcrumb['text']; ?></li>
@@ -27,6 +53,9 @@
             <?php } ?>
             <?php $i++;}
 ?>
+            <?php } ?>
+
+
             <a href="<?php echo $btnLink?>" class="backToCat">Назад</a>
         </ul>
         <div class="container">
@@ -1454,3 +1483,9 @@
 <div class="row no-margin" style="margin-top: 25px !important;">
     <?php echo $footer; ?>
 </div>
+<style>
+    .small_custom{
+        padding-right: 12px !important;
+        background: url('../../../catalog/view/theme/default/image/strilka.png') right center no-repeat;
+    }
+</style>

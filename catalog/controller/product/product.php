@@ -235,7 +235,17 @@ class ControllerProductProduct extends Controller {
 
 		$this->load->model('catalog/product');
 
-		$product_info = $this->model_catalog_product->getProduct($product_id);
+        if(isset($_GET['artist_id'])){
+            $data['manufacturer_data'] = $this->model_catalog_product->getManufacturerArt((int)$_GET['artist_id']);
+            $data['manufacturer_type'] = "manufacturerart";
+        }
+        if(isset($_GET['museum_id'])){
+            $data['manufacturer_data'] = $this->model_catalog_product->getManufacturerMuseum((int)$_GET['museum_id']);
+            $data['manufacturer_type'] = "manufacturer";
+        }
+
+
+        $product_info = $this->model_catalog_product->getProduct($product_id);
 
 		if ($product_info) {
 			$url = '';

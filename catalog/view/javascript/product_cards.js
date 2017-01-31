@@ -363,8 +363,8 @@ function ready() {
                 hSlider.noUiSlider.set(h);
             }
 
-            heightInput.value = h;
-            widthInput.value = w;
+            heightInput.value = Math.round(h);
+            widthInput.value = Math.round(w);
 
             document.querySelector("#wSlider .noUi-tooltip").innerHTML =  (w);
             document.querySelector("#hSlider .noUi-tooltip").innerHTML =  (h);
@@ -395,8 +395,8 @@ function ready() {
                 wSlider.noUiSlider.set(w);
             }
 
-            heightInput.value = h;
-            widthInput.value = w;
+            heightInput.value = Math.round(h);
+            widthInput.value = Math.round(w);
 
             document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(w);
             document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(h);
@@ -423,13 +423,13 @@ function ready() {
 
             var h =  (this.value/CROPPER_ASPECT_RATIO);
 
-            heightInput.value = h;
+            heightInput.value = Math.round(h);
             if(h <= 1){
                 h = pre_height;
                 w = pre_width;
 
-                widthInput.value  = w;
-                heightInput.value = h;
+                widthInput.value  = Math.round(w);
+                heightInput.value = Math.round(h);
             }
 
             wSliderRealMaxValue = Math.ceil(this.value / textureWidth) * textureWidth;
@@ -483,8 +483,8 @@ function ready() {
                 h = pre_height;
                 w = pre_width;
 
-                widthInput.value  = w;
-                heightInput.value = h;
+                widthInput.value  = Math.round(w);
+                heightInput.value = Math.round(h);
             }
 
             wSliderRealMaxValue = Math.ceil(w / textureWidth) * textureWidth;
@@ -572,8 +572,8 @@ function ready() {
                 hSlider.noUiSlider.set([h, null]);
                 wSlider.noUiSlider.set([w, null]);
 
-                widthInput.value  = w;
-                heightInput.value = h;
+                widthInput.value  = Math.round(w);
+                heightInput.value = Math.round(h);
 
                 document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(w);
                 document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(h);
@@ -638,8 +638,8 @@ function ready() {
                 hSlider.noUiSlider.set(h);
             }
 
-            heightInput.value = h;
-            widthInput.value = w;
+            heightInput.value = Math.round(h);
+            widthInput.value = Math.round(w);
 
             document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(w);
             document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(h);
@@ -670,8 +670,8 @@ function ready() {
                 wSlider.noUiSlider.set(w);
             }
 
-            heightInput.value = h;
-            widthInput.value = w;
+            heightInput.value = Math.round(h);
+            widthInput.value = Math.round(w);
 
             document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(w);
             document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(h);
@@ -698,13 +698,13 @@ function ready() {
 
             var h =  (this.value/PICTURE_ASPECT_RATIO);
 
-            heightInput.value = h;
+            heightInput.value = Math.round(h);
             if(h <= 1){
                 h = pre_height;
                 w = pre_width;
 
-                widthInput.value  = w;
-                heightInput.value = h;
+                widthInput.value  = Math.round(w);
+                heightInput.value = Math.round(h);
             }
 
             wSliderRealMaxValue = Math.ceil(this.value / textureWidth) * textureWidth;
@@ -753,13 +753,13 @@ function ready() {
 
             var w =  (this.value*PICTURE_ASPECT_RATIO);
 
-            widthInput.value = w;
+            widthInput.value = Math.round(w);
             if(w <= 1){
                 h = pre_height;
                 w = pre_width;
 
-                widthInput.value  = w;
-                heightInput.value = h;
+                widthInput.value  = Math.round(w);
+                heightInput.value = Math.round(h);
             }
 
             wSliderRealMaxValue = Math.ceil(w / textureWidth) * textureWidth;

@@ -569,4 +569,18 @@ class ModelCatalogProduct extends Model {
 			return 0;
 		}
 	}
+
+	public function getManufacturerArt($data){
+        $query = "SELECT m_art.`name` AS `name`, m_art.manufacturer_art_id AS id, m_art.category_art_id AS from_id FROM oc_manufacturer_art AS m_art WHERE m_art.manufacturer_art_id = ".(int)$data."";
+        $result = $this->db->query($query)->rows[0];
+        //var_dump($result);
+        return $result;
+	}
+	public function getManufacturerMuseum($data){
+        $query = "SELECT m_mus.manufacturer_id AS id, m_mus.`name` AS `name` FROM oc_manufacturer AS m_mus WHERE m_mus.manufacturer_id = ".(int)$data."";
+        $result = $this->db->query($query)->rows[0];
+        //var_dump($result);
+        return $result;
+	}
+
 }
