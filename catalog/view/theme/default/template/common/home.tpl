@@ -153,15 +153,15 @@
     <div class="container">
         <?php  ?>
         <div class="row">
-            <div class="div_item_text_art col-lg-3 col-sm-12" style="background: url(image/catalog/art_1.png) center no-repeat;">
+            <div class="div_item_text_art col-lg-3  col-xs-3" style="background: url(image/catalog/art_1.png) center no-repeat;">
                 <a href="index.php?route=product/manufacturerart/&category=ru">
                     <div class="text_title_np_21_art" style="">Русские художники</div></a>
             </div>
-            <div class="div_item_text_art col-lg-3 col-sm-12" style="background: url(image/catalog/art_2.png) center no-repeat;">
+            <div class="div_item_text_art col-lg-3  col-xs-3" style="background: url(image/catalog/art_2.png) center no-repeat;">
                 <a href="index.php?route=product/manufacturerart/&category=world">
                     <div class="text_title_np_21_art" style="">Зарубежные художники</div></a>
             </div>
-            <div class="div_item_text_art col-lg-3 col-sm-12" style="background: url(image/catalog/art_3.png) center no-repeat;">
+            <div class="div_item_text_art col-lg-3  col-xs-3" style="background: url(image/catalog/art_3.png) center no-repeat;">
                 <a href="index.php?route=product/category&path=18_86">
                     <div class="text_title_np_21_art" style="">Роботы неизвестных художников</div></a>
             </div>
