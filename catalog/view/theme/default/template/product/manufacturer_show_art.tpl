@@ -43,7 +43,7 @@
           <span class="museum-img-div-title">Картины</span>
           <div class="row no-margin">
             <?php foreach($products as $product){ ?>
-              <a href="<?= $product['href']; ?>" class="artists-product-text-style">
+              <a href="<?= $product['href']; ?>&artist_id=<?= $_GET['manufacturer_id'] ?>" class="artists-product-text-style">
                 <div class="col-lg-2">
                   <div style="width: 100%; margin-right: 2px; float: left; margin-top: 15px">
                       <img src="../image/<?= $product['image']; ?>" style="width: 100%; height: 150px">
