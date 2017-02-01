@@ -69,6 +69,7 @@
     $i = 1;
     foreach ($category_home as $category) { ?>
     <div class="hidden-lg hidden-md">
+        <a class="a_kat_adast" href="<?php echo $category['href'];?>">
         <div class="adas_img_sm adas_img_sm2 <?php if($i == 1){echo 'cat1xsFix';} if($i == 5){echo 'cat5xsFix';} ?>"
              style="background: url(<?php echo $category['image'];?>)center no-repeat;">
             <div class="adas_img_mar2">
@@ -79,14 +80,16 @@
                 </div>
                 <div class="col-sm-6 col-xs-12 text_box2">
                     <div class="border_kat2">
-                        <a class="a_kat_adast" href="<?php echo $category['href'];?>">В категорию</a>
+                        <span class="a_kat_adast" >В категорию</span>
                     </div>
                 </div>
             </div>
         </div>
+        </a>
     </div>
     <?php $i++;} ?>
     <div class="hidden-lg hidden-md">
+        <a class="a_kat_adast" href="<?php echo $category['href'];?>">
         <div class="adas_img_sm adas_img_sm2 <?php if($i == 1){echo 'cat1xsFix';} if($i == 5){echo 'cat5xsFix';} ?>"
              style="background: url('../../image/catalog/category_5.png')center no-repeat;">
             <div class="adas_img_mar2">
@@ -97,11 +100,12 @@
                 </div>
                 <div class="col-sm-6 col-xs-12 text_box2">
                     <div class="border_kat2">
-                        <a class="a_kat_adast" href="<?php echo $category['href'];?>">В категорию</a>
+                        <span class="a_kat_adast">В категорию</span>
                     </div>
                 </div>
             </div>
         </div>
+        </a>
     </div>
     <!--<?php
         $count = count($arr);

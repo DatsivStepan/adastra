@@ -22,6 +22,11 @@
     text-transform: capitalize;
     margin-top: 3%;
 }
+@media (max-width: 767px){
+    .div_muzey_text_art {
+        margin-bottom: 6%;
+    }
+}
 .title_adas_o_galer{
     font-family:'Times New Roman';
     font-size: 41px;
@@ -1291,6 +1296,11 @@
     font-size: 80px;
     text-transform: capitalize;
     margin-top: 1%;
+}
+@media (max-width: 767px){
+    .div_muzey_text{
+        margin-bottom: 6%;
+    }
 }
 .div_item_text{
     width: 99.5%;

@@ -997,7 +997,7 @@
                             <span class="card-text-span-style_3"><i><img style="width: 4%" src="../catalog/view/theme/default/image/map-marcer-icon.png" alt=""></i> г. Москва, пер. Слободской, д.6</span>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-xl-5">
+                    <div class="col-lg-5 col-xl-4">
                         <form action="" method="post" id="contact_c_card" class="email_adminy">
                             <div class="modal-div-input-stile">
                                 <input class="modal-input-style" id="name_card" name="name_card" type="text"
