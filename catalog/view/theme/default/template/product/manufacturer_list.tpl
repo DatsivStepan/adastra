@@ -43,7 +43,7 @@
 
         <div class="manufacturer_list">
             <?php foreach ($categories as $category) { ?>
-            <div class="col-sm-4"><h2 id="<?php echo $category['name']; ?>" class='symbol_title'><?php echo $category['name']; ?></h2>
+            <div class="col-sm-4 col-xs-4 "><h2 id="<?php echo $category['name']; ?>" class='symbol_title'><?php echo $category['name']; ?></h2>
             <?php if ($category['manufacturer']) { ?>
             <?php foreach (array_chunk($category['manufacturer'], 4) as $manufacturers) { ?>
                 <?php foreach ($manufacturers as $manufacturer) { ?>
