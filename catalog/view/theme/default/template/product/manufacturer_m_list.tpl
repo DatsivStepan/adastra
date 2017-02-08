@@ -20,7 +20,7 @@
             <?php if ($category['manufacturer']) { ?>
             <?php foreach (array_chunk($category['manufacturer'], 4) as $manufacturers) { ?>
                 <?php foreach ($manufacturers as $manufacturer) { ?>
-                <p><a href="index.php?route=product/manufacturer/show&manufacturer_id=<?=$manufacturer['manufacturer_id']; ?>" class="manufacturer_link"><?php echo $manufacturer['name']; ?></a></p>
+                <p><a href="museum&manufacturer_id=<?=$manufacturer['manufacturer_id']; ?>" class="manufacturer_link"><?php echo $manufacturer['name']; ?></a></p>
                 <?php } ?>
             <?php } ?>
             <?php } ?>

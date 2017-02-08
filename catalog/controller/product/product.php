@@ -237,11 +237,11 @@ class ControllerProductProduct extends Controller {
 
         if(isset($_GET['artist_id'])){
             $data['manufacturer_data'] = $this->model_catalog_product->getManufacturerArt((int)$_GET['artist_id']);
-            $data['manufacturer_type'] = "manufacturerart";
+            $data['manufacturer_type'] = "hydojnik";
         }
         if(isset($_GET['museum_id'])){
             $data['manufacturer_data'] = $this->model_catalog_product->getManufacturerMuseum((int)$_GET['museum_id']);
-            $data['manufacturer_type'] = "manufacturer";
+            $data['manufacturer_type'] = "museum";
         }
 
 

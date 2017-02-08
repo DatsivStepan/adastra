@@ -108,12 +108,6 @@
                              style="border-bottom: 1px solid #fff; width: 100px; margin-left: 40%; margin-top: 4%;">
 
                         </div>
-                        <h5 class="text_style_1 text_style_20" style="text-align: center;  padding-top: 15px;">
-                            5 видов фактур на выбор
-                        </h5>
-                        <h5 class="text_style_2 text_style_20" style="text-align: center">
-                            22 стандартных размера
-                        </h5>
                     </div>
                 </div>
                 <?php } ?>

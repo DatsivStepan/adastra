@@ -37,7 +37,7 @@
       <?php if ($categories) { ?>
       <div style="text-align: center" class="symbol_title">
         <?php foreach ($categories as $category) { ?>
-            <a href="index.php?route=product/manufacturerart/&category=<?= $_GET['category'] ?>#<?php echo $category['name']; ?>" class="symbol_title_small"><?php echo $category['name']; ?></a>
+            <a href="hydojnik/&category=<?= $_GET['category'] ?>#<?php echo $category['name']; ?>" class="symbol_title_small"><?php echo $category['name']; ?></a>
         <?php } ?>
       </div>
 
@@ -49,12 +49,12 @@
                 <?php foreach ($manufacturers as $manufacturer) { ?>
                 <?php if($_GET['category'] == 'ru'){ ?>
                 <?php if($manufacturer['category_name'] == 'Русские художники'){ ?>
-                <p><a href="index.php?route=product/manufacturerart/show&manufacturer_id=<?= $manufacturer['manufacturer_art_id'] ?>&category=<?= $_GET['category'] ?>" class="manufacturer_link"><?php echo $manufacturer['name']; ?></a></p>
+                <p><a href="hydojnik&manufacturer_id=<?= $manufacturer['manufacturer_art_id'] ?>&category=<?= $_GET['category'] ?>" class="manufacturer_link"><?php echo $manufacturer['name']; ?></a></p>
                 <?php } ?>
                 <?php } ?>
                 <?php if($_GET['category'] == 'world'){ ?>
                 <?php if($manufacturer['category_name'] == 'Зарубежные художники'){ ?>
-                <p><a href="index.php?route=product/manufacturerart/show&manufacturer_id=<?= $manufacturer['manufacturer_art_id'] ?>&category=<?= $_GET['category'] ?>" class="manufacturer_link"><?php echo $manufacturer['name']; ?></a></p>
+                <p><a href="hydojnik&manufacturer_id=<?= $manufacturer['manufacturer_art_id'] ?>&category=<?= $_GET['category'] ?>" class="manufacturer_link"><?php echo $manufacturer['name']; ?></a></p>
                 <?php } ?>
                 <?php } ?>
                 <?php } ?>

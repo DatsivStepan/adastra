@@ -12,6 +12,11 @@
     margin-top: 75%;
     line-height: 45px;
 }
+@media (max-width: 992px){
+    .text_title_np_21_art{
+        margin-top: 110%;
+    }
+}
 .div_muzey_text_art {
     text-align: center;
     margin-bottom: 3%;
@@ -27,6 +32,12 @@
         margin-bottom: 6%;
     }
 }
+@media (max-width: 1199px){
+    .div_muzey_text_art {
+        margin-bottom: 6%;
+    }
+}
+
 .title_adas_o_galer{
     font-family:'Times New Roman';
     font-size: 41px;
@@ -354,6 +365,14 @@
     overflow: hidden;
     position: relative;
 }
+@media (max-width: 1100px) and (min-width: 992px){
+    .add1_2{
+        height: 325px;
+    }
+    .add1_1{
+        height: 325px;
+    }
+}
 .add1_1_2{
     transform: skew(15deg);
     border: 1px solid;
@@ -380,6 +399,11 @@
     width: 130%;
     position: absolute;
     left: -19%;
+}
+@media (max-width: 1100px) and (min-width: 992px){
+    .add1_1_3{
+        height: 225px;
+    }
 }
 .div-ramka-style_3{
     background: url(../image/ramka.png)center no-repeat;
@@ -500,6 +524,15 @@
     color: #000;
     text-decoration: none;
 }
+@media (max-width: 1199px) and (min-width: 992px) {
+    .a_kat_adas{
+        font-size: 12px;
+    }
+}@media (max-width: 1366px) and (min-width: 1200px) {
+    .a_kat_adas{
+        font-size: 12px;
+    }
+}
 #parallelogram {
     margin-left: 13px;
     margin-top: 5px;
@@ -549,8 +582,18 @@
 .border_kat{
     padding-top: 20px;
 }
+@media (max-width: 1100px) and (min-width: 992px) {
+    .border_kat{
+        padding-top: 10px;
+    }
+}
 .border_kat_3{
     padding-top: 20px;
+}
+@media (max-width: 1100px) and (min-width: 992px) {
+    .border_kat_3{
+        padding-top: 10px;
+    }
 }
 .adas_img_sm{
     width: 100%;
@@ -1302,6 +1345,11 @@
         margin-bottom: 6%;
     }
 }
+@media (max-width: 1199px){
+    .div_muzey_text {
+        margin-bottom: 6%;
+    }
+}
 .div_item_text{
     width: 99.5%;
     height: 200px;
@@ -1336,13 +1384,13 @@
     color: #0b0b0b !important;
     text-decoration: none;
 }
-@media (max-width: 1100px) and (min-width: 992px) {
+@media (max-width: 1199px) and (min-width: 992px) {
     .add1_3 {
         margin-top: 6px;
         margin-right: 7px;
         margin-left: 0;
         width: 27%;
-        height: 400px;
+        height: 325px;
         transform: skew(-15deg);
         overflow: hidden;
         position: absolute;
@@ -1351,7 +1399,7 @@
     .add1_1_2 {
         transform: skew(15deg);
         border: 1px solid;
-        height: 300px;
+        height: 225px;
         width: 138%;
         position: absolute;
         left: -19%;
@@ -1359,7 +1407,7 @@
     .add1_1_1 {
         transform: skew(15deg);
         border: 1px solid;
-        height: 300px;
+        height: 225px;
         width: 140%;
         position: absolute;
         left: -20%;

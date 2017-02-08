@@ -12,6 +12,9 @@ var crop_can_img;
 var crop_view_box_img;
 var txtSrc;
 
+var texturePrice;
+
+var SELECT_AREA_DESCRIPTION_TEXT = "ВАЖНО: чем меньше выбранная Вами область тем хуже качество изображение при одинаковых размерах";
 function ready() {
 
     var setFrame = function () {
@@ -128,6 +131,7 @@ function ready() {
 
         textureWidth = parseInt(this.children[0].getAttribute('textureWidth'));
         textureHeight = parseInt(this.children[0].getAttribute('textureHeight'));
+        texturePrice = parseInt(this.children[0].getAttribute('data-price'));
 
         try {
             crop_can_img.style.backgroundImage = "url(" + image.src + "), url(" + txtSrc + ")";
@@ -223,6 +227,9 @@ function ready() {
      */
     if (DIGITAL_WIDTH && DIGITAL_HEIGHT && HORIZONTAL_DISPLACEMENT && VERTICAL_DISPLACEMENT) {
         //var image = document.getElementById('image');
+
+        document.getElementById("selectAreaDescription").innerHTML = SELECT_AREA_DESCRIPTION_TEXT;
+        document.getElementById("selectAreaDescription").style.display = "block";
 
         var cropper = new Cropper(image, {
             viewMode:3,
@@ -366,8 +373,8 @@ function ready() {
             heightInput.value = Math.round(h);
             widthInput.value = Math.round(w);
 
-            document.querySelector("#wSlider .noUi-tooltip").innerHTML =  (w);
-            document.querySelector("#hSlider .noUi-tooltip").innerHTML =  (h);
+            document.querySelector("#wSlider .noUi-tooltip").innerHTML =  Math.round(w);
+            document.querySelector("#hSlider .noUi-tooltip").innerHTML =  Math.round(h);
 
             checkTooltip();
             recalculateprice();
