@@ -22,14 +22,15 @@
                     }
                 }
 
+
            $b_text = "<li class='breadcrumb_text'>";
             $b_text .= "<a class='small_custom text' href='index.php?route=common/home'>Главная</a>";
             $b_text .= "</li>";
 
             $b_text .= "<li class='breadcrumb_text'>";
-                $b_text .= "<a class='small_custom text' href='/index.php?route=product/".$manufacturer_type."/show&manufacturer_id=".$manufacturer_data['id']."".$from_cat."'>".$manufacturer_data['name']."</a>";
+                $b_text .= "<a class='small_custom text' href='".$manufacturer_type."&manufacturer_id=".$manufacturer_data['id']."".$from_cat."'>".$manufacturer_data['name']."</a>";
                 $b_text .= "</li>";
-            $btnLink = "/index.php?route=product/".$manufacturer_type."/show&manufacturer_id=".$manufacturer_data['id']."".$from_cat;
+            $btnLink = $manufacturer_type."&manufacturer_id=".$manufacturer_data['id']."".$from_cat;
 
             $b_text .= "<li class='breadcrumb_text'>";
                 $b_text .= "<a class='text'  style=''>".$heading_title."</a>";
@@ -181,6 +182,7 @@
                                         <?php } ?>
                                     </div>
                                 </div>
+                                <div id="selectAreaDescription" style="display: none;"></div>
                                 <div class="productDeliveryBox xs-hidden">
                                     <p class="deliveryBoxTitle">Доставка:</p>
                                     <p>
@@ -1356,6 +1358,7 @@
         var frame_width = parseInt(document.querySelector("input#Ширина").value);
         var frame_size = (frame_height + frame_width)*2;
         var texture_size = frame_height*frame_width;
+        var texture_cost = texture_size/10000 * Number(texturePrice);
 
         $('input:checked,option:selected').each(function() {
             if ($(this).data('prefix') == '+') {
@@ -1372,12 +1375,13 @@
                             break;
                     }
                 }else if($(this).data('texture')){
-                    option_price += frame_height*frame_width/10000 * Number($(this).data('price'));
+                    //option_price += frame_height*frame_width/10000 * Number($(this).data('price'));
+                    option_price += texture_cost;
                 }else{
                     option_price += Number($(this).data('price'));
                 }
                 if($(this).data('coating')){
-                    option_price += main_price * 0.2;
+                    option_price += texture_cost * 0.2;
                 }
 
             }
@@ -1487,5 +1491,14 @@
     .small_custom{
         padding-right: 12px !important;
         background: url('../../../catalog/view/theme/default/image/strilka.png') right center no-repeat;
+    }
+    #selectAreaDescription{
+        float: left;
+        width: 100%;
+        height: auto;
+        padding: 15px 20px 0 20px;
+        font-family: 'Times New Roman';
+        font-size: 20px;
+        font-weight: bold;
     }
 </style>

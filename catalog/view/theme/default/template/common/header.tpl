@@ -228,17 +228,17 @@
                                         </div>
                                         <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9 no-padding">
                                             <div class=" div-menu-style">
-                                                <a href="/index.php?route=information/information&information_id=9"><span
+                                                <a href="kak-kupit"><span
                                                             class="header-menu-text-style">Как купить?</span></a>
-                                                <a href="/index.php?route=information/information&information_id=10"><span
+                                                <a href="oplata"><span
                                                             class="header-menu-text-style">Оплата</span></a>
-                                                <a href="/index.php?route=information/information&information_id=6"><span
+                                                <a href="delivery"><span
                                                             class="header-menu-text-style">Доставка</span></a>
-                                                <a href="/index.php?route=information/contact"><span
+                                                <a href="contact-us"><span
                                                             class="header-menu-text-style">Контакты</span></a>
-                                                <a href="/index.php?route=information/information&information_id=7"><span
+                                                <a href="geografia-rabotu"><span
                                                             class="header-menu-text-style">География работы</span></a>
-                                                <a href="/index.php?route=information/materialsAndPrices"><span
+                                                <a href="materialsAndPrices"><span
                                                             class="header-menu-text-style">Материалы и цены</span></a>
                                             </div>
                                         </div>
@@ -287,22 +287,22 @@
                                 <?php if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'русскиехудожники'){ ?>
                                     <a
                                         class="products-category-style"
-                                        href="index.php?route=product/manufacturerart/&category=ru"><?php echo $child['name']; ?>
+                                        href="hydojniki/&category=ru"><?php echo $child['name']; ?>
                                     </a>
                                 <?php }else if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'зарубежныехудожники'){ ?>
                                     <a
                                         class="products-category-style"
-                                        href="index.php?route=product/manufacturerart/&category=world"><?php echo $child['name']; ?>
+                                        href="hydojniki/&category=world"><?php echo $child['name']; ?>
                                     </a>
                                 <?php }else if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'работынеизвестныххудожников'){ ?>
                                     <a
                                         class="products-category-style"
-                                        href="index.php?route=product/category&path=18_86"><?php echo $child['name']; ?>
+                                        href="reprodukcii-kartin/raboty-neizvestnyx-xudozhnikov/"><?php echo $child['name']; ?>
                                     </a>
                                 <?php }else if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'музеиигалереимира'){ ?>
                                     <a
                                         class="products-category-style"
-                                        href="index.php?route=product/manufacturer/"><?php echo $child['name']; ?>
+                                        href="museums/"><?php echo $child['name']; ?>
                                     </a>
                                 <?php }else{ ?>
                                     <a
@@ -376,17 +376,17 @@
                 <div id="products_md" class="row " style="display: none">
                     <div class=" container" style="text-align: center">
                         <div class=" div-menu-mb-style" style="font-size: 25px; width: 100%;">
-                            <a href="/index.php?route=information/information&information_id=9"><span
+                            <a href="kak-kupit"><span
                                         class="header-menu-text-style">Как купить?</span></a></br>
-                            <a href="/index.php?route=information/information&information_id=10"><span
+                            <a href="oplata"><span
                                         class="header-menu-text-style">Оплата</span></a></br>
-                            <a href="/index.php?route=information/information&information_id=6"><span
+                            <a href="delivery"><span
                                         class="header-menu-text-style">Доставка</span></a></br>
-                            <a href="/index.php?route=information/contact"><span
+                            <a href="contact-us"><span
                                         class="header-menu-text-style">Контакты</span></a></br>
-                            <a href="/index.php?route=information/information&information_id=7"><span
+                            <a href="geografia-rabotu"><span
                                         class="header-menu-text-style">География работы</span></a></br>
-                            <a href="/index.php?route=information/materialsAndPrices"><span
+                            <a href="materialsAndPrices"><span
                                         class="header-menu-text-style">Материалы и цены</span></a></br>
                         </div>
                         <?php foreach ($categories as $category) { ?>
@@ -400,15 +400,19 @@
                             <span class="">
                                 <?php if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'русскиехудожники'){ ?>
                                     <a class="products-category-style products-category-style_20"
-                                        href="index.php?route=product/manufacturerart/&category=ru"><?php echo $child['name']; ?>
+                                        href="hydojniki/&category=ru"><?php echo $child['name']; ?>
                                     </a>
                                 <?php }else if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'зарубежныехудожники'){ ?>
                                     <a class="products-category-style products-category-style_20"
-                                       href="index.php?route=product/manufacturerart/&category=world"><?php echo $child['name']; ?>
+                                       href="hydojniki/&category=world"><?php echo $child['name']; ?>
                                     </a>
                                 <?php }else if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'работынеизвестныххудожников'){ ?>
                                     <a class="products-category-style products-category-style_20"
-                                       href="index.php?route=product/category&path=18_86"><?php echo $child['name']; ?>
+                                       href="reprodukcii-kartin/raboty-neizvestnyx-xudozhnikov"><?php echo $child['name']; ?>
+                                    </a>
+                                <?php }else if(mb_strtolower(str_replace(' ', '', $child['name'])) == 'музеиигалереимира'){ ?>
+                                    <a class="products-category-style products-category-style_20"
+                                       href="museums"><?php echo $child['name']; ?>
                                     </a>
                                 <?php }else{ ?>
                                     <a class="products-category-style products-category-style_20"

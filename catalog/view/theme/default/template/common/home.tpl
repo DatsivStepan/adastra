@@ -5,49 +5,57 @@
         <?php if(($key == 0)){ ?>
         <div class="add1_2">
         <div class="add1_1_2"  style="background: url(<?php echo $category['image'];?>)center no-repeat; background-size:100% 100%; "></div>
+            <a class="a_kat_adas" href="<?php echo $category['href'];?>">
             <div class="div-ramka-style_2"></div>
             <div class="text_kat_name_2">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
-                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    <span class="a_kat_adas">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
             </div>
+            </a>
         </div>
         <?php } ?>
         <?php if(($key == 1)){ ?>
         <div class="add1_1">
             <div class="add1_1_1"  style="background: url(<?php echo $category['image'];?>)center no-repeat; background-size:100% 100%;"></div>
+            <a class="a_kat_adas" href="<?php echo $category['href'];?>">
             <div class="div-ramka-style"></div>
             <div class="text_kat_name_3">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
-                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    <span class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
             </div>
+            </a>
         </div>
         <?php } ?>
         <?php if(($key == 2)){ ?>
         <div class="add1_1">
         <div class="add1_1_1" style="background: url(<?php echo $category['image'];?>)center no-repeat; background-size:100% 100%;"></div>
+            <a class="a_kat_adas" href="<?php echo $category['href'];?>">
             <div class="div-ramka-style"></div>
             <div class="text_kat_name">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
-                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    <span class="a_kat_adas" >В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
             </div>
+            </a>
         </div>
         <?php } ?>
         <?php if(($key == 3)){ ?>
         <div class="add1_1">
         <div class="add1_1_1" style="background: url(<?php echo $category['image'];?>)center no-repeat; background-size:100% 100%;"></div>
+            <a class="a_kat_adas" href="<?php echo $category['href'];?>" style="cursor: pointer;">
             <div class="div-ramka-style"></div>
             <div class="text_kat_name">
                 <span><?php echo $category['name']; ?></span>
                 <div class="border_kat">
-                    <a class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    <span class="a_kat_adas">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
             </div>
+            </a>
         </div>
         <?php } ?>
         <?php if(($key == 4)){ ?>
@@ -56,13 +64,15 @@
         <?php } ?>
         <div class="add1_3">
             <div class="add1_1_3" style="background: url('../../image/catalog/category_5.png')center no-repeat; background-size:100% 100%;"></div>
+            <a class="a_kat_adas" href="http://<?php echo $_SERVER['SERVER_NAME']?>/pechat-vashego-foto-na-holste">
             <div class="div-ramka-style_3"></div>
             <div class="text_kat_name_3">
                 <span>ПЕЧАТЬ ВАШЕГО ФОТО НА ХОЛСТЕ</span>
                 <div class="border_kat_3">
-                    <a class="a_kat_adas" href="http://<?php echo $_SERVER['SERVER_NAME']?>/index.php?route=product/product&product_id=62">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    <span class="a_kat_adas">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
             </div>
+            </a>
         </div>
     </div>
     <?php
@@ -89,7 +99,7 @@
     </div>
     <?php $i++;} ?>
     <div class="hidden-lg hidden-md">
-        <a class="a_kat_adast" href="<?php echo $category['href'];?>">
+        <a class="a_kat_adast" href="http://<?php echo $_SERVER['SERVER_NAME']?>/pechat-vashego-foto-na-holste">
         <div class="adas_img_sm adas_img_sm2 <?php if($i == 1){echo 'cat1xsFix';} if($i == 5){echo 'cat5xsFix';} ?>"
              style="background: url('../../image/catalog/category_5.png')center no-repeat;">
             <div class="adas_img_mar2">
@@ -157,16 +167,16 @@
     <div class="container">
         <?php  ?>
         <div class="row">
-            <div class="div_item_text_art col-lg-3  col-xs-3" style="background: url(image/catalog/art_1.png) center no-repeat;">
-                <a href="index.php?route=product/manufacturerart/&category=ru">
-                    <div class="text_title_np_21_art" style="">Русские художники</div></a>
-            </div>
-            <div class="div_item_text_art col-lg-3  col-xs-3" style="background: url(image/catalog/art_2.png) center no-repeat;">
-                <a href="index.php?route=product/manufacturerart/&category=world">
+            <div class="div_item_text_art col-lg-3  col-xs-3" style="background: url(image/catalog/categ/chanel.jpg) center no-repeat;">
+                <a href="hydojniki/&category=world">
                     <div class="text_title_np_21_art" style="">Зарубежные художники</div></a>
             </div>
-            <div class="div_item_text_art col-lg-3  col-xs-3" style="background: url(image/catalog/art_3.png) center no-repeat;">
-                <a href="index.php?route=product/category&path=18_86">
+            <div class="div_item_text_art col-lg-3  col-xs-3" style="background: url(image/catalog/art_1.png) center no-repeat;">
+                <a href="hydojniki/&category=ru">
+                    <div class="text_title_np_21_art" style="">Русские художники</div></a>
+            </div>
+            <div class="div_item_text_art col-lg-3  col-xs-3" style="background: url(image/catalog/categ/777.jpg) center no-repeat;">
+                <a href="reprodukcii-kartin/raboty-neizvestnyx-xudozhnikov">
                     <div class="text_title_np_21_art" style="">Роботы неизвестных художников</div></a>
             </div>
         </div>
@@ -180,7 +190,7 @@
         <?php foreach($manufacturers as $manufacturer){ ?>
         <div class="item">
             <div class="div_item_text" style="background: url(image/<?php echo $manufacturer['image'];?>) center no-repeat; background-size: cover">
-                <a href="index.php?route=product/manufacturer/show&manufacturer_id=<?php echo $manufacturer['manufacturer_id'];?>">
+                <a href="museum&manufacturer_id=<?php echo $manufacturer['manufacturer_id'];?>">
                     <div class="text_title_np_21" style=""><?php echo $manufacturer['name'];?></div></a>
             </div>
         </div>

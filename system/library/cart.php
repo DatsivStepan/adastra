@@ -51,6 +51,7 @@ class Cart {
                 $i=0;
                 $order_width  = "+";
                 $order_height = "+";
+
                 /*CUSTOM CODE PRICE LOGIC END*/
 				foreach (json_decode($cart['option']) as $product_option_id => $value) {
                     $option_query = $this->db->query("SELECT po.product_option_id, po.option_id, od.name, o.type FROM " . DB_PREFIX . "product_option po LEFT JOIN `" . DB_PREFIX . "option` o ON (po.option_id = o.option_id) LEFT JOIN " . DB_PREFIX . "option_description od ON (o.option_id = od.option_id) WHERE po.product_option_id = '" . (int)$product_option_id . "' AND po.product_id = '" . (int)$cart['product_id'] . "' AND od.language_id = '" . (int)$this->config->get('config_language_id') . "'");
@@ -61,7 +62,25 @@ class Cart {
                         }
                     }
                 }
-
+                $textureCost = 1;
+                foreach (json_decode($cart['option']) as $product_option_id => $value) {
+                    $option_query = $this->db->query("SELECT po.product_option_id, po.option_id, od.name, o.type FROM " . DB_PREFIX . "product_option po LEFT JOIN `" . DB_PREFIX . "option` o ON (po.option_id = o.option_id) LEFT JOIN " . DB_PREFIX . "option_description od ON (o.option_id = od.option_id) WHERE po.product_option_id = '" . (int)$product_option_id . "' AND po.product_id = '" . (int)$cart['product_id'] . "' AND od.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+                    if ($option_query->num_rows) {
+                        if ($option_query->row['type'] == 'custom') {
+                            $option_value_query = $this->db->query("SELECT pov.option_value_id, ovd.name, pov.quantity, pov.subtract, pov.price, pov.price_prefix, pov.points, pov.points_prefix, pov.weight, pov.weight_prefix, od.`name` AS option_name, ov.field1, ov.field2 FROM " . DB_PREFIX . "product_option_value AS pov LEFT JOIN " . DB_PREFIX . "option_value AS ov ON (pov.option_value_id = ov.option_value_id) LEFT JOIN " . DB_PREFIX . "option_value_description AS ovd ON (ov.option_value_id = ovd.option_value_id) LEFT JOIN " . DB_PREFIX . "option_description AS od ON ov.option_id = od.option_id WHERE pov.product_option_value_id = '" . (int)$value . "' AND pov.product_option_id = '" . (int)$product_option_id . "' AND ovd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+                            $i++;
+                            if ($option_value_query->num_rows) {
+                                if ($option_value_query->row['price_prefix'] == '+') {
+                                    if($option_value_query->row['option_name'] == "Фактура"){
+                                        global $textureCost;
+                                        $textureCost = $order_width*$order_height/10000 * $option_value_query->row['price'];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                //var_dump($textureCost);
 				foreach (json_decode($cart['option']) as $product_option_id => $value) {
 					$option_query = $this->db->query("SELECT po.product_option_id, po.option_id, od.name, o.type FROM " . DB_PREFIX . "product_option po LEFT JOIN `" . DB_PREFIX . "option` o ON (po.option_id = o.option_id) LEFT JOIN " . DB_PREFIX . "option_description od ON (o.option_id = od.option_id) WHERE po.product_option_id = '" . (int)$product_option_id . "' AND po.product_id = '" . (int)$cart['product_id'] . "' AND od.language_id = '" . (int)$this->config->get('config_language_id') . "'");
 					if ($option_query->num_rows) {
@@ -75,7 +94,7 @@ class Cart {
 								    /*CUSTOM CODE PRICE LOGIC START*/
 								    if($option_value_query->row['option_name'] == "Покрытие"){
 								        if($option_value_query->row['name'] == "с лаком"){
-                                            $option_price += $price*0.2;
+                                            $option_price += $textureCost*0.2;
                                         }else{
                                             $option_price += $option_value_query->row['price'];
                                         }
