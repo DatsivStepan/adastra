@@ -168,7 +168,7 @@ class ControllerCatalogManufacturer extends Controller {
 			'limit' => $this->config->get('config_limit_admin')
 		);
 
-		$manufacturer_total = $this->model_catalog_manufacturer->getTotalMuseums();
+		$manufacturer_total = $this->model_catalog_manufacturer->getTotalManufacturers();
 
 		$results = $this->model_catalog_manufacturer->getManufacturers($filter_data);
 
