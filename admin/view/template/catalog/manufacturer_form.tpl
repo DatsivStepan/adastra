@@ -37,7 +37,7 @@
           <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-name"><?php echo $entry_description; ?></label>
             <div class="col-sm-10">
-              <textarea type="text" name="description" placeholder="<?php echo $entry_description; ?>" id="input-name" class="form-control" style="height: 200px;" /><?= $description; ?></textarea>
+              <textarea type="text" name="description" placeholder="<?php echo $entry_description; ?>" id="input-desc" class="form-control" style="height: 200px;" /><?= $description; ?></textarea>
               <?php if ($error_name) { ?>
               <div class="text-danger"><?php echo $error_name; ?></div>
               <?php } ?>
@@ -111,3 +111,21 @@
   </div>
 </div>
 <?php echo $footer; ?>
+<script type="text/javascript"><!--
+
+    $('#input-desc').summernote({
+        height: 300,
+        toolbar:[
+            //[groupname,[list buttons]]
+            ['insert',['picture','link','video','table']],
+            ['style',['bold','italic','underline']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize','fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph','style']],
+            ['height', ['height','codeview']],
+
+        ]
+    });
+
+    //--></script>

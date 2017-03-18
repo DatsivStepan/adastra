@@ -37,13 +37,13 @@
       <?php if ($categories) { ?>
       <div style="text-align: center" class="symbol_title">
         <?php foreach ($categories as $category) { ?>
-            <a href="hydojnik/&category=<?= $_GET['category'] ?>#<?php echo $category['name']; ?>" class="symbol_title_small"><?php echo $category['name']; ?></a>
+            <a href="hydojniki/&category=<?= $_GET['category'] ?>#<?php echo $category['name']; ?>" class="symbol_title_small"><?php echo $category['name']; ?></a>
         <?php } ?>
       </div>
 
         <div class="manufacturer_list">
             <?php foreach ($categories as $category) { ?>
-            <div class="col-sm-4 col-xs-4 "><h2 id="<?php echo $category['name']; ?>" class='symbol_title'><?php echo $category['name']; ?></h2>
+            <!--<div class="col-sm-4 col-xs-4 ">--><h2 id="<?php echo $category['name']; ?>" class='symbol_title'><?php echo $category['name']; ?></h2>
             <?php if ($category['manufacturer']) { ?>
             <?php foreach (array_chunk($category['manufacturer'], 4) as $manufacturers) { ?>
                 <?php foreach ($manufacturers as $manufacturer) { ?>
@@ -60,7 +60,7 @@
                 <?php } ?>
             <?php } ?>
             <?php } ?>
-            </div>
+            <!--</div>-->
             <?php } ?>
         </div>
 
@@ -111,6 +111,18 @@
         color: #0b0b0b;
     }
     .manufacturer_list{
-        white-space: nowrap;
+        -webkit-column-width: 33%;
+        -moz-column-width: 33%;
+        column-width: 33%;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+        -webkit-column-gap: 30px;
+        -moz-column-gap: 30px;
+        column-gap: 30px;
+        padding: 30px 0;
+        /*-webkit-column-rule: 1px solid #ccc;
+        -moz-column-rule: 1px solid #ccc;
+        column-rule: 1px solid #ccc;*/
     }
 </style>

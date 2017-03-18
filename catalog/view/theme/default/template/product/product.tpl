@@ -992,7 +992,7 @@
 </div>
             <div class="row card-phone-div-style">
                 <div class="row card-form-div-style">
-                    <div class="col-lg-6 col-xl-7 card-div-content-style">
+                    <div class="col-lg-6 col-sm-6 col-xl-7 card-div-content-style">
                         <div style="float: right">
                             <span class="card-text-span-style_1">затрудняетесь с выбором  рамы</br> и фактуры?</span></br>
                             <span class="card-text-span-style_2">Подберите их в нашем шоуруме</span><br>

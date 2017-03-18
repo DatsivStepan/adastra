@@ -177,7 +177,7 @@
             </div>
             <div class="div_item_text_art col-lg-3  col-xs-3" style="background: url(image/catalog/categ/777.jpg) center no-repeat;">
                 <a href="reprodukcii-kartin/raboty-neizvestnyx-xudozhnikov">
-                    <div class="text_title_np_21_art" style="">Роботы неизвестных художников</div></a>
+                    <div class="text_title_np_21_art" style="">Работы неизвестных художников</div></a>
             </div>
         </div>
 

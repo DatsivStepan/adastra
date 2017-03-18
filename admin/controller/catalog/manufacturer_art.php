@@ -176,6 +176,7 @@ class ControllerCatalogManufacturerart extends Controller {
 			$data['manufacturers'][] = array(
 				'manufacturer_id' => $result['manufacturer_art_id'],
 				'name'            => $result['name'],
+				'category_art_id'            => $result['category_art_id'],
 				'sort_order'      => $result['sort_order'],
 				'edit'            => $this->url->link('catalog/manufacturer_art/edit', 'token=' . $this->session->data['token'] . '&manufacturer_id=' . $result['manufacturer_art_id'] . $url, 'SSL')
 			);

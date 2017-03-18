@@ -140,7 +140,7 @@ class ModelCatalogManufacturerart extends Model {
 	}
 
 	public function getTotalManufacturersArts() {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "manufacturer");
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "manufacturer_art");
 
 		return $query->row['total'];
 	}
