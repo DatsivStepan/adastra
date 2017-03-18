@@ -60,6 +60,7 @@ function ready() {
 
     picture.style.background = "url(" + image.src + ")";
     picture.style.backgroundSize = "contain";
+    picture.style.backgroundRepeat = "no-repeat";
 
     picture.style.height = image.offsetHeight + "px";
     image.style.display = "none";

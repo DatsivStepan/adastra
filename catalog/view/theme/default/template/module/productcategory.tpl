@@ -2,12 +2,12 @@
     <?php foreach ($categories as $category) { ?>
         <h4 class="last_h3_text text_mod_h3 hidden-xs"><?php echo $category['name']; ?></h4>
     <?php } ?>
-    <div class="row mar_left_cont KP_80 hidden-xs">
+    <div class="row mar_left_cont hidden-xs">
         <?php foreach ($category['products'] as $product) { ?>
         <div class="KP_25_mod_productcategory">
             <div class="product-thumb_style">
                 <div class="image hidden-xs"><a class="imga_catalog_mod" href="<?php echo $product['href']; ?>"
-                                                style="background: url('<?php echo $product['thumb']; ?>') center no-repeat; min-height: 300px; background-size: cover;min-width: 219px;"></a>
+                                                style="background: url('<?php echo $product['thumb']; ?>') center no-repeat; min-height: 300px; background-size: contain; background-repeat: no-repeat; min-width: 219px;"></a>
                 </div>
                 <div>
                     <div class="caption_style hidden-xs"
@@ -17,9 +17,9 @@
                         </h4>
 
                         <div style="clear: both"></div>
-                                        <span class="ribbon pull-right_KP"
+                                        <!--<span class="ribbon pull-right_KP"
                                               style="display: none; margin-left: 10px"><?php echo $text_price; ?>
-                                            от <?php echo $product['price']; ?></span>
+                                            от <?php echo $product['price']; ?></span>-->
                     </div>
 
                 </div>
@@ -37,7 +37,7 @@
                 <div class="KP_25_mod">
                     <div class="product-thumb_style">
                         <div class="image "><a class="imga_catalog_mod" href="<?php echo $product['href']; ?>"
-                                               style="background: url('<?php echo $product['thumb']; ?>') center no-repeat; min-height: 300px; background-size: cover;min-width: 219px; display: block"></a>
+                                               style="background: url('<?php echo $product['thumb']; ?>') center no-repeat; min-height: 300px; background-size: contain; background-repeat: no-repeat; min-width: 219px; display: block"></a>
                         </div>
                         <div>
                             <div class="caption_style"
@@ -47,9 +47,9 @@
                                 </h4>
 
                                 <div style="clear: both"></div>
-                                        <span class="ribbon pull-right_KP"
+                                        <!--<span class="ribbon pull-right_KP"
                                               style="display: none; margin-left: 10px"><?php echo $text_price; ?>
-                                            от <?php echo $product['price']; ?></span>
+                                            от <?php echo $product['price']; ?></span>-->
                             </div>
 
                         </div>

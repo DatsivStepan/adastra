@@ -112,8 +112,8 @@
                 </div>
                 <?php } ?>
             </div>
-            <div class="KP_80">
-                <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
+            <div class="KP_100">
+                <div class="col-sm-12" style="text-align: center; padding-top: 25px;"><?php echo $pagination; ?></div>
             </div>
             <?php } ?>
             <?php if (!$categories && !$products) { ?>

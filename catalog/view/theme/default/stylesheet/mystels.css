@@ -1048,8 +1048,8 @@ a.Catalog{
         margin: 0 !important;
     }
     .KP_25_mod{
-        min-height: 375px !important;
-        width: 219px !important;
+        min-height: 430px !important;
+        width: 24% !important;
         padding: 0 !important;
         margin: 10px 10px 0 0 !important;
         float: left;
@@ -1058,8 +1058,6 @@ a.Catalog{
         margin-left: 1%;
     }
     .imga_catalog_mod{
-        width: 209px;
-        height: 300px;
         display: block;
     }
     div.KP_25_mod:nth-child(5n){
@@ -1070,7 +1068,7 @@ a.Catalog{
     }
     .KP_25_mod_productcategory{
         min-height: 375px !important;
-        width: 219px !important;
+        width: 24% !important;
         padding: 0 !important;
         margin: 10px 10px 0 0 !important;
         float: left;
@@ -1087,7 +1085,12 @@ a.Catalog{
         margin: 0 !important;
         float: left;
     }
-
+    .KP_100{
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left;
+    }
 
     .KP_80_2{
         width: 78.5% !important;
