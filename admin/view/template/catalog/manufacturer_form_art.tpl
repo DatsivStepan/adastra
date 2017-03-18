@@ -48,12 +48,12 @@
             <div class="col-sm-10">
               <select class="form-control" id="sel1" name="category_art">
                 <?php foreach($results_art as $result_art){ ?>
-                <option value="<?= $result_art['category_art_id']; ?>"><?php echo $result_art['category']; ?></option>
+                <option value="<?= $result_art['category_art_id']; ?>" <?php if($result_art['category_art_id'] == $category_art_id){echo "selected";} ?> ><?php echo $result_art['category']; ?></option>
                 <?php } ?>
               </select>
             </div>
           </div>
-          <div class="form-group required" style="">
+          <div class="form-group required" style="display: none">
             <label class="col-sm-2 control-label" for="input-category"><?php echo $entry_banner; ?></label>
             <div class="col-sm-10">
               <select class="form-control" id="sel1" name="banner">
