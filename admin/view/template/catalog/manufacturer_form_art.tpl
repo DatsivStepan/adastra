@@ -124,7 +124,18 @@
 <script type="text/javascript"><!--
 
         $('#input-desc').summernote({
-            height: 300
+            height: 300,
+            toolbar:[
+                //[groupname,[list buttons]]
+                ['insert',['picture','link','video','table']],
+                ['style',['bold','italic','underline']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['fontsize', ['fontsize','fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph','style']],
+                ['height', ['height','codeview']],
+
+            ]
         });
 
     //--></script>
