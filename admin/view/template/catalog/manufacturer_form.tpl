@@ -43,7 +43,7 @@
               <?php } ?>
             </div>
           </div>
-          <div class="form-group required" style="">
+          <div class="form-group required" style="display: none;">
             <label class="col-sm-2 control-label" for="input-category"><?php echo $entry_banner; ?></label>
             <div class="col-sm-10">
               <select class="form-control" id="sel1" name="banner">
