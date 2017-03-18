@@ -13,7 +13,7 @@
                 <span class="footer-bottom-text-style footer-bottom-text-padding_20">&#169; 2008-2016. Галерея Адастра Все права защищены.</span>
             </div>
             <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 footer-bottom-text-padding" style="text-align: right;">
-                <a class="footer-bottom-text-style" href="http	://adtherapy.ru">Разработано в <span style="text-decoration: underline">Рекламотерапия</span></a>
+                <!-- <a class="footer-bottom-text-style" href="http	://adtherapy.ru">Разработано в <span style="text-decoration: underline">Рекламотерапия</span></a> -->
             </div>
           </div>
           </div>
@@ -34,7 +34,7 @@
                         <span class="footer-bottom-text-style">&#169; 2016. Галерея Адастра Все права защищены.</span>
                     </div>
                     <div class=" footer-bottom-text-padding">
-                        <span class="">Разработано в <span style="text-decoration: underline">Рекламотерапия</span></span>
+                        <!-- <span class="">Разработано в <span style="text-decoration: underline">Рекламотерапия</span></span> -->
                     </div>
                 </div>
         </div>

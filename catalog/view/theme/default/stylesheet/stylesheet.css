@@ -1048,7 +1048,6 @@ h2.price {
 	font-size: 70px;
 	color: #0b0b0b;
 	line-height: 40px;
-	text-transform: capitalize;
 }
 .advantages-container-style{
 	text-align: center;
@@ -1182,7 +1181,6 @@ h2.price {
 	font-family: 'AristonNormal';
 	font-size: 70px;
 	color: #fff;
-	font-weight: bold;
 }
 .middle-home-text{
 	font-family: 'Times New Roman';

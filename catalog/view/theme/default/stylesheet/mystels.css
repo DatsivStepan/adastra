@@ -402,14 +402,16 @@ a.a-category-child-style_mob{
 .category-icon-style{
     width: 10px;
     height: 10px;
-    background: url("../image/Znak-min.png")center no-repeat;
+    background: url("../image/strilka_vnuz.png")center no-repeat;
     display: inline-block;
+    cursor: pointer;
 }
 .category-icon-style_1{
     width: 10px;
     height: 10px;
     display: inline-block;
-    background: url("../image/Znak-+.png")center no-repeat;
+    background: url("../image/strilka.png")center no-repeat;
+    cursor: pointer;
 }
 .ghhh{
     background: url("../image/Veluka-strilka-vpravo.png")right center no-repeat!important;
@@ -1016,8 +1018,6 @@ a.Catalog{
         width: 56%;
     }
     .imga_catalog{
-        width: 209px;
-        height: 300px;
         display: block;
     }
     .product-layout_modul{
@@ -1026,7 +1026,7 @@ a.Catalog{
         margin-right: 0px !important;
     }
     div.KP_25:nth-child(4n){
-        margin: 10px 0 0 0 !important;
+        /*margin: 10px 0 0 0 !important;*/
     }
     .KP_20{
         width: 219px !important;
@@ -1035,8 +1035,8 @@ a.Catalog{
         float: left;
     }
     .KP_25{
-        min-height: 375px !important;
-        width: 219px !important;
+        min-height: 430px !important;
+        width: 32% !important;
         padding: 0 !important;
         margin: 10px 10px 0 0 !important;
         float: left;

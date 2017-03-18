@@ -20,8 +20,8 @@
 
                     </div>
 
-                    <h5 class="text_style_1_3" style="text-align: center"><?php echo $text_price; ?>
-                        <span class="text_style_price"><?php echo $product['price']; ?></span></h5>
+                    <!-- <h5 class="text_style_1_3" style="text-align: center"><?php echo $text_price; ?>
+                        <span class="text_style_price"><?php echo $product['price']; ?></span></h5> -->
                 </div>
             </div>
         </div>
