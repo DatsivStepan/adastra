@@ -114,7 +114,7 @@
                                         <div class="w  frameSide"></div>
                                         <div class="nw frameSide"></div>
 
-                                        <div id="picture">
+                                        <div id="picture" class="strange_pic_obj">
                                             <input type="hidden" value="<?php echo $thumb; ?>">
                                             <img class="main_image" id="image" src="<?php echo $thumb; ?>"
                                                  realWidth="<?php echo $width; ?>" realHeight="<?php echo $height; ?>">

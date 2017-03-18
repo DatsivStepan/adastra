@@ -43,6 +43,10 @@ class ControllerToolrotateimage extends Controller
                 break;
         }
 
+        if (exif_imagetype($image) == IMAGETYPE_JPEG) {
+            $img = imagecreatefromjpeg($image);
+        }
+        //$img = imagecreatefromjpeg($image);
         $imgRotated = imagerotate($img, $deg, 0);
         imagejpeg($imgRotated, $image, $deg);  //  Новая картинка
 

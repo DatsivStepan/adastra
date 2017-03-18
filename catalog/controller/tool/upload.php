@@ -61,7 +61,8 @@ class ControllerToolUpload extends Controller {
 
 		if (!$json) {
 		    $file_token = token(32);
-			$file = $filename . '.' . $file_token;
+
+			$file = rand().$filename . '.' . $file_token;
 
             $file = str_replace(" ", "", $file);
 			//move_uploaded_file($this->request->files['file']['tmp_name'], DIR_UPLOAD . $file);

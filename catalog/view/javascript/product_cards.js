@@ -1111,18 +1111,18 @@ function ready() {
                                     }
 
                                     document.getElementById('image').src = json['new_file'];
-                                    document.getElementById('picture').style.background = "url(" + json['new_file'] + "), url(" + textureSrc + ")";
+                                    document.getElementById('picture').style.background = "url(" + json['new_file'] + ")";
                                     document.getElementById('picture').style.backgroundSize = "100% 100%";
 
 
                                     $("#image").attr("uploadFileExt", json['file_extension']);
-                                    console.log($("#image").attr("uploadFileExt"));
+                                    //console.log($("#image").attr("uploadFileExt"));
 
                                     $("#image").attr("uploadFileName", json['file_name']);
-                                    console.log($("#image").attr("uploadFileName"));
+                                    //console.log($("#image").attr("uploadFileName"));
 
                                     $("#image").attr("uploadFileToken", json['file_token']);
-                                    console.log($("#image").attr("uploadFileName"));
+                                    //console.log($("#image").attr("uploadFileName"));
 
                                     frameWidth = tmp.naturalWidth + 60;
                                     frameHeight = tmp.naturalHeight + 60;
@@ -1197,7 +1197,7 @@ function ready() {
     $('.btnPhotoRotateLeft').on('click', function () {
                 //console.log('index.php?route=tool/rotateImage&rotate=left&ext='+$("#image").attr("uploadFileExt")+"&filename="+$("#image").attr("uploadFileName"));
                 $.ajax({
-                    url: 'index.php?route=tool/rotateImage&rotate=left&ext='+$("#image").attr("uploadFileExt")+"&filename="+$("#image").attr("uploadFileName")+"&filetoken"+$("#image").attr("uploadFileToken"),
+                    url: 'index.php?route=tool/rotateimage&rotate=left&ext='+$("#image").attr("uploadFileExt")+"&filename="+$("#image").attr("uploadFileName")+"&filetoken="+$("#image").attr("uploadFileToken"),
                     type: 'post',
                     //dataType: 'json',
                     data: "",
@@ -1272,7 +1272,7 @@ function ready() {
                         document.getElementById('image').src = tmp_src;
 
 
-                        document.getElementById('picture').style.background = "url(" + tmp_src + "?"+ Math.random()+"), url(" + textureSrc + ")";
+                        document.getElementById('picture').style.background = "url(" + tmp_src + "?"+ Math.random()+")";
                         document.getElementById('picture').style.backgroundSize = "100% 100%";
 
                         widthInput.dispatchEvent(new Event("change"));
@@ -1288,9 +1288,9 @@ function ready() {
 
     });
     $('.btnPhotoRotateRight').on('click', function () {
-        //console.log('index.php?route=tool/rotateImage&rotate=left&ext='+$("#image").attr("uploadFileExt")+"&filename="+$("#image").attr("uploadFileName"));
+        console.log('index.php?route=tool/rotateimage&rotate=right&ext='+$("#image").attr("uploadFileExt")+"&filename="+$("#image").attr("uploadFileName")+"&filetoken="+$("#image").attr("uploadFileToken"));
         $.ajax({
-            url: 'index.php?route=tool/rotateImage&rotate=right&ext='+$("#image").attr("uploadFileExt")+"&filename="+$("#image").attr("uploadFileName")+"&filetoken"+$("#image").attr("uploadFileToken"),
+            url: 'index.php?route=tool/rotateimage&rotate=right&ext='+$("#image").attr("uploadFileExt")+"&filename="+$("#image").attr("uploadFileName")+"&filetoken="+$("#image").attr("uploadFileToken"),
             type: 'post',
             //dataType: 'json',
             data: "",
@@ -1365,7 +1365,7 @@ function ready() {
                 document.getElementById('image').src = tmp_src;
 
 
-                document.getElementById('picture').style.background = "url(" + tmp_src + "?"+ Math.random()+"), url(" + textureSrc + ")";
+                document.getElementById('picture').style.background = "url(" + tmp_src + "?"+ Math.random()+")";
                 document.getElementById('picture').style.backgroundSize = "100% 100%";
 
                 widthInput.dispatchEvent(new Event("change"));
