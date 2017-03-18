@@ -514,7 +514,6 @@
 .a_kat_adas{
     font-family: 'Times New Roman';
     font-size: 17px;
-    font-weight: 600;
     color: #000;
     /*background: url(/../catalog/view/theme/default/image/Forma-1-copy.png)right no-repeat;*/
     padding: 0 36px 0 0;
@@ -1723,4 +1722,7 @@
         height: 450px;
         margin-left: 11px;
     }
+}
+.bold_text{
+    font-weight: bold;
 }

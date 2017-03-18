@@ -8,7 +8,7 @@
             <a class="a_kat_adas" href="<?php echo $category['href'];?>">
             <div class="div-ramka-style_2"></div>
             <div class="text_kat_name_2">
-                <span><?php echo $category['name']; ?></span>
+                <span class="bold_text"><?php echo $category['name']; ?></span>
                 <div class="border_kat">
                     <span class="a_kat_adas">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
@@ -22,7 +22,7 @@
             <a class="a_kat_adas" href="<?php echo $category['href'];?>">
             <div class="div-ramka-style"></div>
             <div class="text_kat_name_3">
-                <span><?php echo $category['name']; ?></span>
+                <span class="bold_text"><?php echo $category['name']; ?></span>
                 <div class="border_kat">
                     <span class="a_kat_adas" href="<?php echo $category['href'];?>">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
@@ -36,7 +36,7 @@
             <a class="a_kat_adas" href="<?php echo $category['href'];?>">
             <div class="div-ramka-style"></div>
             <div class="text_kat_name">
-                <span><?php echo $category['name']; ?></span>
+                <span class="bold_text"><?php echo $category['name']; ?></span>
                 <div class="border_kat">
                     <span class="a_kat_adas" >В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
@@ -50,7 +50,7 @@
             <a class="a_kat_adas" href="<?php echo $category['href'];?>" style="cursor: pointer;">
             <div class="div-ramka-style"></div>
             <div class="text_kat_name">
-                <span><?php echo $category['name']; ?></span>
+                <span class="bold_text"><?php echo $category['name']; ?></span>
                 <div class="border_kat">
                     <span class="a_kat_adas">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
@@ -67,7 +67,7 @@
             <a class="a_kat_adas" href="http://<?php echo $_SERVER['SERVER_NAME']?>/pechat-vashego-foto-na-holste">
             <div class="div-ramka-style_3"></div>
             <div class="text_kat_name_3">
-                <span>ПЕЧАТЬ ВАШЕГО ФОТО НА ХОЛСТЕ</span>
+                <span class="bold_text">ПЕЧАТЬ ВАШЕГО ФОТО НА ХОЛСТЕ</span>
                 <div class="border_kat_3">
                     <span class="a_kat_adas">В категорию <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                 </div>
@@ -233,9 +233,9 @@
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_1">
                             <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
-                            <span class="advantages-content-title-style">
+                            <div style="text-align:center;"><span class="advantages-content-title-style">
                                 Экологически чистые материалы
-                            </span></br>
+                            </span></div>
                             <span class="advantages-content-style">
                                 При изготовлении нашей продукции используются только экологически чистые материалы,
                                 которые не наносят вред вашему здоровью
@@ -247,9 +247,9 @@
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style adv_con_tit_np_2">
                             <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
-                            <span class="advantages-content-title-style">
+                            <div style="text-align:center;"><span class="advantages-content-title-style">
                                 Мы являемся производителями
-                            </span></br>
+                            </span></div>
                             <span class="advantages-content-style">
                                 Мы являемся производителями с наличием собственной производственной базы,
                                 что дает нам возможность придерживаться лояльной ценовой политики не в ущерб качеству изделий
@@ -263,9 +263,9 @@
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_3">
                             <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
-                            <span class="advantages-content-title-style">
+                            <div style="text-align:center;"><span class="advantages-content-title-style">
                                 Бесшовная печать
-                            </span></br>
+                            </span></div>
                             <span class="advantages-content-style">
                                 Бесшовная печать фресок и фотообоев до 3,20 метров в высоту и до  36 метров в длину
                             </span>
@@ -276,9 +276,9 @@
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style adv_con_tit_np_4">
                             <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
-                            <span class="advantages-content-title-style">
+                            <div style="text-align:center;"><span class="advantages-content-title-style">
                                 Большой выбор
-                            </span></br>
+                            </span></div>
                             <span class="advantages-content-style">
                                 Широкий выбор фактур фотообоев и фресок
                             </span>
@@ -292,9 +292,9 @@
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_1-div-style adv_con_tit_np_5">
                             <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
-                            <span class="advantages-content-title-style">
+                            <div style="text-align:center;"><span class="advantages-content-title-style">
                                Эксклюзивный макет
-                            </span></br>
+                            </span></div>
                             <span class="advantages-content-style">
                                 Также наши дизайнеры могут изготовить для вас эксклюзивный макет с применением техники коллажа,
                                 дорисовки изображений с учетом конфигурации помещения, которое вы хотите украсить нашими изделиями,
@@ -307,9 +307,9 @@
                     <div class="row" style="position: relative; margin: 0 ">
                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-left advantages-content_2-div-style adv_con_tit_np_6">
                             <div class="advantages-icon-div-style"><img src="../../../catalog/view/theme/default/image/advantage_icon.png"></div>
-                            <span class="advantages-content-title-style">
+                            <div style="text-align:center;"><span class="advantages-content-title-style">
                                 Репродукции картин
-                            </span></br>
+                            </span></div>
                             <span class="advantages-content-style">
                                Репродукции картин маслом на холсте любого размера по желанию заказчика.
                                Наши художники выполнят для Вас копии любых шедевров живописи в высочайшем качестве!

@@ -76,7 +76,7 @@
                 <?php foreach ($products as $product) { ?>
                 <div class="KP_25">
                     <div class="product-thumb_style">
-                        <div class="image hidden-xs"><a class="imga_catalog" href="<?php echo $product['href']; ?>" style="background: url('<?php echo $product['thumb']; ?>') center no-repeat; min-height: 300px; background-size: cover;min-width: 219px;"></a>
+                        <div class="image hidden-xs"><a class="imga_catalog" href="<?php echo $product['href']; ?>" style="background: url('<?php echo $product['thumb']; ?>') center no-repeat; min-height: 300px; background-size:contain; min-width: 219px;"></a>
                         </div>
                         <div>
                             <div class="caption_style hidden-xs"
@@ -85,8 +85,8 @@
                                                               href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                                 </h4>
                                     <div style="clear: both"></div>
-                                        <span class="ribbon pull-right_KP" style="display: none; margin-left: 10px"><?php echo $text_price; ?>
-                                            от <?php echo $product['price']; ?></span>
+                                        <!--<span class="ribbon pull-right_KP" style="display: none; margin-left: 10px"><?php echo $text_price; ?>
+                                            от <?php echo $product['price']; ?></span> -->
                             </div>
 
                         </div>

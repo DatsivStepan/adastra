@@ -14,7 +14,7 @@
                                </span></a><a class="a-category-style" href="<?php echo $cat['href'] ?>"><?php echo $cat['name'] ?></a>
 
 
-                <ul class="dropDownSubMenu" style="padding: 0px; margin: 0px; display: <?php if ($cat['category_id'] == $cat_id){ echo 'block'; }else{echo 'none';}?>;">
+                <ul class="dropDownSubMenu" style="<?php if ($level == 1){ echo 'padding: 0px 0 0 25px;'; }else{echo 'padding: 0px 0 0 0px;';}?> margin: 0px; display: <?php if ($cat['category_id'] == $cat_id){ echo 'block'; }else{echo 'none';}?>;">
 
                     <?
                 outTree2($cat['children'], $level+1, $child_id, $cat_id, $level+1);
