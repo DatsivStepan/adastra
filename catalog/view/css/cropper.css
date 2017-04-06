@@ -150,8 +150,8 @@
   cursor: s-resize;
 }
 .cropper-point {
-  width: 5px;
-  height: 5px;
+  width: 15px;
+  height: 15px;
   opacity: .75;
   background-color: #39f;
 }

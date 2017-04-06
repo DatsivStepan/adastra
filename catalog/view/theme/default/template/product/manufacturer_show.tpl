@@ -31,7 +31,7 @@
               <?php echo $heading_title; ?>
             </span>
             <span class="museum-description-style">
-              <?= $description; ?>
+              <?php echo(html_entity_decode($description)); ?>
             </span>
             <div class="row">
               <div class="col-lg-6"></div>
