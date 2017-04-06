@@ -30,9 +30,9 @@
             <span class="museum-title-style">
               <?php echo $heading_title; ?>
             </span>
-            <span class="museum-description-style">
-              <?= $description; ?>
-            </span>
+            <div class="museum-description-style">
+              <?php echo(html_entity_decode($description)); ?>
+            </div>
             <div class="row">
               <div class="col-lg-6"></div>
               <div class="col-lg-6"><a href="hydojnik/&category=<?= $_GET['category'] ?>" class="btnLink">Назад в каталог</a></div>
